@@ -1633,6 +1633,7 @@ containing a value of this type.
         public static final int abc_textfield_search_default_mtrl_alpha=0x7f020031;
         public static final int abc_textfield_search_material=0x7f020032;
         public static final int ic_launcher=0x7f020033;
+        public static final int listener_icon=0x7f020034;
     }
     public static final class id {
         public static final int FirstWord=0x7f09004e;
@@ -1651,7 +1652,7 @@ containing a value of this type.
         public static final int action_mode_bar=0x7f09002e;
         public static final int action_mode_bar_stub=0x7f09002d;
         public static final int action_mode_close_button=0x7f090020;
-        public static final int action_settings=0x7f090053;
+        public static final int action_settings=0x7f090054;
         public static final int activities=0x7f09004d;
         public static final int activity1Button=0x7f090046;
         public static final int activity2Button=0x7f090047;
@@ -1659,7 +1660,6 @@ containing a value of this type.
         public static final int activity_chooser_view_content=0x7f090021;
         public static final int always=0x7f090014;
         public static final int appTitle=0x7f090042;
-        public static final int app_logo=0x7f090054;
         public static final int application=0x7f09004a;
         public static final int beginning=0x7f09001b;
         public static final int checkbox=0x7f090029;
@@ -1679,6 +1679,7 @@ containing a value of this type.
         public static final int icon=0x7f090026;
         public static final int ifRoom=0x7f090016;
         public static final int image=0x7f090023;
+        public static final int imageButton1=0x7f090053;
         public static final int listMode=0x7f09000a;
         public static final int list_item=0x7f090025;
         public static final int middle=0x7f09001d;

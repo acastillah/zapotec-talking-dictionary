@@ -37,7 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/searchBox"
         android:layout_below="@+id/searchBox"
-        android:text="as [] hi"
+        android:text="as [a’s] hi"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:onClick="displayWord"
          />
@@ -48,7 +48,7 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/searchBox"
         android:layout_below="@+id/FirstWord"
-        android:text="as nia [] hi there"
+        android:text="as nia [a’s nniìa’] hi there"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:onClick="displayWord"
         />

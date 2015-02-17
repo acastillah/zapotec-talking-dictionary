@@ -3,5 +3,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.valleyzapotectalkingdictionary.SearchResultActivity" >
 
-
+    <item
+        android:id="@+id/side_menu"
+        android:title="@string/side_menu_eng"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/englishInterface"
+        android:title="@string/englishInterface_eng"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/spanishInterface"
+        android:title="@string/spanishInterface_eng"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/zapotecInterface"
+        android:title="@string/zapotecInterface_eng"
+        app:showAsAction="ifRoom"/>
+    
 </menu>

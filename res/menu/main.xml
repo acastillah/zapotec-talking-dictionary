@@ -4,10 +4,6 @@
     tools:context="com.example.valleyzapotectalkingdictionary.MainActivity" >
 
     <item
-        android:id="@+id/app_logo"
-        android:title="Logo"
-        app:showAsAction="ifRoom"/>
-    <item
         android:id="@+id/side_menu"
         android:title="@string/side_menu_eng"
         app:showAsAction="ifRoom"/>
