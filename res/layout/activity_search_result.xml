@@ -1,0 +1,58 @@
+
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.valleyzapotectalkingdictionary.SearchResultActivity" >
+
+    <ImageButton
+        android:id="@+id/searchButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/searchBox"
+        android:layout_toRightOf="@+id/searchBox"
+        android:onClick="searchWord"
+        android:src="@drawable/abc_ic_search_api_mtrl_alpha"
+         />
+
+    <EditText
+        android:id="@+id/searchBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="113dp"
+        android:ems="10" />
+
+    <Button
+        android:id="@+id/FirstWord"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/searchBox"
+        android:layout_below="@+id/searchBox"
+        android:text="as [] hi"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:onClick="displayWord"
+         />
+
+    <Button
+        android:id="@+id/SecondWord"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/searchBox"
+        android:layout_below="@+id/FirstWord"
+        android:text="as nia [] hi there"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:onClick="displayWord"
+        />
+
+   
+</RelativeLayout>
+
