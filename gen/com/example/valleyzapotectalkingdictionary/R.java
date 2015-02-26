@@ -1671,7 +1671,7 @@ containing a value of this type.
         public static final int dropdown=0x7f09001a;
         public static final int edit_query=0x7f090033;
         public static final int end=0x7f09001c;
-        public static final int englishInterface=0x7f090056;
+        public static final int englishInterface=0x7f090055;
         public static final int expand_activities_button=0x7f090022;
         public static final int expanded_menu=0x7f090028;
         public static final int home=0x7f090000;
@@ -1706,8 +1706,8 @@ containing a value of this type.
         public static final int showCustom=0x7f090010;
         public static final int showHome=0x7f090011;
         public static final int showTitle=0x7f090012;
-        public static final int side_menu=0x7f090055;
-        public static final int spanishInterface=0x7f090057;
+        public static final int side_menu=0x7f090058;
+        public static final int spanishInterface=0x7f090056;
         public static final int split_action_bar=0x7f090004;
         public static final int submit_area=0x7f09003c;
         public static final int tabMode=0x7f09000c;
@@ -1724,7 +1724,7 @@ containing a value of this type.
         public static final int wordOfTheDay_orthography=0x7f090045;
         public static final int wordOfTheDay_word=0x7f090044;
         public static final int wrap_content=0x7f090009;
-        public static final int zapotecInterface=0x7f090058;
+        public static final int zapotecInterface=0x7f090057;
     }
     public static final class integer {
         /**  The maximum number of action buttons that should be permitted within
@@ -1780,8 +1780,9 @@ containing a value of this type.
         public static final int activity_menu=0x7f030019;
         public static final int activity_search_result=0x7f03001a;
         public static final int activity_settings=0x7f03001b;
-        public static final int activity_word_definition=0x7f03001c;
-        public static final int support_simple_spinner_dropdown_item=0x7f03001d;
+        public static final int activity_update=0x7f03001c;
+        public static final int activity_word_definition=0x7f03001d;
+        public static final int support_simple_spinner_dropdown_item=0x7f03001e;
     }
     public static final class menu {
         public static final int about=0x7f0c0000;
@@ -1789,7 +1790,8 @@ containing a value of this type.
         public static final int menu=0x7f0c0002;
         public static final int search_result=0x7f0c0003;
         public static final int settings=0x7f0c0004;
-        public static final int word_definition=0x7f0c0005;
+        public static final int update=0x7f0c0005;
+        public static final int word_definition=0x7f0c0006;
     }
     public static final class string {
         /**  Content description for the action bar "home" affordance. [CHAR LIMIT=NONE] 
@@ -1887,6 +1889,7 @@ containing a value of this type.
         public static final int title_activity_menu=0x7f0a0028;
         public static final int title_activity_search_result=0x7f0a0029;
         public static final int title_activity_settings=0x7f0a002d;
+        public static final int title_activity_update=0x7f0a002e;
         public static final int title_activity_word_definition=0x7f0a002a;
         /**  Translate 
          */

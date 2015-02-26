@@ -29,14 +29,6 @@ public class MainActivity extends ActionBarActivity {
 		// as you specify a parent activity in AndroidManifest.xml.
 		
 		switch (item.getItemId()) {
-			case R.id.settings:
-				Intent settings = new Intent(this, SettingsActivity.class);
-				startActivity(settings);
-				return true;
-			case R.id.side_menu:
-				Intent menu = new Intent(this, MenuActivity.class);
-				startActivity(menu);
-				return true;
 			case R.id.englishInterface:
 				// switch to English UI
 				return true;
@@ -45,6 +37,15 @@ public class MainActivity extends ActionBarActivity {
 				return true;
 			case R.id.zapotecInterface:
 				// switch to Zapotec UI
+				return true;
+			case R.id.about:
+				startActivity(new Intent(this, AboutActivity.class));
+				return true;
+			case R.id.update:
+				startActivity(new Intent(this, UpdateActivity.class));
+				return true;
+			case R.id.settings:
+				startActivity(new Intent(this, SettingsActivity.class));
 				return true;
 		}
 		
