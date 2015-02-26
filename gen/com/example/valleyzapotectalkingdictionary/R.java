@@ -1848,7 +1848,7 @@ containing a value of this type.
         /**  Content description for the Toolbar icon used to collapse an expanded action mode. [CHAR LIMIT=NONE] 
          */
         public static final int abc_toolbar_collapse_description=0x7f0a0004;
-        public static final int action_settings=0x7f0a002b;
+        public static final int action_settings=0x7f0a002c;
         public static final int app_name=0x7f0a0010;
         public static final int app_name_eng=0x7f0a0011;
         public static final int app_name_spa=0x7f0a0012;
@@ -1863,14 +1863,16 @@ containing a value of this type.
         /**  Translate 
          */
         public static final int hello_world=0x7f0a0014;
-        /**  Translate 
- Main Activity 
+        /**  Main Activity 
          */
-        public static final int search_eng=0x7f0a0021;
-        public static final int search_spa=0x7f0a0022;
+        public static final int search_eng=0x7f0a0022;
+        public static final int search_spa=0x7f0a0023;
         /**  Translate 
          */
-        public static final int search_zap=0x7f0a0023;
+        public static final int search_zap=0x7f0a0024;
+        /**  Translate 
+         */
+        public static final int settings_eng=0x7f0a0021;
         /**  Action Bar 
          */
         public static final int side_menu_eng=0x7f0a0015;
@@ -1879,20 +1881,20 @@ containing a value of this type.
         public static final int spanishInterface_eng=0x7f0a001b;
         public static final int spanishInterface_spa=0x7f0a001c;
         public static final int spanishInterface_zap=0x7f0a001d;
-        public static final int title_activity_about=0x7f0a002a;
+        public static final int title_activity_about=0x7f0a002b;
         /**  Translate 
          */
-        public static final int title_activity_menu=0x7f0a0027;
-        public static final int title_activity_search_result=0x7f0a0028;
-        public static final int title_activity_settings=0x7f0a002c;
-        public static final int title_activity_word_definition=0x7f0a0029;
+        public static final int title_activity_menu=0x7f0a0028;
+        public static final int title_activity_search_result=0x7f0a0029;
+        public static final int title_activity_settings=0x7f0a002d;
+        public static final int title_activity_word_definition=0x7f0a002a;
         /**  Translate 
          */
-        public static final int wordOfTheDay_eng=0x7f0a0024;
-        public static final int wordOfTheDay_spa=0x7f0a0025;
+        public static final int wordOfTheDay_eng=0x7f0a0025;
+        public static final int wordOfTheDay_spa=0x7f0a0026;
         /**  Translate 
          */
-        public static final int wordOfTheDay_zap=0x7f0a0026;
+        public static final int wordOfTheDay_zap=0x7f0a0027;
         /**  Translate 
          */
         public static final int zapotecInterface_eng=0x7f0a001e;

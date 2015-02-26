@@ -29,9 +29,13 @@ public class MainActivity extends ActionBarActivity {
 		// as you specify a parent activity in AndroidManifest.xml.
 		
 		switch (item.getItemId()) {
-			case R.id.side_menu:
-				Intent intent = new Intent(this, MenuActivity.class);
+			case R.id.settings:
+				Intent intent = new Intent(this, SettingsActivity.class);
 				startActivity(intent);
+				return true;
+			case R.id.side_menu:
+//				Intent intent = new Intent(this, MenuActivity.class);
+//				startActivity(intent);
 				return true;
 			case R.id.englishInterface:
 				// switch to English UI
