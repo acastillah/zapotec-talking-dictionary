@@ -30,12 +30,12 @@ public class MainActivity extends ActionBarActivity {
 		
 		switch (item.getItemId()) {
 			case R.id.settings:
-				Intent intent = new Intent(this, SettingsActivity.class);
-				startActivity(intent);
+				Intent settings = new Intent(this, SettingsActivity.class);
+				startActivity(settings);
 				return true;
 			case R.id.side_menu:
-//				Intent intent = new Intent(this, MenuActivity.class);
-//				startActivity(intent);
+				Intent menu = new Intent(this, MenuActivity.class);
+				startActivity(menu);
 				return true;
 			case R.id.englishInterface:
 				// switch to English UI
