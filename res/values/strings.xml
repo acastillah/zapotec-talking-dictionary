@@ -4,9 +4,9 @@
     <string name="app_name">Valley Zapotec Talking Dictionary</string>
     <string name="app_name_eng">Valley Zapotec Talking Dictionary</string>
     <string name="app_name_spa">Valley Zapotec Talking Dictionary</string>
- <!-- Translate -->
+    <!-- Translate -->
     <string name="app_name_zap">Valley Zapotec Talking Dictionary</string>
- <!-- Translate -->
+    <!-- Translate -->
 
     <string name="hello_world">Hello world!</string>
 
@@ -14,32 +14,35 @@
     <string name="side_menu_eng">Menu</string>
     <string name="side_menu_spa">Menú</string>
     <string name="side_menu_zap">Menu</string>
- <!-- Translate -->
+    <!-- Translate -->
+    <string name="englishInterface">ENG</string>
+    <string name="spanishInterface">ESP</string>
+    <string name="zapotecInterface">ZAB</string>
     <string name="englishInterface_eng">English</string>
     <string name="englishInterface_spa">Inglés</string>
     <string name="englishInterface_zap">English</string>
     <string name="spanishInterface_eng">Spanish</string>
     <string name="spanishInterface_spa">Español</string>
     <string name="spanishInterface_zap">Spanish</string>
- <!-- Translate -->
+    <!-- Translate -->
     <string name="zapotecInterface_eng">Zapotec</string>
     <string name="zapotecInterface_spa">Zapotec</string>
- <!-- Translate -->
+    <!-- Translate -->
     <string name="zapotecInterface_zap">Zapotec</string>
- <!-- Translate -->
+    <!-- Translate -->
     <string name="settings_eng">Settings</string>
 
     <!-- Main Activity -->
     <string name="search_eng">Search</string>
     <string name="search_spa">Search</string>
- <!-- Translate -->
+    <!-- Translate -->
     <string name="search_zap">Search</string>
- <!-- Translate -->
+    <!-- Translate -->
     <string name="wordOfTheDay_eng">Word of the Day</string>
     <string name="wordOfTheDay_spa">Word of the Day</string>
- <!-- Translate -->
+    <!-- Translate -->
     <string name="wordOfTheDay_zap">Word of the Day</string>
- <!-- Translate -->
+    <!-- Translate -->
 
     <string name="title_activity_menu">Menu</string>
     <string name="title_activity_search_result">Search Result</string>
@@ -48,5 +51,6 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_settings">Settings</string>
     <string name="title_activity_update">UpdateActivity</string>
+    <string name="title_activity_search_fragment">SearchFragment</string>
 
 </resources>

@@ -5,15 +5,15 @@
 
     <item
         android:id="@+id/englishInterface"
-        android:title="@string/englishInterface_eng"
+        android:title="@string/englishInterface"
         app:showAsAction="ifRoom"/>
     <item
         android:id="@+id/spanishInterface"
-        android:title="@string/spanishInterface_eng"
+        android:title="@string/spanishInterface"
         app:showAsAction="ifRoom"/>
     <item
         android:id="@+id/zapotecInterface"
-        android:title="@string/zapotecInterface_eng"
+        android:title="@string/zapotecInterface"
         app:showAsAction="ifRoom"/>
     <item
         android:id="@+id/about"

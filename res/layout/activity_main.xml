@@ -8,6 +8,15 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.valleyzapotectalkingdictionary.MainActivity" >
 
+    <!-- 
+    <fragment 
+        android:name="com.example.valleyzapotectalkingdictionary.SearchFragment"
+        android:id="@+id/search_fragment"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="match_parent" />
+        -->
+    
     <EditText
         android:id="@+id/searchBox"
         android:layout_width="wrap_content"
