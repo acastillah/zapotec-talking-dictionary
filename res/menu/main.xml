@@ -19,5 +19,9 @@
         android:id="@+id/zapotecInterface"
         android:title="@string/zapotecInterface_eng"
         app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/settings"
+        android:title="@string/settings_eng"
+        app:showAsAction="ifRoom"/>
 
 </menu>

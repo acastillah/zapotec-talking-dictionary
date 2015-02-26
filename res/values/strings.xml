@@ -21,6 +21,7 @@
     <string name="zapotecInterface_eng">Zapotec</string>
     <string name="zapotecInterface_spa">Zapotec</string> <!-- Translate -->
     <string name="zapotecInterface_zap">Zapotec</string> <!-- Translate -->
+    <string name="settings_eng">Settings</string>
 
 
     <!-- Main Activity -->
