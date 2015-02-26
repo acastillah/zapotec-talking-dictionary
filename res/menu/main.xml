@@ -22,10 +22,10 @@
     <item
         android:id="@+id/update"
         android:title="Update"
-        app:showAsAction="nervous"/>
+        app:showAsAction="never"/>
     <item
         android:id="@+id/settings"
         android:title="@string/settings_eng"
-        app:showAsAction="nervous"/>
+        app:showAsAction="never"/>
 
 </menu>

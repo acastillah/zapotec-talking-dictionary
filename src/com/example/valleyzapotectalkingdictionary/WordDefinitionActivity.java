@@ -1,6 +1,7 @@
 package com.example.valleyzapotectalkingdictionary;
 
 import android.support.v7.app.ActionBarActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -22,13 +23,28 @@ public class WordDefinitionActivity extends ActionBarActivity {
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		// Handle action bar item clicks here. The action bar will
-		// automatically handle clicks on the Home/Up button, so long
-		// as you specify a parent activity in AndroidManifest.xml.
-		//int id = item.getItemId();
-//		if (id == R.id.action_settings) {
-//			return true;
-//		}
+		
+		switch (item.getItemId()) {
+			case R.id.englishInterface:
+				// switch to English UI
+				return true;
+			case R.id.spanishInterface:
+				// switch to Spanish UI
+				return true;
+			case R.id.zapotecInterface:
+				// switch to Zapotec UI
+				return true;
+			case R.id.about:
+				startActivity(new Intent(this, AboutActivity.class));
+				return true;
+			case R.id.update:
+				startActivity(new Intent(this, UpdateActivity.class));
+				return true;
+			case R.id.settings:
+				startActivity(new Intent(this, SettingsActivity.class));
+				return true;
+		}
+		
 		return super.onOptionsItemSelected(item);
 	}
 }

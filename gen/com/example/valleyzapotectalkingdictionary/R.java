@@ -1652,7 +1652,6 @@ containing a value of this type.
         public static final int action_mode_bar=0x7f09002e;
         public static final int action_mode_bar_stub=0x7f09002d;
         public static final int action_mode_close_button=0x7f090020;
-        public static final int action_settings=0x7f090054;
         public static final int activities=0x7f09004d;
         public static final int activity1Button=0x7f090046;
         public static final int activity2Button=0x7f090047;
@@ -1671,7 +1670,7 @@ containing a value of this type.
         public static final int dropdown=0x7f09001a;
         public static final int edit_query=0x7f090033;
         public static final int end=0x7f09001c;
-        public static final int englishInterface=0x7f090055;
+        public static final int englishInterface=0x7f090054;
         public static final int expand_activities_button=0x7f090022;
         public static final int expanded_menu=0x7f090028;
         public static final int home=0x7f090000;
@@ -1706,8 +1705,7 @@ containing a value of this type.
         public static final int showCustom=0x7f090010;
         public static final int showHome=0x7f090011;
         public static final int showTitle=0x7f090012;
-        public static final int side_menu=0x7f090058;
-        public static final int spanishInterface=0x7f090056;
+        public static final int spanishInterface=0x7f090055;
         public static final int split_action_bar=0x7f090004;
         public static final int submit_area=0x7f09003c;
         public static final int tabMode=0x7f09000c;
@@ -1724,7 +1722,7 @@ containing a value of this type.
         public static final int wordOfTheDay_orthography=0x7f090045;
         public static final int wordOfTheDay_word=0x7f090044;
         public static final int wrap_content=0x7f090009;
-        public static final int zapotecInterface=0x7f090057;
+        public static final int zapotecInterface=0x7f090056;
     }
     public static final class integer {
         /**  The maximum number of action buttons that should be permitted within

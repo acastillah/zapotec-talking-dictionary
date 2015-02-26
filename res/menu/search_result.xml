@@ -4,10 +4,6 @@
     tools:context="com.example.valleyzapotectalkingdictionary.SearchResultActivity" >
 
     <item
-        android:id="@+id/side_menu"
-        android:title="@string/side_menu_eng"
-        app:showAsAction="ifRoom"/>
-    <item
         android:id="@+id/englishInterface"
         android:title="@string/englishInterface_eng"
         app:showAsAction="ifRoom"/>
@@ -19,5 +15,17 @@
         android:id="@+id/zapotecInterface"
         android:title="@string/zapotecInterface_eng"
         app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/about"
+        android:title="About"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/update"
+        android:title="Update"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/settings"
+        android:title="@string/settings_eng"
+        app:showAsAction="never"/>
     
 </menu>
