@@ -1636,8 +1636,8 @@ containing a value of this type.
         public static final int listener_icon=0x7f020034;
     }
     public static final class id {
-        public static final int FirstWord=0x7f09004c;
-        public static final int SecondWord=0x7f09004d;
+        public static final int FirstWord=0x7f090050;
+        public static final int SecondWord=0x7f090051;
         public static final int about=0x7f090048;
         public static final int action_bar=0x7f090031;
         public static final int action_bar_activity_content=0x7f090003;
@@ -1677,7 +1677,7 @@ containing a value of this type.
         public static final int icon=0x7f090026;
         public static final int ifRoom=0x7f090016;
         public static final int image=0x7f090023;
-        public static final int imageButton1=0x7f090051;
+        public static final int imageButton1=0x7f09004d;
         public static final int listMode=0x7f09000a;
         public static final int list_item=0x7f090025;
         public static final int middle=0x7f09001d;
@@ -1687,8 +1687,8 @@ containing a value of this type.
         public static final int progress_circular=0x7f090007;
         public static final int progress_horizontal=0x7f090008;
         public static final int radio=0x7f09002b;
-        public static final int searchBox=0x7f09004b;
-        public static final int searchButton=0x7f09004a;
+        public static final int searchBox=0x7f09004e;
+        public static final int searchButton=0x7f09004f;
         public static final int search_badge=0x7f090035;
         public static final int search_bar=0x7f090034;
         public static final int search_button=0x7f090036;
@@ -1710,9 +1710,9 @@ containing a value of this type.
         public static final int submit_area=0x7f09003c;
         public static final int tabMode=0x7f09000c;
         public static final int textView1=0x7f09003f;
-        public static final int textView2=0x7f09004e;
-        public static final int textView3=0x7f09004f;
-        public static final int textView4=0x7f090050;
+        public static final int textView2=0x7f09004a;
+        public static final int textView3=0x7f09004b;
+        public static final int textView4=0x7f09004c;
         public static final int title=0x7f090027;
         public static final int up=0x7f090001;
         public static final int update=0x7f090045;
@@ -1782,8 +1782,9 @@ containing a value of this type.
         public static final int activity_update=0x7f03001c;
         public static final int activity_word_definition=0x7f03001d;
         public static final int fragment_search_bar=0x7f03001e;
-        public static final int fragment_word_of_the_day=0x7f03001f;
-        public static final int support_simple_spinner_dropdown_item=0x7f030020;
+        public static final int fragment_search_result=0x7f03001f;
+        public static final int fragment_word_of_the_day=0x7f030020;
+        public static final int support_simple_spinner_dropdown_item=0x7f030021;
     }
     public static final class menu {
         public static final int about=0x7f0c0000;

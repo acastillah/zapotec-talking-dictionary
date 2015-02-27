@@ -1,6 +1,8 @@
 package com.example.valleyzapotectalkingdictionary;
 
 import android.support.v7.app.ActionBarActivity;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -14,6 +16,16 @@ public class SearchResultActivity extends ActionBarActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_search_result);
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+		
+		FragmentManager fragmentManager = getFragmentManager();
+		FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+		
+		SearchBarFragment searchBarFragment = new SearchBarFragment();
+		SearchResultFragment searchResultFragment = new SearchResultFragment();
+		fragmentTransaction.add(android.R.id.content, searchBarFragment);
+		fragmentTransaction.add(android.R.id.content, searchResultFragment);
+		
+		fragmentTransaction.commit();
 	}
 
 	@Override
