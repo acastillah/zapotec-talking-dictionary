@@ -8,57 +8,19 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.valleyzapotectalkingdictionary.MainActivity" >
 
-    <!-- 
     <fragment 
-        android:name="com.example.valleyzapotectalkingdictionary.SearchFragment"
+        android:name="com.example.valleyzapotectalkingdictionary.SearchBarFragment"
         android:id="@+id/search_fragment"
         android:layout_weight="1"
         android:layout_width="0dp"
-        android:layout_height="match_parent" />
-        -->
+        android:layout_height="match_parent"/>
     
-
-
-    <TextView
-        android:id="@+id/wordOfTheDay"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/searchBox"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="91dp"
-        android:text="@string/wordOfTheDay_eng"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <TextView
-        android:id="@+id/appTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="44dp"
-        android:text="@string/app_name_eng"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-
-
-    <TextView
-        android:id="@+id/wordOfTheDay_word"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/appTitle"
-        android:layout_below="@+id/wordOfTheDay"
-        android:layout_marginTop="23dp"
-        android:text="bdua"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <TextView
-        android:id="@+id/wordOfTheDay_orthography"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/searchBox"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="85dp"
-        android:text="[bdùùa’]" />
-
+    <fragment 
+        android:name="com.example.valleyzapotectalkingdictionary.WordOfTheDayFragment"
+        android:id="@+id/wordOfTheDay_fragment"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_below="@id/search_fragment" />
+    
 </RelativeLayout>

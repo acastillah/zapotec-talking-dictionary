@@ -18,8 +18,12 @@ public class MainActivity extends ActionBarActivity {
 		
 		FragmentManager fragmentManager = getFragmentManager();
 		FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-		SearchBarFragment fragment = new SearchBarFragment();
-		fragmentTransaction.add(android.R.id.content, fragment);
+		
+		SearchBarFragment searchBarFragment = new SearchBarFragment();
+		WordOfTheDayFragment wotdFragment = new WordOfTheDayFragment();
+		fragmentTransaction.add(android.R.id.content, searchBarFragment);
+		fragmentTransaction.add(android.R.id.content, wotdFragment);
+		
 		fragmentTransaction.commit();
 	}
 
