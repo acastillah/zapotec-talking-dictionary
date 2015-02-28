@@ -7,20 +7,15 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.valleyzapotectalkingdictionary.MainActivity" >
-
-    <fragment 
-        android:name="com.example.valleyzapotectalkingdictionary.SearchBarFragment"
-        android:id="@+id/search_fragment"
-        android:layout_weight="1"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"/>
-    
-    <fragment 
-        android:name="com.example.valleyzapotectalkingdictionary.WordOfTheDayFragment"
-        android:id="@+id/wordOfTheDay_fragment"
-        android:layout_weight="1"
-        android:layout_width="0dp"
+        
+    <LinearLayout
+        android:id="@+id/llFragmentContainer"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/search_fragment" />
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_below="@+id/textView1"
+        android:layout_marginTop="19dp"
+        android:orientation="vertical" >
+    </LinearLayout>
     
-</RelativeLayout>
+</RelativeLayout> 

@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup.LayoutParams;
+import android.widget.LinearLayout;
 
 public class MainActivity extends ActionBarActivity {
 
@@ -16,15 +18,17 @@ public class MainActivity extends ActionBarActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
-		FragmentManager fragmentManager = getFragmentManager();
-		FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+		LinearLayout fragContainer = (LinearLayout) findViewById(R.id.llFragmentContainer);
 		
-		SearchBarFragment searchBarFragment = new SearchBarFragment();
-		WordOfTheDayFragment wotdFragment = new WordOfTheDayFragment();
-		fragmentTransaction.add(android.R.id.content, searchBarFragment);
-		fragmentTransaction.add(android.R.id.content, wotdFragment);
+		LinearLayout ll = new LinearLayout(this);
+		ll.setOrientation(LinearLayout.VERTICAL);
 		
-		fragmentTransaction.commit();
+		ll.setId(12345);
+		
+		getFragmentManager().beginTransaction().add(ll.getId(), new SearchBarFragment(), "tag1").commit();
+		getFragmentManager().beginTransaction().add(ll.getId(), new WordOfTheDayFragment(), "tag2").commit();
+		
+		fragContainer.addView(ll);
 	}
 
 	@Override

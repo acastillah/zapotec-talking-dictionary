@@ -3,15 +3,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
     
-	    <EditText
+	<EditText
         android:id="@+id/searchBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="98dp"
         android:ems="10" >
-
         <requestFocus />
     </EditText>
     
@@ -23,6 +21,5 @@
         android:layout_toRightOf="@id/searchBox"
         android:src="@drawable/abc_ic_search_api_mtrl_alpha"
         android:onClick="searchWord" />
-    
     
 </RelativeLayout>
