@@ -13,17 +13,21 @@ import android.widget.LinearLayout;
 
 public class MainActivity extends ActionBarActivity {
 
+	private static final int LINEAR_LAYOUT_ID = 12345;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
+		// find container in XML to update
 		LinearLayout fragContainer = (LinearLayout) findViewById(R.id.llFragmentContainer);
 		
+		// ll will go inside fragContainer (the layout defined in activity_main.xml)
 		LinearLayout ll = new LinearLayout(this);
 		ll.setOrientation(LinearLayout.VERTICAL);
 		
-		ll.setId(12345);
+		ll.setId(LINEAR_LAYOUT_ID);
 		
 		getFragmentManager().beginTransaction().add(ll.getId(), new SearchBarFragment(), "tag1").commit();
 		getFragmentManager().beginTransaction().add(ll.getId(), new WordOfTheDayFragment(), "tag2").commit();
