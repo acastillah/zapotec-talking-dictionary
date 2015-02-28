@@ -4,7 +4,9 @@ import android.support.v7.app.ActionBarActivity;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -13,7 +15,11 @@ import android.widget.LinearLayout;
 
 public class MainActivity extends ActionBarActivity {
 
-	private static final int LINEAR_LAYOUT_ID = 12345;
+	private static final int LINEAR_LAYOUT_ID = 12345; // needed for adding fragments
+	
+	private static SearchBarFragment searchBarFragment = new SearchBarFragment();
+	private static WordOfTheDayFragment wordOfTheDayFragment = new WordOfTheDayFragment();
+	private static SearchResultFragment searchResultFragment = new SearchResultFragment();
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -27,10 +33,34 @@ public class MainActivity extends ActionBarActivity {
 		LinearLayout ll = new LinearLayout(this);
 		ll.setOrientation(LinearLayout.VERTICAL);
 		
-		ll.setId(LINEAR_LAYOUT_ID);
+		ll.setId(LINEAR_LAYOUT_ID); // must set an id to use in the add command
 		
-		getFragmentManager().beginTransaction().add(ll.getId(), new SearchBarFragment(), "tag1").commit();
-		getFragmentManager().beginTransaction().add(ll.getId(), new WordOfTheDayFragment(), "tag2").commit();
+		FragmentTransaction transaction = getFragmentManager().beginTransaction();
+		
+		// only add fragments once
+		if (getFragmentManager().findFragmentByTag("searchBar") == null)
+			transaction.add(ll.getId(), searchBarFragment, "searchBar");
+		if (getFragmentManager().findFragmentByTag("wordOfTheDay") == null)
+			transaction.add(ll.getId(), wordOfTheDayFragment, "wordOfTheDay");
+		if (getFragmentManager().findFragmentByTag("searchResult") == null)
+			transaction.add(ll.getId(), searchResultFragment, "searchResult");
+		
+		
+		
+		
+		// if phone is horizontal, hide wordOfTheDay
+//		if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
+//			transaction.hide(wordOfTheDayFragment);
+//		}
+//		else { // Configuration.ORIENTATION_PORTRAIT, display word of the day
+//			
+//		}
+		
+		// if user is typing in search bar, hide wordOfTheDay, display searchResult
+		// else, user is not typing, hide searchResult
+		
+		
+		transaction.commit();
 		
 		fragContainer.addView(ll);
 	}
