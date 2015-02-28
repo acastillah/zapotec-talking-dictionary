@@ -46,15 +46,17 @@ public class MainActivity extends ActionBarActivity {
 			transaction.add(ll.getId(), searchResultFragment, "searchResult");
 		
 		
-		
+		//transaction.hide(wordOfTheDayFragment);
 		
 		// if phone is horizontal, hide wordOfTheDay
-//		if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
-//			transaction.hide(wordOfTheDayFragment);
-//		}
-//		else { // Configuration.ORIENTATION_PORTRAIT, display word of the day
-//			
-//		}
+		if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
+			transaction.hide(wordOfTheDayFragment);
+			Log.i("PHONE ORIENTATION", "landscape");
+		}
+		else { // Configuration.ORIENTATION_PORTRAIT, display word of the day
+			transaction.show(wordOfTheDayFragment);
+			Log.i("PHONE ORIENTATION", "portrait");
+		}
 		
 		// if user is typing in search bar, hide wordOfTheDay, display searchResult
 		// else, user is not typing, hide searchResult
