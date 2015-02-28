@@ -1,6 +1,7 @@
 package com.example.valleyzapotectalkingdictionary;
 
 import android.support.v7.app.ActionBarActivity;
+import android.text.TextWatcher;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Intent;
@@ -11,6 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 
 public class MainActivity extends ActionBarActivity {
@@ -42,24 +44,26 @@ public class MainActivity extends ActionBarActivity {
 			transaction.add(ll.getId(), searchBarFragment, "searchBar");
 		if (getFragmentManager().findFragmentByTag("wordOfTheDay") == null)
 			transaction.add(ll.getId(), wordOfTheDayFragment, "wordOfTheDay");
-		if (getFragmentManager().findFragmentByTag("searchResult") == null)
+		if (getFragmentManager().findFragmentByTag("searchResult") == null) {
 			transaction.add(ll.getId(), searchResultFragment, "searchResult");
-		
-		
-		//transaction.hide(wordOfTheDayFragment);
+			transaction.hide(searchResultFragment);
+		}
 		
 		// if phone is horizontal, hide wordOfTheDay
 		if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
-			transaction.hide(wordOfTheDayFragment);
-			Log.i("PHONE ORIENTATION", "landscape");
+			transaction.hide(getFragmentManager().findFragmentByTag("wordOfTheDay")); // doesn't work if you use wordOfTheDayFragment directly for some reason
 		}
 		else { // Configuration.ORIENTATION_PORTRAIT, display word of the day
 			transaction.show(wordOfTheDayFragment);
-			Log.i("PHONE ORIENTATION", "portrait");
 		}
 		
 		// if user is typing in search bar, hide wordOfTheDay, display searchResult
 		// else, user is not typing, hide searchResult
+		
+//		EditText searchBar = (EditText) findViewById(R.id.searchBox);
+//		TextWatcher searchBarWatcher = new SearchBarWatcher();
+//		//searchBar.addTextChangedListener(searchBarWatcher);
+		
 		
 		
 		transaction.commit();
