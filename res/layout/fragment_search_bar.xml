@@ -19,7 +19,8 @@
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/searchBox"
         android:layout_toRightOf="@id/searchBox"
-        android:src="@drawable/abc_ic_search_api_mtrl_alpha"
-        android:onClick="searchWord" />
+        android:src="@drawable/abc_ic_search_api_mtrl_alpha" />
+        <!--  android:onClick="searchWord" --> 
+        
     
 </RelativeLayout>

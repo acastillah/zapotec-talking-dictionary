@@ -11,7 +11,9 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup.LayoutParams;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 
@@ -27,6 +29,8 @@ public class MainActivity extends ActionBarActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		
+		/*** Set up the layout of the activity ***/
 		
 		// find container in XML to update
 		LinearLayout fragContainer = (LinearLayout) findViewById(R.id.llFragmentContainer);
@@ -65,10 +69,21 @@ public class MainActivity extends ActionBarActivity {
 //		//searchBar.addTextChangedListener(searchBarWatcher);
 		
 		
-		
 		transaction.commit();
-		
+
 		fragContainer.addView(ll);
+		
+		
+		/*** Add action listeners to search bar and search button here since they affect other fragments ***/
+		
+//		searchBarFragment.getFragmentManager().
+		
+//		Button searchButton = (Button) findViewById(R.id.searchButton);
+//		Log.i("LISTENER", "searchButton returned id=" + R.id.searchButton);
+//		if (searchButton == null)
+//			Log.i("LISTENER", "searchButton is null");
+//		SearchButtonListener searchButtonListener = new SearchButtonListener();
+//		searchButton.setOnClickListener(searchButtonListener);
 	}
 
 	@Override
@@ -105,8 +120,8 @@ public class MainActivity extends ActionBarActivity {
 		return super.onOptionsItemSelected(item);
 	}
 	
-	public void searchWord(View view) {
-		Intent intent = new Intent(this, SearchResultActivity.class);
-		startActivity(intent);
-	}
+//	public void searchWord(View view) {
+//		Intent intent = new Intent(this, SearchResultActivity.class);
+//		startActivity(intent);
+//	}
 }
