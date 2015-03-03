@@ -35,14 +35,14 @@ public class SearchBarWatcher implements TextWatcher {
 		// else, search bar contains text, hide word of the day, show search results
 		
 		if (count == 0) { // no text in search bar
-			Log.i("SEARCH BAR", "Search bar contains no text");
-			Log.i("VIEW", view.toString());
-			Log.i("VIEW", view.getParent().toString());
+			Log.i("SEARCH BAR WATCHER", "Search bar contains no text");
+//			Log.i("VIEW", view.toString());
+//			Log.i("VIEW", view.getParent().toString());
 			
 //			FragmentTransaction transaction = FragmentManager.beginTransaction();
 		}
 		else { // there is text is search bar
-			Log.i("SEARCH BAR", "Search bar contains text");
+			Log.i("SEARCH BAR WATCHER", "Search bar contains text");
 		}
 	}
 

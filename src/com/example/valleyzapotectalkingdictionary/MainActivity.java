@@ -44,29 +44,43 @@ public class MainActivity extends ActionBarActivity {
 		FragmentTransaction transaction = getFragmentManager().beginTransaction();
 		
 		// only add fragments once
-		if (getFragmentManager().findFragmentByTag("searchBar") == null)
+		if (getFragmentManager().findFragmentByTag("searchBar") == null) {
 			transaction.add(ll.getId(), searchBarFragment, "searchBar");
-		if (getFragmentManager().findFragmentByTag("wordOfTheDay") == null)
+			Log.i("MAIN ACTIVITY", "Added new SearchBarFragment");
+		}
+		if (getFragmentManager().findFragmentByTag("wordOfTheDay") == null) {
 			transaction.add(ll.getId(), wordOfTheDayFragment, "wordOfTheDay");
+			Log.i("MAIN ACTIVITY", "Added new WordOfTheDayFragment");
+		}
 		if (getFragmentManager().findFragmentByTag("searchResult") == null) {
 			transaction.add(ll.getId(), searchResultFragment, "searchResult");
+			Log.i("MAIN ACTIVITY", "Added new SearchResultFragment");
 			transaction.hide(searchResultFragment);
+			Log.i("MAIN ACTIVITY", "Hid SearchBarFragment");
 		}
 		
 		// if phone is horizontal, hide wordOfTheDay
 		if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
+			Log.i("MAIN ACTIVITY", "Device is horizontal");
 			transaction.hide(getFragmentManager().findFragmentByTag("wordOfTheDay")); // doesn't work if you use wordOfTheDayFragment directly for some reason
+			Log.i("MAIN ACTIVITY", "Hid WordOfTheDayFragment");
 		}
 		else { // Configuration.ORIENTATION_PORTRAIT, display word of the day
+			Log.i("MAIN ACTIVITY", "Device is vertical");
 			transaction.show(wordOfTheDayFragment);
+			Log.i("MAIN ACTIVITY", "Showed WordOfTheDayFragment");
 		}
 		
-		// if user is typing in search bar, hide wordOfTheDay, display searchResult
-		// else, user is not typing, hide searchResult
-		
-//		EditText searchBar = (EditText) findViewById(R.id.searchBox);
-//		TextWatcher searchBarWatcher = new SearchBarWatcher();
-//		//searchBar.addTextChangedListener(searchBarWatcher);
+		if (searchBarFragment.searchBarIsEmpty()) {
+			Log.i("MAIN ACTIVITY", "Search bar is empty");
+			transaction.hide(searchResultFragment);
+			Log.i("MAIN ACTIVITY", "Hid SearchResultFragment");
+		}
+		else {
+			Log.i("MAIN ACTIVITY", "Search bar contains text");
+			transaction.show(searchResultFragment);
+			Log.i("MAIN ACTIVITY", "Showed SearchResultFragment");
+		}
 		
 		
 		transaction.commit();
@@ -74,16 +88,7 @@ public class MainActivity extends ActionBarActivity {
 		fragContainer.addView(ll);
 		
 		
-		/*** Add action listeners to search bar and search button here since they affect other fragments ***/
-		
-//		searchBarFragment.getFragmentManager().
-		
-//		Button searchButton = (Button) findViewById(R.id.searchButton);
-//		Log.i("LISTENER", "searchButton returned id=" + R.id.searchButton);
-//		if (searchButton == null)
-//			Log.i("LISTENER", "searchButton is null");
-//		SearchButtonListener searchButtonListener = new SearchButtonListener();
-//		searchButton.setOnClickListener(searchButtonListener);
+		Log.i("MAIN ACTIVITY", "End of onCreate");
 	}
 
 	@Override

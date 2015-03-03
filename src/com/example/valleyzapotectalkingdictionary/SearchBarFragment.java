@@ -3,6 +3,7 @@ package com.example.valleyzapotectalkingdictionary;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -15,8 +16,8 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 
 public class SearchBarFragment extends Fragment implements OnClickListener {
-	EditText searchBar;
-	ImageButton searchButton;
+	EditText searchBar = null;
+	ImageButton searchButton = null;
 	
 	@Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -58,7 +59,7 @@ public class SearchBarFragment extends Fragment implements OnClickListener {
 			 * 2. Hide search result fragment
 			 */
 			
-			if (wordOfTheDay != null) {
+			if (wordOfTheDay != null && getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
 				Log.i("SEARCH BAR FRAGMENT", "Showing Word Of The Day fragment");
 				transaction.show(wordOfTheDay);
 			}
@@ -89,6 +90,14 @@ public class SearchBarFragment extends Fragment implements OnClickListener {
 		}
 		
 		transaction.commit();
+	}
+	
+	public boolean searchBarIsEmpty() {
+		if (searchBar == null)
+			return true;
+		
+		String searchText = searchBar.getText().toString();
+		return (searchText.equals(""));
 	}
 	
 //	public void searchWord(View view) {
