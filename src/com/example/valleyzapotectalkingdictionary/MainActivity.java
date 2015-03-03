@@ -129,4 +129,9 @@ public class MainActivity extends ActionBarActivity {
 //		Intent intent = new Intent(this, SearchResultActivity.class);
 //		startActivity(intent);
 //	}
+	
+	public void displayWord(View view) {
+		Log.i("SEARCH RESULT FRAGMENT", "Displaying word details in a new WordDefinitionActivity...");
+		startActivity(new Intent(this, WordDefinitionActivity.class));
+	}
 }

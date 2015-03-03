@@ -1,7 +1,9 @@
 package com.example.valleyzapotectalkingdictionary;
 
+import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.res.Configuration;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -40,10 +42,11 @@ public class SearchBarWatcher implements TextWatcher {
 //			Log.i("VIEW", view.getParent().toString());
 			
 //			FragmentTransaction transaction = FragmentManager.beginTransaction();
-		}
-		else { // there is text is search bar
-			Log.i("SEARCH BAR WATCHER", "Search bar contains text");
+			
+			/* 1. Show word of the day, if vertical
+			 * 2. Hide search results
+			 */
+			
 		}
 	}
-
 }
