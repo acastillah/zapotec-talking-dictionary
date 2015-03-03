@@ -23,12 +23,11 @@ public class SearchBarFragment extends Fragment implements OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        //return inflater.inflate(R.layout.fragment_search_bar, container, false);
 		View view = inflater.inflate(R.layout.fragment_search_bar, container, false);
         
 		searchBar = (EditText) view.findViewById(R.id.searchBox);
 		SearchBarWatcher searchBarWatcher = new SearchBarWatcher();
-		searchBarWatcher.initialize(view);
+		searchBarWatcher.initialize(view, this);
 		searchBar.addTextChangedListener(searchBarWatcher);
 		
 		searchButton = (ImageButton) view.findViewById(R.id.searchButton);
@@ -99,9 +98,4 @@ public class SearchBarFragment extends Fragment implements OnClickListener {
 		String searchText = searchBar.getText().toString();
 		return (searchText.equals(""));
 	}
-	
-//	public void searchWord(View view) {
-////	Intent intent = new Intent(this, SearchResultActivity.class);
-////	startActivity(intent);
-//	}
 }

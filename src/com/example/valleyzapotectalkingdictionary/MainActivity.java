@@ -71,9 +71,9 @@ public class MainActivity extends ActionBarActivity {
 			Log.i("MAIN ACTIVITY", "Showed WordOfTheDayFragment");
 		}
 		
-		if (searchBarFragment.searchBarIsEmpty()) {
+		if (searchBarFragment.searchBarIsEmpty() && getFragmentManager().findFragmentByTag("searchResult") != null) {
 			Log.i("MAIN ACTIVITY", "Search bar is empty");
-			transaction.hide(searchResultFragment);
+			transaction.hide(getFragmentManager().findFragmentByTag("searchResult"));
 			Log.i("MAIN ACTIVITY", "Hid SearchResultFragment");
 		}
 		else {

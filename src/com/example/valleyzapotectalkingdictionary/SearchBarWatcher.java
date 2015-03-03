@@ -13,9 +13,11 @@ import android.widget.LinearLayout;
 public class SearchBarWatcher implements TextWatcher {
 
 	private View view;
+	private Fragment fragment;
 	
-	public void initialize(View view) {
+	public void initialize(View view, Fragment fragment) {
 		this.view = view;
+		this.fragment = fragment;
 	}
 	
 	@Override
@@ -48,5 +50,52 @@ public class SearchBarWatcher implements TextWatcher {
 			 */
 			
 		}
+		
+		
+		FragmentManager fm = fragment.getFragmentManager();
+		FragmentTransaction transaction = fm.beginTransaction();
+		
+		Fragment wordOfTheDay = fm.findFragmentByTag("wordOfTheDay");
+		Fragment searchResult = fm.findFragmentByTag("searchResult");
+		
+		//String searchText = searchBar.getText().toString();
+		
+		if (count == 0) { // nothing to search for
+			
+			/* 1. Display word of the day fragment if vertical
+			 * 2. Hide search result fragment
+			 */
+			
+			if (wordOfTheDay != null && fragment.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
+				Log.i("SEARCH BAR FRAGMENT", "Showing Word Of The Day fragment");
+				transaction.show(wordOfTheDay);
+			}
+			
+			if (searchResult != null) {
+				Log.i("SEARCH BAR FRAGMENT", "Hiding search result fragment");
+				transaction.hide(searchResult);
+			}
+		}
+		else { // search for results
+			
+			/* 1. Hide word of the day fragment
+			 * 2. Display search result fragment
+			 * 3. Run search algorithm & update search result fragment
+			 */
+			
+			
+			if (wordOfTheDay != null) {
+				Log.i("SEARCH BAR FRAGMENT", "Hiding Word Of The Day fragment");
+				transaction.hide(wordOfTheDay);
+			}
+			
+			if (searchResult != null) {
+				Log.i("SEARCH BAR FRAGMENT", "Showing search result fragment");
+				transaction.show(searchResult);
+				// run search results
+			}
+		}
+		
+		transaction.commit();
 	}
 }
