@@ -67,12 +67,12 @@ public class SearchBarWatcher implements TextWatcher {
 			 */
 			
 			if (wordOfTheDay != null && fragment.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
-				Log.i("SEARCH BAR FRAGMENT", "Showing Word Of The Day fragment");
+				Log.i("SEARCH BAR WATCHER", "Showing Word Of The Day fragment");
 				transaction.show(wordOfTheDay);
 			}
 			
 			if (searchResult != null) {
-				Log.i("SEARCH BAR FRAGMENT", "Hiding search result fragment");
+				Log.i("SEARCH BAR WATCHER", "Hiding search result fragment");
 				transaction.hide(searchResult);
 			}
 		}
@@ -85,12 +85,12 @@ public class SearchBarWatcher implements TextWatcher {
 			
 			
 			if (wordOfTheDay != null) {
-				Log.i("SEARCH BAR FRAGMENT", "Hiding Word Of The Day fragment");
+				Log.i("SEARCH BAR WATCHER", "Hiding Word Of The Day fragment");
 				transaction.hide(wordOfTheDay);
 			}
 			
 			if (searchResult != null) {
-				Log.i("SEARCH BAR FRAGMENT", "Showing search result fragment");
+				Log.i("SEARCH BAR WATCHER", "Showing search result fragment");
 				transaction.show(searchResult);
 				// run search results
 			}
