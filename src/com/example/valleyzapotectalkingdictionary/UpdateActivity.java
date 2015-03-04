@@ -1,5 +1,6 @@
 package com.example.valleyzapotectalkingdictionary;
 
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,6 +14,9 @@ public class UpdateActivity extends ActionBarActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_update);
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+		
+		ActionBar actionBar = getSupportActionBar();
+		actionBar.setTitle("Update");
 	}
 
 	@Override

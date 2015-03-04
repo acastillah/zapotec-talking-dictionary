@@ -16,18 +16,8 @@
         android:layout_alignParentTop="true"
         android:layout_marginLeft="40dp"
         android:layout_marginTop="40dp"
-        android:text="banana"
+        android:text="bdua       [bdùùa’]"
         android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/textView1"
-        android:layout_marginLeft="44dp"
-        android:layout_toRightOf="@+id/textView1"
-        android:text="[bdùùa’]"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
 
     <TextView
         android:id="@+id/textView3"
@@ -36,7 +26,7 @@
         android:layout_alignLeft="@+id/textView1"
         android:layout_below="@+id/textView1"
         android:layout_marginTop="42dp"
-        android:text="Banana\tnoun"
+        android:text="Banana       noun\n(Spanish) plátano"
         android:textAppearance="?android:attr/textAppearanceSmall" />
 
     <TextView
@@ -56,6 +46,25 @@
         android:layout_alignTop="@+id/textView4"
         android:layout_marginRight="20dp"
         android:layout_toLeftOf="@+id/textView4"
+        android:src="@drawable/listener_icon" />
+    
+   <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView3"
+        android:layout_below="@+id/textView4"
+        android:layout_marginTop="86dp"
+        android:text="Variant: San Lucas Quiaviní\nSpeaker: Felipe H. Lopez"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textView5"
+        android:layout_marginRight="20dp"
+        android:layout_toLeftOf="@+id/textView5"
         android:src="@drawable/listener_icon" />
 
 </RelativeLayout>
