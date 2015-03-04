@@ -15,7 +15,7 @@ public class WordDefinitionActivity extends ActionBarActivity {
 		setContentView(R.layout.activity_word_definition);
 		
 		ActionBar actionBar = getSupportActionBar();
-		actionBar.setTitle("");
+		actionBar.setTitle("bdua");
 		actionBar.setDisplayHomeAsUpEnabled(true);
 	}
 
