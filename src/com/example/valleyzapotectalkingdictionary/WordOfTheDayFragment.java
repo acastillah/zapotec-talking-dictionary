@@ -2,8 +2,10 @@ package com.example.valleyzapotectalkingdictionary;
 
 import android.app.Fragment;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 
 public class WordOfTheDayFragment extends Fragment {
@@ -13,4 +15,6 @@ public class WordOfTheDayFragment extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_word_of_the_day, container, false);
     }
+
+
 }

@@ -368,7 +368,7 @@ int id disableHome 0x7f09000d
 int id dropdown 0x7f09001a
 int id edit_query 0x7f090033
 int id end 0x7f09001c
-int id englishInterface 0x7f090054
+int id englishInterface 0x7f090053
 int id expand_activities_button 0x7f090022
 int id expanded_menu 0x7f090028
 int id home 0x7f090000
@@ -404,7 +404,7 @@ int id shortcut 0x7f09002a
 int id showCustom 0x7f090010
 int id showHome 0x7f090011
 int id showTitle 0x7f090012
-int id spanishInterface 0x7f090055
+int id spanishInterface 0x7f090054
 int id split_action_bar 0x7f090004
 int id submit_area 0x7f09003c
 int id tabMode 0x7f09000c
@@ -418,10 +418,9 @@ int id update 0x7f090044
 int id useLogo 0x7f090013
 int id withText 0x7f090018
 int id wordOfTheDay 0x7f090051
-int id wordOfTheDay_orthography 0x7f090053
 int id wordOfTheDay_word 0x7f090052
 int id wrap_content 0x7f090009
-int id zapotecInterface 0x7f090056
+int id zapotecInterface 0x7f090055
 int integer abc_max_action_buttons 0x7f080000
 int layout abc_action_bar_title_item 0x7f030000
 int layout abc_action_bar_up_container 0x7f030001

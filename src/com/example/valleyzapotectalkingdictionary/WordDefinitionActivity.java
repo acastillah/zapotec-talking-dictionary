@@ -1,5 +1,6 @@
 package com.example.valleyzapotectalkingdictionary;
 
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,7 +13,10 @@ public class WordDefinitionActivity extends ActionBarActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_word_definition);
-		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+		
+		ActionBar actionBar = getSupportActionBar();
+		actionBar.setTitle("");
+		actionBar.setDisplayHomeAsUpEnabled(true);
 	}
 
 	@Override

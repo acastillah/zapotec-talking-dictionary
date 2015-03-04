@@ -1,5 +1,6 @@
 package com.example.valleyzapotectalkingdictionary;
 
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.text.TextWatcher;
 import android.app.FragmentManager;
@@ -30,6 +31,9 @@ public class MainActivity extends ActionBarActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
+		ActionBar actionBar = getSupportActionBar();
+		actionBar.setTitle("Valley Zapotec");
+
 		/*** Set up the layout of the activity ***/
 		
 		// find container in XML to update
@@ -136,5 +140,10 @@ public class MainActivity extends ActionBarActivity {
 	public void displayWord(View view) {
 		Log.i("SEARCH RESULT FRAGMENT", "Displaying word details in a new WordDefinitionActivity...");
 		startActivity(new Intent(this, WordDefinitionActivity.class));
+	}
+	
+	public void displayWordOfTheDay(View v) {
+		Log.i("WORD OF THE DAY FRAGMENT", "Word of the day was clicked");
+		startActivity(new Intent(this, WordDefinitionActivity.class));		
 	}
 }
