@@ -17,7 +17,7 @@
     <!-- Translate -->
     <string name="englishInterface">ENG</string>
     <string name="spanishInterface">ESP</string>
-    <string name="zapotecInterface">ZAB</string>
+    <string name="zapotecInterface">ZAP</string>
     <string name="englishInterface_eng">English</string>
     <string name="englishInterface_spa">Inglés</string>
     <string name="englishInterface_zap">English</string>

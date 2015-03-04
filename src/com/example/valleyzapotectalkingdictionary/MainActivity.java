@@ -26,6 +26,8 @@ public class MainActivity extends ActionBarActivity {
 	private static WordOfTheDayFragment wordOfTheDayFragment = new WordOfTheDayFragment();
 	private static SearchResultFragment searchResultFragment = new SearchResultFragment();
 	
+	private static Menu menu = null;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -101,8 +103,34 @@ public class MainActivity extends ActionBarActivity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
+		this.menu = menu;
 		getMenuInflater().inflate(R.menu.main, menu);
+		
+		setLanguageInterfaceButtons();
+		
 		return true;
+	}
+	
+	public void setLanguageInterfaceButtons() {
+		for (int i = 0; i < menu.size(); i++)
+            menu.getItem(i).setVisible(true);
+		
+		MenuItem menuItem = null;
+		switch (LanguageInterface.interfaceLanguage) {
+			case LanguageInterface.LANGUAGE_ENGLISH:
+				menuItem = menu.findItem(R.id.englishInterface);
+				break;
+			case LanguageInterface.LANGUAGE_SPANISH:
+				menuItem = menu.findItem(R.id.spanishInterface);
+				break;
+			case LanguageInterface.LANGUAGE_ZAPOTEC:
+				menuItem = menu.findItem(R.id.zapotecInterface);
+				break;
+		}	
+		
+		if (menuItem != null) {
+			menuItem.setVisible(false);
+		}
 	}
 
 	@Override
@@ -110,13 +138,16 @@ public class MainActivity extends ActionBarActivity {
 		
 		switch (item.getItemId()) {
 			case R.id.englishInterface:
-				// switch to English UI
+				LanguageInterface.interfaceLanguage = LanguageInterface.LANGUAGE_ENGLISH;
+				setLanguageInterfaceButtons();
 				return true;
 			case R.id.spanishInterface:
-				// switch to Spanish UI
+				LanguageInterface.interfaceLanguage = LanguageInterface.LANGUAGE_SPANISH;
+				setLanguageInterfaceButtons();
 				return true;
 			case R.id.zapotecInterface:
-				// switch to Zapotec UI
+				LanguageInterface.interfaceLanguage = LanguageInterface.LANGUAGE_ZAPOTEC;
+				setLanguageInterfaceButtons();
 				return true;
 			case R.id.about:
 				startActivity(new Intent(this, AboutActivity.class));
@@ -145,5 +176,16 @@ public class MainActivity extends ActionBarActivity {
 	public void displayWordOfTheDay(View v) {
 		Log.i("WORD OF THE DAY FRAGMENT", "Word of the day was clicked");
 		startActivity(new Intent(this, WordDefinitionActivity.class));		
+	}
+	
+	
+	
+	
+	static class LanguageInterface {
+		public static final int LANGUAGE_ENGLISH = 0;
+		public static final int LANGUAGE_SPANISH = 1;
+		public static final int LANGUAGE_ZAPOTEC = 2;
+		
+		public static int interfaceLanguage = 0;
 	}
 }
