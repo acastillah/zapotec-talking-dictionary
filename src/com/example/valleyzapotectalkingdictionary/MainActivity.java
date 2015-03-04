@@ -105,32 +105,9 @@ public class MainActivity extends ActionBarActivity {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		this.menu = menu;
 		getMenuInflater().inflate(R.menu.main, menu);
-		
-		setLanguageInterfaceButtons();
+		LanguageInterface.setLanguageInterfaceButtons(menu);
 		
 		return true;
-	}
-	
-	public void setLanguageInterfaceButtons() {
-		for (int i = 0; i < menu.size(); i++)
-            menu.getItem(i).setVisible(true);
-		
-		MenuItem menuItem = null;
-		switch (LanguageInterface.interfaceLanguage) {
-			case LanguageInterface.LANGUAGE_ENGLISH:
-				menuItem = menu.findItem(R.id.englishInterface);
-				break;
-			case LanguageInterface.LANGUAGE_SPANISH:
-				menuItem = menu.findItem(R.id.spanishInterface);
-				break;
-			case LanguageInterface.LANGUAGE_ZAPOTEC:
-				menuItem = menu.findItem(R.id.zapotecInterface);
-				break;
-		}	
-		
-		if (menuItem != null) {
-			menuItem.setVisible(false);
-		}
 	}
 
 	@Override
@@ -139,15 +116,15 @@ public class MainActivity extends ActionBarActivity {
 		switch (item.getItemId()) {
 			case R.id.englishInterface:
 				LanguageInterface.interfaceLanguage = LanguageInterface.LANGUAGE_ENGLISH;
-				setLanguageInterfaceButtons();
+				LanguageInterface.setLanguageInterfaceButtons(this.menu);
 				return true;
 			case R.id.spanishInterface:
 				LanguageInterface.interfaceLanguage = LanguageInterface.LANGUAGE_SPANISH;
-				setLanguageInterfaceButtons();
+				LanguageInterface.setLanguageInterfaceButtons(this.menu);
 				return true;
 			case R.id.zapotecInterface:
 				LanguageInterface.interfaceLanguage = LanguageInterface.LANGUAGE_ZAPOTEC;
-				setLanguageInterfaceButtons();
+				LanguageInterface.setLanguageInterfaceButtons(this.menu);
 				return true;
 			case R.id.about:
 				startActivity(new Intent(this, AboutActivity.class));
@@ -187,5 +164,27 @@ public class MainActivity extends ActionBarActivity {
 		public static final int LANGUAGE_ZAPOTEC = 2;
 		
 		public static int interfaceLanguage = 0;
+		
+		public static void setLanguageInterfaceButtons(Menu menu) {
+			for (int i = 0; i < menu.size(); i++)
+	            menu.getItem(i).setVisible(true);
+			
+			MenuItem menuItem = null;
+			switch (LanguageInterface.interfaceLanguage) {
+				case LanguageInterface.LANGUAGE_ENGLISH:
+					menuItem = menu.findItem(R.id.englishInterface);
+					break;
+				case LanguageInterface.LANGUAGE_SPANISH:
+					menuItem = menu.findItem(R.id.spanishInterface);
+					break;
+				case LanguageInterface.LANGUAGE_ZAPOTEC:
+					menuItem = menu.findItem(R.id.zapotecInterface);
+					break;
+			}	
+			
+			if (menuItem != null) {
+				menuItem.setVisible(false);
+			}
+		}
 	}
 }
