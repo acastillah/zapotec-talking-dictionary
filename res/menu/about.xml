@@ -16,10 +16,6 @@
         android:title="@string/zapotecInterface"
         app:showAsAction="always"/>
     <item
-        android:id="@+id/about"
-        android:title="About"
-        app:showAsAction="never"/>
-    <item
         android:id="@+id/update"
         android:title="Update"
         app:showAsAction="never"/>
