@@ -16,31 +16,32 @@
         android:layout_alignParentTop="true"
         android:text="The Valley Zapotec Talking Dictionary is constantly growing. Each time you update, the new words will take up more space on your phone. If space is a concern, you may choose if you want to download audio and pictures." />
 
-   <CheckBox
-        android:id="@+id/downloadAudioCheckbox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/checkBox1"
-        android:layout_below="@+id/checkBox1"
-        android:text="Download pictures"
-        android:checked="true" />
-    
     <CheckBox
         android:id="@+id/downloadPicturesCheckbox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView1"
-        android:layout_below="@+id/textView1"
-        android:text="Download audio"
-        android:checked="true" />
+        android:layout_alignLeft="@+id/updateText"
+        android:layout_below="@+id/updateText"
+        android:layout_marginTop="26dp"
+        android:checked="true"
+        android:text="Download audio" />
+
+    <CheckBox
+        android:id="@+id/downloadAudioCheckbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/downloadPicturesCheckbox"
+        android:layout_below="@+id/downloadPicturesCheckbox"
+        android:checked="true"
+        android:text="Download pictures" />
 
     <Button
         android:id="@+id/updateButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/checkBox2"
+        android:layout_below="@+id/downloadAudioCheckbox"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="66dp"
         android:text="Update" />
 
 </RelativeLayout>

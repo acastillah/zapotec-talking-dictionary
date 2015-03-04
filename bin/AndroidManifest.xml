@@ -49,12 +49,12 @@
         <activity
             android:name=".AboutActivity"
             android:label="@string/title_activity_about"
-            android:parentActivityName=".MainResultActivity" >
+            android:parentActivityName=".SearchResultActivity" >
 
             <!-- Parent activity meta-data to support 4.0 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.valleyzapotectalkingdictionary.MainActivity" />
+                android:value="com.example.valleyzapotectalkingdictionary.SearchResultActivity" />
         </activity>
         <activity
             android:name=".SettingsActivity"
@@ -69,12 +69,12 @@
         <activity
             android:name=".UpdateActivity"
             android:label="@string/title_activity_update"
-            android:parentActivityName=".MainResultActivity" >
+            android:parentActivityName=".SearchResultActivity" >
 
             <!-- Parent activity meta-data to support 4.0 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.valleyzapotectalkingdictionary.MainActivity" />
+                android:value="com.example.valleyzapotectalkingdictionary.SearchResultActivity" />
         </activity>
         <activity
             android:name=".SearchFragment"
