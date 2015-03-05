@@ -23,8 +23,8 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 	private static SearchResultFragment searchResultFragment = new SearchResultFragment();
 	private NavigationDrawerFragment mNavigationDrawerFragment;
 
-	
 	private static Menu menu = null;
+	private CharSequence mTitle;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -33,10 +33,9 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		
 		mNavigationDrawerFragment = (NavigationDrawerFragment) getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
 		mNavigationDrawerFragment.setUp(R.id.navigation_drawer, (DrawerLayout) findViewById(R.id.drawer_layout));
+		mTitle = getTitle();
 
-		ActionBar actionBar = getSupportActionBar();
-		actionBar.setTitle("Valley Zapotec");
-
+		
 		/*** Set up the layout of the activity ***/
 		
 		// find container in XML to update
@@ -103,14 +102,40 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		MainActivity.menu = menu;
-		getMenuInflater().inflate(R.menu.main, menu);
-		LanguageInterface.setLanguageInterfaceButtons(menu);
 		
-		return true;
+		if (!mNavigationDrawerFragment.isDrawerOpen()) {
+			// Inflate the menu; this adds items to the action bar if it is present.
+			MainActivity.menu = menu;
+			getMenuInflater().inflate(R.menu.main, menu);
+			LanguageInterface.setLanguageInterfaceButtons(menu);
+			restoreActionBar();
+			return true;
+
+		}
+		return super.onCreateOptionsMenu(menu);
 	}
 
+	public void onSectionAttached(int number) {
+		switch (number) {
+		case 1:
+			mTitle = getString(R.string.title_main_section);
+			break;
+		case 2:
+			mTitle = getString(R.string.title_section2);
+			break;
+		case 3:
+			mTitle = getString(R.string.title_section3);
+			break;
+		}
+	}
+	
+	public void restoreActionBar() {
+		ActionBar actionBar = getSupportActionBar();
+		actionBar.setDisplayShowTitleEnabled(true);
+		actionBar.setTitle(mTitle);
+
+	}
+	
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		
@@ -145,6 +170,8 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 //		Intent intent = new Intent(this, SearchResultActivity.class);
 //		startActivity(intent);
 //	}
+	
+
 	
 	public void displayWord(View view) {
 		Log.i("SEARCH RESULT FRAGMENT", "Displaying word details in a new WordDefinitionActivity...");
@@ -193,8 +220,5 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 				.commit();		
 	}
 
-	public void onSectionAttached(int int1) {
-		// TODO Auto-generated method stub
-		
-	}
+
 }

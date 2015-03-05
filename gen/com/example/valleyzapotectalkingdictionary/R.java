@@ -1912,7 +1912,7 @@ containing a value of this type.
         public static final int title_activity_settings=0x7f0a0030;
         public static final int title_activity_update=0x7f0a0031;
         public static final int title_activity_word_definition=0x7f0a002d;
-        public static final int title_section1=0x7f0a0033;
+        public static final int title_main_section=0x7f0a0033;
         public static final int title_section2=0x7f0a0034;
         public static final int title_section3=0x7f0a0035;
         /**  Translate 
