@@ -4,7 +4,6 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
-import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -22,6 +21,8 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 	private static WordOfTheDayFragment wordOfTheDayFragment = new WordOfTheDayFragment();
 	private static SearchResultFragment searchResultFragment = new SearchResultFragment();
 	private NavigationDrawerFragment mNavigationDrawerFragment;
+	private UpdateFragment updateFragment = new UpdateFragment();
+
 
 	private static Menu menu = null;
 	private CharSequence mTitle;
@@ -36,66 +37,66 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		mTitle = getTitle();
 
 		
-		/*** Set up the layout of the activity ***/
-		
-		// find container in XML to update
-		LinearLayout fragContainer = (LinearLayout) findViewById(R.id.llFragmentContainer);
-		
-		// ll will go inside fragContainer (the layout defined in activity_main.xml)
-		LinearLayout ll = new LinearLayout(this);
-		ll.setOrientation(LinearLayout.VERTICAL);
-		
-		ll.setId(LINEAR_LAYOUT_ID); // must set an id to use in the add command
-		
-		FragmentTransaction transaction = getFragmentManager().beginTransaction();
-		
-		// only add fragments once
-		if (getFragmentManager().findFragmentByTag("searchBar") == null) {
-			transaction.add(ll.getId(), searchBarFragment, "searchBar");
-			Log.i("MAIN ACTIVITY", "Added new SearchBarFragment");
-		}
-		if (getFragmentManager().findFragmentByTag("wordOfTheDay") == null) {
-			transaction.add(ll.getId(), wordOfTheDayFragment, "wordOfTheDay");
-			Log.i("MAIN ACTIVITY", "Added new WordOfTheDayFragment");
-		}
-		if (getFragmentManager().findFragmentByTag("searchResult") == null) {
-			transaction.add(ll.getId(), searchResultFragment, "searchResult");
-			Log.i("MAIN ACTIVITY", "Added new SearchResultFragment");
-			transaction.hide(searchResultFragment);
-			Log.i("MAIN ACTIVITY", "Hid SearchBarFragment");
-		}
-		
-		// if phone is horizontal, hide wordOfTheDay
-		if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
-			Log.i("MAIN ACTIVITY", "Device is horizontal");
-			transaction.hide(getFragmentManager().findFragmentByTag("wordOfTheDay")); // doesn't work if you use wordOfTheDayFragment directly for some reason
-			Log.i("MAIN ACTIVITY", "Hid WordOfTheDayFragment");
-		}
-		else { // Configuration.ORIENTATION_PORTRAIT, display word of the day
-			Log.i("MAIN ACTIVITY", "Device is vertical");
-			transaction.show(wordOfTheDayFragment);
-			Log.i("MAIN ACTIVITY", "Showed WordOfTheDayFragment");
-		}
-		
-		if (searchBarFragment.searchBarIsEmpty()) {
-			Log.i("MAIN ACTIVITY", "Search bar is empty");
-			
-			if (getFragmentManager().findFragmentByTag("searchResult") != null) {
-			transaction.hide(getFragmentManager().findFragmentByTag("searchResult"));
-			Log.i("MAIN ACTIVITY", "Hid SearchResultFragment");
-			}
-		}
-		else {
-			Log.i("MAIN ACTIVITY", "Search bar contains text");
-			transaction.show(searchResultFragment);
-			Log.i("MAIN ACTIVITY", "Showed SearchResultFragment");
-		}
-		
-		
-		transaction.commit();
-
-		fragContainer.addView(ll);
-		
+//		/*** Set up the layout of the activity ***/
+//		
+//		// find container in XML to update
+//		LinearLayout fragContainer = (LinearLayout) findViewById(R.id.llFragmentContainer);
+//		
+//		// ll will go inside fragContainer (the layout defined in activity_main.xml)
+//		LinearLayout ll = new LinearLayout(this);
+//		ll.setOrientation(LinearLayout.VERTICAL);
+//		
+//		ll.setId(LINEAR_LAYOUT_ID); // must set an id to use in the add command
+//		
+//		FragmentTransaction transaction = getFragmentManager().beginTransaction();
+//		
+//		// only add fragments once
+//		if (getFragmentManager().findFragmentByTag("searchBar") == null) {
+//			transaction.add(ll.getId(), searchBarFragment, "searchBar");
+//			Log.i("MAIN ACTIVITY", "Added new SearchBarFragment");
+//		}
+//		if (getFragmentManager().findFragmentByTag("wordOfTheDay") == null) {
+//			transaction.add(ll.getId(), wordOfTheDayFragment, "wordOfTheDay");
+//			Log.i("MAIN ACTIVITY", "Added new WordOfTheDayFragment");
+//		}
+//		if (getFragmentManager().findFragmentByTag("searchResult") == null) {
+//			transaction.add(ll.getId(), searchResultFragment, "searchResult");
+//			Log.i("MAIN ACTIVITY", "Added new SearchResultFragment");
+//			transaction.hide(searchResultFragment);
+//			Log.i("MAIN ACTIVITY", "Hid SearchBarFragment");
+//		}
+//		
+//		// if phone is horizontal, hide wordOfTheDay
+//		if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
+//			Log.i("MAIN ACTIVITY", "Device is horizontal");
+//			transaction.hide(getFragmentManager().findFragmentByTag("wordOfTheDay")); // doesn't work if you use wordOfTheDayFragment directly for some reason
+//			Log.i("MAIN ACTIVITY", "Hid WordOfTheDayFragment");
+//		}
+//		else { // Configuration.ORIENTATION_PORTRAIT, display word of the day
+//			Log.i("MAIN ACTIVITY", "Device is vertical");
+//			transaction.show(wordOfTheDayFragment);
+//			Log.i("MAIN ACTIVITY", "Showed WordOfTheDayFragment");
+//		}
+//		
+//		if (searchBarFragment.searchBarIsEmpty()) {
+//			Log.i("MAIN ACTIVITY", "Search bar is empty");
+//			
+//			if (getFragmentManager().findFragmentByTag("searchResult") != null) {
+//			transaction.hide(getFragmentManager().findFragmentByTag("searchResult"));
+//			Log.i("MAIN ACTIVITY", "Hid SearchResultFragment");
+//			}
+//		}
+//		else {
+//			Log.i("MAIN ACTIVITY", "Search bar contains text");
+//			transaction.show(searchResultFragment);
+//			Log.i("MAIN ACTIVITY", "Showed SearchResultFragment");
+//		}
+//		
+//		
+//		transaction.commit();
+//
+//		fragContainer.addView(ll);
+//		
 		
 		Log.i("MAIN ACTIVITY", "End of onCreate");
 	}
@@ -216,8 +217,19 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 	@Override
 	public void onNavigationDrawerItemSelected(int position) {
 		FragmentManager fragmentManager = getSupportFragmentManager();
-		fragmentManager.beginTransaction().replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
-				.commit();		
+//		fragmentManager.beginTransaction().replace(R.id.container, PlaceholderFragment.newInstance(position + 1)).commit();		
+		
+		switch(position+1){
+			case 1:
+				fragmentManager.beginTransaction().replace(R.id.container, PlaceholderFragment.newInstance(position + 1)).commit();		
+
+//				fragmentManager.beginTransaction().replace(R.id.container, searchBarFragment).commit();		
+			case 2:
+				fragmentManager.beginTransaction().replace(R.id.container, updateFragment).commit();
+			case 3:
+				fragmentManager.beginTransaction().replace(R.id.container, searchResultFragment).commit();
+		}
+
 	}
 
 

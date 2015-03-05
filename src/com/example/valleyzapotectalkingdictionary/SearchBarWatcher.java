@@ -1,17 +1,17 @@
 package com.example.valleyzapotectalkingdictionary;
 
-import android.app.Fragment;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.content.res.Configuration;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
-import android.widget.LinearLayout;
 
 public class SearchBarWatcher implements TextWatcher {
 
+	@SuppressWarnings("unused")
 	private View view;
 	private Fragment fragment;
 	

@@ -53,9 +53,9 @@
     <string name="title_activity_update">UpdateActivity</string>
     <string name="title_activity_search_fragment">SearchFragment</string>
     
-	<string name="title_main_section">Valley Zapotec</string>
-    <string name="title_section2">Section 2</string>
-    <string name="title_section3">Section 3</string>
+	<string name="title_main_section">Search</string>
+    <string name="title_section2">Update</string>
+    <string name="title_section3">About</string>
     
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
