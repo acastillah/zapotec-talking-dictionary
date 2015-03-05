@@ -17,11 +17,11 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 
 	private static final int LINEAR_LAYOUT_ID = 12345; // needed for adding fragments
 	
-	private static SearchBarFragment searchBarFragment = new SearchBarFragment();
-	private static WordOfTheDayFragment wordOfTheDayFragment = new WordOfTheDayFragment();
-	private static SearchResultFragment searchResultFragment = new SearchResultFragment();
+//	private static SearchBarFragment searchBarFragment = new SearchBarFragment();
+//	private static WordOfTheDayFragment wordOfTheDayFragment = new WordOfTheDayFragment();
+//	private static SearchResultFragment searchResultFragment = new SearchResultFragment();
 	private NavigationDrawerFragment mNavigationDrawerFragment;
-	private UpdateFragment updateFragment = new UpdateFragment();
+//	private UpdateFragment updateFragment = new UpdateFragment();
 
 
 	private static Menu menu = null;
@@ -116,20 +116,6 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		return super.onCreateOptionsMenu(menu);
 	}
 
-	public void onSectionAttached(int number) {
-		switch (number) {
-		case 1:
-			mTitle = getString(R.string.title_main_section);
-			break;
-		case 2:
-			mTitle = getString(R.string.title_section2);
-			break;
-		case 3:
-			mTitle = getString(R.string.title_section3);
-			break;
-		}
-	}
-	
 	public void restoreActionBar() {
 		ActionBar actionBar = getSupportActionBar();
 		actionBar.setDisplayShowTitleEnabled(true);
@@ -172,7 +158,6 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 //		startActivity(intent);
 //	}
 	
-
 	
 	public void displayWord(View view) {
 		Log.i("SEARCH RESULT FRAGMENT", "Displaying word details in a new WordDefinitionActivity...");
@@ -217,20 +202,20 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 	@Override
 	public void onNavigationDrawerItemSelected(int position) {
 		FragmentManager fragmentManager = getSupportFragmentManager();
-//		fragmentManager.beginTransaction().replace(R.id.container, PlaceholderFragment.newInstance(position + 1)).commit();		
+		fragmentManager.beginTransaction().replace(R.id.container, PlaceholderFragment.newInstance(position + 1)).commit();		
 		
-		switch(position+1){
-			case 1:
-				fragmentManager.beginTransaction().replace(R.id.container, PlaceholderFragment.newInstance(position + 1)).commit();		
-
-//				fragmentManager.beginTransaction().replace(R.id.container, searchBarFragment).commit();		
-			case 2:
-				fragmentManager.beginTransaction().replace(R.id.container, updateFragment).commit();
-			case 3:
-				fragmentManager.beginTransaction().replace(R.id.container, searchResultFragment).commit();
+		switch (position+1) {
+		case 1:
+			mTitle = getString(R.string.title_main_section);
+			break;
+		case 2:
+			mTitle = getString(R.string.title_section2);
+			break;
+		case 3:
+			mTitle = getString(R.string.title_section3);
+			break;
 		}
-
+		
 	}
-
 
 }

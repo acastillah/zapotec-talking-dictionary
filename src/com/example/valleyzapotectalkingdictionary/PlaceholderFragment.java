@@ -1,6 +1,5 @@
 package com.example.valleyzapotectalkingdictionary;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -11,21 +10,29 @@ import android.view.ViewGroup;
  * A placeholder fragment containing a simple view.
  */
 public class PlaceholderFragment extends Fragment {
-	/**
-	 * The fragment argument representing the section number for this
-	 * fragment.
-	 */
-	private static final String ARG_SECTION_NUMBER = "section_number";
-
+	
 	/**
 	 * Returns a new instance of this fragment for the given section number.
 	 */
-	public static PlaceholderFragment newInstance(int sectionNumber) {
-		PlaceholderFragment fragment = new PlaceholderFragment();
-		Bundle args = new Bundle();
-		args.putInt(ARG_SECTION_NUMBER, sectionNumber);
-		fragment.setArguments(args);
+	public static Fragment newInstance(int sectionNumber) {
+		Fragment fragment;
+		
+		switch(sectionNumber){
+			case 1:
+				fragment = new SearchBarFragment();	
+				break;
+			case 2:
+				fragment = new UpdateFragment();
+				break;
+			case 3:
+				fragment = new PlaceholderFragment();
+				break;
+			default:
+				fragment = new PlaceholderFragment();
+		}
+
 		return fragment;
+		
 	}
 
 	public PlaceholderFragment() {
@@ -37,10 +44,5 @@ public class PlaceholderFragment extends Fragment {
 		return rootView;
 	}
 
-	@Override
-	public void onAttach(Activity activity) {
-		super.onAttach(activity);
-		((MainActivity) activity).onSectionAttached(getArguments().getInt(ARG_SECTION_NUMBER));
-	}
 }
 
