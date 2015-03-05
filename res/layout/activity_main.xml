@@ -1,4 +1,27 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+        
+  <android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.valleyzapotectalkingdictionary.MainActivity" >
+    
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    
+    
+     <fragment
+        android:id="@+id/navigation_drawer"
+        android:name="com.example.valleyzapotectalkingdictionary.NavigationDrawerFragment"
+        android:layout_width="@dimen/navigation_drawer_width"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        tools:layout="@layout/fragment_navigation_drawer" />
+         
+  <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,15 +30,17 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.valleyzapotectalkingdictionary.MainActivity" >
-        
+      
     <LinearLayout
         android:id="@+id/llFragmentContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignLeft="@+id/textView1"
-        android:layout_below="@+id/textView1"
         android:layout_marginTop="19dp"
         android:orientation="vertical" >
     </LinearLayout>
+     
     
 </RelativeLayout> 
+
+         </android.support.v4.widget.DrawerLayout>
+  

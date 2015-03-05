@@ -2,8 +2,8 @@ package com.example.valleyzapotectalkingdictionary;
 
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
-import android.text.TextWatcher;
-import android.app.FragmentManager;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.widget.DrawerLayout;
 import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -12,19 +12,17 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.View.OnClickListener;
-import android.view.ViewGroup.LayoutParams;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.LinearLayout;
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends ActionBarActivity implements NavigationDrawerFragment.NavigationDrawerCallbacks  {
 
 	private static final int LINEAR_LAYOUT_ID = 12345; // needed for adding fragments
 	
 	private static SearchBarFragment searchBarFragment = new SearchBarFragment();
 	private static WordOfTheDayFragment wordOfTheDayFragment = new WordOfTheDayFragment();
 	private static SearchResultFragment searchResultFragment = new SearchResultFragment();
+	private NavigationDrawerFragment mNavigationDrawerFragment;
+
 	
 	private static Menu menu = null;
 	
@@ -33,6 +31,9 @@ public class MainActivity extends ActionBarActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
+		mNavigationDrawerFragment = (NavigationDrawerFragment) getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
+		mNavigationDrawerFragment.setUp(R.id.navigation_drawer, (DrawerLayout) findViewById(R.id.drawer_layout));
+
 		ActionBar actionBar = getSupportActionBar();
 		actionBar.setTitle("Valley Zapotec");
 
@@ -103,7 +104,7 @@ public class MainActivity extends ActionBarActivity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		this.menu = menu;
+		MainActivity.menu = menu;
 		getMenuInflater().inflate(R.menu.main, menu);
 		LanguageInterface.setLanguageInterfaceButtons(menu);
 		
@@ -116,15 +117,15 @@ public class MainActivity extends ActionBarActivity {
 		switch (item.getItemId()) {
 			case R.id.englishInterface:
 				LanguageInterface.interfaceLanguage = LanguageInterface.LANGUAGE_ENGLISH;
-				LanguageInterface.setLanguageInterfaceButtons(this.menu);
+				LanguageInterface.setLanguageInterfaceButtons(MainActivity.menu);
 				return true;
 			case R.id.spanishInterface:
 				LanguageInterface.interfaceLanguage = LanguageInterface.LANGUAGE_SPANISH;
-				LanguageInterface.setLanguageInterfaceButtons(this.menu);
+				LanguageInterface.setLanguageInterfaceButtons(MainActivity.menu);
 				return true;
 			case R.id.zapotecInterface:
 				LanguageInterface.interfaceLanguage = LanguageInterface.LANGUAGE_ZAPOTEC;
-				LanguageInterface.setLanguageInterfaceButtons(this.menu);
+				LanguageInterface.setLanguageInterfaceButtons(MainActivity.menu);
 				return true;
 			case R.id.about:
 				startActivity(new Intent(this, AboutActivity.class));
@@ -155,9 +156,6 @@ public class MainActivity extends ActionBarActivity {
 		startActivity(new Intent(this, WordDefinitionActivity.class));		
 	}
 	
-	
-	
-	
 	static class LanguageInterface {
 		public static final int LANGUAGE_ENGLISH = 0;
 		public static final int LANGUAGE_SPANISH = 1;
@@ -186,5 +184,17 @@ public class MainActivity extends ActionBarActivity {
 				menuItem.setVisible(false);
 			}
 		}
+	}
+
+	@Override
+	public void onNavigationDrawerItemSelected(int position) {
+		FragmentManager fragmentManager = getSupportFragmentManager();
+		fragmentManager.beginTransaction().replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
+				.commit();		
+	}
+
+	public void onSectionAttached(int int1) {
+		// TODO Auto-generated method stub
+		
 	}
 }
