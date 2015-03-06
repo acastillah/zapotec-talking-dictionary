@@ -16,7 +16,7 @@
 	         android:layout_height="wrap_content" >
 	     </FrameLayout>
 	    
-	     </ScrollView>	 
+	</ScrollView>	 
 	     
 <EditText
 	    android:id="@+id/searchBox"
