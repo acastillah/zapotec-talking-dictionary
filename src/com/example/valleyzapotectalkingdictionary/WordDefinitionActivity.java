@@ -48,12 +48,6 @@ public class WordDefinitionActivity extends ActionBarActivity {
 				LanguageInterface.interfaceLanguage = LanguageInterface.LANGUAGE_ZAPOTEC;
 				LanguageInterface.setLanguageInterfaceButtons(this.menu);
 				return true;
-			case R.id.about:
-				startActivity(new Intent(this, AboutActivity.class));
-				return true;
-			case R.id.update:
-				startActivity(new Intent(this, UpdateActivity.class));
-				return true;
 			case R.id.settings:
 				startActivity(new Intent(this, SettingsActivity.class));
 				return true;

@@ -20,7 +20,6 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
 @SuppressWarnings("deprecation")
 public class NavigationDrawerFragment extends Fragment {
@@ -30,7 +29,6 @@ public class NavigationDrawerFragment extends Fragment {
 	 * Remember the position of the selected item.
 	 */
 	private static final String STATE_SELECTED_POSITION = "selected_navigation_drawer_position";
-
 	/**
 	 * Per the design guidelines, you should show the drawer on launch until the
 	 * user manually expands it. This shared preference tracks this.
@@ -105,6 +103,7 @@ public class NavigationDrawerFragment extends Fragment {
 	public boolean isDrawerOpen() {
 		return mDrawerLayout != null && mDrawerLayout.isDrawerOpen(mFragmentContainerView);
 	}
+	
 
 	/**
 	 * Users of this fragment must call this method to set up the navigation
@@ -172,6 +171,7 @@ public class NavigationDrawerFragment extends Fragment {
 				getActivity().supportInvalidateOptionsMenu(); // calls
 																// onPrepareOptionsMenu()
 			}
+			
 		};
 
 		// If the user hasn't 'learned' about the drawer, open it to introduce
@@ -250,11 +250,6 @@ public class NavigationDrawerFragment extends Fragment {
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		if (mDrawerToggle.onOptionsItemSelected(item)) {
-			return true;
-		}
-
-		if (item.getItemId() == R.id.action_example) {
-			Toast.makeText(getActivity(), "Example action.", Toast.LENGTH_SHORT).show();
 			return true;
 		}
 

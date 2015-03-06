@@ -2,7 +2,9 @@ package com.example.valleyzapotectalkingdictionary;
 
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -16,7 +18,6 @@ import android.widget.LinearLayout;
 public class MainActivity extends ActionBarActivity implements NavigationDrawerFragment.NavigationDrawerCallbacks  {
 
 	private static final int LINEAR_LAYOUT_ID = 12345; // needed for adding fragments
-	
 //	private static SearchBarFragment searchBarFragment = new SearchBarFragment();
 //	private static WordOfTheDayFragment wordOfTheDayFragment = new WordOfTheDayFragment();
 //	private static SearchResultFragment searchResultFragment = new SearchResultFragment();
@@ -31,7 +32,6 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		
 		mNavigationDrawerFragment = (NavigationDrawerFragment) getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
 		mNavigationDrawerFragment.setUp(R.id.navigation_drawer, (DrawerLayout) findViewById(R.id.drawer_layout));
 		mTitle = getTitle();
@@ -48,7 +48,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 //		
 //		ll.setId(LINEAR_LAYOUT_ID); // must set an id to use in the add command
 //		
-//		FragmentTransaction transaction = getFragmentManager().beginTransaction();
+		//FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
 //		
 //		// only add fragments once
 //		if (getFragmentManager().findFragmentByTag("searchBar") == null) {
@@ -69,12 +69,13 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 //		// if phone is horizontal, hide wordOfTheDay
 //		if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
 //			Log.i("MAIN ACTIVITY", "Device is horizontal");
-//			transaction.hide(getFragmentManager().findFragmentByTag("wordOfTheDay")); // doesn't work if you use wordOfTheDayFragment directly for some reason
+//			//transaction.hide(getFragmentManager().findFragmentByTag("wordOfTheDay")); // doesn't work if you use wordOfTheDayFragment directly for some reason
+//			//transaction.hide(getSupportFragmentManager().findFragmentByTag(wordOfTheDay));
 //			Log.i("MAIN ACTIVITY", "Hid WordOfTheDayFragment");
 //		}
 //		else { // Configuration.ORIENTATION_PORTRAIT, display word of the day
 //			Log.i("MAIN ACTIVITY", "Device is vertical");
-//			transaction.show(wordOfTheDayFragment);
+//			//transaction.show(wordDay);
 //			Log.i("MAIN ACTIVITY", "Showed WordOfTheDayFragment");
 //		}
 //		
@@ -101,7 +102,6 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		Log.i("MAIN ACTIVITY", "End of onCreate");
 	}
 
-	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		
 		if (!mNavigationDrawerFragment.isDrawerOpen()) {
@@ -138,12 +138,6 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 			case R.id.zapotecInterface:
 				LanguageInterface.interfaceLanguage = LanguageInterface.LANGUAGE_ZAPOTEC;
 				LanguageInterface.setLanguageInterfaceButtons(MainActivity.menu);
-				return true;
-			case R.id.about:
-				startActivity(new Intent(this, AboutActivity.class));
-				return true;
-			case R.id.update:
-				startActivity(new Intent(this, UpdateActivity.class));
 				return true;
 			case R.id.settings:
 				startActivity(new Intent(this, SettingsActivity.class));
@@ -202,18 +196,30 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 	@Override
 	public void onNavigationDrawerItemSelected(int position) {
 		FragmentManager fragmentManager = getSupportFragmentManager();
-		fragmentManager.beginTransaction().replace(R.id.container, PlaceholderFragment.newInstance(position + 1)).commit();		
+		Fragment fragment;
 		
-		switch (position+1) {
-		case 1:
-			mTitle = getString(R.string.title_main_section);
-			break;
-		case 2:
-			mTitle = getString(R.string.title_section2);
-			break;
-		case 3:
-			mTitle = getString(R.string.title_section3);
-			break;
+		switch(position+1){
+			case 1:
+				fragment = new SearchBarFragment();	
+				mTitle = getString(R.string.title_main_section);
+				break;
+			case 2:
+				fragment = new UpdateFragment();
+				mTitle = getString(R.string.title_section2);
+				break;
+			case 3:
+				fragment = new AboutFragment();
+				mTitle = getString(R.string.title_section3);
+				break;
+			default:
+				fragment = new PlaceholderFragment();
+		}
+		
+		fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();				
+		if (position+1 == 1){
+			Log.i("Word","1");
+			Fragment WordFragment = new WordOfTheDayFragment();
+			fragmentManager.beginTransaction().add(WordFragment, "wordDay");
 		}
 		
 	}

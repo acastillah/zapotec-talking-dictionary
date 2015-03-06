@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:text="About the Tlacolula Valley Zapotec Talking Dictionary App"
+        android:text="Tlacolula Valley Zapotec Talking Dictionary"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView

@@ -3,15 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.valleyzapotectalkingdictionary.MainActivity" >
 
-     <item
-        android:id="@+id/action_example"
-        android:title="@string/action_example"
-        app:showAsAction="withText|ifRoom"/>
-    
     <item
         android:id="@+id/englishInterface"
         android:title="@string/englishInterface"
-        app:showAsAction="always"/>
+        app:showAsAction="ifRoom"/>
     <item
         android:id="@+id/spanishInterface"
         android:title="@string/spanishInterface"
@@ -21,16 +16,8 @@
         android:title="@string/zapotecInterface"
         app:showAsAction="always"/>
     <item
-        android:id="@+id/about"
-        android:title="About"
-        app:showAsAction="never"/>
-    <item
-        android:id="@+id/update"
-        android:title="Update"
-        app:showAsAction="never"/>
-    <!-- <item
         android:id="@+id/settings"
         android:title="@string/settings_eng"
-        app:showAsAction="never"/> -->
+        app:showAsAction="never"/>
 
 </menu>

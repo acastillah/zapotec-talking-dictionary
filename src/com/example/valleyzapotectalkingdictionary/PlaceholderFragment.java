@@ -25,7 +25,7 @@ public class PlaceholderFragment extends Fragment {
 				fragment = new UpdateFragment();
 				break;
 			case 3:
-				fragment = new PlaceholderFragment();
+				fragment = new AboutFragment();
 				break;
 			default:
 				fragment = new PlaceholderFragment();
