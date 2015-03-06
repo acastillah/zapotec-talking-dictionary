@@ -36,7 +36,6 @@ public class SearchBarFragment extends Fragment implements OnClickListener {
 		}
 		
 		Fragment WordFragment = new WordOfTheDayFragment();
-		Fragment ResultFragment = new SearchResultFragment();
 		FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
 		
 		if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
@@ -46,12 +45,6 @@ public class SearchBarFragment extends Fragment implements OnClickListener {
 			transaction.hide(WordFragment).commit();
 		}
 		
-		if (!searchBarIsEmpty()) {
-			Log.i("SEarch","not empty");
-			transaction.replace(R.id.child_fragment,ResultFragment).commit();
-		}
-		else {
-		}
 		
 		return view;
     }

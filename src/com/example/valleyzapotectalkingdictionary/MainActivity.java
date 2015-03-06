@@ -4,21 +4,17 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.content.Intent;
-import android.content.res.Configuration;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.LinearLayout;
 
 public class MainActivity extends ActionBarActivity implements NavigationDrawerFragment.NavigationDrawerCallbacks  {
 
 	private NavigationDrawerFragment mNavigationDrawerFragment;
-	private static final int LINEAR_LAYOUT_ID = 12345; // needed for adding fragments
 
 	private static Menu menu = null;
 	private CharSequence mTitle;
@@ -127,34 +123,24 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 	@Override
 	public void onNavigationDrawerItemSelected(int position) {
 		FragmentManager fragmentManager = getSupportFragmentManager();
-		Fragment fragment;
+		Fragment fragment = null;
 		
 		switch(position+1){
 			case 1:
-				Fragment searchBarFragment = new SearchBarFragment();	
-				
+				fragment = new SearchBarFragment();	
 				mTitle = getString(R.string.title_main_section);
-				fragmentManager.beginTransaction().replace(R.id.container, searchBarFragment).commit();		
-
 				break;
 			case 2:
 				fragment = new UpdateFragment();
 				mTitle = getString(R.string.title_section2);
-				fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();				
 
 				break;
 			case 3:
 				fragment = new AboutFragment();
 				mTitle = getString(R.string.title_section3);
-				fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();				
 				break;
-			default:
-				fragment = new PlaceholderFragment();
-				fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();				
-
 		}
-		
-		
+		fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();				
 	}
 
 }

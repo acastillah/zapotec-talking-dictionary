@@ -38,63 +38,18 @@ public class SearchBarWatcher implements TextWatcher {
 		// if search bar is empty, display word of the day, hide search results
 		// else, search bar contains text, hide word of the day, show search results
 		
-		if (count == 0) { // no text in search bar
-			Log.i("SEARCH BAR WATCHER", "Search bar contains no text");
-//			Log.i("VIEW", view.toString());
-//			Log.i("VIEW", view.getParent().toString());
-			
-//			FragmentTransaction transaction = FragmentManager.beginTransaction();
-			
-			/* 1. Show word of the day, if vertical
-			 * 2. Hide search results
-			 */
-			
-		}
-		
-		
-		FragmentManager fm = fragment.getFragmentManager();
+		FragmentManager fm = fragment.getChildFragmentManager();
 		FragmentTransaction transaction = fm.beginTransaction();
 		
-		Fragment wordOfTheDay = fm.findFragmentByTag("wordOfTheDay");
-		Fragment searchResult = fm.findFragmentByTag("searchResult");
-		
-		//String searchText = searchBar.getText().toString();
-		
-		if (count == 0) { // nothing to search for
-			
-			/* 1. Display word of the day fragment if vertical
-			 * 2. Hide search result fragment
-			 */
-			
-			if (wordOfTheDay != null && fragment.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
-				Log.i("SEARCH BAR WATCHER", "Showing Word Of The Day fragment");
-				transaction.show(wordOfTheDay);
-			}
-			
-			if (searchResult != null) {
-				Log.i("SEARCH BAR WATCHER", "Hiding search result fragment");
-				transaction.hide(searchResult);
-			}
+		if (count == 0 && fragment.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) { // no text in search bar
+			Log.i("SEARCH BAR WATCHER", "Search bar contains no text");
+			transaction.replace(R.id.child_fragment,new WordOfTheDayFragment());
 		}
-		else { // search for results
-			
-			/* 1. Hide word of the day fragment
-			 * 2. Display search result fragment
-			 * 3. Run search algorithm & update search result fragment
-			 */
-			
-			
-			if (wordOfTheDay != null) {
-				Log.i("SEARCH BAR WATCHER", "Hiding Word Of The Day fragment");
-				transaction.hide(wordOfTheDay);
-			}
-			
-			if (searchResult != null) {
-				Log.i("SEARCH BAR WATCHER", "Showing search result fragment");
-				transaction.show(searchResult);
-				// run search results
-			}
+		
+		else{
+			transaction.replace(R.id.child_fragment,new SearchResultFragment());
 		}
+
 		
 		transaction.commit();
 	}

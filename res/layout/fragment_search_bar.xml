@@ -27,7 +27,7 @@
 	    android:layout_height="200dip"
 	    android:layout_alignParentLeft="true"
 	    android:layout_below="@+id/searchBox"
-	    android:layout_marginTop="81dp" >
+	    android:layout_marginTop="82dp" >
 	</FrameLayout>
     
 </RelativeLayout>
