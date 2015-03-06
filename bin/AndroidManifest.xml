@@ -15,7 +15,8 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:windowSoftInputMode="stateHidden" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -27,25 +28,10 @@
             android:label="@string/title_activity_menu" >
         </activity>
         <activity
-            android:name=".SearchResultActivity"
-            android:label="@string/title_activity_search_result"
-            android:parentActivityName=".MainActivity" >
-
-            <!-- Parent activity meta-data to support 4.0 and lower -->
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.valleyzapotectalkingdictionary.MainActivity" />
-        </activity>
-        <activity
             android:name=".WordDefinitionActivity"
-            android:label="@string/title_activity_word_definition"
-            android:parentActivityName=".SearchResultActivity" >
-
-            <!-- Parent activity meta-data to support 4.0 and lower -->
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.valleyzapotectalkingdictionary.SearchResultActivity" />
+            android:label="@string/title_activity_word_definition" > 
         </activity>
+        
         <activity
             android:name=".SearchFragment"
             android:label="@string/title_activity_search_fragment" >

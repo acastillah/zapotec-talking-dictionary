@@ -1,5 +1,6 @@
 package com.example.valleyzapotectalkingdictionary;
 
+import android.content.Context;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -10,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.View.OnClickListener;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
@@ -52,6 +54,15 @@ public class SearchBarFragment extends Fragment implements OnClickListener {
 	@Override
 	public void onClick(View v) {
 		Log.i("SEARCH BAR FRAGMENT", "searchButton listener was called");
+		
+		 try  {
+			    if (v != null) {
+			    	final InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+			        imm.hideSoftInputFromWindow(getView().getWindowToken(), 0);
+			    }      
+			 } catch (Exception e) {
+            // TODO: handle exception
+        }
 		
 		FragmentManager fm = getFragmentManager();
 		FragmentTransaction transaction = fm.beginTransaction();

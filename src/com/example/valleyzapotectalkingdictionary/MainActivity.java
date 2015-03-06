@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 public class MainActivity extends ActionBarActivity implements NavigationDrawerFragment.NavigationDrawerCallbacks  {
 
@@ -67,17 +68,15 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 				LanguageInterface.setLanguageInterfaceButtons(MainActivity.menu);
 				return true;
 			case R.id.settings:
-				startActivity(new Intent(this, SettingsActivity.class));
+				Toast.makeText(this, "Settings.", Toast.LENGTH_SHORT).show();
+				return true;
+			case R.id.help:
+				Toast.makeText(this, "Help.", Toast.LENGTH_SHORT).show();
 				return true;
 		}
 		
 		return super.onOptionsItemSelected(item);
 	}
-	
-//	public void searchWord(View view) {
-//		Intent intent = new Intent(this, SearchResultActivity.class);
-//		startActivity(intent);
-//	}
 	
 	
 	public void displayWord(View view) {

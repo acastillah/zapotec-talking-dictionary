@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 public class WordDefinitionActivity extends ActionBarActivity {
 
@@ -49,7 +50,10 @@ public class WordDefinitionActivity extends ActionBarActivity {
 				LanguageInterface.setLanguageInterfaceButtons(this.menu);
 				return true;
 			case R.id.settings:
-				startActivity(new Intent(this, SettingsActivity.class));
+				Toast.makeText(this, "Settings.", Toast.LENGTH_SHORT).show();
+				return true;
+			case R.id.help:
+				Toast.makeText(this, "Help.", Toast.LENGTH_SHORT).show();
 				return true;
 		}
 		

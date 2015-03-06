@@ -4,7 +4,21 @@
     android:layout_height="match_parent" >
         <!--  android:onClick="searchWord" -->
 
-	<EditText
+<ScrollView
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:layout_below="@+id/searchBox" >
+	
+	     <FrameLayout
+	         android:id="@+id/child_fragment"
+	         android:layout_width="fill_parent"
+	         android:layout_height="wrap_content" >
+	     </FrameLayout>
+	    
+	     </ScrollView>	 
+	     
+<EditText
 	    android:id="@+id/searchBox"
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
@@ -18,16 +32,8 @@
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
 	    android:layout_alignBottom="@+id/searchBox"
-	    android:layout_alignRight="@+id/searchBox"
+	    android:layout_alignEnd="@+id/searchBox"
+	   	android:layout_alignRight="@+id/searchBox"
 	    android:src="@drawable/abc_ic_search_api_mtrl_alpha" />
-
-	<FrameLayout
-	    android:id="@+id/child_fragment"
-	    android:layout_width="fill_parent"
-	    android:layout_height="200dip"
-	    android:layout_alignParentLeft="true"
-	    android:layout_below="@+id/searchBox"
-	    android:layout_marginTop="82dp" >
-	</FrameLayout>
     
 </RelativeLayout>
