@@ -35,6 +35,24 @@ public class SearchBarFragment extends Fragment implements OnClickListener {
 			Log.i("SEARCH BAR FRAGMENT", "searchButton listener was set");
 		}
 		
+		Fragment WordFragment = new WordOfTheDayFragment();
+		Fragment ResultFragment = new SearchResultFragment();
+		FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
+		
+		if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
+			transaction.replace(R.id.child_fragment,WordFragment).commit();
+		}
+		else { // Configuration.ORIENTATION_LANDSCAPE, display word of the day
+			transaction.hide(WordFragment).commit();
+		}
+		
+		if (!searchBarIsEmpty()) {
+			Log.i("SEarch","not empty");
+			transaction.replace(R.id.child_fragment,ResultFragment).commit();
+		}
+		else {
+		}
+		
 		return view;
     }
 

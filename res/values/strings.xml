@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name"></string>
+    <string name="app_name">Valley Zapotec Dictionary</string>
     <string name="app_name_eng">Valley Zapotec Talking Dictionary</string>
     <string name="app_name_spa">Valley Zapotec Talking Dictionary</string>
     <!-- Translate -->
@@ -54,5 +54,9 @@
     
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>    
+    
+    <string name="about">All content copyright © the recorded Zapotec communities. (2013)
+Dictionary produced by Brook Lillehaugen, with support from K. David Harrison and Jeremy Fahringer. (2013).
+All rights reserved. Do not distribute or reproduce without permission.</string>
 
 </resources>

@@ -1,6 +1,7 @@
 package com.example.valleyzapotectalkingdictionary;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -20,6 +21,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 @SuppressWarnings("deprecation")
 public class NavigationDrawerFragment extends Fragment {
@@ -251,6 +253,10 @@ public class NavigationDrawerFragment extends Fragment {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		if (mDrawerToggle.onOptionsItemSelected(item)) {
 			return true;
+		}
+		
+		if (item.getItemId() == R.id.settings) {
+			Toast.makeText(getActivity(), "Settings.", Toast.LENGTH_SHORT).show();
 		}
 
 		return super.onOptionsItemSelected(item);

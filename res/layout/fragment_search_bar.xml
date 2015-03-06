@@ -4,24 +4,30 @@
     android:layout_height="match_parent" >
         <!--  android:onClick="searchWord" -->
 
-	<ImageButton
-	    android:id="@+id/searchButton"
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:layout_alignBottom="@+id/searchBox"
-	    android:layout_toRightOf="@+id/searchBox"
-	    android:src="@drawable/abc_ic_search_api_mtrl_alpha" />
-
 	<EditText
 	    android:id="@+id/searchBox"
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
 	    android:layout_alignParentTop="true"
 	    android:layout_centerHorizontal="true"
-	    android:layout_marginTop="78dp"
-	    android:ems="10" >
+	    android:layout_marginTop="79dp"
+	    android:ems="10" />
 
-	    <requestFocus />
-	</EditText>
+	<ImageButton
+	    android:id="@+id/searchButton"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_alignBottom="@+id/searchBox"
+	    android:layout_alignRight="@+id/searchBox"
+	    android:src="@drawable/abc_ic_search_api_mtrl_alpha" />
+
+	<FrameLayout
+	    android:id="@+id/child_fragment"
+	    android:layout_width="fill_parent"
+	    android:layout_height="200dip"
+	    android:layout_alignParentLeft="true"
+	    android:layout_below="@+id/searchBox"
+	    android:layout_marginTop="81dp" >
+	</FrameLayout>
     
 </RelativeLayout>
