@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?><RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
         <!--  android:onClick="searchWord" -->
@@ -16,16 +15,41 @@
 	         android:layout_height="wrap_content" >
 	     </FrameLayout>
 	    
-	</ScrollView>	 
-	     
-<EditText
+</ScrollView>	 
+	  
+	<fragment android:name="com.example.valleyzapotectalkingdictionary.TitleFragment"
+              android:id="@+id/title_fragment"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_alignParentTop="true"
+              android:layout_centerHorizontal="true"
+              android:layout_marginTop="10dp" />
+
+	<fragment android:name="com.example.valleyzapotectalkingdictionary.SearchDomainFragment"
+              android:id="@+id/searchDomain_fragment"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_below="@+id/title_fragment"
+              android:layout_alignLeft = "@+id/searchBox"
+              android:layout_marginTop="10dp" />
+
+	<fragment android:name="com.example.valleyzapotectalkingdictionary.SemanticDomainFragment"
+              android:id="@+id/semanticDomain_fragment"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_below="@+id/searchDomain_fragment"
+              android:layout_alignLeft = "@+id/searchBox" />
+
+	<EditText
 	    android:id="@+id/searchBox"
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
-	    android:layout_alignParentTop="true"
+	    android:layout_alignTop="@+id/semanticDomain_spinner"
 	    android:layout_centerHorizontal="true"
-	    android:layout_marginTop="79dp"
+	    android:layout_marginBottom="10dp"
+	    android:layout_below="@+id/semanticDomain_fragment"
 	    android:ems="10" />
+		<!-- android:layout_marginTop="79dp" -->
 
 	<ImageButton
 	    android:id="@+id/searchButton"
@@ -35,5 +59,5 @@
 	    android:layout_alignEnd="@+id/searchBox"
 	   	android:layout_alignRight="@+id/searchBox"
 	    android:src="@drawable/abc_ic_search_api_mtrl_alpha" />
-    
+
 </RelativeLayout>

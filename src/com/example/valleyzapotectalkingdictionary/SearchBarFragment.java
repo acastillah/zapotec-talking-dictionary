@@ -12,6 +12,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.View.OnClickListener;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
@@ -118,4 +120,5 @@ public class SearchBarFragment extends Fragment implements OnClickListener {
 		String searchText = searchBar.getText().toString();
 		return (searchText.equals(""));
 	}
+	
 }
