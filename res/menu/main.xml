@@ -3,10 +3,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.valleyzapotectalkingdictionary.MainActivity" >
 
+        
+    
     <item android:id="@+id/action_search"
           android:title="action_search"
           app:showAsAction="always"
-          app:actionViewClass="android.support.v7.widget.SearchView" />
+          app:actionViewClass="android.support.v7.widget.SearchView" /> 
+    
+    <item 
+        android:title="title"
+        android:id="@+id/spinner"
+    	app:showAsAction="ifRoom"
+    	app:actionViewClass="android.widget.Spinner" />
     
     <item
         android:id="@+id/englishInterface"

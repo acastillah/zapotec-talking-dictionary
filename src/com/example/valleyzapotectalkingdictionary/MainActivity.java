@@ -1,5 +1,10 @@
 package com.example.valleyzapotectalkingdictionary;
 
+import java.io.FileReader;
+
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.SearchView;
@@ -14,6 +19,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.AdapterView.OnItemSelectedListener;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
+import android.widget.SpinnerAdapter;
 import android.widget.Toast;
 
 public class MainActivity extends ActionBarActivity implements NavigationDrawerFragment.NavigationDrawerCallbacks  {
@@ -29,10 +38,13 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		setContentView(R.layout.activity_main);
 		mNavigationDrawerFragment = (NavigationDrawerFragment) getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
 		mNavigationDrawerFragment.setUp(R.id.navigation_drawer, (DrawerLayout) findViewById(R.id.drawer_layout));
-		mTitle = getTitle();
+		//mTitle = getTitle();
+		mTitle = "Search";
 	}
 
 	public boolean onCreateOptionsMenu(Menu menu) {
+		
+		JSONReadFromFile();
 		
 		if (!mNavigationDrawerFragment.isDrawerOpen()) {
 			// Inflate the menu; this adds items to the action bar if it is present.
@@ -44,8 +56,30 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		    MenuItem searchItem = menu.findItem(R.id.action_search);
 		    SearchView searchView = (SearchView) MenuItemCompat.getActionView(searchItem);
 		    OnClickListener searchClickListener = new SearchClickListener();
-			// Configure the search info and add any event listeners
 			searchView.setOnSearchClickListener(searchClickListener );
+			//searchView.setIconified(false);
+			
+			
+			MenuItem spinnerItem = menu.findItem(R.id.spinner);
+			Spinner spinner = (Spinner) MenuItemCompat.getActionView(spinnerItem);
+			
+			if (spinner != null) {
+				Log.i("SPINNER", "Spinner is not null");
+				// Create an ArrayAdapter using the string array and a default spinner layout
+				ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+				        R.array.languages_array, android.R.layout.simple_spinner_item);
+				// Specify the layout to use when the list of choices appears
+				adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+				// Apply the adapter to the spinner
+				spinner.setAdapter(adapter);
+				
+				OnItemSelectedListener listener = new languageSpinnerItemSelectedListener();
+				spinner.setOnItemSelectedListener(listener);
+			}
+			else {
+				Log.i("SPINNER", "Spinner is null");
+			}
+			
 			
 			return true;
 
@@ -66,15 +100,15 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		switch (item.getItemId()) {
 			case R.id.englishInterface:
 				LanguageInterface.interfaceLanguage = LanguageInterface.LANGUAGE_ENGLISH;
-				LanguageInterface.setLanguageInterfaceButtons(MainActivity.menu);
+				//LanguageInterface.setLanguageInterfaceButtons(MainActivity.menu);
 				return true;
 			case R.id.spanishInterface:
 				LanguageInterface.interfaceLanguage = LanguageInterface.LANGUAGE_SPANISH;
-				LanguageInterface.setLanguageInterfaceButtons(MainActivity.menu);
+				//LanguageInterface.setLanguageInterfaceButtons(MainActivity.menu);
 				return true;
 			case R.id.zapotecInterface:
 				LanguageInterface.interfaceLanguage = LanguageInterface.LANGUAGE_ZAPOTEC;
-				LanguageInterface.setLanguageInterfaceButtons(MainActivity.menu);
+				//LanguageInterface.setLanguageInterfaceButtons(MainActivity.menu);
 				return true;
 			case R.id.settings:
 				Toast.makeText(this, "Settings.", Toast.LENGTH_SHORT).show();
@@ -150,5 +184,30 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		}
 		fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();				
 	}
+	
+	public void JSONReadFromFile() {
+
+		JSONParser parser = new JSONParser();
+
+		try {
+
+			Object obj = parser.parse(new FileReader(
+					"/Users/Adri/Desktop/teotitlan_export.json"));
+
+			JSONObject jsonObject = (JSONObject) obj;
+
+			String id = (String) jsonObject.get("Object ID");
+			String word = (String) jsonObject.get("Word");
+			String pronunciation = (String) jsonObject.get("Pronunciation");
+
+			Log.i("Id: ", id);
+			Log.i("Word: ", word);
+			Log.i("Pronunciation:", pronunciation);
+
+		} catch (Exception e) {
+			Log.i("Parsing failed", "FAIL");
+		}
+
+}
 
 }
