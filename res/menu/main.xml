@@ -3,6 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.valleyzapotectalkingdictionary.MainActivity" >
 
+    <item android:id="@+id/action_search"
+          android:title="action_search"
+          android:icon="@drawable/ic_launcher"
+          app:showAsAction="always"
+          app:actionViewClass="android.support.v7.widget.SearchView" />
+    
     <item
         android:id="@+id/englishInterface"
         android:title="@string/englishInterface"
@@ -10,11 +16,11 @@
     <item
         android:id="@+id/spanishInterface"
         android:title="@string/spanishInterface"
-        app:showAsAction="always"/>
+        app:showAsAction="ifRoom"/>
     <item
         android:id="@+id/zapotecInterface"
         android:title="@string/zapotecInterface"
-        app:showAsAction="always"/>
+        app:showAsAction="ifRoom"/>
     <item
         android:id="@+id/settings"
         android:title="@string/settings_eng"

@@ -353,6 +353,7 @@ int id action_menu_presenter 0x7f090006
 int id action_mode_bar 0x7f09002e
 int id action_mode_bar_stub 0x7f09002d
 int id action_mode_close_button 0x7f090020
+int id action_search 0x7f09005e
 int id activity_chooser_view_content 0x7f090021
 int id always 0x7f090014
 int id beginning 0x7f09001b
@@ -370,10 +371,10 @@ int id drawer_layout 0x7f09003f
 int id dropdown 0x7f09001a
 int id edit_query 0x7f090033
 int id end 0x7f09001c
-int id englishInterface 0x7f09005e
+int id englishInterface 0x7f09005f
 int id expand_activities_button 0x7f090022
 int id expanded_menu 0x7f090028
-int id help 0x7f090062
+int id help 0x7f090063
 int id home 0x7f090000
 int id homeAsUp 0x7f09000e
 int id icon 0x7f090026
@@ -409,12 +410,12 @@ int id search_voice_btn 0x7f09003e
 int id semanticDomain_fragment 0x7f09004d
 int id semanticDomain_spinner 0x7f09004e
 int id semanticDomain_textView 0x7f090054
-int id settings 0x7f090061
+int id settings 0x7f090062
 int id shortcut 0x7f09002a
 int id showCustom 0x7f090010
 int id showHome 0x7f090011
 int id showTitle 0x7f090012
-int id spanishInterface 0x7f09005f
+int id spanishInterface 0x7f090060
 int id split_action_bar 0x7f090004
 int id submit_area 0x7f09003c
 int id subtitle_textView 0x7f090057
@@ -436,7 +437,7 @@ int id withText 0x7f090018
 int id wordOfTheDay 0x7f09005c
 int id wordOfTheDay_word 0x7f09005d
 int id wrap_content 0x7f090009
-int id zapotecInterface 0x7f090060
+int id zapotecInterface 0x7f090061
 int integer abc_max_action_buttons 0x7f080000
 int layout abc_action_bar_title_item 0x7f030000
 int layout abc_action_bar_up_container 0x7f030001
@@ -501,6 +502,7 @@ int string englishInterface 0x7f0a0017
 int string englishInterface_eng 0x7f0a001a
 int string englishInterface_spa 0x7f0a001b
 int string englishInterface_zap 0x7f0a001c
+int string hello_world 0x7f0a0037
 int string help 0x7f0a0035
 int string navigation_drawer_close 0x7f0a0033
 int string navigation_drawer_open 0x7f0a0032
@@ -516,6 +518,7 @@ int string spanishInterface_eng 0x7f0a001d
 int string spanishInterface_spa 0x7f0a001e
 int string spanishInterface_zap 0x7f0a001f
 int string title_activity_menu 0x7f0a002a
+int string title_activity_search 0x7f0a0036
 int string title_activity_search_fragment 0x7f0a002e
 int string title_activity_search_result 0x7f0a002b
 int string title_activity_word_definition 0x7f0a002c
