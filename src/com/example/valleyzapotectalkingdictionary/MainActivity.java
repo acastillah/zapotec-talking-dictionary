@@ -2,8 +2,10 @@ package com.example.valleyzapotectalkingdictionary;
 
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.SearchView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +13,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.Toast;
 
 public class MainActivity extends ActionBarActivity implements NavigationDrawerFragment.NavigationDrawerCallbacks  {
@@ -26,8 +29,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		setContentView(R.layout.activity_main);
 		mNavigationDrawerFragment = (NavigationDrawerFragment) getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
 		mNavigationDrawerFragment.setUp(R.id.navigation_drawer, (DrawerLayout) findViewById(R.id.drawer_layout));
-		mTitle = getTitle();	
-
+		mTitle = getTitle();
 	}
 
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -38,6 +40,13 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 			getMenuInflater().inflate(R.menu.main, menu);
 			LanguageInterface.setLanguageInterfaceButtons(menu);
 			restoreActionBar();
+			
+		    MenuItem searchItem = menu.findItem(R.id.action_search);
+		    SearchView searchView = (SearchView) MenuItemCompat.getActionView(searchItem);
+		    OnClickListener searchClickListener = new SearchClickListener();
+			// Configure the search info and add any event listeners
+			searchView.setOnSearchClickListener(searchClickListener );
+			
 			return true;
 
 		}
