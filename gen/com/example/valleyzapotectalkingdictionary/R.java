@@ -1675,10 +1675,9 @@ containing a value of this type.
         public static final int dropdown=0x7f0a001a;
         public static final int edit_query=0x7f0a0033;
         public static final int end=0x7f0a001c;
-        public static final int englishInterface=0x7f0a0060;
         public static final int expand_activities_button=0x7f0a0022;
         public static final int expanded_menu=0x7f0a0028;
-        public static final int help=0x7f0a0064;
+        public static final int help=0x7f0a0061;
         public static final int home=0x7f0a0000;
         public static final int homeAsUp=0x7f0a000e;
         public static final int icon=0x7f0a0026;
@@ -1714,12 +1713,11 @@ containing a value of this type.
         public static final int semanticDomain_fragment=0x7f0a004d;
         public static final int semanticDomain_spinner=0x7f0a004e;
         public static final int semanticDomain_textView=0x7f0a0054;
-        public static final int settings=0x7f0a0063;
+        public static final int settings=0x7f0a0060;
         public static final int shortcut=0x7f0a002a;
         public static final int showCustom=0x7f0a0010;
         public static final int showHome=0x7f0a0011;
         public static final int showTitle=0x7f0a0012;
-        public static final int spanishInterface=0x7f0a0061;
         public static final int spinner=0x7f0a005f;
         public static final int split_action_bar=0x7f0a0004;
         public static final int submit_area=0x7f0a003c;
@@ -1742,7 +1740,6 @@ containing a value of this type.
         public static final int wordOfTheDay=0x7f0a005c;
         public static final int wordOfTheDay_word=0x7f0a005d;
         public static final int wrap_content=0x7f0a0009;
-        public static final int zapotecInterface=0x7f0a0062;
     }
     public static final class integer {
         /**  The maximum number of action buttons that should be permitted within

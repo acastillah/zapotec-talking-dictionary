@@ -15,7 +15,7 @@
         android:id="@+id/spinner"
     	app:showAsAction="ifRoom"
     	app:actionViewClass="android.widget.Spinner" />
-    
+    <!-- 
     <item
         android:id="@+id/englishInterface"
         android:title="@string/englishInterface"
@@ -28,6 +28,7 @@
         android:id="@+id/zapotecInterface"
         android:title="@string/zapotecInterface"
         app:showAsAction="ifRoom"/>
+        -->
     <item
         android:id="@+id/settings"
         android:title="@string/settings_eng"

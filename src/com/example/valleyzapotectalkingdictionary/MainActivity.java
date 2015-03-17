@@ -50,7 +50,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 			// Inflate the menu; this adds items to the action bar if it is present.
 			MainActivity.menu = menu;
 			getMenuInflater().inflate(R.menu.main, menu);
-			LanguageInterface.setLanguageInterfaceButtons(menu);
+			//LanguageInterface.setLanguageInterfaceButtons(menu);
 			restoreActionBar();
 			
 		    MenuItem searchItem = menu.findItem(R.id.action_search);
@@ -98,18 +98,18 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 	public boolean onOptionsItemSelected(MenuItem item) {
 		
 		switch (item.getItemId()) {
-			case R.id.englishInterface:
-				LanguageInterface.interfaceLanguage = LanguageInterface.LANGUAGE_ENGLISH;
-				//LanguageInterface.setLanguageInterfaceButtons(MainActivity.menu);
-				return true;
-			case R.id.spanishInterface:
-				LanguageInterface.interfaceLanguage = LanguageInterface.LANGUAGE_SPANISH;
-				//LanguageInterface.setLanguageInterfaceButtons(MainActivity.menu);
-				return true;
-			case R.id.zapotecInterface:
-				LanguageInterface.interfaceLanguage = LanguageInterface.LANGUAGE_ZAPOTEC;
-				//LanguageInterface.setLanguageInterfaceButtons(MainActivity.menu);
-				return true;
+//			case R.id.englishInterface:
+//				LanguageInterface.interfaceLanguage = LanguageInterface.LANGUAGE_ENGLISH;
+//				//LanguageInterface.setLanguageInterfaceButtons(MainActivity.menu);
+//				return true;
+//			case R.id.spanishInterface:
+//				LanguageInterface.interfaceLanguage = LanguageInterface.LANGUAGE_SPANISH;
+//				//LanguageInterface.setLanguageInterfaceButtons(MainActivity.menu);
+//				return true;
+//			case R.id.zapotecInterface:
+//				LanguageInterface.interfaceLanguage = LanguageInterface.LANGUAGE_ZAPOTEC;
+//				//LanguageInterface.setLanguageInterfaceButtons(MainActivity.menu);
+//				return true;
 			case R.id.settings:
 				Toast.makeText(this, "Settings.", Toast.LENGTH_SHORT).show();
 				return true;
@@ -138,7 +138,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		public static final int LANGUAGE_ZAPOTEC = 2;
 		
 		public static int interfaceLanguage = 0;
-		
+		/*
 		public static void setLanguageInterfaceButtons(Menu menu) {
 			for (int i = 0; i < menu.size(); i++)
 	            menu.getItem(i).setVisible(true);
@@ -160,6 +160,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 				menuItem.setVisible(false);
 			}
 		}
+		*/
 	}
 
 	@Override
