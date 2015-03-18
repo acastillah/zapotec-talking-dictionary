@@ -73,7 +73,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 				// Apply the adapter to the spinner
 				spinner.setAdapter(adapter);
 				
-				OnItemSelectedListener listener = new languageSpinnerItemSelectedListener();
+				OnItemSelectedListener listener = new LanguageSpinnerItemSelectedListener();
 				spinner.setOnItemSelectedListener(listener);
 			}
 			else {
