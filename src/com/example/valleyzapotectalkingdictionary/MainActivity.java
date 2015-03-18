@@ -40,6 +40,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		mNavigationDrawerFragment.setUp(R.id.navigation_drawer, (DrawerLayout) findViewById(R.id.drawer_layout));
 		//mTitle = getTitle();
 		mTitle = "Search";
+
 	}
 
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -60,10 +61,10 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 			//searchView.setIconified(false);
 			
 			
-			MenuItem spinnerItem = menu.findItem(R.id.spinner);
-			Spinner spinner = (Spinner) MenuItemCompat.getActionView(spinnerItem);
+			MenuItem language_spinnerItem = menu.findItem(R.id.language_spinner);
+			Spinner language_spinner = (Spinner) MenuItemCompat.getActionView(language_spinnerItem);
 			
-			if (spinner != null) {
+			if (language_spinner != null) {
 				Log.i("SPINNER", "Spinner is not null");
 				// Create an ArrayAdapter using the string array and a default spinner layout
 				ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
@@ -71,14 +72,55 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 				// Specify the layout to use when the list of choices appears
 				adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 				// Apply the adapter to the spinner
-				spinner.setAdapter(adapter);
+				language_spinner.setAdapter(adapter);
 				
 				OnItemSelectedListener listener = new languageSpinnerItemSelectedListener();
-				spinner.setOnItemSelectedListener(listener);
+				language_spinner.setOnItemSelectedListener(listener);
 			}
 			else {
 				Log.i("SPINNER", "Spinner is null");
 			}
+			
+			
+//			MenuItem searchDomain_spinnerItem = menu.findItem(R.id.searchDomain_spinner);
+//			Spinner searchDomain_spinner = (Spinner) MenuItemCompat.getActionView(searchDomain_spinnerItem);
+//			
+//			if (searchDomain_spinner != null) {
+//				Log.i("SPINNER", "Spinner is not null");
+//				// Create an ArrayAdapter using the string array and a default spinner layout
+//				ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+//				        R.array.searchDomain_array, android.R.layout.simple_spinner_item);
+//				// Specify the layout to use when the list of choices appears
+//				adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//				// Apply the adapter to the spinner
+//				searchDomain_spinner.setAdapter(adapter);
+//				
+//				OnItemSelectedListener listener = new languageSpinnerItemSelectedListener();
+//				searchDomain_spinner.setOnItemSelectedListener(listener);
+//			}
+//			else {
+//				Log.i("SPINNER", "Spinner is null");
+//			}
+//			
+//			MenuItem semanticDomain_spinnerItem = menu.findItem(R.id.semanticDomain_spinner);
+//			Spinner semanticDomain_spinner = (Spinner) MenuItemCompat.getActionView(semanticDomain_spinnerItem);
+//			
+//			if (semanticDomain_spinner != null) {
+//				Log.i("SPINNER", "Spinner is not null");
+//				// Create an ArrayAdapter using the string array and a default spinner layout
+//				ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+//				        R.array.semanticDomain_array, android.R.layout.simple_spinner_item);
+//				// Specify the layout to use when the list of choices appears
+//				adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//				// Apply the adapter to the spinner
+//				semanticDomain_spinner.setAdapter(adapter);
+//				
+//				OnItemSelectedListener listener = new languageSpinnerItemSelectedListener();
+//				semanticDomain_spinner.setOnItemSelectedListener(listener);
+//			}
+//			else {
+//				Log.i("SPINNER", "Spinner is null");
+//			}
 			
 			
 			return true;

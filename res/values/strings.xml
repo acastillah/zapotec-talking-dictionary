@@ -65,5 +65,17 @@ All rights reserved. Do not distribute or reproduce without permission.</string>
         <item>ESP</item>
         <item>ZAP</item>
     </string-array>
+    
+    <string-array name="searchDomain_array">
+        <item>English headwords</item>
+        <item>Spanish headwords</item>
+        <item>Zapotec headwords</item>
+    </string-array>
+    
+    <string-array name="semanticDomain_array">
+        <item>Animals</item>
+        <item>Food</item>
+        <item>Colors</item>
+    </string-array>
 
 </resources>

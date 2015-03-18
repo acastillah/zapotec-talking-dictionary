@@ -18,6 +18,8 @@ public final class R {
     }
     public static final class array {
         public static final int languages_array=0x7f0d0000;
+        public static final int searchDomain_array=0x7f0d0001;
+        public static final int semanticDomain_array=0x7f0d0002;
     }
     public static final class attr {
         /**  Custom divider drawable to use for elements in the action bar. 
@@ -1685,6 +1687,7 @@ containing a value of this type.
         public static final int image=0x7f0a0023;
         public static final int imageButton1=0x7f0a0045;
         public static final int imageButton2=0x7f0a0047;
+        public static final int language_spinner=0x7f0a005f;
         public static final int listMode=0x7f0a000a;
         public static final int list_item=0x7f0a0025;
         public static final int middle=0x7f0a001d;
@@ -1718,7 +1721,6 @@ containing a value of this type.
         public static final int showCustom=0x7f0a0010;
         public static final int showHome=0x7f0a0011;
         public static final int showTitle=0x7f0a0012;
-        public static final int spinner=0x7f0a005f;
         public static final int split_action_bar=0x7f0a0004;
         public static final int submit_area=0x7f0a003c;
         public static final int subtitle_textView=0x7f0a0057;

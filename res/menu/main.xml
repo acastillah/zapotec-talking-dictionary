@@ -11,9 +11,9 @@
           app:actionViewClass="android.support.v7.widget.SearchView" /> 
     
     <item 
-        android:title="title"
-        android:id="@+id/spinner"
-    	app:showAsAction="ifRoom"
+        android:title="Language"
+        android:id="@+id/language_spinner"
+    	app:showAsAction="always"
     	app:actionViewClass="android.widget.Spinner" />
     <!-- 
     <item
@@ -38,5 +38,17 @@
         android:id="@+id/help"
         android:title="@string/help"
         app:showAsAction="never"/>
+    <!-- 
+    <item 
+        android:title="Search Domain"
+        android:id="@+id/searchDomain_spinner"
+    	app:showAsAction="always"
+    	app:actionViewClass="android.widget.Spinner" />
+    
+    <item 
+        android:title="Semantic Domain"
+        android:id="@+id/semanticDomain_spinner"
+    	app:showAsAction="always"
+    	app:actionViewClass="android.widget.Spinner" /> -->
     
 </menu>
