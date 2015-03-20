@@ -1,4 +1,4 @@
-package com.example.androidaudiocapture;
+package com.example.valleyzapotectalkingdictionary;
 
 import java.io.File;
 import java.io.IOException;
