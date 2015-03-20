@@ -1,5 +1,6 @@
-package com.example.valleyzapotectalkingdictionary;
+package com.example.androidaudiocapture;
 
+import java.io.File;
 import java.io.IOException;
 
 import android.content.Context;
@@ -32,12 +33,17 @@ public class AudioCaptureFragment extends Fragment {
     
     private FileNameEditText mFileNameEditText = null;
     private SaveButton	mSaveButton = null;
+    
+    private boolean mRecorded = false;
+    
+    private static final String mFileExtension = ".3gp"; // WHAT FILE TYPE?
 	
     public AudioCaptureFragment() {
     	// WHERE DO WE WANT THESE TO BE SAVED? INTERNALLY OR EXTERNALLY?
     	
         mFileName = Environment.getExternalStorageDirectory().getAbsolutePath();
-        mFileName += "/valleyzapotectalkingdictionary_audiofile.3gp";
+        mFileName += "/valleyzapotectalkingdictionary_audiofile_temp";
+        mFileName += mFileExtension;
     }
     
     @Override
@@ -113,16 +119,31 @@ public class AudioCaptureFragment extends Fragment {
 	private void onRecord(boolean start) {
         if (start) {
             startRecording();
-        } else {
+            mRecorded = false;
+            mSaveButton.setEnabled(false);
+            mPlayButton.setEnabled(false);
+        } 
+        else {
             stopRecording();
+            mRecorded = true;
+            mPlayButton.setEnabled(true);
+            
+            if (!mFileNameEditText.getText().toString().equals(""))
+            	mSaveButton.setEnabled(true); 
         }
     }
 
     private void onPlay(boolean start) {
         if (start) {
             startPlaying();
+            mRecordButton.setEnabled(false);
+            mSaveButton.setEnabled(false);
         } else {
             stopPlaying();
+            mRecordButton.setEnabled(true);
+            
+            if (!mFileNameEditText.getText().toString().equals(""))
+            	mSaveButton.setEnabled(true);
         }
     }
 
@@ -224,12 +245,12 @@ public class AudioCaptureFragment extends Fragment {
 			public void onTextChanged(CharSequence s, int start, int before,
 					int count) {
 				
-				// user must enter file name before saving
-				if (s.length() == 0) {
-					mSaveButton.setEnabled(false); 
+				// user must enter file name before saving & there must be audio recorded to save
+				if (s.length() != 0 && mRecorded == true) {
+					mSaveButton.setEnabled(true); 
             	}
             	else {
-            		mSaveButton.setEnabled(true); 
+            		mSaveButton.setEnabled(false); 
             	}
 			}
 			
@@ -246,7 +267,22 @@ public class AudioCaptureFragment extends Fragment {
 
         OnClickListener clicker = new OnClickListener() {
             public void onClick(View v) {
+            	// disable file name field and save button
+            	// so that user cannot change anything while we are saving the audio file
+            	mFileNameEditText.setEnabled(false);
+                mSaveButton.setEnabled(false);
+            	
             	String userDefinedFileName = mFileNameEditText.getText().toString();
+            	File defaultAudioFile = new File(mFileName);
+            	
+            	String newFileName = Environment.getExternalStorageDirectory().getAbsolutePath();
+                newFileName += "/valleyzapotectalkingdictionary_audiofile_temp";
+                newFileName += mFileExtension;
+                
+                File newAudioFile = new File(newFileName);
+                defaultAudioFile.renameTo(newAudioFile);
+            	
+            	// close view
             }
         };
 
