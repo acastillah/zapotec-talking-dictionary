@@ -2,7 +2,7 @@ package com.example.valleyzapotectalkingdictionary;
 
 import java.io.File;
 import java.io.IOException;
-
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.media.MediaPlayer;
 import android.media.MediaRecorder;
@@ -22,6 +22,9 @@ import android.widget.LinearLayout;
 
 public class AudioCaptureFragment extends Fragment {
 
+    private static boolean mExternalStorageAvailable = false;
+    private static boolean mExternalStorageWriteable = false;
+	
     private static final String LOG_TAG = "AudioRecordTest";
     private static String mFileName = null;
 
@@ -37,16 +40,18 @@ public class AudioCaptureFragment extends Fragment {
     private boolean mRecorded = false;
     
     private static final String mFileExtension = ".3gp"; // WHAT FILE TYPE?
+    private static final String dictionaryDirectoryName = "Zapotec Talking Dictionary";
+    private static final String audioDirectoryName = "audio";
+    private static String audioDirectoryFullPath = null;
 	
     public AudioCaptureFragment() {
     	// WHERE DO WE WANT THESE TO BE SAVED? INTERNALLY OR EXTERNALLY?
     	
-        mFileName = Environment.getExternalStorageDirectory().getAbsolutePath();
-        mFileName += "/valleyzapotectalkingdictionary_audiofile_temp";
-        mFileName += mFileExtension;
+        
     }
     
-    @Override
+    @SuppressLint("NewApi")
+	@Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
 
@@ -92,6 +97,67 @@ public class AudioCaptureFragment extends Fragment {
                     0));
         
         activity.setContentView(fragmentLayout);
+        
+        
+        
+        updateExternalStorageState();
+
+        Log.i("DIR", "Setting audio dir path");
+        
+       // if (Environment.getExternalStorageState() == true) {
+        	audioDirectoryFullPath = Environment.getExternalStorageDirectory().getAbsolutePath();
+        	Log.i("DIR", "audio dir full path=" + audioDirectoryFullPath);
+        	
+        	File appDir = new File(audioDirectoryFullPath, dictionaryDirectoryName);
+        	if (!appDir.exists()) {
+        		boolean success = appDir.mkdir();
+        		Log.i("DIR", "appDir created=" + success);
+        	}
+        	else {
+        		Log.i("DIR", "appDir exists");
+        	}
+        	
+        	if (appDir.exists() && appDir.isDirectory()) {
+        		Log.i("DIR", "appDir exists & is a directory");
+        		
+        		if (!appDir.canWrite())
+        			appDir.setWritable(true);
+        		
+        		audioDirectoryFullPath += "/" + dictionaryDirectoryName;
+        		Log.i("DIR", "audio dir full path=" + audioDirectoryFullPath);
+        		        		
+        		File audioDir = new File(audioDirectoryFullPath, audioDirectoryName);
+        		if (!audioDir.exists()) {
+        			audioDir.mkdir();
+        		}
+        		
+        		if (audioDir.isDirectory()) {
+        			if (!audioDir.canWrite())
+        				audioDir.setWritable(true);
+        			
+        			audioDirectoryFullPath += "/" + audioDirectoryName;
+        			Log.i("DIR", "audio dir full path=" + audioDirectoryFullPath);
+        		}
+        		
+        	}
+        	else {
+        		Log.i("DIR", "app directory is not a directory");
+        	}
+        	
+//        }
+//        else {
+//        	mRecordButton.setEnabled(false);
+//        }
+        	
+        	
+        	
+        	
+        	mFileName = audioDirectoryFullPath;
+            mFileName += "/temp";
+            mFileName += mFileExtension;
+        	
+        	
+        	
     }
 
     @Override
@@ -116,6 +182,19 @@ public class AudioCaptureFragment extends Fragment {
 		return view;
 	}
 	
+    void updateExternalStorageState() {
+        String state = Environment.getExternalStorageState();
+        if (Environment.MEDIA_MOUNTED.equals(state)) {
+            mExternalStorageAvailable = mExternalStorageWriteable = true;
+        } else if (Environment.MEDIA_MOUNTED_READ_ONLY.equals(state)) {
+            mExternalStorageAvailable = true;
+            mExternalStorageWriteable = false;
+        } else {
+            mExternalStorageAvailable = mExternalStorageWriteable = false;
+        }
+//        handleExternalStorageState(mExternalStorageAvailable, mExternalStorageWriteable);
+    }
+	
 	private void onRecord(boolean start) {
         if (start) {
             startRecording();
@@ -138,9 +217,11 @@ public class AudioCaptureFragment extends Fragment {
             startPlaying();
             mRecordButton.setEnabled(false);
             mSaveButton.setEnabled(false);
+            mFileNameEditText.setEnabled(false);
         } else {
             stopPlaying();
             mRecordButton.setEnabled(true);
+            mFileNameEditText.setEnabled(true);
             
             if (!mFileNameEditText.getText().toString().equals(""))
             	mSaveButton.setEnabled(true);
@@ -266,22 +347,62 @@ public class AudioCaptureFragment extends Fragment {
     class SaveButton extends Button {
 
         OnClickListener clicker = new OnClickListener() {
-            public void onClick(View v) {
+            @SuppressLint("NewApi")
+			public void onClick(View v) {
             	// disable file name field and save button
             	// so that user cannot change anything while we are saving the audio file
+            	mRecordButton.setEnabled(false);
+            	mPlayButton.setEnabled(false);
             	mFileNameEditText.setEnabled(false);
                 mSaveButton.setEnabled(false);
             	
             	String userDefinedFileName = mFileNameEditText.getText().toString();
             	File defaultAudioFile = new File(mFileName);
             	
-            	String newFileName = Environment.getExternalStorageDirectory().getAbsolutePath();
-                newFileName += "/valleyzapotectalkingdictionary_audiofile_temp";
-                newFileName += mFileExtension;
-                
-                File newAudioFile = new File(newFileName);
-                defaultAudioFile.renameTo(newAudioFile);
+            	if (defaultAudioFile.exists()) {
             	
+	            	Log.i("SAVE AUDIO", 
+	            			"default file path=" + mFileName +
+	            			" canRead()=" + defaultAudioFile.canRead() +
+	            			", canWrite()=" + defaultAudioFile.canWrite());
+	            	
+	            	String newFileName = audioDirectoryFullPath;
+	                newFileName += "/" + userDefinedFileName;
+	                newFileName += mFileExtension;
+	                
+	                File newAudioFile = new File(newFileName);
+	                try {
+						newAudioFile.createNewFile();
+
+		                Log.i("SAVE AUDIO", 
+		            			"new file path=" + newFileName +
+		            			" canRead()=" + newAudioFile.canRead() +
+		            			", canWrite()=" + newAudioFile.canWrite());
+		                
+		                boolean renameSuccessful = defaultAudioFile.renameTo(newAudioFile);
+		            	Log.i("SAVE AUDIO", "renameSuccessful=" + renameSuccessful);
+		            	
+		            	if (newAudioFile.exists()) {
+		            		Log.i("SAVE AUDIO", "New file exists");
+		            		Log.i("SAVE AUDIO", "New file name=" + newAudioFile.getAbsolutePath());
+		            	}
+		            	else {
+		            		Log.i("SAVE AUDIO", "New does not file exist");
+		            	}
+		            	
+		            	if (defaultAudioFile.exists()) {
+		            		Log.i("SAVE AUDIO", "Default file exists");
+		            		defaultAudioFile.delete();
+		            	}
+		            	else {
+		            		Log.i("SAVE AUDIO", "Default does not file exist");
+		            	}
+		            	
+					} catch (IOException e) {
+						Log.e("SAVE AUDIO", "Could not create new audio file");
+					}
+	                newAudioFile.setWritable(true);
+            	}
             	// close view
             }
         };
