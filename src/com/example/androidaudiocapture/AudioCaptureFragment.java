@@ -3,6 +3,8 @@ package com.example.androidaudiocapture;
 import java.io.File;
 import java.io.IOException;
 
+import com.example.valleyzapotectalkingdictionary.R;
+
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.media.MediaPlayer;
