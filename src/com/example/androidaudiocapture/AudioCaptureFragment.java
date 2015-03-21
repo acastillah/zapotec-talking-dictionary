@@ -1,7 +1,8 @@
-package com.example.valleyzapotectalkingdictionary;
+package com.example.androidaudiocapture;
 
 import java.io.File;
 import java.io.IOException;
+
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.media.MediaPlayer;
@@ -19,6 +20,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 public class AudioCaptureFragment extends Fragment {
 
@@ -53,7 +55,7 @@ public class AudioCaptureFragment extends Fragment {
     @SuppressLint("NewApi")
 	@Override
     public void onCreate(Bundle icicle) {
-        super.onCreate(icicle);
+    	super.onCreate(icicle);
 
         FragmentActivity activity = getActivity();
         
@@ -155,6 +157,7 @@ public class AudioCaptureFragment extends Fragment {
         	mFileName = audioDirectoryFullPath;
             mFileName += "/temp";
             mFileName += mFileExtension;
+        	
         	
         	
         	
@@ -303,6 +306,7 @@ public class AudioCaptureFragment extends Fragment {
                 mStartPlaying = !mStartPlaying;
             }
         };
+        
 
         public PlayButton(Context ctx) {
             super(ctx);
@@ -313,8 +317,8 @@ public class AudioCaptureFragment extends Fragment {
     
     class FileNameEditText extends EditText {
 
-		TextWatcher watcher = new TextWatcher() {
-
+    	TextWatcher watcher = new TextWatcher() {
+    		
 			@Override
 			public void afterTextChanged(Editable arg0) {}
 
@@ -347,6 +351,7 @@ public class AudioCaptureFragment extends Fragment {
     class SaveButton extends Button {
 
         OnClickListener clicker = new OnClickListener() {
+        	
             @SuppressLint("NewApi")
 			public void onClick(View v) {
             	// disable file name field and save button
@@ -406,6 +411,7 @@ public class AudioCaptureFragment extends Fragment {
             	// close view
             }
         };
+        
 
         public SaveButton(Context ctx) {
             super(ctx);
