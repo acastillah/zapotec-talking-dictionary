@@ -51,6 +51,8 @@
     <string name="title_main_section">Search</string>
     <string name="title_section2">Update</string>
     <string name="title_section3">About</string>
+    <string name="audio_section">Record Audio</string>
+    <string name="photo_section">Take Photo</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="about">All content copyright © the recorded Zapotec communities. (2013)

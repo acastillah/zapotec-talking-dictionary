@@ -11,6 +11,7 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -95,8 +96,11 @@ public class NavigationDrawerFragment extends Fragment {
 		});
 		mDrawerListView.setAdapter(new ArrayAdapter<String>(getActionBar().getThemedContext(),
 				android.R.layout.simple_list_item_1, android.R.id.text1, new String[] {
-						getString(R.string.title_main_section), getString(R.string.title_section2),
-						getString(R.string.title_section3), }));
+						getString(R.string.title_main_section), 
+						getString(R.string.title_section2),
+						getString(R.string.title_section3),
+						getString(R.string.photo_section),
+						getString(R.string.audio_section)}));
 		mDrawerListView.setItemChecked(mCurrentSelectedPosition, true);
 		return mDrawerListView;
 	}
@@ -194,16 +198,21 @@ public class NavigationDrawerFragment extends Fragment {
 	}
 
 	private void selectItem(int position) {
+		Log.i("NAV", "Nav item selected at position " + position);
 		mCurrentSelectedPosition = position;
 		if (mDrawerListView != null) {
+			Log.i("NAV", "About to setItemChecked for position " + position);
 			mDrawerListView.setItemChecked(position, true);
 		}
 		if (mDrawerLayout != null) {
+			Log.i("NAV", "About to closeDrawer for position " + position);
 			mDrawerLayout.closeDrawer(mFragmentContainerView);
 		}
 		if (mCallbacks != null) {
+			Log.i("NAV", "About to onNavigationDrawerItemSelected for position " + position);
 			mCallbacks.onNavigationDrawerItemSelected(position);
 		}
+		Log.i("NAV", "selectItem function returning for position " + position);
 	}
 
 	@Override

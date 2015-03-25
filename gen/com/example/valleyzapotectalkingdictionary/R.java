@@ -1866,7 +1866,7 @@ containing a value of this type.
         /**  Content description for the Toolbar icon used to collapse an expanded action mode. [CHAR LIMIT=NONE] 
          */
         public static final int abc_toolbar_collapse_description=0x7f0a0004;
-        public static final int about=0x7f0a0034;
+        public static final int about=0x7f0a0036;
         public static final int action_settings=0x7f0a002d;
         public static final int app_name=0x7f0a0010;
         public static final int app_name_eng=0x7f0a0011;
@@ -1874,16 +1874,18 @@ containing a value of this type.
         /**  Translate 
          */
         public static final int app_name_zap=0x7f0a0013;
+        public static final int audio_section=0x7f0a0032;
         /**  Translate 
          */
         public static final int englishInterface=0x7f0a0017;
         public static final int englishInterface_eng=0x7f0a001a;
         public static final int englishInterface_spa=0x7f0a001b;
         public static final int englishInterface_zap=0x7f0a001c;
-        public static final int hello_world=0x7f0a0037;
-        public static final int help=0x7f0a0035;
-        public static final int navigation_drawer_close=0x7f0a0033;
-        public static final int navigation_drawer_open=0x7f0a0032;
+        public static final int hello_world=0x7f0a0039;
+        public static final int help=0x7f0a0037;
+        public static final int navigation_drawer_close=0x7f0a0035;
+        public static final int navigation_drawer_open=0x7f0a0034;
+        public static final int photo_section=0x7f0a0033;
         /**  Main Activity 
          */
         public static final int search_eng=0x7f0a0024;
@@ -1907,7 +1909,7 @@ containing a value of this type.
         /**  Translate 
          */
         public static final int title_activity_menu=0x7f0a002a;
-        public static final int title_activity_search=0x7f0a0036;
+        public static final int title_activity_search=0x7f0a0038;
         public static final int title_activity_search_fragment=0x7f0a002e;
         public static final int title_activity_search_result=0x7f0a002b;
         public static final int title_activity_word_definition=0x7f0a002c;

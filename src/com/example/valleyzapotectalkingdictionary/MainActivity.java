@@ -176,11 +176,20 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 			case 2:
 				fragment = new UpdateFragment();
 				mTitle = getString(R.string.title_section2);
-
 				break;
 			case 3:
 				fragment = new AboutFragment();
 				mTitle = getString(R.string.title_section3);
+				break;
+			case 4:
+				Log.i("NAV", "ImageCaptureFragment selected");
+				fragment = new ImageCaptureFragment();
+				mTitle = getString(R.string.photo_section);
+				break;
+			case 5:
+				Log.i("NAV", "AudioCaptureFragment selected");
+				fragment = new AudioCaptureFragment();
+				mTitle = getString(R.string.audio_section);
 				break;
 		}
 		fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();				

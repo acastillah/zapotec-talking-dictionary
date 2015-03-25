@@ -54,40 +54,9 @@ public class ImageCaptureFragment extends Fragment {
 	public void onCreate(Bundle icicle) {
     	super.onCreate(icicle);
     	
-    	FragmentActivity activity = getActivity();
-        
-        LinearLayout fragmentLayout = new LinearLayout(activity);
-        fragmentLayout.setOrientation(LinearLayout.VERTICAL);
-        
-        mImageCaptureButton = new ImageCaptureButton(activity);
-        fragmentLayout.addView(mImageCaptureButton,
-                new LinearLayout.LayoutParams(
-                    ViewGroup.LayoutParams.WRAP_CONTENT,
-                    ViewGroup.LayoutParams.WRAP_CONTENT,
-                    0));
-        
-        mImageView = new ImageView(activity);
-        fragmentLayout.addView(mImageView,
-                new LinearLayout.LayoutParams(
-                    ViewGroup.LayoutParams.WRAP_CONTENT,
-                    ViewGroup.LayoutParams.WRAP_CONTENT,
-                    0));
-        
-        mFileNameEditText = new FileNameEditText(activity);
-        fragmentLayout.addView(mFileNameEditText,
-                new LinearLayout.LayoutParams(
-                    ViewGroup.LayoutParams.MATCH_PARENT,
-                    ViewGroup.LayoutParams.WRAP_CONTENT,
-                    0));
-        
-        mSaveButton = new SaveButton(activity);
-        fragmentLayout.addView(mSaveButton,
-                new LinearLayout.LayoutParams(
-                    ViewGroup.LayoutParams.WRAP_CONTENT,
-                    ViewGroup.LayoutParams.WRAP_CONTENT,
-                    0));
-        
-        activity.setContentView(fragmentLayout);
+    	Log.i("IMAGE", "ImageCaptureFragment entered onCreate method");
+    	
+    	
         
         Log.i("DIR", "Setting audio dir path");
         
@@ -149,7 +118,41 @@ public class ImageCaptureFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 		View view = inflater.inflate(R.layout.fragment_image_capture, container, false);
-		return view;
+		
+		FragmentActivity activity = getActivity();
+        
+        LinearLayout fragmentLayout = new LinearLayout(activity);
+        fragmentLayout.setOrientation(LinearLayout.VERTICAL);
+        
+        mImageCaptureButton = new ImageCaptureButton(activity);
+        fragmentLayout.addView(mImageCaptureButton,
+                new LinearLayout.LayoutParams(
+                    ViewGroup.LayoutParams.WRAP_CONTENT,
+                    ViewGroup.LayoutParams.WRAP_CONTENT,
+                    0));
+        
+        mImageView = new ImageView(activity);
+        fragmentLayout.addView(mImageView,
+                new LinearLayout.LayoutParams(
+                    ViewGroup.LayoutParams.WRAP_CONTENT,
+                    ViewGroup.LayoutParams.WRAP_CONTENT,
+                    0));
+        
+        mFileNameEditText = new FileNameEditText(activity);
+        fragmentLayout.addView(mFileNameEditText,
+                new LinearLayout.LayoutParams(
+                    ViewGroup.LayoutParams.MATCH_PARENT,
+                    ViewGroup.LayoutParams.WRAP_CONTENT,
+                    0));
+        
+        mSaveButton = new SaveButton(activity);
+        fragmentLayout.addView(mSaveButton,
+                new LinearLayout.LayoutParams(
+                    ViewGroup.LayoutParams.WRAP_CONTENT,
+                    ViewGroup.LayoutParams.WRAP_CONTENT,
+                    0));
+        
+        return fragmentLayout;
 	}
 	
 	@Override
@@ -263,6 +266,7 @@ public class ImageCaptureFragment extends Fragment {
 			public void onClick(View arg0) {
 				mImageCaptureButton.setEnabled(false);
 				mFileNameEditText.setEnabled(false);
+				mSaveButton.setEnabled(false);
 			}
 			
 		};
