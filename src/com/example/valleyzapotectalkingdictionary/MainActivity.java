@@ -1,7 +1,11 @@
 package com.example.valleyzapotectalkingdictionary;
 
-import java.io.FileReader;
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.Iterator;
 
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
@@ -22,13 +26,13 @@ import android.view.View.OnClickListener;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
-import android.widget.SpinnerAdapter;
 import android.widget.Toast;
 
 public class MainActivity extends ActionBarActivity implements NavigationDrawerFragment.NavigationDrawerCallbacks  {
 
 	private NavigationDrawerFragment mNavigationDrawerFragment;
 
+	@SuppressWarnings("unused")
 	private static Menu menu = null;
 	private CharSequence mTitle;
 	
@@ -39,6 +43,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		mNavigationDrawerFragment = (NavigationDrawerFragment) getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
 		mNavigationDrawerFragment.setUp(R.id.navigation_drawer, (DrawerLayout) findViewById(R.id.drawer_layout));
 		//mTitle = getTitle();
+		JSONReadFromFile();
 		mTitle = "Search";
 	}
 
@@ -195,24 +200,32 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();				
 	}
 	
+	@SuppressWarnings("unused")
 	public void JSONReadFromFile() {
 
-		JSONParser parser = new JSONParser();
-
 		try {
-
-			Object obj = parser.parse(new FileReader(
-					"/Users/Adri/Desktop/teotitlan_export.json"));
-
-			JSONObject jsonObject = (JSONObject) obj;
-
-			String id = (String) jsonObject.get("Object ID");
-			String word = (String) jsonObject.get("Word");
-			String pronunciation = (String) jsonObject.get("Pronunciation");
-
-			Log.i("Id: ", id);
-			Log.i("Word: ", word);
-			Log.i("Pronunciation:", pronunciation);
+			String str="";
+			StringBuffer buf = new StringBuffer();			
+			InputStream is = this.getResources().openRawResource(R.raw.teotitlan_export);
+			BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+			if (is!=null) {							
+				while ((str = reader.readLine()) != null) {	
+					buf.append(str + "\n" );
+				}				
+			}		
+			is.close();	
+			
+			JSONParser parser=new JSONParser();
+            JSONArray jsonArray = (JSONArray) parser.parse(buf.toString());
+ 	        	
+			Iterator<?> i = jsonArray.iterator();
+        			 
+        	while (i.hasNext()) {
+        		JSONObject innerObj = (JSONObject) i.next();		                
+		            String id = (String) innerObj.get("oid");
+		            String word = (String) innerObj.get("lang");
+		            String pronunciation = (String) innerObj.get("ipa");
+        	}        
 
 		} catch (Exception e) {
 			Log.i("Parsing failed", "FAIL");
