@@ -67,5 +67,7 @@ All rights reserved. Do not distribute or reproduce without permission.</string>
         <item>ESP</item>
         <item>ZAP</item>
     </string-array>
+    
+    <string name="preview_image">Image Preview</string>
 
 </resources>

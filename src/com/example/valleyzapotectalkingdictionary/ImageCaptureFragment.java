@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
@@ -26,6 +27,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 @SuppressLint("NewApi")
 public class ImageCaptureFragment extends Fragment {
@@ -36,6 +38,7 @@ public class ImageCaptureFragment extends Fragment {
 	private static String mFileName = null;
 	
 	private ImageCaptureButton mImageCaptureButton = null;
+	private TextView mPreviewText = null;
 	private ImageView mImageView = null;
 	private FileNameEditText mFileNameEditText = null;
 	private SaveButton mSaveButton = null;
@@ -132,11 +135,12 @@ public class ImageCaptureFragment extends Fragment {
                     0));
         
         mImageView = new ImageView(activity);
-        fragmentLayout.addView(mImageView,
-                new LinearLayout.LayoutParams(
-                    ViewGroup.LayoutParams.WRAP_CONTENT,
-                    ViewGroup.LayoutParams.WRAP_CONTENT,
-                    0));
+        fragmentLayout.addView(mImageView);
+        
+        mPreviewText = new TextView(activity);
+        mPreviewText.setText(R.string.preview_image);
+        mPreviewText.setVisibility(View.INVISIBLE);
+        fragmentLayout.addView(mPreviewText);
         
         mFileNameEditText = new FileNameEditText(activity);
         fragmentLayout.addView(mFileNameEditText,
@@ -238,6 +242,7 @@ public class ImageCaptureFragment extends Fragment {
 				
 				
 				mImageCaptured = true;
+				mPreviewText.setVisibility(View.VISIBLE);
 				
 				// user must enter file name before saving & there must be picture captured to save
 				if (!mFileNameEditText.getText().toString().equals("")) {

@@ -510,6 +510,7 @@ int string help 0x7f0b0037
 int string navigation_drawer_close 0x7f0b0035
 int string navigation_drawer_open 0x7f0b0034
 int string photo_section 0x7f0b0033
+int string preview_image 0x7f0b003a
 int string search_eng 0x7f0b0024
 int string search_spa 0x7f0b0025
 int string search_zap 0x7f0b0026

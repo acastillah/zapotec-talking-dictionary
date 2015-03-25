@@ -1889,6 +1889,7 @@ containing a value of this type.
         public static final int navigation_drawer_close=0x7f0b0035;
         public static final int navigation_drawer_open=0x7f0b0034;
         public static final int photo_section=0x7f0b0033;
+        public static final int preview_image=0x7f0b003a;
         /**  Main Activity 
          */
         public static final int search_eng=0x7f0b0024;
