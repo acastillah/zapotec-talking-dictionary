@@ -16,7 +16,9 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v4.widget.DrawerLayout;
+import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -173,6 +175,9 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		FragmentManager fragmentManager = getSupportFragmentManager();
 		Fragment fragment = null;
 		
+		SharedPreferences preferences = getSharedPreferences(Preferences.APP_SETTINGS, Activity.MODE_PRIVATE);
+		
+		// Options all users see
 		switch(position+1){
 			case 1:
 				fragment = new SearchBarFragment();	
@@ -186,17 +191,33 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 				fragment = new AboutFragment();
 				mTitle = getString(R.string.title_section3);
 				break;
-			case 4:
+		}
+		
+		// Options only linguists see
+		if (preferences.getBoolean(Preferences.IS_LINGUIST, false) == true) {
+			if (position+1 == 4) {
 				Log.i("NAV", "ImageCaptureFragment selected");
 				fragment = new ImageCaptureFragment();
 				mTitle = getString(R.string.photo_section);
-				break;
-			case 5:
+			}
+			else if (position+1 == 5) {
 				Log.i("NAV", "AudioCaptureFragment selected");
 				fragment = new AudioCaptureFragment();
 				mTitle = getString(R.string.audio_section);
-				break;
+			}
 		}
+		
+		// Options only non-logged in users see
+		else {
+			Log.i("NAV", "User is not logged in");
+			if (position+1 == 4) {
+				Log.i("NAV", "PasswordFragment selected");
+				fragment = new PasswordFragment(); // something is wrong with the fragment?
+				mTitle = getString(R.string.password_section);
+			}
+		}
+				
+		
 		fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();				
 	}
 	

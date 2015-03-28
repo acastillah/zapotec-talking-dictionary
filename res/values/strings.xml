@@ -51,6 +51,7 @@
     <string name="title_main_section">Search</string>
     <string name="title_section2">Update</string>
     <string name="title_section3">About</string>
+    <string name="password_section">Log In</string>
     <string name="audio_section">Record Audio</string>
     <string name="photo_section">Take Photo</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -72,6 +73,7 @@ All rights reserved. Do not distribute or reproduce without permission.</string>
     
     <string name="passwordExplanation">This page is for linguists documenting the Valley Zapoec language blah blah blah...</string>
 	<string name="password">Password: </string>
+	<string name="passwordIncorrect">Incorrect password</string>
 	<string name="submit">Submit</string>
     
 </resources>
