@@ -52,16 +52,12 @@ public class AudioCaptureFragment extends Fragment {
 	@Override
     public void onCreate(Bundle icicle) {
     	super.onCreate(icicle);
-
-        
-        
-        
         
         updateExternalStorageState();
 
         Log.i("DIR", "Setting audio dir path");
         
-       // if (Environment.getExternalStorageState() == true) {
+//        if (Environment.getExternalStorageState() == true) {
         	audioDirectoryFullPath = Environment.getExternalStorageDirectory().getAbsolutePath();
         	Log.i("DIR", "audio dir full path=" + audioDirectoryFullPath);
         	
@@ -108,13 +104,10 @@ public class AudioCaptureFragment extends Fragment {
         	
         	
         	
-        	
-        	mFileName = audioDirectoryFullPath;
-            mFileName += "/temp";
-            mFileName += mFileExtension;
-        	
-        	
-        	
+        // set the name (full path) to the temporary file
+    	mFileName = audioDirectoryFullPath;
+        mFileName += "/temp";
+        mFileName += mFileExtension;
         	
     }
 
@@ -138,7 +131,7 @@ public class AudioCaptureFragment extends Fragment {
         // Inflate the layout for this fragment
 		View view = inflater.inflate(R.layout.fragment_audio_capture, container, false);
 		
-FragmentActivity activity = getActivity();
+		FragmentActivity activity = getActivity();
         
         LinearLayout fragmentLayout = new LinearLayout(activity);
         fragmentLayout.setOrientation(LinearLayout.VERTICAL);

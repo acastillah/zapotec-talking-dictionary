@@ -10,6 +10,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -50,6 +51,8 @@ public class ImageCaptureFragment extends Fragment {
     private static final String dictionaryDirectoryName = "Zapotec Talking Dictionary";
     private static final String photoDirectoryName = "photos";
     private static String photoDirectoryFullPath = null;
+    
+    private static String mTempFilePath = null;
 	
 	public ImageCaptureFragment() {}
 	
@@ -112,7 +115,7 @@ public class ImageCaptureFragment extends Fragment {
          	
          	
          	mFileName = photoDirectoryFullPath;
-             mFileName += "/temp";
+             mFileName += "/blah";
              mFileName += mFileExtension;
 	}
 	
@@ -162,42 +165,68 @@ public class ImageCaptureFragment extends Fragment {
 	@Override
 	public void onActivityResult(int requestCode, int resultCode, Intent data) {
 	    if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == Activity.RESULT_OK) {
-	        Bundle extras = data.getExtras();
-	        Bitmap imageBitmap = (Bitmap) extras.get("data");
-	        mImageView.setImageBitmap(imageBitmap);
+//	        Bundle extras = data.getExtras();
+//	        Bitmap imageBitmap = (Bitmap) extras.get("data");
+//	        mImageView.setImageBitmap(imageBitmap);
+	    	
+//	    	File image = new File(mFileName);
+	    	
+	    	File image = new File(mTempFilePath);
+	    			
+	    			
+	    	Log.i("FILE", "File path=" + mTempFilePath);
+
+	    	BitmapFactory.Options bmOptions = new BitmapFactory.Options();
+	    	Bitmap bitmap = BitmapFactory.decodeFile(image.getAbsolutePath(),bmOptions);
+	    	
+//	    	bitmap = Bitmap.createScaledBitmap(bitmap,parent.getWidth(),parent.getHeight(),true);
+
+	    	mImageView.setImageBitmap(bitmap);
+	    	
+	    	
+	    	
+	    	
+	    	boolean renameSuccessful = image.renameTo(new File(photoDirectoryFullPath + "/PHOTO.jpg"));
 	    }
 	}
 	
 	private void dispatchTakePictureIntent() {
-	    Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-	    if (takePictureIntent.resolveActivity(getActivity().getPackageManager()) != null) {
-	        startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
-	    }
-		
-//		Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-//	    // Ensure that there's a camera activity to handle the intent
+//	    Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 //	    if (takePictureIntent.resolveActivity(getActivity().getPackageManager()) != null) {
-//	        // Create the File where the photo should go
-//	        File photoFile = null;
-//	        try {
-//	            photoFile = createImageFile();
-//	        } catch (IOException ex) {
-//	            // Error occurred while creating the File
-//	            //...
-//	        }
-//	        // Continue only if the File was successfully created
-//	        if (photoFile != null) {
-//	            takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT,
-//	                    Uri.fromFile(photoFile));
-//	            startActivityForResult(takePictureIntent, REQUEST_TAKE_PHOTO);
-//	        }
+//	        startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
 //	    }
+		
+		Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+	    // Ensure that there's a camera activity to handle the intent
+	    if (takePictureIntent.resolveActivity(getActivity().getPackageManager()) != null) {
+	        // Create the File where the photo should go
+	        File photoFile = null;
+	        try {
+	            photoFile = createImageFile();
+	        } catch (IOException ex) {
+	            // Error occurred while creating the File
+	            //...
+	        }
+	        // Continue only if the File was successfully created
+	        if (photoFile != null) {
+	            takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(photoFile));
+	            startActivityForResult(takePictureIntent, REQUEST_TAKE_PHOTO);
+	        }
+	    }
 	}
 	
 	private File createImageFile() throws IOException {
 	    // Create an image file name
 	    String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
 	    String imageFileName = "JPEG_" + timeStamp + "_";
+	    
+//	    imageFileName = "temp";
+	    
+	    if (mTempFilePath != null) {
+	    	File tempFile = new File(mTempFilePath);
+	    	tempFile.delete();
+	    }
+	    
 	    File storageDir = Environment.getExternalStoragePublicDirectory(
 	            Environment.DIRECTORY_PICTURES);
 	    File image = File.createTempFile(
@@ -205,19 +234,34 @@ public class ImageCaptureFragment extends Fragment {
 	        ".jpg",         /* suffix */
 	        storageDir      /* directory */
 	    );
+	    
+	    mTempFilePath = image.getAbsolutePath();
+	    
+	    
+//	    File image = new File(storageDir.getAbsoluteFile() + "/temp.jpg");
+//	    if (image.exists())
+//	    	image.delete();
+		
+		
+//	    File storageDir = Environment.getExternalStoragePublicDirectory(
+//	            Environment.DIRECTORY_PICTURES);
+//	    File image = File.createTempFile("temp", ".jgp", new File(photoDirectoryFullPath));
+	    
+//	    File image = new File(mFileName);
+//		File image = new File(mFileName);
 
 	    // Save a file: path for use with ACTION_VIEW intents
-	    mCurrentPhotoPath = "file:" + image.getAbsolutePath();
+//	    mCurrentPhotoPath = "file:" + image.getAbsolutePath();
 	    return image;
 	}
 	
-	private void galleryAddPic() {
-	    Intent mediaScanIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
-	    File f = new File(mCurrentPhotoPath);
-	    Uri contentUri = Uri.fromFile(f);
-	    mediaScanIntent.setData(contentUri);
-	    getActivity().sendBroadcast(mediaScanIntent);
-	}
+//	private void galleryAddPic() {
+//	    Intent mediaScanIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
+//	    File f = new File(mCurrentPhotoPath);
+//	    Uri contentUri = Uri.fromFile(f);
+//	    mediaScanIntent.setData(contentUri);
+//	    getActivity().sendBroadcast(mediaScanIntent);
+//	}
 	
 	private class ImageCaptureButton extends Button {
 
@@ -281,6 +325,15 @@ public class ImageCaptureFragment extends Fragment {
 			setOnClickListener(clicker);
 			setText("Save");
 			setEnabled(false);
+			
+//			String userDefinedFileName = mFileNameEditText.getText().toString();
+//			
+//			String newFileName = photoDirectoryFullPath;
+//            newFileName += "/" + userDefinedFileName;
+//            newFileName += mFileExtension;
+//			
+//			File image = new File(mTempFilePath);
+//			boolean renameSuccessful = image.renameTo(new File(newFileName));
 		}
 		
 	}

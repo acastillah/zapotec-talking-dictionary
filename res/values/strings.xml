@@ -69,5 +69,9 @@ All rights reserved. Do not distribute or reproduce without permission.</string>
     </string-array>
     
     <string name="preview_image">Image Preview</string>
-
+    
+    <string name="passwordExplanation">This page is for linguists documenting the Valley Zapoec language blah blah blah...</string>
+	<string name="password">Password: </string>
+	<string name="submit">Submit</string>
+    
 </resources>
