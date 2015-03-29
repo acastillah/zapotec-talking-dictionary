@@ -11,7 +11,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Matrix;
 import android.graphics.Point;
+import android.media.ExifInterface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -228,11 +230,37 @@ public class ImageCaptureFragment extends Fragment {
 	    	
 	    	Log.i("BITMAP", "new width=" + width + " height=" + height);
 	    	
-	    	bitmap = Bitmap.createScaledBitmap(bitmap, (int)width, (int)height, false);
+	    	ExifInterface exif = null;
 	    	
-	    	mImageView.setImageBitmap(bitmap);
+	    	try {
+				exif = new ExifInterface(image.getPath());
+				
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 	    	
 	    	
+	    	if (exif != null) {
+		    	int orientation = exif.getAttributeInt(ExifInterface.TAG_ORIENTATION, 1);
+		    	
+		    	Matrix m = new Matrix();
+		    	
+				if (orientation == 3)
+		    		m.postRotate(180);
+		    	else if (orientation == 6)
+		    		m.postRotate(90);
+		    	if (orientation == 8)
+		    		m.postRotate(270);
+		    	
+		    	
+		    	bitmap = Bitmap.createBitmap(bitmap, 0, 0, (int)width, (int)height, m, true);
+		    	
+//		    	bitmap = Bitmap.createScaledBitmap(bitmap, (int)width, (int)height, false);
+		    	
+		    	mImageView.setImageBitmap(bitmap);
+	    	
+	    	}
 	    	
 	    	
 	    	boolean renameSuccessful = image.renameTo(new File(photoDirectoryFullPath + "/PHOTO.jpg"));
