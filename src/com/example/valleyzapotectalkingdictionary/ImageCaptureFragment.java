@@ -11,6 +11,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Point;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -20,6 +21,7 @@ import android.support.v4.app.FragmentActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,6 +31,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 @SuppressLint("NewApi")
 public class ImageCaptureFragment extends Fragment {
@@ -129,6 +132,12 @@ public class ImageCaptureFragment extends Fragment {
         
         LinearLayout fragmentLayout = new LinearLayout(activity);
         fragmentLayout.setOrientation(LinearLayout.VERTICAL);
+        fragmentLayout.setGravity(Gravity.CENTER_HORIZONTAL);
+        
+        TextView photoFragmentDescription = new TextView(activity);
+        photoFragmentDescription.setText("Take a photo and upload it.");
+        photoFragmentDescription.setPadding(0, 20, 0, 20);
+        fragmentLayout.addView(photoFragmentDescription);
         
         mImageCaptureButton = new ImageCaptureButton(activity);
         fragmentLayout.addView(mImageCaptureButton,
@@ -145,12 +154,30 @@ public class ImageCaptureFragment extends Fragment {
         mPreviewText.setVisibility(View.INVISIBLE);
         fragmentLayout.addView(mPreviewText);
         
+        LinearLayout fileNameLayout = new LinearLayout(activity);
+        fileNameLayout.setOrientation(LinearLayout.HORIZONTAL);
+        
+        TextView namePhotoTextView = new TextView(activity);
+        namePhotoTextView.setText("Photo name:");
+        fileNameLayout.addView(namePhotoTextView);
+        
         mFileNameEditText = new FileNameEditText(activity);
-        fragmentLayout.addView(mFileNameEditText,
+        mFileNameEditText.setEms(10);
+        fileNameLayout.addView(mFileNameEditText,
                 new LinearLayout.LayoutParams(
-                    ViewGroup.LayoutParams.MATCH_PARENT,
+                    ViewGroup.LayoutParams.WRAP_CONTENT,
                     ViewGroup.LayoutParams.WRAP_CONTENT,
                     0));
+        
+        TextView imageExtension = new TextView(activity);
+        imageExtension.setText(".jpg");
+        fileNameLayout.addView(imageExtension);
+        
+        fragmentLayout.addView(fileNameLayout,
+                new LinearLayout.LayoutParams(
+                        ViewGroup.LayoutParams.WRAP_CONTENT,
+                        ViewGroup.LayoutParams.WRAP_CONTENT,
+                        0));
         
         mSaveButton = new SaveButton(activity);
         fragmentLayout.addView(mSaveButton,
@@ -175,12 +202,34 @@ public class ImageCaptureFragment extends Fragment {
 	    			
 	    			
 	    	Log.i("FILE", "File path=" + mTempFilePath);
+	    	
+	    	mImageCaptured = true;
+			mPreviewText.setVisibility(View.VISIBLE);
 
 	    	BitmapFactory.Options bmOptions = new BitmapFactory.Options();
 	    	Bitmap bitmap = BitmapFactory.decodeFile(image.getAbsolutePath(),bmOptions);
 	    	
+	    	
 //	    	bitmap = Bitmap.createScaledBitmap(bitmap,parent.getWidth(),parent.getHeight(),true);
 
+	    	double ratio = bitmap.getWidth() / bitmap.getHeight();
+	    	Log.i("BITMAP", "original width=" + bitmap.getWidth() + " height=" + bitmap.getHeight() + " ratio=" + ratio);
+	    	
+	    	Point size = new Point();
+	    	getActivity().getWindowManager().getDefaultDisplay().getSize(size);
+	    	
+	    	Log.i("BITMAP", "window width=" + size.x + " height=" + size.y);
+	    	
+//	    	double width = 300;
+//	    	double height = width / (bitmap.getWidth() / bitmap.getHeight());
+	    	
+	    	double width = bitmap.getWidth() / 2;
+	    	double height = bitmap.getHeight() / 2;
+	    	
+	    	Log.i("BITMAP", "new width=" + width + " height=" + height);
+	    	
+	    	bitmap = Bitmap.createScaledBitmap(bitmap, (int)width, (int)height, false);
+	    	
 	    	mImageView.setImageBitmap(bitmap);
 	    	
 	    	
@@ -285,8 +334,7 @@ public class ImageCaptureFragment extends Fragment {
 				////// not getting to here... it's making a new intent?
 				
 				
-				mImageCaptured = true;
-				mPreviewText.setVisibility(View.VISIBLE);
+				
 				
 				// user must enter file name before saving & there must be picture captured to save
 				if (!mFileNameEditText.getText().toString().equals("")) {
@@ -316,6 +364,17 @@ public class ImageCaptureFragment extends Fragment {
 				mImageCaptureButton.setEnabled(false);
 				mFileNameEditText.setEnabled(false);
 				mSaveButton.setEnabled(false);
+				
+				String userDefinedFileName = mFileNameEditText.getText().toString();
+				
+				String newFileName = photoDirectoryFullPath;
+	            newFileName += "/" + userDefinedFileName;
+	            newFileName += mFileExtension;
+				
+				File image = new File(mTempFilePath);
+				boolean renameSuccessful = image.renameTo(new File(newFileName));
+				
+				Toast.makeText(getActivity(), "Photo saved", Toast.LENGTH_SHORT).show();
 			}
 			
 		};
@@ -325,15 +384,6 @@ public class ImageCaptureFragment extends Fragment {
 			setOnClickListener(clicker);
 			setText("Save");
 			setEnabled(false);
-			
-//			String userDefinedFileName = mFileNameEditText.getText().toString();
-//			
-//			String newFileName = photoDirectoryFullPath;
-//            newFileName += "/" + userDefinedFileName;
-//            newFileName += mFileExtension;
-//			
-//			File image = new File(mTempFilePath);
-//			boolean renameSuccessful = image.renameTo(new File(newFileName));
 		}
 		
 	}
