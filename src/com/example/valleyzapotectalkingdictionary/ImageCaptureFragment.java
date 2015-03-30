@@ -137,8 +137,8 @@ public class ImageCaptureFragment extends Fragment {
         fragmentLayout.setGravity(Gravity.CENTER_HORIZONTAL);
         
         TextView photoFragmentDescription = new TextView(activity);
-        photoFragmentDescription.setText("Take a photo and upload it.");
-        photoFragmentDescription.setPadding(0, 20, 0, 20);
+        photoFragmentDescription.setText("Click \"Take Photo\" to take a photo and enter a name for your file. Photos can be accessed on your device's local storage under the \"Zapotec Talking Dictionary/photos\" directory.");
+        photoFragmentDescription.setPadding(20, 20, 20, 20);
         fragmentLayout.addView(photoFragmentDescription);
         
         mImageCaptureButton = new ImageCaptureButton(activity);
@@ -149,12 +149,17 @@ public class ImageCaptureFragment extends Fragment {
                     0));
         
         mImageView = new ImageView(activity);
+        mImageView.setPadding(0, 20, 0, 0);
         fragmentLayout.addView(mImageView);
         
         mPreviewText = new TextView(activity);
         mPreviewText.setText(R.string.preview_image);
         mPreviewText.setVisibility(View.INVISIBLE);
-        fragmentLayout.addView(mPreviewText);
+        fragmentLayout.addView(mPreviewText,
+                new LinearLayout.LayoutParams(
+                        ViewGroup.LayoutParams.WRAP_CONTENT,
+                        ViewGroup.LayoutParams.WRAP_CONTENT,
+                        0));
         
         LinearLayout fileNameLayout = new LinearLayout(activity);
         fileNameLayout.setOrientation(LinearLayout.HORIZONTAL);
@@ -208,11 +213,7 @@ public class ImageCaptureFragment extends Fragment {
 	    	mImageCaptured = true;
 			mPreviewText.setVisibility(View.VISIBLE);
 
-	    	BitmapFactory.Options bmOptions = new BitmapFactory.Options();
-	    	Bitmap bitmap = BitmapFactory.decodeFile(image.getAbsolutePath(),bmOptions);
-	    	
-	    	
-//	    	bitmap = Bitmap.createScaledBitmap(bitmap,parent.getWidth(),parent.getHeight(),true);
+	    	Bitmap bitmap = BitmapFactory.decodeFile(image.getAbsolutePath(), new BitmapFactory.Options());
 
 	    	double ratio = bitmap.getWidth() / bitmap.getHeight();
 	    	Log.i("BITMAP", "original width=" + bitmap.getWidth() + " height=" + bitmap.getHeight() + " ratio=" + ratio);
@@ -222,11 +223,8 @@ public class ImageCaptureFragment extends Fragment {
 	    	
 	    	Log.i("BITMAP", "window width=" + size.x + " height=" + size.y);
 	    	
-//	    	double width = 300;
-//	    	double height = width / (bitmap.getWidth() / bitmap.getHeight());
-	    	
-	    	double width = bitmap.getWidth() / 2;
-	    	double height = bitmap.getHeight() / 2;
+	    	double width = bitmap.getWidth() / 3;
+	    	double height = bitmap.getHeight() / 3;
 	    	
 	    	Log.i("BITMAP", "new width=" + width + " height=" + height);
 	    	
@@ -245,25 +243,22 @@ public class ImageCaptureFragment extends Fragment {
 		    	int orientation = exif.getAttributeInt(ExifInterface.TAG_ORIENTATION, 1);
 		    	
 		    	Matrix m = new Matrix();
-		    	
 				if (orientation == 3)
 		    		m.postRotate(180);
 		    	else if (orientation == 6)
 		    		m.postRotate(90);
 		    	if (orientation == 8)
 		    		m.postRotate(270);
-		    	
-		    	
+		    
 		    	bitmap = Bitmap.createBitmap(bitmap, 0, 0, (int)width, (int)height, m, true);
-		    	
-//		    	bitmap = Bitmap.createScaledBitmap(bitmap, (int)width, (int)height, false);
-		    	
+
 		    	mImageView.setImageBitmap(bitmap);
 	    	
+		    	boolean renameSuccessful = image.renameTo(new File(photoDirectoryFullPath + "/PHOTO.jpg"));
+		    	
+		    	mImageCaptureButton.setText("Retake Picture");
+		    	
 	    	}
-	    	
-	    	
-	    	boolean renameSuccessful = image.renameTo(new File(photoDirectoryFullPath + "/PHOTO.jpg"));
 	    }
 	}
 	
@@ -304,8 +299,10 @@ public class ImageCaptureFragment extends Fragment {
 	    	tempFile.delete();
 	    }
 	    
-	    File storageDir = Environment.getExternalStoragePublicDirectory(
-	            Environment.DIRECTORY_PICTURES);
+//	    File storageDir = Environment.getExternalStoragePublicDirectory(
+//	            Environment.DIRECTORY_PICTURES);
+	    File storageDir = new File(photoDirectoryFullPath);
+	    		
 	    File image = File.createTempFile(
 	        imageFileName,  /* prefix */
 	        ".jpg",         /* suffix */
@@ -365,12 +362,12 @@ public class ImageCaptureFragment extends Fragment {
 				
 				
 				// user must enter file name before saving & there must be picture captured to save
-				if (!mFileNameEditText.getText().toString().equals("")) {
-					mSaveButton.setEnabled(true); 
-            	}
-            	else {
-            		mSaveButton.setEnabled(false); 
-            	}
+//				if (!mFileNameEditText.getText().toString().equals("")) {
+//					mSaveButton.setEnabled(true); 
+//            	}
+//            	else {
+//            		mSaveButton.setEnabled(false); 
+//            	}
 			}
 			
 		};
@@ -400,9 +397,24 @@ public class ImageCaptureFragment extends Fragment {
 	            newFileName += mFileExtension;
 				
 				File image = new File(mTempFilePath);
-				boolean renameSuccessful = image.renameTo(new File(newFileName));
+				File newImage = new File(newFileName);
+				boolean renameSuccessful = image.renameTo(newImage);
 				
-				Toast.makeText(getActivity(), "Photo saved", Toast.LENGTH_SHORT).show();
+				Log.i("PHOTOS", "Old file path="+mTempFilePath);
+				Log.i("PHOTOS", "New file path="+newFileName);
+				
+				image.setReadable(true);
+				image.setWritable(true);
+				newImage.setReadable(true);
+				newImage.setWritable(true);
+				
+				Log.i("PHOTOS", "image canRead="+image.canRead()+" canWrite="+image.canWrite());
+				Log.i("PHOTOS", "newImage canRead="+newImage.canRead()+" canWrite="+newImage.canWrite());
+				
+				Log.i("PHOTOS", "Rename successful="+renameSuccessful);
+				
+				if (renameSuccessful)
+					Toast.makeText(getActivity(), "Photo saved", Toast.LENGTH_SHORT).show();
 			}
 			
 		};

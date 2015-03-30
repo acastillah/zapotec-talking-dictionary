@@ -136,6 +136,11 @@ public class AudioCaptureFragment extends Fragment {
         LinearLayout fragmentLayout = new LinearLayout(activity);
         fragmentLayout.setOrientation(LinearLayout.VERTICAL);
         
+        TextView audioFragmentDescription = new TextView(activity);
+        audioFragmentDescription.setText("Click \"Start recording\" to start recording audio and click \"Stop recording\" to end the recording. You can play the recording with the \"Start playing/Stop playing\" button. You may name your audio file in the text field. Audio files can be accessed on your device's local storage under the \"Zapotec Talking Dictionary/audio\" directory.");
+        audioFragmentDescription.setPadding(20, 20, 20, 20);
+        fragmentLayout.addView(audioFragmentDescription);
+        
         LinearLayout recPlayButtonsLayout = new LinearLayout(activity);
         
         mRecordButton = new RecordButton(activity);
@@ -158,12 +163,35 @@ public class AudioCaptureFragment extends Fragment {
                         ViewGroup.LayoutParams.WRAP_CONTENT,
                         0));
         
+        LinearLayout fileNameLayout = new LinearLayout(activity);
+        fileNameLayout.setOrientation(LinearLayout.HORIZONTAL);
+        
+        TextView nameAudioTextView = new TextView(activity);
+        nameAudioTextView.setText("Photo name:");
+        nameAudioTextView.setPadding(20, 0, 0, 0);
+        fileNameLayout.addView(nameAudioTextView,
+                new LinearLayout.LayoutParams(
+                        ViewGroup.LayoutParams.WRAP_CONTENT,
+                        ViewGroup.LayoutParams.WRAP_CONTENT,
+                        0));
+        
         mFileNameEditText = new FileNameEditText(activity);
-        fragmentLayout.addView(mFileNameEditText,
+        mFileNameEditText.setEms(10);
+        fileNameLayout.addView(mFileNameEditText,
                 new LinearLayout.LayoutParams(
                     ViewGroup.LayoutParams.MATCH_PARENT,
                     ViewGroup.LayoutParams.WRAP_CONTENT,
                     0));
+        
+        TextView audioExtension = new TextView(activity);
+        audioExtension.setText(".3gp");
+        fileNameLayout.addView(audioExtension);
+        
+        fragmentLayout.addView(fileNameLayout,
+                new LinearLayout.LayoutParams(
+                        ViewGroup.LayoutParams.WRAP_CONTENT,
+                        ViewGroup.LayoutParams.WRAP_CONTENT,
+                        0));
         
         mSaveButton = new SaveButton(activity);
         fragmentLayout.addView(mSaveButton,
