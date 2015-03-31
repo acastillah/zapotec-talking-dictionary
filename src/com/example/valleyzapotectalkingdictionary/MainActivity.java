@@ -46,15 +46,13 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		setContentView(R.layout.activity_main);
 		mNavigationDrawerFragment = (NavigationDrawerFragment) getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
 		mNavigationDrawerFragment.setUp(R.id.navigation_drawer, (DrawerLayout) findViewById(R.id.drawer_layout));
-		//mTitle = getTitle();
-		JSONReadFromFile();
-		mTitle = "Search";
+		mTitle = getString(R.string.app_name);
+        handleIntent(getIntent());
 	}
+	
 
 	public boolean onCreateOptionsMenu(Menu menu) {
-		
-		JSONReadFromFile();
-		
+				
 		if (!mNavigationDrawerFragment.isDrawerOpen()) {
 			// Inflate the menu; this adds items to the action bar if it is present.
 			MainActivity.menu = menu;
@@ -256,38 +254,5 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		
 		fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();				
 	}
-	
-	@SuppressWarnings("unused")
-	public void JSONReadFromFile() {
-
-		try {
-			String str="";
-			StringBuffer buf = new StringBuffer();			
-			InputStream is = this.getResources().openRawResource(R.raw.teotitlan_export);
-			BufferedReader reader = new BufferedReader(new InputStreamReader(is));
-			if (is!=null) {							
-				while ((str = reader.readLine()) != null) {	
-					buf.append(str + "\n" );
-				}				
-			}		
-			is.close();	
-			
-			JSONParser parser=new JSONParser();
-            JSONArray jsonArray = (JSONArray) parser.parse(buf.toString());
- 	        	
-			Iterator<?> i = jsonArray.iterator();
-        			 
-        	while (i.hasNext()) {
-        		JSONObject innerObj = (JSONObject) i.next();		                
-		            String id = (String) innerObj.get("oid");
-		            String word = (String) innerObj.get("lang");
-		            String pronunciation = (String) innerObj.get("ipa");
-        	}        
-
-		} catch (Exception e) {
-			Log.i("Parsing failed", "FAIL");
-		}
-
-}
 
 }
