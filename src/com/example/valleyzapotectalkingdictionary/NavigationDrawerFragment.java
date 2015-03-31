@@ -276,9 +276,9 @@ public class NavigationDrawerFragment extends Fragment {
 			return true;
 		}
 		
-		if (item.getItemId() == R.id.settings) {
-			Toast.makeText(getActivity(), "Settings.", Toast.LENGTH_SHORT).show();
-		}
+//		if (item.getItemId() == R.id.settings) {
+//			Toast.makeText(getActivity(), "Settings.", Toast.LENGTH_SHORT).show();
+//		}
 
 		return super.onOptionsItemSelected(item);
 	}

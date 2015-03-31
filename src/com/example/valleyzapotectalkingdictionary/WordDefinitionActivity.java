@@ -48,12 +48,12 @@ public class WordDefinitionActivity extends ActionBarActivity {
 //				LanguageInterface.interfaceLanguage = LanguageInterface.LANGUAGE_ZAPOTEC;
 //				LanguageInterface.setLanguageInterfaceButtons(this.menu);
 //				return true;
-			case R.id.settings:
-				Toast.makeText(this, "Settings.", Toast.LENGTH_SHORT).show();
-				return true;
-			case R.id.help:
-				Toast.makeText(this, "Help.", Toast.LENGTH_SHORT).show();
-				return true;
+//			case R.id.settings:
+//				Toast.makeText(this, "Settings.", Toast.LENGTH_SHORT).show();
+//				return true;
+//			case R.id.help:
+//				Toast.makeText(this, "Help.", Toast.LENGTH_SHORT).show();
+//				return true;
 		}
 		
 		return super.onOptionsItemSelected(item);

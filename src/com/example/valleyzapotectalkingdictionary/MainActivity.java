@@ -106,12 +106,12 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 //				LanguageInterface.interfaceLanguage = LanguageInterface.LANGUAGE_ZAPOTEC;
 //				//LanguageInterface.setLanguageInterfaceButtons(MainActivity.menu);
 //				return true;
-			case R.id.settings:
-				Toast.makeText(this, "Settings.", Toast.LENGTH_SHORT).show();
-				return true;
-			case R.id.help:
-				Toast.makeText(this, "Help.", Toast.LENGTH_SHORT).show();
-				return true;
+//			case R.id.settings:
+//				Toast.makeText(this, "Settings.", Toast.LENGTH_SHORT).show();
+//				return true;
+//			case R.id.help:
+//				Toast.makeText(this, "Help.", Toast.LENGTH_SHORT).show();
+//				return true;
 		}
 		
 		return super.onOptionsItemSelected(item);

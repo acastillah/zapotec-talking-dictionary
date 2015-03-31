@@ -28,7 +28,7 @@
         android:id="@+id/zapotecInterface"
         android:title="@string/zapotecInterface"
         app:showAsAction="ifRoom"/>
-        -->
+        
     <item
         android:id="@+id/settings"
         android:title="@string/settings_eng"
@@ -37,6 +37,6 @@
     <item
         android:id="@+id/help"
         android:title="@string/help"
-        app:showAsAction="never"/>
+        app:showAsAction="never"/> -->
     
 </menu>
