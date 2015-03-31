@@ -1,22 +1,16 @@
 package com.example.valleyzapotectalkingdictionary;
 
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.util.Iterator;
-
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.SearchView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.app.Activity;
+import android.app.SearchManager;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -24,7 +18,6 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
@@ -44,15 +37,13 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		setContentView(R.layout.activity_main);
 		mNavigationDrawerFragment = (NavigationDrawerFragment) getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
 		mNavigationDrawerFragment.setUp(R.id.navigation_drawer, (DrawerLayout) findViewById(R.id.drawer_layout));
-		//mTitle = getTitle();
-		JSONReadFromFile();
-		mTitle = "Search";
+		mTitle = getString(R.string.app_name);
+        handleIntent(getIntent());
 	}
+	
 
 	public boolean onCreateOptionsMenu(Menu menu) {
-		
-		JSONReadFromFile();
-		
+				
 		if (!mNavigationDrawerFragment.isDrawerOpen()) {
 			// Inflate the menu; this adds items to the action bar if it is present.
 			MainActivity.menu = menu;
@@ -60,11 +51,9 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 			//LanguageInterface.setLanguageInterfaceButtons(menu);
 			restoreActionBar();
 			
-		    MenuItem searchItem = menu.findItem(R.id.action_search);
-		    SearchView searchView = (SearchView) MenuItemCompat.getActionView(searchItem);
-		    OnClickListener searchClickListener = new SearchClickListener();
-			searchView.setOnSearchClickListener(searchClickListener );
-			//searchView.setIconified(false);
+			SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+		    SearchView searchView = (SearchView) menu.findItem(R.id.action_search).getActionView();		    //OnClickListener searchClickListener = new SearchClickListener();
+			searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));	
 			
 			
 			MenuItem spinnerItem = menu.findItem(R.id.spinner);
@@ -169,6 +158,40 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		}
 		*/
 	}
+	
+	@Override
+    protected void onNewIntent(Intent intent) {
+        handleIntent(intent);
+    }
+
+    private void handleIntent(Intent intent) {
+//        if (Intent.ACTION_VIEW.equals(intent.getAction())) {
+//            // handles a click on a search suggestion; launches activity to show word
+//            Intent wordIntent = new Intent(this, WordDefinitionActivity.class);
+//            wordIntent.setData(intent.getData());
+//            startActivity(wordIntent);
+//            finish();
+//        } else if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
+    	if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
+    		// handles a search query
+            String query = intent.getStringExtra(SearchManager.QUERY);
+            Log.i("Search word", query);
+            showResults(query);
+        }
+    }
+
+    
+    private void showResults(String query) {
+    	Log.i("Results", "searching...");
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+		Fragment fragment = new SearchResultsFragment();
+        transaction.addToBackStack(null);            
+        Bundle bundle = new Bundle();
+        bundle.putString("QUERY", query);
+        ((Fragment) fragment).setArguments(bundle);
+		transaction.replace(R.id.container, fragment).commit();				
+    }
+
 
 	@Override
 	public void onNavigationDrawerItemSelected(int position) {
@@ -220,38 +243,5 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		
 		fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();				
 	}
-	
-	@SuppressWarnings("unused")
-	public void JSONReadFromFile() {
-
-		try {
-			String str="";
-			StringBuffer buf = new StringBuffer();			
-			InputStream is = this.getResources().openRawResource(R.raw.teotitlan_export);
-			BufferedReader reader = new BufferedReader(new InputStreamReader(is));
-			if (is!=null) {							
-				while ((str = reader.readLine()) != null) {	
-					buf.append(str + "\n" );
-				}				
-			}		
-			is.close();	
-			
-			JSONParser parser=new JSONParser();
-            JSONArray jsonArray = (JSONArray) parser.parse(buf.toString());
- 	        	
-			Iterator<?> i = jsonArray.iterator();
-        			 
-        	while (i.hasNext()) {
-        		JSONObject innerObj = (JSONObject) i.next();		                
-		            String id = (String) innerObj.get("oid");
-		            String word = (String) innerObj.get("lang");
-		            String pronunciation = (String) innerObj.get("ipa");
-        	}        
-
-		} catch (Exception e) {
-			Log.i("Parsing failed", "FAIL");
-		}
-
-}
 
 }
