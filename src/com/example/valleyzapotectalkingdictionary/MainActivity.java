@@ -14,9 +14,11 @@ import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.SearchView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.app.Activity;
+import android.app.SearchManager;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -169,6 +171,40 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		}
 		*/
 	}
+	
+	@Override
+    protected void onNewIntent(Intent intent) {
+        handleIntent(intent);
+    }
+
+    private void handleIntent(Intent intent) {
+//        if (Intent.ACTION_VIEW.equals(intent.getAction())) {
+//            // handles a click on a search suggestion; launches activity to show word
+//            Intent wordIntent = new Intent(this, WordDefinitionActivity.class);
+//            wordIntent.setData(intent.getData());
+//            startActivity(wordIntent);
+//            finish();
+//        } else if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
+    	if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
+    		// handles a search query
+            String query = intent.getStringExtra(SearchManager.QUERY);
+            Log.i("Search word", query);
+            showResults(query);
+        }
+    }
+
+    
+    private void showResults(String query) {
+    	Log.i("Results", "searching...");
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+		Fragment fragment = new SearchResultsFragment();
+        transaction.addToBackStack(null);            
+        Bundle bundle = new Bundle();
+        bundle.putString("QUERY", query);
+        ((Fragment) fragment).setArguments(bundle);
+		transaction.replace(R.id.container, fragment).commit();				
+    }
+
 
 	@Override
 	public void onNavigationDrawerItemSelected(int position) {
