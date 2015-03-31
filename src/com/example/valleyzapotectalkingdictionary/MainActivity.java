@@ -1,14 +1,5 @@
 package com.example.valleyzapotectalkingdictionary;
 
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.util.Iterator;
-
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.SearchView;
@@ -19,6 +10,7 @@ import android.support.v4.view.MenuItemCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.app.Activity;
 import android.app.SearchManager;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -26,7 +18,6 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
@@ -60,11 +51,9 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 			//LanguageInterface.setLanguageInterfaceButtons(menu);
 			restoreActionBar();
 			
-		    MenuItem searchItem = menu.findItem(R.id.action_search);
-		    SearchView searchView = (SearchView) MenuItemCompat.getActionView(searchItem);
-		    OnClickListener searchClickListener = new SearchClickListener();
-			searchView.setOnSearchClickListener(searchClickListener );
-			//searchView.setIconified(false);
+			SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+		    SearchView searchView = (SearchView) menu.findItem(R.id.action_search).getActionView();		    //OnClickListener searchClickListener = new SearchClickListener();
+			searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));	
 			
 			
 			MenuItem spinnerItem = menu.findItem(R.id.spinner);
