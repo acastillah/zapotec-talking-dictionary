@@ -311,6 +311,8 @@ public class ImageCaptureFragment extends Fragment {
 	    
 	    mTempFilePath = image.getAbsolutePath();
 	    
+	    Log.i("PHOTO", "createImageFile file path=" + mTempFilePath);
+	    
 	    
 //	    File image = new File(storageDir.getAbsoluteFile() + "/temp.jpg");
 //	    if (image.exists())
@@ -343,13 +345,14 @@ public class ImageCaptureFragment extends Fragment {
 
 			@Override
 			public void onClick(View arg0) {
-				Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-				File image = new File(Environment.getExternalStorageDirectory(), "testImage.jpg");
-				
-				if (cameraIntent.resolveActivity(getActivity().getPackageManager()) != null) {
-			        startActivityForResult(cameraIntent, REQUEST_IMAGE_CAPTURE);
-			        cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(image));
-			    }
+//				Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+//				File image = new File(Environment.getExternalStorageDirectory(), "testImage.jpg");
+//				
+//				if (cameraIntent.resolveActivity(getActivity().getPackageManager()) != null) {
+//			        
+//			        cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(image));
+//			        startActivityForResult(cameraIntent, REQUEST_IMAGE_CAPTURE);
+//			    }
 				
 				
 				
@@ -398,7 +401,7 @@ public class ImageCaptureFragment extends Fragment {
 				
 				File image = new File(mTempFilePath);
 				File newImage = new File(newFileName);
-				boolean renameSuccessful = image.renameTo(newImage);
+				
 				
 				Log.i("PHOTOS", "Old file path="+mTempFilePath);
 				Log.i("PHOTOS", "New file path="+newFileName);
@@ -407,6 +410,8 @@ public class ImageCaptureFragment extends Fragment {
 				image.setWritable(true);
 				newImage.setReadable(true);
 				newImage.setWritable(true);
+				
+				boolean renameSuccessful = image.renameTo(newImage);
 				
 				Log.i("PHOTOS", "image canRead="+image.canRead()+" canWrite="+image.canWrite());
 				Log.i("PHOTOS", "newImage canRead="+newImage.canRead()+" canWrite="+newImage.canWrite());
