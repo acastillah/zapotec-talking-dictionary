@@ -49,6 +49,10 @@
             android:name=".SearchActivity"
             android:label="@string/title_activity_search" >
         </activity>
+        <activity
+            android:name=".AudioCaptureFragment"
+            android:label="Audio Capture" >
+        </activity>
     </application>
 
 </manifest>

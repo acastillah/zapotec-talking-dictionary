@@ -5,10 +5,13 @@ import java.io.IOException;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.res.Configuration;
 import android.media.MediaPlayer;
 import android.media.MediaRecorder;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.text.Editable;
@@ -21,8 +24,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
-public class AudioCaptureFragment extends Fragment {
+public class AudioCaptureFragment extends Fragment implements Parcelable {
 
     private static boolean mExternalStorageAvailable = false;
     private static boolean mExternalStorageWriteable = false;
@@ -39,7 +43,16 @@ public class AudioCaptureFragment extends Fragment {
     private FileNameEditText mFileNameEditText = null;
     private SaveButton	mSaveButton = null;
     
+    private boolean recordButtonEnabled = true;
+    private boolean playButtonEnabled = false;
+    private boolean fileNameEditTextEnabled = true;
+    private boolean saveButtonEnabled = false;
     private boolean mRecorded = false;
+    
+    private static final String RECORD_BUTTON_ENABLED = "RECORD_BUTTON_ENABLED";
+    private static final String PLAY_BUTTON_ENABLED = "PLAY_BUTTON_ENABLED";
+    private static final String FILE_NAME_EDIT_TEXT_ENABLED = "FILE_NAME_EDIT_TEXT_ENABLED";
+    private static final String SAVE_BUTTON_ENABLED = "SAVE_BUTTON_ENABLED";
     
     private static final String mFileExtension = ".3gp"; // WHAT FILE TYPE?
     private static final String dictionaryDirectoryName = "Zapotec Talking Dictionary";
@@ -47,6 +60,61 @@ public class AudioCaptureFragment extends Fragment {
     private static String audioDirectoryFullPath = null;
 	
     public AudioCaptureFragment() {}
+    
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+
+        // Checks the orientation of the screen
+        if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            Toast.makeText(getActivity(), "landscape", Toast.LENGTH_SHORT).show();
+        } else if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT){
+            Toast.makeText(getActivity(), "portrait", Toast.LENGTH_SHORT).show();
+        }
+    }
+    
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+    	super.onSaveInstanceState(savedInstanceState);
+    	
+    	Log.i("AUDIO", "onSaveInstanceState");
+    	
+    	savedInstanceState.putBoolean(RECORD_BUTTON_ENABLED, mRecordButton.isEnabled());
+    	savedInstanceState.putBoolean(PLAY_BUTTON_ENABLED, mPlayButton.isEnabled());
+    	savedInstanceState.putBoolean(FILE_NAME_EDIT_TEXT_ENABLED, mFileNameEditText.isEnabled());
+    	savedInstanceState.putBoolean(SAVE_BUTTON_ENABLED, mSaveButton.isEnabled());
+    	
+    	
+//    	outState.putParcelable("AudioCaptureFrag", this);
+    }
+    
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+    	super.onActivityCreated(savedInstanceState);
+    	
+    	Log.i("AUDIO", "onActivityCreated");
+    	
+    	if (savedInstanceState != null) {
+    		Log.i("AUDIO", "savedInstanceState is not null");
+	    	recordButtonEnabled = savedInstanceState.getBoolean(RECORD_BUTTON_ENABLED);
+	    	playButtonEnabled = savedInstanceState.getBoolean(PLAY_BUTTON_ENABLED);
+	    	fileNameEditTextEnabled = savedInstanceState.getBoolean(FILE_NAME_EDIT_TEXT_ENABLED);
+	    	saveButtonEnabled = savedInstanceState.getBoolean(SAVE_BUTTON_ENABLED);
+	    	
+	    	Log.i("AUDIO", "Record button enabled=" + recordButtonEnabled);
+	    	Log.i("AUDIO", "Play button enabled=" + playButtonEnabled);
+	    	Log.i("AUDIO", "File name enabled=" + fileNameEditTextEnabled);
+	    	Log.i("AUDIO", "Save button enabled=" + saveButtonEnabled);
+	    	
+	    	mRecordButton.setEnabled(recordButtonEnabled);
+	    	mPlayButton.setEnabled(playButtonEnabled);
+	    	mFileNameEditText.setEnabled(fileNameEditTextEnabled);
+	    	mSaveButton.setEnabled(saveButtonEnabled);
+    	}
+    	
+    	Log.i("AUDIO", "onActivityCreated end");
+    	
+    }
     
     @SuppressLint("NewApi")
 	@Override
@@ -128,6 +196,8 @@ public class AudioCaptureFragment extends Fragment {
 	@Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+		Log.i("AUDIO", "onCreateView");
+		
         // Inflate the layout for this fragment
 		View view = inflater.inflate(R.layout.fragment_audio_capture, container, false);
 		
@@ -144,6 +214,7 @@ public class AudioCaptureFragment extends Fragment {
         LinearLayout recPlayButtonsLayout = new LinearLayout(activity);
         
         mRecordButton = new RecordButton(activity);
+        mRecordButton.setEnabled(recordButtonEnabled);
         recPlayButtonsLayout.addView(mRecordButton,
             new LinearLayout.LayoutParams(
                 ViewGroup.LayoutParams.WRAP_CONTENT,
@@ -151,6 +222,7 @@ public class AudioCaptureFragment extends Fragment {
                 0));
         
         mPlayButton = new PlayButton(activity);
+        mPlayButton.setEnabled(playButtonEnabled);
         recPlayButtonsLayout.addView(mPlayButton,
             new LinearLayout.LayoutParams(
                 ViewGroup.LayoutParams.WRAP_CONTENT,
@@ -176,6 +248,7 @@ public class AudioCaptureFragment extends Fragment {
                         0));
         
         mFileNameEditText = new FileNameEditText(activity);
+        mFileNameEditText.setEnabled(fileNameEditTextEnabled);
         mFileNameEditText.setEms(10);
         fileNameLayout.addView(mFileNameEditText,
                 new LinearLayout.LayoutParams(
@@ -194,13 +267,24 @@ public class AudioCaptureFragment extends Fragment {
                         0));
         
         mSaveButton = new SaveButton(activity);
+        mSaveButton.setEnabled(saveButtonEnabled);
         fragmentLayout.addView(mSaveButton,
                 new LinearLayout.LayoutParams(
                     ViewGroup.LayoutParams.WRAP_CONTENT,
                     ViewGroup.LayoutParams.WRAP_CONTENT,
                     0));
         
+        
+    	mRecordButton.setEnabled(recordButtonEnabled);
+    	mPlayButton.setEnabled(playButtonEnabled);
+    	mFileNameEditText.setEnabled(fileNameEditTextEnabled);
+    	mSaveButton.setEnabled(saveButtonEnabled);
+        
+        
         return fragmentLayout;
+        
+        
+        
         
 	}
 	
@@ -215,6 +299,8 @@ public class AudioCaptureFragment extends Fragment {
             mExternalStorageAvailable = mExternalStorageWriteable = false;
         }
 //        handleExternalStorageState(mExternalStorageAvailable, mExternalStorageWriteable);
+        
+
     }
 	
 	private void onRecord(boolean start) {
@@ -436,7 +522,19 @@ public class AudioCaptureFragment extends Fragment {
             super(ctx);
             setText("Save");
             setOnClickListener(clicker);
-            setEnabled(false);
+//            setEnabled(false);
         }
     }
+
+	@Override
+	public int describeContents() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void writeToParcel(Parcel arg0, int arg1) {
+		// TODO Auto-generated method stub
+		
+	}
 }
