@@ -11,6 +11,7 @@ import android.content.res.AssetFileDescriptor;
 import android.content.res.AssetManager;
 import android.content.res.Resources;
 import android.media.MediaPlayer;
+import android.media.MediaPlayer.OnCompletionListener;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -153,13 +154,22 @@ public class WordDefinitionFragment extends Fragment{
         OnClickListener clicker = new OnClickListener() {
             public void onClick(View v) {
                 onPlay(mStartPlaying);
-                if (mStartPlaying) {
+                if (mStartPlaying)
                     setText("Stop playing");
-                } else {
+                else
                     setText("Start playing");
-                }
+
                 mStartPlaying = !mStartPlaying;
             }
+        };
+        
+        OnCompletionListener listener = new OnCompletionListener() {
+			public void onCompletion(MediaPlayer mp) {
+				onPlay(mStartPlaying);
+                setText("Start playing");
+                
+                mStartPlaying = !mStartPlaying;
+			}
         };
         
 
@@ -180,6 +190,7 @@ public class WordDefinitionFragment extends Fragment{
         public void startPlaying() {
             player = new MediaPlayer();
             try {
+				player.setOnCompletionListener(listener);
                 player.setDataSource(audioFileFD.getFileDescriptor());
                 player.prepare();
                 player.start();
