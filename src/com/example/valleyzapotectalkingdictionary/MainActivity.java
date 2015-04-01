@@ -21,7 +21,6 @@ import android.view.View;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 public class MainActivity extends ActionBarActivity implements NavigationDrawerFragment.NavigationDrawerCallbacks  {
 
@@ -188,7 +187,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
         Bundle bundle = new Bundle();
         bundle.putString("QUERY", query);
         ((Fragment) fragment).setArguments(bundle);
-		transaction.replace(R.id.container, fragment).addToBackStack("fragBack").commit();				
+		transaction.addToBackStack("fragBack").replace(R.id.container, fragment).commit();				
     }
 
 
@@ -240,7 +239,17 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		}
 				
 		
-		fragmentManager.beginTransaction().replace(R.id.container, fragment).addToBackStack("fragBack").commit();				
+		fragmentManager.beginTransaction().addToBackStack("fragBack").replace(R.id.container, fragment).commit();				
 	}
+	
+//	@Override
+//	public void onBackPressed() {
+//	    FragmentManager manager = getSupportFragmentManager();
+//	    if (manager.getBackStackEntryCount() == 1 ) {
+//	        Log.i("1 fragment in backstack", "frag");
+//	    } else if (manager.getBackStackEntryCount() == 0){
+//	        Log.i("0 fragment in backstack", "frag");
+//	    }
+//	}
 
 }
