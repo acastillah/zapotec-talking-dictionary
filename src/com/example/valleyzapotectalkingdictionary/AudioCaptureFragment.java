@@ -8,6 +8,7 @@ import android.content.Context;
 import android.content.res.Configuration;
 import android.media.MediaPlayer;
 import android.media.MediaRecorder;
+import android.media.MediaPlayer.OnCompletionListener;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Parcel;
@@ -320,38 +321,6 @@ public class AudioCaptureFragment extends Fragment implements Parcelable {
         }
     }
 
-    private void onPlay(boolean start) {
-        if (start) {
-            startPlaying();
-            mRecordButton.setEnabled(false);
-            mSaveButton.setEnabled(false);
-            mFileNameEditText.setEnabled(false);
-        } else {
-            stopPlaying();
-            mRecordButton.setEnabled(true);
-            mFileNameEditText.setEnabled(true);
-            
-            if (!mFileNameEditText.getText().toString().equals(""))
-            	mSaveButton.setEnabled(true);
-        }
-    }
-
-    private void startPlaying() {
-        mPlayer = new MediaPlayer();
-        try {
-            mPlayer.setDataSource(mFileName);
-            mPlayer.prepare();
-            mPlayer.start();
-        } catch (IOException e) {
-            Log.e(LOG_TAG, "prepare() failed");
-        }
-    }
-
-    private void stopPlaying() {
-        mPlayer.release();
-        mPlayer = null;
-    }
-
     private void startRecording() {
         mRecorder = new MediaRecorder();
         mRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
@@ -412,11 +381,52 @@ public class AudioCaptureFragment extends Fragment implements Parcelable {
             }
         };
         
+        OnCompletionListener listener = new OnCompletionListener() {
+			public void onCompletion(MediaPlayer mp) {
+				onPlay(mStartPlaying);
+                setText("Start playing");
+                mStartPlaying = !mStartPlaying;
+			}
+        };
+        
 
         public PlayButton(Context ctx) {
             super(ctx);
             setText("Start playing");
             setOnClickListener(clicker);
+        }
+        
+        private void onPlay(boolean start) {
+            if (start) {
+                startPlaying();
+                mRecordButton.setEnabled(false);
+                mSaveButton.setEnabled(false);
+                mFileNameEditText.setEnabled(false);
+            } else {
+                stopPlaying();
+                mRecordButton.setEnabled(true);
+                mFileNameEditText.setEnabled(true);
+                
+                if (!mFileNameEditText.getText().toString().equals(""))
+                	mSaveButton.setEnabled(true);
+            }
+        }
+
+        private void startPlaying() {
+            mPlayer = new MediaPlayer();
+            try {
+            	mPlayer.setOnCompletionListener(listener);
+                mPlayer.setDataSource(mFileName);
+                mPlayer.prepare();
+                mPlayer.start();
+            } catch (IOException e) {
+                Log.e(LOG_TAG, "prepare() failed");
+            }
+        }
+
+        private void stopPlaying() {
+            mPlayer.release();
+            mPlayer = null;
         }
     }
     
