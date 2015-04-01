@@ -15,6 +15,18 @@
   	      	android:layout_width="fill_parent"
   	        android:layout_height="wrap_content" >
     	</android.support.v7.widget.SearchView>
+    	
+	    <fragment android:name="com.example.valleyzapotectalkingdictionary.SearchDomainFragment"
+              android:id="@+id/searchDomain_fragment"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="10dp" />
+
+		<fragment android:name="com.example.valleyzapotectalkingdictionary.SemanticDomainFragment"
+              android:id="@+id/semanticDomain_fragment"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              />
      	
      	<FrameLayout
         android:id="@+id/container"
