@@ -5,10 +5,10 @@
     android:layout_height="match_parent"
     tools:context="com.example.valleyzapotectalkingdictionary.MainActivity" >
         
-	<LinearLayout  
-	    android:orientation="vertical"
-	    android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
+	<LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="fill_parent"
+	    android:orientation="vertical" >
 	      
 	     <android.support.v7.widget.SearchView
 	       	android:id="@+id/searchBAR"
@@ -16,17 +16,28 @@
   	        android:layout_height="wrap_content" >
     	</android.support.v7.widget.SearchView>
     	
-	    <fragment android:name="com.example.valleyzapotectalkingdictionary.SearchDomainFragment"
-              android:id="@+id/searchDomain_fragment"
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:layout_marginTop="10dp" />
-
-		<fragment android:name="com.example.valleyzapotectalkingdictionary.SemanticDomainFragment"
-              android:id="@+id/semanticDomain_fragment"
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              />
+	   	<LinearLayout
+	   	    android:baselineAligned="false" 
+	   	    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:orientation="horizontal" >
+	        
+		    <fragment
+		        android:id="@+id/searchDomain_fragment"
+		        android:name="com.example.valleyzapotectalkingdictionary.SearchDomainFragment"
+		        android:layout_width="0dp"
+		        android:layout_weight="1"
+		        android:layout_height="wrap_content"
+		         />
+	
+			<fragment
+			    android:id="@+id/semanticDomain_fragment"
+			    android:name="com.example.valleyzapotectalkingdictionary.SemanticDomainFragment"
+			    android:layout_width="0dp"
+			    android:layout_weight="1"
+			    android:layout_height="wrap_content" />
+			
+		</LinearLayout>
      	
      	<FrameLayout
         android:id="@+id/container"
