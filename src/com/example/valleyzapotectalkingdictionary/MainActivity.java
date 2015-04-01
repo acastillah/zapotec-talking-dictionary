@@ -13,6 +13,7 @@ import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -39,7 +40,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 	    SearchView searchView = (SearchView) findViewById(R.id.searchBAR);
 		SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);		
 		searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));	
-	
+		searchView.setBackgroundColor(Color.GRAY);
 		mTitle = getString(R.string.app_name);
         handleIntent(getIntent());
 	}
@@ -73,7 +74,6 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 			else {
 				Log.i("SPINNER", "Spinner is null");
 			}
-			
 			
 			return true;
 
@@ -201,7 +201,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		// Options all users see
 		switch(position+1){
 			case 1:
-				fragment = new SearchBarFragment();	
+				fragment = new UpdateFragment();	
 				mTitle = getString(R.string.title_main_section);
 				break;
 			case 2:
@@ -236,8 +236,8 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 				fragment = new PasswordFragment(); // something is wrong with the fragment?
 				mTitle = getString(R.string.password_section);
 			}
-		}
-				
+			
+		}	
 		
 		fragmentManager.beginTransaction().addToBackStack("fragBack").replace(R.id.container, fragment).commit();				
 	}
