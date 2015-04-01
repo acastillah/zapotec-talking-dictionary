@@ -167,7 +167,6 @@ public class WordDefinitionFragment extends Fragment{
 			public void onCompletion(MediaPlayer mp) {
 				onPlay(mStartPlaying);
                 setText("Start playing");
-                
                 mStartPlaying = !mStartPlaying;
 			}
         };
