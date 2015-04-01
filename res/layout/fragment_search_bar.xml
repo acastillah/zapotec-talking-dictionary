@@ -16,7 +16,7 @@
 	     </FrameLayout>
 	    
 </ScrollView>	 
-	  
+
 	<fragment android:name="com.example.valleyzapotectalkingdictionary.TitleFragment"
               android:id="@+id/title_fragment"
               android:layout_width="wrap_content"

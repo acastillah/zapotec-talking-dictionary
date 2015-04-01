@@ -34,9 +34,13 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+		setContentView(R.layout.activity_main);	    
 		mNavigationDrawerFragment = (NavigationDrawerFragment) getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
 		mNavigationDrawerFragment.setUp(R.id.navigation_drawer, (DrawerLayout) findViewById(R.id.drawer_layout));
+	    SearchView searchView = (SearchView) findViewById(R.id.searchBAR);
+		SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);		
+		searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));	
+	
 		mTitle = getString(R.string.app_name);
         handleIntent(getIntent());
 	}
@@ -50,11 +54,6 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 			getMenuInflater().inflate(R.menu.main, menu);
 			//LanguageInterface.setLanguageInterfaceButtons(menu);
 			restoreActionBar();
-			
-			SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
-		    SearchView searchView = (SearchView) menu.findItem(R.id.action_search).getActionView();		    //OnClickListener searchClickListener = new SearchClickListener();
-			searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));	
-			
 			
 			MenuItem spinnerItem = menu.findItem(R.id.spinner);
 			Spinner spinner = (Spinner) MenuItemCompat.getActionView(spinnerItem);
@@ -189,7 +188,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
         Bundle bundle = new Bundle();
         bundle.putString("QUERY", query);
         ((Fragment) fragment).setArguments(bundle);
-		transaction.replace(R.id.container, fragment).commit();				
+		transaction.replace(R.id.container, fragment).addToBackStack("fragBack").commit();				
     }
 
 
@@ -241,7 +240,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		}
 				
 		
-		fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();				
+		fragmentManager.beginTransaction().replace(R.id.container, fragment).addToBackStack("fragBack").commit();				
 	}
 
 }
