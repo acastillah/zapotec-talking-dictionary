@@ -28,6 +28,8 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 	private NavigationDrawerFragment mNavigationDrawerFragment;
 
 	@SuppressWarnings("unused")
+	private Spinner searchSpinner, domainSpinner;
+	@SuppressWarnings("unused")
 	private static Menu menu = null;
 	private CharSequence mTitle;
 	
@@ -42,6 +44,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));	
 		searchView.setBackgroundColor(Color.GRAY);
 		mTitle = getString(R.string.app_name);
+		addListenerOnSpinnerItemSelection();
         handleIntent(getIntent());
 	}
 	
@@ -59,7 +62,6 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 			Spinner spinner = (Spinner) MenuItemCompat.getActionView(spinnerItem);
 			
 			if (spinner != null) {
-				Log.i("SPINNER", "Spinner is not null");
 				// Create an ArrayAdapter using the string array and a default spinner layout
 				ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
 				        R.array.languages_array, android.R.layout.simple_spinner_item);
@@ -72,7 +74,6 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 				spinner.setOnItemSelectedListener(listener);
 			}
 			else {
-				Log.i("SPINNER", "Spinner is null");
 			}
 			
 			return true;
@@ -104,17 +105,16 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 //				LanguageInterface.interfaceLanguage = LanguageInterface.LANGUAGE_ZAPOTEC;
 //				//LanguageInterface.setLanguageInterfaceButtons(MainActivity.menu);
 //				return true;
-//			case R.id.settings:
-//				Toast.makeText(this, "Settings.", Toast.LENGTH_SHORT).show();
-//				return true;
-//			case R.id.help:
-//				Toast.makeText(this, "Help.", Toast.LENGTH_SHORT).show();
-//				return true;
+
 		}
 		
 		return super.onOptionsItemSelected(item);
 	}
 	
+	 public void addListenerOnSpinnerItemSelection() {
+			searchSpinner = (Spinner) findViewById(R.id.search_spinner);
+			searchSpinner.setOnItemSelectedListener(new CustomItemSelectedListener());
+	  }
 	
 	public void displayWord(View view) {
 		Log.i("SEARCH RESULT FRAGMENT", "Displaying word details in a new WordDefinitionActivity...");
@@ -124,7 +124,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 	public void displayWordOfTheDay(View v) {
 		Log.i("WORD OF THE DAY FRAGMENT", "Word of the day was clicked");
 		startActivity(new Intent(this, WordDefinitionActivity.class));		
-	}
+	}	 
 	
 	static class LanguageInterface {
 		public static final int LANGUAGE_ENGLISH = 0;
@@ -173,21 +173,18 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
     	if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
     		// handles a search query
             String query = intent.getStringExtra(SearchManager.QUERY);
-            Log.i("Search word", query);
             showResults(query);
         }
     }
-
     
     private void showResults(String query) {
-    	Log.i("Results", "searching...");
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
 		Fragment fragment = new SearchResultsFragment();
         transaction.addToBackStack(null);            
         Bundle bundle = new Bundle();
         bundle.putString("QUERY", query);
         ((Fragment) fragment).setArguments(bundle);
-		transaction.addToBackStack("fragBack").replace(R.id.container, fragment).commit();				
+		transaction.replace(R.id.container, fragment).commit();				
     }
 
 
@@ -237,19 +234,9 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 				mTitle = getString(R.string.password_section);
 			}
 			
-		}	
-		
-		fragmentManager.beginTransaction().addToBackStack("fragBack").replace(R.id.container, fragment).commit();				
+		}			
+		fragmentManager.beginTransaction().addToBackStack(null).replace(R.id.container, fragment).commit();				
 	}
-	
-//	@Override
-//	public void onBackPressed() {
-//	    FragmentManager manager = getSupportFragmentManager();
-//	    if (manager.getBackStackEntryCount() == 1 ) {
-//	        Log.i("1 fragment in backstack", "frag");
-//	    } else if (manager.getBackStackEntryCount() == 0){
-//	        Log.i("0 fragment in backstack", "frag");
-//	    }
-//	}
-
 }
+
+
