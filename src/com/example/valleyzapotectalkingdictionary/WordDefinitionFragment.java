@@ -1,6 +1,7 @@
 package com.example.valleyzapotectalkingdictionary;
 
 import java.io.IOException;
+
 import android.content.Context;
 import android.content.res.AssetFileDescriptor;
 import android.content.res.AssetManager;
@@ -132,21 +133,24 @@ public class WordDefinitionFragment extends Fragment{
 			
 		}
 		
-//		try {
-//			String[] assets = assetManager.list("");
-//			int i=1;
-//			for (String a : assets)
-//				Log.i("ASSET", i + "..... " + a);
-//			
-//			assets = assetManager.list("audio");
-//			//i=2;
-//			for (String a : assets)
-//				Log.i("ASSET", i++ + " " + a);
-//		} catch (IOException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
 		
+		
+		
+		try {
+		String[] assets = assetManager.list("");
+		int i=1;
+		for (String a : assets)
+			Log.i("ASSET", i + "..... " + a);
+		
+		assets = assetManager.list("audio");
+		Log.i("ASSET", "there are " + assets.length);
+		for (String a : assets)
+			Log.i("ASSET", i++ + " " + a);
+	} catch (IOException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+
 		
 		if (!w.getIMG().equals("")) {
 			String imageFileName = "images/IMG_6114-scaled.jpg";
