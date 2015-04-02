@@ -28,7 +28,8 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 	private NavigationDrawerFragment mNavigationDrawerFragment;
 
 	@SuppressWarnings("unused")
-	private Spinner searchSpinner, domainSpinner;
+	static private Spinner searchSpinner, domainSpinner;
+	private int Language_search = 0;
 	@SuppressWarnings("unused")
 	private static Menu menu = null;
 	private CharSequence mTitle;
@@ -44,7 +45,8 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));	
 		searchView.setBackgroundColor(Color.GRAY);
 		mTitle = getString(R.string.app_name);
-		addListenerOnSpinnerItemSelection();
+		addListenerOnSpinnerItemSelection(); 
+		Log.i("LANG", "After spinner: " + Integer.toString(Language_search));
         handleIntent(getIntent());
 	}
 	
@@ -113,7 +115,9 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 	
 	 public void addListenerOnSpinnerItemSelection() {
 			searchSpinner = (Spinner) findViewById(R.id.search_spinner);
-			searchSpinner.setOnItemSelectedListener(new CustomItemSelectedListener());
+			CustomItemSelectedListener listener = new CustomItemSelectedListener();
+			searchSpinner.setOnItemSelectedListener(listener);
+			Language_search = listener.getLanguage();
 	  }
 	
 	public void displayWord(View view) {
@@ -180,9 +184,11 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
     private void showResults(String query) {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
 		Fragment fragment = new SearchResultsFragment();
-        transaction.addToBackStack(null);            
+        transaction.addToBackStack(null); 
+		Log.i("LANG", "Show Results: " + Integer.toString(Language_search));
         Bundle bundle = new Bundle();
         bundle.putString("QUERY", query);
+        bundle.putInt("LANG", Language_search);
         ((Fragment) fragment).setArguments(bundle);
 		transaction.replace(R.id.container, fragment).commit();				
     }

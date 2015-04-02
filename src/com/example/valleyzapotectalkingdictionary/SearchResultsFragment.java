@@ -1,7 +1,5 @@
 package com.example.valleyzapotectalkingdictionary;
 
-import org.apache.commons.lang3.StringEscapeUtils;
-
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -19,6 +17,7 @@ import android.widget.TextView;
 public class SearchResultsFragment extends Fragment {
 	private String query;
 	private ListView mListView;
+	private int lang;
 	private TextView mTextView;
 	
 	@Override
@@ -26,6 +25,7 @@ public class SearchResultsFragment extends Fragment {
                              Bundle savedInstanceState) {
 		Bundle bundle = this.getArguments();
         query = bundle.getString("QUERY");
+        lang = bundle.getInt("LANG");
 		// Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.search, container, false);
         mTextView = (TextView) v.findViewById(R.id.text);
@@ -37,8 +37,10 @@ public class SearchResultsFragment extends Fragment {
 	
 	public void showWords(){
 		DictionaryDatabase db = new DictionaryDatabase(getActivity());
-		
-    	Cursor cursor = db.getMatchWord(query);
+		Log.i("LANG", "Show Words: " + Integer.toString(lang));
+
+		Cursor cursor = db.getMatch(query, lang);
+    	//Cursor cursor = db.getMatchWord(query, lang);
     	if (cursor == null) {
             // There are no results
         	Log.i("Results", "None");

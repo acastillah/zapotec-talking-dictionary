@@ -24,9 +24,10 @@ public class DictionaryDatabase {
 
     private static final String TAG = "DictionaryDatabase";
     private static final String DATABASE_NAME = "dictionary";
-    private static final int DATABASE_VERSION = 7;
+    private static final int DATABASE_VERSION = 8;
     private static final String TABLE_WORDS = "words";
     private final DictionaryOpenHelper mDatabaseOpenHelper;
+    private int search = 0;
     
  // Words Table Columns names
     private static final String KEY_ID = "_id";
@@ -45,24 +46,45 @@ public class DictionaryDatabase {
     
     public DictionaryDatabase(Context context) {
         mDatabaseOpenHelper = new DictionaryOpenHelper(context);
+
     }
     
-    public Word getMatch(String query){
+    public Cursor getMatch(String q, int language){
+    	search = language;
+		Log.i("LANG", "get Match: " + Integer.toString(search));
+
+    	String KEY = null;
+    	if (search == 0){
+    		KEY = null;
+    	}
+    	else if (search == 1){
+    		KEY = KEY_WORD;
+    	}
+    	else if (search == 2){
+    		KEY = KEY_GLOSS;
+    	}
+    	else if (search == 3){
+    		KEY = KEY_ESGLOSS;
+    	}
+    	Log.i("Searching", Integer.toString(search));
     	SQLiteDatabase db = mDatabaseOpenHelper.getReadableDatabase();
-    	 Cursor cursor = db.query(TABLE_WORDS, null, KEY_GLOSS + "=?",
-	                new String[]{query}, null, null, null);
-    	 if(cursor!=null){
-    		 cursor.moveToFirst();
-    	 }
-    	 Word word = new Word(Integer.parseInt(cursor.getString(0)),
-	                cursor.getString(1), cursor.getString(2), cursor.getString(3), 
-	                cursor.getString(4), cursor.getString(5), cursor.getString(6), 
-	                cursor.getString(7), cursor.getString(8), cursor.getString(9),
-	                cursor.getString(10), cursor.getString(11), cursor.getString(12));
-    	 return word;
+    	//String[] params = {"%" + param1 + "%", "%" + param2 + "%", "%" + param3 + "%"};
+        Cursor cursor = db.query(TABLE_WORDS, new String[] { KEY_ID,
+                KEY_WORD, KEY_IPA, KEY_GLOSS, KEY_POS, KEY_USAGE, KEY_DIALECT, KEY_META, KEY_AUTHORITY,
+                KEY_AUDIO, KEY_IMG, KEY_SEMANTIC, KEY_ESGLOSS}, KEY + "=?",
+                new String[] { String.valueOf(q) }, null, null, null, null);
+        if(cursor==null){
+    		return null;
+    	}
+        if(!cursor.moveToFirst()){
+    		return null;
+    	}
+		return cursor;
+
     }
     
-    public Cursor getMatchWord(String query){
+    public Cursor getMatchWord(String query, int language){
+    	search = language;
     	Cursor found = mDatabaseOpenHelper.getEntry(query);
     	if(found==null){
     		return null;

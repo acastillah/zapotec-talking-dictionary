@@ -69,6 +69,14 @@ All rights reserved. Do not distribute or reproduce without permission.</string>
         <item>ZAP</item>
     </string-array>
     
+        <string-array name="search_options">
+        <item>Entire dictionary</item>
+        <item>Tlacolula Valley Zapotec</item>
+        <item>English</item>
+        <item>Spanish</item>
+    </string-array>
+    
+    
     <string name="preview_image">Image Preview</string>
     
     <string name="passwordExplanation">This log in provides access to tools for the linguists 
@@ -78,7 +86,7 @@ All rights reserved. Do not distribute or reproduce without permission.</string>
 	<string name="passwordIncorrect">Incorrect password</string>
 	<string name="submit">Submit</string>
 	
-	    <string name="search_hint">Search dictionary</string>
+	<string name="search_hint">Search dictionary</string>
 	
     
 </resources>
