@@ -42,6 +42,7 @@ public class WordDefinitionFragment extends Fragment{
 	private PlayButton playButton = null;
 	
 	private static final String audioFileDirectory = "audio";		// under assets
+	private String audioFileName = null;
 	private AssetFileDescriptor audioFileFD = null;
 	
 	private static final String imageFileDirectory = "images";		// under assets
@@ -124,10 +125,10 @@ public class WordDefinitionFragment extends Fragment{
 		AssetManager assetManager = getActivity().getAssets();
 		
 		if (!w.getAudio().equals("")) {
-			String audioFileName;// = "audio/TdVZ_JCS_06132014_bien_guenk.mp3";
+//			String audioFileName;// = "audio/TdVZ_JCS_06132014_bien_guenk.mp3";
 			audioFileName = "audio/" + w.getAudio();	// NEED TO DECODE!!!!
 //			audioFileName = "TdVZ_JCS_07292013_yu'u_casa.mp3";
-			audioFileName = "audio/teotitlan_Janet-Chavez-Santiago_16Jun2014-1540_1.mp3";
+//			audioFileName = "audio/teotitlan_Janet-Chavez-Santiago_16Jun2014-1540_1.mp3";
 		
 			playButton.setText(audioFileName);
 			
@@ -146,20 +147,20 @@ public class WordDefinitionFragment extends Fragment{
 			
 		}
 		
-		try {
-			String[] assets = assetManager.list("");
-			int i=1;
-			for (String a : assets)
-				Log.i("ASSET", i + " " + a);
-			
-			assets = assetManager.list("audio");
-			i=2;
-			for (String a : assets)
-				Log.i("ASSET", i + " " + a);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+//		try {
+//			String[] assets = assetManager.list("");
+//			int i=1;
+//			for (String a : assets)
+//				Log.i("ASSET", i + "..... " + a);
+//			
+//			assets = assetManager.list("audio");
+//			//i=2;
+//			for (String a : assets)
+//				Log.i("ASSET", i++ + " " + a);
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 		
 		
 		if (!w.getIMG().equals("")) {
