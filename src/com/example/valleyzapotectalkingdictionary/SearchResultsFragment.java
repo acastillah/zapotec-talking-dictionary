@@ -72,21 +72,6 @@ public class SearchResultsFragment extends Fragment {
             		Fragment fragment = new WordDefinitionFragment();
             		Cursor c = ((SimpleCursorAdapter)parent.getAdapter()).getCursor();
             		c.moveToPosition(position);      
-//                	String[] w = {
-//                			StringEscapeUtils.unescapeHtml4(c.getString(0)),
-//                			StringEscapeUtils.unescapeHtml4(c.getString(1)), 
-//                			StringEscapeUtils.unescapeHtml4(c.getString(2)), 
-//                			StringEscapeUtils.unescapeHtml4(c.getString(3)), 
-//                			StringEscapeUtils.unescapeHtml4(c.getString(4)),
-//                			StringEscapeUtils.unescapeHtml4(c.getString(5)),
-//                			StringEscapeUtils.unescapeHtml4(c.getString(6)),
-//                			StringEscapeUtils.unescapeHtml4(c.getString(7)),
-//                			StringEscapeUtils.unescapeHtml4(c.getString(8)),
-//                			StringEscapeUtils.unescapeHtml4(c.getString(9)),
-//                			StringEscapeUtils.unescapeHtml4(c.getString(10)),
-//                			StringEscapeUtils.unescapeHtml4(c.getString(11)),
-//                			StringEscapeUtils.unescapeHtml4(c.getString(12)),
-//                			};
             		String[] w = {c.getString(0),
     		                c.getString(1), c.getString(2), c.getString(3), 
     		                c.getString(4), c.getString(5), c.getString(6), 
