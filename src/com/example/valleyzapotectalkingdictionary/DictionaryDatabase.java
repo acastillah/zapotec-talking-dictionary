@@ -7,6 +7,7 @@ import java.io.InputStreamReader;
 import java.util.Iterator;
 import java.util.List;
 
+import org.apache.commons.lang3.StringEscapeUtils;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -111,19 +112,19 @@ public class DictionaryDatabase {
             Iterator<?> i = JSONReadFromFile();
         	while (i.hasNext()) {
         		JSONObject innerObj = (JSONObject) i.next();		                
-		            String id = (String) innerObj.get("oid");
-		            String word = (String) innerObj.get("lang");
-		            String ipa = (String) innerObj.get("ipa");		            
-		            String gloss = (String) innerObj.get("gloss");
-		            String pos = (String) innerObj.get("pos");
-		            String usage = (String) innerObj.get("usage_example");
-		            String dialect = (String) innerObj.get("dialect");
-		            String metadata = (String) innerObj.get("metadata");
-		            String authority = (String) innerObj.get("authority");
-		            String audio = (String) innerObj.get("audio");
-		            String image = (String) innerObj.get("image");
-		            String semantic_ids = (String) innerObj.get("semantic_ids");
-		            String es_gloss = (String) innerObj.get("es_gloss");
+		            String id 			= StringEscapeUtils.unescapeHtml4((String) innerObj.get("oid"));
+		            String word 		= StringEscapeUtils.unescapeHtml4((String) innerObj.get("lang"));
+		            String ipa 			= StringEscapeUtils.unescapeHtml4((String) innerObj.get("ipa"));		            
+		            String gloss 		= StringEscapeUtils.unescapeHtml4((String) innerObj.get("gloss"));
+		            String pos 			= StringEscapeUtils.unescapeHtml4((String) innerObj.get("pos"));
+		            String usage 		= StringEscapeUtils.unescapeHtml4((String) innerObj.get("usage_example"));
+		            String dialect 		= StringEscapeUtils.unescapeHtml4((String) innerObj.get("dialect"));
+		            String metadata 	= StringEscapeUtils.unescapeHtml4((String) innerObj.get("metadata"));
+		            String authority 	= StringEscapeUtils.unescapeHtml4((String) innerObj.get("authority"));
+		            String audio 		= StringEscapeUtils.unescapeHtml4((String) innerObj.get("audio"));
+		            String image 		= StringEscapeUtils.unescapeHtml4((String) innerObj.get("image"));
+		            String semantic_ids = StringEscapeUtils.unescapeHtml4((String) innerObj.get("semantic_ids"));
+		            String es_gloss 	= StringEscapeUtils.unescapeHtml4((String) innerObj.get("es_gloss"));
 		            Word w = new Word(Integer.parseInt(id),word,ipa,gloss,pos,usage,dialect,metadata,authority,audio,image,semantic_ids,es_gloss);
 		            long word_id = addWord(w);
                     if (word_id < 0) {

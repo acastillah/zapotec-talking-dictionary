@@ -3,6 +3,8 @@ package com.example.valleyzapotectalkingdictionary;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 
 import com.example.valleyzapotectalkingdictionary.AudioCaptureFragment.PlayButton;
 
@@ -22,6 +24,10 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import org.apache.commons.lang3.StringEscapeUtils;
+
+//.lang.StringEscapeUtils;
 
 public class WordDefinitionFragment extends Fragment{
 	
@@ -120,7 +126,8 @@ public class WordDefinitionFragment extends Fragment{
 		if (!w.getAudio().equals("")) {
 			String audioFileName = "audio/TdVZ_JCS_06132014_bien_guenk.mp3";
 			audioFileName = "audio/" + w.getAudio();	// NEED TO DECODE!!!!
-
+//			audioFileName = "TdVZ_JCS_07292013_yu'u_casa.mp3";
+		
 			try {
 				audioFileFD = assetManager.openFd(audioFileName);
 			} catch (IOException e) {
