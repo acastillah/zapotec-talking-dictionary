@@ -44,4 +44,12 @@
         android:layout_marginTop="66dp"
         android:text="Update" />
 
+    <TextView
+        android:id="@+id/currentLanguage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/updateButton"
+        android:layout_centerHorizontal="true"
+        android:text="@string/current_language" />
+
 </RelativeLayout>

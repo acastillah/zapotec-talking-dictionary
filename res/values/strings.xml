@@ -54,5 +54,7 @@ All rights reserved. Do not distribute or reproduce without permission.</string>
         <item>Spanish</item>
     </string-array>
     
+    <string name="current_language">English</string>
+    
 
 </resources>
