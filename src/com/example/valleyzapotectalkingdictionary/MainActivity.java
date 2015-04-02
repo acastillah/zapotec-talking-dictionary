@@ -13,6 +13,7 @@ import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
@@ -37,7 +38,23 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);	    
+		setContentView(R.layout.activity_main);	 
+		
+		/** Set the language **/
+		
+		SharedPreferences prefs = this.getSharedPreferences(Preferences.APP_SETTINGS, Activity.MODE_PRIVATE);
+		Editor prefEditor = prefs.edit();
+		
+		if (!prefs.contains(Preferences.LANGUAGE))
+			prefEditor.putString(Preferences.LANGUAGE, Preferences.ENGLISH);
+		
+		prefEditor.commit();
+		
+		Log.i("LANG", "App displaying in " + prefs.getString(Preferences.LANGUAGE, "no language"));
+		
+		
+		/*********************/
+		
 		mNavigationDrawerFragment = (NavigationDrawerFragment) getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
 		mNavigationDrawerFragment.setUp(R.id.navigation_drawer, (DrawerLayout) findViewById(R.id.drawer_layout));
 	    SearchView searchView = (SearchView) findViewById(R.id.searchBAR);
@@ -94,21 +111,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		
-		switch (item.getItemId()) {
-//			case R.id.englishInterface:
-//				LanguageInterface.interfaceLanguage = LanguageInterface.LANGUAGE_ENGLISH;
-//				//LanguageInterface.setLanguageInterfaceButtons(MainActivity.menu);
-//				return true;
-//			case R.id.spanishInterface:
-//				LanguageInterface.interfaceLanguage = LanguageInterface.LANGUAGE_SPANISH;
-//				//LanguageInterface.setLanguageInterfaceButtons(MainActivity.menu);
-//				return true;
-//			case R.id.zapotecInterface:
-//				LanguageInterface.interfaceLanguage = LanguageInterface.LANGUAGE_ZAPOTEC;
-//				//LanguageInterface.setLanguageInterfaceButtons(MainActivity.menu);
-//				return true;
-
-		}
+		switch (item.getItemId()) {}
 		
 		return super.onOptionsItemSelected(item);
 	}

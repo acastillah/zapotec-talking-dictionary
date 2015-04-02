@@ -1,52 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- ENGLISH -->
+    
     <string name="app_name">Valley Zapotec Dictionary</string>
     <string name="app_name_eng">Valley Zapotec Talking Dictionary</string>
-    <string name="app_name_spa">Valley Zapotec Talking Dictionary</string>
-    <!-- Translate -->
-    <string name="app_name_zap">Valley Zapotec Talking Dictionary</string>
-    <!-- Translate -->
-
-
-    <!-- Action Bar -->
-    <string name="side_menu_eng">Menu</string>
-    <string name="side_menu_spa">Menú</string>
-    <string name="side_menu_zap">Menu</string>
-    <!-- Translate -->
+    <string name="side_menu">Menu</string>
     <string name="englishInterface">ENG</string>
     <string name="spanishInterface">ESP</string>
     <string name="zapotecInterface">ZAP</string>
-    <string name="englishInterface_eng">English</string>
-    <string name="englishInterface_spa">Inglés</string>
-    <string name="englishInterface_zap">English</string>
-    <string name="spanishInterface_eng">Spanish</string>
-    <string name="spanishInterface_spa">Español</string>
-    <string name="spanishInterface_zap">Spanish</string>
-    <!-- Translate -->
-    <string name="zapotecInterface_eng">Zapotec</string>
-    <string name="zapotecInterface_spa">Zapoteca</string>
-    <!-- Translate -->
-    <string name="zapotecInterface_zap">Zapoteca</string>
-    <!-- Translate -->
-    <string name="settings_eng">Settings</string>
-
-    <!-- Main Activity -->
-    <string name="search_eng">Search</string>
-    <string name="search_spa">Busqueda</string>
-    <!-- Translate -->
-    <string name="search_zap">Search</string>
-    <!-- Translate -->
-    <string name="wordOfTheDay_eng">Word of the Day</string>
-    <string name="wordOfTheDay_spa">Palabra del dia</string>
-    <!-- Translate -->
-    <string name="wordOfTheDay_zap">Word of the Day</string>
-    <!-- Translate -->
-
+    <string name="english">English</string>
+    <string name="spanish">Spanish</string>
+    <string name="settings">Settings</string>
+    <string name="search">Search</string>
+    <string name="wordOfTheDay">Word of the Day</string>
     <string name="title_activity_menu">Menu</string>
     <string name="title_activity_search_result">Search Result</string>
     <string name="title_activity_word_definition">Word Definition</string>
-    <string name="action_settings">Settings</string>
     <string name="title_activity_search_fragment">SearchFragment</string>
     <string name="title_main_section">Search</string>
     <string name="title_section2">Update</string>
@@ -61,7 +31,15 @@ Dictionary produced by Brook Lillehaugen, with support from K. David Harrison an
 All rights reserved. Do not distribute or reproduce without permission.</string>
     <string name="help">Help</string>
     <string name="title_activity_search">SearchActivity</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="preview_image">Image Preview</string>
+    <string name="passwordExplanation">This log in provides access to tools for the linguists 
+        developing the Vally Zapotec language database. If you are not a part of the project or 
+        have not been provided with a password, then you cannot access these tools.</string>
+	<string name="password">Password: </string>
+	<string name="passwordIncorrect">Incorrect password</string>
+	<string name="submit">Submit</string>
+	<string name="search_hint">Search dictionary</string>
+    
     
     <string-array name="languages_array">
         <item>ENG</item>
@@ -69,24 +47,12 @@ All rights reserved. Do not distribute or reproduce without permission.</string>
         <item>ZAP</item>
     </string-array>
     
-        <string-array name="search_options">
+    <string-array name="search_options">
         <item>Entire dictionary</item>
         <item>Tlacolula Valley Zapotec</item>
         <item>English</item>
         <item>Spanish</item>
     </string-array>
     
-    
-    <string name="preview_image">Image Preview</string>
-    
-    <string name="passwordExplanation">This log in provides access to tools for the linguists 
-        developing the Vally Zapotec language database. If you are not a part of the project or 
-        have not been provided with a password, then you cannot access these tools.</string>
-	<string name="password">Password: </string>
-	<string name="passwordIncorrect">Incorrect password</string>
-	<string name="submit">Submit</string>
-	
-	<string name="search_hint">Search dictionary</string>
-	
-    
+
 </resources>
