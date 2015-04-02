@@ -1,17 +1,9 @@
 package com.example.valleyzapotectalkingdictionary;
 
-import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
-
-import com.example.valleyzapotectalkingdictionary.AudioCaptureFragment.PlayButton;
-
 import android.content.Context;
 import android.content.res.AssetFileDescriptor;
 import android.content.res.AssetManager;
-import android.content.res.Resources;
 import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnCompletionListener;
 import android.os.Bundle;
@@ -20,14 +12,9 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
-import org.apache.commons.lang3.StringEscapeUtils;
-
-//.lang.StringEscapeUtils;
 
 public class WordDefinitionFragment extends Fragment{
 	

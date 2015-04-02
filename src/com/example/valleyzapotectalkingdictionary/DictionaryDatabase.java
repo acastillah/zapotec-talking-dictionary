@@ -51,28 +51,31 @@ public class DictionaryDatabase {
     
     public Cursor getMatch(String q, int language){
     	search = language;
-		Log.i("LANG", "get Match: " + Integer.toString(search));
-
     	String KEY = null;
+    	String ALL[] = new String[] { String.valueOf(q), String.valueOf(q), String.valueOf(q) };
+    	String COMP[] = null;
     	if (search == 0){
-    		KEY = null;
+    		KEY = KEY_WORD + "=?" + " OR " + KEY_GLOSS + "=?" + " OR " + KEY_ESGLOSS + "=?";
+    		COMP = ALL;
     	}
     	else if (search == 1){
-    		KEY = KEY_WORD;
+    		KEY = KEY_WORD + "=?";
+    		COMP = new String[] {String.valueOf(q)};
     	}
     	else if (search == 2){
-    		KEY = KEY_GLOSS;
+    		KEY = KEY_GLOSS + "=?";
+        	COMP = new String[] {String.valueOf(q)};
     	}
     	else if (search == 3){
-    		KEY = KEY_ESGLOSS;
+    		KEY = KEY_ESGLOSS + "=?";
+        	COMP = new String[] {String.valueOf(q)};
     	}
-    	Log.i("Searching", Integer.toString(search));
     	SQLiteDatabase db = mDatabaseOpenHelper.getReadableDatabase();
-    	//String[] params = {"%" + param1 + "%", "%" + param2 + "%", "%" + param3 + "%"};
-        Cursor cursor = db.query(TABLE_WORDS, new String[] { KEY_ID,
+    	
+    	Cursor cursor = db.query(TABLE_WORDS, new String[] { KEY_ID,
                 KEY_WORD, KEY_IPA, KEY_GLOSS, KEY_POS, KEY_USAGE, KEY_DIALECT, KEY_META, KEY_AUTHORITY,
-                KEY_AUDIO, KEY_IMG, KEY_SEMANTIC, KEY_ESGLOSS}, KEY + "=?",
-                new String[] { String.valueOf(q) }, null, null, null, null);
+                KEY_AUDIO, KEY_IMG, KEY_SEMANTIC, KEY_ESGLOSS}, KEY,
+                COMP, null, null, null, null);
         if(cursor==null){
     		return null;
     	}
@@ -81,18 +84,6 @@ public class DictionaryDatabase {
     	}
 		return cursor;
 
-    }
-    
-    public Cursor getMatchWord(String query, int language){
-    	search = language;
-    	Cursor found = mDatabaseOpenHelper.getEntry(query);
-    	if(found==null){
-    		return null;
-    	}
-    	if(!found.moveToFirst()){
-    		return null;
-    	}
-    	return found;
     }
     
     public class DictionaryOpenHelper extends SQLiteOpenHelper {

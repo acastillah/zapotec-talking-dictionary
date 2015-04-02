@@ -15,8 +15,8 @@
   	      	android:layout_width="fill_parent"
   	        android:layout_height="wrap_content" >
     	</android.support.v7.widget.SearchView>
-    	
-	   	<LinearLayout
+    		        
+	     	<LinearLayout
 	   	    android:baselineAligned="false" 
 	   	    android:layout_width="match_parent"
 		    android:layout_height="wrap_content"
@@ -24,23 +24,24 @@
 	        
 		    <Spinner
         android:id="@+id/search_spinner"
+        android:layout_width="0dp"
+        android:layout_weight="1"
         android:entries="@array/search_options"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 	
-			<fragment
-			    android:id="@+id/semanticDomain_fragment"
-			    android:name="com.example.valleyzapotectalkingdictionary.SemanticDomainFragment"
-			    android:layout_width="0dp"
-			    android:layout_weight="1"
-			    android:layout_height="wrap_content" />
-			
+			<Spinner
+        android:id="@+id/domain_spinner"
+        android:entries="@array/domain_options"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"/>
 		</LinearLayout>
-     	
+			     	
+			   
      	<FrameLayout
         android:id="@+id/container"
         android:layout_width="fill_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="wrap_content">
      	</FrameLayout>
      	
      </LinearLayout>

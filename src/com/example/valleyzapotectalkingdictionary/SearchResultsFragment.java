@@ -4,7 +4,6 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,16 +36,10 @@ public class SearchResultsFragment extends Fragment {
 	
 	public void showWords(){
 		DictionaryDatabase db = new DictionaryDatabase(getActivity());
-		Log.i("LANG", "Show Words: " + Integer.toString(lang));
-
 		Cursor cursor = db.getMatch(query, lang);
-    	//Cursor cursor = db.getMatchWord(query, lang);
     	if (cursor == null) {
-            // There are no results
-        	Log.i("Results", "None");
-        	
+            // There are no results        	
     		mTextView.setText("No Results");
-    		//mTextView.setText(getString(R.string.no_results, new Object[] {query}));
         } 
     	else {
    		 	cursor.moveToFirst();
@@ -59,7 +52,6 @@ public class SearchResultsFragment extends Fragment {
             // Create a simple cursor adapter for the definitions and apply them to the ListView
             SimpleCursorAdapter words = new SimpleCursorAdapter(getActivity(),R.layout.search_results, cursor, from, to,0);
             mListView.setAdapter(words);
-        	Log.i("Results", "adapter set");
 
             // Define the on-click listener for the list items
             mListView.setOnItemClickListener(new OnItemClickListener() {
