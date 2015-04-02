@@ -1,5 +1,7 @@
 package com.example.valleyzapotectalkingdictionary;
 
+import java.util.Locale;
+
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.SearchView;
@@ -14,6 +16,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import android.content.res.Configuration;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
@@ -35,13 +38,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 	private static Menu menu = null;
 	private CharSequence mTitle;
 	
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);	 
-		
-		/** Set the language **/
-		
+	private int setLanguage(Spinner spinner) {
 		SharedPreferences prefs = this.getSharedPreferences(Preferences.APP_SETTINGS, Activity.MODE_PRIVATE);
 		Editor prefEditor = prefs.edit();
 		
@@ -52,6 +49,46 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		
 		Log.i("LANG", "App displaying in " + prefs.getString(Preferences.LANGUAGE, "no language"));
 		
+		prefs = this.getSharedPreferences(Preferences.APP_SETTINGS, Activity.MODE_PRIVATE);
+		String lang = prefs.getString(Preferences.LANGUAGE, Preferences.ENGLISH);
+		Locale locale = Preferences.ENGLISH_LOC;
+		int selection = 0;
+		
+		if (lang.equals(Preferences.SPANISH)) {
+			locale = Preferences.SPANISH_LOC;
+			selection = 1;
+		}
+		else if (lang.equals(Preferences.ZAPOTEC)) {
+			locale = Preferences.ZAPOTEC_LOC;
+			selection = 2;
+		}
+		else {
+			locale = Preferences.ENGLISH_LOC;
+			selection = 0;
+		}
+		
+		Locale.setDefault(locale);
+		
+//		if (spinner != null)
+//			spinner.setSelection(selection);
+		
+		Configuration config = new Configuration();
+		config.locale = locale;
+		getBaseContext().getResources().updateConfiguration(config, 
+		    getBaseContext().getResources().getDisplayMetrics());
+		
+		return selection;
+	}
+	
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);	 
+		
+		/** Set the language **/
+		
+		setLanguage(null);
 		
 		/*********************/
 		
@@ -91,6 +128,9 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 				
 				OnItemSelectedListener listener = new LanguageSpinnerItemSelectedListener();
 				spinner.setOnItemSelectedListener(listener);
+				
+				int selection = setLanguage(spinner);
+				spinner.setSelection(selection);
 			}
 			else {
 			}

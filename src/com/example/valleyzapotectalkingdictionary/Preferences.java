@@ -1,5 +1,7 @@
 package com.example.valleyzapotectalkingdictionary;
 
+import java.util.Locale;
+
 public class Preferences {
 	public static final String APP_SETTINGS = "APP_SETTINGS";
 	
@@ -12,4 +14,8 @@ public class Preferences {
 	public static final String ENGLISH = "ENGLISH";
 	public static final String SPANISH = "SPANISH";
 	public static final String ZAPOTEC = "ZAPOTEC";
+	
+	public static final Locale ENGLISH_LOC = Locale.ENGLISH;
+	public static final Locale SPANISH_LOC = new Locale(SPANISH);
+	public static final Locale ZAPOTEC_LOC = new Locale(ZAPOTEC);
 }
