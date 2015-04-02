@@ -2,6 +2,8 @@ package com.example.valleyzapotectalkingdictionary;
 
 import java.io.IOException;
 
+import org.apache.commons.lang3.StringEscapeUtils;
+
 import android.content.Context;
 import android.content.res.AssetFileDescriptor;
 import android.content.res.AssetManager;
@@ -114,8 +116,31 @@ public class WordDefinitionFragment extends Fragment{
 		
 		if (!w.getAudio().equals("")) {
 			audioFileName = "audio/" + w.getAudio();
+			
+//			String audioFileName2 = "audio/TdVZ_JCS_07292013_yu'u_casa.mp3";
+//			
+//			String jsonFileName = "TdVZ_JCS_07292013_yu&#8217;u_casa.mp3";
+//			
+//			Log.i("AUDIO", "decoded in DB=" + audioFileName + "\n"
+//					+ "copied from eclipse" + audioFileName2 + "\n" +
+//					"equal?=" + audioFileName.equals(audioFileName2) + "\n"
+//					+ "from json=" + jsonFileName
+//					+ "\nescape Html3=" + StringEscapeUtils.unescapeHtml3(jsonFileName)
+//					+ "\nescape Html4=" + StringEscapeUtils.unescapeHtml4(jsonFileName)
+//					+ "\nescape Xml=" + StringEscapeUtils.unescapeXml(jsonFileName)
+//					+ "\nescape Csv=" + StringEscapeUtils.unescapeCsv(jsonFileName)
+//					+ "\nescape EcmaScript=" + StringEscapeUtils.unescapeEcmaScript(jsonFileName)
+//					+ "\nescape Java=" + StringEscapeUtils.unescapeJava(jsonFileName)
+//					+ "\nescape Json=" + StringEscapeUtils.unescapeJson(jsonFileName));
+			
+			String HtmlUnescapedQuote = StringEscapeUtils.unescapeHtml3("&#8217;");
+			String imageFileNameQuote = "'";
+			
+			audioFileName = audioFileName.replace(HtmlUnescapedQuote, imageFileNameQuote);
+			
+			Log.i("AUDIO", "Replaced quote=" + audioFileName);
 
-//			playButton.setText(audioFileName);
+			playButton.setText(audioFileName);
 			
 			try {
 				audioFileFD = assetManager.openFd(audioFileName);
@@ -136,20 +161,20 @@ public class WordDefinitionFragment extends Fragment{
 		
 		
 		
-		try {
-		String[] assets = assetManager.list("");
-		int i=1;
-		for (String a : assets)
-			Log.i("ASSET", i + "..... " + a);
-		
-		assets = assetManager.list("audio");
-		Log.i("ASSET", "there are " + assets.length);
-		for (String a : assets)
-			Log.i("ASSET", i++ + " " + a);
-	} catch (IOException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}
+//		try {
+//			String[] assets = assetManager.list("");
+//			int i=1;
+//			for (String a : assets)
+//				Log.i("ASSET", i + "..... " + a);
+//			
+//			assets = assetManager.list("audio");
+//			Log.i("ASSET", "there are " + assets.length);
+//			for (String a : assets)
+//				Log.i("ASSET", i++ + " " + a);
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 
 		
 		if (!w.getIMG().equals("")) {
