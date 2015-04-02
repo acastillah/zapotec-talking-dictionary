@@ -22,13 +22,11 @@
 		    android:layout_height="wrap_content"
 		    android:orientation="horizontal" >
 	        
-		    <fragment
-		        android:id="@+id/searchDomain_fragment"
-		        android:name="com.example.valleyzapotectalkingdictionary.SearchDomainFragment"
-		        android:layout_width="0dp"
-		        android:layout_weight="1"
-		        android:layout_height="wrap_content"
-		         />
+		    <Spinner
+        android:id="@+id/search_spinner"
+        android:entries="@array/search_options"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 	
 			<fragment
 			    android:id="@+id/semanticDomain_fragment"

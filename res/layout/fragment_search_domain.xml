@@ -12,7 +12,8 @@
         android:text="Search: " />
 
     <Spinner
-        android:id="@+id/searchDomain_spinner"
+        android:id="@+id/search_spinner"
+        android:entries="@array/search_options"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 

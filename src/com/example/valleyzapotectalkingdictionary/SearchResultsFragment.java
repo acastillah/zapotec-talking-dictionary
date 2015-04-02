@@ -37,6 +37,7 @@ public class SearchResultsFragment extends Fragment {
 	
 	public void showWords(){
 		DictionaryDatabase db = new DictionaryDatabase(getActivity());
+		
     	Cursor cursor = db.getMatchWord(query);
     	if (cursor == null) {
             // There are no results
