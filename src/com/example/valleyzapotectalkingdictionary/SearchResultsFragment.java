@@ -1,5 +1,7 @@
 package com.example.valleyzapotectalkingdictionary;
 
+import org.apache.commons.lang3.StringEscapeUtils;
+
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -71,11 +73,11 @@ public class SearchResultsFragment extends Fragment {
             		Fragment fragment = new WordDefinitionFragment();
             		Cursor c = ((SimpleCursorAdapter)parent.getAdapter()).getCursor();
             		c.moveToPosition(position);      
-                	String[] w = {c.getString(0),
-		                c.getString(1), c.getString(2), c.getString(3), 
-		                c.getString(4), c.getString(5), c.getString(6), 
-		                c.getString(7), c.getString(8), c.getString(9),
-		                c.getString(10), c.getString(11), c.getString(12)};
+            		String[] w = {c.getString(0),
+    		                c.getString(1), c.getString(2), c.getString(3), 
+    		                c.getString(4), c.getString(5), c.getString(6), 
+    		                c.getString(7), c.getString(8), c.getString(9),
+    		                c.getString(10), c.getString(11), c.getString(12)};
             		Bundle bundle = new Bundle();
             	    bundle.putStringArray("WORD", w);
             	    ((Fragment) fragment).setArguments(bundle);
