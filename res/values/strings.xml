@@ -69,11 +69,16 @@ All rights reserved. Do not distribute or reproduce without permission.</string>
         <item>ZAP</item>
     </string-array>
     
-        <string-array name="search_options">
+    <string-array name="search_options">
         <item>Entire dictionary</item>
         <item>Tlacolula Valley Zapotec</item>
         <item>English</item>
         <item>Spanish</item>
+    </string-array>
+    
+    <string-array name="domain_options">
+        <item>Animals</item>
+        <item>Fruits</item>
     </string-array>
     
     

@@ -19,6 +19,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
@@ -29,7 +30,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 
 	@SuppressWarnings("unused")
 	static private Spinner searchSpinner, domainSpinner;
-	private int Language_search = 0;
+	private static int Language_search = 0;
 	@SuppressWarnings("unused")
 	private static Menu menu = null;
 	private CharSequence mTitle;
@@ -46,7 +47,6 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		searchView.setBackgroundColor(Color.GRAY);
 		mTitle = getString(R.string.app_name);
 		addListenerOnSpinnerItemSelection(); 
-		Log.i("LANG", "After spinner: " + Integer.toString(Language_search));
         handleIntent(getIntent());
 	}
 	
@@ -115,11 +115,19 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 	
 	 public void addListenerOnSpinnerItemSelection() {
 			searchSpinner = (Spinner) findViewById(R.id.search_spinner);
-			CustomItemSelectedListener listener = new CustomItemSelectedListener();
-			searchSpinner.setOnItemSelectedListener(listener);
-			Language_search = listener.getLanguage();
+			
+		   searchSpinner.setOnItemSelectedListener(new OnItemSelectedListener() {
+		        public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
+		            Language_search = pos;
+		        }
+		        public void onNothingSelected(AdapterView<?> arg0) {
+		        }
+		    }); 
+			
 	  }
 	
+	 
+	 
 	public void displayWord(View view) {
 		Log.i("SEARCH RESULT FRAGMENT", "Displaying word details in a new WordDefinitionActivity...");
 		startActivity(new Intent(this, WordDefinitionActivity.class));
@@ -176,7 +184,8 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 //        } else if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
     	if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
     		// handles a search query
-            String query = intent.getStringExtra(SearchManager.QUERY);
+            String q = intent.getStringExtra(SearchManager.QUERY);
+            String query = q.trim();
             showResults(query);
         }
     }
@@ -184,15 +193,12 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
     private void showResults(String query) {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
 		Fragment fragment = new SearchResultsFragment();
-        transaction.addToBackStack(null); 
-		Log.i("LANG", "Show Results: " + Integer.toString(Language_search));
         Bundle bundle = new Bundle();
         bundle.putString("QUERY", query);
         bundle.putInt("LANG", Language_search);
         ((Fragment) fragment).setArguments(bundle);
-		transaction.replace(R.id.container, fragment).commit();				
+		transaction.addToBackStack(null).replace(R.id.container, fragment).commit();				
     }
-
 
 	@Override
 	public void onNavigationDrawerItemSelected(int position) {
@@ -220,12 +226,10 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		// Options only linguists see
 		if (preferences.getBoolean(Preferences.IS_LINGUIST, false) == true) {
 			if (position+1 == 4) {
-				Log.i("NAV", "ImageCaptureFragment selected");
 				fragment = new ImageCaptureFragment();
 				mTitle = getString(R.string.photo_section);
 			}
 			else if (position+1 == 5) {
-				Log.i("NAV", "AudioCaptureFragment selected");
 				fragment = new AudioCaptureFragment();
 				mTitle = getString(R.string.audio_section);
 			}
@@ -235,7 +239,6 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		else {
 			Log.i("NAV", "User is not logged in");
 			if (position+1 == 4) {
-				Log.i("NAV", "PasswordFragment selected");
 				fragment = new PasswordFragment(); // something is wrong with the fragment?
 				mTitle = getString(R.string.password_section);
 			}
