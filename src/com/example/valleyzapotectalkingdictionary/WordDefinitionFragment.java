@@ -125,12 +125,9 @@ public class WordDefinitionFragment extends Fragment{
 		AssetManager assetManager = getActivity().getAssets();
 		
 		if (!w.getAudio().equals("")) {
-//			String audioFileName;// = "audio/TdVZ_JCS_06132014_bien_guenk.mp3";
-			audioFileName = "audio/" + w.getAudio();	// NEED TO DECODE!!!!
-//			audioFileName = "TdVZ_JCS_07292013_yu'u_casa.mp3";
-//			audioFileName = "audio/teotitlan_Janet-Chavez-Santiago_16Jun2014-1540_1.mp3";
-		
-			playButton.setText(audioFileName);
+			audioFileName = "audio/" + w.getAudio();
+
+//			playButton.setText(audioFileName);
 			
 			try {
 				audioFileFD = assetManager.openFd(audioFileName);
@@ -142,7 +139,8 @@ public class WordDefinitionFragment extends Fragment{
 				Log.i("AUDIO", "Opened audio file, fd=" + audioFileFD.getFileDescriptor());
 			}
 			else {
-				playButton.setEnabled(false);	// change to playButton.setVisible(View.GONE);
+//				playButton.setEnabled(false);
+				playButton.setVisibility(View.GONE);
 			}
 			
 		}
@@ -216,7 +214,13 @@ public class WordDefinitionFragment extends Fragment{
             player = new MediaPlayer();
             try {
 				player.setOnCompletionListener(listener);
-                player.setDataSource(audioFileFD.getFileDescriptor());
+				
+//                player.setDataSource(audioFileFD.getFileDescriptor());
+				
+				// must call setDataSource giving offset and length in addition to FD!!!
+				// calling setDataSource with just FD plays all of the audio files in the directory
+                player.setDataSource(audioFileFD.getFileDescriptor(), audioFileFD.getStartOffset(), audioFileFD.getLength ());
+                
                 player.prepare();
                 player.start();
             } catch (IOException e) {
