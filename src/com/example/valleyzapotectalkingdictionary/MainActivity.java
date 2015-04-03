@@ -10,6 +10,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v4.widget.DrawerLayout;
+import android.text.Html;
 import android.app.Activity;
 import android.app.SearchManager;
 import android.content.Context;
@@ -18,6 +19,7 @@ import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.content.res.Configuration;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -100,10 +102,15 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 	    SearchView searchView = (SearchView) findViewById(R.id.searchBAR);
 		SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);		
 		searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));	
-		searchView.setBackgroundColor(Color.GRAY);
+//		searchView.setBackgroundColor(Color.GRAY);
+		searchView.setBackgroundColor(Color.parseColor(getResources().getString(R.color.searchbar_background_color)));
 		mTitle = getString(R.string.app_name);
 		addListenerOnSpinnerItemSelection(); 
         handleIntent(getIntent());
+        
+//        searchSpinner.set
+//        setBackgroundColor(Style.dropdownColor);
+//        domainSpinner.setBackgroundColor(Style.dropdownColor);
 	}
 	
 
@@ -148,8 +155,16 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 	public void restoreActionBar() {
 		ActionBar actionBar = getSupportActionBar();
 		actionBar.setDisplayShowTitleEnabled(true);
-		actionBar.setTitle(mTitle);
-
+		
+//		actionBar.setBackgroundDrawable((Color.parseColor(getResources().getString(R.color.actionbar_background_color))));
+//		
+		
+		actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor(getResources().getString(R.color.actionbar_background_color))));
+		
+		if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT)
+			actionBar.setTitle(Html.fromHtml("<small>" + mTitle + "</small>"));
+		else
+			actionBar.setTitle(mTitle);
 	}
 	
 	@Override
@@ -173,6 +188,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 			searchSpinner.setOnItemSelectedListener(new OnItemSelectedListener() {
 		        public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
 		            Language_search = pos;
+//		            view.setBackgroundColor(Style.dropdownColor);
 		        }
 		        public void onNothingSelected(AdapterView<?> arg0) {
 		        }
