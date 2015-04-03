@@ -46,8 +46,8 @@ public class ImageCaptureFragment extends Fragment {
 	private ImageCaptureButton mImageCaptureButton = null;
 	private TextView mPreviewText = null;
 	private ImageView mImageView = null;
-	private FileNameEditText mFileNameEditText = null;
-	private SaveButton mSaveButton = null;
+//	private FileNameEditText mFileNameEditText = null;
+//	private SaveButton mSaveButton = null;
 	
 	private boolean mImageCaptured = false;
 	String mCurrentPhotoPath;
@@ -164,34 +164,36 @@ public class ImageCaptureFragment extends Fragment {
         LinearLayout fileNameLayout = new LinearLayout(activity);
         fileNameLayout.setOrientation(LinearLayout.HORIZONTAL);
         
-        TextView namePhotoTextView = new TextView(activity);
-        namePhotoTextView.setText(R.string.photoName);
-        fileNameLayout.addView(namePhotoTextView);
+//        TextView namePhotoTextView = new TextView(activity);
+//        namePhotoTextView.setText(R.string.photoName);
+//        fileNameLayout.addView(namePhotoTextView);
+//        
+//        mFileNameEditText = new FileNameEditText(activity);
+//        mFileNameEditText.setEms(10);
+//        fileNameLayout.addView(mFileNameEditText,
+//                new LinearLayout.LayoutParams(
+//                    ViewGroup.LayoutParams.WRAP_CONTENT,
+//                    ViewGroup.LayoutParams.WRAP_CONTENT,
+//                    0));
+//        
+//        TextView imageExtension = new TextView(activity);
+//        imageExtension.setText(".jpg");
+//        fileNameLayout.addView(imageExtension);
+//        
+//        fragmentLayout.addView(fileNameLayout,
+//                new LinearLayout.LayoutParams(
+//                        ViewGroup.LayoutParams.WRAP_CONTENT,
+//                        ViewGroup.LayoutParams.WRAP_CONTENT,
+//                        0));
         
-        mFileNameEditText = new FileNameEditText(activity);
-        mFileNameEditText.setEms(10);
-        fileNameLayout.addView(mFileNameEditText,
-                new LinearLayout.LayoutParams(
-                    ViewGroup.LayoutParams.WRAP_CONTENT,
-                    ViewGroup.LayoutParams.WRAP_CONTENT,
-                    0));
+//        mSaveButton = new SaveButton(activity);
+//        fragmentLayout.addView(mSaveButton,
+//                new LinearLayout.LayoutParams(
+//                    ViewGroup.LayoutParams.WRAP_CONTENT,
+//                    ViewGroup.LayoutParams.WRAP_CONTENT,
+//                    0));
         
-        TextView imageExtension = new TextView(activity);
-        imageExtension.setText(".jpg");
-        fileNameLayout.addView(imageExtension);
-        
-        fragmentLayout.addView(fileNameLayout,
-                new LinearLayout.LayoutParams(
-                        ViewGroup.LayoutParams.WRAP_CONTENT,
-                        ViewGroup.LayoutParams.WRAP_CONTENT,
-                        0));
-        
-        mSaveButton = new SaveButton(activity);
-        fragmentLayout.addView(mSaveButton,
-                new LinearLayout.LayoutParams(
-                    ViewGroup.LayoutParams.WRAP_CONTENT,
-                    ViewGroup.LayoutParams.WRAP_CONTENT,
-                    0));
+        dispatchTakePictureIntent();
         
         return fragmentLayout;
 	}
@@ -254,9 +256,9 @@ public class ImageCaptureFragment extends Fragment {
 
 		    	mImageView.setImageBitmap(bitmap);
 	    	
-		    	boolean renameSuccessful = image.renameTo(new File(photoDirectoryFullPath + "/PHOTO.jpg"));
+//		    	boolean renameSuccessful = image.renameTo(new File(photoDirectoryFullPath + "/PHOTO.jpg"));
 		    	
-		    	mImageCaptureButton.setText(R.string.retakePhoto);
+		    	mImageCaptureButton.setText(R.string.takeAnotherPhoto);
 		    	
 	    	}
 	    }
@@ -390,35 +392,35 @@ public class ImageCaptureFragment extends Fragment {
 			@Override
 			public void onClick(View arg0) {
 				mImageCaptureButton.setEnabled(false);
-				mFileNameEditText.setEnabled(false);
-				mSaveButton.setEnabled(false);
+//				mFileNameEditText.setEnabled(false);
+//				mSaveButton.setEnabled(false);
 				
-				String userDefinedFileName = mFileNameEditText.getText().toString();
+//				String userDefinedFileName = mFileNameEditText.getText().toString();
 				
-				String newFileName = photoDirectoryFullPath;
-	            newFileName += "/" + userDefinedFileName;
-	            newFileName += mFileExtension;
+//				String newFileName = photoDirectoryFullPath;
+//	            newFileName += "/" + userDefinedFileName;
+//	            newFileName += mFileExtension;
+//				
+//				File image = new File(mTempFilePath);
+//				File newImage = new File(newFileName);
+//				
+//				
+//				Log.i("PHOTOS", "Old file path="+mTempFilePath);
+//				Log.i("PHOTOS", "New file path="+newFileName);
+//				
+//				image.setReadable(true);
+//				image.setWritable(true);
+//				newImage.setReadable(true);
+//				newImage.setWritable(true);
+//				
+//				boolean renameSuccessful = image.renameTo(newImage);
+//				
+//				Log.i("PHOTOS", "image canRead="+image.canRead()+" canWrite="+image.canWrite());
+//				Log.i("PHOTOS", "newImage canRead="+newImage.canRead()+" canWrite="+newImage.canWrite());
+//				
+//				Log.i("PHOTOS", "Rename successful="+renameSuccessful);
 				
-				File image = new File(mTempFilePath);
-				File newImage = new File(newFileName);
-				
-				
-				Log.i("PHOTOS", "Old file path="+mTempFilePath);
-				Log.i("PHOTOS", "New file path="+newFileName);
-				
-				image.setReadable(true);
-				image.setWritable(true);
-				newImage.setReadable(true);
-				newImage.setWritable(true);
-				
-				boolean renameSuccessful = image.renameTo(newImage);
-				
-				Log.i("PHOTOS", "image canRead="+image.canRead()+" canWrite="+image.canWrite());
-				Log.i("PHOTOS", "newImage canRead="+newImage.canRead()+" canWrite="+newImage.canWrite());
-				
-				Log.i("PHOTOS", "Rename successful="+renameSuccessful);
-				
-				if (renameSuccessful)
+//				if (renameSuccessful)
 					Toast.makeText(getActivity(), "Photo saved", Toast.LENGTH_SHORT).show();
 			}
 			
@@ -456,10 +458,10 @@ public class ImageCaptureFragment extends Fragment {
 
 				// user must enter file name before saving & there must be picture captured to save
 				if (s.length() != 0 && mImageCaptured == true) {
-					mSaveButton.setEnabled(true); 
+//					mSaveButton.setEnabled(true); 
             	}
             	else {
-            		mSaveButton.setEnabled(false); 
+//            		mSaveButton.setEnabled(false); 
             	}
 			}
 			

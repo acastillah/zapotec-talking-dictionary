@@ -240,7 +240,7 @@ public class AudioCaptureFragment extends Fragment implements Parcelable {
         fileNameLayout.setOrientation(LinearLayout.HORIZONTAL);
         
         TextView nameAudioTextView = new TextView(activity);
-        nameAudioTextView.setText(R.string.photoName);
+        nameAudioTextView.setText(R.string.audioName);
         nameAudioTextView.setPadding(20, 0, 0, 0);
         fileNameLayout.addView(nameAudioTextView,
                 new LinearLayout.LayoutParams(
