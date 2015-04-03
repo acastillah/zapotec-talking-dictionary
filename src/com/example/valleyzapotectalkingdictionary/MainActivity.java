@@ -30,6 +30,8 @@ import android.widget.Spinner;
 
 public class MainActivity extends ActionBarActivity implements NavigationDrawerFragment.NavigationDrawerCallbacks  {
 
+	public boolean recreate = false;
+	
 	private NavigationDrawerFragment mNavigationDrawerFragment;
 
 	@SuppressWarnings("unused")
@@ -129,8 +131,10 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 				OnItemSelectedListener listener = new LanguageSpinnerItemSelectedListener();
 				spinner.setOnItemSelectedListener(listener);
 				
+				recreate = false;
 				int selection = setLanguage(spinner);
 				spinner.setSelection(selection);
+//				recreate = true;
 			}
 			else {
 			}

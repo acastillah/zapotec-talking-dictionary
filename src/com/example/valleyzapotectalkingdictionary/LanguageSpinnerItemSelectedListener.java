@@ -3,6 +3,7 @@ package com.example.valleyzapotectalkingdictionary;
 import java.util.Locale;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.content.res.Configuration;
@@ -60,8 +61,17 @@ public class LanguageSpinnerItemSelectedListener implements
 		
 		parent.getResources().updateConfiguration(config, null);
 		
-		// need to recreate activity
-//		parent.getContext().
+		// need to recreate activity if this is not the first time the spinner is set
+		// (first time spinner is set is when the activity is initially created,
+		// but the language is already set correctly at that point)
+		Activity activity = (Activity) view.getContext();
+		if (((MainActivity)activity).recreate) {
+			activity.recreate();
+		}
+		else {
+			((MainActivity)activity).recreate = true;
+		}
+
 	}
 
 	@Override
