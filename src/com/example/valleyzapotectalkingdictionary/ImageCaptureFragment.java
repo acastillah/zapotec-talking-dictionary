@@ -137,7 +137,7 @@ public class ImageCaptureFragment extends Fragment {
         fragmentLayout.setGravity(Gravity.CENTER_HORIZONTAL);
         
         TextView photoFragmentDescription = new TextView(activity);
-        photoFragmentDescription.setText("Click \"Take Photo\" to take a photo and enter a name for your file. Photos can be accessed on your device's local storage under the \"Zapotec Talking Dictionary/photos\" directory.");
+        photoFragmentDescription.setText(R.string.imageFragmentDescription);
         photoFragmentDescription.setPadding(20, 20, 20, 20);
         fragmentLayout.addView(photoFragmentDescription);
         
@@ -165,7 +165,7 @@ public class ImageCaptureFragment extends Fragment {
         fileNameLayout.setOrientation(LinearLayout.HORIZONTAL);
         
         TextView namePhotoTextView = new TextView(activity);
-        namePhotoTextView.setText("Photo name:");
+        namePhotoTextView.setText(R.string.photoName);
         fileNameLayout.addView(namePhotoTextView);
         
         mFileNameEditText = new FileNameEditText(activity);
@@ -256,7 +256,7 @@ public class ImageCaptureFragment extends Fragment {
 	    	
 		    	boolean renameSuccessful = image.renameTo(new File(photoDirectoryFullPath + "/PHOTO.jpg"));
 		    	
-		    	mImageCaptureButton.setText("Retake Picture");
+		    	mImageCaptureButton.setText(R.string.retakePhoto);
 		    	
 	    	}
 	    }
@@ -378,7 +378,7 @@ public class ImageCaptureFragment extends Fragment {
 		public ImageCaptureButton(Context context) {
 			super(context);
 			setOnClickListener(clicker);
-			setText("Take Picture");
+			setText(R.string.takePhoto);
 		}
 		
 	}
@@ -427,7 +427,7 @@ public class ImageCaptureFragment extends Fragment {
 		public SaveButton(Context context) {
 			super(context);
 			setOnClickListener(clicker);
-			setText("Save");
+			setText(R.string.save);
 			setEnabled(false);
 		}
 		

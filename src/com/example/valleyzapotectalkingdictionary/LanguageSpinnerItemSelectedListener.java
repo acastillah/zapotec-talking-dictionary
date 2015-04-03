@@ -61,6 +61,7 @@ public class LanguageSpinnerItemSelectedListener implements
 		parent.getResources().updateConfiguration(config, null);
 		
 		// need to recreate activity
+//		parent.getContext().
 	}
 
 	@Override

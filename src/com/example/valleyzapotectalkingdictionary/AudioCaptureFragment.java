@@ -208,7 +208,7 @@ public class AudioCaptureFragment extends Fragment implements Parcelable {
         fragmentLayout.setOrientation(LinearLayout.VERTICAL);
         
         TextView audioFragmentDescription = new TextView(activity);
-        audioFragmentDescription.setText("Click \"Start recording\" to start recording audio and click \"Stop recording\" to end the recording. You can play the recording with the \"Start playing/Stop playing\" button. You may name your audio file in the text field. Audio files can be accessed on your device's local storage under the \"Zapotec Talking Dictionary/audio\" directory.");
+        audioFragmentDescription.setText(R.string.audioFragmentDescription);
         audioFragmentDescription.setPadding(20, 20, 20, 20);
         fragmentLayout.addView(audioFragmentDescription);
         
@@ -240,7 +240,7 @@ public class AudioCaptureFragment extends Fragment implements Parcelable {
         fileNameLayout.setOrientation(LinearLayout.HORIZONTAL);
         
         TextView nameAudioTextView = new TextView(activity);
-        nameAudioTextView.setText("Photo name:");
+        nameAudioTextView.setText(R.string.photoName);
         nameAudioTextView.setPadding(20, 0, 0, 0);
         fileNameLayout.addView(nameAudioTextView,
                 new LinearLayout.LayoutParams(
@@ -351,9 +351,9 @@ public class AudioCaptureFragment extends Fragment implements Parcelable {
             public void onClick(View v) {
                 onRecord(mStartRecording);
                 if (mStartRecording) {
-                    setText("Stop recording");
+                    setText(R.string.stopRecording);
                 } else {
-                    setText("Start recording");
+                    setText(R.string.startRecording);
                 }
                 mStartRecording = !mStartRecording;
             }
@@ -361,7 +361,7 @@ public class AudioCaptureFragment extends Fragment implements Parcelable {
 
         public RecordButton(Context ctx) {
             super(ctx);
-            setText("Start recording");
+            setText(R.string.startRecording);
             setOnClickListener(clicker);
         }
     }
@@ -373,7 +373,7 @@ public class AudioCaptureFragment extends Fragment implements Parcelable {
             public void onClick(View v) {
                 onPlay(mStartPlaying);
                 if (mStartPlaying) {
-                    setText("Stop playing");
+                    setText(R.string.stopPlaying);
                 } else {
                     setText("Start playing");
                 }
@@ -384,7 +384,7 @@ public class AudioCaptureFragment extends Fragment implements Parcelable {
         OnCompletionListener listener = new OnCompletionListener() {
 			public void onCompletion(MediaPlayer mp) {
 				onPlay(mStartPlaying);
-                setText("Start playing");
+                setText(R.string.startPlaying);
                 mStartPlaying = !mStartPlaying;
 			}
         };
@@ -392,7 +392,7 @@ public class AudioCaptureFragment extends Fragment implements Parcelable {
 
         public PlayButton(Context ctx) {
             super(ctx);
-            setText("Start playing");
+            setText(R.string.startPlaying);
             setOnClickListener(clicker);
         }
         
@@ -530,7 +530,7 @@ public class AudioCaptureFragment extends Fragment implements Parcelable {
 
         public SaveButton(Context ctx) {
             super(ctx);
-            setText("Save");
+            setText(R.string.save);
             setOnClickListener(clicker);
 //            setEnabled(false);
         }

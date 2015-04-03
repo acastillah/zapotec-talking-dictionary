@@ -95,7 +95,7 @@ public class UpdateFragment extends Fragment {
 		@Override
 		public void onClick(View arg0) {
 
-			Toast.makeText(getActivity(), "Up to date", Toast.LENGTH_SHORT).show();	
+			Toast.makeText(getActivity(), R.string.upToDate, Toast.LENGTH_SHORT).show();	
 		}
 		
 	}

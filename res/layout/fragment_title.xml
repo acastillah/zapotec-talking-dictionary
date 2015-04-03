@@ -10,7 +10,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_toRightOf="@+id/temporaryLogo"
-        android:text="Tlacolula Valley Zapotec"
+        android:text="@string/TeotitlanDelValleZapotec"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:gravity="center" />
 
@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/title_textView"
         android:layout_below="@+id/title_textView"
-        android:text="Online Talking Dictionary"
+        android:text="@string/AndroidTalkingDictionary"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <ImageView

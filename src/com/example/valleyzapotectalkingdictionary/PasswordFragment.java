@@ -64,7 +64,7 @@ public class PasswordFragment extends Fragment {
 				editor.commit();
 				
 				// Inform user that password was accepted
-				Toast.makeText(getActivity(), "Password accepted", Toast.LENGTH_SHORT).show();				
+				Toast.makeText(getActivity(), R.string.passwordAccepted, Toast.LENGTH_SHORT).show();				
 				
 				// Change nav bar options
 				Intent intent = new Intent(getActivity(), MainActivity.class);

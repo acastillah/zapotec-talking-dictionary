@@ -93,12 +93,12 @@ public class WordDefinitionFragment extends Fragment{
 			pos.setVisibility(View.GONE);
 		
 		if (!w.getGloss().equals(""))
-			definition_Eng.setText("English: " + w.getGloss());
+			definition_Eng.setText(R.string.EnglishDefinition + w.getGloss());
 		else
 			definition_Eng.setVisibility(View.GONE);
 		
 		if (!w.getEsGloss().equals(""))
-			definition_Spa.setText("Spanish: " + w.getEsGloss());
+			definition_Spa.setText(R.string.SpanishDefinition + w.getEsGloss());
 		else
 			definition_Spa.setVisibility(View.GONE);
 		
@@ -140,7 +140,7 @@ public class WordDefinitionFragment extends Fragment{
 			
 			Log.i("AUDIO", "Replaced quote=" + audioFileName);
 
-			playButton.setText(audioFileName);
+//			playButton.setText(audioFileName);
 			
 			try {
 				audioFileFD = assetManager.openFd(audioFileName);
@@ -195,9 +195,9 @@ public class WordDefinitionFragment extends Fragment{
             public void onClick(View v) {
                 onPlay(mStartPlaying);
                 if (mStartPlaying)
-                    setText("Stop playing");
+                    setText(R.string.stopPlaying);
                 else
-                    setText("Start playing");
+                    setText(R.string.startPlaying);
 
                 mStartPlaying = !mStartPlaying;
             }
@@ -206,7 +206,7 @@ public class WordDefinitionFragment extends Fragment{
         OnCompletionListener listener = new OnCompletionListener() {
 			public void onCompletion(MediaPlayer mp) {
 				onPlay(mStartPlaying);
-                setText("Start playing");
+                setText(R.string.startPlaying);
                 mStartPlaying = !mStartPlaying;
 			}
         };
@@ -214,7 +214,7 @@ public class WordDefinitionFragment extends Fragment{
 
         public PlayButton(Context ctx) {
             super(ctx);
-            setText("Start playing");
+            setText(R.string.startPlaying);
             setOnClickListener(clicker);
         }
         
