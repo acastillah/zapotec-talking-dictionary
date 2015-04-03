@@ -24,10 +24,9 @@ public class DictionaryDatabase {
 
     private static final String TAG = "DictionaryDatabase";
     private static final String DATABASE_NAME = "dictionary";
-    private static final int DATABASE_VERSION = 8;
+    private static final int DATABASE_VERSION = 18;
     private static final String TABLE_WORDS = "words";
     private final DictionaryOpenHelper mDatabaseOpenHelper;
-    private int search = 0;
     
  // Words Table Columns names
     private static final String KEY_ID = "_id";
@@ -42,40 +41,38 @@ public class DictionaryDatabase {
     private static final String KEY_AUDIO = "audio";
     private static final String KEY_IMG = "image";
     private static final String KEY_SEMANTIC = "semantic_ids";
-    private static final String KEY_ESGLOSS = "es_gloss"; //WORD IN SPANISH
+    static final String KEY_ESGLOSS = "es_gloss"; //WORD IN SPANISH
     
     public DictionaryDatabase(Context context) {
-        mDatabaseOpenHelper = new DictionaryOpenHelper(context);
-
+        mDatabaseOpenHelper = new DictionaryOpenHelper(context);        
     }
     
-    public Cursor getMatch(String q, int language){
-    	search = language;
-    	String KEY = null;
-    	String ALL[] = new String[] { String.valueOf(q), String.valueOf(q), String.valueOf(q) };
-    	String COMP[] = null;
-    	if (search == 0){
-    		KEY = KEY_WORD + "=?" + " OR " + KEY_GLOSS + "=?" + " OR " + KEY_ESGLOSS + "=?";
-    		COMP = ALL;
-    	}
-    	else if (search == 1){
-    		KEY = KEY_WORD + "=?";
-    		COMP = new String[] {String.valueOf(q)};
-    	}
-    	else if (search == 2){
-    		KEY = KEY_GLOSS + "=?";
-        	COMP = new String[] {String.valueOf(q)};
-    	}
-    	else if (search == 3){
-    		KEY = KEY_ESGLOSS + "=?";
-        	COMP = new String[] {String.valueOf(q)};
-    	}
-    	SQLiteDatabase db = mDatabaseOpenHelper.getReadableDatabase();
+    public Cursor getMatch(String q, int language, String dom){
     	
+    	SQLiteDatabase db = mDatabaseOpenHelper.getReadableDatabase();
+    	String KEY = null;
+
+    	switch(language){
+			case 0: 
+				KEY = "(" + KEY_WORD + " LIKE '%" + String.valueOf(q) + "%'" + " OR " + KEY_GLOSS +  " LIKE '%" + String.valueOf(q) 
+							+ "%'" + " OR " + KEY_ESGLOSS + " LIKE '%" + String.valueOf(q) + "%'" + ")"; 
+				break;
+			case 1: KEY = KEY_WORD + " LIKE '%" + String.valueOf(q) + "%'";
+				break;
+			case 2: KEY = KEY_GLOSS + " LIKE '%" + String.valueOf(q) + "%'";
+				break;
+			case 3: KEY = KEY_ESGLOSS + " LIKE '%" + String.valueOf(q) + "%'";
+				break;
+    	}	
+    	
+    	if (!dom.equals("all")){
+    		KEY = KEY + " AND " + KEY_SEMANTIC + " LIKE '%" + String.valueOf(dom) + "%'";
+    	}
+ 
     	Cursor cursor = db.query(TABLE_WORDS, new String[] { KEY_ID,
                 KEY_WORD, KEY_IPA, KEY_GLOSS, KEY_POS, KEY_USAGE, KEY_DIALECT, KEY_META, KEY_AUTHORITY,
                 KEY_AUDIO, KEY_IMG, KEY_SEMANTIC, KEY_ESGLOSS}, KEY,
-                COMP, null, null, null, null);
+                null, null, null, null, null);
         if(cursor==null){
     		return null;
     	}
@@ -86,14 +83,20 @@ public class DictionaryDatabase {
 
     }
     
+//    public String[] getDomainList(){
+//		return (String[]) mDatabaseOpenHelper.domainList.toArray();
+//    }
+    
     public class DictionaryOpenHelper extends SQLiteOpenHelper {
 		
         private final Context mHelperContext;
+    	//private final ArrayList<String> domainList = new ArrayList<String>();
 	 
-	    public DictionaryOpenHelper(Context context) {
+    	public DictionaryOpenHelper(Context context) {
 	        super(context, DATABASE_NAME, null, DATABASE_VERSION);
             mHelperContext = context;
 	    }
+	   
 	 
 	    // Creating Tables
 	    @Override
@@ -138,7 +141,11 @@ public class DictionaryDatabase {
 		            String image 		= StringEscapeUtils.unescapeHtml4((String) innerObj.get("image"));
 		            String semantic_ids = StringEscapeUtils.unescapeHtml4((String) innerObj.get("semantic_ids"));
 		            String es_gloss 	= StringEscapeUtils.unescapeHtml4((String) innerObj.get("es_gloss"));
+		      
 		            Word w = new Word(Integer.parseInt(id),word,ipa,gloss,pos,usage,dialect,metadata,authority,audio,image,semantic_ids,es_gloss);
+		            if(w.getSemantic()!=null){
+		            	Log.i("Semantic", w.getSemantic());
+		            }
 		            long word_id = addWord(w);
                     if (word_id < 0) {
                         Log.e(TAG, "unable to add word: " + word);
@@ -188,7 +195,7 @@ public class DictionaryDatabase {
 	 // Adding new contact
 	    public long addWord(Word word) {
 	    	SQLiteDatabase db = this.getWritableDatabase();
-	    	 
+	    	 	    	
 	        ContentValues values = new ContentValues();
 	        values.put(KEY_ID, word.getID());
 	        values.put(KEY_WORD, word.getName()); // Name
@@ -201,8 +208,19 @@ public class DictionaryDatabase {
 	        values.put(KEY_AUTHORITY, word.getAuthority()); // AUTHORITY
 	        values.put(KEY_AUDIO, word.getAudio()); // audio
 	        values.put(KEY_IMG, word.getIMG()); // img
-	        values.put(KEY_SEMANTIC, word.getSemantic()); // semantic
+	        values.put(KEY_SEMANTIC, word.getSemantic()); // semantic	        
 	        values.put(KEY_ESGLOSS, word.getEsGloss()); // es_gloss
+	        
+//	        if(word.getSemantic()!=null){
+//	        	if(!domainList.contains(word.getSemantic())){
+//		        	domainList.add(word.getSemantic());
+//		        	Log.i("Semantic", domainList.get(word.getID()));
+//		        }
+//	        }
+	        
+	        if(word.getGloss().equals("hour")){
+	        	Log.i("WORD", "hour is here");
+	        }
 	        
 	        // Inserting Row
 	        long result = db.insert(TABLE_WORDS, null, values);
@@ -213,7 +231,6 @@ public class DictionaryDatabase {
 	    // Getting single contact
 	    public Cursor getEntry(String q) {
 	    	SQLiteDatabase db = this.getReadableDatabase();
-	    	Log.i("getting entry","of id");
 	        Cursor cursor = db.query(TABLE_WORDS, new String[] { KEY_ID,
 	                KEY_WORD, KEY_IPA, KEY_GLOSS, KEY_POS, KEY_USAGE, KEY_DIALECT, KEY_META, KEY_AUTHORITY,
 	                KEY_AUDIO, KEY_IMG, KEY_SEMANTIC, KEY_ESGLOSS}, KEY_GLOSS + "=?",

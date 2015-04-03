@@ -17,6 +17,7 @@ public class SearchResultsFragment extends Fragment {
 	private String query;
 	private ListView mListView;
 	private int lang;
+	private String domain;
 	private TextView mTextView;
 	
 	@Override
@@ -25,6 +26,7 @@ public class SearchResultsFragment extends Fragment {
 		Bundle bundle = this.getArguments();
         query = bundle.getString("QUERY");
         lang = bundle.getInt("LANG");
+        domain = bundle.getString("DOM");
 		// Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.search, container, false);
         mTextView = (TextView) v.findViewById(R.id.text);
@@ -36,19 +38,31 @@ public class SearchResultsFragment extends Fragment {
 	
 	public void showWords(){
 		DictionaryDatabase db = new DictionaryDatabase(getActivity());
-		Cursor cursor = db.getMatch(query, lang);
+		Cursor cursor = db.getMatch(query, lang, domain);
     	if (cursor == null) {
             // There are no results        	
     		mTextView.setText("No Results");
         } 
     	else {
    		 	cursor.moveToFirst();
-            // Specify the columns we want to display in the result
-            String[] from = new String[] { DictionaryDatabase.KEY_GLOSS,
-                                           DictionaryDatabase.KEY_WORD };
-//            // Specify the corresponding layout elements where we want the columns to go
-            int[] to = new int[] { R.id.word_ENG,
-                                        R.id.word_ZAP };
+   		 	
+   		 	// Specify the columns we want to display in the result
+            String[] from = null;
+   		 	
+            switch(lang){
+	            case 0: from = new String[] { DictionaryDatabase.KEY_WORD, DictionaryDatabase.KEY_GLOSS };
+	            		break;
+	            case 1: from = new String[] { DictionaryDatabase.KEY_WORD, DictionaryDatabase.KEY_GLOSS }; //depends on language interface
+        				break;
+	            case 2: from = new String[] { DictionaryDatabase.KEY_GLOSS, DictionaryDatabase.KEY_WORD };
+        				break;
+	            case 3: from = new String[] { DictionaryDatabase.KEY_ESGLOSS, DictionaryDatabase.KEY_WORD };
+        				break;
+        		
+            }
+            
+   		 	// Specify the corresponding layout elements where we want the columns to go
+            int[] to = new int[] { R.id.word_Searched, R.id.word_Definition };
             // Create a simple cursor adapter for the definitions and apply them to the ListView
             SimpleCursorAdapter words = new SimpleCursorAdapter(getActivity(),R.layout.search_results, cursor, from, to,0);
             mListView.setAdapter(words);

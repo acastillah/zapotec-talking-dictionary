@@ -56,12 +56,14 @@
     <string name="photo_section">Take Photo</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="about">All content copyright © the recorded Zapotec communities. (2013)
-Dictionary produced by Brook Lillehaugen, with support from K. David Harrison and Jeremy Fahringer. (2013).
+    <string name="about">All content copyright © the recorded Zapotec communities (2013-2015).
+Dictionary produced by Brook Danielle Lillehaugen, Alex Mannix, 
+Janet Chavez Santiago, Ambrocio Gutiérrez, Bibiana Gutiérrez, Nick Kalivoda, 
+Alex Mannix, Teresa Martínez Chavez and Troi Carleton, with Helen Felker and Rachel Elizabeth Weissler, 
+with support from K. David Harrison and Jeremy Fahringer. (2013-2014).
 All rights reserved. Do not distribute or reproduce without permission.</string>
     <string name="help">Help</string>
-    <string name="title_activity_search">SearchActivity</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_search">Search Activity</string>
     
     <string-array name="languages_array">
         <item>ENG</item>
@@ -77,8 +79,18 @@ All rights reserved. Do not distribute or reproduce without permission.</string>
     </string-array>
     
     <string-array name="domain_options">
-        <item>Animals</item>
-        <item>Fruits</item>
+        <item>all</item>
+        <item>animal</item>
+        <item>body parts</item>
+        <item>clima</item>
+        <item>clothing</item>       
+        <item>color</item>
+        <item>food</item>
+        <item>kinship</item>
+        <item>location</item>
+        <item>persona</item>
+        <item>time</item>
+        <item>ubicación</item>
     </string-array>
     
     

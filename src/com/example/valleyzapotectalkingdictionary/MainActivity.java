@@ -28,9 +28,9 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 
 	private NavigationDrawerFragment mNavigationDrawerFragment;
 
-	@SuppressWarnings("unused")
 	static private Spinner searchSpinner, domainSpinner;
 	private static int Language_search = 0;
+	private static String domain_search = null;
 	@SuppressWarnings("unused")
 	private static Menu menu = null;
 	private CharSequence mTitle;
@@ -115,15 +115,30 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 	
 	 public void addListenerOnSpinnerItemSelection() {
 			searchSpinner = (Spinner) findViewById(R.id.search_spinner);
-			
-		   searchSpinner.setOnItemSelectedListener(new OnItemSelectedListener() {
+			domainSpinner = (Spinner) findViewById(R.id.domain_spinner);
+	   
+		//DictionaryDatabase newdb = new DictionaryDatabase(this);
+		   //String[] domainOptions = newdb.getDomainList();
+		   //ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, domainOptions);
+		   //spinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item); // The drop down view
+		   //domainSpinner.setAdapter(spinnerArrayAdapter);
+			   
+			searchSpinner.setOnItemSelectedListener(new OnItemSelectedListener() {
 		        public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
 		            Language_search = pos;
 		        }
 		        public void onNothingSelected(AdapterView<?> arg0) {
 		        }
 		    }); 
-			
+		   
+		   domainSpinner.setOnItemSelectedListener(new OnItemSelectedListener() {
+		        public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
+		            domain_search = domainSpinner.getSelectedItem().toString();
+		        }
+		        public void onNothingSelected(AdapterView<?> arg0) {
+		        }
+		    }); 
+		   
 	  }
 	
 	 
@@ -196,6 +211,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
         Bundle bundle = new Bundle();
         bundle.putString("QUERY", query);
         bundle.putInt("LANG", Language_search);
+        bundle.putString("DOM", domain_search);
         ((Fragment) fragment).setArguments(bundle);
 		transaction.addToBackStack(null).replace(R.id.container, fragment).commit();				
     }
