@@ -7,6 +7,7 @@ import org.apache.commons.lang3.StringEscapeUtils;
 import android.content.Context;
 import android.content.res.AssetFileDescriptor;
 import android.content.res.AssetManager;
+import android.graphics.drawable.GradientDrawable;
 import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnCompletionListener;
 import android.os.Bundle;
@@ -16,7 +17,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class WordDefinitionFragment extends Fragment{
@@ -56,12 +59,13 @@ public class WordDefinitionFragment extends Fragment{
         speaker = (TextView) v.findViewById(R.id.Speaker);
         
         playButton = new PlayButton(getActivity());
-        LinearLayout layout = (LinearLayout) v.findViewById(R.id.WordDefinitionLL);
-        layout.addView(playButton,
-                new LinearLayout.LayoutParams(
-                        ViewGroup.LayoutParams.WRAP_CONTENT,
-                        ViewGroup.LayoutParams.WRAP_CONTENT,
-                        0));
+ 
+        RelativeLayout layout = (RelativeLayout) v.findViewById(R.id.PlayButtonContainer);
+        layout.addView(playButton);
+        
+        RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams)playButton.getLayoutParams();
+        layoutParams.addRule(RelativeLayout.CENTER_IN_PARENT, RelativeLayout.TRUE);
+        playButton.setLayoutParams(layoutParams);
         
         setUpDisplay();
         
@@ -93,12 +97,12 @@ public class WordDefinitionFragment extends Fragment{
 			pos.setVisibility(View.GONE);
 		
 		if (!w.getGloss().equals(""))
-			definition_Eng.setText(R.string.EnglishDefinition + w.getGloss());
+			definition_Eng.setText(getResources().getString(R.string.english) + ": " + w.getGloss());
 		else
 			definition_Eng.setVisibility(View.GONE);
 		
 		if (!w.getEsGloss().equals(""))
-			definition_Spa.setText(R.string.SpanishDefinition + w.getEsGloss());
+			definition_Spa.setText(getResources().getString(R.string.spanish) + ": " + w.getEsGloss());
 		else
 			definition_Spa.setVisibility(View.GONE);
 		
@@ -187,17 +191,17 @@ public class WordDefinitionFragment extends Fragment{
 	}
 	
     
-    class PlayButton extends Button {
+    class PlayButton extends ImageButton {
     	private MediaPlayer player = null;
         boolean mStartPlaying = true;
 
         OnClickListener clicker = new OnClickListener() {
             public void onClick(View v) {
                 onPlay(mStartPlaying);
-                if (mStartPlaying)
-                    setText(R.string.stopPlaying);
-                else
-                    setText(R.string.startPlaying);
+//                if (mStartPlaying)
+//                    setText(R.string.stopPlaying);
+//                else
+//                    setText(R.string.startPlaying);
 
                 mStartPlaying = !mStartPlaying;
             }
@@ -206,7 +210,7 @@ public class WordDefinitionFragment extends Fragment{
         OnCompletionListener listener = new OnCompletionListener() {
 			public void onCompletion(MediaPlayer mp) {
 				onPlay(mStartPlaying);
-                setText(R.string.startPlaying);
+//                setText(R.string.startPlaying);
                 mStartPlaying = !mStartPlaying;
 			}
         };
@@ -214,7 +218,11 @@ public class WordDefinitionFragment extends Fragment{
 
         public PlayButton(Context ctx) {
             super(ctx);
-            setText(R.string.startPlaying);
+//            setText(R.string.startPlaying);
+            this.setImageResource(R.drawable.audio_play);
+            GradientDrawable buttonShape = new GradientDrawable();
+            buttonShape.setCornerRadius(10);
+            this.setBackgroundDrawable(buttonShape);
             setOnClickListener(clicker);
         }
         

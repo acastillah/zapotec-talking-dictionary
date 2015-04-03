@@ -9,6 +9,7 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
@@ -28,10 +29,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.View.OnClickListener;
+import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Gallery;
+import android.widget.Gallery.LayoutParams;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -46,8 +51,8 @@ public class ImageCaptureFragment extends Fragment {
 	private ImageCaptureButton mImageCaptureButton = null;
 	private TextView mPreviewText = null;
 	private ImageView mImageView = null;
-	private FileNameEditText mFileNameEditText = null;
-	private SaveButton mSaveButton = null;
+//	private FileNameEditText mFileNameEditText = null;
+//	private SaveButton mSaveButton = null;
 	
 	private boolean mImageCaptured = false;
 	String mCurrentPhotoPath;
@@ -164,34 +169,46 @@ public class ImageCaptureFragment extends Fragment {
         LinearLayout fileNameLayout = new LinearLayout(activity);
         fileNameLayout.setOrientation(LinearLayout.HORIZONTAL);
         
-        TextView namePhotoTextView = new TextView(activity);
-        namePhotoTextView.setText(R.string.photoName);
-        fileNameLayout.addView(namePhotoTextView);
+//        TextView namePhotoTextView = new TextView(activity);
+//        namePhotoTextView.setText(R.string.photoName);
+//        fileNameLayout.addView(namePhotoTextView);
+//        
+//        mFileNameEditText = new FileNameEditText(activity);
+//        mFileNameEditText.setEms(10);
+//        fileNameLayout.addView(mFileNameEditText,
+//                new LinearLayout.LayoutParams(
+//                    ViewGroup.LayoutParams.WRAP_CONTENT,
+//                    ViewGroup.LayoutParams.WRAP_CONTENT,
+//                    0));
+//        
+//        TextView imageExtension = new TextView(activity);
+//        imageExtension.setText(".jpg");
+//        fileNameLayout.addView(imageExtension);
+//        
+//        fragmentLayout.addView(fileNameLayout,
+//                new LinearLayout.LayoutParams(
+//                        ViewGroup.LayoutParams.WRAP_CONTENT,
+//                        ViewGroup.LayoutParams.WRAP_CONTENT,
+//                        0));
         
-        mFileNameEditText = new FileNameEditText(activity);
-        mFileNameEditText.setEms(10);
-        fileNameLayout.addView(mFileNameEditText,
-                new LinearLayout.LayoutParams(
-                    ViewGroup.LayoutParams.WRAP_CONTENT,
-                    ViewGroup.LayoutParams.WRAP_CONTENT,
-                    0));
+//        mSaveButton = new SaveButton(activity);
+//        fragmentLayout.addView(mSaveButton,
+//                new LinearLayout.LayoutParams(
+//                    ViewGroup.LayoutParams.WRAP_CONTENT,
+//                    ViewGroup.LayoutParams.WRAP_CONTENT,
+//                    0));
         
-        TextView imageExtension = new TextView(activity);
-        imageExtension.setText(".jpg");
-        fileNameLayout.addView(imageExtension);
         
-        fragmentLayout.addView(fileNameLayout,
-                new LinearLayout.LayoutParams(
-                        ViewGroup.LayoutParams.WRAP_CONTENT,
-                        ViewGroup.LayoutParams.WRAP_CONTENT,
-                        0));
+        Gallery gallery = new Gallery(activity);
         
-        mSaveButton = new SaveButton(activity);
-        fragmentLayout.addView(mSaveButton,
-                new LinearLayout.LayoutParams(
-                    ViewGroup.LayoutParams.WRAP_CONTENT,
-                    ViewGroup.LayoutParams.WRAP_CONTENT,
-                    0));
+        gallery.setAdapter(new ImageAdapter(activity));
+        
+        Gallery.LayoutParams galleryLayoutParams = (LayoutParams) gallery.getLayoutParams();
+        galleryLayoutParams.height = galleryLayoutParams.WRAP_CONTENT;
+        galleryLayoutParams.width = galleryLayoutParams.FILL_PARENT;
+        gallery.setLayoutParams(galleryLayoutParams);
+        
+        dispatchTakePictureIntent();
         
         return fragmentLayout;
 	}
@@ -254,9 +271,9 @@ public class ImageCaptureFragment extends Fragment {
 
 		    	mImageView.setImageBitmap(bitmap);
 	    	
-		    	boolean renameSuccessful = image.renameTo(new File(photoDirectoryFullPath + "/PHOTO.jpg"));
+//		    	boolean renameSuccessful = image.renameTo(new File(photoDirectoryFullPath + "/PHOTO.jpg"));
 		    	
-		    	mImageCaptureButton.setText(R.string.retakePhoto);
+		    	mImageCaptureButton.setText(R.string.takeAnotherPhoto);
 		    	
 	    	}
 	    }
@@ -390,35 +407,35 @@ public class ImageCaptureFragment extends Fragment {
 			@Override
 			public void onClick(View arg0) {
 				mImageCaptureButton.setEnabled(false);
-				mFileNameEditText.setEnabled(false);
-				mSaveButton.setEnabled(false);
+//				mFileNameEditText.setEnabled(false);
+//				mSaveButton.setEnabled(false);
 				
-				String userDefinedFileName = mFileNameEditText.getText().toString();
+//				String userDefinedFileName = mFileNameEditText.getText().toString();
 				
-				String newFileName = photoDirectoryFullPath;
-	            newFileName += "/" + userDefinedFileName;
-	            newFileName += mFileExtension;
+//				String newFileName = photoDirectoryFullPath;
+//	            newFileName += "/" + userDefinedFileName;
+//	            newFileName += mFileExtension;
+//				
+//				File image = new File(mTempFilePath);
+//				File newImage = new File(newFileName);
+//				
+//				
+//				Log.i("PHOTOS", "Old file path="+mTempFilePath);
+//				Log.i("PHOTOS", "New file path="+newFileName);
+//				
+//				image.setReadable(true);
+//				image.setWritable(true);
+//				newImage.setReadable(true);
+//				newImage.setWritable(true);
+//				
+//				boolean renameSuccessful = image.renameTo(newImage);
+//				
+//				Log.i("PHOTOS", "image canRead="+image.canRead()+" canWrite="+image.canWrite());
+//				Log.i("PHOTOS", "newImage canRead="+newImage.canRead()+" canWrite="+newImage.canWrite());
+//				
+//				Log.i("PHOTOS", "Rename successful="+renameSuccessful);
 				
-				File image = new File(mTempFilePath);
-				File newImage = new File(newFileName);
-				
-				
-				Log.i("PHOTOS", "Old file path="+mTempFilePath);
-				Log.i("PHOTOS", "New file path="+newFileName);
-				
-				image.setReadable(true);
-				image.setWritable(true);
-				newImage.setReadable(true);
-				newImage.setWritable(true);
-				
-				boolean renameSuccessful = image.renameTo(newImage);
-				
-				Log.i("PHOTOS", "image canRead="+image.canRead()+" canWrite="+image.canWrite());
-				Log.i("PHOTOS", "newImage canRead="+newImage.canRead()+" canWrite="+newImage.canWrite());
-				
-				Log.i("PHOTOS", "Rename successful="+renameSuccessful);
-				
-				if (renameSuccessful)
+//				if (renameSuccessful)
 					Toast.makeText(getActivity(), "Photo saved", Toast.LENGTH_SHORT).show();
 			}
 			
@@ -456,10 +473,10 @@ public class ImageCaptureFragment extends Fragment {
 
 				// user must enter file name before saving & there must be picture captured to save
 				if (s.length() != 0 && mImageCaptured == true) {
-					mSaveButton.setEnabled(true); 
+//					mSaveButton.setEnabled(true); 
             	}
             	else {
-            		mSaveButton.setEnabled(false); 
+//            		mSaveButton.setEnabled(false); 
             	}
 			}
 			
@@ -468,6 +485,43 @@ public class ImageCaptureFragment extends Fragment {
 		public FileNameEditText(Context context) {
 			super(context);
 			addTextChangedListener(watcher);
+		}
+		
+	}
+	
+	public class ImageAdapter extends BaseAdapter {
+
+		private Context context;
+		
+		public ImageAdapter(Context c) {
+			context = c;
+//			TypedArray a = obtainStyledAttributes(R.styleable.MyGallery);
+//			itemBackground = a.getResourceId(R.styleable.MyGallery_android_galleryItemBackground, 0);
+//			
+		}
+		
+		@Override
+		public int getCount() {
+			// TODO Auto-generated method stub
+			return 0;
+		}
+
+		@Override
+		public Object getItem(int arg0) {
+			// TODO Auto-generated method stub
+			return null;
+		}
+
+		@Override
+		public long getItemId(int arg0) {
+			// TODO Auto-generated method stub
+			return 0;
+		}
+
+		@Override
+		public View getView(int arg0, View arg1, ViewGroup arg2) {
+			// TODO Auto-generated method stub
+			return null;
 		}
 		
 	}

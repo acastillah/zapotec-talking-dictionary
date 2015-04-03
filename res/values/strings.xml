@@ -50,6 +50,7 @@ All rights reserved. Do not distribute or reproduce without permission.</string>
     <string name="speaker">Speaker: </string>
     <string name="audioFragmentDescription">"Click \"Start recording\" to start recording audio and click \"Stop recording\" to end the recording. You can play the recording with the \"Start playing/Stop playing\" button. You may name your audio file in the text field. Audio files can be accessed on your device's local storage under the \"Zapotec Talking Dictionary/audio\" directory."</string>
     <string name="photoName">"Photo name:"</string>
+    <string name="audioName">"Audio name:"</string>
     <string name="stopRecording">"Stop recording"</string>
     <string name="startRecording">"Start recording"</string>
     <string name="stopPlaying">"Stop playing"</string>
@@ -57,7 +58,8 @@ All rights reserved. Do not distribute or reproduce without permission.</string>
     <string name="save">"Save"</string>
     <string name="imageFragmentDescription">"Click \"Take Photo\" to take a photo and enter a name for your file. Photos can be accessed on your device's local storage under the \"Zapotec Talking Dictionary/photos\" directory."</string>
     <string name="retakePhoto">"Retake Photo"</string>
-    <string name="takePhoto">"Retake Photo"</string>
+    <string name="takeAnotherPhoto">Take Another Photo</string>
+    <string name="takePhoto">"Take Photo"</string>
     <string name="passwordAccepted">"Password accepted"</string>
     <string name="upToDate">"Up to date"</string>
     <string name="EnglishDefinition">"English: "</string>
