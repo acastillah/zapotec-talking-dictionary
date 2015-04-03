@@ -8,6 +8,7 @@ import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.content.res.Configuration;
 import android.graphics.Color;
+import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -66,7 +67,10 @@ public class LanguageSpinnerItemSelectedListener implements
 		// but the language is already set correctly at that point)
 		Activity activity = (Activity) view.getContext();
 		if (((MainActivity)activity).recreate) {
+//			activity.finish();
 			activity.recreate();
+			
+
 		}
 		else {
 			((MainActivity)activity).recreate = true;
