@@ -10,6 +10,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v4.widget.DrawerLayout;
+import android.text.Html;
 import android.app.Activity;
 import android.app.SearchManager;
 import android.content.Context;
@@ -148,8 +149,11 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 	public void restoreActionBar() {
 		ActionBar actionBar = getSupportActionBar();
 		actionBar.setDisplayShowTitleEnabled(true);
-		actionBar.setTitle(mTitle);
-
+		
+		if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT)
+			actionBar.setTitle(Html.fromHtml("<small>" + mTitle + "</small>"));
+		else
+			actionBar.setTitle(mTitle);
 	}
 	
 	@Override
