@@ -3,6 +3,6 @@
     <color name="actionbar_background_color">#920000</color>
     <color name="searchbar_background_color">#ba0c0c</color>
     <color name="dropdown_background_color">#00ff00</color>
-    <color name="background_color">#ff4444</color>
+    <color name="background_color">#f25252</color>
     <color name="nav_background_color">#ffff00</color>
 </resources>
