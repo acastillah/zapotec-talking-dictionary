@@ -7,6 +7,7 @@ import org.apache.commons.lang3.StringEscapeUtils;
 import android.content.Context;
 import android.content.res.AssetFileDescriptor;
 import android.content.res.AssetManager;
+import android.graphics.drawable.GradientDrawable;
 import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnCompletionListener;
 import android.os.Bundle;
@@ -219,6 +220,9 @@ public class WordDefinitionFragment extends Fragment{
             super(ctx);
 //            setText(R.string.startPlaying);
             this.setImageResource(R.drawable.audio_play);
+            GradientDrawable buttonShape = new GradientDrawable();
+            buttonShape.setCornerRadius(10);
+            this.setBackgroundDrawable(buttonShape);
             setOnClickListener(clicker);
         }
         
