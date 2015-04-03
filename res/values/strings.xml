@@ -1,52 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Valley Zapotec Dictionary</string>
-    <string name="app_name_eng">Valley Zapotec Talking Dictionary</string>
-    <string name="app_name_spa">Valley Zapotec Talking Dictionary</string>
-    <!-- Translate -->
-    <string name="app_name_zap">Valley Zapotec Talking Dictionary</string>
-    <!-- Translate -->
-
-
-    <!-- Action Bar -->
-    <string name="side_menu_eng">Menu</string>
-    <string name="side_menu_spa">Menú</string>
-    <string name="side_menu_zap">Menu</string>
-    <!-- Translate -->
+    <!-- ENGLISH -->
+    
+    <string name="app_name">Valley Zapotec Talking Dictionary</string>
+    <string name="TeotitlanDelValleZapotec">Teotitlán del Valle Zapotec</string>
+    <string name="AndroidTalkingDictionary">Android Talking Dictionary</string>
+    <string name="side_menu">Menu</string>
     <string name="englishInterface">ENG</string>
     <string name="spanishInterface">ESP</string>
     <string name="zapotecInterface">ZAP</string>
-    <string name="englishInterface_eng">English</string>
-    <string name="englishInterface_spa">Inglés</string>
-    <string name="englishInterface_zap">English</string>
-    <string name="spanishInterface_eng">Spanish</string>
-    <string name="spanishInterface_spa">Español</string>
-    <string name="spanishInterface_zap">Spanish</string>
-    <!-- Translate -->
-    <string name="zapotecInterface_eng">Zapotec</string>
-    <string name="zapotecInterface_spa">Zapoteca</string>
-    <!-- Translate -->
-    <string name="zapotecInterface_zap">Zapoteca</string>
-    <!-- Translate -->
-    <string name="settings_eng">Settings</string>
-
-    <!-- Main Activity -->
-    <string name="search_eng">Search</string>
-    <string name="search_spa">Busqueda</string>
-    <!-- Translate -->
-    <string name="search_zap">Search</string>
-    <!-- Translate -->
-    <string name="wordOfTheDay_eng">Word of the Day</string>
-    <string name="wordOfTheDay_spa">Palabra del dia</string>
-    <!-- Translate -->
-    <string name="wordOfTheDay_zap">Word of the Day</string>
-    <!-- Translate -->
-
+    <string name="english">English</string>
+    <string name="spanish">Spanish</string>
+    <string name="settings">Settings</string>
+    <string name="search">Search</string>
+    <string name="wordOfTheDay">Word of the Day</string>
     <string name="title_activity_menu">Menu</string>
     <string name="title_activity_search_result">Search Result</string>
     <string name="title_activity_word_definition">Word Definition</string>
-    <string name="action_settings">Settings</string>
     <string name="title_activity_search_fragment">SearchFragment</string>
     <string name="title_main_section">Search</string>
     <string name="title_section2">Update</string>
@@ -64,6 +35,34 @@ with support from K. David Harrison and Jeremy Fahringer. (2013-2014).
 All rights reserved. Do not distribute or reproduce without permission.</string>
     <string name="help">Help</string>
     <string name="title_activity_search">Search Activity</string>
+    <string name="preview_image">Image Preview</string>
+    <string name="passwordExplanation">This log in provides access to tools for the linguists 
+        developing the Vally Zapotec language database. If you are not a part of the project or 
+        have not been provided with a password, then you cannot access these tools.</string>
+	<string name="password">Password: </string>
+	<string name="passwordIncorrect">Incorrect password</string>
+	<string name="submit">Submit</string>
+	<string name="search_hint">Search dictionary</string>
+    <string name="updateInfo">The Valley Zapotec Talking Dictionary is constantly growing. Each time you update, the new words will take up more space on your phone. If space is a concern, you may choose if you want to download audio and pictures.</string>
+    <string name="downloadAudio">Download Audio</string>
+    <string name="downloadPictures">Download Pictures</string>
+    <string name="update">Update</string>
+    <string name="speaker">Speaker: </string>
+    <string name="audioFragmentDescription">"Click \"Start recording\" to start recording audio and click \"Stop recording\" to end the recording. You can play the recording with the \"Start playing/Stop playing\" button. You may name your audio file in the text field. Audio files can be accessed on your device's local storage under the \"Zapotec Talking Dictionary/audio\" directory."</string>
+    <string name="photoName">"Photo name:"</string>
+    <string name="stopRecording">"Stop recording"</string>
+    <string name="startRecording">"Start recording"</string>
+    <string name="stopPlaying">"Stop playing"</string>
+    <string name="startPlaying">"Start playing"</string>
+    <string name="save">"Save"</string>
+    <string name="imageFragmentDescription">"Click \"Take Photo\" to take a photo and enter a name for your file. Photos can be accessed on your device's local storage under the \"Zapotec Talking Dictionary/photos\" directory."</string>
+    <string name="retakePhoto">"Retake Photo"</string>
+    <string name="takePhoto">"Retake Photo"</string>
+    <string name="passwordAccepted">"Password accepted"</string>
+    <string name="upToDate">"Up to date"</string>
+    <string name="EnglishDefinition">"English: "</string>
+    <string name="SpanishDefinition">"Spanish: "</string>
+>>>>>>> 223b1dfae12438cf5e41e8737c459da34b06a1bb
     
     <string-array name="languages_array">
         <item>ENG</item>
@@ -93,17 +92,6 @@ All rights reserved. Do not distribute or reproduce without permission.</string>
         <item>ubicación</item>
     </string-array>
     
-    
-    <string name="preview_image">Image Preview</string>
-    
-    <string name="passwordExplanation">This log in provides access to tools for the linguists 
-        developing the Vally Zapotec language database. If you are not a part of the project or 
-        have not been provided with a password, then you cannot access these tools.</string>
-	<string name="password">Password: </string>
-	<string name="passwordIncorrect">Incorrect password</string>
-	<string name="submit">Submit</string>
-	
-	<string name="search_hint">Search dictionary</string>
-	
-    
+    <string name="current_language">English</string>
+
 </resources>

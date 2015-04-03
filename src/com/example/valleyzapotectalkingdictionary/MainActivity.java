@@ -1,5 +1,7 @@
 package com.example.valleyzapotectalkingdictionary;
 
+import java.util.Locale;
+
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.SearchView;
@@ -13,6 +15,8 @@ import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
+import android.content.res.Configuration;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
@@ -26,6 +30,8 @@ import android.widget.Spinner;
 
 public class MainActivity extends ActionBarActivity implements NavigationDrawerFragment.NavigationDrawerCallbacks  {
 
+	public boolean recreate = false;
+	
 	private NavigationDrawerFragment mNavigationDrawerFragment;
 
 	static private Spinner searchSpinner, domainSpinner;
@@ -35,10 +41,60 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 	private static Menu menu = null;
 	private CharSequence mTitle;
 	
+	private int setLanguage(Spinner spinner) {
+		SharedPreferences prefs = this.getSharedPreferences(Preferences.APP_SETTINGS, Activity.MODE_PRIVATE);
+		Editor prefEditor = prefs.edit();
+		
+		if (!prefs.contains(Preferences.LANGUAGE))
+			prefEditor.putString(Preferences.LANGUAGE, Preferences.ENGLISH);
+		
+		prefEditor.commit();
+		
+		Log.i("LANG", "App displaying in " + prefs.getString(Preferences.LANGUAGE, "no language"));
+		
+		prefs = this.getSharedPreferences(Preferences.APP_SETTINGS, Activity.MODE_PRIVATE);
+		String lang = prefs.getString(Preferences.LANGUAGE, Preferences.ENGLISH);
+		Locale locale = Preferences.ENGLISH_LOC;
+		int selection = 0;
+		
+		if (lang.equals(Preferences.SPANISH)) {
+			locale = Preferences.SPANISH_LOC;
+			selection = 1;
+		}
+		else if (lang.equals(Preferences.ZAPOTEC)) {
+			locale = Preferences.ZAPOTEC_LOC;
+			selection = 2;
+		}
+		else {
+			locale = Preferences.ENGLISH_LOC;
+			selection = 0;
+		}
+		
+		Locale.setDefault(locale);
+		
+//		if (spinner != null)
+//			spinner.setSelection(selection);
+		
+		Configuration config = new Configuration();
+		config.locale = locale;
+		getBaseContext().getResources().updateConfiguration(config, 
+		    getBaseContext().getResources().getDisplayMetrics());
+		
+		return selection;
+	}
+	
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);	    
+		setContentView(R.layout.activity_main);	 
+		
+		/** Set the language **/
+		
+		setLanguage(null);
+		
+		/*********************/
+		
 		mNavigationDrawerFragment = (NavigationDrawerFragment) getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
 		mNavigationDrawerFragment.setUp(R.id.navigation_drawer, (DrawerLayout) findViewById(R.id.drawer_layout));
 	    SearchView searchView = (SearchView) findViewById(R.id.searchBAR);
@@ -74,6 +130,11 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 				
 				OnItemSelectedListener listener = new LanguageSpinnerItemSelectedListener();
 				spinner.setOnItemSelectedListener(listener);
+				
+				recreate = false;
+				int selection = setLanguage(spinner);
+				spinner.setSelection(selection);
+//				recreate = true;
 			}
 			else {
 			}
@@ -94,21 +155,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		
-		switch (item.getItemId()) {
-//			case R.id.englishInterface:
-//				LanguageInterface.interfaceLanguage = LanguageInterface.LANGUAGE_ENGLISH;
-//				//LanguageInterface.setLanguageInterfaceButtons(MainActivity.menu);
-//				return true;
-//			case R.id.spanishInterface:
-//				LanguageInterface.interfaceLanguage = LanguageInterface.LANGUAGE_SPANISH;
-//				//LanguageInterface.setLanguageInterfaceButtons(MainActivity.menu);
-//				return true;
-//			case R.id.zapotecInterface:
-//				LanguageInterface.interfaceLanguage = LanguageInterface.LANGUAGE_ZAPOTEC;
-//				//LanguageInterface.setLanguageInterfaceButtons(MainActivity.menu);
-//				return true;
-
-		}
+		switch (item.getItemId()) {}
 		
 		return super.onOptionsItemSelected(item);
 	}
