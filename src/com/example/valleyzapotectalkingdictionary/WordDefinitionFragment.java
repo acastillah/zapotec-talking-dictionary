@@ -93,12 +93,12 @@ public class WordDefinitionFragment extends Fragment{
 			pos.setVisibility(View.GONE);
 		
 		if (!w.getGloss().equals(""))
-			definition_Eng.setText(R.string.EnglishDefinition + w.getGloss());
+			definition_Eng.setText(getResources().getString(R.string.english) + ": " + w.getGloss());
 		else
 			definition_Eng.setVisibility(View.GONE);
 		
 		if (!w.getEsGloss().equals(""))
-			definition_Spa.setText(R.string.SpanishDefinition + w.getEsGloss());
+			definition_Spa.setText(getResources().getString(R.string.spanish) + ": " + w.getEsGloss());
 		else
 			definition_Spa.setVisibility(View.GONE);
 		
