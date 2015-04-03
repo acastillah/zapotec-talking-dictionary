@@ -83,6 +83,22 @@ public class DictionaryDatabase {
 
     }
     
+    public Cursor getIDmatch(int id){
+    	SQLiteDatabase db = mDatabaseOpenHelper.getReadableDatabase();
+    	String selection = KEY_ID + "=?";
+    	String[] selectionArgs = {Integer.toString(id)};
+    	Cursor cursor = db.query(TABLE_WORDS,  new String[] { KEY_ID,
+                KEY_WORD, KEY_IPA, KEY_GLOSS, KEY_POS, KEY_USAGE, KEY_DIALECT, KEY_META, KEY_AUTHORITY,
+                KEY_AUDIO, KEY_IMG, KEY_SEMANTIC, KEY_ESGLOSS}, selection, selectionArgs, null, null, null);
+    	if(cursor==null){
+    		return null;
+    	}
+        if(!cursor.moveToFirst()){
+    		return null;
+    	}
+		return cursor;    	
+    }
+    
 //    public String[] getDomainList(){
 //		return (String[]) mDatabaseOpenHelper.domainList.toArray();
 //    }

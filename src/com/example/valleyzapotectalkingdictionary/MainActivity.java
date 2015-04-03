@@ -179,16 +179,16 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 			searchSpinner = (Spinner) findViewById(R.id.search_spinner);
 			domainSpinner = (Spinner) findViewById(R.id.domain_spinner);
 	   
-		//DictionaryDatabase newdb = new DictionaryDatabase(this);
-		   //String[] domainOptions = newdb.getDomainList();
-		   //ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, domainOptions);
+//			String[] options = {"all", "animal", "body parts", "clima", "clothing", "color", "food", "kinship", "location", "persona", "time", "ubicación"};
+//			
+//			ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(this,
+//				   R.layout.spinner_custom_layout, R.id.options, options);
 		   //spinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item); // The drop down view
 		   //domainSpinner.setAdapter(spinnerArrayAdapter);
-			   
+		
 			searchSpinner.setOnItemSelectedListener(new OnItemSelectedListener() {
 		        public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
 		            Language_search = pos;
-//		            view.setBackgroundColor(Style.dropdownColor);
 		        }
 		        public void onNothingSelected(AdapterView<?> arg0) {
 		        }
@@ -289,7 +289,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		// Options all users see
 		switch(position+1){
 			case 1:
-				fragment = new UpdateFragment();	
+				fragment = new MainPageFragment();	
 				mTitle = getString(R.string.title_main_section);
 				break;
 			case 2:

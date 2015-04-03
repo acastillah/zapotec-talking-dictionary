@@ -62,7 +62,6 @@ All rights reserved. Do not distribute or reproduce without permission.</string>
     <string name="upToDate">"Up to date"</string>
     <string name="EnglishDefinition">"English: "</string>
     <string name="SpanishDefinition">"Spanish: "</string>
->>>>>>> 223b1dfae12438cf5e41e8737c459da34b06a1bb
     
     <string-array name="languages_array">
         <item>ENG</item>

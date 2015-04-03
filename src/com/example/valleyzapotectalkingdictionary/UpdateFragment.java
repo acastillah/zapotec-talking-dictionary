@@ -18,7 +18,7 @@ import android.widget.CompoundButton.OnCheckedChangeListener;
 
 public class UpdateFragment extends Fragment {
 
-	public static final String ARG_SECTION_NUMBER = "section_number";
+	//public static final String ARG_SECTION_NUMBER = "section_number";
 	
 	private CheckBox downloadPicturesCheckbox = null;
 	private CheckBox downloadAudioCheckbox = null;
