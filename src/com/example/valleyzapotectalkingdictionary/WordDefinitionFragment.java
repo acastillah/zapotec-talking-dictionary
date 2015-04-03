@@ -16,7 +16,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class WordDefinitionFragment extends Fragment{
@@ -56,12 +58,13 @@ public class WordDefinitionFragment extends Fragment{
         speaker = (TextView) v.findViewById(R.id.Speaker);
         
         playButton = new PlayButton(getActivity());
-        LinearLayout layout = (LinearLayout) v.findViewById(R.id.WordDefinitionLL);
-        layout.addView(playButton,
-                new LinearLayout.LayoutParams(
-                        ViewGroup.LayoutParams.WRAP_CONTENT,
-                        ViewGroup.LayoutParams.WRAP_CONTENT,
-                        0));
+ 
+        RelativeLayout layout = (RelativeLayout) v.findViewById(R.id.PlayButtonContainer);
+        layout.addView(playButton);
+        
+        RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams)playButton.getLayoutParams();
+        layoutParams.addRule(RelativeLayout.CENTER_IN_PARENT, RelativeLayout.TRUE);
+        playButton.setLayoutParams(layoutParams);
         
         setUpDisplay();
         
@@ -187,17 +190,17 @@ public class WordDefinitionFragment extends Fragment{
 	}
 	
     
-    class PlayButton extends Button {
+    class PlayButton extends ImageButton {
     	private MediaPlayer player = null;
         boolean mStartPlaying = true;
 
         OnClickListener clicker = new OnClickListener() {
             public void onClick(View v) {
                 onPlay(mStartPlaying);
-                if (mStartPlaying)
-                    setText(R.string.stopPlaying);
-                else
-                    setText(R.string.startPlaying);
+//                if (mStartPlaying)
+//                    setText(R.string.stopPlaying);
+//                else
+//                    setText(R.string.startPlaying);
 
                 mStartPlaying = !mStartPlaying;
             }
@@ -206,7 +209,7 @@ public class WordDefinitionFragment extends Fragment{
         OnCompletionListener listener = new OnCompletionListener() {
 			public void onCompletion(MediaPlayer mp) {
 				onPlay(mStartPlaying);
-                setText(R.string.startPlaying);
+//                setText(R.string.startPlaying);
                 mStartPlaying = !mStartPlaying;
 			}
         };
@@ -214,7 +217,8 @@ public class WordDefinitionFragment extends Fragment{
 
         public PlayButton(Context ctx) {
             super(ctx);
-            setText(R.string.startPlaying);
+//            setText(R.string.startPlaying);
+            this.setImageResource(R.drawable.audio_play);
             setOnClickListener(clicker);
         }
         
