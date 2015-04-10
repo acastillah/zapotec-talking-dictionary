@@ -6,7 +6,6 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
-    android:background="@color/background_color"
     tools:context="com.example.valleyzapotectalkingdictionary.AboutActivity" >
      
     <TextView
@@ -16,6 +15,5 @@
         android:text="@string/about">
         
     </TextView>
-   
 
 </LinearLayout>

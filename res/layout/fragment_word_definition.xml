@@ -18,7 +18,7 @@
 	    <RelativeLayout
 	        android:id="@+id/PlayButtonContainer"
 	        android:layout_width="wrap_content"
-	    	android:layout_height="match_parent" >
+	    	android:layout_height="wrap_content" >
 	    </RelativeLayout>
 	    
 	    <LinearLayout
@@ -38,21 +38,21 @@
 		        android:id="@+id/PartOfSpeech"
 		        android:layout_width="wrap_content"
 		        android:layout_height="wrap_content"
-		        android:textAppearance="?android:attr/textAppearanceSmall"
+		        android:textAppearance="?android:attr/textAppearanceMedium"
 		        android:text="Part of Speech" />
 		    
 		    <TextView
 		        android:id="@+id/Word_Eng"
 		        android:layout_width="wrap_content"
 		        android:layout_height="wrap_content"
-		        android:textAppearance="?android:attr/textAppearanceSmall"
+		        android:textAppearance="?android:attr/textAppearanceMedium"
 		        android:text="English definition" />
 		    
 		    <TextView
 		        android:id="@+id/Word_Spa"
 		        android:layout_width="wrap_content"
 		        android:layout_height="wrap_content"
-		        android:textAppearance="?android:attr/textAppearanceSmall"
+		        android:textAppearance="?android:attr/textAppearanceMedium"
 		        android:text="Spanish definition" />
 		
 		    <TextView
@@ -66,19 +66,11 @@
 		        android:id="@+id/Speaker"
 		        android:layout_width="wrap_content"
 		        android:layout_height="wrap_content"
-		        android:textAppearance="?android:attr/textAppearanceSmall"
+		        android:textAppearance="?android:attr/textAppearanceMedium"
 		        android:text="@string/speaker" />
 	    
 	    </LinearLayout>
     
     </LinearLayout>
-    
-    <!-- 
-    <ImageButton
-        android:id="@+id/listen"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/listener_icon" /> -->
-
 
 </LinearLayout>

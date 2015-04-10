@@ -3,7 +3,8 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.valleyzapotectalkingdictionary.MainActivity" >
+    tools:context="com.example.valleyzapotectalkingdictionary.MainActivity"
+    android:background="#E2725B" >
         
 	<LinearLayout
 	    android:layout_width="match_parent"
@@ -37,14 +38,16 @@
         android:layout_width="0dp"
         android:layout_weight="1"
         android:layout_height="wrap_content"
-        android:background="#C96749"/>
+        />
 		</LinearLayout>
 			     	
 			   
      	<FrameLayout
         android:id="@+id/container"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="fill_parent"
+        android:background="#F0C2B2"
+        >
      	</FrameLayout>
      	
      </LinearLayout>
