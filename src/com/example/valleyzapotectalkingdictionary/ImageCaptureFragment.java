@@ -62,9 +62,11 @@ public class ImageCaptureFragment extends Fragment {
     private static final String photoDirectoryName = "photos";
     private static String photoDirectoryFullPath = null;
     
-    private static String mTempFilePath = null;
+//    private static String mFileName = null;
     
     private boolean imageSaved = false;
+    
+    private File image = null;
 	
 	public ImageCaptureFragment() {}
 	
@@ -224,10 +226,10 @@ public class ImageCaptureFragment extends Fragment {
 	    	
 //	    	File image = new File(mFileName);
 	    	
-	    	File image = new File(mTempFilePath);
+	    	image = new File(mFileName);
 	    			
 	    			
-	    	Log.i("FILE", "File path=" + mTempFilePath);
+	    	Log.i("FILE", "File path=" + mFileName);
 	    	
 	    	mImageCaptured = true;
 			mPreviewText.setVisibility(View.VISIBLE);
@@ -278,6 +280,8 @@ public class ImageCaptureFragment extends Fragment {
 		    	mImageCaptureButton.setText(R.string.takeAnotherPhoto);
 		    	
 	    	}
+	    	
+	    	
 	    }
 	}
 	
@@ -310,13 +314,13 @@ public class ImageCaptureFragment extends Fragment {
 	    // Create an image file name
 	    String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
 	    String imageFileName = "JPEG_" + timeStamp + "_";
-	    
+//	    
 //	    imageFileName = "temp";
 	    
-	    if (mTempFilePath != null) {
-	    	File tempFile = new File(mTempFilePath);
-	    	tempFile.delete();
-	    }
+//	    if (mFileName != null) {
+//	    	File tempFile = new File(mFileName);
+//	    	tempFile.delete();
+//	    }
 	    
 //	    File storageDir = Environment.getExternalStoragePublicDirectory(
 //	            Environment.DIRECTORY_PICTURES);
@@ -330,9 +334,12 @@ public class ImageCaptureFragment extends Fragment {
 	    
 //	    image = new File(photoDirectoryFullPath, imageFileName + ".jpg");
 	    
-	    mTempFilePath = image.getAbsolutePath();
+	    mFileName = image.getAbsolutePath();
 	    
-	    Log.i("PHOTO", "createImageFile file path=" + mTempFilePath);
+//	    image = new File(mFileName);
+//	    image.createNewFile();
+	    
+	    Log.i("PHOTO", "createImageFile file path=" + mFileName);
 	    
 	    
 //	    File image = new File(storageDir.getAbsoluteFile() + "/temp.jpg");
@@ -410,11 +417,13 @@ public class ImageCaptureFragment extends Fragment {
 	            newFileName += "/" + userDefinedFileName;
 	            newFileName += mFileExtension;
 				
-				File image = new File(mTempFilePath);
+//				File image = new File(mFileName);
+//	            File image = new File(mFileName);
 				File newImage = new File(newFileName);
+				try {
+					newImage.createNewFile();
 				
-				
-				Log.i("PHOTOS", "Old file path="+mTempFilePath);
+				Log.i("PHOTOS", "Old file path="+mFileName);
 				Log.i("PHOTOS", "New file path="+newFileName);
 				
 				image.setReadable(true);
@@ -422,15 +431,37 @@ public class ImageCaptureFragment extends Fragment {
 				newImage.setReadable(true);
 				newImage.setWritable(true);
 				
-//				boolean renameSuccessful = image.renameTo(newImage);
-//				
-//				Log.i("PHOTOS", "image canRead="+image.canRead()+" canWrite="+image.canWrite());
-//				Log.i("PHOTOS", "newImage canRead="+newImage.canRead()+" canWrite="+newImage.canWrite());
-//				
-//				Log.i("PHOTOS", "Rename successful="+renameSuccessful);
-//				
-//				if (renameSuccessful)
+				boolean renameSuccessful = image.renameTo(newImage);
+				
+				Log.i("PHOTOS", "image canRead="+image.canRead()+" canWrite="+image.canWrite());
+				Log.i("PHOTOS", "newImage canRead="+newImage.canRead()+" canWrite="+newImage.canWrite());
+				
+				Log.i("PHOTOS", "Rename successful="+renameSuccessful);
+				
+
+				if (renameSuccessful)
 					Toast.makeText(getActivity(), "Photo saved", Toast.LENGTH_SHORT).show();
+				
+				
+				if (newImage.exists()) {
+            		Log.i("SAVE AUDIO", "New file exists");
+            		Log.i("SAVE AUDIO", "New file name=" + newImage.getAbsolutePath());
+            	}
+            	else {
+            		Log.i("SAVE AUDIO", "New does not file exist");
+            	}
+            	
+            	if (image.exists()) {
+            		Log.i("SAVE AUDIO", "Default file exists");
+//            		image.delete();
+            	}
+            	else {
+            		Log.i("SAVE AUDIO", "Default does not file exist");
+            	}
+//				
+				} catch (IOException e) {
+					Log.e("SAVE PHOTO", "Could not create new photo file");
+				}
 				
 					
 				imageSaved = true;
@@ -439,6 +470,8 @@ public class ImageCaptureFragment extends Fragment {
 				mImageCaptureButton.setEnabled(true);
 				mFileNameEditText.setText("");
 				mFileNameEditText.setEnabled(true);
+				
+				
 			}
 			
 		};

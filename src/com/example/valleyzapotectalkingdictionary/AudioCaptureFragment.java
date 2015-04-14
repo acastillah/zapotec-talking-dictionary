@@ -122,8 +122,6 @@ public class AudioCaptureFragment extends Fragment implements Parcelable {
 	@Override
     public void onCreate(Bundle icicle) {
     	super.onCreate(icicle);
-        
-        updateExternalStorageState();
 
         Log.i("DIR", "Setting audio dir path");
         
@@ -290,20 +288,6 @@ public class AudioCaptureFragment extends Fragment implements Parcelable {
         
 	}
 	
-    void updateExternalStorageState() {
-        String state = Environment.getExternalStorageState();
-        if (Environment.MEDIA_MOUNTED.equals(state)) {
-            mExternalStorageAvailable = mExternalStorageWriteable = true;
-        } else if (Environment.MEDIA_MOUNTED_READ_ONLY.equals(state)) {
-            mExternalStorageAvailable = true;
-            mExternalStorageWriteable = false;
-        } else {
-            mExternalStorageAvailable = mExternalStorageWriteable = false;
-        }
-//        handleExternalStorageState(mExternalStorageAvailable, mExternalStorageWriteable);
-        
-
-    }
 	
 	private void onRecord(boolean start) {
         if (start) {
