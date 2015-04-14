@@ -51,13 +51,13 @@ public class ImageCaptureFragment extends Fragment {
 	private ImageCaptureButton mImageCaptureButton = null;
 	private TextView mPreviewText = null;
 	private ImageView mImageView = null;
-//	private FileNameEditText mFileNameEditText = null;
-//	private SaveButton mSaveButton = null;
+	private FileNameEditText mFileNameEditText = null;
+	private SaveButton mSaveButton = null;
 	
 	private boolean mImageCaptured = false;
 	String mCurrentPhotoPath;
 	
-    private static final String mFileExtension = ".jgp"; // WHAT FILE TYPE?
+    private static final String mFileExtension = ".jgp";
     private static final String dictionaryDirectoryName = "Zapotec Talking Dictionary";
     private static final String photoDirectoryName = "photos";
     private static String photoDirectoryFullPath = null;
@@ -169,44 +169,44 @@ public class ImageCaptureFragment extends Fragment {
         LinearLayout fileNameLayout = new LinearLayout(activity);
         fileNameLayout.setOrientation(LinearLayout.HORIZONTAL);
         
-//        TextView namePhotoTextView = new TextView(activity);
-//        namePhotoTextView.setText(R.string.photoName);
-//        fileNameLayout.addView(namePhotoTextView);
+        TextView namePhotoTextView = new TextView(activity);
+        namePhotoTextView.setText(R.string.photoName);
+        fileNameLayout.addView(namePhotoTextView);
+        
+        mFileNameEditText = new FileNameEditText(activity);
+        mFileNameEditText.setEms(10);
+        fileNameLayout.addView(mFileNameEditText,
+                new LinearLayout.LayoutParams(
+                    ViewGroup.LayoutParams.WRAP_CONTENT,
+                    ViewGroup.LayoutParams.WRAP_CONTENT,
+                    0));
+        
+        TextView imageExtension = new TextView(activity);
+        imageExtension.setText(".jpg");
+        fileNameLayout.addView(imageExtension);
+        
+        fragmentLayout.addView(fileNameLayout,
+                new LinearLayout.LayoutParams(
+                        ViewGroup.LayoutParams.WRAP_CONTENT,
+                        ViewGroup.LayoutParams.WRAP_CONTENT,
+                        0));
+        
+        mSaveButton = new SaveButton(activity);
+        fragmentLayout.addView(mSaveButton,
+                new LinearLayout.LayoutParams(
+                    ViewGroup.LayoutParams.WRAP_CONTENT,
+                    ViewGroup.LayoutParams.WRAP_CONTENT,
+                    0));
+        
+        
+//        Gallery gallery = new Gallery(activity);
 //        
-//        mFileNameEditText = new FileNameEditText(activity);
-//        mFileNameEditText.setEms(10);
-//        fileNameLayout.addView(mFileNameEditText,
-//                new LinearLayout.LayoutParams(
-//                    ViewGroup.LayoutParams.WRAP_CONTENT,
-//                    ViewGroup.LayoutParams.WRAP_CONTENT,
-//                    0));
+//        gallery.setAdapter(new ImageAdapter(activity));
 //        
-//        TextView imageExtension = new TextView(activity);
-//        imageExtension.setText(".jpg");
-//        fileNameLayout.addView(imageExtension);
-//        
-//        fragmentLayout.addView(fileNameLayout,
-//                new LinearLayout.LayoutParams(
-//                        ViewGroup.LayoutParams.WRAP_CONTENT,
-//                        ViewGroup.LayoutParams.WRAP_CONTENT,
-//                        0));
-        
-//        mSaveButton = new SaveButton(activity);
-//        fragmentLayout.addView(mSaveButton,
-//                new LinearLayout.LayoutParams(
-//                    ViewGroup.LayoutParams.WRAP_CONTENT,
-//                    ViewGroup.LayoutParams.WRAP_CONTENT,
-//                    0));
-        
-        
-        Gallery gallery = new Gallery(activity);
-        
-        gallery.setAdapter(new ImageAdapter(activity));
-        
-        Gallery.LayoutParams galleryLayoutParams = (LayoutParams) gallery.getLayoutParams();
-        galleryLayoutParams.height = galleryLayoutParams.WRAP_CONTENT;
-        galleryLayoutParams.width = galleryLayoutParams.FILL_PARENT;
-        gallery.setLayoutParams(galleryLayoutParams);
+//        Gallery.LayoutParams galleryLayoutParams = (LayoutParams) gallery.getLayoutParams();
+//        galleryLayoutParams.height = galleryLayoutParams.WRAP_CONTENT;
+//        galleryLayoutParams.width = galleryLayoutParams.FILL_PARENT;
+//        gallery.setLayoutParams(galleryLayoutParams);
         
         dispatchTakePictureIntent();
         

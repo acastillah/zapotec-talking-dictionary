@@ -208,12 +208,12 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 	 
 	public void displayWord(View view) {
 		Log.i("SEARCH RESULT FRAGMENT", "Displaying word details in a new WordDefinitionActivity...");
-		startActivity(new Intent(this, WordDefinitionActivity.class));
+		startActivity(new Intent(this, WordDefinitionFragment.class));
 	}
 	
 	public void displayWordOfTheDay(View v) {
 		Log.i("WORD OF THE DAY FRAGMENT", "Word of the day was clicked");
-		startActivity(new Intent(this, WordDefinitionActivity.class));		
+		startActivity(new Intent(this, WordDefinitionFragment.class));		
 	}	 
 	
 	static class LanguageInterface {
