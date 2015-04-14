@@ -126,8 +126,6 @@ public class ImageCaptureFragment extends Fragment {
 //         }
          	
          	
-         	
-         	
          	mFileName = photoDirectoryFullPath;
              mFileName += "/blah";
              mFileName += mFileExtension;

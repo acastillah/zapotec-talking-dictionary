@@ -1,14 +1,10 @@
 package com.example.valleyzapotectalkingdictionary;
 
-import java.util.Locale;
-
 import android.app.Activity;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.content.res.Configuration;
 import android.graphics.Color;
-import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -54,11 +50,7 @@ public class LanguageSpinnerItemSelectedListener implements
 				config.locale = Preferences.ENGLISH_LOC;
 		}
 		
-		prefEditor.commit();
-		
-		
-		Log.i("SPINNER", "sharedPrefs now has lang set to " + prefs.getString(Preferences.LANGUAGE, "noLang"));
-		
+		prefEditor.commit();		
 		
 		parent.getResources().updateConfiguration(config, null);
 		
@@ -67,10 +59,7 @@ public class LanguageSpinnerItemSelectedListener implements
 		// but the language is already set correctly at that point)
 		Activity activity = (Activity) view.getContext();
 		if (((MainActivity)activity).recreate) {
-//			activity.finish();
 			activity.recreate();
-			
-
 		}
 		else {
 			((MainActivity)activity).recreate = true;
@@ -80,8 +69,6 @@ public class LanguageSpinnerItemSelectedListener implements
 
 	@Override
 	public void onNothingSelected(AdapterView<?> arg0) {
-		// TODO Auto-generated method stub
-
 	}
 
 }

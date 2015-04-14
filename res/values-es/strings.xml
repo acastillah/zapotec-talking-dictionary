@@ -18,22 +18,24 @@
     <string name="title_activity_search_result">Búsqueda</string>
     <string name="title_activity_word_definition">Definición</string>
     <string name="title_activity_search_fragment">Búsqueda</string>
-    <string name="title_main_section">Búsqueda</string>
+    <string name="title_main_section">Palabra del día</string>
     <string name="title_section2">Actualizar</string>
     <string name="title_section3">Información</string>
     <string name="password_section">Iniciar sesión</string>
     <string name="audio_section">Grabar audio</string>
     <string name="photo_section">Tomar foto</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="about">All content copyright © the recorded Zapotec communities. (2013)
-Dictionary produced by Brook Lillehaugen, with support from K. David Harrison and Jeremy Fahringer. (2013).
+    <string name="navigation_drawer_close">All content copyright © the recorded Zapotec communities (2013-2015).
+Dictionary produced by Brook Danielle Lillehaugen, Alex Mannix, 
+Janet Chavez Santiago, Ambrocio Gutiérrez, Bibiana Gutiérrez, Nick Kalivoda, 
+Alex Mannix, Teresa Martínez Chavez and Troi Carleton, with Helen Felker and Rachel Elizabeth Weissler, 
+with support from K. David Harrison and Jeremy Fahringer. (2013-2014).
 All rights reserved. Do not distribute or reproduce without permission.</string>
     <string name="help">Ayuda</string>
     <string name="title_activity_search">SearchActivity</string>
     <string name="preview_image">Imagen</string>
-    <string name="passwordExplanation">Esta sesión provee acceso a las herramientas usadas para los linguistas que están desarrollando
-        la base de datos del lenguaje Zapoteca de Teotitlán del Valle. Por el momento estas herramientas no son accesibles para el público. </string>
+    <string name="passwordExplanation">Esta sesión provee acceso a las herramientas usadas por los linguistas que están desarrollando
+        la base de datos del lenguaje Zapoteco de Teotitlán del Valle. Por el momento estas herramientas no son accesibles para el público. </string>
 	<string name="password">Contraseña: </string>
 	<string name="passwordIncorrect">Contraseña incorrecta</string>
 	<string name="submit">Mandar</string>
@@ -65,15 +67,25 @@ All rights reserved. Do not distribute or reproduce without permission.</string>
     </string-array>
     
     <string-array name="search_options">
-        <item>Entire dictionary</item>
-        <item>Tlacolula Valley Zapotec</item>
-        <item>English</item>
-        <item>Spanish</item>
+        <item>Diccionario completo</item>
+        <item>Zapoteco de Teotitlán del Valle</item>
+        <item>Inglés</item>
+        <item>Español</item>
     </string-array>
     
     <string-array name="domain_options">
-        <item>Animals</item>
-        <item>Fruits</item>
+        <item>all</item>
+        <item>animal</item>
+        <item>body parts</item>
+        <item>clima</item>
+        <item>clothing</item>       
+        <item>color</item>
+        <item>food</item>
+        <item>kinship</item>
+        <item>location</item>
+        <item>persona</item>
+        <item>time</item>
+        <item>ubicación</item>
     </string-array>
 	
 	<string name="current_language">Spanish</string>

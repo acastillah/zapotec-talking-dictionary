@@ -12,13 +12,12 @@ import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnCompletionListener;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.text.Html;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -75,35 +74,38 @@ public class WordDefinitionFragment extends Fragment{
 	public void setUpDisplay(){
 		Word w = new Word(Integer.parseInt(info[0]), info[1],info[2],info[3],info[4],info[5],info[6],info[7],info[8],info[9],info[10],info[11],info[12]);
 		
-		Log.i("WORD DEF", "id=" + w.getID()
-				+ "\nword=" + w.getName()
-				+ "\ngloss=" + w.getGloss()
-				+ "\nipa=" + w.getIPA()
-				+ "\npos=" + w.getPos()
-				+ "\nusage_example=" + w.getUsage()
-				+ "\ndialect=" + w.getDialect()
-				+ "\nmetadata=" + w.getMetadata()
-				+ "\nauthority=" + w.getAuthority()
-				+ "\naudio=" + w.getAudio()
-				+ "\nimage=" + w.getIMG()
-				+ "\nsemantic_ids=" + w.getSemantic()
-				+ "\nes_gloss=" + w.getEsGloss());
+//		Log.i("WORD DEF", "id=" + w.getID()
+//				+ "\nword=" + w.getName()
+//				+ "\ngloss=" + w.getGloss()
+//				+ "\nipa=" + w.getIPA()
+//				+ "\npos=" + w.getPos()
+//				+ "\nusage_example=" + w.getUsage()
+//				+ "\ndialect=" + w.getDialect()
+//				+ "\nmetadata=" + w.getMetadata()
+//				+ "\nauthority=" + w.getAuthority()
+//				+ "\naudio=" + w.getAudio()
+//				+ "\nimage=" + w.getIMG()
+//				+ "\nsemantic_ids=" + w.getSemantic()
+//				+ "\nes_gloss=" + w.getEsGloss());
 		
-		word.setText(w.getName());
+		String name = "<b>" + w.getName()+ "</b>: "; 
+		word.setText(Html.fromHtml(name));
 		
 		if (!w.getPos().equals(""))
 			pos.setText(w.getPos());
 		else
 			pos.setVisibility(View.GONE);
 		
-		if (!w.getGloss().equals(""))
-			definition_Eng.setText(getResources().getString(R.string.english) + ": " + w.getGloss());
-		else
+		if (!w.getGloss().equals("")){
+			String sourceString = "<b>" + getResources().getString(R.string.english) + "</b>: " + w.getGloss(); 
+			definition_Eng.setText(Html.fromHtml(sourceString));
+		}else
 			definition_Eng.setVisibility(View.GONE);
 		
-		if (!w.getEsGloss().equals(""))
-			definition_Spa.setText(getResources().getString(R.string.spanish) + ": " + w.getEsGloss());
-		else
+		if (!w.getEsGloss().equals("")){
+			String sourceString = "<b>" + getResources().getString(R.string.spanish) + "</b>: " + w.getEsGloss(); 
+			definition_Spa.setText(Html.fromHtml(sourceString));
+		}else
 			definition_Spa.setVisibility(View.GONE);
 		
 		if (!w.getDialect().equals(""))
@@ -111,8 +113,10 @@ public class WordDefinitionFragment extends Fragment{
 		else
 			variant.setVisibility(View.GONE);
 		
-		if (!w.getAuthority().equals(""))
-			speaker.setText("Speaker: " + w.getAuthority());
+		if (!w.getAuthority().equals("")){
+			String authority = "<b>" + getResources().getString(R.string.speaker) + "</b>: " + w.getAuthority(); 
+			speaker.setText(Html.fromHtml(authority));
+		}
 		else
 			speaker.setVisibility(View.GONE);
 			
@@ -121,31 +125,11 @@ public class WordDefinitionFragment extends Fragment{
 		if (!w.getAudio().equals("")) {
 			audioFileName = "audio/" + w.getAudio();
 			
-//			String audioFileName2 = "audio/TdVZ_JCS_07292013_yu'u_casa.mp3";
-//			
-//			String jsonFileName = "TdVZ_JCS_07292013_yu&#8217;u_casa.mp3";
-//			
-//			Log.i("AUDIO", "decoded in DB=" + audioFileName + "\n"
-//					+ "copied from eclipse" + audioFileName2 + "\n" +
-//					"equal?=" + audioFileName.equals(audioFileName2) + "\n"
-//					+ "from json=" + jsonFileName
-//					+ "\nescape Html3=" + StringEscapeUtils.unescapeHtml3(jsonFileName)
-//					+ "\nescape Html4=" + StringEscapeUtils.unescapeHtml4(jsonFileName)
-//					+ "\nescape Xml=" + StringEscapeUtils.unescapeXml(jsonFileName)
-//					+ "\nescape Csv=" + StringEscapeUtils.unescapeCsv(jsonFileName)
-//					+ "\nescape EcmaScript=" + StringEscapeUtils.unescapeEcmaScript(jsonFileName)
-//					+ "\nescape Java=" + StringEscapeUtils.unescapeJava(jsonFileName)
-//					+ "\nescape Json=" + StringEscapeUtils.unescapeJson(jsonFileName));
-			
 			String HtmlUnescapedQuote = StringEscapeUtils.unescapeHtml3("&#8217;");
 			String imageFileNameQuote = "'";
 			
 			audioFileName = audioFileName.replace(HtmlUnescapedQuote, imageFileNameQuote);
-			
-			Log.i("AUDIO", "Replaced quote=" + audioFileName);
-
-//			playButton.setText(audioFileName);
-			
+						
 			try {
 				audioFileFD = assetManager.openFd(audioFileName);
 			} catch (IOException e) {
@@ -156,29 +140,32 @@ public class WordDefinitionFragment extends Fragment{
 				Log.i("AUDIO", "Opened audio file, fd=" + audioFileFD.getFileDescriptor());
 			}
 			else {
-//				playButton.setEnabled(false);
 				playButton.setVisibility(View.GONE);
+				Log.i("Hidden button", "AUDIO");
 			}
 			
 		}
 		
+		else{
+			playButton.setVisibility(View.GONE);
+		}
 		
 		
 		
-//		try {
-//			String[] assets = assetManager.list("");
-//			int i=1;
-//			for (String a : assets)
-//				Log.i("ASSET", i + "..... " + a);
-//			
-//			assets = assetManager.list("audio");
-//			Log.i("ASSET", "there are " + assets.length);
-//			for (String a : assets)
-//				Log.i("ASSET", i++ + " " + a);
-//		} catch (IOException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
+		try {
+			String[] assets = assetManager.list("");
+			int i=1;
+			for (String a : assets)
+				Log.i("ASSET", i + "..... " + a);
+			
+			assets = assetManager.list("audio");
+			Log.i("ASSET", "there are " + assets.length);
+			for (String a : assets)
+				Log.i("ASSET", i++ + " " + a);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 		
 		if (!w.getIMG().equals("")) {
@@ -198,11 +185,6 @@ public class WordDefinitionFragment extends Fragment{
         OnClickListener clicker = new OnClickListener() {
             public void onClick(View v) {
                 onPlay(mStartPlaying);
-//                if (mStartPlaying)
-//                    setText(R.string.stopPlaying);
-//                else
-//                    setText(R.string.startPlaying);
-
                 mStartPlaying = !mStartPlaying;
             }
         };
@@ -210,7 +192,6 @@ public class WordDefinitionFragment extends Fragment{
         OnCompletionListener listener = new OnCompletionListener() {
 			public void onCompletion(MediaPlayer mp) {
 				onPlay(mStartPlaying);
-//                setText(R.string.startPlaying);
                 mStartPlaying = !mStartPlaying;
 			}
         };
@@ -218,11 +199,10 @@ public class WordDefinitionFragment extends Fragment{
 
         public PlayButton(Context ctx) {
             super(ctx);
-//            setText(R.string.startPlaying);
             this.setImageResource(R.drawable.audio_play);
             GradientDrawable buttonShape = new GradientDrawable();
             buttonShape.setCornerRadius(10);
-            this.setBackgroundDrawable(buttonShape);
+            //this.setBackgroundDrawable(buttonShape);
             setOnClickListener(clicker);
         }
         
