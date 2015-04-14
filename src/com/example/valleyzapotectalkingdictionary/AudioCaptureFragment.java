@@ -55,7 +55,8 @@ public class AudioCaptureFragment extends Fragment implements Parcelable {
     private static final String FILE_NAME_EDIT_TEXT_ENABLED = "FILE_NAME_EDIT_TEXT_ENABLED";
     private static final String SAVE_BUTTON_ENABLED = "SAVE_BUTTON_ENABLED";
     
-    private static final String mFileExtension = ".3gp"; // WHAT FILE TYPE?
+    private static final String mFileExtension = ".3gp";
+    private static final String mFileExtension_desired = ".wav";
     private static final String dictionaryDirectoryName = "Zapotec Talking Dictionary";
     private static final String audioDirectoryName = "audio";
     private static String audioDirectoryFullPath = null;
@@ -176,7 +177,7 @@ public class AudioCaptureFragment extends Fragment implements Parcelable {
         // set the name (full path) to the temporary file
     	mFileName = audioDirectoryFullPath;
         mFileName += "/temp";
-        mFileName += mFileExtension;
+        mFileName += mFileExtension_desired;
         	
     }
 
@@ -488,7 +489,7 @@ public class AudioCaptureFragment extends Fragment implements Parcelable {
 	            	
 	            	String newFileName = audioDirectoryFullPath;
 	                newFileName += "/" + userDefinedFileName;
-	                newFileName += mFileExtension;
+	                newFileName += mFileExtension_desired;
 	                
 	                File newAudioFile = new File(newFileName);
 	                try {
