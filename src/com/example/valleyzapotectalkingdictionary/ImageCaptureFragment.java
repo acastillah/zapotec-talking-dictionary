@@ -63,6 +63,8 @@ public class ImageCaptureFragment extends Fragment {
     private static String photoDirectoryFullPath = null;
     
     private static String mTempFilePath = null;
+    
+    private boolean imageSaved = false;
 	
 	public ImageCaptureFragment() {}
 	
@@ -76,7 +78,7 @@ public class ImageCaptureFragment extends Fragment {
         
         Log.i("DIR", "Setting audio dir path");
         
-        // if (Environment.getExternalStorageState() == true) {
+//         if (Environment.getExternalStorageState() == true) {
          	photoDirectoryFullPath = Environment.getExternalStorageDirectory().getAbsolutePath();
          	Log.i("DIR", "audio dir full path=" + photoDirectoryFullPath);
          	
@@ -326,6 +328,8 @@ public class ImageCaptureFragment extends Fragment {
 	        storageDir      /* directory */
 	    );
 	    
+//	    image = new File(photoDirectoryFullPath, imageFileName + ".jpg");
+	    
 	    mTempFilePath = image.getAbsolutePath();
 	    
 	    Log.i("PHOTO", "createImageFile file path=" + mTempFilePath);
@@ -362,32 +366,22 @@ public class ImageCaptureFragment extends Fragment {
 
 			@Override
 			public void onClick(View arg0) {
-//				Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-//				File image = new File(Environment.getExternalStorageDirectory(), "testImage.jpg");
-//				
-//				if (cameraIntent.resolveActivity(getActivity().getPackageManager()) != null) {
-//			        
-//			        cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(image));
-//			        startActivityForResult(cameraIntent, REQUEST_IMAGE_CAPTURE);
-//			    }
+
 				
-				
-				
+//				if (imageSaved)
+////					startActivity(new Intent(getContext(), ImageCaptureFragment.class));
+					
 				
 				dispatchTakePictureIntent();
-				
-				////// not getting to here... it's making a new intent?
-				
-				
-				
+							
 				
 				// user must enter file name before saving & there must be picture captured to save
-//				if (!mFileNameEditText.getText().toString().equals("")) {
-//					mSaveButton.setEnabled(true); 
-//            	}
-//            	else {
-//            		mSaveButton.setEnabled(false); 
-//            	}
+				if (!mFileNameEditText.getText().toString().equals("")) {
+					mSaveButton.setEnabled(true); 
+            	}
+            	else {
+            		mSaveButton.setEnabled(false); 
+            	}
 			}
 			
 		};
@@ -407,36 +401,44 @@ public class ImageCaptureFragment extends Fragment {
 			@Override
 			public void onClick(View arg0) {
 				mImageCaptureButton.setEnabled(false);
-//				mFileNameEditText.setEnabled(false);
-//				mSaveButton.setEnabled(false);
+				mFileNameEditText.setEnabled(false);
+				mSaveButton.setEnabled(false);
 				
-//				String userDefinedFileName = mFileNameEditText.getText().toString();
+				String userDefinedFileName = mFileNameEditText.getText().toString();
 				
-//				String newFileName = photoDirectoryFullPath;
-//	            newFileName += "/" + userDefinedFileName;
-//	            newFileName += mFileExtension;
-//				
-//				File image = new File(mTempFilePath);
-//				File newImage = new File(newFileName);
-//				
-//				
-//				Log.i("PHOTOS", "Old file path="+mTempFilePath);
-//				Log.i("PHOTOS", "New file path="+newFileName);
-//				
-//				image.setReadable(true);
-//				image.setWritable(true);
-//				newImage.setReadable(true);
-//				newImage.setWritable(true);
-//				
+				String newFileName = photoDirectoryFullPath;
+	            newFileName += "/" + userDefinedFileName;
+	            newFileName += mFileExtension;
+				
+				File image = new File(mTempFilePath);
+				File newImage = new File(newFileName);
+				
+				
+				Log.i("PHOTOS", "Old file path="+mTempFilePath);
+				Log.i("PHOTOS", "New file path="+newFileName);
+				
+				image.setReadable(true);
+				image.setWritable(true);
+				newImage.setReadable(true);
+				newImage.setWritable(true);
+				
 //				boolean renameSuccessful = image.renameTo(newImage);
 //				
 //				Log.i("PHOTOS", "image canRead="+image.canRead()+" canWrite="+image.canWrite());
 //				Log.i("PHOTOS", "newImage canRead="+newImage.canRead()+" canWrite="+newImage.canWrite());
 //				
 //				Log.i("PHOTOS", "Rename successful="+renameSuccessful);
-				
+//				
 //				if (renameSuccessful)
 					Toast.makeText(getActivity(), "Photo saved", Toast.LENGTH_SHORT).show();
+				
+					
+				imageSaved = true;
+				
+				// Reset form so user can take another photo
+				mImageCaptureButton.setEnabled(true);
+				mFileNameEditText.setText("");
+				mFileNameEditText.setEnabled(true);
 			}
 			
 		};
@@ -473,10 +475,10 @@ public class ImageCaptureFragment extends Fragment {
 
 				// user must enter file name before saving & there must be picture captured to save
 				if (s.length() != 0 && mImageCaptured == true) {
-//					mSaveButton.setEnabled(true); 
+					mSaveButton.setEnabled(true); 
             	}
             	else {
-//            		mSaveButton.setEnabled(false); 
+            		mSaveButton.setEnabled(false); 
             	}
 			}
 			

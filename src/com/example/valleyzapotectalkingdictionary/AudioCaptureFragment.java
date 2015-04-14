@@ -502,6 +502,15 @@ public class AudioCaptureFragment extends Fragment implements Parcelable {
 		                boolean renameSuccessful = defaultAudioFile.renameTo(newAudioFile);
 		            	Log.i("SAVE AUDIO", "renameSuccessful=" + renameSuccessful);
 		            	
+		            	// Inform the user that saving the audio was successful
+		            	Toast.makeText(getActivity(), "Photo saved", Toast.LENGTH_SHORT).show();
+		            	
+		            	// Reset the form so user can record more audio
+		            	mRecordButton.setEnabled(true);
+		            	mSaveButton.setEnabled(false);
+		            	mFileNameEditText.setText("");
+		            	mFileNameEditText.setEnabled(true);
+		            	
 		            	if (newAudioFile.exists()) {
 		            		Log.i("SAVE AUDIO", "New file exists");
 		            		Log.i("SAVE AUDIO", "New file name=" + newAudioFile.getAbsolutePath());
