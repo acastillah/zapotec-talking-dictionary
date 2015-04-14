@@ -102,7 +102,6 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 	    SearchView searchView = (SearchView) findViewById(R.id.searchBAR);
 		SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);		
 		searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));	
-//		searchView.setBackgroundColor(Color.GRAY);
 		searchView.setBackgroundColor(Color.parseColor(getResources().getString(R.color.searchbar_background_color)));
 		mTitle = getString(R.string.app_name);
 		addListenerOnSpinnerItemSelection(); 
@@ -141,7 +140,6 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 				recreate = false;
 				int selection = setLanguage(spinner);
 				spinner.setSelection(selection);
-//				recreate = true;
 			}
 			else {
 			}
@@ -154,10 +152,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 
 	public void restoreActionBar() {
 		ActionBar actionBar = getSupportActionBar();
-		actionBar.setDisplayShowTitleEnabled(true);
-		
-//		actionBar.setBackgroundDrawable((Color.parseColor(getResources().getString(R.color.actionbar_background_color))));
-//		
+		actionBar.setDisplayShowTitleEnabled(true);	
 		
 		actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor(getResources().getString(R.color.actionbar_background_color))));
 		
@@ -178,14 +173,6 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 	 public void addListenerOnSpinnerItemSelection() {
 			searchSpinner = (Spinner) findViewById(R.id.search_spinner);
 			domainSpinner = (Spinner) findViewById(R.id.domain_spinner);
-	   
-//			String[] options = {"all", "animal", "body parts", "clima", "clothing", "color", "food", "kinship", "location", "persona", "time", "ubicación"};
-//			
-//			ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(this,
-//				   R.layout.spinner_custom_layout, R.id.options, options);
-		   //spinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item); // The drop down view
-		   //domainSpinner.setAdapter(spinnerArrayAdapter);
-		
 			searchSpinner.setOnItemSelectedListener(new OnItemSelectedListener() {
 		        public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
 		            Language_search = pos;
@@ -200,21 +187,9 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		        }
 		        public void onNothingSelected(AdapterView<?> arg0) {
 		        }
-		    }); 
-		   
+		    });    
 	  }
 	
-	 
-	 
-	public void displayWord(View view) {
-		Log.i("SEARCH RESULT FRAGMENT", "Displaying word details in a new WordDefinitionActivity...");
-		startActivity(new Intent(this, WordDefinitionActivity.class));
-	}
-	
-	public void displayWordOfTheDay(View v) {
-		Log.i("WORD OF THE DAY FRAGMENT", "Word of the day was clicked");
-		startActivity(new Intent(this, WordDefinitionActivity.class));		
-	}	 
 	
 	static class LanguageInterface {
 		public static final int LANGUAGE_ENGLISH = 0;
@@ -222,29 +197,6 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		public static final int LANGUAGE_ZAPOTEC = 2;
 		
 		public static int interfaceLanguage = 0;
-		/*
-		public static void setLanguageInterfaceButtons(Menu menu) {
-			for (int i = 0; i < menu.size(); i++)
-	            menu.getItem(i).setVisible(true);
-			
-			MenuItem menuItem = null;
-			switch (LanguageInterface.interfaceLanguage) {
-				case LanguageInterface.LANGUAGE_ENGLISH:
-					menuItem = menu.findItem(R.id.englishInterface);
-					break;
-				case LanguageInterface.LANGUAGE_SPANISH:
-					menuItem = menu.findItem(R.id.spanishInterface);
-					break;
-				case LanguageInterface.LANGUAGE_ZAPOTEC:
-					menuItem = menu.findItem(R.id.zapotecInterface);
-					break;
-			}	
-			
-			if (menuItem != null) {
-				menuItem.setVisible(false);
-			}
-		}
-		*/
 	}
 	
 	@Override
@@ -283,7 +235,6 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 	public void onNavigationDrawerItemSelected(int position) {
 		FragmentManager fragmentManager = getSupportFragmentManager();
 		Fragment fragment = null;
-		
 		SharedPreferences preferences = getSharedPreferences(Preferences.APP_SETTINGS, Activity.MODE_PRIVATE);
 		
 		// Options all users see

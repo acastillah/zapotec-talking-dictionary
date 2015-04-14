@@ -19,7 +19,7 @@
     <string name="title_activity_search_result">Search Result</string>
     <string name="title_activity_word_definition">Word Definition</string>
     <string name="title_activity_search_fragment">SearchFragment</string>
-    <string name="title_main_section">Search</string>
+    <string name="title_main_section">Word of the Day</string>
     <string name="title_section2">Update</string>
     <string name="title_section3">About</string>
     <string name="password_section">Log In</string>

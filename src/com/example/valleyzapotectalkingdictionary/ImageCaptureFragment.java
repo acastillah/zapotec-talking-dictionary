@@ -122,8 +122,6 @@ public class ImageCaptureFragment extends Fragment {
 //         }
          	
          	
-         	
-         	
          	mFileName = photoDirectoryFullPath;
              mFileName += "/blah";
              mFileName += mFileExtension;
@@ -199,14 +197,14 @@ public class ImageCaptureFragment extends Fragment {
 //                    0));
         
         
-        Gallery gallery = new Gallery(activity);
-        
-        gallery.setAdapter(new ImageAdapter(activity));
-        
-        Gallery.LayoutParams galleryLayoutParams = (LayoutParams) gallery.getLayoutParams();
-        galleryLayoutParams.height = galleryLayoutParams.WRAP_CONTENT;
-        galleryLayoutParams.width = galleryLayoutParams.FILL_PARENT;
-        gallery.setLayoutParams(galleryLayoutParams);
+//        Gallery gallery = new Gallery(activity);
+//        
+//        gallery.setAdapter(new ImageAdapter(activity));
+//        
+//        Gallery.LayoutParams galleryLayoutParams = (LayoutParams) gallery.getLayoutParams();
+//        galleryLayoutParams.height = galleryLayoutParams.WRAP_CONTENT;
+//        galleryLayoutParams.width = galleryLayoutParams.FILL_PARENT;
+//        gallery.setLayoutParams(galleryLayoutParams);
         
         dispatchTakePictureIntent();
         

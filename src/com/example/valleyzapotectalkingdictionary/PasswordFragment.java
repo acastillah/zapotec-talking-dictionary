@@ -1,12 +1,12 @@
 package com.example.valleyzapotectalkingdictionary;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -67,8 +67,15 @@ public class PasswordFragment extends Fragment {
 				Toast.makeText(getActivity(), R.string.passwordAccepted, Toast.LENGTH_SHORT).show();				
 				
 				// Change nav bar options
-				Intent intent = new Intent(getActivity(), MainActivity.class);
-				startActivity(intent);
+//				Intent intent = new Intent(getActivity(), MainActivity.class);
+//				startActivity(intent);
+				//Activity activity = (Activity) view.getContext();
+				FragmentManager fragmentManager = getFragmentManager();
+				Fragment fragment = null;
+				fragment = new MainPageFragment();	
+				fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();	
+				getActivity().recreate();
+
 				
 				// REMOVE OLD ACTIVITY FROM THE STACK?
 			}
