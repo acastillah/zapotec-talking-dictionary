@@ -76,12 +76,9 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		
 //		if (spinner != null)
 //			spinner.setSelection(selection);
-		
 		Configuration config = new Configuration();
 		config.locale = locale;
-		getBaseContext().getResources().updateConfiguration(config, 
-		    getBaseContext().getResources().getDisplayMetrics());
-		
+		getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
 		return selection;
 	}
 	
@@ -90,13 +87,9 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);	 
-		
 		/** Set the language **/
-		
 		setLanguage(null);
-		
 		/*********************/
-		
 		mNavigationDrawerFragment = (NavigationDrawerFragment) getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
 		mNavigationDrawerFragment.setUp(R.id.navigation_drawer, (DrawerLayout) findViewById(R.id.drawer_layout));
 	    SearchView searchView = (SearchView) findViewById(R.id.searchBAR);
@@ -107,11 +100,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		addListenerOnSpinnerItemSelection(); 
         handleIntent(getIntent());
         
-//        searchSpinner.set
-//        setBackgroundColor(Style.dropdownColor);
-//        domainSpinner.setBackgroundColor(Style.dropdownColor);
 	}
-	
 
 	public boolean onCreateOptionsMenu(Menu menu) {
 				
@@ -180,10 +169,12 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		        public void onNothingSelected(AdapterView<?> arg0) {
 		        }
 		    }); 
-		   
 		   domainSpinner.setOnItemSelectedListener(new OnItemSelectedListener() {
 		        public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
 		            domain_search = domainSpinner.getSelectedItem().toString();
+		            if (pos!=0){
+		            	showDomain();
+		            }
 		        }
 		        public void onNothingSelected(AdapterView<?> arg0) {
 		        }
@@ -193,12 +184,10 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 	 
 	 
 	public void displayWord(View view) {
-		Log.i("SEARCH RESULT FRAGMENT", "Displaying word details in a new WordDefinitionActivity...");
 		startActivity(new Intent(this, WordDefinitionFragment.class));
 	}
 	
 	public void displayWordOfTheDay(View v) {
-		Log.i("WORD OF THE DAY FRAGMENT", "Word of the day was clicked");
 		startActivity(new Intent(this, WordDefinitionFragment.class));		
 	}	 
 	
@@ -229,6 +218,17 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
             String query = q.trim();
             showResults(query);
         }
+    }
+    
+    private void showDomain(){
+    	FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+		Fragment fragment = new SearchResultsFragment();
+        Bundle bundle = new Bundle();
+        bundle.putString("QUERY", "");
+        bundle.putInt("LANG", Language_search);
+        bundle.putString("DOM", domain_search);
+        ((Fragment) fragment).setArguments(bundle);
+		transaction.addToBackStack(null).replace(R.id.container, fragment).commit();	
     }
     
     private void showResults(String query) {

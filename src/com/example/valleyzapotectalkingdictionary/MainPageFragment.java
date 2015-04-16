@@ -59,9 +59,7 @@ public class MainPageFragment extends Fragment{
 		int month = cl.get(Calendar.MONTH);	
 		String date = Integer.toString(day) + Integer.toString(month);
 		Random rn = new Random(Integer.parseInt(date));
-	    int number = rn.nextInt((640 - 5) + 1) + 5;
-	    Log.i("Number", Integer.toString(number));
-	    
+	    int number = rn.nextInt((640 - 5) + 1) + 5;	    
 		DictionaryDatabase db = new DictionaryDatabase(getActivity());
 		Cursor c = db.getIDmatch(number);
 		if (c != null) {
