@@ -44,7 +44,7 @@ All rights reserved. Do not distribute or reproduce without permission.</string>
     <string name="downloadAudio">Descargar audio</string>
     <string name="downloadPictures">Descargar imágenes</string>
     <string name="update">Actualizar</string>
-    <string name="speaker">Tu kani'i </string>
+    <string name="speaker">Tu kani\'i </string>
     <string name="audioFragmentDescription">"Click \"Start recording\" to start recording audio and click \"Stop recording\" to end the recording. You can play the recording with the \"Start playing/Stop playing\" button. You may name your audio file in the text field. Audio files can be accessed on your device's local storage under the \"Zapotec Talking Dictionary/audio\" directory."</string>
     <string name="photoName">"Nombre de la imagen:"</string>
     <string name="stopRecording">"Parar grabación"</string>
@@ -67,9 +67,9 @@ All rights reserved. Do not distribute or reproduce without permission.</string>
     </string-array>
     
     <string-array name="search_options">
-        <item>Raatè' gits ni rigizhe'e xi zelau' xi nekih</item>
-        <item>Guni' naa te dìch dixza</item>
-        <item>Guni' naa te dìch ingles</item>
+        <item>Raatè\' gits ni rigizhe\'e xi zelau\' xi nekih</item>
+        <item>Guni\' naa te dìch dixza</item>
+        <item>Guni\' naa te dìch ingles</item>
         <item>Español</item>
     </string-array>
     

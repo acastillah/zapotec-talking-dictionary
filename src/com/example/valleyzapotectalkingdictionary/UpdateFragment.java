@@ -20,8 +20,8 @@ public class UpdateFragment extends Fragment {
 
 	//public static final String ARG_SECTION_NUMBER = "section_number";
 	
-	private CheckBox downloadPicturesCheckbox = null;
-	private CheckBox downloadAudioCheckbox = null;
+//	private CheckBox downloadPicturesCheckbox = null;
+//	private CheckBox downloadAudioCheckbox = null;
 	private Button updateButton = null;
 	
 	@Override
@@ -30,8 +30,8 @@ public class UpdateFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_update, container, false);
         
-        downloadPicturesCheckbox = (CheckBox) view.findViewById(R.id.downloadPicturesCheckbox);
-        downloadAudioCheckbox = (CheckBox) view.findViewById(R.id.downloadAudioCheckbox);
+//        downloadPicturesCheckbox = (CheckBox) view.findViewById(R.id.downloadPicturesCheckbox);
+//        downloadAudioCheckbox = (CheckBox) view.findViewById(R.id.downloadAudioCheckbox);
         updateButton = (Button) view.findViewById(R.id.updateButton);
         
         SharedPreferences preferences = getActivity().getSharedPreferences(Preferences.APP_SETTINGS, Activity.MODE_PRIVATE);
@@ -54,11 +54,11 @@ public class UpdateFragment extends Fragment {
         Log.i("UPDATE", "Photo pref=" + preferences.getBoolean(Preferences.DOWNLOAD_PHOTOS, false));
         Log.i("UPDATE", "Audio pref=" + preferences.getBoolean(Preferences.DOWNLOAD_AUDIO, false));
         
-        downloadPicturesCheckbox.setChecked(preferences.getBoolean(Preferences.DOWNLOAD_PHOTOS, false));
-        downloadAudioCheckbox.setChecked(preferences.getBoolean(Preferences.DOWNLOAD_AUDIO, false));
-        	        
-		downloadPicturesCheckbox.setOnCheckedChangeListener(new CheckboxListener(Preferences.DOWNLOAD_PHOTOS));
-		downloadAudioCheckbox.setOnCheckedChangeListener(new CheckboxListener(Preferences.DOWNLOAD_AUDIO));
+//        downloadPicturesCheckbox.setChecked(preferences.getBoolean(Preferences.DOWNLOAD_PHOTOS, false));
+//        downloadAudioCheckbox.setChecked(preferences.getBoolean(Preferences.DOWNLOAD_AUDIO, false));
+//        	        
+//		downloadPicturesCheckbox.setOnCheckedChangeListener(new CheckboxListener(Preferences.DOWNLOAD_PHOTOS));
+//		downloadAudioCheckbox.setOnCheckedChangeListener(new CheckboxListener(Preferences.DOWNLOAD_AUDIO));
 
 		updateButton.setOnClickListener(new UpdateButtonListener());
 		
