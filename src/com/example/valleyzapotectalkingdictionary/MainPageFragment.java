@@ -75,7 +75,7 @@ public class MainPageFragment extends Fragment{
    		 wordday.setText(Html.fromHtml(wordofday));
    		 //wordday.setTypeface(type);
    		 	
-   		 	String name = "<b>" + w.getName()+ "</b>: "; 
+   		 	String name = "<b>" + w.getName()+ "</b> "; 
    		 	word.setText(Html.fromHtml(name));
  		
  		if (!w.getPos().equals("")){
@@ -86,14 +86,14 @@ public class MainPageFragment extends Fragment{
  			pos.setVisibility(View.GONE);
  		
  		if (!w.getGloss().equals("")){
- 			String sourceString = "<b>" + getResources().getString(R.string.english) + "</b>: " + w.getGloss(); 
+ 			String sourceString = "<b>" + getResources().getString(R.string.english) + ":</b> " + w.getGloss(); 
  			definition_Eng.setText(Html.fromHtml(sourceString));
  		}
  		else
  			definition_Eng.setVisibility(View.GONE);
  		
  		if (!w.getEsGloss().equals("")){
- 			String sourceString = "<b>" + getResources().getString(R.string.spanish) + "</b>: " + w.getEsGloss(); 
+ 			String sourceString = "<b>" + getResources().getString(R.string.spanish) + ":</b> " + w.getEsGloss(); 
  			definition_Spa.setText(Html.fromHtml(sourceString));
  		}
  		else
@@ -105,7 +105,7 @@ public class MainPageFragment extends Fragment{
  			variant.setVisibility(View.GONE);
  		
  		if (!w.getAuthority().equals("")){
- 			String authority = "<b>" + getResources().getString(R.string.speaker) + "</b>: " + w.getAuthority(); 
+ 			String authority = "<b>" + getResources().getString(R.string.speaker) + "</b> " + w.getAuthority(); 
  			speaker.setText(Html.fromHtml(authority));
  		}
  		else

@@ -88,7 +88,7 @@ public class WordDefinitionFragment extends Fragment{
 //				+ "\nsemantic_ids=" + w.getSemantic()
 //				+ "\nes_gloss=" + w.getEsGloss());
 		
-		String name = "<b>" + w.getName()+ "</b>: "; 
+		String name = "<b>" + w.getName()+ "</b> "; 
 		word.setText(Html.fromHtml(name));
 		
 		if (!w.getPos().equals(""))
@@ -97,13 +97,13 @@ public class WordDefinitionFragment extends Fragment{
 			pos.setVisibility(View.GONE);
 		
 		if (!w.getGloss().equals("")){
-			String sourceString = "<b>" + getResources().getString(R.string.english) + "</b>: " + w.getGloss(); 
+			String sourceString = "<b>" + getResources().getString(R.string.english) + ":</b> " + w.getGloss(); 
 			definition_Eng.setText(Html.fromHtml(sourceString));
 		}else
 			definition_Eng.setVisibility(View.GONE);
 		
 		if (!w.getEsGloss().equals("")){
-			String sourceString = "<b>" + getResources().getString(R.string.spanish) + "</b>: " + w.getEsGloss(); 
+			String sourceString = "<b>" + getResources().getString(R.string.spanish) + ":</b> " + w.getEsGloss(); 
 			definition_Spa.setText(Html.fromHtml(sourceString));
 		}else
 			definition_Spa.setVisibility(View.GONE);
@@ -114,7 +114,7 @@ public class WordDefinitionFragment extends Fragment{
 			variant.setVisibility(View.GONE);
 		
 		if (!w.getAuthority().equals("")){
-			String authority = "<b>" + getResources().getString(R.string.speaker) + "</b>: " + w.getAuthority(); 
+			String authority = "<b>" + getResources().getString(R.string.speaker) + "</b> " + w.getAuthority(); 
 			speaker.setText(Html.fromHtml(authority));
 		}
 		else
