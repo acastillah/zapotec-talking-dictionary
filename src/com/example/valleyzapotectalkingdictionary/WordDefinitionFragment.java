@@ -7,6 +7,7 @@ import org.apache.commons.lang3.StringEscapeUtils;
 import android.content.Context;
 import android.content.res.AssetFileDescriptor;
 import android.content.res.AssetManager;
+import android.graphics.Typeface;
 import android.graphics.drawable.GradientDrawable;
 import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnCompletionListener;
@@ -91,8 +92,10 @@ public class WordDefinitionFragment extends Fragment{
 		String name = "<b>" + w.getName()+ "</b> "; 
 		word.setText(Html.fromHtml(name));
 		
-		if (!w.getPos().equals(""))
+		if (!w.getPos().equals("")) {
 			pos.setText(w.getPos());
+			pos.setTypeface(null, Typeface.ITALIC);
+		}
 		else
 			pos.setVisibility(View.GONE);
 		

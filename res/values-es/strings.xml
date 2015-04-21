@@ -21,7 +21,7 @@
     <string name="title_main_section">Palabra del día</string>
     <string name="title_section2">Actualizar</string>
     <string name="title_section3">Información</string>
-    <string name="password_section">Iniciar sesión</string>
+    <string name="password_section">Admin Log In</string> <!-- Iniciar sesión</string> -->
     <string name="audio_section">Grabar audio</string>
     <string name="photo_section">Tomar foto</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -34,8 +34,9 @@ All rights reserved. Do not distribute or reproduce without permission.</string>
     <string name="help">Ayuda</string>
     <string name="title_activity_search">SearchActivity</string>
     <string name="preview_image">Imagen</string>
-    <string name="passwordExplanation">Esta sesión provee acceso a las herramientas usadas por los linguistas que están desarrollando
+    <!-- <string name="passwordExplanation">Esta sesión provee acceso a las herramientas usadas por los linguistas que están desarrollando
         la base de datos del lenguaje Zapoteco de Teotitlán del Valle. Por el momento estas herramientas no son accesibles para el público. </string>
+	-->
 	<string name="password">Contraseña: </string>
 	<string name="passwordIncorrect">Contraseña incorrecta</string>
 	<string name="submit">Mandar</string>
