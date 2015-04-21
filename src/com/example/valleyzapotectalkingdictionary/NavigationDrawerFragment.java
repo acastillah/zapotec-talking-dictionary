@@ -102,8 +102,8 @@ public class NavigationDrawerFragment extends Fragment {
 							getString(R.string.title_main_section), 
 							getString(R.string.title_section2),
 							getString(R.string.title_section3),
-							getString(R.string.photo_section),
-							getString(R.string.audio_section)}));
+							getString(R.string.audio_section),
+							getString(R.string.photo_section)}));
 		}
 		else {
 			mDrawerListView.setAdapter(new ArrayAdapter<String>(getActionBar().getThemedContext(),

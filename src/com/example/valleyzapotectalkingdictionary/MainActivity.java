@@ -266,13 +266,13 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		
 		// Options only linguists see
 		if (preferences.getBoolean(Preferences.IS_LINGUIST, false) == true) {
-			if (position+1 == 4) {
-				fragment = new ImageCaptureFragment();
-				mTitle = getString(R.string.photo_section);
-			}
-			else if (position+1 == 5) {
+			if (position+1 == 4) { //  JUST ADD SOMETHING HERE WITH SHARED PREFS TO PICK CORRECT THING AFTER LOGGING IN
 				fragment = new AudioCaptureFragment();
 				mTitle = getString(R.string.audio_section);
+			}
+			else if (position+1 == 5) {
+				fragment = new ImageCaptureFragment();
+				mTitle = getString(R.string.photo_section);
 			}
 		}
 		
