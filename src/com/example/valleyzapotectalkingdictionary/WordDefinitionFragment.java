@@ -11,6 +11,7 @@ import android.graphics.Typeface;
 import android.graphics.drawable.GradientDrawable;
 import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnCompletionListener;
+import android.media.MediaPlayer.OnPreparedListener;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.Html;
@@ -183,29 +184,32 @@ public class WordDefinitionFragment extends Fragment{
     
     class PlayButton extends ImageButton {
     	private MediaPlayer player = null;
-        boolean mStartPlaying = true;
 
         OnClickListener clicker = new OnClickListener() {
             public void onClick(View v) {
-                onPlay(mStartPlaying);
-                mStartPlaying = !mStartPlaying;
+            	playButton.setEnabled(false);
+                onPlay(true);
             }
         };
         
         OnCompletionListener listener = new OnCompletionListener() {
 			public void onCompletion(MediaPlayer mp) {
-				onPlay(mStartPlaying);
-                mStartPlaying = !mStartPlaying;
+				onPlay(false);
+                playButton.setEnabled(true);
 			}
+        };
+        
+        OnPreparedListener prepListener = new OnPreparedListener() {
+        	public void onPrepared(MediaPlayer mp) {
+        		playButton.setEnabled(false);
+        		mp.start();
+        	}
         };
         
 
         public PlayButton(Context ctx) {
             super(ctx);
             this.setImageResource(R.drawable.audio_play);
-            GradientDrawable buttonShape = new GradientDrawable();
-            buttonShape.setCornerRadius(10);
-            //this.setBackgroundDrawable(buttonShape);
             setOnClickListener(clicker);
         }
         
@@ -220,16 +224,14 @@ public class WordDefinitionFragment extends Fragment{
         public void startPlaying() {
             player = new MediaPlayer();
             try {
+            	player.setOnPreparedListener(prepListener);
 				player.setOnCompletionListener(listener);
-				
-//                player.setDataSource(audioFileFD.getFileDescriptor());
-				
+
 				// must call setDataSource giving offset and length in addition to FD!!!
 				// calling setDataSource with just FD plays all of the audio files in the directory
                 player.setDataSource(audioFileFD.getFileDescriptor(), audioFileFD.getStartOffset(), audioFileFD.getLength ());
                 
-                player.prepare();
-                player.start();
+                player.prepareAsync();
             } catch (IOException e) {
                 Log.e("AUDIO", "prepare() failed");
             }
