@@ -181,8 +181,7 @@ public class WordDefinitionFragment extends Fragment{
 
 		
 		if (!w.getIMG().equals("")) {
-			String imageFileName = "images/IMG_6114-scaled.JPG"; //+ w.getIMG();
-			imageFileName = imageFileDirectory + "/";
+			String imageFileName = imageFileDirectory + "/";
 			imageFileName += w.getIMG().substring(0, w.getIMG().length()-4);
 			imageFileName += "-scaled";
 			imageFileName += w.getIMG().substring(w.getIMG().length()-4);
