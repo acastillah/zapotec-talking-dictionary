@@ -3,7 +3,7 @@
 
     <!-- ENGLISH -->
     
-    <string name="app_name">Teotitlán del Valle Zapotec</string>
+    <string name="app_name">Dixza</string>
     <string name="TeotitlanDelValleZapotec">Teotitlán del Valle Zapotec</string>
     <string name="AndroidTalkingDictionary">Android Talking Dictionary</string>
     <string name="side_menu">Menu</string>
@@ -74,7 +74,7 @@ All rights reserved. Do not distribute or reproduce without permission.</string>
     
     <string-array name="search_options">
         <item>Entire dictionary</item>
-        <item>Tlacolula Valley Zapotec</item>
+        <item>Teotitlán del Valle Zapotec</item>
         <item>English</item>
         <item>Spanish</item>
     </string-array>

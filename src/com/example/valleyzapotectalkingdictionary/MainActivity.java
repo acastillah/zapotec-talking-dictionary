@@ -146,7 +146,8 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor(getResources().getString(R.color.actionbar_background_color))));
 		
 		if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT)
-			actionBar.setTitle(Html.fromHtml("<small>" + mTitle + "</small>"));
+//			actionBar.setTitle(Html.fromHtml("<small>" + mTitle + "</small>"));
+			actionBar.setTitle(mTitle);
 		else
 			actionBar.setTitle(mTitle);
 	}
