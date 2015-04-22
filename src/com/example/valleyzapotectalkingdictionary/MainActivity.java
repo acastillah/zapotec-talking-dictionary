@@ -247,8 +247,9 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		FragmentManager fragmentManager = getSupportFragmentManager();
 		Fragment fragment = null;
 		SharedPreferences preferences = getSharedPreferences(Preferences.APP_SETTINGS, Activity.MODE_PRIVATE);
-		
+		Log.i("NAV", "selected="+(position+1));
 		if (preferences.getBoolean(Preferences.LOGIN_STATUS_CHANGE, false) == true) {
+			Log.i("NAV", "status just changed");
 			Editor editor = preferences.edit();
 			editor.putBoolean(Preferences.LOGIN_STATUS_CHANGE, false);
 			editor.commit();
@@ -287,10 +288,6 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 					fragment = new PasswordFragment();
 					mTitle = getString(R.string.password_section);
 				}
-				else {
-					fragment = new MainPageFragment();	
-					mTitle = getString(R.string.title_main_section);
-				}
 			}
 			
 			// Options only non-logged in users see
@@ -300,11 +297,6 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 					fragment = new PasswordFragment();
 					mTitle = getString(R.string.password_section);
 				}
-				else {
-					fragment = new MainPageFragment();	
-					mTitle = getString(R.string.title_main_section);
-				}
-				
 			}	
 		}
 		fragmentManager.beginTransaction().addToBackStack(null).replace(R.id.container, fragment).commit();				
