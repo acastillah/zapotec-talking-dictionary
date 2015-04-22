@@ -248,43 +248,65 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		Fragment fragment = null;
 		SharedPreferences preferences = getSharedPreferences(Preferences.APP_SETTINGS, Activity.MODE_PRIVATE);
 		
-		// Options all users see
-		switch(position+1){
-			case 1:
-				fragment = new MainPageFragment();	
-				mTitle = getString(R.string.title_main_section);
-				break;
-			case 2:
-				fragment = new UpdateFragment();
-				mTitle = getString(R.string.title_section2);
-				break;
-			case 3:
-				fragment = new AboutFragment();
-				mTitle = getString(R.string.title_section3);
-				break;
+		if (preferences.getBoolean(Preferences.LOGIN_STATUS_CHANGE, false) == true) {
+			Editor editor = preferences.edit();
+			editor.putBoolean(Preferences.LOGIN_STATUS_CHANGE, false);
+			editor.commit();
+			
+			fragment = new MainPageFragment();	
+			mTitle = getString(R.string.title_main_section);
 		}
-		
-		// Options only linguists see
-		if (preferences.getBoolean(Preferences.IS_LINGUIST, false) == true) {
-			if (position+1 == 4) { //  JUST ADD SOMETHING HERE WITH SHARED PREFS TO PICK CORRECT THING AFTER LOGGING IN
-				fragment = new AudioCaptureFragment();
-				mTitle = getString(R.string.audio_section);
-			}
-			else if (position+1 == 5) {
-				fragment = new ImageCaptureFragment();
-				mTitle = getString(R.string.photo_section);
-			}
-		}
-		
-		// Options only non-logged in users see
 		else {
-			Log.i("NAV", "User is not logged in");
-			if (position+1 == 4) {
-				fragment = new PasswordFragment(); // something is wrong with the fragment?
-				mTitle = getString(R.string.password_section);
+			// Options all users see
+			switch(position+1){
+				case 1:
+					fragment = new MainPageFragment();	
+					mTitle = getString(R.string.title_main_section);
+					break;
+				case 2:
+					fragment = new UpdateFragment();
+					mTitle = getString(R.string.title_section2);
+					break;
+				case 3:
+					fragment = new AboutFragment();
+					mTitle = getString(R.string.title_section3);
+					break;
 			}
 			
-		}			
+			// Options only linguists see
+			if (preferences.getBoolean(Preferences.IS_LINGUIST, false) == true) {
+				if (position+1 == 4) { //  JUST ADD SOMETHING HERE WITH SHARED PREFS TO PICK CORRECT THING AFTER LOGGING IN
+					fragment = new AudioCaptureFragment();
+					mTitle = getString(R.string.audio_section);
+				}
+				else if (position+1 == 5) {
+					fragment = new ImageCaptureFragment();
+					mTitle = getString(R.string.photo_section);
+				}
+				else if (position+1 == 6) {
+					fragment = new PasswordFragment();
+					mTitle = getString(R.string.password_section);
+				}
+				else {
+					fragment = new MainPageFragment();	
+					mTitle = getString(R.string.title_main_section);
+				}
+			}
+			
+			// Options only non-logged in users see
+			else {
+				Log.i("NAV", "User is not logged in");
+				if (position+1 == 4) {
+					fragment = new PasswordFragment();
+					mTitle = getString(R.string.password_section);
+				}
+				else {
+					fragment = new MainPageFragment();	
+					mTitle = getString(R.string.title_main_section);
+				}
+				
+			}	
+		}
 		fragmentManager.beginTransaction().addToBackStack(null).replace(R.id.container, fragment).commit();				
 	}
 }

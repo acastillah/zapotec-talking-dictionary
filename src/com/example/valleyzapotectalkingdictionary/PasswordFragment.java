@@ -27,25 +27,48 @@ public class PasswordFragment extends Fragment {
 	private EditText passwordField = null;
 	private Button submitButton = null;
 	
+	private Button logoutButton = null;
+	
 	 
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
              Bundle savedInstanceState) {
 		 
 		Log.i("PASSWORD", "PasswordFragment onCreateView");
-		
 		View view = inflater.inflate(R.layout.fragment_password, container, false);
-				 
-		incorrectPasswordView = (TextView) view.findViewById(R.id.passwordIncorrect_textView);
-		passwordField = (EditText) view.findViewById(R.id.password_editText);
-		submitButton = (Button) view.findViewById(R.id.password_submitButton);
 		
-		incorrectPasswordView.setTextColor(Color.RED);
-		incorrectPasswordView.setVisibility(View.INVISIBLE);
+		SharedPreferences preferences = getActivity().getSharedPreferences(Preferences.APP_SETTINGS, Activity.MODE_PRIVATE);
+		if (preferences.getBoolean(Preferences.IS_LINGUIST, false) == false) {
+
+			incorrectPasswordView = (TextView) view.findViewById(R.id.passwordIncorrect_textView);
+			passwordField = (EditText) view.findViewById(R.id.password_editText);
+			submitButton = (Button) view.findViewById(R.id.password_submitButton);
+			
+			incorrectPasswordView.setTextColor(Color.RED);
+			incorrectPasswordView.setVisibility(View.INVISIBLE);
+			
+			submitButton.setEnabled(false);
+			submitButton.setOnClickListener(new SubmitButtonOnClickListener());
+			
+			passwordField.addTextChangedListener(new PasswordEditTextWatcher());
 		
-		submitButton.setEnabled(false);
-		submitButton.setOnClickListener(new SubmitButtonOnClickListener());
-		
-		passwordField.addTextChangedListener(new PasswordEditTextWatcher());
+		}
+		else {
+			TextView explanation = (TextView) view.findViewById(R.id.passwordExplanation_textView);
+			explanation.setText(R.string.logoutExplanation);
+			
+			TextView passwordTextView = (TextView) view.findViewById(R.id.password_textView);
+			passwordTextView.setVisibility(View.INVISIBLE);
+			
+			incorrectPasswordView = (TextView) view.findViewById(R.id.passwordIncorrect_textView);
+			incorrectPasswordView.setVisibility(View.INVISIBLE);
+			
+			passwordField = (EditText) view.findViewById(R.id.password_editText);
+			passwordField.setVisibility(View.INVISIBLE);
+			
+			logoutButton = (Button) view.findViewById(R.id.password_submitButton);
+			logoutButton.setText(R.string.logout);
+			logoutButton.setOnClickListener(new LogoutButtonOnClickListener());
+		}
 		
 		return view; 
 	}
@@ -54,13 +77,16 @@ public class PasswordFragment extends Fragment {
 
 		@Override
 		public void onClick(View arg0) {
+			Log.i("LOGIN", "button clicked");
 			submitButton.setEnabled(false);
 			
 			// password accepted
 			if (passwordField.getText().toString().equals(PASSWORD)) {
+				Log.i("LOGIN", "valid password");
 				SharedPreferences preferences = getActivity().getSharedPreferences(Preferences.APP_SETTINGS, Activity.MODE_PRIVATE);
 				Editor editor = preferences.edit();
 				editor.putBoolean(Preferences.IS_LINGUIST, true);
+				editor.putBoolean(Preferences.LOGIN_STATUS_CHANGE, true); 
 				editor.commit();
 				
 				// Inform user that password was accepted
@@ -86,6 +112,29 @@ public class PasswordFragment extends Fragment {
 			}
 		}
 		
+	}
+	
+	public class LogoutButtonOnClickListener implements OnClickListener {
+
+		@Override
+		public void onClick(View arg0) {
+			Log.i("LOGOUT", "button clicked");
+			
+			SharedPreferences preferences = getActivity().getSharedPreferences(Preferences.APP_SETTINGS, Activity.MODE_PRIVATE);
+			Editor editor = preferences.edit();
+			editor.putBoolean(Preferences.IS_LINGUIST, false);
+			editor.putBoolean(Preferences.LOGIN_STATUS_CHANGE, true);
+			editor.commit();
+			
+			// Inform user that password was accepted
+			Toast.makeText(getActivity(), R.string.logoutAccepted, Toast.LENGTH_SHORT).show();
+			
+			FragmentManager fragmentManager = getFragmentManager();
+			Fragment fragment = null;
+			fragment = new MainPageFragment();	
+			fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();	
+			getActivity().recreate();
+		}
 	}
 	
 	public class PasswordEditTextWatcher implements TextWatcher {
