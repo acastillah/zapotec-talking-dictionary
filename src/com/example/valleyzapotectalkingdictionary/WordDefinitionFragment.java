@@ -1,12 +1,16 @@
 package com.example.valleyzapotectalkingdictionary;
 
+import java.io.FileDescriptor;
 import java.io.IOException;
+import java.io.InputStream;
 
 import org.apache.commons.lang3.StringEscapeUtils;
 
 import android.content.Context;
 import android.content.res.AssetFileDescriptor;
 import android.content.res.AssetManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Typeface;
 import android.graphics.drawable.GradientDrawable;
 import android.media.MediaPlayer;
@@ -20,6 +24,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -39,8 +44,9 @@ public class WordDefinitionFragment extends Fragment{
 	private String audioFileName = null;
 	private AssetFileDescriptor audioFileFD = null;
 	
+	private ImageView image = null;
 	private static final String imageFileDirectory = "images";		// under assets
-	private AssetFileDescriptor imageFileFD = null;
+	private InputStream imageStream = null;
 
 	
 	@Override
@@ -67,6 +73,8 @@ public class WordDefinitionFragment extends Fragment{
         RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams)playButton.getLayoutParams();
         layoutParams.addRule(RelativeLayout.CENTER_IN_PARENT, RelativeLayout.TRUE);
         playButton.setLayoutParams(layoutParams);
+        
+        image = (ImageView) v.findViewById(R.id.image);
         
         setUpDisplay();
         
@@ -156,28 +164,48 @@ public class WordDefinitionFragment extends Fragment{
 		
 		
 		
-		try {
-			String[] assets = assetManager.list("");
-			int i=1;
-			for (String a : assets)
-				Log.i("ASSET", i + "..... " + a);
-			
-			assets = assetManager.list("audio");
-			Log.i("ASSET", "there are " + assets.length);
-			for (String a : assets)
-				Log.i("ASSET", i++ + " " + a);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+//		try {
+//			String[] assets = assetManager.list("");
+//			int i=1;
+//			for (String a : assets)
+//				Log.i("ASSET", i + "..... " + a);
+//			
+//			assets = assetManager.list("audio");
+//			Log.i("ASSET", "there are " + assets.length);
+//			for (String a : assets)
+//				Log.i("ASSET", i++ + " " + a);
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 
 		
 		if (!w.getIMG().equals("")) {
-			String imageFileName = "images/IMG_6114-scaled.jpg";
+			String imageFileName = "images/IMG_6114-scaled.JPG"; //+ w.getIMG();
+			imageFileName = imageFileDirectory + "/";
+			imageFileName += w.getIMG().substring(0, w.getIMG().length()-4);
+			imageFileName += "-scaled";
+			imageFileName += w.getIMG().substring(w.getIMG().length()-4);
 			
-			//...
+			Log.i("IMAGE", "image file name="+imageFileName);
 			
-			// WHY CAN'T I COPY THE IMAGE FILES INTO THE PROJECT?
+			try {
+				imageStream = assetManager.open(imageFileName);
+			} catch (IOException e) {
+				Log.i("IMAGE", "Failed to open input stream for image file");
+			}
+			
+			if (imageStream != null) {
+				Log.i("IMAGE", "Opened image stream");
+				Bitmap bitmap = BitmapFactory.decodeStream(imageStream);
+				image.setImageBitmap(bitmap);
+			}
+			else {
+				image.setVisibility(View.GONE);
+			}
+		}
+		else {
+			image.setVisibility(View.GONE);
 		}
 	}
 	
