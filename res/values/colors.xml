@@ -7,4 +7,5 @@
     <color name="nav_background_color">#ffff00</color>
     <color name="nav_drawer">#99EBAD99</color>
     <color name="url">#3333FF</color>
+    <color name="black">#000000</color>
 </resources>

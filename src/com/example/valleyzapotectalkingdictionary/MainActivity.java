@@ -25,6 +25,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
@@ -36,12 +37,14 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 	
 	private NavigationDrawerFragment mNavigationDrawerFragment;
 
-	static private Spinner searchSpinner, domainSpinner;
+	static private Spinner /*searchSpinner,*/ domainSpinner;
 	private static int Language_search = 0;
 	private static String domain_search = null;
 	@SuppressWarnings("unused")
 	private static Menu menu = null;
 	private CharSequence mTitle;
+	
+	SearchView searchView = null;
 	
 	private int setLanguage(Spinner spinner) {
 		SharedPreferences prefs = this.getSharedPreferences(Preferences.APP_SETTINGS, Activity.MODE_PRIVATE);
@@ -92,7 +95,20 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		/*********************/
 		mNavigationDrawerFragment = (NavigationDrawerFragment) getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
 		mNavigationDrawerFragment.setUp(R.id.navigation_drawer, (DrawerLayout) findViewById(R.id.drawer_layout));
-	    SearchView searchView = (SearchView) findViewById(R.id.searchBAR);
+	    searchView = (SearchView) findViewById(R.id.searchBAR);
+	    searchView.setInputType(0);
+	    searchView.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+			
+			@Override
+			public void onFocusChange(View v, boolean hasFocus) {
+				if (!hasFocus) {
+	                hideKeyboard(v);
+	                searchView.setEnabled(false);
+	                searchView.setEnabled(true);
+	            }
+			}
+		});
+	    
 		SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);		
 		searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));	
 		searchView.setBackgroundColor(Color.parseColor(getResources().getString(R.color.searchbar_background_color)));
@@ -161,15 +177,15 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 	}
 	
 	 public void addListenerOnSpinnerItemSelection() {
-			searchSpinner = (Spinner) findViewById(R.id.search_spinner);
+//			searchSpinner = (Spinner) findViewById(R.id.search_spinner);
 			domainSpinner = (Spinner) findViewById(R.id.domain_spinner);
-			searchSpinner.setOnItemSelectedListener(new OnItemSelectedListener() {
-		        public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
-		            Language_search = pos;
-		        }
-		        public void onNothingSelected(AdapterView<?> arg0) {
-		        }
-		    }); 
+//			searchSpinner.setOnItemSelectedListener(new OnItemSelectedListener() {
+//		        public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
+//		            Language_search = pos;
+//		        }
+//		        public void onNothingSelected(AdapterView<?> arg0) {
+//		        }
+//		    }); 
 		   domainSpinner.setOnItemSelectedListener(new OnItemSelectedListener() {
 		        public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
 		            domain_search = domainSpinner.getSelectedItem().toString();
@@ -301,6 +317,17 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 			}	
 		}
 		fragmentManager.beginTransaction().addToBackStack(null).replace(R.id.container, fragment).commit();				
+	}
+	
+	public void hideKeyboard(View view) {
+//        InputMethodManager inputMethodManager =(InputMethodManager)getSystemService(Activity.INPUT_METHOD_SERVICE);
+//        inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
+        
+//        InputMethodManager imm = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
+//        imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
+    
+		InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+		imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
 	}
 }
 
