@@ -196,8 +196,13 @@ public class WordDefinitionFragment extends Fragment{
 			
 			if (imageStream != null) {
 				Log.i("IMAGE", "Opened image stream");
-				Bitmap bitmap = BitmapFactory.decodeStream(imageStream);
-				image.setImageBitmap(bitmap);
+				Bitmap bm = BitmapFactory.decodeStream(imageStream);
+				
+				int width = bm.getWidth();
+				int height = bm.getHeight();
+				Log.i("IMAGE", "width="+width+" height="+height);
+				
+				image.setImageBitmap(bm);
 			}
 			else {
 				image.setVisibility(View.GONE);

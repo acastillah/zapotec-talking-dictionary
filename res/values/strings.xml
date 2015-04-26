@@ -27,8 +27,10 @@
     <string name="photo_section">Take Photo</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="appExplanation">This android application is intended to be an offline version of the Teotitlán del Valle Zapotec online talking dictionary, which can be found at: </string>
+    <string name="website"><u>http://talkingdictionary.swarthmore.edu/teotitlan/</u></string>
     <string name="about">All content copyright © the recorded Zapotec communities (2013-2015).
-Dictionary produced by Brook Danielle Lillehaugen, Alex Mannix, 
+Dictionary produced by Brook Danielle Lillehaugen, 
 Janet Chavez Santiago, Ambrocio Gutiérrez, Bibiana Gutiérrez, Nick Kalivoda, 
 Alex Mannix, Teresa Martínez Chavez and Troi Carleton, with Helen Felker and Rachel Elizabeth Weissler, 
 with support from K. David Harrison and Jeremy Fahringer. (2013-2014).
