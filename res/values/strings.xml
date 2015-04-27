@@ -68,6 +68,8 @@ All rights reserved. Do not distribute or reproduce without permission.</string>
     <string name="logoutAccepted">Log out successful</string>
     <string name="logoutExplanation">Logging out recinds access to audio and photo tools. You can always log back in anytime.</string>
     <string name="semanticDomain_text">Category:</string>
+    <string name="username">User name:</string>
+    <string name="passwordWelcome">Welcome</string>
     
     <string-array name="languages_array">
         <item>ENG</item>

@@ -23,6 +23,8 @@ public class PasswordFragment extends Fragment {
 	
 	private static final String PASSWORD = "linguist";
 	
+	private TextView usernameView = null;
+	private EditText usernameField = null;
 	private TextView incorrectPasswordView = null;
 	private EditText passwordField = null;
 	private Button submitButton = null;
@@ -39,8 +41,9 @@ public class PasswordFragment extends Fragment {
 		SharedPreferences preferences = getActivity().getSharedPreferences(Preferences.APP_SETTINGS, Activity.MODE_PRIVATE);
 		if (preferences.getBoolean(Preferences.IS_LINGUIST, false) == false) {
 
-			incorrectPasswordView = (TextView) view.findViewById(R.id.passwordIncorrect_textView);
+			usernameField = (EditText) view.findViewById(R.id.username_editText);
 			passwordField = (EditText) view.findViewById(R.id.password_editText);
+			incorrectPasswordView = (TextView) view.findViewById(R.id.passwordIncorrect_textView);
 			submitButton = (Button) view.findViewById(R.id.password_submitButton);
 			
 			incorrectPasswordView.setTextColor(Color.RED);
@@ -58,6 +61,12 @@ public class PasswordFragment extends Fragment {
 			
 			TextView passwordTextView = (TextView) view.findViewById(R.id.password_textView);
 			passwordTextView.setVisibility(View.INVISIBLE);
+			
+			usernameView = (TextView) view.findViewById(R.id.username_textView);
+			usernameView.setVisibility(View.INVISIBLE);
+			
+			usernameField = (EditText) view.findViewById(R.id.username_editText);
+			usernameField.setVisibility(View.INVISIBLE);
 			
 			incorrectPasswordView = (TextView) view.findViewById(R.id.passwordIncorrect_textView);
 			incorrectPasswordView.setVisibility(View.INVISIBLE);
@@ -78,19 +87,27 @@ public class PasswordFragment extends Fragment {
 		@Override
 		public void onClick(View arg0) {
 			Log.i("LOGIN", "button clicked");
-			submitButton.setEnabled(false);
 			
 			// password accepted
 			if (passwordField.getText().toString().equals(PASSWORD)) {
 				Log.i("LOGIN", "valid password");
+				submitButton.setEnabled(false);
+				
+				// DO STRING PROCESSING ON THIS TO ELIMINATE TRAILING SPACES, ETC.
+				String username = usernameField.getText().toString();
+				
 				SharedPreferences preferences = getActivity().getSharedPreferences(Preferences.APP_SETTINGS, Activity.MODE_PRIVATE);
 				Editor editor = preferences.edit();
 				editor.putBoolean(Preferences.IS_LINGUIST, true);
 				editor.putBoolean(Preferences.LOGIN_STATUS_CHANGE, true); 
+				editor.putString(Preferences.USERNAME, username);
 				editor.commit();
 				
 				// Inform user that password was accepted
-				Toast.makeText(getActivity(), R.string.passwordAccepted, Toast.LENGTH_SHORT).show();				
+//				Toast.makeText(getActivity(), R.string.passwordAccepted, Toast.LENGTH_SHORT).show();
+				Toast.makeText(getActivity(), 
+						getResources().getString(R.string.passwordWelcome) + " " + username, 
+						Toast.LENGTH_SHORT).show();
 				
 				// Change nav bar options
 //				Intent intent = new Intent(getActivity(), MainActivity.class);

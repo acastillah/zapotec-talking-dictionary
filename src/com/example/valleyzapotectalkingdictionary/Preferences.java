@@ -9,6 +9,7 @@ public class Preferences {
 	public static final String DOWNLOAD_PHOTOS = "DOWNLOAD_PHOTOS";
 	
 	public static final String IS_LINGUIST = "IS_LINGUIST";
+	public static final String USERNAME = "USERNAME";
 	public static final String LOGIN_STATUS_CHANGE = "LOGIN_STATUS_CHANGE";
 	
 	public static final String LANGUAGE = "LANGUAGE";
