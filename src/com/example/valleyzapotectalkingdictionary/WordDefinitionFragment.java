@@ -66,12 +66,14 @@ public class WordDefinitionFragment extends Fragment{
         speaker = (TextView) v.findViewById(R.id.Speaker);
         
         playButton = new PlayButton(getActivity());
+//        playButton.setPadding(0, 0, 10, 0);
  
         RelativeLayout layout = (RelativeLayout) v.findViewById(R.id.PlayButtonContainer);
         layout.addView(playButton);
         
         RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams)playButton.getLayoutParams();
         layoutParams.addRule(RelativeLayout.CENTER_IN_PARENT, RelativeLayout.TRUE);
+        layoutParams.setMargins(10, 10, 10, 10);
         playButton.setLayoutParams(layoutParams);
         
         image = (ImageView) v.findViewById(R.id.image);
