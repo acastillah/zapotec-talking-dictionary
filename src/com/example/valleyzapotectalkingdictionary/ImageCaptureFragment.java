@@ -70,6 +70,16 @@ public class ImageCaptureFragment extends Fragment {
 	
 	public ImageCaptureFragment() {}
 	
+	public static ImageCaptureFragment newInstance(String text) {
+
+		ImageCaptureFragment f = new ImageCaptureFragment();
+
+        Bundle b = new Bundle();
+        b.putBoolean("LAUNCH_CAMERA", false);
+        f.setArguments(b);
+        return f;
+    }
+	
 	@SuppressLint("NewApi")
 	public void onCreate(Bundle icicle) {
     	super.onCreate(icicle);

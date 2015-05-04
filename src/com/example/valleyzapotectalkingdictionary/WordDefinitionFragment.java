@@ -25,6 +25,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -75,6 +76,9 @@ public class WordDefinitionFragment extends Fragment{
         layoutParams.addRule(RelativeLayout.CENTER_IN_PARENT, RelativeLayout.TRUE);
         layoutParams.setMargins(10, 10, 10, 10);
         playButton.setLayoutParams(layoutParams);
+        
+        RelativeLayout imageFragmentContainer = (RelativeLayout) v.findViewById(R.id.ImageFragmentContainer);
+        getFragmentManager().beginTransaction().add(imageFragmentContainer.getId(), ImageCaptureFragment.newInstance("I am frag 1"), "someTag1").commit();
         
         image = (ImageView) v.findViewById(R.id.image);
         

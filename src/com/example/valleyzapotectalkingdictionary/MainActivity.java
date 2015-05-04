@@ -121,7 +121,30 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 			UserAgreementDialogFragment dialog = new UserAgreementDialogFragment();
 			dialog.show(getSupportFragmentManager(), "Dialog");
 		}
+		
+//		if (preferences.getBoolean(Preferences.DB_LOADED, false) == false) {
+//		Editor editor = preferences.edit();
+//		editor.putBoolean(Preferences.DB_LOADED, true);
+//		editor.commit();
+////		this.recreate();
+//		finish();
+//		startActivity(getIntent());
+//	}
+		
 	}
+	
+//	@Override
+//	protected void onStart() {
+//		super.onStart();
+//		Log.i("ONSTART", "START");
+//		SharedPreferences preferences = getSharedPreferences(Preferences.APP_SETTINGS, Activity.MODE_PRIVATE);
+//		if (preferences.getBoolean(Preferences.DB_LOADED, false) == false) {
+//			Editor editor = preferences.edit();
+//			editor.putBoolean(Preferences.DB_LOADED, true);
+//			editor.commit();
+//			this.recreate();
+//		}
+//	}
 
 	public boolean onCreateOptionsMenu(Menu menu) {
 				

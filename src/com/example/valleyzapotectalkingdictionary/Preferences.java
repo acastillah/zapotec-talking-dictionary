@@ -5,6 +5,7 @@ import java.util.Locale;
 public class Preferences {
 	public static final String APP_SETTINGS = "APP_SETTINGS";
 	public static final String TERMS_ACCEPTED = "TERMS_ACCEPTED";
+	public static final String DB_LOADED = "DB_LOADED";
 	
 	public static final String DOWNLOAD_AUDIO = "DOWNLOAD_AUDIO";
 	public static final String DOWNLOAD_PHOTOS = "DOWNLOAD_PHOTOS";
