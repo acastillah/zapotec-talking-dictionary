@@ -46,6 +46,9 @@ public class ImageCaptureFragment extends Fragment {
 	static final int REQUEST_IMAGE_CAPTURE = 1;
 	static final int REQUEST_TAKE_PHOTO = 1;
 	
+	static final String LAUNCH_CAMERA = "LAUNCH_CAMERA";
+	static final String FILE_NAME = "FILE_NAME";
+	
 	private static String mFileName = null;
 	
 	private ImageCaptureButton mImageCaptureButton = null;
@@ -67,16 +70,17 @@ public class ImageCaptureFragment extends Fragment {
     private boolean imageSaved = false;
     
     private File image = null;
+    
+    private Bundle bundle = null;
 	
-	public ImageCaptureFragment() {}
+    public ImageCaptureFragment() {}
+    
+	public ImageCaptureFragment(Bundle bundle) {
+		this.bundle = bundle;
+	}
 	
-	public static ImageCaptureFragment newInstance(String text) {
-
-		ImageCaptureFragment f = new ImageCaptureFragment();
-
-        Bundle b = new Bundle();
-        b.putBoolean("LAUNCH_CAMERA", false);
-        f.setArguments(b);
+	public static ImageCaptureFragment newInstance(Bundle bundle) {
+		ImageCaptureFragment f = new ImageCaptureFragment(bundle);
         return f;
     }
 	
@@ -220,7 +224,16 @@ public class ImageCaptureFragment extends Fragment {
 //        galleryLayoutParams.width = galleryLayoutParams.FILL_PARENT;
 //        gallery.setLayoutParams(galleryLayoutParams);
         
-        dispatchTakePictureIntent();
+        
+        if (bundle == null || bundle.getBoolean(LAUNCH_CAMERA, true))
+        	dispatchTakePictureIntent();
+        
+        if (bundle != null) {
+        	mFileNameEditText.setText(bundle.getString(FILE_NAME, ""));
+        }
+        
+//        if (savedInstanceState != null && savedInstanceState.containsKey(LAUNCH_CAMERA))
+//        	Log.i("BUNDLE", "launch camera=" + savedInstanceState.getBoolean(LAUNCH_CAMERA));
         
         return fragmentLayout;
 	}

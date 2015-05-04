@@ -8,4 +8,6 @@
     <color name="nav_drawer">#99EBAD99</color>
     <color name="url">#3333FF</color>
     <color name="black">#000000</color>
+    <color name="light_pink">#EBAD99</color>
+    <color name="dark_pink">#E69980</color>
 </resources>

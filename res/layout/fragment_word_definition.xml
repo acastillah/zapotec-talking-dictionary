@@ -13,7 +13,8 @@
 	    android:id="@+id/WordDefinitionLL2"
 	    android:orientation="horizontal"
 	    android:layout_width="match_parent"
-	    android:layout_height="match_parent" >
+	    android:layout_height="wrap_content"
+	    android:background="@color/light_pink" >
 
 	    <RelativeLayout
 	        android:id="@+id/PlayButtonContainer"
@@ -46,14 +47,16 @@
 		        android:layout_width="wrap_content"
 		        android:layout_height="wrap_content"
 		        android:textAppearance="?android:attr/textAppearanceMedium"
-		        android:text="English definition" />
+		        android:text="English definition"
+		        android:background="@color/dark_pink" />
 		    
 		    <TextView
 		        android:id="@+id/Word_Spa"
 		        android:layout_width="wrap_content"
 		        android:layout_height="wrap_content"
 		        android:textAppearance="?android:attr/textAppearanceMedium"
-		        android:text="Spanish definition" />
+		        android:text="Spanish definition"
+		        android:background="@color/dark_pink" />
 		
 		    <TextView
 		        android:id="@+id/Variant"
@@ -78,16 +81,21 @@
 
     </LinearLayout>
     
-	<!-- 
-	<fragment class="com.example.valleyzapotectalkingdictionary.ImageCaptureFragment"
-	    android:id="@+id/audio_fragment"
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content" /> -->
+	<LinearLayout
+	        android:id="@+id/spacer"
+	        android:layout_width="match_parent"
+	    	android:layout_height="20dp"
+	    	android:orientation="horizontal" >
+	    </LinearLayout>
 
-	<RelativeLayout
+	<LinearLayout
 	        android:id="@+id/ImageFragmentContainer"
-	        android:layout_width="wrap_content"
-	    	android:layout_height="wrap_content" >
-	    </RelativeLayout>
+	        android:layout_width="match_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="horizontal"
+	    	android:background="@color/light_pink" >
+	    </LinearLayout>
+	    
+
 
 </LinearLayout>

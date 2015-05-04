@@ -77,9 +77,31 @@ public class WordDefinitionFragment extends Fragment{
         layoutParams.setMargins(10, 10, 10, 10);
         playButton.setLayoutParams(layoutParams);
         
-        RelativeLayout imageFragmentContainer = (RelativeLayout) v.findViewById(R.id.ImageFragmentContainer);
-        getFragmentManager().beginTransaction().add(imageFragmentContainer.getId(), ImageCaptureFragment.newInstance("I am frag 1"), "someTag1").commit();
         
+        
+        LinearLayout fragContainer = (LinearLayout) v.findViewById(R.id.ImageFragmentContainer);
+
+        LinearLayout ll = new LinearLayout(v.getContext());
+        ll.setOrientation(LinearLayout.HORIZONTAL);
+
+        ll.setId(12345);
+        
+        String fileName = "123";
+        
+        Bundle b = new Bundle();
+        b.putBoolean(ImageCaptureFragment.LAUNCH_CAMERA, false);
+        b.putString(ImageCaptureFragment.FILE_NAME, fileName);
+        getFragmentManager().beginTransaction().add(ll.getId(), ImageCaptureFragment.newInstance(b), "someTag1").commit();
+
+        fragContainer.addView(ll);
+        
+        
+        
+//        RelativeLayout imageFragmentContainer = (RelativeLayout) v.findViewById(R.id.ImageFragmentContainer);
+//        Bundle b = new Bundle();
+//        b.putBoolean(ImageCaptureFragment.LAUNCH_CAMERA, false);
+//        getFragmentManager().beginTransaction().add(imageFragmentContainer.getId(), ImageCaptureFragment.newInstance(b), "someTag1").commit();
+//        
         image = (ImageView) v.findViewById(R.id.image);
         
         setUpDisplay();
