@@ -116,6 +116,11 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		addListenerOnSpinnerItemSelection(); 
         handleIntent(getIntent());
         
+        SharedPreferences preferences = getSharedPreferences(Preferences.APP_SETTINGS, Activity.MODE_PRIVATE);
+		if (preferences.getBoolean(Preferences.TERMS_ACCEPTED, false) == false) {
+			UserAgreementDialogFragment dialog = new UserAgreementDialogFragment();
+			dialog.show(getSupportFragmentManager(), "Dialog");
+		}
 	}
 
 	public boolean onCreateOptionsMenu(Menu menu) {
