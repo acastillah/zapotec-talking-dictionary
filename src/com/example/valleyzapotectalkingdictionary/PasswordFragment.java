@@ -41,8 +41,8 @@ public class PasswordFragment extends Fragment {
 		SharedPreferences preferences = getActivity().getSharedPreferences(Preferences.APP_SETTINGS, Activity.MODE_PRIVATE);
 		if (preferences.getBoolean(Preferences.IS_LINGUIST, false) == false) {
 
-			usernameField = (EditText) view.findViewById(R.id.username_editText);
-			passwordField = (EditText) view.findViewById(R.id.password_editText);
+//			usernameField = (EditText) view.findViewById(R.id.username_editText);
+//			passwordField = (EditText) view.findViewById(R.id.password_editText);
 			incorrectPasswordView = (TextView) view.findViewById(R.id.passwordIncorrect_textView);
 			submitButton = (Button) view.findViewById(R.id.password_submitButton);
 			
@@ -62,11 +62,11 @@ public class PasswordFragment extends Fragment {
 			TextView passwordTextView = (TextView) view.findViewById(R.id.password_textView);
 			passwordTextView.setVisibility(View.INVISIBLE);
 			
-			usernameView = (TextView) view.findViewById(R.id.username_textView);
-			usernameView.setVisibility(View.INVISIBLE);
+//			usernameView = (TextView) view.findViewById(R.id.username_textView);
+//			usernameView.setVisibility(View.INVISIBLE);
 			
-			usernameField = (EditText) view.findViewById(R.id.username_editText);
-			usernameField.setVisibility(View.INVISIBLE);
+//			usernameField = (EditText) view.findViewById(R.id.username_editText);
+//			usernameField.setVisibility(View.INVISIBLE);
 			
 			incorrectPasswordView = (TextView) view.findViewById(R.id.passwordIncorrect_textView);
 			incorrectPasswordView.setVisibility(View.INVISIBLE);
