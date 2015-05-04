@@ -5,12 +5,14 @@ import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class SettingsFragment extends Fragment {
 	
@@ -45,6 +47,12 @@ public class SettingsFragment extends Fragment {
 	        Editor editor = preferences.edit();
 			editor.putString(Preferences.USERNAME, usernameEditText.getText().toString());
 			editor.commit();
+			
+			Toast.makeText(getActivity(), R.string.settingsSaved, Toast.LENGTH_SHORT).show();
+			
+			FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+			Fragment fragment = new MainPageFragment();
+			fragmentManager.beginTransaction().addToBackStack(null).replace(R.id.container, fragment).commit();
 		}
 		
 	}

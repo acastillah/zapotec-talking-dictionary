@@ -265,14 +265,23 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		Fragment fragment = null;
 		SharedPreferences preferences = getSharedPreferences(Preferences.APP_SETTINGS, Activity.MODE_PRIVATE);
 		Log.i("NAV", "selected="+(position+1));
-		if (preferences.getBoolean(Preferences.LOGIN_STATUS_CHANGE, false) == true) {
+		if (preferences.getBoolean(Preferences.LOGIN_STATUS_CHANGE, false)) {
 			Log.i("NAV", "status just changed");
 			Editor editor = preferences.edit();
 			editor.putBoolean(Preferences.LOGIN_STATUS_CHANGE, false);
 			editor.commit();
 			
-			fragment = new MainPageFragment();	
-			mTitle = getString(R.string.title_main_section);
+			// logged in, go to settings
+			if (preferences.getBoolean(Preferences.IS_LINGUIST, false)) {
+				fragment = new SettingsFragment();	
+				mTitle = getString(R.string.title_settings);
+			}
+			// logged out, go to main page
+			else {
+				fragment = new MainPageFragment();	
+				mTitle = getString(R.string.title_main_section);
+			}
+			
 		}
 		else {
 			// Options all users see
@@ -302,6 +311,10 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 					mTitle = getString(R.string.photo_section);
 				}
 				else if (position+1 == 6) {
+					fragment = new SettingsFragment();	
+					mTitle = getString(R.string.title_settings);
+				}
+				else if (position+1 == 7) {
 					fragment = new PasswordFragment();
 					mTitle = getString(R.string.password_section);
 				}

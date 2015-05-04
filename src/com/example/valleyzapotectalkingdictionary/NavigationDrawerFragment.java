@@ -104,6 +104,7 @@ public class NavigationDrawerFragment extends Fragment {
 							getString(R.string.title_section3),
 							getString(R.string.audio_section),
 							getString(R.string.photo_section),
+							getString(R.string.title_settings),
 							getString(R.string.logout)}));
 		}
 		else {
