@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 
@@ -23,6 +24,7 @@ public class UpdateFragment extends Fragment {
 //	private CheckBox downloadPicturesCheckbox = null;
 //	private CheckBox downloadAudioCheckbox = null;
 	private Button updateButton = null;
+	private TextView dbspecs = null;
 	
 	@Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -33,6 +35,9 @@ public class UpdateFragment extends Fragment {
 //        downloadPicturesCheckbox = (CheckBox) view.findViewById(R.id.downloadPicturesCheckbox);
 //        downloadAudioCheckbox = (CheckBox) view.findViewById(R.id.downloadAudioCheckbox);
         updateButton = (Button) view.findViewById(R.id.updateButton);
+        dbspecs = (TextView) view.findViewById(R.id.db_specs);
+        
+        
         
         SharedPreferences preferences = getActivity().getSharedPreferences(Preferences.APP_SETTINGS, Activity.MODE_PRIVATE);
         Editor editor = preferences.edit(); 
@@ -61,6 +66,9 @@ public class UpdateFragment extends Fragment {
 //		downloadAudioCheckbox.setOnCheckedChangeListener(new CheckboxListener(Preferences.DOWNLOAD_AUDIO));
 
 		updateButton.setOnClickListener(new UpdateButtonListener());
+		
+		dbspecs.setText(preferences.getLong(Preferences.DB_SIZE, 0) + " " + dbspecs.getText().toString());
+		
 		
 		return view;
     }
