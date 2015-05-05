@@ -105,7 +105,8 @@ public class MainPageFragment extends Fragment{
 		Calendar cl = Calendar.getInstance();
 		int day = cl.get(Calendar.DATE);
 		int month = cl.get(Calendar.MONTH);
-		String date = Integer.toString(day) + Integer.toString(month);
+		int year = cl.get(Calendar.YEAR);
+		String date = Integer.toString(day) + Integer.toString(month) + Integer.toString(year);
 		Random rn = new Random(Integer.parseInt(date));
 		
 		DictionaryDatabase db = new DictionaryDatabase(getActivity());
