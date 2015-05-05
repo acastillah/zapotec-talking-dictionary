@@ -107,18 +107,17 @@ public class MainPageFragment extends Fragment{
 		int month = cl.get(Calendar.MONTH);
 		String date = Integer.toString(day) + Integer.toString(month);
 		Random rn = new Random(Integer.parseInt(date));
-		int number = 10; //rn.nextInt((640 - 5) + 1) + 5; // this is the problem
-		
-		
 		
 		DictionaryDatabase db = new DictionaryDatabase(getActivity());
-		
-		Log.i("WORD", "db_size="+db.getSize());
-		
-		
-		
 		db_size = db.getSize();
 		
+		SharedPreferences preferences = getActivity().getSharedPreferences(Preferences.APP_SETTINGS, Activity.MODE_PRIVATE);
+		if (db_size == 0 && preferences.getLong(Preferences.DB_SIZE, 0) > 0)
+			db_size = preferences.getLong(Preferences.DB_SIZE, 0);
+			
+
+		int number = rn.nextInt((int)db_size); // this is the problem, ID no.s not serialized
+		Log.i("WORD", "num=" + number);
 		
 		Cursor c = db.getIDmatch(number);
 		if (c != null) {
