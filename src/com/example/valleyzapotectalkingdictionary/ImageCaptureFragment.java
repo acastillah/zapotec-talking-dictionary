@@ -38,6 +38,7 @@ import android.widget.Gallery.LayoutParams;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -155,6 +156,8 @@ public class ImageCaptureFragment extends Fragment {
 		
 		FragmentActivity activity = getActivity();
         
+		ScrollView scrollView = new ScrollView(activity);
+		
         LinearLayout fragmentLayout = new LinearLayout(activity);
         fragmentLayout.setOrientation(LinearLayout.VERTICAL);
         fragmentLayout.setGravity(Gravity.CENTER_HORIZONTAL);
@@ -240,7 +243,9 @@ public class ImageCaptureFragment extends Fragment {
 //        if (savedInstanceState != null && savedInstanceState.containsKey(LAUNCH_CAMERA))
 //        	Log.i("BUNDLE", "launch camera=" + savedInstanceState.getBoolean(LAUNCH_CAMERA));
         
-        return fragmentLayout;
+        scrollView.addView(fragmentLayout);
+        
+        return scrollView; //fragmentLayout;
 	}
 	
 	@Override
