@@ -1,13 +1,21 @@
 package com.example.valleyzapotectalkingdictionary;
 
+import java.io.IOException;
 import java.util.Calendar;
 import java.util.Random;
 
+import org.apache.commons.lang3.StringEscapeUtils;
+
 import com.example.valleyzapotectalkingdictionary.WordDefinitionFragment.PlayButton;
 
+import android.content.Context;
 import android.content.res.AssetFileDescriptor;
+import android.content.res.AssetManager;
 import android.database.Cursor;
 import android.graphics.Typeface;
+import android.media.MediaPlayer;
+import android.media.MediaPlayer.OnCompletionListener;
+import android.media.MediaPlayer.OnPreparedListener;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.Html;
@@ -15,6 +23,9 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.View.OnClickListener;
+import android.widget.ImageButton;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class MainPageFragment extends Fragment{
@@ -26,6 +37,8 @@ public class MainPageFragment extends Fragment{
 	private TextView variant;
 	private TextView speaker;
 	private TextView wordday;
+	
+	Word w;
 
 	@SuppressWarnings("unused")
 	private String audioFileName = null;
@@ -49,6 +62,18 @@ public class MainPageFragment extends Fragment{
         wordday = (TextView) v.findViewById(R.id.wordDAY);
 		updateWord();
 		// Inflate the layout for this fragment
+		
+		playButton = new PlayButton(getActivity());
+//      playButton.setPadding(0, 0, 10, 0);
+
+	      RelativeLayout layout = (RelativeLayout) v.findViewById(R.id.PlayButtonContainer);
+	      layout.addView(playButton);
+	      
+	      RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams)playButton.getLayoutParams();
+	      layoutParams.addRule(RelativeLayout.CENTER_IN_PARENT, RelativeLayout.TRUE);
+	      layoutParams.setMargins(10, 10, 10, 10);
+	      playButton.setLayoutParams(layoutParams);
+		
         return v;
 
 	}
@@ -64,7 +89,7 @@ public class MainPageFragment extends Fragment{
 		Cursor c = db.getIDmatch(number);
 		if (c != null) {
    		 	c.moveToFirst();
-   		 	Word w = new Word(Integer.parseInt(c.getString(0)),
+   		 	w = new Word(Integer.parseInt(c.getString(0)),
 	                c.getString(1), c.getString(2), c.getString(3), 
 	                c.getString(4), c.getString(5), c.getString(6), 
 	                c.getString(7), c.getString(8), c.getString(9),
@@ -111,31 +136,92 @@ public class MainPageFragment extends Fragment{
  		else
  			speaker.setVisibility(View.GONE);
 			
-//		AssetManager assetManager = getActivity().getAssets();
-//		
-//		if (!w.getAudio().equals("")) {
-//			audioFileName = "audio/" + w.getAudio();
-//			
-//			String HtmlUnescapedQuote = StringEscapeUtils.unescapeHtml3("&#8217;");
-//			String imageFileNameQuote = "'";
-//			
-//			audioFileName = audioFileName.replace(HtmlUnescapedQuote, imageFileNameQuote);
-//						
-//			try {
-//				audioFileFD = assetManager.openFd(audioFileName);
-//			} catch (IOException e) {
-//				Log.i("AUDIO", "Failed to open input stream for audio file");
-//			}
-//			
-//			if (audioFileFD != null) {
-//			}
-//			else {
-//				playButton.setVisibility(View.GONE);
-//			}
-//			
-//		}
+		AssetManager assetManager = getActivity().getAssets();
+		
+		if (!w.getAudio().equals("")) {
+			audioFileName = "audio/" + w.getAudio();
+			
+			String HtmlUnescapedQuote = StringEscapeUtils.unescapeHtml3("&#8217;");
+			String imageFileNameQuote = "'";
+			
+			audioFileName = audioFileName.replace(HtmlUnescapedQuote, imageFileNameQuote);
+						
+			try {
+				audioFileFD = assetManager.openFd(audioFileName);
+			} catch (IOException e) {
+				Log.i("AUDIO", "Failed to open input stream for audio file");
+			}
+			
+			if (audioFileFD != null) {
+			}
+			else {
+				playButton.setVisibility(View.GONE);
+			}
+			
+		}
 		}
 	    
 	}
+	
+	class PlayButton extends ImageButton {
+    	private MediaPlayer player = null;
+
+        OnClickListener clicker = new OnClickListener() {
+            public void onClick(View v) {
+            	playButton.setEnabled(false);
+                onPlay(true);
+            }
+        };
+        
+        OnCompletionListener listener = new OnCompletionListener() {
+			public void onCompletion(MediaPlayer mp) {
+				onPlay(false);
+                playButton.setEnabled(true);
+			}
+        };
+        
+        OnPreparedListener prepListener = new OnPreparedListener() {
+        	public void onPrepared(MediaPlayer mp) {
+        		playButton.setEnabled(false);
+        		mp.start();
+        	}
+        };
+        
+
+        public PlayButton(Context ctx) {
+            super(ctx);
+            this.setImageResource(R.drawable.audio_play);
+            setOnClickListener(clicker);
+        }
+        
+    	public void onPlay(boolean start) {
+            if (start) {
+                startPlaying();
+            } else {
+                stopPlaying();
+            }
+        }
+
+        public void startPlaying() {
+            player = new MediaPlayer();
+            try {
+            	player.setOnPreparedListener(prepListener);
+				player.setOnCompletionListener(listener);
+
+				// must call setDataSource giving offset and length in addition to FD!!!
+				// calling setDataSource with just FD plays all of the audio files in the directory
+                player.setDataSource(audioFileFD.getFileDescriptor(), audioFileFD.getStartOffset(), audioFileFD.getLength ());
+                
+                player.prepareAsync();
+            } catch (IOException e) {
+                Log.e("AUDIO", "prepare() failed");
+            }
+        }
+
+        public void stopPlaying() {
+            player.release();
+            player = null;
+        }
+    }
 	
 }
