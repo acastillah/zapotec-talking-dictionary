@@ -8,7 +8,10 @@ import org.apache.commons.lang3.StringEscapeUtils;
 
 import com.example.valleyzapotectalkingdictionary.WordDefinitionFragment.PlayButton;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.content.res.AssetFileDescriptor;
 import android.content.res.AssetManager;
 import android.database.Cursor;
@@ -82,8 +85,15 @@ public class MainPageFragment extends Fragment{
 	      
 	      updateWord();
 	      
-	      
-	      
+	      SharedPreferences preferences = getActivity().getSharedPreferences(Preferences.APP_SETTINGS, Activity.MODE_PRIVATE);
+	      if (preferences.getLong(Preferences.DB_SIZE, 0) != db_size && db_size > 0) {
+	    	  Editor editor = preferences.edit();
+				editor.putLong(Preferences.DB_SIZE, db_size);
+				editor.commit();
+	      }
+	      else {
+	    	  db_size = preferences.getLong(Preferences.DB_SIZE, 0);
+	      }
 	      
 	      dbspecs.setText(db_size + " " + dbspecs.getText().toString());
 	      
