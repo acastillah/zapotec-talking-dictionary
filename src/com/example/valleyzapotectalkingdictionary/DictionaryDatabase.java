@@ -43,6 +43,8 @@ public class DictionaryDatabase {
     private static final String KEY_SEMANTIC = "semantic_ids";
     static final String KEY_ESGLOSS = "es_gloss"; //WORD IN SPANISH
     
+    private static long db_size = 0;
+    
     public DictionaryDatabase(Context context) {
         mDatabaseOpenHelper = new DictionaryOpenHelper(context);        
     }
@@ -97,6 +99,10 @@ public class DictionaryDatabase {
     		return null;
     	}
 		return cursor;    	
+    }
+    
+    public long getSize() {
+    	return db_size;
     }
     
 //    public String[] getDomainList(){
@@ -241,6 +247,9 @@ public class DictionaryDatabase {
 	        // Inserting Row
 	        long result = db.insert(TABLE_WORDS, null, values);
 	        db.close(); // Closing database connection
+	        
+	        db_size++;
+	        
 	        return result;
 	    }
 	     

@@ -37,8 +37,10 @@ public class MainPageFragment extends Fragment{
 	private TextView variant;
 	private TextView speaker;
 	private TextView wordday;
+	private TextView dbspecs;
 	
 	Word w;
+	long db_size = 0;
 
 	@SuppressWarnings("unused")
 	private String audioFileName = null;
@@ -60,7 +62,7 @@ public class MainPageFragment extends Fragment{
         variant = (TextView) v.findViewById(R.id.Variant);
         speaker = (TextView) v.findViewById(R.id.Speaker);
         wordday = (TextView) v.findViewById(R.id.wordDAY);
-        Log.i("WORD", "about to call func");
+        dbspecs = (TextView) v.findViewById(R.id.db_specs);
 		
 		// Inflate the layout for this fragment
 		
@@ -76,24 +78,40 @@ public class MainPageFragment extends Fragment{
 	      playButton.setLayoutParams(layoutParams);
 	      playButton.setVisibility(View.GONE);
 		
+	      
+	      
 	      updateWord();
+	      
+	      
+	      
+	      
+	      dbspecs.setText(db_size + " " + dbspecs.getText().toString());
 	      
         return v;
 
 	}
 	
 	public void updateWord() {
-		Log.i("WORD", "updateWord");
 		Calendar cl = Calendar.getInstance();
 		int day = cl.get(Calendar.DATE);
 		int month = cl.get(Calendar.MONTH);
 		String date = Integer.toString(day) + Integer.toString(month);
 		Random rn = new Random(Integer.parseInt(date));
-		int number = 10; //rn.nextInt((640 - 5) + 1) + 5;
+		int number = 10; //rn.nextInt((640 - 5) + 1) + 5; // this is the problem
+		
+		
+		
 		DictionaryDatabase db = new DictionaryDatabase(getActivity());
+		
+		Log.i("WORD", "db_size="+db.getSize());
+		
+		
+		
+		db_size = db.getSize();
+		
+		
 		Cursor c = db.getIDmatch(number);
 		if (c != null) {
-			Log.i("WORD", "c != null");
 			c.moveToFirst();
 			w = new Word(Integer.parseInt(c.getString(0)), c.getString(1),
 					c.getString(2), c.getString(3), c.getString(4),
