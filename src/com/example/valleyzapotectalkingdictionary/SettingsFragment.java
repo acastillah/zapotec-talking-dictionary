@@ -6,6 +6,10 @@ import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.text.Editable;
+import android.text.InputFilter;
+import android.text.Spanned;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -33,10 +37,34 @@ public class SettingsFragment extends Fragment {
 		if (preferences.contains(Preferences.USERNAME))
 			usernameEditText.setText( preferences.getString(Preferences.USERNAME, "") );
         
+		usernameEditText.setFilters(MainActivity.inputFilters);
+		usernameEditText.addTextChangedListener(new usernameEditTextWatcher());
 		saveButton.setOnClickListener(new saveButtonOnClickListener());
         
 		return view;
     }
+	
+	public class usernameEditTextWatcher implements TextWatcher {
+
+		@Override
+		public void afterTextChanged(Editable arg0) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void beforeTextChanged(CharSequence arg0, int arg1,
+				int arg2, int arg3) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void onTextChanged(CharSequence s, int start, int before,
+				int count) {
+			
+		}
+	}
 	
 	public class saveButtonOnClickListener implements OnClickListener {
 

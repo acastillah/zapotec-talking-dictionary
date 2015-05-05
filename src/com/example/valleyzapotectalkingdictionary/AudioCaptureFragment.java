@@ -110,6 +110,7 @@ public class AudioCaptureFragment extends Fragment implements Parcelable {
 	    	
 	    	mRecordButton.setEnabled(recordButtonEnabled);
 	    	mPlayButton.setEnabled(playButtonEnabled);
+	    	mFileNameEditText.setFilters(MainActivity.inputFilters);
 	    	mFileNameEditText.setEnabled(fileNameEditTextEnabled);
 	    	mSaveButton.setEnabled(saveButtonEnabled);
     	}

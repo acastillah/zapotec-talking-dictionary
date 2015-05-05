@@ -46,6 +46,7 @@ public class ImageCaptureFragment extends Fragment {
 	static final int REQUEST_IMAGE_CAPTURE = 1;
 	static final int REQUEST_TAKE_PHOTO = 1;
 	
+	static final String INSIDE_WORD_DEFINITION = "INSIDE_WORD_DEFINITION";
 	static final String LAUNCH_CAMERA = "LAUNCH_CAMERA";
 	static final String FILE_NAME = "FILE_NAME";
 	
@@ -191,6 +192,7 @@ public class ImageCaptureFragment extends Fragment {
         
         mFileNameEditText = new FileNameEditText(activity);
         mFileNameEditText.setEms(10);
+        mFileNameEditText.setFilters(MainActivity.inputFilters);
         fileNameLayout.addView(mFileNameEditText,
                 new LinearLayout.LayoutParams(
                     ViewGroup.LayoutParams.WRAP_CONTENT,
@@ -228,9 +230,8 @@ public class ImageCaptureFragment extends Fragment {
         if (bundle == null || bundle.getBoolean(LAUNCH_CAMERA, true))
         	dispatchTakePictureIntent();
         
-        if (bundle != null) {
+        if (bundle != null)
         	mFileNameEditText.setText(bundle.getString(FILE_NAME, ""));
-        }
         
 //        if (savedInstanceState != null && savedInstanceState.containsKey(LAUNCH_CAMERA))
 //        	Log.i("BUNDLE", "launch camera=" + savedInstanceState.getBoolean(LAUNCH_CAMERA));
@@ -243,11 +244,14 @@ public class ImageCaptureFragment extends Fragment {
 	    if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == Activity.RESULT_OK) {
 //	        Bundle extras = data.getExtras();
 //	        Bitmap imageBitmap = (Bitmap) extras.get("data");
+//	        Log.i("BUNDLE", "extras=" + extras.getByte("data"));
 //	        mImageView.setImageBitmap(imageBitmap);
 	    	
 //	    	File image = new File(mFileName);
 	    	
 	    	image = new File(mFileName);
+	    	
+	    	Log.i("IMAGE", "exist? "+image.exists());
 	    			
 	    			
 	    	Log.i("FILE", "File path=" + mFileName);
@@ -298,7 +302,12 @@ public class ImageCaptureFragment extends Fragment {
 	    	
 //		    	boolean renameSuccessful = image.renameTo(new File(photoDirectoryFullPath + "/PHOTO.jpg"));
 		    	
-		    	mImageCaptureButton.setText(R.string.takeAnotherPhoto);
+		    	if (bundle.getBoolean(INSIDE_WORD_DEFINITION, false))
+		    		mImageCaptureButton.setText(R.string.retakePhoto);
+		    	else
+		    		mImageCaptureButton.setText(R.string.takeAnotherPhoto);
+		    	
+		    	mSaveButton.setEnabled(true);
 		    	
 	    	}
 	    	
@@ -405,7 +414,7 @@ public class ImageCaptureFragment extends Fragment {
 				
 				// user must enter file name before saving & there must be picture captured to save
 				if (!mFileNameEditText.getText().toString().equals("")) {
-					mSaveButton.setEnabled(true); 
+//					mSaveButton.setEnabled(true); 
             	}
             	else {
             		mSaveButton.setEnabled(false); 
@@ -489,7 +498,10 @@ public class ImageCaptureFragment extends Fragment {
 				
 				// Reset form so user can take another photo
 				mImageCaptureButton.setEnabled(true);
-				mFileNameEditText.setText("");
+				
+				if (bundle != null)
+		        	mFileNameEditText.setText(bundle.getString(FILE_NAME, ""));
+
 				mFileNameEditText.setEnabled(true);
 				
 				

@@ -6,7 +6,9 @@ import java.io.InputStream;
 
 import org.apache.commons.lang3.StringEscapeUtils;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.res.AssetFileDescriptor;
 import android.content.res.AssetManager;
 import android.graphics.Bitmap;
@@ -30,6 +32,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class WordDefinitionFragment extends Fragment{
+	
+	private Word w;
 	
 	private TextView word;
 	private TextView pos;
@@ -78,39 +82,56 @@ public class WordDefinitionFragment extends Fragment{
         playButton.setLayoutParams(layoutParams);
         
         
-        
-        LinearLayout fragContainer = (LinearLayout) v.findViewById(R.id.ImageFragmentContainer);
-
-        LinearLayout ll = new LinearLayout(v.getContext());
-        ll.setOrientation(LinearLayout.HORIZONTAL);
-
-        ll.setId(12345);
-        
-        String fileName = "123";
-        
-        Bundle b = new Bundle();
-        b.putBoolean(ImageCaptureFragment.LAUNCH_CAMERA, false);
-        b.putString(ImageCaptureFragment.FILE_NAME, fileName);
-        getFragmentManager().beginTransaction().add(ll.getId(), ImageCaptureFragment.newInstance(b), "someTag1").commit();
-
-        fragContainer.addView(ll);
-        
-        
-        
-//        RelativeLayout imageFragmentContainer = (RelativeLayout) v.findViewById(R.id.ImageFragmentContainer);
-//        Bundle b = new Bundle();
-//        b.putBoolean(ImageCaptureFragment.LAUNCH_CAMERA, false);
-//        getFragmentManager().beginTransaction().add(imageFragmentContainer.getId(), ImageCaptureFragment.newInstance(b), "someTag1").commit();
-//        
         image = (ImageView) v.findViewById(R.id.image);
         
         setUpDisplay();
+        
+        
+       /*** If user is logged in && there is no photo for the word definition, display the ImageCaptureFragment ***/ 
+        
+        SharedPreferences preferences = getActivity().getSharedPreferences(Preferences.APP_SETTINGS, Activity.MODE_PRIVATE);
+	        if(preferences.getBoolean(Preferences.IS_LINGUIST, false)
+	        		&& w.getIMG().equals("") 
+	        		&& true /* no image on local device */) {
+	        
+	        
+	        LinearLayout fragContainer = (LinearLayout) v.findViewById(R.id.ImageFragmentContainer);
+	
+	        LinearLayout ll = new LinearLayout(v.getContext());
+	        ll.setOrientation(LinearLayout.HORIZONTAL);
+	
+	        ll.setId(12345);
+	        
+	        String fileName = "Teotitlan_";
+	        
+	        String username = preferences.getString(Preferences.USERNAME, "");
+	        if (!username.equals("")) {
+	        	username = username.replace(" ", "");
+	        	fileName += username + "_";
+	        }
+	        
+	        fileName += w.getGloss();
+	        
+	        Bundle b = new Bundle();
+	        b.putBoolean(ImageCaptureFragment.INSIDE_WORD_DEFINITION, true);
+	        b.putBoolean(ImageCaptureFragment.LAUNCH_CAMERA, false);
+	        b.putString(ImageCaptureFragment.FILE_NAME, fileName);
+	        getFragmentManager().beginTransaction().add(ll.getId(), ImageCaptureFragment.newInstance(b), "someTag1").commit();
+	
+	        fragContainer.addView(ll);
+        }
+        
+        
+        /***********************************************************************************************************/
+        
+
+        
         
         return v;
     }
 	
 	public void setUpDisplay(){
-		Word w = new Word(Integer.parseInt(info[0]), info[1],info[2],info[3],info[4],info[5],info[6],info[7],info[8],info[9],info[10],info[11],info[12]);
+		w = new Word(Integer.parseInt(info[0]), info[1],info[2],info[3],info[4],info[5],info[6],info[7],info[8],info[9],info[10],info[11],info[12]);
 		
 //		Log.i("WORD DEF", "id=" + w.getID()
 //				+ "\nword=" + w.getName()
