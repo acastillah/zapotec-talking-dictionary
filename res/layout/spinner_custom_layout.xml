@@ -8,7 +8,7 @@
 	android:id="@+id/options"
 	android:layout_width="wrap_content"
 	android:layout_height="wrap_content"
-	android:textColor="#D9723B"
+	android:textColor="@color/spinner_color"
 	android:text="hello"/>
     
 </LinearLayout>

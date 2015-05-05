@@ -78,7 +78,7 @@ public class WordDefinitionFragment extends Fragment{
         
         RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams)playButton.getLayoutParams();
         layoutParams.addRule(RelativeLayout.CENTER_IN_PARENT, RelativeLayout.TRUE);
-        layoutParams.setMargins(10, 10, 10, 10);
+//        layoutParams.setMargins(10, 10, 10, 10);
         playButton.setLayoutParams(layoutParams);
         
         

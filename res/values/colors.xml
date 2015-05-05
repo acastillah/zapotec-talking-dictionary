@@ -11,4 +11,5 @@
     <color name="light_pink">#EBAD99</color>
     <color name="dark_pink">#E69980</color>
     <color name="main_activity_background_color">#E2725B</color>
+    <color name="spinner_color">#D9723B</color>
 </resources>
