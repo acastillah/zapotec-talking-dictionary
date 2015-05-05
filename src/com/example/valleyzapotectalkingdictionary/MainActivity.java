@@ -119,6 +119,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		mNavigationDrawerFragment = (NavigationDrawerFragment) getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
 		mNavigationDrawerFragment.setUp(R.id.navigation_drawer, (DrawerLayout) findViewById(R.id.drawer_layout));
 	    searchView = (SearchView) findViewById(R.id.searchBAR);
+	    searchView.setIconifiedByDefault(false);
 	    searchView.setInputType(0);
 	    searchView.setOnFocusChangeListener(new View.OnFocusChangeListener() {
 			
