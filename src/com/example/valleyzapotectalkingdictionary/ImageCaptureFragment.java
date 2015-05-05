@@ -245,7 +245,9 @@ public class ImageCaptureFragment extends Fragment {
 	
 	@Override
 	public void onActivityResult(int requestCode, int resultCode, Intent data) {
+		Log.i("PHOTO", "onActivityResult");
 	    if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == Activity.RESULT_OK) {
+	    	Log.i("PHOTO", "request and result codes OK");
 //	        Bundle extras = data.getExtras();
 //	        Bitmap imageBitmap = (Bitmap) extras.get("data");
 //	        Log.i("BUNDLE", "extras=" + extras.getByte("data"));
@@ -264,7 +266,7 @@ public class ImageCaptureFragment extends Fragment {
 			mPreviewText.setVisibility(View.VISIBLE);
 
 	    	Bitmap bitmap = BitmapFactory.decodeFile(image.getAbsolutePath(), new BitmapFactory.Options());
-
+	    	
 	    	double ratio = bitmap.getWidth() / bitmap.getHeight();
 	    	Log.i("BITMAP", "original width=" + bitmap.getWidth() + " height=" + bitmap.getHeight() + " ratio=" + ratio);
 	    	
@@ -299,10 +301,8 @@ public class ImageCaptureFragment extends Fragment {
 		    		m.postRotate(90);
 		    	if (orientation == 8)
 		    		m.postRotate(270);
-		    
 		    	bitmap = Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight(), m, true);
 		    	bitmap = Bitmap.createScaledBitmap(bitmap, (int)height, (int)width, false);
-		    	
 //		    	if (bitmap != null) {
 //		    		Log.i("BITMAP", "bitmap not null");
 			    	mImageView.setImageBitmap(bitmap);
@@ -316,14 +316,11 @@ public class ImageCaptureFragment extends Fragment {
 //		    	}
 	    	
 //		    	boolean renameSuccessful = image.renameTo(new File(photoDirectoryFullPath + "/PHOTO.jpg"));
-		    	
-		    	if (bundle.getBoolean(INSIDE_WORD_DEFINITION, false))
+		    	if (bundle != null && bundle.getBoolean(INSIDE_WORD_DEFINITION, false))
 		    		mImageCaptureButton.setText(R.string.retakePhoto);
 		    	else
 		    		mImageCaptureButton.setText(R.string.takeAnotherPhoto);
-		    	
 		    	mSaveButton.setEnabled(true);
-		    	
 	    	}
 	    	
 	    	
