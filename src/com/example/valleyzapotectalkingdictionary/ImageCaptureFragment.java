@@ -300,9 +300,20 @@ public class ImageCaptureFragment extends Fragment {
 		    	if (orientation == 8)
 		    		m.postRotate(270);
 		    
-		    	bitmap = Bitmap.createBitmap(bitmap, 0, 0, (int)width, (int)height, m, true);
-
-		    	mImageView.setImageBitmap(bitmap);
+		    	bitmap = Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight(), m, true);
+		    	bitmap = Bitmap.createScaledBitmap(bitmap, (int)height, (int)width, false);
+		    	
+//		    	if (bitmap != null) {
+//		    		Log.i("BITMAP", "bitmap not null");
+			    	mImageView.setImageBitmap(bitmap);
+//		    	}
+//		    	else if (bitmap == null && b != null) {
+//		    		Log.i("BITMAP", "bitmap null, b not null");
+//			    	mImageView.setImageBitmap(b);
+//		    	}
+//		    	else {
+//		    		Log.i("BITMAP", "bitmap and b null");
+//		    	}
 	    	
 //		    	boolean renameSuccessful = image.renameTo(new File(photoDirectoryFullPath + "/PHOTO.jpg"));
 		    	
