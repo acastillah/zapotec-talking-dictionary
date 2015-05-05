@@ -22,6 +22,7 @@ import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.text.Editable;
+import android.text.InputType;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.Gravity;
@@ -192,7 +193,6 @@ public class ImageCaptureFragment extends Fragment {
         
         mFileNameEditText = new FileNameEditText(activity);
         mFileNameEditText.setEms(10);
-        mFileNameEditText.setFilters(MainActivity.inputFilters);
         fileNameLayout.addView(mFileNameEditText,
                 new LinearLayout.LayoutParams(
                     ViewGroup.LayoutParams.WRAP_CONTENT,
@@ -225,6 +225,10 @@ public class ImageCaptureFragment extends Fragment {
 //        galleryLayoutParams.height = galleryLayoutParams.WRAP_CONTENT;
 //        galleryLayoutParams.width = galleryLayoutParams.FILL_PARENT;
 //        gallery.setLayoutParams(galleryLayoutParams);
+        
+        
+        mFileNameEditText.setFilters(MainActivity.inputFilters);
+        mFileNameEditText.setInputType(InputType.TYPE_TEXT_VARIATION_PERSON_NAME);
         
         
         if (bundle == null || bundle.getBoolean(LAUNCH_CAMERA, true))

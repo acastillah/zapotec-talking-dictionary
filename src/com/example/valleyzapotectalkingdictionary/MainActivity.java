@@ -57,7 +57,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
                     if(src.equals("")){ // for backspace
                         return src;
                     }
-                    if(src.toString().matches("[a-zA-Z ]*")) //put your constraints here
+                    if(src.toString().matches("[a-zA-Z _ñáãàéẽèíìóòúùï]*"))
                     {
                         return src;
                     }

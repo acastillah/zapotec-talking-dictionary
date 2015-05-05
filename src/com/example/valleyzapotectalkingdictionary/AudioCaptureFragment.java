@@ -16,6 +16,7 @@ import android.os.Parcelable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.text.Editable;
+import android.text.InputType;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -279,6 +280,8 @@ public class AudioCaptureFragment extends Fragment implements Parcelable {
     	mRecordButton.setEnabled(recordButtonEnabled);
     	mPlayButton.setEnabled(playButtonEnabled);
     	mFileNameEditText.setEnabled(fileNameEditTextEnabled);
+    	mFileNameEditText.setFilters(MainActivity.inputFilters);
+        mFileNameEditText.setInputType(InputType.TYPE_TEXT_VARIATION_PERSON_NAME);
     	mSaveButton.setEnabled(saveButtonEnabled);
         
         
