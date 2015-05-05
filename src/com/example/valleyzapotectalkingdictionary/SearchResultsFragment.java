@@ -38,7 +38,8 @@ public class SearchResultsFragment extends Fragment {
 	
 	public void showWords(){
 		DictionaryDatabase db = new DictionaryDatabase(getActivity());
-		Cursor cursor = db.getMatch(query, lang, domain);
+//		Cursor cursor = db.getMatch(query, lang, domain);
+		Cursor cursor = db.getMatch(query, MainActivity.LanguageInterface.LANGUAGE_ENGLISH, domain);
     	if (cursor == null) {
             // There are no results        	
     		mTextView.setText("No Results");
@@ -47,19 +48,25 @@ public class SearchResultsFragment extends Fragment {
    		 	cursor.moveToFirst();
    		 	
    		 	// Specify the columns we want to display in the result
-            String[] from = null;
-   		 	
-            switch(lang){
-	            case 0: from = new String[] { DictionaryDatabase.KEY_WORD, DictionaryDatabase.KEY_GLOSS };
-	            		break;
-	            case 1: from = new String[] { DictionaryDatabase.KEY_WORD, DictionaryDatabase.KEY_GLOSS }; //depends on language interface
-        				break;
-	            case 2: from = new String[] { DictionaryDatabase.KEY_GLOSS, DictionaryDatabase.KEY_WORD };
-        				break;
-	            case 3: from = new String[] { DictionaryDatabase.KEY_ESGLOSS, DictionaryDatabase.KEY_WORD };
-        				break;
-        		
-            }
+            String[] from = null;	
+            if (lang == MainActivity.LanguageInterface.LANGUAGE_SPANISH)
+            	from = new String[] { DictionaryDatabase.KEY_WORD, DictionaryDatabase.KEY_ESGLOSS };
+            else if (lang == MainActivity.LanguageInterface.LANGUAGE_ZAPOTEC)
+            	from = new String[] { DictionaryDatabase.KEY_WORD, DictionaryDatabase.KEY_ESGLOSS };
+            else 
+            	from = new String[] { DictionaryDatabase.KEY_WORD, DictionaryDatabase.KEY_GLOSS };
+            
+//            switch(lang){
+//	            case 0: from = new String[] { DictionaryDatabase.KEY_WORD, DictionaryDatabase.KEY_GLOSS };
+//	            		break;
+//	            case 1: from = new String[] { DictionaryDatabase.KEY_WORD, DictionaryDatabase.KEY_GLOSS }; //depends on language interface
+//        				break;
+//	            case 2: from = new String[] { DictionaryDatabase.KEY_GLOSS, DictionaryDatabase.KEY_WORD };
+//        				break;
+//	            case 3: from = new String[] { DictionaryDatabase.KEY_ESGLOSS, DictionaryDatabase.KEY_WORD };
+//        				break;
+//        		
+//            }
             
    		 	// Specify the corresponding layout elements where we want the columns to go
             int[] to = new int[] { R.id.word_Searched, R.id.word_Definition };

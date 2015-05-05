@@ -85,14 +85,17 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		if (lang.equals(Preferences.SPANISH)) {
 			locale = Preferences.SPANISH_LOC;
 			selection = 1;
+			Language_search = LanguageInterface.LANGUAGE_SPANISH;
 		}
 		else if (lang.equals(Preferences.ZAPOTEC)) {
 			locale = Preferences.ZAPOTEC_LOC;
 			selection = 2;
+			Language_search = LanguageInterface.LANGUAGE_ZAPOTEC;
 		}
 		else {
 			locale = Preferences.ENGLISH_LOC;
 			selection = 0;
+			Language_search = LanguageInterface.LANGUAGE_ENGLISH;
 		}
 		
 		Locale.setDefault(locale);

@@ -62,7 +62,7 @@ public class AboutFragment extends Fragment {
 	public class DictionaryURLOnClickListener implements OnClickListener {
 
 		@Override
-		public void onClick(View arg0) {
+		public void onClick(View arg0) { 
 			String url = "http://talkingdictionary.swarthmore.edu/teotitlan/";
 			Intent i = new Intent(Intent.ACTION_VIEW);
 			i.setData(Uri.parse(url));
