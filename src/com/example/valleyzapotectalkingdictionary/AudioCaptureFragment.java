@@ -201,7 +201,7 @@ public class AudioCaptureFragment extends Fragment implements Parcelable {
 		Log.i("AUDIO", "onCreateView");
 		
         // Inflate the layout for this fragment
-		View view = inflater.inflate(R.layout.fragment_audio_capture, container, false);
+		View view = new View(getActivity());
 		
 		FragmentActivity activity = getActivity();
         

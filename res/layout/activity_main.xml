@@ -3,74 +3,61 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.valleyzapotectalkingdictionary.MainActivity"
-    android:background="#E2725B" >
-        
-	<LinearLayout
-	    android:layout_width="match_parent"
-	    android:layout_height="fill_parent"
-	    android:orientation="vertical" >
-	      
-	     <android.support.v7.widget.SearchView
-	       	android:id="@+id/searchBAR"
-  	      	android:layout_width="fill_parent"
-  	        android:layout_height="wrap_content"
-  	        android:background="@color/background_color" >
-    	</android.support.v7.widget.SearchView>
-    		        
-	     	<LinearLayout
-	   	    
-	   	    android:layout_width="wrap_content"
-		    android:layout_height="wrap_content"
-		    android:orientation="horizontal"
-		    android:gravity="center_horizontal" >
-	        
-		<!--     <Spinner
-        android:id="@+id/search_spinner"
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:entries="@array/search_options"
-        android:layout_height="wrap_content"
-        /> -->
-		    
-		    <TextView
-        android:id="@+id/semanticDomain_textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingLeft="10dp"
-        android:paddingStart="10dp"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        android:text="@string/semanticDomain_text"
-        android:gravity="bottom" />
-		    
-			<Spinner
-        android:id="@+id/domain_spinner"
-        android:entries="@array/domain_options"
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:layout_height="wrap_content"
-        android:gravity="center" />
-		</LinearLayout>
-			     	
-			   
-     	<FrameLayout
-        android:id="@+id/container"
-        android:layout_width="fill_parent"
+    android:background="@color/main_activity_background_color"
+    tools:context="com.example.valleyzapotectalkingdictionary.MainActivity" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="fill_parent"
-        android:background="#F0C2B2"
-        >
-     	</FrameLayout>
-     	
-     </LinearLayout>
-        
-     <fragment
+        android:orientation="vertical" >
+
+        <android.support.v7.widget.SearchView
+            android:id="@+id/searchBAR"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/background_color" >
+        </android.support.v7.widget.SearchView>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/semanticDomain_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="bottom"
+                android:paddingLeft="10dp"
+                android:paddingStart="10dp"
+                android:text="@string/semanticDomain_text"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:id="@+id/domain_spinner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:entries="@array/domain_options"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/container"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="#F0C2B2" >
+        </FrameLayout>
+    </LinearLayout>
+
+    <fragment
         android:id="@+id/navigation_drawer"
         android:name="com.example.valleyzapotectalkingdictionary.NavigationDrawerFragment"
         android:layout_width="@dimen/navigation_drawer_width"
         android:layout_height="match_parent"
         android:layout_gravity="start"
         tools:layout="@layout/fragment_navigation_drawer" />
-         
+
 </android.support.v4.widget.DrawerLayout>
-  

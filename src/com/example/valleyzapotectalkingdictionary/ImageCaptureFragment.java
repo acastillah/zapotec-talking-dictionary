@@ -151,7 +151,7 @@ public class ImageCaptureFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-		View view = inflater.inflate(R.layout.fragment_image_capture, container, false);
+		View view = new View(getActivity());
 		
 		FragmentActivity activity = getActivity();
         
