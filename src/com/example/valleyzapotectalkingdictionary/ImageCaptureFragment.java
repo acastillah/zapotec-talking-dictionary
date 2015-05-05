@@ -195,7 +195,7 @@ public class ImageCaptureFragment extends Fragment {
         mFileNameEditText.setEms(10);
         fileNameLayout.addView(mFileNameEditText,
                 new LinearLayout.LayoutParams(
-                    ViewGroup.LayoutParams.WRAP_CONTENT,
+                    ViewGroup.LayoutParams.MATCH_PARENT,
                     ViewGroup.LayoutParams.WRAP_CONTENT,
                     0));
         
