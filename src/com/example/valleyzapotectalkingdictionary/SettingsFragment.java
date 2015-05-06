@@ -78,9 +78,9 @@ public class SettingsFragment extends Fragment {
 			
 			Toast.makeText(getActivity(), R.string.settingsSaved, Toast.LENGTH_SHORT).show();
 			
-			FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-			Fragment fragment = new MainPageFragment();
-			fragmentManager.beginTransaction().addToBackStack(null).replace(R.id.container, fragment).commit();
+//			FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+//			Fragment fragment = new MainPageFragment();
+//			fragmentManager.beginTransaction().addToBackStack(null).replace(R.id.container, fragment).commit();
 		}
 		
 	}
