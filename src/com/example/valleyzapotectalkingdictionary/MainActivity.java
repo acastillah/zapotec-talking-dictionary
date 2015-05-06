@@ -127,10 +127,9 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 			
 			@Override
 			public void onFocusChange(View v, boolean hasFocus) {
+				Log.i("FOCUS", "focus change, hasFocus=" + hasFocus);
 				if (!hasFocus) {
 	                hideKeyboard(v);
-	                searchView.setEnabled(false);
-	                searchView.setEnabled(true);
 	            }
 			}
 		});

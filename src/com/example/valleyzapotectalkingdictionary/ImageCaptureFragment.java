@@ -1,7 +1,12 @@
 package com.example.valleyzapotectalkingdictionary;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.nio.channels.FileChannel;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -67,6 +72,8 @@ public class ImageCaptureFragment extends Fragment {
     private static final String dictionaryDirectoryName = "Zapotec Talking Dictionary";
     private static final String photoDirectoryName = "photos";
     private static String photoDirectoryFullPath = null;
+    private static final String tempDirectoryName = "temp";
+    private static String tempDirectoryFullPath = null;
     
 //    private static String mFileName = null;
     
@@ -94,6 +101,7 @@ public class ImageCaptureFragment extends Fragment {
     	Log.i("IMAGE", "ImageCaptureFragment entered onCreate method");
     	
     	
+    	/*********** photo directory **********/
         
         Log.i("DIR", "Setting audio dir path");
         
@@ -137,15 +145,60 @@ public class ImageCaptureFragment extends Fragment {
          		Log.i("DIR", "app directory is not a directory");
          	}
          	
-//         }
-//         else {
-//         	mRecordButton.setEnabled(false);
-//         }
+
+
+         	
+         	/*********** temp directory **********/
+            
+            Log.i("DIR", "Setting audio dir path");
+            
+//             if (Environment.getExternalStorageState() == true) {
+             	tempDirectoryFullPath = Environment.getExternalStorageDirectory().getAbsolutePath();
+             	Log.i("DIR", "audio dir full path=" + tempDirectoryFullPath);
+             	
+             	appDir = new File(tempDirectoryFullPath, dictionaryDirectoryName);
+             	if (!appDir.exists()) {
+             		boolean success = appDir.mkdir();
+             		Log.i("DIR", "appDir created=" + success);
+             	}
+             	else {
+             		Log.i("DIR", "appDir exists");
+             	}
+             	
+             	if (appDir.exists() && appDir.isDirectory()) {
+             		Log.i("DIR", "appDir exists & is a directory");
+             		
+             		if (!appDir.canWrite())
+             			appDir.setWritable(true);
+             		
+             		tempDirectoryFullPath += "/" + dictionaryDirectoryName;
+             		Log.i("DIR", "audio dir full path=" + tempDirectoryFullPath);
+             		        		
+             		File tempDir = new File(tempDirectoryFullPath, tempDirectoryName);
+             		if (!tempDir.exists()) {
+             			tempDir.mkdir();
+             		}
+             		
+             		if (tempDir.isDirectory()) {
+             			if (!tempDir.canWrite())
+             				tempDir.setWritable(true);
+             			
+             			tempDirectoryFullPath += "/" + tempDirectoryName;
+             			Log.i("DIR", "audio dir full path=" + tempDirectoryFullPath);
+             		}
+             		
+             	}
+             	else {
+             		Log.i("DIR", "app directory is not a directory");
+             	}
+             	
+             	
+             	
          	
          	
-         	mFileName = photoDirectoryFullPath;
-             mFileName += "/blah";
-             mFileName += mFileExtension;
+//         	mFileName = tempDirectoryFullPath;
+//             mFileName += "/blah";
+//             mFileName += mFileExtension;
 	}
 	
 	@Override
@@ -219,17 +272,6 @@ public class ImageCaptureFragment extends Fragment {
                     ViewGroup.LayoutParams.WRAP_CONTENT,
                     0));
         
-        
-//        Gallery gallery = new Gallery(activity);
-//        
-//        gallery.setAdapter(new ImageAdapter(activity));
-//        
-//        Gallery.LayoutParams galleryLayoutParams = (LayoutParams) gallery.getLayoutParams();
-//        galleryLayoutParams.height = galleryLayoutParams.WRAP_CONTENT;
-//        galleryLayoutParams.width = galleryLayoutParams.FILL_PARENT;
-//        gallery.setLayoutParams(galleryLayoutParams);
-        
-        
         mFileNameEditText.setFilters(MainActivity.inputFilters);
         mFileNameEditText.setInputType(InputType.TYPE_TEXT_VARIATION_PERSON_NAME);
         
@@ -240,8 +282,6 @@ public class ImageCaptureFragment extends Fragment {
         if (bundle != null)
         	mFileNameEditText.setText(bundle.getString(FILE_NAME, ""));
         
-//        if (savedInstanceState != null && savedInstanceState.containsKey(LAUNCH_CAMERA))
-//        	Log.i("BUNDLE", "launch camera=" + savedInstanceState.getBoolean(LAUNCH_CAMERA));
         
         scrollView.addView(fragmentLayout);
         
@@ -253,18 +293,9 @@ public class ImageCaptureFragment extends Fragment {
 		Log.i("PHOTO", "onActivityResult");
 	    if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == Activity.RESULT_OK) {
 	    	Log.i("PHOTO", "request and result codes OK");
-//	        Bundle extras = data.getExtras();
-//	        Bitmap imageBitmap = (Bitmap) extras.get("data");
-//	        Log.i("BUNDLE", "extras=" + extras.getByte("data"));
-//	        mImageView.setImageBitmap(imageBitmap);
-	    	
-//	    	File image = new File(mFileName);
-	    	
 	    	image = new File(mFileName);
 	    	
-	    	Log.i("IMAGE", "exist? "+image.exists());
-	    			
-	    			
+	    	Log.i("IMAGE", "exist? "+image.exists());	
 	    	Log.i("FILE", "File path=" + mFileName);
 	    	
 	    	mImageCaptured = true;
@@ -283,7 +314,7 @@ public class ImageCaptureFragment extends Fragment {
 	    	double width = bitmap.getWidth() / 3;
 	    	double height = bitmap.getHeight() / 3;
 	    	
-	    	Log.i("BITMAP", "new width=" + width + " height=" + height);
+//	    	Log.i("BITMAP", "new width=" + width + " height=" + height);
 	    	
 	    	ExifInterface exif = null;
 	    	
@@ -306,21 +337,11 @@ public class ImageCaptureFragment extends Fragment {
 		    		m.postRotate(90);
 		    	if (orientation == 8)
 		    		m.postRotate(270);
+		    	
 		    	bitmap = Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight(), m, true);
 		    	bitmap = Bitmap.createScaledBitmap(bitmap, (int)height, (int)width, false);
-//		    	if (bitmap != null) {
-//		    		Log.i("BITMAP", "bitmap not null");
-			    	mImageView.setImageBitmap(bitmap);
-//		    	}
-//		    	else if (bitmap == null && b != null) {
-//		    		Log.i("BITMAP", "bitmap null, b not null");
-//			    	mImageView.setImageBitmap(b);
-//		    	}
-//		    	else {
-//		    		Log.i("BITMAP", "bitmap and b null");
-//		    	}
+		    	mImageView.setImageBitmap(bitmap);
 	    	
-//		    	boolean renameSuccessful = image.renameTo(new File(photoDirectoryFullPath + "/PHOTO.jpg"));
 		    	if (bundle != null && bundle.getBoolean(INSIDE_WORD_DEFINITION, false))
 		    		mImageCaptureButton.setText(R.string.retakePhoto);
 		    	else
@@ -333,11 +354,6 @@ public class ImageCaptureFragment extends Fragment {
 	}
 	
 	private void dispatchTakePictureIntent() {
-//	    Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-//	    if (takePictureIntent.resolveActivity(getActivity().getPackageManager()) != null) {
-//	        startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
-//	    }
-		
 		Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 	    // Ensure that there's a camera activity to handle the intent
 	    if (takePictureIntent.resolveActivity(getActivity().getPackageManager()) != null) {
@@ -371,13 +387,15 @@ public class ImageCaptureFragment extends Fragment {
 	    
 //	    File storageDir = Environment.getExternalStoragePublicDirectory(
 //	            Environment.DIRECTORY_PICTURES);
-	    File storageDir = new File(photoDirectoryFullPath);
+	    File storageDir = new File(tempDirectoryFullPath);
+//	    File storageDir = new File(Environment.getExternalStorageDirectory().getAbsolutePath());
 	    		
-	    File image = File.createTempFile(
-	        imageFileName,  /* prefix */
-	        ".jpg",         /* suffix */
-	        storageDir      /* directory */
-	    );
+//	    File image = File.createTempFile(
+//	        imageFileName,  /* prefix */
+//	        ".jpg",         /* suffix */
+//	        storageDir      /* directory */
+//	    );
+	    File image = new File(tempDirectoryFullPath, imageFileName + ".jpg");
 	    
 //	    image = new File(photoDirectoryFullPath, imageFileName + ".jpg");
 	    
@@ -406,13 +424,6 @@ public class ImageCaptureFragment extends Fragment {
 	    return image;
 	}
 	
-//	private void galleryAddPic() {
-//	    Intent mediaScanIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
-//	    File f = new File(mCurrentPhotoPath);
-//	    Uri contentUri = Uri.fromFile(f);
-//	    mediaScanIntent.setData(contentUri);
-//	    getActivity().sendBroadcast(mediaScanIntent);
-//	}
 	
 	private class ImageCaptureButton extends Button {
 
@@ -420,15 +431,8 @@ public class ImageCaptureFragment extends Fragment {
 
 			@Override
 			public void onClick(View arg0) {
-
-				
-//				if (imageSaved)
-////					startActivity(new Intent(getContext(), ImageCaptureFragment.class));
-					
-				
 				dispatchTakePictureIntent();
 							
-				
 				// user must enter file name before saving & there must be picture captured to save
 				if (!mFileNameEditText.getText().toString().equals("")) {
 //					mSaveButton.setEnabled(true); 
@@ -460,15 +464,22 @@ public class ImageCaptureFragment extends Fragment {
 				
 				String userDefinedFileName = mFileNameEditText.getText().toString();
 				
-				String newFileName = photoDirectoryFullPath;
+				String newFileName = /*Environment.getExternalStorageDirectory().getAbsolutePath();*/ photoDirectoryFullPath;
 	            newFileName += "/" + userDefinedFileName;
 	            newFileName += mFileExtension;
 				
-//				File image = new File(mFileName);
 //	            File image = new File(mFileName);
-				File newImage = new File(newFileName);
+				File newImage = new File(newFileName); ////
+				if (newImage.exists())
+					newImage.delete();
+
+//				newImage.createNewFile();
+//	            File newImage = null;
 				try {
-					newImage.createNewFile();
+//					newImage.createNewFile(); ////
+//					newImage.createTempFile("test123", ".jpg", new File(photoDirectoryFullPath));
+					newImage = File.createTempFile("test123", ".jpg", new File(photoDirectoryFullPath));
+//					System.getProperty(System.)
 				
 				Log.i("PHOTOS", "Old file path="+mFileName);
 				Log.i("PHOTOS", "New file path="+newFileName);
@@ -478,16 +489,51 @@ public class ImageCaptureFragment extends Fragment {
 				newImage.setReadable(true);
 				newImage.setWritable(true);
 				
-				boolean renameSuccessful = image.renameTo(newImage);
+				
+				
+
+//				BitmapFactory.Options bmOptions = new BitmapFactory.Options();
+//				Bitmap bitmap = BitmapFactory.decodeFile(image.getAbsolutePath(), bmOptions);
+//				
+//				FileOutputStream out = null;
+//				try {
+//				    out = new FileOutputStream(newFileName);
+//				    bitmap.compress(Bitmap.CompressFormat.JPEG, 100, out); // bmp is your Bitmap instance
+//				    // PNG is a lossless format, the compression factor (100) is ignored
+//				} catch (Exception e) {
+//				    e.printStackTrace();
+//				} finally {
+//				    try {
+//				        if (out != null) {
+//				            out.close();
+//				        }
+//				    } catch (IOException e) {
+//				        e.printStackTrace();
+//				    }
+//				}
+				
+				
+				
+				
+				
+//				boolean renameSuccessful = copy(image, newImage);
+				
+				boolean renameSuccessful = image.renameTo(newImage); //// 
+//				image.c
 				
 				Log.i("PHOTOS", "image canRead="+image.canRead()+" canWrite="+image.canWrite());
 				Log.i("PHOTOS", "newImage canRead="+newImage.canRead()+" canWrite="+newImage.canWrite());
 				
 				Log.i("PHOTOS", "Rename successful="+renameSuccessful);
 				
-
-				if (renameSuccessful)
+				
+				if (renameSuccessful) {
+					Log.i("PHOTOS", "RENAME WAS SUCCESSFUL");
 					Toast.makeText(getActivity(), "Photo saved", Toast.LENGTH_SHORT).show();
+				}
+				else {
+					Log.i("PHOTOS", "RENAME WAS NOT SUCCESSFUL");
+				}
 				
 				
 				if (newImage.exists()) {
@@ -506,10 +552,11 @@ public class ImageCaptureFragment extends Fragment {
             		Log.i("SAVE AUDIO", "Default does not file exist");
             	}
 //				
-				} catch (IOException e) {
+				} 
+				catch (IOException e) {
 					Log.e("SAVE PHOTO", "Could not create new photo file");
 				}
-				
+				finally {}
 					
 				imageSaved = true;
 				
@@ -609,5 +656,45 @@ public class ImageCaptureFragment extends Fragment {
 			return null;
 		}
 		
+	}
+	
+	public boolean copy(File src, File dst) throws IOException {
+		
+		try {
+			if (!src.exists()) {
+                return false;
+            }
+
+            FileChannel source = null;
+                FileChannel destination = null;
+                source = new FileInputStream(src).getChannel();
+                destination = new FileOutputStream(dst).getChannel();
+                if (destination != null && source != null) {
+                    destination.transferFrom(source, 0, source.size());
+                }
+                if (source != null) {
+                    source.close();
+                }
+                if (destination != null) {
+                    destination.close();
+                }
+			
+//	    InputStream in = new FileInputStream(src);
+//	    OutputStream out = new FileOutputStream(dst);
+//
+//	    // Transfer bytes from in to out
+//	    byte[] buf = new byte[1024];
+//	    int len;
+//	    while ((len = in.read(buf)) > 0) {
+//	        out.write(buf, 0, len);
+//	    }
+//	    in.close();
+//	    out.close();
+		}
+		catch (Exception e) {
+			return false;
+		}
+	    
+	    return true;
 	}
 }
