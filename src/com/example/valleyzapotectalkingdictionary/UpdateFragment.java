@@ -4,9 +4,13 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
+import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -118,20 +122,58 @@ public class UpdateFragment extends Fragment {
 		
 		@Override
 		public void onClick(View arg0) {
-			
-			SharedPreferences preferences = getActivity().getSharedPreferences(Preferences.APP_SETTINGS, Activity.MODE_PRIVATE);
-			Editor editor = preferences.edit();
-			Calendar cal = Calendar.getInstance();
-        	String date = DictionaryDatabase.dateFormat.format(cal.getTime());
-        	editor.putString(Preferences.LAST_DB_UPDATE, date);
-        	editor.commit();
-        	
-        	lastUpdateView.setText(R.string.last_updated);
-        	lastUpdateView.append(" " + preferences.getString(Preferences.LAST_DB_UPDATE, ""));
-			
-			Toast.makeText(getActivity(), R.string.upToDate, Toast.LENGTH_SHORT).show();	
+			new UpdateDialogFragment().show(getFragmentManager(), "Dialog");
 		}
 		
+	}
+	
+	
+	public class UpdateDialogFragment extends DialogFragment {
+	    @Override
+	    public Dialog onCreateDialog(Bundle savedInstanceState) {
+
+	    	// you can put whatever you want in the layout, including checkboxes, etc.
+	    	View dialogView = getActivity().getLayoutInflater().inflate(R.layout.fragment_update_dialog, null);
+	    	
+	        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+	        builder.setTitle("Title");
+	        builder.setView(dialogView);
+	        
+	        builder.setPositiveButton("Update", new DialogInterface.OnClickListener() {
+	                   public void onClick(DialogInterface dialog, int id) {
+							// proceed with updates
+		                	SharedPreferences preferences = getActivity().getSharedPreferences(Preferences.APP_SETTINGS, Activity.MODE_PRIVATE);
+		           			Editor editor = preferences.edit();
+		           			Calendar cal = Calendar.getInstance();
+		                   	String date = DictionaryDatabase.dateFormat.format(cal.getTime());
+		                   	editor.putString(Preferences.LAST_DB_UPDATE, date);
+		                   	editor.commit();
+		                   	
+		                   	lastUpdateView.setText(R.string.last_updated);
+		                   	lastUpdateView.append(" " + preferences.getString(Preferences.LAST_DB_UPDATE, ""));
+		                   	
+		                   	// UPDATE DB
+		           			
+		           			Toast.makeText(getActivity(), R.string.upToDate, Toast.LENGTH_SHORT).show();
+	                   }
+	               });
+	        
+	        // you can also set the "neutral" button if you want
+//	        builder.setNeutralButton("Other option", new DialogInterface.OnClickListener() {
+//	                public void onClick(DialogInterface dialog, int id) {
+//									// do something
+//                }
+//            });
+	        
+	        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+	                   public void onClick(DialogInterface dialog, int id) {
+	                	   // cancel update
+	                   }
+	               });
+	        
+
+	        return builder.create();
+	    }
 	}
 	
 }
