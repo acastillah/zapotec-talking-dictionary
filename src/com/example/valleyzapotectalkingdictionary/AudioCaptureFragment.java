@@ -59,8 +59,8 @@ public class AudioCaptureFragment extends Fragment implements Parcelable {
     private static final String FILE_NAME_EDIT_TEXT_ENABLED = "FILE_NAME_EDIT_TEXT_ENABLED";
     private static final String SAVE_BUTTON_ENABLED = "SAVE_BUTTON_ENABLED";
     
-    private static final String mFileExtension = ".3gp";
-    private static final String mFileExtension_desired = ".wav";
+    private static final String mFileExtension = ".mp3";
+    private static final String mFileExtension_desired = ".mp3";
     private static final String dictionaryDirectoryName = "Zapotec Talking Dictionary";
     private static final String audioDirectoryName = "audio";
     private static String audioDirectoryFullPath = null;
@@ -274,7 +274,7 @@ public class AudioCaptureFragment extends Fragment implements Parcelable {
                     0));
         
         TextView audioExtension = new TextView(activity);
-        audioExtension.setText(".3gp");
+        audioExtension.setText(mFileExtension);
         fileNameLayout.addView(audioExtension);
         
         fragmentLayout.addView(fileNameLayout,
@@ -327,9 +327,11 @@ public class AudioCaptureFragment extends Fragment implements Parcelable {
     private void startRecording() {
         mRecorder = new MediaRecorder();
         mRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
-        mRecorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
         mRecorder.setOutputFile(mFileName);
-        mRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
+        mRecorder.setOutputFormat(MediaRecorder.OutputFormat.MPEG_4);
+        mRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_WB);
+        mRecorder.setAudioEncodingBitRate(8000);
+        mRecorder.setAudioSamplingRate(44100);
         mRecorder.setMaxDuration(60*1000); // 60 sec
         mRecorder.setMaxFileSize(100*1000);	// 100 kb
 
