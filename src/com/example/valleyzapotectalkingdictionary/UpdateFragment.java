@@ -59,9 +59,12 @@ public class UpdateFragment extends Fragment {
         
         if (!preferences.contains(Preferences.LAST_DB_UPDATE)) {
         	Calendar cal = Calendar.getInstance();
-        	cal.set(2015, 1, 5, 22, 34); // NOTE: months start at 0
-        	SimpleDateFormat sdf = new SimpleDateFormat("MMM dd, yyyy kk:mm");
-        	String date = sdf.format(cal.getTime());
+        	cal.set(DictionaryDatabase.DB_YEAR, 
+        			DictionaryDatabase.DB_MONTH, 
+        			DictionaryDatabase.DB_DAY, 
+        			DictionaryDatabase.DB_HOUR, 
+        			DictionaryDatabase.DB_MINUTE);
+        	String date = DictionaryDatabase.dateFormat.format(cal.getTime());
         	editor.putString(Preferences.LAST_DB_UPDATE, date);
         }
         
@@ -115,7 +118,17 @@ public class UpdateFragment extends Fragment {
 		
 		@Override
 		public void onClick(View arg0) {
-
+			
+			SharedPreferences preferences = getActivity().getSharedPreferences(Preferences.APP_SETTINGS, Activity.MODE_PRIVATE);
+			Editor editor = preferences.edit();
+			Calendar cal = Calendar.getInstance();
+        	String date = DictionaryDatabase.dateFormat.format(cal.getTime());
+        	editor.putString(Preferences.LAST_DB_UPDATE, date);
+        	editor.commit();
+        	
+        	lastUpdateView.setText(R.string.last_updated);
+        	lastUpdateView.append(" " + preferences.getString(Preferences.LAST_DB_UPDATE, ""));
+			
 			Toast.makeText(getActivity(), R.string.upToDate, Toast.LENGTH_SHORT).show();	
 		}
 		

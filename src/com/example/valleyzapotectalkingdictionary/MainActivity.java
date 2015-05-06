@@ -111,6 +111,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+		
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);	 
 		/** Set the language **/

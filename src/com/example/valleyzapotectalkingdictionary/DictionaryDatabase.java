@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.text.SimpleDateFormat;
 import java.util.Iterator;
 import java.util.List;
 
@@ -44,6 +45,14 @@ public class DictionaryDatabase {
     static final String KEY_ESGLOSS = "es_gloss"; //WORD IN SPANISH
     
     private static long db_size = 0;
+    
+    // date of DB that comes with the app, given same date/time as email from Jeremy
+    public static final int DB_YEAR = 2015;
+    public static final int DB_MONTH = 1; // NOTE: months start at 0, not 1, so 1=February
+    public static final int DB_DAY = 5;
+    public static final int DB_HOUR = 22; // military time
+    public static final int DB_MINUTE = 34;
+    public static final SimpleDateFormat dateFormat = new SimpleDateFormat("MMM dd, yyyy kk:mm");
     
     public DictionaryDatabase(Context context) {
         mDatabaseOpenHelper = new DictionaryOpenHelper(context);        

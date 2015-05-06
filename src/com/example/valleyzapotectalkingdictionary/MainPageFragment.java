@@ -81,9 +81,11 @@ public class MainPageFragment extends Fragment{
 	      playButton.setLayoutParams(layoutParams);
 	      playButton.setVisibility(View.GONE);
 		
-	      
+	      Log.i("CRASH", "here");
 	      
 	      updateWord();
+	      
+	      Log.i("CRASH", "here2");
 	      
 	      SharedPreferences preferences = getActivity().getSharedPreferences(Preferences.APP_SETTINGS, Activity.MODE_PRIVATE);
 	      if (preferences.getLong(Preferences.DB_SIZE, 0) != db_size && db_size > 0) {
@@ -97,6 +99,7 @@ public class MainPageFragment extends Fragment{
 	      
 	      dbspecs.setText(db_size + " " + dbspecs.getText().toString());
 	      
+	      Log.i("CRASH", "here3");
         return v;
 
 	}
@@ -108,19 +111,23 @@ public class MainPageFragment extends Fragment{
 		int year = cl.get(Calendar.YEAR);
 		String date = Integer.toString(day) + Integer.toString(month) + Integer.toString(year);
 		Random rn = new Random(Integer.parseInt(date));
-		
+		Log.i("CRASH", "here");
 		DictionaryDatabase db = new DictionaryDatabase(getActivity());
 		db_size = db.getSize();
-		
+		Log.i("CRASH", "hereA");
 		SharedPreferences preferences = getActivity().getSharedPreferences(Preferences.APP_SETTINGS, Activity.MODE_PRIVATE);
 		if (db_size == 0 && preferences.getLong(Preferences.DB_SIZE, 0) > 0)
 			db_size = preferences.getLong(Preferences.DB_SIZE, 0);
-			
+		Log.i("CRASH", "hereB");
 
+		if (db_size == 0)
+			db_size = 519;
+		
 		int number = rn.nextInt((int)db_size); // this is the problem, ID no.s not serialized
 		Log.i("WORD", "num=" + number);
-		
+		Log.i("CRASH", "hereC");
 		Cursor c = db.getIDmatch(number);
+		Log.i("CRASH", "hereD");
 		if (c != null) {
 			c.moveToFirst();
 			w = new Word(Integer.parseInt(c.getString(0)), c.getString(1),
