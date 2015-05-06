@@ -330,6 +330,8 @@ public class AudioCaptureFragment extends Fragment implements Parcelable {
         mRecorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
         mRecorder.setOutputFile(mFileName);
         mRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
+        mRecorder.setMaxDuration(60*1000); // 60 sec
+        mRecorder.setMaxFileSize(100*1000);	// 100 kb
 
         try {
             mRecorder.prepare();
