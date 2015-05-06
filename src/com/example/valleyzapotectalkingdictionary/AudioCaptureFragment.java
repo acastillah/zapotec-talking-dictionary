@@ -19,6 +19,7 @@ import android.text.Editable;
 import android.text.InputType;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,6 +42,8 @@ public class AudioCaptureFragment extends Fragment implements Parcelable {
 
     private PlayButton   mPlayButton = null;
     private MediaPlayer   mPlayer = null;
+    
+    private TextView recordingTextView = null;
     
     private FileNameEditText mFileNameEditText = null;
     private SaveButton	mSaveButton = null;
@@ -206,6 +209,7 @@ public class AudioCaptureFragment extends Fragment implements Parcelable {
 		FragmentActivity activity = getActivity();
         
         LinearLayout fragmentLayout = new LinearLayout(activity);
+        fragmentLayout.setGravity(Gravity.CENTER_HORIZONTAL);
         fragmentLayout.setOrientation(LinearLayout.VERTICAL);
         
         TextView audioFragmentDescription = new TextView(activity);
@@ -237,17 +241,28 @@ public class AudioCaptureFragment extends Fragment implements Parcelable {
                         ViewGroup.LayoutParams.WRAP_CONTENT,
                         0));
         
-        LinearLayout fileNameLayout = new LinearLayout(activity);
-        fileNameLayout.setOrientation(LinearLayout.HORIZONTAL);
-        
-        TextView nameAudioTextView = new TextView(activity);
-        nameAudioTextView.setText(R.string.audioName);
-        nameAudioTextView.setPadding(20, 0, 0, 0);
-        fileNameLayout.addView(nameAudioTextView,
+        recordingTextView = new TextView(activity);
+        recordingTextView.setText(R.string.recording);
+        recordingTextView.setTextColor(getResources().getColor(R.color.red));
+        recordingTextView.setTextSize(20);
+        recordingTextView.setVisibility(View.INVISIBLE);
+        fragmentLayout.addView(recordingTextView,
                 new LinearLayout.LayoutParams(
                         ViewGroup.LayoutParams.WRAP_CONTENT,
                         ViewGroup.LayoutParams.WRAP_CONTENT,
                         0));
+        
+        TextView nameAudioTextView = new TextView(activity);
+        nameAudioTextView.setText(R.string.audioName);
+        nameAudioTextView.setPadding(20, 40, 0, 0);
+        fragmentLayout.addView(nameAudioTextView,
+                new LinearLayout.LayoutParams(
+                        ViewGroup.LayoutParams.WRAP_CONTENT,
+                        ViewGroup.LayoutParams.WRAP_CONTENT,
+                        0));
+        
+        LinearLayout fileNameLayout = new LinearLayout(activity);
+        fileNameLayout.setOrientation(LinearLayout.HORIZONTAL);
         
         mFileNameEditText = new FileNameEditText(activity);
         mFileNameEditText.setEnabled(fileNameEditTextEnabled);
@@ -286,10 +301,7 @@ public class AudioCaptureFragment extends Fragment implements Parcelable {
         
         
         return fragmentLayout;
-        
-        
-        
-        
+         
 	}
 	
 	
@@ -299,11 +311,13 @@ public class AudioCaptureFragment extends Fragment implements Parcelable {
             mRecorded = false;
             mSaveButton.setEnabled(false);
             mPlayButton.setEnabled(false);
+            recordingTextView.setVisibility(View.VISIBLE);
         } 
         else {
             stopRecording();
             mRecorded = true;
             mPlayButton.setEnabled(true);
+            recordingTextView.setVisibility(View.INVISIBLE);
             
             if (!mFileNameEditText.getText().toString().equals(""))
             	mSaveButton.setEnabled(true); 

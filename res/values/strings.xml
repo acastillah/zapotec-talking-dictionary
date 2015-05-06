@@ -76,6 +76,7 @@ All rights reserved. Do not distribute or reproduce without permission.</string>
     <string name="settingsSaved">Settings Saved</string>
     <string name="db_specs"> words are in the database</string>
     <string name="last_updated">Last updated: </string>
+    <string name="recording">RECORDING</string>
     
     <string-array name="languages_array">
         <item>ENG</item>
