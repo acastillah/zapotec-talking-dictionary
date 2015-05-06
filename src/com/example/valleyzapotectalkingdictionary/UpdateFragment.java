@@ -1,7 +1,9 @@
 package com.example.valleyzapotectalkingdictionary;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -74,7 +76,7 @@ public class UpdateFragment extends Fragment {
         
         editor.commit();
         
-        preferences = getActivity().getSharedPreferences(Preferences.APP_SETTINGS, Activity.MODE_PRIVATE);
+//        preferences = getActivity().getSharedPreferences(Preferences.APP_SETTINGS, Activity.MODE_PRIVATE);
         
         Log.i("UPDATE", "Photo pref=" + preferences.getBoolean(Preferences.DOWNLOAD_PHOTOS, false));
         Log.i("UPDATE", "Audio pref=" + preferences.getBoolean(Preferences.DOWNLOAD_AUDIO, false));
@@ -89,6 +91,28 @@ public class UpdateFragment extends Fragment {
 		
 		dbspecs.setText(preferences.getLong(Preferences.DB_SIZE, 0) + " " + dbspecs.getText().toString());
 		lastUpdateView.append(" " + preferences.getString(Preferences.LAST_DB_UPDATE, ""));
+
+		
+		// users may only update once per day
+		if (!preferences.getString(Preferences.LAST_DB_UPDATE, "").equals("")) {
+		Calendar lastUpdate = Calendar.getInstance();
+			try {
+				lastUpdate.setTime(DictionaryDatabase.dateFormat.parse(preferences.getString(Preferences.LAST_DB_UPDATE, "")));
+				Calendar today = Calendar.getInstance();
+				if (today.get(Calendar.YEAR) > lastUpdate.get(Calendar.YEAR)
+						|| today.get(Calendar.MONTH) > lastUpdate.get(Calendar.MONTH)
+						|| today.get(Calendar.DATE) > lastUpdate.get(Calendar.DATE)) {
+					updateButton.setEnabled(true);
+				}
+				else {
+					updateButton.setEnabled(false);
+				}
+			} catch (ParseException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
 		
 		return view;
     }
@@ -142,6 +166,8 @@ public class UpdateFragment extends Fragment {
 	        builder.setPositiveButton("Update", new DialogInterface.OnClickListener() {
 	                   public void onClick(DialogInterface dialog, int id) {
 							// proceed with updates
+	                	   updateButton.setEnabled(false);
+	                	   
 		                	SharedPreferences preferences = getActivity().getSharedPreferences(Preferences.APP_SETTINGS, Activity.MODE_PRIVATE);
 		           			Editor editor = preferences.edit();
 		           			Calendar cal = Calendar.getInstance();
