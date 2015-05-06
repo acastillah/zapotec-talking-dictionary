@@ -476,9 +476,9 @@ public class ImageCaptureFragment extends Fragment {
 //				newImage.createNewFile();
 //	            File newImage = null;
 				try {
-//					newImage.createNewFile(); ////
+					newImage.createNewFile(); ////
 //					newImage.createTempFile("test123", ".jpg", new File(photoDirectoryFullPath));
-					newImage = File.createTempFile("test123", ".jpg", new File(photoDirectoryFullPath));
+//					newImage = File.createTempFile("test123", ".jpg", new File(photoDirectoryFullPath));
 //					System.getProperty(System.)
 				
 				Log.i("PHOTOS", "Old file path="+mFileName);
