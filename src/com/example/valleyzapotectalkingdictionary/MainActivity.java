@@ -394,6 +394,10 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 					mTitle = getString(R.string.title_settings);
 				}
 				else if (position+1 == 7) {
+					fragment = new ReportFragment();
+					mTitle = getString(R.string.report_a_problem);
+				}
+				else if (position+1 == 8) {
 					fragment = new PasswordFragment();
 					mTitle = getString(R.string.password_section);
 				}
@@ -403,6 +407,10 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 			else {
 				Log.i("NAV", "User is not logged in");
 				if (position+1 == 4) {
+					fragment = new ReportFragment();
+					mTitle = getString(R.string.report_a_problem);
+				}
+				else if (position+1 == 5) {
 					fragment = new PasswordFragment();
 					mTitle = getString(R.string.password_section);
 				}
