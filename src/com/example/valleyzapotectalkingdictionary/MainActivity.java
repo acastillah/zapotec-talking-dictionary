@@ -36,6 +36,7 @@ import android.widget.Spinner;
 public class MainActivity extends ActionBarActivity implements NavigationDrawerFragment.NavigationDrawerCallbacks  {
 
 	public boolean recreate = false;
+	public boolean clearStack = false;
 	
 	private NavigationDrawerFragment mNavigationDrawerFragment;
 
@@ -163,6 +164,10 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		searchView.setFocusable(false);
 //		hideKeyboard(getWindow().getDecorView().getRootView());
 		Log.i("ROOT", "null?=" + Boolean.toString(getWindow().getDecorView().getRootView() == null));
+		
+		
+		
+//		getFragmentManager().popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
 		
 	}
 	
@@ -421,7 +426,14 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 			searchView.setQuery("", false);
 			searchView.clearFocus();
 		}
-		fragmentManager.beginTransaction().addToBackStack(null).replace(R.id.container, fragment).commit();				
+		
+		if (preferences.getBoolean(Preferences.LANGUAGE_CHANGE, false)) {
+//			fragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
+			Editor editor = preferences.edit();
+			editor.putBoolean(Preferences.LANGUAGE_CHANGE, false);
+			editor.commit();
+		}
+		fragmentManager.beginTransaction().replace(R.id.container, fragment).addToBackStack(null).commit();		
 	}
 	
 	public void hideKeyboard(View view) {

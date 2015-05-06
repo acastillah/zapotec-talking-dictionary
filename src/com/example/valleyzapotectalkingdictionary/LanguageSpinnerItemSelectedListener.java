@@ -1,10 +1,12 @@
 package com.example.valleyzapotectalkingdictionary;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.content.res.Configuration;
 import android.graphics.Color;
+import android.support.v4.app.FragmentManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -59,6 +61,8 @@ public class LanguageSpinnerItemSelectedListener implements
 		// but the language is already set correctly at that point)
 		Activity activity = (Activity) view.getContext();
 		if (((MainActivity)activity).recreate) {
+			prefEditor.putBoolean(Preferences.LANGUAGE_CHANGE, true);
+			prefEditor.commit();
 			activity.recreate();
 		}
 		else {
