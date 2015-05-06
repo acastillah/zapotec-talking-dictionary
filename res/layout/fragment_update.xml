@@ -12,8 +12,9 @@
         android:id="@+id/updateText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
+        android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
+        android:layout_marginBottom="20dp"
         android:text="@string/updateInfo" />
 <!-- 
     <CheckBox
@@ -43,20 +44,29 @@
         android:layout_centerHorizontal="true"
         android:text="@string/current_language" /> -->
 
+	<TextView
+        android:id="@+id/db_specs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/updateText"
+        android:text="@string/db_specs" />
+	
+	<TextView
+        android:id="@+id/last_updated"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/db_specs"
+        android:text="@string/last_updated" />
+
     <Button
         android:id="@+id/updateButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
+        android:layout_below="@+id/last_updated"
+        android:layout_marginTop="20dp"
         android:text="@string/update" />
-    
-    <TextView
-        android:id="@+id/db_specs"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/db_specs"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentBottom="true" />
 
 </RelativeLayout>

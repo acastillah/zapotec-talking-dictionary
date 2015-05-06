@@ -7,6 +7,7 @@ public class Preferences {
 	public static final String TERMS_ACCEPTED = "TERMS_ACCEPTED";
 	public static final String DB_LOADED = "DB_LOADED";
 	public static final String DB_SIZE = "DB_SIZE";
+	public static final String LAST_DB_UPDATE = "LAST_UPDATE";
 	
 	public static final String DOWNLOAD_AUDIO = "DOWNLOAD_AUDIO";
 	public static final String DOWNLOAD_PHOTOS = "DOWNLOAD_PHOTOS";

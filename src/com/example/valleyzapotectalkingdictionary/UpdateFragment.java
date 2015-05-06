@@ -1,5 +1,8 @@
 package com.example.valleyzapotectalkingdictionary;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 import android.app.Activity;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
@@ -25,6 +28,7 @@ public class UpdateFragment extends Fragment {
 //	private CheckBox downloadAudioCheckbox = null;
 	private Button updateButton = null;
 	private TextView dbspecs = null;
+	private TextView lastUpdateView = null;
 	
 	@Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -36,6 +40,7 @@ public class UpdateFragment extends Fragment {
 //        downloadAudioCheckbox = (CheckBox) view.findViewById(R.id.downloadAudioCheckbox);
         updateButton = (Button) view.findViewById(R.id.updateButton);
         dbspecs = (TextView) view.findViewById(R.id.db_specs);
+        lastUpdateView = (TextView) view.findViewById(R.id.last_updated);
         
         
         
@@ -50,6 +55,14 @@ public class UpdateFragment extends Fragment {
         if (!preferences.contains(Preferences.DOWNLOAD_AUDIO)) {
         	editor.putBoolean(Preferences.DOWNLOAD_AUDIO, true);
         	Log.i("UPDATE", "Added audio pref true");
+        }
+        
+        if (!preferences.contains(Preferences.LAST_DB_UPDATE)) {
+        	Calendar cal = Calendar.getInstance();
+        	cal.set(2015, 1, 5, 22, 34); // NOTE: months start at 0
+        	SimpleDateFormat sdf = new SimpleDateFormat("MMM dd, yyyy kk:mm");
+        	String date = sdf.format(cal.getTime());
+        	editor.putString(Preferences.LAST_DB_UPDATE, date);
         }
         
         editor.commit();
@@ -68,7 +81,7 @@ public class UpdateFragment extends Fragment {
 		updateButton.setOnClickListener(new UpdateButtonListener());
 		
 		dbspecs.setText(preferences.getLong(Preferences.DB_SIZE, 0) + " " + dbspecs.getText().toString());
-		
+		lastUpdateView.append(" " + preferences.getString(Preferences.LAST_DB_UPDATE, ""));
 		
 		return view;
     }
