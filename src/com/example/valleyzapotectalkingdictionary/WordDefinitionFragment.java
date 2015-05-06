@@ -20,6 +20,7 @@ import android.media.MediaPlayer.OnCompletionListener;
 import android.media.MediaPlayer.OnPreparedListener;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.SearchView;
 import android.text.Html;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -125,7 +126,12 @@ public class WordDefinitionFragment extends Fragment{
         /***********************************************************************************************************/
         
 
-        
+	        SearchView searchView = (SearchView) v.getRootView().findViewById(R.id.searchView1);
+	        if (searchView != null) {
+	        	Log.i("SEARCHVIEW", "not null");
+//				searchView.setQuery("", false);
+				searchView.clearFocus();
+			}
         
         return v;
     }

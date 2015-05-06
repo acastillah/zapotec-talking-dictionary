@@ -122,6 +122,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 	    searchView = (SearchView) findViewById(R.id.searchBAR);
 	    searchView.setIconifiedByDefault(false);
 	    searchView.setInputType(0);
+//	    searchView.clearFocus();
 	    searchView.setOnFocusChangeListener(new View.OnFocusChangeListener() {
 			
 			@Override
@@ -155,6 +156,14 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 //		finish();
 //		startActivity(getIntent());
 //	}
+		
+		
+		if (this.getCurrentFocus() != null)
+			this.getCurrentFocus().clearFocus();
+		
+		searchView.setFocusable(false);
+//		hideKeyboard(getWindow().getDecorView().getRootView());
+		Log.i("ROOT", "null?=" + Boolean.toString(getWindow().getDecorView().getRootView() == null));
 		
 	}
 	
@@ -254,6 +263,12 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 	 
 	 
 	public void displayWord(View view) {
+		if (searchView != null) {
+        	Log.i("SEARCHVIEW", "not null");
+//			searchView.setQuery("", false);
+			searchView.clearFocus();
+		}
+		
 		startActivity(new Intent(this, WordDefinitionFragment.class));
 	}
 	
@@ -299,6 +314,12 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
         bundle.putString("DOM", domain_search);
         ((Fragment) fragment).setArguments(bundle);
 		transaction.addToBackStack(null).replace(R.id.container, fragment).commit();	
+		
+        if (searchView != null) {
+        	Log.i("SEARCHVIEW", "not null");
+//			searchView.setQuery("", false);
+			searchView.clearFocus();
+		}
     }
     
     private void showResults(String query) {
@@ -309,7 +330,13 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
         bundle.putInt("LANG", Language_search);
         bundle.putString("DOM", domain_search);
         ((Fragment) fragment).setArguments(bundle);
-		transaction.addToBackStack(null).replace(R.id.container, fragment).commit();				
+		transaction.addToBackStack(null).replace(R.id.container, fragment).commit();	
+		
+        if (searchView != null) {
+        	Log.i("SEARCHVIEW", "not null");
+//			searchView.setQuery("", false);
+			searchView.clearFocus();
+		}
     }
 
 	@Override
@@ -381,6 +408,11 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 					mTitle = getString(R.string.password_section);
 				}
 			}	
+		}
+		
+		if (searchView != null) {
+			searchView.setQuery("", false);
+			searchView.clearFocus();
 		}
 		fragmentManager.beginTransaction().addToBackStack(null).replace(R.id.container, fragment).commit();				
 	}

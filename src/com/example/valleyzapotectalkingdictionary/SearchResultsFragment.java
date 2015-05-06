@@ -4,6 +4,8 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.widget.SearchView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +21,7 @@ public class SearchResultsFragment extends Fragment {
 	private int lang;
 	private String domain;
 	private TextView mTextView;
+	private View v = null;
 	
 	@Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -28,10 +31,12 @@ public class SearchResultsFragment extends Fragment {
         lang = bundle.getInt("LANG");
         domain = bundle.getString("DOM");
 		// Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.search, container, false);
+        v = inflater.inflate(R.layout.search, container, false);
         mTextView = (TextView) v.findViewById(R.id.text);
         mListView = (ListView) v.findViewById(R.id.list);        
         showWords();
+        
+        
         return v;
         
     }
@@ -97,7 +102,16 @@ public class SearchResultsFragment extends Fragment {
             	    bundle.putStringArray("WORD", w);
             	    ((Fragment) fragment).setArguments(bundle);
             		transaction.addToBackStack(null);            
-            		transaction.replace(R.id.container, fragment).commit();		
+            		transaction.replace(R.id.container, fragment).commit();	
+            		
+            		if (v != null) {
+	            		SearchView searchView = (SearchView) v.findViewById(R.id.searchView1);
+	            		if (searchView != null) {
+	                    	Log.i("SEARCHVIEW", "not null");
+	//            			searchView.setQuery("", false);
+	            			searchView.clearFocus();
+	            		}
+            		}
                 }
             });    	
           }
