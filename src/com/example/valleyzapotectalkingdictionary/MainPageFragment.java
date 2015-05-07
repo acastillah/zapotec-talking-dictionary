@@ -5,9 +5,6 @@ import java.util.Calendar;
 import java.util.Random;
 
 import org.apache.commons.lang3.StringEscapeUtils;
-
-import com.example.valleyzapotectalkingdictionary.WordDefinitionFragment.PlayButton;
-
 import android.content.Context;
 import android.content.res.AssetFileDescriptor;
 import android.content.res.AssetManager;
@@ -23,7 +20,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.View.OnClickListener;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -40,19 +36,18 @@ public class MainPageFragment extends Fragment{
 	
 	Word w;
 
-	@SuppressWarnings("unused")
 	private String audioFileName = null;
-	@SuppressWarnings("unused")
 	private AssetFileDescriptor audioFileFD = null;
-	@SuppressWarnings("unused")
 	private PlayButton playButton = null;
+	DictionaryDatabase db;
+
 
 	@Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 		
         View v = inflater.inflate(R.layout.fragment_main_page, container, false);
-
+        
         word = (TextView) v.findViewById(R.id.Word_Zap);
         pos = (TextView) v.findViewById(R.id.PartOfSpeech);
         definition_Eng = (TextView) v.findViewById(R.id.Word_Eng);
@@ -79,13 +74,13 @@ public class MainPageFragment extends Fragment{
 	}
 	
 	public void updateWord(){
+		db = new DictionaryDatabase(getActivity());
 		Calendar cl = Calendar.getInstance();
 		int day = cl.get(Calendar.DATE);
 		int month = cl.get(Calendar.MONTH);	
 		String date = Integer.toString(day) + Integer.toString(month);
 		Random rn = new Random(Integer.parseInt(date));
 	    int number = rn.nextInt((640 - 5) + 1) + 5;	    
-		DictionaryDatabase db = new DictionaryDatabase(getActivity());
 		Cursor c = db.getIDmatch(number);
 		if (c != null) {
    		 	c.moveToFirst();

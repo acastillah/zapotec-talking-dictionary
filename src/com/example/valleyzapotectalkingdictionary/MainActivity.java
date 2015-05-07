@@ -10,7 +10,6 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v4.widget.DrawerLayout;
-import android.text.Html;
 import android.text.InputFilter;
 import android.text.Spanned;
 import android.app.Activity;
@@ -225,15 +224,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 	}
 	
 	 public void addListenerOnSpinnerItemSelection() {
-//			searchSpinner = (Spinner) findViewById(R.id.search_spinner);
 			domainSpinner = (Spinner) findViewById(R.id.domain_spinner);
-//			searchSpinner.setOnItemSelectedListener(new OnItemSelectedListener() {
-//		        public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
-//		            Language_search = pos;
-//		        }
-//		        public void onNothingSelected(AdapterView<?> arg0) {
-//		        }
-//		    }); 
 		   domainSpinner.setOnItemSelectedListener(new OnItemSelectedListener() {
 		        public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
 		            domain_search = domainSpinner.getSelectedItem().toString();
@@ -245,8 +236,6 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		        }
 		    });    
 	  }
-	
-	 
 	 
 	public void displayWord(View view) {
 		startActivity(new Intent(this, WordDefinitionFragment.class));
@@ -270,13 +259,6 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
     }
 
     private void handleIntent(Intent intent) {
-//        if (Intent.ACTION_VIEW.equals(intent.getAction())) {
-//            // handles a click on a search suggestion; launches activity to show word
-//            Intent wordIntent = new Intent(this, WordDefinitionActivity.class);
-//            wordIntent.setData(intent.getData());
-//            startActivity(wordIntent);
-//            finish();
-//        } else if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
     	if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
     		// handles a search query
             String q = intent.getStringExtra(SearchManager.QUERY);
@@ -290,7 +272,6 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		Fragment fragment = new SearchResultsFragment();
         Bundle bundle = new Bundle();
         bundle.putString("QUERY", "");
-        bundle.putInt("LANG", Language_search);
         bundle.putString("DOM", domain_search);
         ((Fragment) fragment).setArguments(bundle);
 		transaction.addToBackStack(null).replace(R.id.container, fragment).commit();	
@@ -370,7 +351,6 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 			
 			// Options only non-logged in users see
 			else {
-				Log.i("NAV", "User is not logged in");
 				if (position+1 == 4) {
 					fragment = new PasswordFragment();
 					mTitle = getString(R.string.password_section);
