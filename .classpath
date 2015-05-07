@@ -9,5 +9,6 @@
 	<classpathentry kind="lib" path="libs/json-simple.jar"/>
 	<classpathentry kind="lib" path="libs/commons-lang3-3.3.2-javadoc.jar"/>
 	<classpathentry kind="lib" path="libs/commons-lang3-3.3.2.jar"/>
+	<classpathentry kind="lib" path="libs/dropbox-android-sdk-1.6.3.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

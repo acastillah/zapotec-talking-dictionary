@@ -276,8 +276,10 @@ public class ImageCaptureFragment extends Fragment {
         mFileNameEditText.setInputType(InputType.TYPE_TEXT_VARIATION_PERSON_NAME);
         
         
-        if (bundle == null || bundle.getBoolean(LAUNCH_CAMERA, true))
+        if (bundle != null && bundle.getBoolean(LAUNCH_CAMERA, false)) {
+        	bundle.putBoolean(LAUNCH_CAMERA, false);
         	dispatchTakePictureIntent();
+        }
         
         if (bundle != null)
         	mFileNameEditText.setText(bundle.getString(FILE_NAME, ""));
@@ -291,6 +293,9 @@ public class ImageCaptureFragment extends Fragment {
 	@Override
 	public void onActivityResult(int requestCode, int resultCode, Intent data) {
 		Log.i("PHOTO", "onActivityResult");
+		if (bundle == null)
+			bundle = new Bundle();
+		bundle.putBoolean(LAUNCH_CAMERA, false);
 	    if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == Activity.RESULT_OK) {
 	    	Log.i("PHOTO", "request and result codes OK");
 	    	image = new File(mFileName);

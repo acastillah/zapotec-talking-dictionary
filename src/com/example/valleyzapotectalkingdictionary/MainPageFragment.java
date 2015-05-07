@@ -126,6 +126,7 @@ public class MainPageFragment extends Fragment{
 			db_size = 519;
 		
 		int number = rn.nextInt((int)db_size); // this is the problem, ID no.s not serialized
+		number = 10;
 		Log.i("WORD", "num=" + number);
 		Cursor c = db.getIDmatch(number);
 		if (c != null) {

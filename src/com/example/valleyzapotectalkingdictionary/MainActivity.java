@@ -49,6 +49,8 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 	
 	SearchView searchView = null;
 	
+	private boolean configChange = false;
+	
 	public static final InputFilter[] inputFilters = new InputFilter[] {
             new InputFilter() {
             	@Override
@@ -391,7 +393,11 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 					mTitle = getString(R.string.audio_section);
 				}
 				else if (position+1 == 5) {
-					fragment = new ImageCaptureFragment();
+					Bundle b = new Bundle();
+					if (configChange == false)
+						b.putBoolean(ImageCaptureFragment.LAUNCH_CAMERA, true);
+					fragment = ImageCaptureFragment.newInstance(b);
+//					fragment = new ImageCaptureFragment();
 					mTitle = getString(R.string.photo_section);
 				}
 				else if (position+1 == 6) {
@@ -433,6 +439,8 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 			editor.putBoolean(Preferences.LANGUAGE_CHANGE, false);
 			editor.commit();
 		}
+		
+		configChange = false;
 		fragmentManager.beginTransaction().replace(R.id.container, fragment).addToBackStack(null).commit();		
 	}
 	
@@ -445,6 +453,13 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
     
 		InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
 		imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+	}
+	
+	@Override
+	public void onConfigurationChanged (Configuration newConfig) {
+		super.onConfigurationChanged(newConfig);
+		configChange = true;
+		Log.i("CONFIG", "config changed");
 	}
 }
 
