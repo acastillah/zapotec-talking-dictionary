@@ -9,8 +9,35 @@
     tools:context="com.example.valleyzapotectalkingdictionary.UploadActivity" >
 
     <TextView
+        android:id="@+id/uploading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="UPLOADING" />
+    
+    <TextView
+        android:id="@+id/uploading1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/uploading"
+        android:text="." />
+    
+    <TextView
+        android:id="@+id/uploading2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/uploading1"
+        android:text="." />
+    
+    <TextView
+        android:id="@+id/uploading3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/uploading2"
+        android:text="." />
 
 </RelativeLayout>
