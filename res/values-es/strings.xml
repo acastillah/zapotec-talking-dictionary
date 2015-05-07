@@ -25,8 +25,11 @@
     <string name="audio_section">Grabar audio</string>
     <string name="photo_section">Tomar foto</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">All content copyright © the recorded Zapotec communities (2013-2015).
-Dictionary produced by Brook Danielle Lillehaugen, Alex Mannix, 
+     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="appExplanation">Esta aplicación fue creada con la intención de ser una versión del Diccionario Hablante de Zapoteca de Teotitlán del Valle que se puede ser encontrado en el siguiente enlace: </string>
+    <string name="website"><u>http://talkingdictionary.swarthmore.edu/teotitlan/</u></string>
+    <string name="about">All content copyright © the recorded Zapotec communities (2013-2015).
+Dictionary produced by Brook Danielle Lillehaugen, 
 Janet Chavez Santiago, Ambrocio Gutiérrez, Bibiana Gutiérrez, Nick Kalivoda, 
 Alex Mannix, Teresa Martínez Chavez and Troi Carleton, with Helen Felker and Rachel Elizabeth Weissler, 
 with support from K. David Harrison and Jeremy Fahringer. (2013-2014).
@@ -41,7 +44,7 @@ All rights reserved. Do not distribute or reproduce without permission.</string>
 	<string name="passwordIncorrect">Contraseña incorrecta</string>
 	<string name="submit">Mandar</string>
 	<string name="search_hint">Buscar palabra</string>
-    <string name="updateInfo">El idioma esta creciendo constantemente. Cada que actualices la base de datos puedes decidir si deseas incluir audio y fotos o no para preservar espacios.</string>
+    <string name="updateInfo">El idioma esta creciendo constantemente. Cada que actualices la base de datos puedes decidir si deseas incluir audio y fotos o no para preservar espacio.</string>
     <string name="downloadAudio">Descargar audio</string>
     <string name="downloadPictures">Descargar imágenes</string>
     <string name="update">Actualizar</string>

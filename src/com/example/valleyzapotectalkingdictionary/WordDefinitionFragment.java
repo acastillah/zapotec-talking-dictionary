@@ -18,6 +18,7 @@ import android.media.MediaPlayer.OnCompletionListener;
 import android.media.MediaPlayer.OnPreparedListener;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.SearchView;
 import android.text.Html;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -77,7 +78,7 @@ public class WordDefinitionFragment extends Fragment{
         
         RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams)playButton.getLayoutParams();
         layoutParams.addRule(RelativeLayout.CENTER_IN_PARENT, RelativeLayout.TRUE);
-        layoutParams.setMargins(10, 10, 10, 10);
+//        layoutParams.setMargins(10, 10, 10, 10);
         playButton.setLayoutParams(layoutParams);
         
         
@@ -124,7 +125,12 @@ public class WordDefinitionFragment extends Fragment{
         /***********************************************************************************************************/
         
 
-        
+	        SearchView searchView = (SearchView) v.getRootView().findViewById(R.id.searchView1);
+	        if (searchView != null) {
+	        	Log.i("SEARCHVIEW", "not null");
+//				searchView.setQuery("", false);
+				searchView.clearFocus();
+			}
         
         return v;
     }

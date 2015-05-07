@@ -84,14 +84,17 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		if (lang.equals(Preferences.SPANISH)) {
 			locale = Preferences.SPANISH_LOC;
 			selection = 1;
+			Language_search = LanguageInterface.LANGUAGE_SPANISH;
 		}
 		else if (lang.equals(Preferences.ZAPOTEC)) {
 			locale = Preferences.ZAPOTEC_LOC;
 			selection = 2;
+			Language_search = LanguageInterface.LANGUAGE_ZAPOTEC;
 		}
 		else {
 			locale = Preferences.ENGLISH_LOC;
 			selection = 0;
+			Language_search = LanguageInterface.LANGUAGE_ENGLISH;
 		}
 		
 		Locale.setDefault(locale);
@@ -107,6 +110,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+		
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);	 
 		/** Set the language **/
@@ -115,15 +119,16 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		mNavigationDrawerFragment = (NavigationDrawerFragment) getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
 		mNavigationDrawerFragment.setUp(R.id.navigation_drawer, (DrawerLayout) findViewById(R.id.drawer_layout));
 	    searchView = (SearchView) findViewById(R.id.searchBAR);
+	    searchView.setIconifiedByDefault(false);
 	    searchView.setInputType(0);
+//	    searchView.clearFocus();
 	    searchView.setOnFocusChangeListener(new View.OnFocusChangeListener() {
 			
 			@Override
 			public void onFocusChange(View v, boolean hasFocus) {
+				Log.i("FOCUS", "focus change, hasFocus=" + hasFocus);
 				if (!hasFocus) {
 	                hideKeyboard(v);
-	                searchView.setEnabled(false);
-	                searchView.setEnabled(true);
 	            }
 			}
 		});
@@ -149,6 +154,14 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 //		finish();
 //		startActivity(getIntent());
 //	}
+		
+		
+		if (this.getCurrentFocus() != null)
+			this.getCurrentFocus().clearFocus();
+		
+		searchView.setFocusable(false);
+//		hideKeyboard(getWindow().getDecorView().getRootView());
+		Log.i("ROOT", "null?=" + Boolean.toString(getWindow().getDecorView().getRootView() == null));
 		
 	}
 	
@@ -238,6 +251,12 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 	  }
 	 
 	public void displayWord(View view) {
+		if (searchView != null) {
+        	Log.i("SEARCHVIEW", "not null");
+//			searchView.setQuery("", false);
+			searchView.clearFocus();
+		}
+		
 		startActivity(new Intent(this, WordDefinitionFragment.class));
 	}
 	
@@ -275,6 +294,12 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
         bundle.putString("DOM", domain_search);
         ((Fragment) fragment).setArguments(bundle);
 		transaction.addToBackStack(null).replace(R.id.container, fragment).commit();	
+		
+        if (searchView != null) {
+        	Log.i("SEARCHVIEW", "not null");
+//			searchView.setQuery("", false);
+			searchView.clearFocus();
+		}
     }
     
     private void showResults(String query) {
@@ -285,7 +310,13 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
         bundle.putInt("LANG", Language_search);
         bundle.putString("DOM", domain_search);
         ((Fragment) fragment).setArguments(bundle);
-		transaction.addToBackStack(null).replace(R.id.container, fragment).commit();				
+		transaction.addToBackStack(null).replace(R.id.container, fragment).commit();	
+		
+        if (searchView != null) {
+        	Log.i("SEARCHVIEW", "not null");
+//			searchView.setQuery("", false);
+			searchView.clearFocus();
+		}
     }
 
 	@Override
@@ -344,6 +375,10 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 					mTitle = getString(R.string.title_settings);
 				}
 				else if (position+1 == 7) {
+					fragment = new ReportFragment();
+					mTitle = getString(R.string.report_a_problem);
+				}
+				else if (position+1 == 8) {
 					fragment = new PasswordFragment();
 					mTitle = getString(R.string.password_section);
 				}
@@ -352,10 +387,19 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 			// Options only non-logged in users see
 			else {
 				if (position+1 == 4) {
+					fragment = new ReportFragment();
+					mTitle = getString(R.string.report_a_problem);
+				}
+				else if (position+1 == 5) {
 					fragment = new PasswordFragment();
 					mTitle = getString(R.string.password_section);
 				}
 			}	
+		}
+		
+		if (searchView != null) {
+			searchView.setQuery("", false);
+			searchView.clearFocus();
 		}
 		fragmentManager.beginTransaction().addToBackStack(null).replace(R.id.container, fragment).commit();				
 	}

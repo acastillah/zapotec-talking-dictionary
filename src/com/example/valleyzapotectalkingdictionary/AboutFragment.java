@@ -1,15 +1,19 @@
 package com.example.valleyzapotectalkingdictionary;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class AboutFragment extends Fragment {
 
@@ -19,6 +23,9 @@ public class AboutFragment extends Fragment {
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_about, container, false);
 
+        TextView dictionaryURLTextView = (TextView) view.findViewById(R.id.website);
+		dictionaryURLTextView.setOnClickListener(new DictionaryURLOnClickListener());
+        
         ImageView[] logos = {
     		(ImageView) view.findViewById(R.id.haverfordLogo),
             (ImageView) view.findViewById(R.id.livingtonguesLogo),
@@ -50,6 +57,18 @@ public class AboutFragment extends Fragment {
         
         
         return view;
+	}
+	
+	public class DictionaryURLOnClickListener implements OnClickListener {
+
+		@Override
+		public void onClick(View arg0) { 
+			String url = "http://talkingdictionary.swarthmore.edu/teotitlan/";
+			Intent i = new Intent(Intent.ACTION_VIEW);
+			i.setData(Uri.parse(url));
+			startActivity(i);
+		}
+		
 	}
 	
 }

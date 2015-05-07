@@ -12,6 +12,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.text.SimpleDateFormat;
 import java.util.Iterator;
 import java.util.List;
 import java.util.zip.ZipEntry;
@@ -52,6 +53,16 @@ public class DictionaryDatabase {
     private static final String KEY_IMG = "image";
     private static final String KEY_SEMANTIC = "semantic_ids";
     static final String KEY_ESGLOSS = "es_gloss"; //WORD IN SPANISH
+    
+    private static long db_size = 0;
+    
+    // date of DB that comes with the app, given same date/time as email from Jeremy
+    public static final int DB_YEAR = 2015;
+    public static final int DB_MONTH = 1; // NOTE: months start at 0, not 1, so 1=February
+    public static final int DB_DAY = 5;
+    public static final int DB_HOUR = 22; // military time
+    public static final int DB_MINUTE = 34;
+    public static final SimpleDateFormat dateFormat = new SimpleDateFormat("MMM dd, yyyy kk:mm");
     
     public DictionaryDatabase(Context context) {
         mDatabaseOpenHelper = new DictionaryOpenHelper(context);   
@@ -113,6 +124,10 @@ public class DictionaryDatabase {
     public void update(int old, int newv){
     	SQLiteDatabase db = mDatabaseOpenHelper.getReadableDatabase();
     	mDatabaseOpenHelper.onUpgrade(db, old, newv);
+    }
+    
+    public long getSize() {
+    	return db_size;
     }
     
 //    public String[] getDomainList(){
@@ -317,6 +332,9 @@ public class DictionaryDatabase {
 	        // Inserting Row
 	        long result = db.insert(TABLE_WORDS, null, values);
 	        db.close(); // Closing database connection
+	        
+	        db_size++;
+	        
 	        return result;
 	    }
 	     
