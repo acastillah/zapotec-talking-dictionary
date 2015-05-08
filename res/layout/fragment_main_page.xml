@@ -8,6 +8,12 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.valleyzapotectalkingdictionary.WordDefinitionActivity" >
 
+    <ScrollView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true">
+        
     <LinearLayout
         android:id="@+id/WordDefinitionLL2"
         android:layout_width="match_parent"
@@ -109,6 +115,8 @@
                 android:textAppearance="?android:attr/textAppearanceMedium" />
         </LinearLayout>
     </LinearLayout>
+    
+    </ScrollView>
 
     <ImageView
         android:id="@+id/logo"
@@ -135,6 +143,6 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="10dp" />
-        
+     
 
 </RelativeLayout>

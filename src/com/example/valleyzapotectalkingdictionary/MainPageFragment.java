@@ -10,8 +10,10 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import android.content.pm.ActivityInfo;
 import android.content.res.AssetFileDescriptor;
 import android.content.res.AssetManager;
+import android.content.res.Configuration;
 import android.database.Cursor;
 import android.graphics.Typeface;
 import android.media.MediaPlayer;
@@ -25,6 +27,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -38,6 +41,8 @@ public class MainPageFragment extends Fragment{
 	private TextView speaker;
 	private TextView wordday;
 	private TextView dbspecs;
+	private ImageView logo_top;
+	private ImageView logo_bottom;
 	
 	Word w;
 	long db_size = 0;
@@ -62,6 +67,8 @@ public class MainPageFragment extends Fragment{
         speaker = (TextView) v.findViewById(R.id.Speaker);
         wordday = (TextView) v.findViewById(R.id.wordDAY);
         dbspecs = (TextView) v.findViewById(R.id.db_specs);
+        logo_top = (ImageView) v.findViewById(R.id.logo);
+        logo_bottom = (ImageView) v.findViewById(R.id.ImageView01);
 		
 		// Inflate the layout for this fragment
 		
@@ -73,7 +80,6 @@ public class MainPageFragment extends Fragment{
 	      
 	      RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams)playButton.getLayoutParams();
 	      layoutParams.addRule(RelativeLayout.CENTER_IN_PARENT, RelativeLayout.TRUE);
-//	      layoutParams.setMargins(10, 10, 10, 10);
 	      playButton.setLayoutParams(layoutParams);
 	      playButton.setVisibility(View.GONE);
 		
@@ -94,8 +100,13 @@ public class MainPageFragment extends Fragment{
 	      dbspecs.setText(db_size + " " + dbspecs.getText().toString());
 	      
 	      
-//	      getActivity().getCurrentFocus().clearFocus(); // clear focus?
-//	      v.requestFocus();
+	      if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
+	    	  logo_top.setVisibility(View.GONE);
+	    	  logo_bottom.setVisibility(View.GONE);
+	    	  dbspecs.setVisibility(View.GONE);
+	      }
+	      
+
 	      
 	      if (getActivity().getCurrentFocus() != null)
 				getActivity().getCurrentFocus().clearFocus();

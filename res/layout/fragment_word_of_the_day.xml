@@ -3,7 +3,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
     
-	    <TextView
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        
+    <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    
+	<TextView
         android:id="@+id/wordOfTheDay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -33,5 +41,8 @@
         android:clickable="true"
         android:onClick="displayWordOfTheDay"
         android:text="banana noun\n (Spanish) plátano" />
+    
+    </RelativeLayout>
+    </ScrollView>
     
 </RelativeLayout>
