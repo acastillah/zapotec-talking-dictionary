@@ -95,14 +95,12 @@ public class PasswordFragment extends Fragment {
 				Toast.makeText(getActivity(), R.string.passwordAccepted, Toast.LENGTH_SHORT).show();
 				
 				// Change nav bar options
-//				Intent intent = new Intent(getActivity(), MainActivity.class);
-//				startActivity(intent);
-				//Activity activity = (Activity) view.getContext();
 				FragmentManager fragmentManager = getFragmentManager();
 				Fragment fragment = null;
 				fragment = new MainPageFragment();	
 				fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();	
 				getActivity().recreate();
+				
 
 				
 				// REMOVE OLD ACTIVITY FROM THE STACK?

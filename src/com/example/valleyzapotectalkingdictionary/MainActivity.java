@@ -441,6 +441,16 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		configChange = true;
 		Log.i("CONFIG", "config changed");
 	}
+	
+	public void setActionBarTitle(String title) {
+		this.mTitle = title;
+		this.restoreActionBar();
+	}
+	
+	public void setActionBarTitle(int resId) {
+		this.mTitle = this.getResources().getString(resId);
+		this.restoreActionBar();
+	}
 }
 
 

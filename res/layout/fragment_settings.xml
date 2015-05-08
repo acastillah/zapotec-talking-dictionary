@@ -11,6 +11,16 @@
     android:layout_marginRight="20dp"
     android:layout_marginTop="20dp" >
     
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal" >
+    
 		<TextView
 			android:id="@+id/settingsExplanation_textView"
 			android:layout_width="wrap_content"
@@ -49,6 +59,7 @@
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:layout_marginTop="20dp"
+	        android:layout_marginBottom="10dp"
 	        android:text="You can upload content saved from this app to Dropbox by clicking UPLOAD. When you upload content to Dropbox, you will be given the option to remove the uploaded content from your device." />
 	    
 	    <Button
@@ -56,5 +67,8 @@
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:text="Upload" />
+	    
+	    </LinearLayout>
+	    </ScrollView>
 
 </LinearLayout>
