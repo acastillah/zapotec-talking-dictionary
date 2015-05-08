@@ -99,14 +99,14 @@ public class UpdateFragment extends Fragment {
 			try {
 				lastUpdate.setTime(DictionaryDatabase.dateFormat.parse(preferences.getString(Preferences.LAST_DB_UPDATE, "")));
 				Calendar today = Calendar.getInstance();
-//				if (today.get(Calendar.YEAR) > lastUpdate.get(Calendar.YEAR)
-//						|| today.get(Calendar.MONTH) > lastUpdate.get(Calendar.MONTH)
-//						|| today.get(Calendar.DATE) > lastUpdate.get(Calendar.DATE)) {
+				if (today.get(Calendar.YEAR) > lastUpdate.get(Calendar.YEAR)
+						|| today.get(Calendar.MONTH) > lastUpdate.get(Calendar.MONTH)
+						|| today.get(Calendar.DATE) > lastUpdate.get(Calendar.DATE)) {
 					updateButton.setEnabled(true);
-//				}
-//				else {
-//					updateButton.setEnabled(false);
-//				}
+				}
+				else {
+					updateButton.setEnabled(false);
+				}
 			} catch (ParseException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -147,7 +147,7 @@ public class UpdateFragment extends Fragment {
 	
 			new Thread(new Runnable() {
                 public void run() {
-                	String size = String.format("%.2f", getSize());
+                	String size = getSize();//String.format("%.2f", getSize());
                 	msg = "Would you like to download a file of this size?\n" + size + "MB.";
         			new UpdateDialogFragment().show(getFragmentManager(), "Dialog");
                 	

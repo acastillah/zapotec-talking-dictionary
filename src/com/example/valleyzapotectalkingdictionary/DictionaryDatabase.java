@@ -192,13 +192,13 @@ public class DictionaryDatabase {
 					con.setDoOutput(true);
 					DataOutputStream wr = new DataOutputStream(con.getOutputStream());
 					String urlParam;
-					if(hash[type] == 0){
+//					if(hash[type] == 0){
 						urlParam = "dict=teotitlan&export=true&dl_type=" + Integer.toString(type);
-					} 
-					else{
-						urlParam = "dict=teotitlan&export=true&dl_type=" + Integer.toString(type) + "&hash=" + hash[type];
-
-					}
+//					} 
+//					else{
+//						urlParam = "dict=teotitlan&export=true&dl_type=" + Integer.toString(type) + "&hash=" + hash[type];
+//
+//					}
 					
 					wr.writeBytes(urlParam);
 					wr.flush();

@@ -1,5 +1,6 @@
 package com.example.valleyzapotectalkingdictionary;
 
+import java.io.File;
 import java.util.Locale;
 
 import android.support.v7.app.ActionBar;
@@ -22,6 +23,7 @@ import android.content.res.Configuration;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.os.Environment;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -386,24 +388,24 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 					mTitle = getString(R.string.title_settings);
 				}
 				else if (position+1 == 7) {
-					fragment = new ReportFragment();
-					mTitle = getString(R.string.report_a_problem);
-				}
-				else if (position+1 == 8) {
 					fragment = new PasswordFragment();
 					mTitle = getString(R.string.password_section);
+				}
+				else if (position+1 == 8) {
+					fragment = new ReportFragment();
+					mTitle = getString(R.string.report_a_problem);
 				}
 			}
 			
 			// Options only non-logged in users see
 			else {
 				if (position+1 == 4) {
-					fragment = new ReportFragment();
-					mTitle = getString(R.string.report_a_problem);
-				}
-				else if (position+1 == 5) {
 					fragment = new PasswordFragment();
 					mTitle = getString(R.string.password_section);
+				}
+				else if (position+1 == 5) {
+					fragment = new ReportFragment();
+					mTitle = getString(R.string.report_a_problem);
 				}
 			}	
 		}
@@ -422,6 +424,40 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		
 		configChange = false;
 		fragmentManager.beginTransaction().replace(R.id.container, fragment).addToBackStack(null).commit();		
+	}
+	
+	@Override
+	public void onStop() {
+		Log.i("ONSTOP", "activity stopped");
+		new Thread(new DeleteAllFilesInDirectoryRunnable(
+				Environment.getExternalStorageDirectory().getAbsolutePath() + "/Zapotec Talking Dictionary/temp"))
+				.start();
+		super.onStop();
+	}
+	
+	public class DeleteAllFilesInDirectoryRunnable implements Runnable {
+
+		private String directoryPath = null;
+		public DeleteAllFilesInDirectoryRunnable(String directoryPath) {
+			this.directoryPath = directoryPath;
+		}
+		
+		@Override
+		public void run() {
+			Log.i("DELETE FILES", "Background thread deleting all files in director \'" + directoryPath + "\'");
+			
+			File dir = new File(directoryPath);
+			if (dir.exists() && dir.isDirectory()) {
+
+				File[] files = dir.listFiles();
+				for (File file : files)
+					file.delete();	
+				
+			}
+			else {
+				Log.e("DELETE FILES", "Error: \'" + directoryPath + "\' does not exist or is not a directory");
+			}
+		}
 	}
 	
 	public void hideKeyboard(View view) {

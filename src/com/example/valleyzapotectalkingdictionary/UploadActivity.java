@@ -519,6 +519,8 @@ public class UploadActivity extends FragmentActivity {
 		}
 	}
 	
+
+	
 	public class DeleteHandlerMessageObject {
 		
 		public DeleteHandlerMessageObject() {}
