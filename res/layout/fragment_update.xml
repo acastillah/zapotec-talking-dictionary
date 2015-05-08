@@ -8,6 +8,16 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.valleyzapotectalkingdictionary.UpdateActivity" >
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true" >
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true" >
+    
     <TextView
         android:id="@+id/updateText"
         android:layout_width="wrap_content"
@@ -22,8 +32,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/updateText"
-        android:layout_below="@+id/updateText"
-        android:layout_marginTop="26dp"
+        android:layout_below="@+id/last_updated"
+        android:layout_marginTop="20dp"
         android:checked="true"
         android:text="@string/downloadPictures" />
 
@@ -57,8 +67,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/last_updated"
+        android:layout_below="@+id/downloadAudioCheckbox"
         android:layout_marginTop="20dp"
         android:text="@string/update" />
+    
+    </RelativeLayout>
+    </ScrollView>
 
 </RelativeLayout>
