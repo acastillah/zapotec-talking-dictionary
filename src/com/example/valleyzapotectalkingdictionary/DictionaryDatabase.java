@@ -22,7 +22,7 @@ import org.apache.commons.lang3.StringEscapeUtils;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
-
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -31,9 +31,9 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 import android.widget.Toast;
 
+@SuppressLint("SimpleDateFormat")
 public class DictionaryDatabase {
 
-    private static final String TAG = "DictionaryDatabase";
     private static final String DATABASE_NAME = "dictionary";
     private static final int DATABASE_VERSION = 1;
     private static final String TABLE_WORDS = "words";
@@ -75,24 +75,12 @@ public class DictionaryDatabase {
     	SQLiteDatabase db = mDatabaseOpenHelper.getReadableDatabase();
     	String KEY = null;
     	q = q.replace("'", "''");
-//    	switch(language){
-//			case 0: 
 				KEY = "(" + KEY_WORD + " LIKE '%" + q + "%'" + " OR " + KEY_GLOSS +  " LIKE '%" + String.valueOf(q) 
 							+ "%'" + " OR " + KEY_ESGLOSS + " LIKE '%" + String.valueOf(q) + "%'" + ")"; 
-//				break;
-//			case 1: KEY = KEY_WORD + " LIKE '%" + String.valueOf(q) + "%'";
-//				break;
-//			case 2: KEY = KEY_GLOSS + " LIKE '%" + String.valueOf(q) + "%'";
-//				break;
-//			case 3: KEY = KEY_ESGLOSS + " LIKE '%" + String.valueOf(q) + "%'";
-//				break;
-//    	}	
-    	
     	if (!dom.equals("all")){
     		KEY = KEY + " AND " + KEY_SEMANTIC + " LIKE '%" + String.valueOf(dom) + "%'";
     		Log.i("KEY", KEY);
     	}
-
     	Cursor cursor = db.query(TABLE_WORDS, new String[] { KEY_ID,
                 KEY_WORD, KEY_IPA, KEY_GLOSS, KEY_POS, KEY_USAGE, KEY_DIALECT, KEY_META, KEY_AUTHORITY,
                 KEY_AUDIO, KEY_IMG, KEY_SEMANTIC, KEY_ESGLOSS}, KEY,
@@ -104,7 +92,6 @@ public class DictionaryDatabase {
     		return null;
     	}
 		return cursor;
-
     }
     
     public Cursor getIDmatch(int id){
@@ -147,7 +134,6 @@ public class DictionaryDatabase {
     	public DictionaryOpenHelper(Context context) {
 	        super(context, DATABASE_NAME, null, DATABASE_VERSION);
             mHelperContext = context;
-
 	    }
 	   
 	    // Creating Tables
@@ -214,13 +200,13 @@ public class DictionaryDatabase {
 
 					}
 					
-					Log.i("download", urlParam);
 					wr.writeBytes(urlParam);
 					wr.flush();
 					wr.close();
 
 					Log.i("download",Integer.toString(con.getResponseCode()));
 					Log.i("download",Integer.toString(con.getContentLength()));
+					Log.i("download", Integer.toString(con.hashCode()));
 
 //					if(con.getContentLength()==0){
 //						if(con.getResponseCode()==403 || con.getResponseCode()==404){

@@ -1,5 +1,13 @@
 package com.example.valleyzapotectalkingdictionary;
 
+import java.io.BufferedReader;
+import java.io.DataOutputStream;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.text.ParseException;
 import java.util.Calendar;
 import android.app.Activity;
@@ -11,6 +19,7 @@ import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -30,6 +39,7 @@ public class UpdateFragment extends Fragment {
 	private Button updateButton = null;
 	private TextView dbspecs = null;
 	private TextView lastUpdateView = null;
+	public String msg = null;
 	
 	@Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -89,14 +99,14 @@ public class UpdateFragment extends Fragment {
 			try {
 				lastUpdate.setTime(DictionaryDatabase.dateFormat.parse(preferences.getString(Preferences.LAST_DB_UPDATE, "")));
 				Calendar today = Calendar.getInstance();
-				if (today.get(Calendar.YEAR) > lastUpdate.get(Calendar.YEAR)
-						|| today.get(Calendar.MONTH) > lastUpdate.get(Calendar.MONTH)
-						|| today.get(Calendar.DATE) > lastUpdate.get(Calendar.DATE)) {
+//				if (today.get(Calendar.YEAR) > lastUpdate.get(Calendar.YEAR)
+//						|| today.get(Calendar.MONTH) > lastUpdate.get(Calendar.MONTH)
+//						|| today.get(Calendar.DATE) > lastUpdate.get(Calendar.DATE)) {
 					updateButton.setEnabled(true);
-				}
-				else {
-					updateButton.setEnabled(false);
-				}
+//				}
+//				else {
+//					updateButton.setEnabled(false);
+//				}
 			} catch (ParseException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -134,25 +144,39 @@ public class UpdateFragment extends Fragment {
 		
 		@Override
 		public void onClick(View arg0) {			
-			//downloading photos only is not an option
-		
-			new UpdateDialogFragment().show(getFragmentManager(), "Dialog");
+	
+			new Thread(new Runnable() {
+                public void run() {
+                	String size = String.format("%.2f", getSize());
+                	msg = "Would you like to download a file of this size?\n" + size + "MB.";
+        			new UpdateDialogFragment().show(getFragmentManager(), "Dialog");
+                	
+                }
+                
+            }).start();
+			
 		}
 		
 	}
 	
 	
 	public class UpdateDialogFragment extends DialogFragment {
+		
+		public TextView dialogMSG = null;
 	    @Override
 	    public Dialog onCreateDialog(Bundle savedInstanceState) {
 
 	    	// you can put whatever you want in the layout, including checkboxes, etc.
 	    	View dialogView = getActivity().getLayoutInflater().inflate(R.layout.fragment_update_dialog, null);
-	    	
+
 	        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 	        builder.setTitle("Title");
 	        builder.setView(dialogView);
 	        
+	        dialogMSG = (TextView) dialogView.findViewById(R.id.size_update);
+        	dialogMSG.setText(msg);
+
+
 	        builder.setPositiveButton("Update", new DialogInterface.OnClickListener() {
 	                   public void onClick(DialogInterface dialog, int id) {
 							// proceed with updates
@@ -169,8 +193,13 @@ public class UpdateFragment extends Fragment {
 		                   	lastUpdateView.append(" " + preferences.getString(Preferences.LAST_DB_UPDATE, ""));
 		                   	
 		                   	// UPDATE DB
-		                   	DictionaryDatabase db = new DictionaryDatabase(getActivity());
-		        			db.update();
+		                   	//DictionaryDatabase db = new DictionaryDatabase(getActivity());
+		        			//db.update();
+		                   	new Thread(new Runnable() {
+		                        public void run() {
+		                        	
+		                        }
+		                    }).start();
 		           			
 	                   }
 	               });
@@ -191,6 +220,82 @@ public class UpdateFragment extends Fragment {
 
 	        return builder.create();
 	    }
+	}
+	
+	public int getHash(){
+		try{	
+			URL url = new URL("http://talkingdictionary.swarthmore.edu/dl/retrieve.php");
+	        String urlParam = "dict=teotitlan&current=true&current_hash=true&dl_type=" + Integer.toString(0);			         
+	        HttpURLConnection con = (HttpURLConnection) url.openConnection();
+			con.setRequestMethod("POST");
+			DataOutputStream hr = new DataOutputStream(con.getOutputStream());
+				hr.writeBytes(urlParam);
+				Log.i("download", "write bytes");
+				hr.flush();
+				Log.i("download", "flush");
+				hr.close();
+				Log.i("download", Integer.toString(con.getContentLength()));
+				Log.i("download", Integer.toString(con.getResponseCode()));		    								
+				int hash = con.hashCode();
+				Log.i("download",Integer.toString(hash));
+				
+				String str="";
+				StringBuffer buf = new StringBuffer();
+				InputStream is = con.getInputStream();
+
+				BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+				if (is!=null) {							
+					while ((str = reader.readLine()) != null) {	
+						buf.append(str + "\n" );
+					}				
+				}		
+				is.close();	
+				
+				Log.i("download", buf.toString());
+				
+           } catch (IOException e){
+        	  
+           }
+		return 0;
+	}
+	
+	public String getSize(){
+		
+		try{	
+			URL url = new URL("http://talkingdictionary.swarthmore.edu/dl/retrieve.php");
+	        String urlParam = "dict=teotitlan&current=true&size=true&dl_type=" + Integer.toString(0);			         
+	        HttpURLConnection con = (HttpURLConnection) url.openConnection();
+			con.setRequestMethod("POST");
+			DataOutputStream hr = new DataOutputStream(con.getOutputStream());
+			hr.writeBytes(urlParam);
+			hr.flush();
+			hr.close();
+			Log.i("download", Integer.toString(con.getContentLength()));
+			Log.i("download", Integer.toString(con.getResponseCode()));		    								
+				
+			String str="";
+			StringBuffer buf = new StringBuffer();
+			InputStream is = con.getInputStream();
+			BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+			if (is!=null) {							
+				while ((str = reader.readLine()) != null) {	
+					buf.append(str + "\n" );
+				}				
+			}		
+			is.close();	
+			
+			Log.i("download", buf.toString());
+			
+			float sz = Float.parseFloat(buf.toString());
+			sz = sz/(1024*1024);
+			
+			return Float.toString(sz);
+           } catch (IOException e){
+        	  
+           }
+		return null;
+		
+		
 	}
 	
 }
