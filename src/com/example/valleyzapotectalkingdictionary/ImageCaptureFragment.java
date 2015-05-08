@@ -276,8 +276,10 @@ public class ImageCaptureFragment extends Fragment {
         mFileNameEditText.setInputType(InputType.TYPE_TEXT_VARIATION_PERSON_NAME);
         
         
-        if (bundle == null || bundle.getBoolean(LAUNCH_CAMERA, true))
+        if (bundle != null && bundle.getBoolean(LAUNCH_CAMERA, false)) {
+        	bundle.putBoolean(LAUNCH_CAMERA, false);
         	dispatchTakePictureIntent();
+        }
         
         if (bundle != null)
         	mFileNameEditText.setText(bundle.getString(FILE_NAME, ""));
@@ -291,6 +293,9 @@ public class ImageCaptureFragment extends Fragment {
 	@Override
 	public void onActivityResult(int requestCode, int resultCode, Intent data) {
 		Log.i("PHOTO", "onActivityResult");
+		if (bundle == null)
+			bundle = new Bundle();
+		bundle.putBoolean(LAUNCH_CAMERA, false);
 	    if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == Activity.RESULT_OK) {
 	    	Log.i("PHOTO", "request and result codes OK");
 	    	image = new File(mFileName);
@@ -395,9 +400,14 @@ public class ImageCaptureFragment extends Fragment {
 //	        ".jpg",         /* suffix */
 //	        storageDir      /* directory */
 //	    );
-	    File image = new File(tempDirectoryFullPath, imageFileName + ".jpg");
+//	    File image = new File(tempDirectoryFullPath, imageFileName + ".jpg");
 	    
 //	    image = new File(photoDirectoryFullPath, imageFileName + ".jpg");
+	    File image = File.createTempFile(
+		        imageFileName,  /* prefix */
+		        ".jpg",         /* suffix */
+		        new File(tempDirectoryFullPath)      /* directory */
+		    );
 	    
 	    mFileName = image.getAbsolutePath();
 	    
@@ -469,17 +479,22 @@ public class ImageCaptureFragment extends Fragment {
 	            newFileName += mFileExtension;
 				
 //	            File image = new File(mFileName);
-				File newImage = new File(newFileName); ////
-				if (newImage.exists())
-					newImage.delete();
+//				File newImage = new File(newFileName); ////
+//				if (newImage.exists())
+//					newImage.delete();
+	            File newImage;
 
 //				newImage.createNewFile();
 //	            File newImage = null;
 				try {
-					newImage.createNewFile(); ////
+//					newImage.createNewFile(); ////
 //					newImage.createTempFile("test123", ".jpg", new File(photoDirectoryFullPath));
-//					newImage = File.createTempFile("test123", ".jpg", new File(photoDirectoryFullPath));
+//					newImage = File.createTempFile("test123", ".jpg", new File(photoDirectoryFullPath)); // worked
+					
+					newImage = File.createTempFile(userDefinedFileName, ".jpg", new File(photoDirectoryFullPath));
+					
 //					System.getProperty(System.)
+//					newImage = File.createTempFile(newFileName, mFileExtension);
 				
 				Log.i("PHOTOS", "Old file path="+mFileName);
 				Log.i("PHOTOS", "New file path="+newFileName);
@@ -490,32 +505,7 @@ public class ImageCaptureFragment extends Fragment {
 				newImage.setWritable(true);
 				
 				
-				
 
-//				BitmapFactory.Options bmOptions = new BitmapFactory.Options();
-//				Bitmap bitmap = BitmapFactory.decodeFile(image.getAbsolutePath(), bmOptions);
-//				
-//				FileOutputStream out = null;
-//				try {
-//				    out = new FileOutputStream(newFileName);
-//				    bitmap.compress(Bitmap.CompressFormat.JPEG, 100, out); // bmp is your Bitmap instance
-//				    // PNG is a lossless format, the compression factor (100) is ignored
-//				} catch (Exception e) {
-//				    e.printStackTrace();
-//				} finally {
-//				    try {
-//				        if (out != null) {
-//				            out.close();
-//				        }
-//				    } catch (IOException e) {
-//				        e.printStackTrace();
-//				    }
-//				}
-				
-				
-				
-				
-				
 //				boolean renameSuccessful = copy(image, newImage);
 				
 				boolean renameSuccessful = image.renameTo(newImage); //// 

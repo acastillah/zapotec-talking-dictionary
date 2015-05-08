@@ -2,7 +2,7 @@
 <resources>
 
     <!-- ENGLISH -->
-    
+
     <string name="app_name">Dixza</string>
     <string name="TeotitlanDelValleZapotec">Teotitlán del Valle Zapotec</string>
     <string name="AndroidTalkingDictionary">Android Talking Dictionary</string>
@@ -40,10 +40,10 @@ All rights reserved. Do not distribute or reproduce without permission.</string>
     <string name="title_activity_search">Search Activity</string>
     <string name="preview_image">Image Preview</string>
     <string name="passwordExplanation">Administrator access only.</string>
-	<string name="password">Password: </string>
-	<string name="passwordIncorrect">Incorrect password</string>
-	<string name="submit">Submit</string>
-	<string name="search_hint">Search dictionary</string>
+    <string name="password">Password: </string>
+    <string name="passwordIncorrect">Incorrect password</string>
+    <string name="submit">Submit</string>
+    <string name="search_hint">Search dictionary</string>
     <string name="updateInfo">The Valley Zapotec Talking Dictionary is constantly growing. Each time you update, the new words will take up more space on your phone. If space is a concern, you may choose if you want to download audio and pictures.</string>
     <string name="downloadAudio">Download Audio</string>
     <string name="downloadPictures">Download Pictures</string>
@@ -83,26 +83,24 @@ All rights reserved. Do not distribute or reproduce without permission.</string>
     <string name="report_button">Report problem</string>
     <string name="reportEmail_subject">"Dixza Android Application Bug Report"</string>
     <string name="reportEmail_body">"Bug description:\n"</string>
-    
+
     <string-array name="languages_array">
         <item>ENG</item>
         <item>ESP</item>
         <item>ZAP</item>
     </string-array>
-    
     <string-array name="search_options">
         <item>Entire dictionary</item>
         <item>Teotitlán del Valle Zapotec</item>
         <item>English</item>
         <item>Spanish</item>
     </string-array>
-    
     <string-array name="domain_options">
         <item>all</item>
         <item>animal</item>
         <item>body parts</item>
         <item>clima</item>
-        <item>clothing</item>       
+        <item>clothing</item>
         <item>color</item>
         <item>food</item>
         <item>kinship</item>
@@ -111,7 +109,10 @@ All rights reserved. Do not distribute or reproduce without permission.</string>
         <item>time</item>
         <item>ubicación</item>
     </string-array>
-    
+
     <string name="current_language">English</string>
+    <string name="title_activity_upload">UploadActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
 
 </resources>

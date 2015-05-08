@@ -20,6 +20,7 @@ public class Preferences {
 	public static final String ENGLISH = "en";
 	public static final String SPANISH = "es";
 	public static final String ZAPOTEC = "za";
+	public static final String LANGUAGE_CHANGE = "LANGUAGE_CHANGE";
 	
 	public static final Locale ENGLISH_LOC = Locale.ENGLISH;
 	public static final Locale SPANISH_LOC = new Locale(SPANISH);

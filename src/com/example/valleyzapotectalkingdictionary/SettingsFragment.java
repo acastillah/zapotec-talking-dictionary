@@ -1,6 +1,7 @@
 package com.example.valleyzapotectalkingdictionary;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
@@ -22,6 +23,7 @@ public class SettingsFragment extends Fragment {
 	
 	EditText usernameEditText = null;
 	Button saveButton = null;
+	Button uploadButton = null;
 	
 	@Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -31,6 +33,7 @@ public class SettingsFragment extends Fragment {
 
         usernameEditText = (EditText) view.findViewById(R.id.username_editText);
         saveButton = (Button) view.findViewById(R.id.settings_submitButton);
+        uploadButton = (Button) view.findViewById(R.id.upload_button);
         
         // fill in username if one already exists
         SharedPreferences preferences = getActivity().getSharedPreferences(Preferences.APP_SETTINGS, Activity.MODE_PRIVATE);
@@ -40,6 +43,7 @@ public class SettingsFragment extends Fragment {
 		usernameEditText.setFilters(MainActivity.inputFilters);
 		usernameEditText.addTextChangedListener(new usernameEditTextWatcher());
 		saveButton.setOnClickListener(new saveButtonOnClickListener());
+		uploadButton.setOnClickListener(new uploadButtonOnClickListener());
         
 		return view;
     }
@@ -81,6 +85,17 @@ public class SettingsFragment extends Fragment {
 //			FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
 //			Fragment fragment = new MainPageFragment();
 //			fragmentManager.beginTransaction().addToBackStack(null).replace(R.id.container, fragment).commit();
+		}
+		
+	}
+	
+	public class uploadButtonOnClickListener implements OnClickListener {
+
+		@Override
+		public void onClick(View arg0) {
+			// TODO Auto-generated method stub
+			Intent intent = new Intent(getActivity(), UploadActivity.class);
+		    startActivity(intent);
 		}
 		
 	}
