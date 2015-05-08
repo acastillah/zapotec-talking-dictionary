@@ -83,7 +83,7 @@ public class UpdateFragment extends Fragment {
 		lastUpdateView.append(" " + preferences.getString(Preferences.LAST_DB_UPDATE, ""));
 
 		
-		// users may only update once per day
+		// users may only update once per day 
 		if (!preferences.getString(Preferences.LAST_DB_UPDATE, "").equals("")) {
 		Calendar lastUpdate = Calendar.getInstance();
 			try {
