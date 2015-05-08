@@ -1,6 +1,7 @@
 package com.example.valleyzapotectalkingdictionary;
 
 import java.io.FileDescriptor;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -9,12 +10,9 @@ import org.apache.commons.lang3.StringEscapeUtils;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.content.res.AssetFileDescriptor;
-import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Typeface;
-import android.graphics.drawable.GradientDrawable;
 import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnCompletionListener;
 import android.media.MediaPlayer.OnPreparedListener;
@@ -46,12 +44,13 @@ public class WordDefinitionFragment extends Fragment{
 	
 	private PlayButton playButton = null;
 	
-	private static final String audioFileDirectory = "audio";		// under assets
+	//private static final String audioFileDirectory = "audio";		// under assets
 	private String audioFileName = null;
-	private AssetFileDescriptor audioFileFD = null;
+	private FileDescriptor audioFileFD = null;
 	
 	private ImageView image = null;
-	private static final String imageFileDirectory = "images";		// under assets
+	//private static final String imageFileDirectory = "images";		// under assets
+	private static final String imageDirectory = "pix";
 	private InputStream imageStream = null;
 
 	
@@ -139,20 +138,6 @@ public class WordDefinitionFragment extends Fragment{
 	public void setUpDisplay(){
 		w = new Word(Integer.parseInt(info[0]), info[1],info[2],info[3],info[4],info[5],info[6],info[7],info[8],info[9],info[10],info[11],info[12]);
 		
-//		Log.i("WORD DEF", "id=" + w.getID()
-//				+ "\nword=" + w.getName()
-//				+ "\ngloss=" + w.getGloss()
-//				+ "\nipa=" + w.getIPA()
-//				+ "\npos=" + w.getPos()
-//				+ "\nusage_example=" + w.getUsage()
-//				+ "\ndialect=" + w.getDialect()
-//				+ "\nmetadata=" + w.getMetadata()
-//				+ "\nauthority=" + w.getAuthority()
-//				+ "\naudio=" + w.getAudio()
-//				+ "\nimage=" + w.getIMG()
-//				+ "\nsemantic_ids=" + w.getSemantic()
-//				+ "\nes_gloss=" + w.getEsGloss());
-		
 		String name = "<b>" + w.getName()+ "</b> "; 
 		word.setText(Html.fromHtml(name));
 		
@@ -187,10 +172,11 @@ public class WordDefinitionFragment extends Fragment{
 		else
 			speaker.setVisibility(View.GONE);
 			
-		AssetManager assetManager = getActivity().getAssets();
+		//AssetManager assetManager = getActivity().getAssets();
 		
 		if (!w.getAudio().equals("")) {
-			audioFileName = "audio/" + w.getAudio();
+			audioFileName = getActivity().getFilesDir().getAbsolutePath() + "/teotitlan_content/aud/" + w.getAudio();
+			//audioFileName = "audio/" + w.getAudio();
 			
 			String HtmlUnescapedQuote = StringEscapeUtils.unescapeHtml3("&#8217;");
 			String imageFileNameQuote = "'";
@@ -198,13 +184,14 @@ public class WordDefinitionFragment extends Fragment{
 			audioFileName = audioFileName.replace(HtmlUnescapedQuote, imageFileNameQuote);
 						
 			try {
-				audioFileFD = assetManager.openFd(audioFileName);
+				audioFileFD = new FileInputStream(audioFileName).getFD();
+//				//audioFileFD = assetManager.openFd(audioFileName);
 			} catch (IOException e) {
 				Log.i("AUDIO", "Failed to open input stream for audio file");
 			}
 			
 			if (audioFileFD != null) {
-				Log.i("AUDIO", "Opened audio file, fd=" + audioFileFD.getFileDescriptor());
+				Log.i("AUDIO", "Opened audio file, fd=" + audioFileFD.toString());
 			}
 			else {
 				playButton.setVisibility(View.GONE);
@@ -217,26 +204,9 @@ public class WordDefinitionFragment extends Fragment{
 			playButton.setVisibility(View.GONE);
 		}
 		
-		
-		
-//		try {
-//			String[] assets = assetManager.list("");
-//			int i=1;
-//			for (String a : assets)
-//				Log.i("ASSET", i + "..... " + a);
-//			
-//			assets = assetManager.list("audio");
-//			Log.i("ASSET", "there are " + assets.length);
-//			for (String a : assets)
-//				Log.i("ASSET", i++ + " " + a);
-//		} catch (IOException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-
-		
 		if (!w.getIMG().equals("")) {
-			String imageFileName = imageFileDirectory + "/";
+			
+			String imageFileName = getActivity().getFilesDir().getAbsolutePath() + "/teotitlan_content/" + imageDirectory + "/";
 			imageFileName += w.getIMG().substring(0, w.getIMG().length()-4);
 			imageFileName += "-scaled";
 			imageFileName += w.getIMG().substring(w.getIMG().length()-4);
@@ -244,7 +214,9 @@ public class WordDefinitionFragment extends Fragment{
 			Log.i("IMAGE", "image file name="+imageFileName);
 			
 			try {
-				imageStream = assetManager.open(imageFileName);
+				//imageStream = assetManager.open(imageFileName);
+			imageStream = new FileInputStream(imageFileName);
+
 			} catch (IOException e) {
 				Log.i("IMAGE", "Failed to open input stream for image file");
 			}
@@ -256,7 +228,6 @@ public class WordDefinitionFragment extends Fragment{
 				int width = bm.getWidth();
 				int height = bm.getHeight();
 				Log.i("IMAGE", "width="+width+" height="+height);
-				
 				image.setImageBitmap(bm);
 			}
 			else {
@@ -316,8 +287,9 @@ public class WordDefinitionFragment extends Fragment{
 
 				// must call setDataSource giving offset and length in addition to FD!!!
 				// calling setDataSource with just FD plays all of the audio files in the directory
-                player.setDataSource(audioFileFD.getFileDescriptor(), audioFileFD.getStartOffset(), audioFileFD.getLength ());
-                
+                //player.setDataSource(audioFileFD.getFileDescriptor(), audioFileFD.getStartOffset(), audioFileFD.getLength ());
+                //player.setDataSource(audioFileName);
+                player.setDataSource(audioFileFD);
                 player.prepareAsync();
             } catch (IOException e) {
                 Log.e("AUDIO", "prepare() failed");

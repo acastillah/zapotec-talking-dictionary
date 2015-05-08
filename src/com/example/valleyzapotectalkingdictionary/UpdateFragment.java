@@ -14,7 +14,6 @@ import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -30,8 +29,8 @@ public class UpdateFragment extends Fragment {
 
 	//public static final String ARG_SECTION_NUMBER = "section_number";
 	
-//	private CheckBox downloadPicturesCheckbox = null;
-//	private CheckBox downloadAudioCheckbox = null;
+	private CheckBox downloadPicturesCheckbox = null;
+	private CheckBox downloadAudioCheckbox = null;
 	private Button updateButton = null;
 	private TextView dbspecs = null;
 	private TextView lastUpdateView = null;
@@ -42,8 +41,8 @@ public class UpdateFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_update, container, false);
         
-//        downloadPicturesCheckbox = (CheckBox) view.findViewById(R.id.downloadPicturesCheckbox);
-//        downloadAudioCheckbox = (CheckBox) view.findViewById(R.id.downloadAudioCheckbox);
+        downloadPicturesCheckbox = (CheckBox) view.findViewById(R.id.downloadPicturesCheckbox);
+        downloadAudioCheckbox = (CheckBox) view.findViewById(R.id.downloadAudioCheckbox);
         updateButton = (Button) view.findViewById(R.id.updateButton);
         dbspecs = (TextView) view.findViewById(R.id.db_specs);
         lastUpdateView = (TextView) view.findViewById(R.id.last_updated);
@@ -54,13 +53,11 @@ public class UpdateFragment extends Fragment {
         Editor editor = preferences.edit(); 
         
         if(!preferences.contains(Preferences.DOWNLOAD_PHOTOS)) {
-        	Log.i("UPDATE", "Added photo pref true");
         	editor.putBoolean(Preferences.DOWNLOAD_PHOTOS, true);
         }
         
         if (!preferences.contains(Preferences.DOWNLOAD_AUDIO)) {
         	editor.putBoolean(Preferences.DOWNLOAD_AUDIO, true);
-        	Log.i("UPDATE", "Added audio pref true");
         }
         
         if (!preferences.contains(Preferences.LAST_DB_UPDATE)) {
@@ -78,14 +75,11 @@ public class UpdateFragment extends Fragment {
         
 //        preferences = getActivity().getSharedPreferences(Preferences.APP_SETTINGS, Activity.MODE_PRIVATE);
         
-        Log.i("UPDATE", "Photo pref=" + preferences.getBoolean(Preferences.DOWNLOAD_PHOTOS, false));
-        Log.i("UPDATE", "Audio pref=" + preferences.getBoolean(Preferences.DOWNLOAD_AUDIO, false));
-        
-//        downloadPicturesCheckbox.setChecked(preferences.getBoolean(Preferences.DOWNLOAD_PHOTOS, false));
-//        downloadAudioCheckbox.setChecked(preferences.getBoolean(Preferences.DOWNLOAD_AUDIO, false));
-//        	        
-//		downloadPicturesCheckbox.setOnCheckedChangeListener(new CheckboxListener(Preferences.DOWNLOAD_PHOTOS));
-//		downloadAudioCheckbox.setOnCheckedChangeListener(new CheckboxListener(Preferences.DOWNLOAD_AUDIO));
+        downloadPicturesCheckbox.setChecked(preferences.getBoolean(Preferences.DOWNLOAD_PHOTOS, false));
+        downloadAudioCheckbox.setChecked(preferences.getBoolean(Preferences.DOWNLOAD_AUDIO, false));
+        	        
+		downloadPicturesCheckbox.setOnCheckedChangeListener(new CheckboxListener(Preferences.DOWNLOAD_PHOTOS));
+		downloadAudioCheckbox.setOnCheckedChangeListener(new CheckboxListener(Preferences.DOWNLOAD_AUDIO));
 
 		updateButton.setOnClickListener(new UpdateButtonListener());
 		
@@ -131,9 +125,7 @@ public class UpdateFragment extends Fragment {
 			
 			SharedPreferences preferences = getActivity().getSharedPreferences(Preferences.APP_SETTINGS, Activity.MODE_PRIVATE);
 			Editor editor = preferences.edit();
-			
-			Log.i("UPDATE", pref + " pref=" + isChecked);
-			
+						
 			editor.putBoolean(pref, isChecked);
 			
 			editor.commit();
@@ -145,7 +137,11 @@ public class UpdateFragment extends Fragment {
 	public class UpdateButtonListener implements OnClickListener {
 		
 		@Override
-		public void onClick(View arg0) {
+		public void onClick(View arg0) {			
+			//downloading photos only is not an option
+			//DictionaryDatabase db = new DictionaryDatabase(getActivity());
+			//db.update(old, newv);
+		
 			new UpdateDialogFragment().show(getFragmentManager(), "Dialog");
 		}
 		
