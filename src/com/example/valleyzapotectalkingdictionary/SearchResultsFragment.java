@@ -26,6 +26,9 @@ public class SearchResultsFragment extends Fragment {
 	@Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+		
+		((MainActivity)getActivity()).setActionBarTitle(R.string.searchResults);
+		
 		Bundle bundle = this.getArguments();
         query = bundle.getString("QUERY");
         lang = bundle.getInt("LANG");

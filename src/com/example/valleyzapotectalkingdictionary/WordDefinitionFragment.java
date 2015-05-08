@@ -58,6 +58,9 @@ public class WordDefinitionFragment extends Fragment{
 	@Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+		
+		((MainActivity)getActivity()).setActionBarTitle(R.string.wordDefinition);
+		
 		Bundle bundle = this.getArguments();
         info = bundle.getStringArray("WORD");
         

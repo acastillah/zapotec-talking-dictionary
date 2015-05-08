@@ -83,6 +83,8 @@ All rights reserved. Do not distribute or reproduce without permission.</string>
     <string name="report_button">Report problem</string>
     <string name="reportEmail_subject">"Dixza Android Application Bug Report"</string>
     <string name="reportEmail_body">"Bug description:\n"</string>
+    <string name="searchResults">Search Results</string>
+    <string name="wordDefinition">Word Defition</string>
 
     <string-array name="languages_array">
         <item>ENG</item>
