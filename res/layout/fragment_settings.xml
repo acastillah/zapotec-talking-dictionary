@@ -44,6 +44,13 @@
 	        android:layout_height="wrap_content"
 	        android:text="@string/save" />
 	    
+	    <TextView
+	        android:id="@+id/fileManagement_textView"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginTop="20dp"
+	        android:text="You can upload content saved from this app to Dropbox by clicking UPLOAD. When you upload content to Dropbox, you will be given the option to remove the uploaded content from your device." />
+	    
 	    <Button
 	        android:id="@+id/upload_button"
 	        android:layout_width="wrap_content"

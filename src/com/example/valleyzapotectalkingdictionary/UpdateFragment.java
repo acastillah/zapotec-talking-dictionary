@@ -1,10 +1,7 @@
 package com.example.valleyzapotectalkingdictionary;
 
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -22,7 +19,6 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.TextView;
-import android.widget.Toast;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 
 public class UpdateFragment extends Fragment {
@@ -139,8 +135,6 @@ public class UpdateFragment extends Fragment {
 		@Override
 		public void onClick(View arg0) {			
 			//downloading photos only is not an option
-			//DictionaryDatabase db = new DictionaryDatabase(getActivity());
-			//db.update(old, newv);
 		
 			new UpdateDialogFragment().show(getFragmentManager(), "Dialog");
 		}
@@ -175,8 +169,9 @@ public class UpdateFragment extends Fragment {
 		                   	lastUpdateView.append(" " + preferences.getString(Preferences.LAST_DB_UPDATE, ""));
 		                   	
 		                   	// UPDATE DB
+		                   	DictionaryDatabase db = new DictionaryDatabase(getActivity());
+		        			db.update();
 		           			
-		           			Toast.makeText(getActivity(), R.string.upToDate, Toast.LENGTH_SHORT).show();
 	                   }
 	               });
 	        

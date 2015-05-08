@@ -62,7 +62,8 @@ All rights reserved. Do not distribute or reproduce without permission.</string>
     <string name="takeAnotherPhoto">Take Another Photo</string>
     <string name="takePhoto">"Take Photo"</string>
     <string name="passwordAccepted">"Password accepted"</string>
-    <string name="upToDate">"Up to date"</string>
+    <string name="updated">Database updated successfully</string>
+    <string name="noUpdate">Database alreay up to date.</string>
     <string name="EnglishDefinition">"English: "</string>
     <string name="SpanishDefinition">"Spanish: "</string>
     <string name="logout">Log Out</string>
