@@ -89,8 +89,9 @@ public class DictionaryDatabase {
     	
     	if (!dom.equals("all")){
     		KEY = KEY + " AND " + KEY_SEMANTIC + " LIKE '%" + String.valueOf(dom) + "%'";
+    		Log.i("KEY", KEY);
     	}
-    	Log.i("KEY", KEY);
+    	
     	Cursor cursor = db.query(TABLE_WORDS, new String[] { KEY_ID,
                 KEY_WORD, KEY_IPA, KEY_GLOSS, KEY_POS, KEY_USAGE, KEY_DIALECT, KEY_META, KEY_AUTHORITY,
                 KEY_AUDIO, KEY_IMG, KEY_SEMANTIC, KEY_ESGLOSS}, KEY,

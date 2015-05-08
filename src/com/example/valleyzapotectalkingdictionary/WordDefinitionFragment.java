@@ -24,6 +24,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewGroup.LayoutParams;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -99,6 +100,9 @@ public class WordDefinitionFragment extends Fragment{
 	
 	        LinearLayout ll = new LinearLayout(v.getContext());
 	        ll.setOrientation(LinearLayout.HORIZONTAL);
+			LayoutParams params = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
+			
+			ll.setLayoutParams(params);
 	
 	        ll.setId(12345);
 	        
