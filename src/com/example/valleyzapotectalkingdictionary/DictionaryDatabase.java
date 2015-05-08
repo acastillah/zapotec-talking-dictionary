@@ -29,15 +29,16 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
+import android.widget.Toast;
 
 public class DictionaryDatabase {
 
     //private static final String TAG = "DictionaryDatabase";
     private static final String DATABASE_NAME = "dictionary";
-    private static final int DATABASE_VERSION = 3;
+    private static final int DATABASE_VERSION = 11;
     private static final String TABLE_WORDS = "words";
     private final DictionaryOpenHelper mDatabaseOpenHelper;
-    private static String hash = null;
+    public static int hash[] = new int[4];
     
  // Words Table Columns names
     private static final String KEY_ID = "_id";
@@ -121,8 +122,10 @@ public class DictionaryDatabase {
 		return cursor;    	
     }
     
-    public void update(int old, int newv){
+    public void update(){
     	SQLiteDatabase db = mDatabaseOpenHelper.getReadableDatabase();
+    	int old = DATABASE_VERSION;
+    	int newv = old + 1;
     	mDatabaseOpenHelper.onUpgrade(db, old, newv);
     }
     
@@ -161,13 +164,7 @@ public class DictionaryDatabase {
 	    private void loadDictionary() {
             new Thread(new Runnable() {
                 public void run() {
-                    try {
-                    	download();
-                        loadWords();
-                        
-                    } catch (IOException e) {
-                        throw new RuntimeException(e);
-                    }
+                    download();
                 }
             }).start();
         }
@@ -197,73 +194,87 @@ public class DictionaryDatabase {
 	    public void download(){
 	        	HttpURLConnection con;
 				try {
+			         int type = 1;
 					URL url = new URL("http://talkingdictionary.swarthmore.edu/dl/retrieve.php");
 					con = (HttpURLConnection) url.openConnection();
 					con.setRequestMethod("POST");
 					con.setDoOutput(true);
 					DataOutputStream wr = new DataOutputStream(con.getOutputStream());
 					String urlParam;
-					if(hash == null){
+					if(hash[type] == 0){
 						urlParam = "dict=teotitlan&export=true&dl_type=2";
 					} 
 					else{
-						urlParam = "dict=teotitlan&export=true&dl_type=2&hash=" + hash;
+						urlParam = "dict=teotitlan&export=true&dl_type=" + Integer.toString(type) + "&hash=" + hash[type];
 
 					}
 					wr.writeBytes(urlParam);
 					wr.flush();
 					wr.close();
 
-					String path = mHelperContext.getFilesDir().getAbsolutePath();
-					File file = new File(mHelperContext.getFilesDir(), "content.zip");
-					OutputStream output = new FileOutputStream(file);
-					InputStream input = con.getInputStream();
-					byte[] buffer = new byte[1024]; 
-					int bytesRead = input.read(buffer);
-					while (bytesRead >= 0) {
-					    output.write(buffer, 0, bytesRead);
-					    bytesRead = input.read(buffer);
+					if(con.getContentLength()==0){
+						if(con.getResponseCode()==403 || con.getResponseCode()==404){
+		           			//Toast.makeText(mHelperContext, R.string.noUpdate, Toast.LENGTH_SHORT).show();
+
+						}
+						else if(con.getResponseCode()==204){
+		           			Toast.makeText(mHelperContext, R.string.noUpdate, Toast.LENGTH_SHORT).show();
+						}
 					}
-				    output.flush();
-				    output.close();
-				    input.close();
+					//Else, when download is complete, show a success message
+					else{
+						String path = mHelperContext.getFilesDir().getAbsolutePath();
+						File file = new File(mHelperContext.getFilesDir(), "content.zip");
+						OutputStream output = new FileOutputStream(file);
+						InputStream input = con.getInputStream();
+						byte[] buffer = new byte[1024]; 
+						int bytesRead = input.read(buffer);
+						while (bytesRead >= 0) {
+						    output.write(buffer, 0, bytesRead);
+						    bytesRead = input.read(buffer);
+						}
+					    output.flush();
+					    output.close();
+					    input.close();
+						
+					    InputStream is;
+					    ZipInputStream zis;
+					    String filename;
+				        is = new FileInputStream(file);
+				        zis = new ZipInputStream(new BufferedInputStream(is));          
+				        ZipEntry ze;
+				        int count;
+
+				         while ((ze = zis.getNextEntry()) != null) {
+				             filename = ze.getName();
+				             if (ze.isDirectory()) {
+				                File fmd = new File(path, filename);
+				                fmd.mkdirs();
+				                continue;
+				             }
+	
+				             FileOutputStream fout = new FileOutputStream(path + "/" + filename);
+				             while ((count = zis.read(buffer)) != -1) {
+				                 fout.write(buffer, 0, count);             
+				             }
+				             fout.close();               
+				             zis.closeEntry();
+	
+				         }
+				         zis.close(); 
+				         
+				         urlParam = "dict=teotitlan&current=true&hash=true&dl_type=" + Integer.toString(type);			         
+				         con = (HttpURLConnection) url.openConnection();
+						con.setRequestMethod("POST");
+						DataOutputStream hr = new DataOutputStream(con.getOutputStream());
+							hr.writeBytes(urlParam);
+							hr.flush();
+							hr.close();
+							hash[type] = con.hashCode();
+	                        loadWords();
+					}
 					
-				    InputStream is;
-				    ZipInputStream zis;
-				    String filename;
-			        is = new FileInputStream(file);
-			        zis = new ZipInputStream(new BufferedInputStream(is));          
-			        ZipEntry ze;
-			        int count;
-
-			         while ((ze = zis.getNextEntry()) != null) {
-			             filename = ze.getName();
-			             if (ze.isDirectory()) {
-			                File fmd = new File(path, filename);
-			                fmd.mkdirs();
-			                continue;
-			             }
-
-			             FileOutputStream fout = new FileOutputStream(path + "/" + filename);
-			             while ((count = zis.read(buffer)) != -1) {
-			                 fout.write(buffer, 0, count);             
-			             }
-			             fout.close();               
-			             zis.closeEntry();
-
-			         }
-			         zis.close(); 
-			         
-			         urlParam = "dict=teotitlan&current=true&hash=true&dl_type=2";			         
-			         con = (HttpURLConnection) url.openConnection();
-					con.setRequestMethod("POST");
-					DataOutputStream hr = new DataOutputStream(con.getOutputStream());
-						hr.writeBytes(urlParam);
-						hr.flush();
-						hr.close();
-//						hash = con.getResponseMessage();
-						Log.i("Response", con.getResponseMessage());
-					
+						
 				} catch (IOException e) {
 					e.printStackTrace();
 					Log.i("DOWNLOAD", "failed");

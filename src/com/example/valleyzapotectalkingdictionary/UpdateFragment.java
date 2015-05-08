@@ -114,8 +114,6 @@ public class UpdateFragment extends Fragment {
 		@Override
 		public void onClick(View arg0) {			
 			//downloading photos only is not an option
-			//DictionaryDatabase db = new DictionaryDatabase(getActivity());
-			//db.update(old, newv);
 		
 			new UpdateDialogFragment().show(getFragmentManager(), "Dialog");
 		}
@@ -148,8 +146,9 @@ public class UpdateFragment extends Fragment {
 		                   	lastUpdateView.append(" " + preferences.getString(Preferences.LAST_DB_UPDATE, ""));
 		                   	
 		                   	// UPDATE DB
+		                   	DictionaryDatabase db = new DictionaryDatabase(getActivity());
+		        			db.update();
 		           			
-		           			Toast.makeText(getActivity(), R.string.upToDate, Toast.LENGTH_SHORT).show();
 	                   }
 	               });
 	        
