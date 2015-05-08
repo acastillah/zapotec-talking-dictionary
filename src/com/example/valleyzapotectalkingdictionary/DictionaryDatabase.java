@@ -33,12 +33,12 @@ import android.widget.Toast;
 
 public class DictionaryDatabase {
 
-    //private static final String TAG = "DictionaryDatabase";
+    private static final String TAG = "DictionaryDatabase";
     private static final String DATABASE_NAME = "dictionary";
-    private static final int DATABASE_VERSION = 11;
+    private static final int DATABASE_VERSION = 1;
     private static final String TABLE_WORDS = "words";
     private final DictionaryOpenHelper mDatabaseOpenHelper;
-    public static int hash[] = new int[4];
+    public static int hash[] = {0,0,0,0};
     
  // Words Table Columns names
     private static final String KEY_ID = "_id";
@@ -55,7 +55,7 @@ public class DictionaryDatabase {
     private static final String KEY_SEMANTIC = "semantic_ids";
     static final String KEY_ESGLOSS = "es_gloss"; //WORD IN SPANISH
     
-    private static long db_size = 0;
+    private static long db_size;
     
     // date of DB that comes with the app, given same date/time as email from Jeremy
     public static final int DB_YEAR = 2015;
@@ -77,8 +77,8 @@ public class DictionaryDatabase {
     	q = q.replace("'", "''");
 //    	switch(language){
 //			case 0: 
-//				KEY = "(" + KEY_WORD + " LIKE '%" + q + "%'" + " OR " + KEY_GLOSS +  " LIKE '%" + String.valueOf(q) 
-//							+ "%'" + " OR " + KEY_ESGLOSS + " LIKE '%" + String.valueOf(q) + "%'" + ")"; 
+				KEY = "(" + KEY_WORD + " LIKE '%" + q + "%'" + " OR " + KEY_GLOSS +  " LIKE '%" + String.valueOf(q) 
+							+ "%'" + " OR " + KEY_ESGLOSS + " LIKE '%" + String.valueOf(q) + "%'" + ")"; 
 //				break;
 //			case 1: KEY = KEY_WORD + " LIKE '%" + String.valueOf(q) + "%'";
 //				break;
@@ -91,7 +91,6 @@ public class DictionaryDatabase {
     	if (!dom.equals("all")){
     		KEY = KEY + " AND " + KEY_SEMANTIC + " LIKE '%" + String.valueOf(dom) + "%'";
     	}
-    	Log.i("KEY", KEY);
     	Cursor cursor = db.query(TABLE_WORDS, new String[] { KEY_ID,
                 KEY_WORD, KEY_IPA, KEY_GLOSS, KEY_POS, KEY_USAGE, KEY_DIALECT, KEY_META, KEY_AUTHORITY,
                 KEY_AUDIO, KEY_IMG, KEY_SEMANTIC, KEY_ESGLOSS}, KEY,
@@ -141,7 +140,8 @@ public class DictionaryDatabase {
 		
         private final Context mHelperContext;
     	//private final ArrayList<String> domainList = new ArrayList<String>();
-	 
+        private String response;
+        
     	public DictionaryOpenHelper(Context context) {
 	        super(context, DATABASE_NAME, null, DATABASE_VERSION);
             mHelperContext = context;
@@ -151,6 +151,7 @@ public class DictionaryDatabase {
 	    // Creating Tables
 	    @Override
 	    public void onCreate(SQLiteDatabase db) {
+	    	db_size = 0;
 	        String CREATE_WORDS_TABLE = "CREATE TABLE " + TABLE_WORDS + "("
 	                + KEY_ID + " INTEGER PRIMARY KEY," + KEY_WORD + " TEXT,"
 	                + KEY_IPA + " TEXT," + KEY_GLOSS + " TEXT," + KEY_POS + " TEXT,"
@@ -159,6 +160,8 @@ public class DictionaryDatabase {
 	                + KEY_SEMANTIC + " TEXT," + KEY_ESGLOSS + " TEXT" + ")";
             db.execSQL(CREATE_WORDS_TABLE);
 	        loadDictionary();
+   			Toast.makeText(mHelperContext, response, Toast.LENGTH_SHORT).show();
+
 	    }
 	    
 	    private void loadDictionary() {
@@ -194,7 +197,7 @@ public class DictionaryDatabase {
 	    public void download(){
 	        	HttpURLConnection con;
 				try {
-			         int type = 1;
+			        int type = 2;
 					URL url = new URL("http://talkingdictionary.swarthmore.edu/dl/retrieve.php");
 					con = (HttpURLConnection) url.openConnection();
 					con.setRequestMethod("POST");
@@ -202,27 +205,31 @@ public class DictionaryDatabase {
 					DataOutputStream wr = new DataOutputStream(con.getOutputStream());
 					String urlParam;
 					if(hash[type] == 0){
-						urlParam = "dict=teotitlan&export=true&dl_type=2";
+						urlParam = "dict=teotitlan&export=true&dl_type=" + Integer.toString(type);
 					} 
 					else{
 						urlParam = "dict=teotitlan&export=true&dl_type=" + Integer.toString(type) + "&hash=" + hash[type];
 
 					}
+					
+					Log.i("download", urlParam);
 					wr.writeBytes(urlParam);
 					wr.flush();
 					wr.close();
 
-					if(con.getContentLength()==0){
-						if(con.getResponseCode()==403 || con.getResponseCode()==404){
-		           			//Toast.makeText(mHelperContext, R.string.noUpdate, Toast.LENGTH_SHORT).show();
+					Log.i("download",Integer.toString(con.getResponseCode()));
+					Log.i("download",Integer.toString(con.getContentLength()));
 
-						}
-						else if(con.getResponseCode()==204){
-		           			Toast.makeText(mHelperContext, R.string.noUpdate, Toast.LENGTH_SHORT).show();
-						}
-					}
-					//Else, when download is complete, show a success message
-					else{
+//					if(con.getContentLength()==0){
+//						if(con.getResponseCode()==403 || con.getResponseCode()==404){
+//
+//						}
+//						else if(con.getResponseCode()==204){
+//							response = "no update";
+//						}
+//					}
+//					//Else, when download is complete, show a success message
+//					else{
 						String path = mHelperContext.getFilesDir().getAbsolutePath();
 						File file = new File(mHelperContext.getFilesDir(), "content.zip");
 						OutputStream output = new FileOutputStream(file);
@@ -263,16 +270,21 @@ public class DictionaryDatabase {
 				         }
 				         zis.close(); 
 				         
-				         urlParam = "dict=teotitlan&current=true&hash=true&dl_type=" + Integer.toString(type);			         
-				         con = (HttpURLConnection) url.openConnection();
-						con.setRequestMethod("POST");
-						DataOutputStream hr = new DataOutputStream(con.getOutputStream());
-							hr.writeBytes(urlParam);
-							hr.flush();
-							hr.close();
-							hash[type] = con.hashCode();
-	                        loadWords();
-					}
+//				         urlParam = "dict=teotitlan&current=true&hash=true&dl_type=" + Integer.toString(type);			         
+//				         con = (HttpURLConnection) url.openConnection();
+//						con.setRequestMethod("POST");
+//						Log.i("download", Integer.toString(con.getContentLength()));
+//						
+//						DataOutputStream hr = new DataOutputStream(con.getOutputStream());
+//							hr.writeBytes(urlParam);
+//							hr.flush();
+//							hr.close();
+//							hash[type] = con.hashCode();
+//							Log.i("download",Integer.toString(hash[type]));
+//							response = Integer.toString(R.string.updated);
+							loadWords();
+	             
+					//}
 					
 						
 				} catch (IOException e) {
@@ -287,7 +299,6 @@ public class DictionaryDatabase {
 			try {
 				String str="";
 				StringBuffer buf = new StringBuffer();
-				Log.i("Dict",mHelperContext.getFilesDir().toString());
 				InputStream is = new FileInputStream(mHelperContext.getFilesDir() + "/teotitlan_content/teotitlan_export.json");
 
 				BufferedReader reader = new BufferedReader(new InputStreamReader(is));
