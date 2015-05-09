@@ -77,12 +77,15 @@ All rights reserved. Do not distribute or reproduce without permission.</string>
     <string name="settingsSaved">Settings Saved</string>
     <string name="db_specs"> words are in the database</string>
     <string name="last_updated">Last updated: </string>
+    <string name="checkOncePerDay">You may check for updates once per day</string>
     <string name="recording">RECORDING</string>
     <string name="report_a_problem">Report a Problem</string>
     <string name="report_textView">Is there a problem with the app or dictionary that you would like to report? You can report the problem via email by clicking the button below.</string>
     <string name="report_button">Report problem</string>
     <string name="reportEmail_subject">"Dixza Android Application Bug Report"</string>
     <string name="reportEmail_body">"Bug description:\n"</string>
+    <string name="searchResults">Search Results</string>
+    <string name="wordDefinition">Word Defition</string>
 
     <string-array name="languages_array">
         <item>ENG</item>

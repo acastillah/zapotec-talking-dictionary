@@ -52,6 +52,9 @@ public class WordDefinitionFragment extends Fragment{
 	@Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+		
+		((MainActivity)getActivity()).setActionBarTitle(R.string.wordDefinition);
+		
 		Bundle bundle = this.getArguments();
         info = bundle.getStringArray("WORD");
         
@@ -64,6 +67,7 @@ public class WordDefinitionFragment extends Fragment{
         definition_Spa = (TextView) v.findViewById(R.id.Word_Spa);
         variant = (TextView) v.findViewById(R.id.Variant);
         speaker = (TextView) v.findViewById(R.id.Speaker);
+        image = (ImageView) v.findViewById(R.id.image);
         
         playButton = new PlayButton(getActivity());
 //        playButton.setPadding(0, 0, 10, 0);
@@ -135,34 +139,36 @@ public class WordDefinitionFragment extends Fragment{
 	public void setUpDisplay(){
 		w = new Word(Integer.parseInt(info[0]), info[1],info[2],info[3],info[4],info[5],info[6],info[7],info[8],info[9],info[10],info[11],info[12]);
 		
-		String name = "<b>" + w.getName()+ "</b> "; 
+		String name = "";
+		if (w.getName() != null)
+			name = "<b>" + w.getName()+ "</b> "; 
 		word.setText(Html.fromHtml(name));
 		
-		if (!w.getPos().equals("")) {
+		if (w.getPos() != null && !w.getPos().equals("")) {
 			pos.setText(w.getPos());
 			pos.setTypeface(null, Typeface.ITALIC);
 		}
 		else
 			pos.setVisibility(View.GONE);
 		
-		if (!w.getGloss().equals("")){
+		if (w.getGloss() != null && !w.getGloss().equals("")){
 			String sourceString = "<b>" + getResources().getString(R.string.english) + ":</b> " + w.getGloss(); 
 			definition_Eng.setText(Html.fromHtml(sourceString));
 		}else
 			definition_Eng.setVisibility(View.GONE);
 		
-		if (!w.getEsGloss().equals("")){
+		if (w.getEsGloss() != null && !w.getEsGloss().equals("")){
 			String sourceString = "<b>" + getResources().getString(R.string.spanish) + ":</b> " + w.getEsGloss(); 
 			definition_Spa.setText(Html.fromHtml(sourceString));
 		}else
 			definition_Spa.setVisibility(View.GONE);
 		
-		if (!w.getDialect().equals(""))
+		if (w.getDialect() != null && !w.getDialect().equals(""))
 			variant.setText(w.getDialect());
 		else
 			variant.setVisibility(View.GONE);
 		
-		if (!w.getAuthority().equals("")){
+		if (w.getAuthority() != null && !w.getAuthority().equals("")){
 			String authority = "<b>" + getResources().getString(R.string.speaker) + "</b> " + w.getAuthority(); 
 			speaker.setText(Html.fromHtml(authority));
 		}
@@ -170,8 +176,7 @@ public class WordDefinitionFragment extends Fragment{
 			speaker.setVisibility(View.GONE);
 			
 		//AssetManager assetManager = getActivity().getAssets();
-		
-		if (!w.getAudio().equals("")) {
+		if (w.getAudio() != null && !w.getAudio().equals("")) {
 			audioFileName = getActivity().getFilesDir().getAbsolutePath() + "/teotitlan_content/aud/" + w.getAudio();
 			//audioFileName = "audio/" + w.getAudio();
 			
@@ -201,19 +206,11 @@ public class WordDefinitionFragment extends Fragment{
 			playButton.setVisibility(View.GONE);
 		}
 		
-		if (!w.getIMG().equals("")) {
-			
-			String imageFileName = w.getIMG();
-//			
-//			imageFileName = imageFileName.substring(0,imageFileName.length()-4);
-//			imageFileName += "-scaled";
-//			imageFileName += w.getIMG().substring(w.getIMG().length()-4);
-			
-			Log.i("IMAGE", "image file name="+imageFileName);
-			
+		if (w.getIMG() != null && !w.getIMG().equals("")) {
+			String imageFileName = getActivity().getFilesDir().getAbsolutePath() + "/teotitlan_content/pix/" + w.getIMG();
+						
 			try {
-				//imageStream = assetManager.open(imageFileName);
-			imageStream = new FileInputStream(getActivity().getFilesDir().getAbsolutePath() + "/teotitlan_content/pix/" + imageFileName);
+			imageStream = new FileInputStream(imageFileName);
 
 			} catch (IOException e) {
 				Log.i("IMAGE", "Failed to open input stream for image file");
@@ -234,6 +231,7 @@ public class WordDefinitionFragment extends Fragment{
 		}
 		else {
 			image.setVisibility(View.GONE);
+			Log.i("IMAGE", "no image");
 		}
 	}
 	

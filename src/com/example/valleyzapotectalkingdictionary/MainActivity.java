@@ -1,5 +1,6 @@
 package com.example.valleyzapotectalkingdictionary;
 
+import java.io.File;
 import java.util.Locale;
 
 import android.support.v7.app.ActionBar;
@@ -22,6 +23,8 @@ import android.content.res.Configuration;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.os.Environment;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -49,6 +52,12 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 	
 	private boolean configChange = false;
 	
+	Bundle bundle = null;
+	
+	public MainActivity() {
+		bundle = new Bundle();
+	}
+		
 	public static final InputFilter[] inputFilters = new InputFilter[] {
             new InputFilter() {
             	@Override
@@ -158,8 +167,15 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 			this.getCurrentFocus().clearFocus();
 		
 		searchView.setFocusable(false);
-//		hideKeyboard(getWindow().getDecorView().getRootView());		
+//		hideKeyboard(getWindow().getDecorView().getRootView());
+		Log.i("ROOT", "null?=" + Boolean.toString(getWindow().getDecorView().getRootView() == null));
 		
+		
+		if (savedInstanceState != null && savedInstanceState.containsKey("QUERY")) {
+			Log.i("SEARCH", "QUERY_SAVED");
+			showResults(savedInstanceState.getString("QUERY", ""));
+		}
+				
 //		getFragmentManager().popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
 		
 	}
@@ -212,6 +228,10 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 
 		}
 		return super.onCreateOptionsMenu(menu);
+	}
+	
+	public void onSaveInstanceState(Bundle outState) {
+		outState = this.bundle;
 	}
 
 	public void restoreActionBar() {
@@ -280,6 +300,8 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
     		// handles a search query
             String q = intent.getStringExtra(SearchManager.QUERY);
             String query = q.trim();
+            Log.i("QUERY", query);
+            this.bundle.putString("QUERY", query);
             showResults(query);
         }
     }
@@ -306,6 +328,11 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
         bundle.putString("QUERY", query);
         bundle.putInt("LANG", Language_search);
         bundle.putString("DOM", domain_search);
+        
+//        this.bundle.putString("QUERY", query);
+//        this.bundle.putInt("LANG", Language_search);
+//        this.bundle.putString("DOM", domain_search);
+        
         ((Fragment) fragment).setArguments(bundle);
 		transaction.addToBackStack(null).replace(R.id.container, fragment).commit();	
 		
@@ -320,6 +347,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		FragmentManager fragmentManager = getSupportFragmentManager();
 		Fragment fragment = null;
 		SharedPreferences preferences = getSharedPreferences(Preferences.APP_SETTINGS, Activity.MODE_PRIVATE);
+
 		if (preferences.getBoolean(Preferences.LOGIN_STATUS_CHANGE, false)) {
 			Editor editor = preferences.edit();
 			editor.putBoolean(Preferences.LOGIN_STATUS_CHANGE, false);
@@ -373,24 +401,24 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 					mTitle = getString(R.string.title_settings);
 				}
 				else if (position+1 == 7) {
-					fragment = new ReportFragment();
-					mTitle = getString(R.string.report_a_problem);
-				}
-				else if (position+1 == 8) {
 					fragment = new PasswordFragment();
 					mTitle = getString(R.string.password_section);
+				}
+				else if (position+1 == 8) {
+					fragment = new ReportFragment();
+					mTitle = getString(R.string.report_a_problem);
 				}
 			}
 			
 			// Options only non-logged in users see
 			else {
 				if (position+1 == 4) {
-					fragment = new ReportFragment();
-					mTitle = getString(R.string.report_a_problem);
-				}
-				else if (position+1 == 5) {
 					fragment = new PasswordFragment();
 					mTitle = getString(R.string.password_section);
+				}
+				else if (position+1 == 5) {
+					fragment = new ReportFragment();
+					mTitle = getString(R.string.report_a_problem);
 				}
 			}	
 		}
@@ -409,6 +437,40 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		
 		configChange = false;
 		fragmentManager.beginTransaction().replace(R.id.container, fragment).addToBackStack(null).commit();		
+	}
+	
+	@Override
+	public void onStop() {
+		Log.i("ONSTOP", "activity stopped");
+		new Thread(new DeleteAllFilesInDirectoryRunnable(
+				Environment.getExternalStorageDirectory().getAbsolutePath() + "/Zapotec Talking Dictionary/temp"))
+				.start();
+		super.onStop();
+	}
+	
+	public class DeleteAllFilesInDirectoryRunnable implements Runnable {
+
+		private String directoryPath = null;
+		public DeleteAllFilesInDirectoryRunnable(String directoryPath) {
+			this.directoryPath = directoryPath;
+		}
+		
+		@Override
+		public void run() {
+			Log.i("DELETE FILES", "Background thread deleting all files in director \'" + directoryPath + "\'");
+			
+			File dir = new File(directoryPath);
+			if (dir.exists() && dir.isDirectory()) {
+
+				File[] files = dir.listFiles();
+				for (File file : files)
+					file.delete();	
+				
+			}
+			else {
+				Log.e("DELETE FILES", "Error: \'" + directoryPath + "\' does not exist or is not a directory");
+			}
+		}
 	}
 	
 	public void hideKeyboard(View view) {

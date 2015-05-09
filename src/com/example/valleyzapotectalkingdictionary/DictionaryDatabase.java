@@ -205,7 +205,6 @@ public class DictionaryDatabase {
 						}				
 					}		
 					is.close();	
-					
 					Log.i("download", buf.toString());
 					hash[type] = buf.toString();
 	           } catch (IOException e){

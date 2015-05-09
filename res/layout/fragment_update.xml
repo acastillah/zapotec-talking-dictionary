@@ -32,8 +32,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/updateText"
-        android:layout_below="@+id/last_updated"
-        android:layout_marginTop="20dp"
+        android:layout_below="@+id/updateText"
         android:checked="true"
         android:text="@string/downloadPictures" />
 
@@ -46,12 +45,22 @@
         android:checked="true"
         android:text="@string/downloadAudio" />
 
-	<TextView
+    <Button
+        android:id="@+id/updateButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/downloadAudioCheckbox"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:text="@string/update" />
+    
+    <TextView
         android:id="@+id/db_specs"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/updateText"
+        android:layout_below="@+id/updateButton"
         android:text="@string/db_specs" />
 	
 	<TextView
@@ -61,15 +70,14 @@
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/db_specs"
         android:text="@string/last_updated" />
-
-    <Button
-        android:id="@+id/updateButton"
+	
+	<TextView
+        android:id="@+id/check"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/downloadAudioCheckbox"
-        android:layout_marginTop="20dp"
-        android:text="@string/update" />
+        android:layout_below="@+id/last_updated"
+        android:text="@string/checkOncePerDay" />
     
     </RelativeLayout>
     </ScrollView>

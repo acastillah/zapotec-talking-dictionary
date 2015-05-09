@@ -104,8 +104,8 @@ public class NavigationDrawerFragment extends Fragment {
 							getString(R.string.audio_section),
 							getString(R.string.photo_section),
 							getString(R.string.title_settings),
-							getString(R.string.report_a_problem),
-							getString(R.string.logout)}));
+							getString(R.string.logout),
+							getString(R.string.report_a_problem)}));
 		}
 		else {
 			mDrawerListView.setAdapter(new ArrayAdapter<String>(getActionBar().getThemedContext(),
@@ -113,8 +113,8 @@ public class NavigationDrawerFragment extends Fragment {
 							getString(R.string.title_main_section), 
 							getString(R.string.title_section2),
 							getString(R.string.title_section3),
-							getString(R.string.report_a_problem),
-							getString(R.string.password_section)}));
+							getString(R.string.password_section),
+							getString(R.string.report_a_problem)}));
 		}
 		
 		mDrawerListView.setItemChecked(mCurrentSelectedPosition, true);
