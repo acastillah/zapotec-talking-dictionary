@@ -240,13 +240,18 @@ public class ImageCaptureFragment extends Fragment {
                         ViewGroup.LayoutParams.WRAP_CONTENT,
                         0));
         
-        LinearLayout fileNameLayout = new LinearLayout(activity);
-        fileNameLayout.setOrientation(LinearLayout.HORIZONTAL);
-        
         TextView namePhotoTextView = new TextView(activity);
         namePhotoTextView.setText(R.string.photoName);
-        fileNameLayout.addView(namePhotoTextView);
+        namePhotoTextView.setPadding(20, 40, 0, 0);
+        fragmentLayout.addView(namePhotoTextView,
+                new LinearLayout.LayoutParams(
+                        ViewGroup.LayoutParams.WRAP_CONTENT,
+                        ViewGroup.LayoutParams.WRAP_CONTENT,
+                        0));
         
+        LinearLayout fileNameLayout = new LinearLayout(activity);
+        fileNameLayout.setOrientation(LinearLayout.HORIZONTAL);
+
         mFileNameEditText = new FileNameEditText(activity);
         mFileNameEditText.setEms(10);
         fileNameLayout.addView(mFileNameEditText,
@@ -519,7 +524,7 @@ public class ImageCaptureFragment extends Fragment {
 				
 				if (renameSuccessful) {
 					Log.i("PHOTOS", "RENAME WAS SUCCESSFUL");
-					Toast.makeText(getActivity(), "Photo saved", Toast.LENGTH_SHORT).show();
+					Toast.makeText(getActivity(), R.string.photoSaved, Toast.LENGTH_SHORT).show();
 				}
 				else {
 					Log.i("PHOTOS", "RENAME WAS NOT SUCCESSFUL");

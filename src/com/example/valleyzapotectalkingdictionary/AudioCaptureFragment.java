@@ -514,7 +514,7 @@ public class AudioCaptureFragment extends Fragment implements Parcelable {
 		            	Log.i("SAVE AUDIO", "renameSuccessful=" + renameSuccessful);
 		            	
 		            	// Inform the user that saving the audio was successful
-		            	Toast.makeText(getActivity(), "Photo saved", Toast.LENGTH_SHORT).show();
+		            	Toast.makeText(getActivity(), R.string.audioSaved, Toast.LENGTH_SHORT).show();
 		            	
 		            	// Reset the form so user can record more audio
 		            	mRecordButton.setEnabled(true);
