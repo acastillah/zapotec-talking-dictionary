@@ -131,16 +131,16 @@ public class MainPageFragment extends Fragment{
 		if (db_size == 0)
 			db_size = 519;
 		
-		int number = rn.nextInt((int)db_size); // this is the problem, ID no.s not serialized
-		number = 10;
+		int number = rn.nextInt((int)db_size) + 1; 
+		
 		Cursor c = db.getIDmatch(number);
 		if (c != null) {
 			c.moveToFirst();
-			w = new Word(Integer.parseInt(c.getString(0)), c.getString(1),
+			w = new Word(Integer.parseInt(c.getString(0)), Integer.parseInt(c.getString(1)),
 					c.getString(2), c.getString(3), c.getString(4),
 					c.getString(5), c.getString(6), c.getString(7),
 					c.getString(8), c.getString(9), c.getString(10),
-					c.getString(11), c.getString(12));
+					c.getString(11), c.getString(12), c.getString(13));
 
 			// Typeface type =
 			// Typeface.createFromAsset(getActivity().getAssets(),"fonts/Parisish.ttf");
