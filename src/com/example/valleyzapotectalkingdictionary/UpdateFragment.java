@@ -2,7 +2,6 @@ package com.example.valleyzapotectalkingdictionary;
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -10,6 +9,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.text.ParseException;
 import java.util.Calendar;
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -19,7 +19,6 @@ import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -53,13 +52,11 @@ public class UpdateFragment extends Fragment {
         dbspecs = (TextView) view.findViewById(R.id.db_specs);
         lastUpdateView = (TextView) view.findViewById(R.id.last_updated);
         
-        
-        
         SharedPreferences preferences = getActivity().getSharedPreferences(Preferences.APP_SETTINGS, Activity.MODE_PRIVATE);
         Editor editor = preferences.edit(); 
         
         if(!preferences.contains(Preferences.DOWNLOAD_PHOTOS)) {
-        	editor.putBoolean(Preferences.DOWNLOAD_PHOTOS, true);
+        	editor.putBoolean(Preferences.DOWNLOAD_PHOTOS, false);
         }
         
         if (!preferences.contains(Preferences.DOWNLOAD_AUDIO)) {
@@ -78,9 +75,7 @@ public class UpdateFragment extends Fragment {
         }
         
         editor.commit();
-        
-//        preferences = getActivity().getSharedPreferences(Preferences.APP_SETTINGS, Activity.MODE_PRIVATE);
-        
+                
         downloadPicturesCheckbox.setChecked(preferences.getBoolean(Preferences.DOWNLOAD_PHOTOS, false));
         downloadAudioCheckbox.setChecked(preferences.getBoolean(Preferences.DOWNLOAD_AUDIO, false));
         	        
@@ -99,21 +94,19 @@ public class UpdateFragment extends Fragment {
 			try {
 				lastUpdate.setTime(DictionaryDatabase.dateFormat.parse(preferences.getString(Preferences.LAST_DB_UPDATE, "")));
 				Calendar today = Calendar.getInstance();
-//				if (today.get(Calendar.YEAR) > lastUpdate.get(Calendar.YEAR)
-//						|| today.get(Calendar.MONTH) > lastUpdate.get(Calendar.MONTH)
-//						|| today.get(Calendar.DATE) > lastUpdate.get(Calendar.DATE)) {
+				if (today.get(Calendar.YEAR) > lastUpdate.get(Calendar.YEAR)
+						|| today.get(Calendar.MONTH) > lastUpdate.get(Calendar.MONTH)
+						|| today.get(Calendar.DATE) > lastUpdate.get(Calendar.DATE)) {
 					updateButton.setEnabled(true);
-//				}
-//				else {
-//					updateButton.setEnabled(false);
-//				}
+				}
+				else {
+					updateButton.setEnabled(false);
+				}
 			} catch (ParseException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
-		
-		
 		return view;
     }
 	
@@ -126,18 +119,12 @@ public class UpdateFragment extends Fragment {
 		}
 		
 		@Override
-		public void onCheckedChanged(CompoundButton buttonView,
-				boolean isChecked) {
-			
+		public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) {
 			SharedPreferences preferences = getActivity().getSharedPreferences(Preferences.APP_SETTINGS, Activity.MODE_PRIVATE);
 			Editor editor = preferences.edit();
-						
 			editor.putBoolean(pref, isChecked);
-			
 			editor.commit();
-			
 		}
-		
 	}
 	
 	public class UpdateButtonListener implements OnClickListener {
@@ -147,7 +134,7 @@ public class UpdateFragment extends Fragment {
 	
 			new Thread(new Runnable() {
                 public void run() {
-                	String size = String.format("%.2f", getSize());
+                	String size = getSize();
                 	msg = "Would you like to download a file of this size?\n" + size + "MB.";
         			new UpdateDialogFragment().show(getFragmentManager(), "Dialog");
                 	
@@ -163,12 +150,12 @@ public class UpdateFragment extends Fragment {
 	public class UpdateDialogFragment extends DialogFragment {
 		
 		public TextView dialogMSG = null;
-	    @Override
+	    @SuppressLint("InflateParams")
+		@Override
 	    public Dialog onCreateDialog(Bundle savedInstanceState) {
 
 	    	// you can put whatever you want in the layout, including checkboxes, etc.
 	    	View dialogView = getActivity().getLayoutInflater().inflate(R.layout.fragment_update_dialog, null);
-
 	        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 	        builder.setTitle("Title");
 	        builder.setView(dialogView);
@@ -193,23 +180,10 @@ public class UpdateFragment extends Fragment {
 		                   	lastUpdateView.append(" " + preferences.getString(Preferences.LAST_DB_UPDATE, ""));
 		                   	
 		                   	// UPDATE DB
-		                   	//DictionaryDatabase db = new DictionaryDatabase(getActivity());
-		        			//db.update();
-		                   	new Thread(new Runnable() {
-		                        public void run() {
-		                        	
-		                        }
-		                    }).start();
-		           			
+		                   	DictionaryDatabase db = new DictionaryDatabase(getActivity());
+		        			db.update();
 	                   }
 	               });
-	        
-	        // you can also set the "neutral" button if you want
-//	        builder.setNeutralButton("Other option", new DialogInterface.OnClickListener() {
-//	                public void onClick(DialogInterface dialog, int id) {
-//									// do something
-//                }
-//            });
 	        
 	        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
 	                   public void onClick(DialogInterface dialog, int id) {
@@ -222,57 +196,37 @@ public class UpdateFragment extends Fragment {
 	    }
 	}
 	
-	public int getHash(){
-		try{	
-			URL url = new URL("http://talkingdictionary.swarthmore.edu/dl/retrieve.php");
-	        String urlParam = "dict=teotitlan&current=true&current_hash=true&dl_type=" + Integer.toString(0);			         
-	        HttpURLConnection con = (HttpURLConnection) url.openConnection();
-			con.setRequestMethod("POST");
-			DataOutputStream hr = new DataOutputStream(con.getOutputStream());
-				hr.writeBytes(urlParam);
-				Log.i("download", "write bytes");
-				hr.flush();
-				Log.i("download", "flush");
-				hr.close();
-				Log.i("download", Integer.toString(con.getContentLength()));
-				Log.i("download", Integer.toString(con.getResponseCode()));		    								
-				int hash = con.hashCode();
-				Log.i("download",Integer.toString(hash));
-				
-				String str="";
-				StringBuffer buf = new StringBuffer();
-				InputStream is = con.getInputStream();
-
-				BufferedReader reader = new BufferedReader(new InputStreamReader(is));
-				if (is!=null) {							
-					while ((str = reader.readLine()) != null) {	
-						buf.append(str + "\n" );
-					}				
-				}		
-				is.close();	
-				
-				Log.i("download", buf.toString());
-				
-           } catch (IOException e){
-        	  
-           }
-		return 0;
+	public int getType(){
+    	SharedPreferences preferences = getActivity().getSharedPreferences(Preferences.APP_SETTINGS, Activity.MODE_PRIVATE);
+       	Boolean pictures = preferences.getBoolean(Preferences.DOWNLOAD_PHOTOS, false);
+       	Boolean audio = preferences.getBoolean(Preferences.DOWNLOAD_AUDIO, false);
+       	int type;
+       	
+       	if (pictures && audio){
+       		type = 0;
+       	}
+       	else if(audio){
+       		type = 2;
+       	}
+       	else{
+       		type = 1;
+       	}
+       	
+       	return type;
 	}
 	
 	public String getSize(){
 		
 		try{	
+			int type = getType();
 			URL url = new URL("http://talkingdictionary.swarthmore.edu/dl/retrieve.php");
-	        String urlParam = "dict=teotitlan&current=true&size=true&dl_type=" + Integer.toString(0);			         
+	        String urlParam = "dict=teotitlan&current=true&size=true&dl_type=" + Integer.toString(type);	
 	        HttpURLConnection con = (HttpURLConnection) url.openConnection();
 			con.setRequestMethod("POST");
 			DataOutputStream hr = new DataOutputStream(con.getOutputStream());
 			hr.writeBytes(urlParam);
 			hr.flush();
-			hr.close();
-			Log.i("download", Integer.toString(con.getContentLength()));
-			Log.i("download", Integer.toString(con.getResponseCode()));		    								
-				
+			hr.close();				
 			String str="";
 			StringBuffer buf = new StringBuffer();
 			InputStream is = con.getInputStream();
@@ -282,10 +236,7 @@ public class UpdateFragment extends Fragment {
 					buf.append(str + "\n" );
 				}				
 			}		
-			is.close();	
-			
-			Log.i("download", buf.toString());
-			
+			is.close();				
 			float sz = Float.parseFloat(buf.toString());
 			sz = sz/(1024*1024);
 			

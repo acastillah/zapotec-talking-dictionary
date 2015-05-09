@@ -82,9 +82,7 @@ public class AudioCaptureFragment extends Fragment implements Parcelable {
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
     	super.onSaveInstanceState(savedInstanceState);
-    	
-    	Log.i("AUDIO", "onSaveInstanceState");
-    	
+    	    	
     	savedInstanceState.putBoolean(RECORD_BUTTON_ENABLED, mRecordButton.isEnabled());
     	savedInstanceState.putBoolean(PLAY_BUTTON_ENABLED, mPlayButton.isEnabled());
     	savedInstanceState.putBoolean(FILE_NAME_EDIT_TEXT_ENABLED, mFileNameEditText.isEnabled());
