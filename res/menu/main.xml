@@ -6,7 +6,7 @@
     <item 
         android:title="title"
         android:id="@+id/spinner"
-    	app:showAsAction="ifRoom"
+    	app:showAsAction="always"
     	app:actionViewClass="android.widget.Spinner" />
     <!-- 
     <item

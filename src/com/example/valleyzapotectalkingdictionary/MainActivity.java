@@ -22,6 +22,7 @@ import android.content.SharedPreferences.Editor;
 import android.content.res.Configuration;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
@@ -210,7 +211,8 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 				ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
 				        R.array.languages_array, android.R.layout.simple_spinner_item);
 				// Specify the layout to use when the list of choices appears
-				adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//				adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+				adapter.setDropDownViewResource(R.layout.actionbar_spinner_dropdown);
 				// Apply the adapter to the spinner
 				spinner.setAdapter(adapter);
 				
