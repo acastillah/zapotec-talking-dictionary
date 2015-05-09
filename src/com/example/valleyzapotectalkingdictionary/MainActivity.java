@@ -33,7 +33,6 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
-import android.widget.TextView;
 
 public class MainActivity extends ActionBarActivity implements NavigationDrawerFragment.NavigationDrawerCallbacks  {
 
@@ -85,9 +84,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 			prefEditor.putString(Preferences.LANGUAGE, Preferences.ENGLISH);
 		
 		prefEditor.commit();
-		
-		Log.i("LANG", "App displaying in " + prefs.getString(Preferences.LANGUAGE, "no language"));
-		
+			
 		prefs = this.getSharedPreferences(Preferences.APP_SETTINGS, Activity.MODE_PRIVATE);
 		String lang = prefs.getString(Preferences.LANGUAGE, Preferences.ENGLISH);
 		Locale locale = Preferences.ENGLISH_LOC;
@@ -138,7 +135,6 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 			
 			@Override
 			public void onFocusChange(View v, boolean hasFocus) {
-				Log.i("FOCUS", "focus change, hasFocus=" + hasFocus);
 				if (!hasFocus) {
 	                hideKeyboard(v);
 	            }
@@ -167,7 +163,6 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 //		startActivity(getIntent());
 //	}
 		
-		
 		if (this.getCurrentFocus() != null)
 			this.getCurrentFocus().clearFocus();
 		
@@ -180,8 +175,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 			Log.i("SEARCH", "QUERY_SAVED");
 			showResults(savedInstanceState.getString("QUERY", ""));
 		}
-		
-		
+				
 //		getFragmentManager().popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
 		
 	}
@@ -277,7 +271,6 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 	 
 	public void displayWord(View view) {
 		if (searchView != null) {
-        	Log.i("SEARCHVIEW", "not null");
 //			searchView.setQuery("", false);
 			searchView.clearFocus();
 		}
@@ -323,7 +316,6 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		transaction.addToBackStack(null).replace(R.id.container, fragment).commit();	
 		
         if (searchView != null) {
-        	Log.i("SEARCHVIEW", "not null");
 //			searchView.setQuery("", false);
 			searchView.clearFocus();
 		}
@@ -345,7 +337,6 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		transaction.addToBackStack(null).replace(R.id.container, fragment).commit();	
 		
         if (searchView != null) {
-        	Log.i("SEARCHVIEW", "not null");
 //			searchView.setQuery("", false);
 			searchView.clearFocus();
 		}
@@ -356,11 +347,8 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		FragmentManager fragmentManager = getSupportFragmentManager();
 		Fragment fragment = null;
 		SharedPreferences preferences = getSharedPreferences(Preferences.APP_SETTINGS, Activity.MODE_PRIVATE);
-		
-		
-		Log.i("NAV", "selected="+(position+1));
+
 		if (preferences.getBoolean(Preferences.LOGIN_STATUS_CHANGE, false)) {
-			Log.i("NAV", "status just changed");
 			Editor editor = preferences.edit();
 			editor.putBoolean(Preferences.LOGIN_STATUS_CHANGE, false);
 			editor.commit();
@@ -500,7 +488,6 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 	public void onConfigurationChanged (Configuration newConfig) {
 		super.onConfigurationChanged(newConfig);
 		configChange = true;
-		Log.i("CONFIG", "config changed");
 	}
 	
 	public void setActionBarTitle(String title) {

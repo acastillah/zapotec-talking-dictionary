@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.SearchView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -66,18 +65,6 @@ public class SearchResultsFragment extends Fragment {
             else 
             	from = new String[] { DictionaryDatabase.KEY_WORD, DictionaryDatabase.KEY_GLOSS };
             
-//            switch(lang){
-//	            case 0: from = new String[] { DictionaryDatabase.KEY_WORD, DictionaryDatabase.KEY_GLOSS };
-//	            		break;
-//	            case 1: from = new String[] { DictionaryDatabase.KEY_WORD, DictionaryDatabase.KEY_GLOSS }; //depends on language interface
-//        				break;
-//	            case 2: from = new String[] { DictionaryDatabase.KEY_GLOSS, DictionaryDatabase.KEY_WORD };
-//        				break;
-//	            case 3: from = new String[] { DictionaryDatabase.KEY_ESGLOSS, DictionaryDatabase.KEY_WORD };
-//        				break;
-//        		
-//            }
-            
    		 	// Specify the corresponding layout elements where we want the columns to go
             int[] to = new int[] { R.id.word_Searched, R.id.word_Definition };
             // Create a simple cursor adapter for the definitions and apply them to the ListView
@@ -87,13 +74,6 @@ public class SearchResultsFragment extends Fragment {
             // Define the on-click listener for the list items
             mListView.setOnItemClickListener(new OnItemClickListener() {
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    // Build the Intent used to open WordActivity with a specific word Uri
-                    //Intent wordIntent = new Intent(getActivity(), WordDefinitionActivity.class);
-                    ///Uri data = Uri.withAppendedPath(DictionaryProvider.CONTENT_URI,
-                    //                                String.valueOf(id));
-                    //wordIntent.setData(data);
-                    //startActivity(wordIntent);
-            		//startActivity(new Intent(getActivity(), WordDefinitionActivity.class));
                 	FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
             		Fragment fragment = new WordDefinitionFragment();
             		Cursor c = ((SimpleCursorAdapter)parent.getAdapter()).getCursor();
@@ -112,7 +92,6 @@ public class SearchResultsFragment extends Fragment {
             		if (v != null) {
 	            		SearchView searchView = (SearchView) v.findViewById(R.id.searchView1);
 	            		if (searchView != null) {
-	                    	Log.i("SEARCHVIEW", "not null");
 	//            			searchView.setQuery("", false);
 	            			searchView.clearFocus();
 	            		}

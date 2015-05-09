@@ -1,5 +1,7 @@
 package com.example.valleyzapotectalkingdictionary;
 
+import java.io.FileDescriptor;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Calendar;
 import java.util.Random;
@@ -10,9 +12,6 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
-import android.content.pm.ActivityInfo;
-import android.content.res.AssetFileDescriptor;
-import android.content.res.AssetManager;
 import android.content.res.Configuration;
 import android.database.Cursor;
 import android.graphics.Typeface;
@@ -48,7 +47,7 @@ public class MainPageFragment extends Fragment{
 	long db_size = 0;
 
 	private String audioFileName = null;
-	private AssetFileDescriptor audioFileFD = null;
+	private FileDescriptor audioFileFD = null;
 	private PlayButton playButton = null;
 	DictionaryDatabase db;
 
@@ -73,8 +72,6 @@ public class MainPageFragment extends Fragment{
 		// Inflate the layout for this fragment
 		
 		playButton = new PlayButton(getActivity());
-//      playButton.setPadding(0, 0, 10, 0);
-
 	      RelativeLayout layout = (RelativeLayout) v.findViewById(R.id.PlayButtonContainer);
 	      layout.addView(playButton);
 	      
@@ -136,7 +133,6 @@ public class MainPageFragment extends Fragment{
 		
 		int number = rn.nextInt((int)db_size); // this is the problem, ID no.s not serialized
 		number = 10;
-		Log.i("WORD", "num=" + number);
 		Cursor c = db.getIDmatch(number);
 		if (c != null) {
 			c.moveToFirst();
@@ -193,31 +189,27 @@ public class MainPageFragment extends Fragment{
 			} else
 				speaker.setVisibility(View.GONE);
 
-			AssetManager assetManager = getActivity().getAssets();
-
 			if (!w.getAudio().equals("")) {
-				audioFileName = "audio/" + w.getAudio();
-
-				String HtmlUnescapedQuote = StringEscapeUtils
-						.unescapeHtml3("&#8217;");
+				
+				audioFileName = getActivity().getFilesDir().getAbsolutePath() + "/teotitlan_content/aud/" + w.getAudio();				
+				String HtmlUnescapedQuote = StringEscapeUtils.unescapeHtml3("&#8217;");
 				String imageFileNameQuote = "'";
-
-				audioFileName = audioFileName.replace(HtmlUnescapedQuote,
-						imageFileNameQuote);
-
+				
+				audioFileName = audioFileName.replace(HtmlUnescapedQuote, imageFileNameQuote);
+							
 				try {
-					audioFileFD = assetManager.openFd(audioFileName);
+					audioFileFD = new FileInputStream(audioFileName).getFD();
 				} catch (IOException e) {
 					Log.i("AUDIO", "Failed to open input stream for audio file");
 				}
-
-				if (audioFileFD != null && playButton != null) {
-					playButton.setVisibility(View.VISIBLE);
-				} else {
-					Log.i("WORD", "no fd or playButton == null");
-//					playButton.setVisibility(View.GONE);
+				
+				if (audioFileFD != null) {
+					Log.i("AUDIO", "Opened audio file, fd=" + audioFileFD.toString());
 				}
-
+				else {
+					playButton.setVisibility(View.GONE);
+					Log.i("Hidden button", "AUDIO");
+				}
 			}
 		}
 		else {
@@ -271,11 +263,7 @@ public class MainPageFragment extends Fragment{
             try {
             	player.setOnPreparedListener(prepListener);
 				player.setOnCompletionListener(listener);
-
-				// must call setDataSource giving offset and length in addition to FD!!!
-				// calling setDataSource with just FD plays all of the audio files in the directory
-                player.setDataSource(audioFileFD.getFileDescriptor(), audioFileFD.getStartOffset(), audioFileFD.getLength ());
-                
+                player.setDataSource(audioFileFD);
                 player.prepareAsync();
             } catch (IOException e) {
                 Log.e("AUDIO", "prepare() failed");

@@ -1,13 +1,10 @@
 package com.example.valleyzapotectalkingdictionary;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.content.res.Configuration;
 import android.graphics.Color;
-import android.support.v4.app.FragmentManager;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
@@ -19,9 +16,6 @@ public class LanguageSpinnerItemSelectedListener implements
 	@Override
 	public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
 
-		String selection = parent.getItemAtPosition(pos).toString();
-		Log.i("SPINNER", selection + " at index " + pos + " selected");
-		
 		((TextView) parent.getChildAt(0)).setTextColor(Color.WHITE);
 		
 		SharedPreferences prefs = parent.getContext().getSharedPreferences(Preferences.APP_SETTINGS, Activity.MODE_PRIVATE);
@@ -30,7 +24,6 @@ public class LanguageSpinnerItemSelectedListener implements
 		Configuration config = new Configuration();
 		
 		if (prefs.contains(Preferences.LANGUAGE)) {
-			Log.i("SPINNER", prefs.getString(Preferences.LANGUAGE, "noLang") + " was in shared preferences");
 			prefEditor.remove(Preferences.LANGUAGE);
 		}
 		

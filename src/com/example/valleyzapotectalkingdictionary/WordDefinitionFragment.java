@@ -44,16 +44,10 @@ public class WordDefinitionFragment extends Fragment{
 	private String[] info;
 	
 	private PlayButton playButton = null;
-	
-	//private static final String audioFileDirectory = "audio";		// under assets
-	private String audioFileName = null;
+		private String audioFileName = null;
 	private FileDescriptor audioFileFD = null;
-	
 	private ImageView image = null;
-	//private static final String imageFileDirectory = "images";		// under assets
-	private static final String imageDirectory = "pix";
 	private InputStream imageStream = null;
-
 	
 	@Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -83,7 +77,6 @@ public class WordDefinitionFragment extends Fragment{
         
         RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams)playButton.getLayoutParams();
         layoutParams.addRule(RelativeLayout.CENTER_IN_PARENT, RelativeLayout.TRUE);
-//        layoutParams.setMargins(10, 10, 10, 10);
         playButton.setLayoutParams(layoutParams);
         
         
@@ -214,18 +207,9 @@ public class WordDefinitionFragment extends Fragment{
 		}
 		
 		if (w.getIMG() != null && !w.getIMG().equals("")) {
-			Log.i("IMAGE", "w.getIMG=" + w.getIMG());
-			
-			String imageFileName = getActivity().getFilesDir().getAbsolutePath() + "/teotitlan_content/" + imageDirectory + "/";
-//			imageFileName += w.getIMG().substring(0, w.getIMG().length()-4);
-//			imageFileName += "-scaled";
-//			imageFileName += w.getIMG().substring(w.getIMG().length()-4);
-			imageFileName += w.getIMG();
-			
-			Log.i("IMAGE", "image file name="+imageFileName);
-			
+			String imageFileName = getActivity().getFilesDir().getAbsolutePath() + "/teotitlan_content/pix/" + w.getIMG();
+						
 			try {
-				//imageStream = assetManager.open(imageFileName);
 			imageStream = new FileInputStream(imageFileName);
 
 			} catch (IOException e) {
