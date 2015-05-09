@@ -59,11 +59,13 @@ public class AudioCaptureFragment extends Fragment implements Parcelable {
     private static final String FILE_NAME_EDIT_TEXT_ENABLED = "FILE_NAME_EDIT_TEXT_ENABLED";
     private static final String SAVE_BUTTON_ENABLED = "SAVE_BUTTON_ENABLED";
     
-    private static final String mFileExtension = ".mp3";
-    private static final String mFileExtension_desired = ".mp3";
+    private static final String mFileExtension = ".3gp";
+    private static final String mFileExtension_desired = ".wav";
     private static final String dictionaryDirectoryName = "Zapotec Talking Dictionary";
     private static final String audioDirectoryName = "audio";
+    private static final String tempDirectoryName = "temp";
     private static String audioDirectoryFullPath = null;
+    private static String tempDirectoryFullPath = null;
 	
     public AudioCaptureFragment() {}
     
@@ -140,6 +142,7 @@ public class AudioCaptureFragment extends Fragment implements Parcelable {
         
 //        if (Environment.getExternalStorageState() == true) {
         	audioDirectoryFullPath = Environment.getExternalStorageDirectory().getAbsolutePath();
+        	tempDirectoryFullPath = Environment.getExternalStorageDirectory().getAbsolutePath();
         	Log.i("DIR", "audio dir full path=" + audioDirectoryFullPath);
         	
         	File appDir = new File(audioDirectoryFullPath, dictionaryDirectoryName);
@@ -173,10 +176,30 @@ public class AudioCaptureFragment extends Fragment implements Parcelable {
         			Log.i("DIR", "audio dir full path=" + audioDirectoryFullPath);
         		}
         		
+        		
+        		
+        		tempDirectoryFullPath += "/" + dictionaryDirectoryName;
+        		Log.i("DIR", "temp dir full path=" + tempDirectoryFullPath);
+        		        		
+        		File tempDir = new File(tempDirectoryFullPath, tempDirectoryName);
+        		if (!tempDir.exists()) {
+        			tempDir.mkdir();
+        		}
+        		
+        		if (tempDir.isDirectory()) {
+        			if (!tempDir.canWrite())
+        				tempDir.setWritable(true);
+        			
+        			tempDirectoryFullPath += "/" + tempDirectoryName;
+        			Log.i("DIR", "temp dir full path=" + tempDirectoryFullPath);
+        		}
+        		
+        		
         	}
         	else {
         		Log.i("DIR", "app directory is not a directory");
         	}
+        	
         	
 //        }
 //        else {
@@ -186,9 +209,9 @@ public class AudioCaptureFragment extends Fragment implements Parcelable {
         	
         	
         // set the name (full path) to the temporary file
-    	mFileName = audioDirectoryFullPath;
-        mFileName += "/temp";
-        mFileName += mFileExtension_desired;
+    	mFileName = tempDirectoryFullPath;
+        mFileName += "/tempAudio";
+        mFileName += mFileExtension;
         	
     }
 
@@ -282,7 +305,7 @@ public class AudioCaptureFragment extends Fragment implements Parcelable {
                     0));
         
         TextView audioExtension = new TextView(activity);
-        audioExtension.setText(mFileExtension);
+        audioExtension.setText(mFileExtension_desired);
         fileNameLayout.addView(audioExtension);
         
         fragmentLayout.addView(fileNameLayout,
@@ -336,10 +359,10 @@ public class AudioCaptureFragment extends Fragment implements Parcelable {
         mRecorder = new MediaRecorder();
         mRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
         mRecorder.setOutputFile(mFileName);
-        mRecorder.setOutputFormat(MediaRecorder.OutputFormat.MPEG_4);
-        mRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_WB);
-        mRecorder.setAudioEncodingBitRate(8000);
-        mRecorder.setAudioSamplingRate(44100);
+        mRecorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
+        mRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
+//        mRecorder.setAudioEncodingBitRate(8000);
+//        mRecorder.setAudioSamplingRate(44100);
         mRecorder.setMaxDuration(60*1000); // 60 sec
         mRecorder.setMaxFileSize(100*1000);	// 100 kb
 
