@@ -33,6 +33,8 @@ public class SearchResultsFragment extends Fragment {
         query = bundle.getString("QUERY");
         lang = bundle.getInt("LANG");
         domain = bundle.getString("DOM");
+        
+        
 		// Inflate the layout for this fragment
         v = inflater.inflate(R.layout.search, container, false);
         mTextView = (TextView) v.findViewById(R.id.text);

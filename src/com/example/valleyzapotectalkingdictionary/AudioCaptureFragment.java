@@ -85,10 +85,14 @@ public class AudioCaptureFragment extends Fragment implements Parcelable {
     	
     	Log.i("AUDIO", "onSaveInstanceState");
     	
-    	savedInstanceState.putBoolean(RECORD_BUTTON_ENABLED, mRecordButton.isEnabled());
-    	savedInstanceState.putBoolean(PLAY_BUTTON_ENABLED, mPlayButton.isEnabled());
-    	savedInstanceState.putBoolean(FILE_NAME_EDIT_TEXT_ENABLED, mFileNameEditText.isEnabled());
-    	savedInstanceState.putBoolean(SAVE_BUTTON_ENABLED, mSaveButton.isEnabled());
+    	if (mRecordButton != null)
+    		savedInstanceState.putBoolean(RECORD_BUTTON_ENABLED, mRecordButton.isEnabled());
+    	if (mPlayButton != null)
+    		savedInstanceState.putBoolean(PLAY_BUTTON_ENABLED, mPlayButton.isEnabled());
+    	if (mFileNameEditText != null)
+    		savedInstanceState.putBoolean(FILE_NAME_EDIT_TEXT_ENABLED, mFileNameEditText.isEnabled());
+    	if (mSaveButton != null)
+    		savedInstanceState.putBoolean(SAVE_BUTTON_ENABLED, mSaveButton.isEnabled());
     	
     	
 //    	outState.putParcelable("AudioCaptureFrag", this);
@@ -102,10 +106,10 @@ public class AudioCaptureFragment extends Fragment implements Parcelable {
     	
     	if (savedInstanceState != null) {
     		Log.i("AUDIO", "savedInstanceState is not null");
-	    	recordButtonEnabled = savedInstanceState.getBoolean(RECORD_BUTTON_ENABLED);
-	    	playButtonEnabled = savedInstanceState.getBoolean(PLAY_BUTTON_ENABLED);
-	    	fileNameEditTextEnabled = savedInstanceState.getBoolean(FILE_NAME_EDIT_TEXT_ENABLED);
-	    	saveButtonEnabled = savedInstanceState.getBoolean(SAVE_BUTTON_ENABLED);
+	    	recordButtonEnabled = savedInstanceState.getBoolean(RECORD_BUTTON_ENABLED, true);
+	    	playButtonEnabled = savedInstanceState.getBoolean(PLAY_BUTTON_ENABLED, false);
+	    	fileNameEditTextEnabled = savedInstanceState.getBoolean(FILE_NAME_EDIT_TEXT_ENABLED, true);
+	    	saveButtonEnabled = savedInstanceState.getBoolean(SAVE_BUTTON_ENABLED, false);
 	    	
 	    	Log.i("AUDIO", "Record button enabled=" + recordButtonEnabled);
 	    	Log.i("AUDIO", "Play button enabled=" + playButtonEnabled);

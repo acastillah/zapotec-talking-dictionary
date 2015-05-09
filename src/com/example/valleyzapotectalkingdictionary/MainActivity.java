@@ -33,6 +33,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 public class MainActivity extends ActionBarActivity implements NavigationDrawerFragment.NavigationDrawerCallbacks  {
 
@@ -52,6 +53,12 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 	
 	private boolean configChange = false;
 	
+	Bundle bundle = null;
+	
+	public MainActivity() {
+		bundle = new Bundle();
+	}
+		
 	public static final InputFilter[] inputFilters = new InputFilter[] {
             new InputFilter() {
             	@Override
@@ -169,6 +176,11 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		Log.i("ROOT", "null?=" + Boolean.toString(getWindow().getDecorView().getRootView() == null));
 		
 		
+		if (savedInstanceState != null && savedInstanceState.containsKey("QUERY")) {
+			Log.i("SEARCH", "QUERY_SAVED");
+			showResults(savedInstanceState.getString("QUERY", ""));
+		}
+		
 		
 //		getFragmentManager().popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
 		
@@ -222,6 +234,10 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 
 		}
 		return super.onCreateOptionsMenu(menu);
+	}
+	
+	public void onSaveInstanceState(Bundle outState) {
+		outState = this.bundle;
 	}
 
 	public void restoreActionBar() {
@@ -291,6 +307,8 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
     		// handles a search query
             String q = intent.getStringExtra(SearchManager.QUERY);
             String query = q.trim();
+            Log.i("QUERY", query);
+            this.bundle.putString("QUERY", query);
             showResults(query);
         }
     }
@@ -318,6 +336,11 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
         bundle.putString("QUERY", query);
         bundle.putInt("LANG", Language_search);
         bundle.putString("DOM", domain_search);
+        
+//        this.bundle.putString("QUERY", query);
+//        this.bundle.putInt("LANG", Language_search);
+//        this.bundle.putString("DOM", domain_search);
+        
         ((Fragment) fragment).setArguments(bundle);
 		transaction.addToBackStack(null).replace(R.id.container, fragment).commit();	
 		
@@ -333,6 +356,8 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		FragmentManager fragmentManager = getSupportFragmentManager();
 		Fragment fragment = null;
 		SharedPreferences preferences = getSharedPreferences(Preferences.APP_SETTINGS, Activity.MODE_PRIVATE);
+		
+		
 		Log.i("NAV", "selected="+(position+1));
 		if (preferences.getBoolean(Preferences.LOGIN_STATUS_CHANGE, false)) {
 			Log.i("NAV", "status just changed");
