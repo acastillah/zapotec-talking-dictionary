@@ -214,11 +214,13 @@ public class WordDefinitionFragment extends Fragment{
 		}
 		
 		if (w.getIMG() != null && !w.getIMG().equals("")) {
+			Log.i("IMAGE", "w.getIMG=" + w.getIMG());
 			
 			String imageFileName = getActivity().getFilesDir().getAbsolutePath() + "/teotitlan_content/" + imageDirectory + "/";
-			imageFileName += w.getIMG().substring(0, w.getIMG().length()-4);
-			imageFileName += "-scaled";
-			imageFileName += w.getIMG().substring(w.getIMG().length()-4);
+//			imageFileName += w.getIMG().substring(0, w.getIMG().length()-4);
+//			imageFileName += "-scaled";
+//			imageFileName += w.getIMG().substring(w.getIMG().length()-4);
+			imageFileName += w.getIMG();
 			
 			Log.i("IMAGE", "image file name="+imageFileName);
 			

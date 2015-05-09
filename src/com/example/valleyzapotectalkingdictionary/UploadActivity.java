@@ -55,9 +55,9 @@ public class UploadActivity extends FragmentActivity {
 //	DeleteHandler deleteHandler = null;
 	
 	TextView uploading = null;
-	TextView uploading1 = null;
-	TextView uploading2 = null;
-	TextView uploading3 = null;
+	TextView[] dots = new TextView[3];
+	int dotsCounter = 0;
+	public static int nDots = 3;
 	
 	public UploadActivity() {}
 	
@@ -69,9 +69,12 @@ public class UploadActivity extends FragmentActivity {
 //		if (!authenticated) {
 		
 		uploading = (TextView) this.findViewById(R.id.uploading);
-		uploading1 = (TextView) this.findViewById(R.id.uploading1);
-		uploading2 = (TextView) this.findViewById(R.id.uploading2);
-		uploading3 = (TextView) this.findViewById(R.id.uploading3);
+		dots[0] = (TextView) this.findViewById(R.id.uploading1);
+		dots[1] = (TextView) this.findViewById(R.id.uploading2);
+		dots[2] = (TextView) this.findViewById(R.id.uploading3);
+		dots[0].setVisibility(View.INVISIBLE);
+		dots[1].setVisibility(View.INVISIBLE);
+		dots[2].setVisibility(View.INVISIBLE);
 		
 		uploadHandler = new UploadHandler(this);
 //		deleteHandler = new DeleteHandler(this);
@@ -175,16 +178,14 @@ public class UploadActivity extends FragmentActivity {
 			super.handleMessage(msg);
 
 			Log.i("HANDLER", "Handler received message");
+			Log.i("HANDLER", "Message received is of type " + msg.obj.getClass());
 			
-			if (msg.obj.getClass().equals(UploadHandlerMessageObject.class)) {
+			if (msg.obj.getClass().equals(Integer.class)) {
+				updateDots((Integer)msg.obj);
+			}
+			else if (msg.obj.getClass().equals(UploadHandlerMessageObject.class)) {
 				Log.i("HANDLER", "Upload message received");
 				UploadHandlerMessageObject mObj = (UploadHandlerMessageObject) msg.obj;
-				
-	
-//				if (activity.getClass().equals(UploadActivity.class))
-//					((UploadActivity)activity).deleteHandler.doNotDeleteList = mObj.badFileList;
-//				
-				
 				new UploadCompleteDialogFragment(activity, mObj).show(activity.getSupportFragmentManager(), "Dialog");
 			}
 			else if (msg.obj.getClass().equals(DeleteHandlerMessageObject.class)) {
@@ -193,32 +194,11 @@ public class UploadActivity extends FragmentActivity {
 		     	activity.finish();
 			}
 			else {
-				Log.i("HANDLER", "Do not recognize message type");
+				Log.i("HANDLER", "Handler did not recognize message type");
 			}
 		}
 	}
-	
-//	class DeleteHandler extends Handler {
-//		private FragmentActivity activity = null;
-//		private List<String> doNotDeleteList = null;
-//		
-//		public DeleteHandler(FragmentActivity activity) {
-//			this.activity = activity;
-//		}
-//		
-//		public DeleteHandler(FragmentActivity activity, List<String> doNotDeleteList) {
-//			this.activity = activity;
-//			this.doNotDeleteList = doNotDeleteList;
-//		}
-//		
-//		public void handleMessage(Message msg) {
-//			super.handleMessage(msg);
-//
-//			Toast.makeText(activity, "Files deleted", Toast.LENGTH_SHORT).show();
-//     	   activity.finish();
-//		}
-//	}
-	
+		
 	class UploadRunnable implements Runnable {
 
 		@Override
@@ -239,6 +219,11 @@ public class UploadActivity extends FragmentActivity {
 					
 					File[] files = photoDir.listFiles();
 					for (File file : files) {
+						// tell UI thread to update animation
+						Message m = new Message();
+						m.obj = (++dotsCounter) % (nDots+1);
+						uploadHandler.sendMessage(m);
+						
 						String originalFileName = file.getName();
 						String uploadedFileName = "/photos/";
 						
@@ -283,6 +268,11 @@ public class UploadActivity extends FragmentActivity {
 					
 					File[] files = audioDir.listFiles();
 					for (File file : files) {
+						// tell UI thread to update animation
+						Message m = new Message();
+						m.obj = (++dotsCounter) % (nDots+1);
+						uploadHandler.sendMessage(m);
+						
 						String originalFileName = file.getName();
 						String uploadedFileName = "/audio/";
 						
@@ -290,8 +280,6 @@ public class UploadActivity extends FragmentActivity {
 						try {
 							FileInputStream inputStream = new FileInputStream(file);
 							
-//							uploadedFileName += originalFileName.substring(0, originalFileName.indexOf('-'));
-//							uploadedFileName += originalFileName.substring(originalFileName.indexOf('.'));
 							uploadedFileName += originalFileName;
 							
 							Entry response = mDBApi.putFile(uploadedFileName, inputStream, file.length(), null, null);
@@ -324,44 +312,74 @@ public class UploadActivity extends FragmentActivity {
 			}
 			
 			
-			
-			
-
-			
-			/**** COMMENTED OUT CODE SUCCESSFULLY UPLOADS TEST FILE ****/
-//			File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath(), "test.txt");
-//			Log.i("UPLOAD", "file path="+file.getAbsolutePath());
-//			try {
-//				file.createNewFile();
-//				FileInputStream inputStream = new FileInputStream(file);
-//				Entry response = mDBApi.putFile("/testUploaded.txt", inputStream, file.length(), null, null);
-//				
-//				Log.i("DbExampleLog", "The uploaded file's rev is: " + response.rev);
-//				
-//			} catch (DropboxUnlinkedException e) {
-//			    Log.e("DbExampleLog", "User has unlinked.");
-//			    mObj.uploadSuccessful = false;
-//			} catch (DropboxException e) {
-//			    Log.e("DbExampleLog", "Something went wrong while uploading.");
-//			    mObj.uploadSuccessful = false;
-//			} catch (IOException e) {
-//				Log.e("DbExampleLog", "Error creating file or with input stream.");
-//				mObj.uploadSuccessful = false;
-//			}
-//			finally {
-//				Log.i("UPLOAD", "Background thread exiting...");
-//			}
-			
-			
-			
-			
-			
 			// tell UI thread that upload is complete
 			Message m = new Message();
 			m.obj = mObj;
 			uploadHandler.sendMessage(m);
 		}
 		
+	}
+	
+	// yes, this is a ridiculous system for the upload animation,
+	// BUT it reflects the ACTUAL progress of the upload
+	// and therefore makes debugging easier
+	public void updateDots(int status) {
+		switch (status) {
+			case 0:
+				dots[0].setVisibility(View.INVISIBLE);
+				dots[1].setVisibility(View.INVISIBLE);
+				dots[2].setVisibility(View.INVISIBLE);
+				dots[0].invalidate();
+				dots[1].invalidate();
+				dots[2].invalidate();
+				dots[0].refreshDrawableState();
+				dots[1].refreshDrawableState();
+				dots[2].refreshDrawableState();
+				break;
+			case 1:
+				dots[0].setVisibility(View.VISIBLE);
+				dots[1].setVisibility(View.INVISIBLE);
+				dots[2].setVisibility(View.INVISIBLE);
+				dots[0].invalidate();
+				dots[1].invalidate();
+				dots[2].invalidate();
+				dots[0].refreshDrawableState();
+				dots[1].refreshDrawableState();
+				dots[2].refreshDrawableState();
+				break;
+			case 2:
+				dots[0].setVisibility(View.VISIBLE);
+				dots[1].setVisibility(View.VISIBLE);
+				dots[2].setVisibility(View.INVISIBLE);
+				dots[0].invalidate();
+				dots[1].invalidate();
+				dots[2].invalidate();
+				dots[0].refreshDrawableState();
+				dots[1].refreshDrawableState();
+				dots[2].refreshDrawableState();
+				break;
+			case 3:
+				dots[0].setVisibility(View.VISIBLE);
+				dots[1].setVisibility(View.VISIBLE);
+				dots[2].setVisibility(View.VISIBLE);
+				dots[0].invalidate();
+				dots[1].invalidate();
+				dots[2].invalidate();
+				dots[0].refreshDrawableState();
+				dots[1].refreshDrawableState();
+				dots[2].refreshDrawableState();
+				break;
+			default:
+				dots[0].setVisibility(View.INVISIBLE);
+				dots[1].setVisibility(View.INVISIBLE);
+				dots[2].setVisibility(View.INVISIBLE);
+				dots[0].invalidate();
+				dots[1].invalidate();
+				dots[2].invalidate();
+				dots[0].refreshDrawableState();
+				dots[1].refreshDrawableState();
+				dots[2].refreshDrawableState();
+		}
 	}
 	
 	public class UploadHandlerMessageObject {
