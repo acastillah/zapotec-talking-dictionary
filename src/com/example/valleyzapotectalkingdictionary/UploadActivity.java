@@ -447,7 +447,7 @@ public class UploadActivity extends FragmentActivity {
 	    		builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
 	                   public void onClick(DialogInterface dialog, int id) {
 	                	   TextView statusView = (TextView) activity.findViewById(R.id.uploading);
-	                	   statusView.setText("Deleting");
+	                	   statusView.setText("DELETING");
 	                	   
 	                	   new Thread(new DeleteRunnable(mObj.badFileList)).start();
 //	                	   Toast.makeText(getActivity(), "Files deleted", Toast.LENGTH_SHORT).show();
@@ -493,13 +493,24 @@ public class UploadActivity extends FragmentActivity {
 					File[] files = photoDir.listFiles();
 					if (doNotDeleteList != null) {
 						for (File file : files) {
+							// tell UI thread to update animation
+							Message m = new Message();
+							m.obj = (++dotsCounter) % (nDots+1);
+							uploadHandler.sendMessage(m);
+							
 							if (!doNotDeleteList.contains(file.getAbsolutePath()))
 								file.delete();
 						}
 					}
 					else {
-						for (File file : files)
+						for (File file : files) {
+							// tell UI thread to update animation
+							Message m = new Message();
+							m.obj = (++dotsCounter) % (nDots+1);
+							uploadHandler.sendMessage(m);
+						
 							file.delete();
+						}
 					}
 
 				}
@@ -513,13 +524,24 @@ public class UploadActivity extends FragmentActivity {
 					File[] files = audioDir.listFiles();
 					if (doNotDeleteList != null) {
 						for (File file : files) {
+							// tell UI thread to update animation
+							Message m = new Message();
+							m.obj = (++dotsCounter) % (nDots+1);
+							uploadHandler.sendMessage(m);
+							
 							if (!doNotDeleteList.contains(file.getAbsolutePath()))
 								file.delete();
 						}
 					}
 					else {
-						for (File file : files)
+						for (File file : files) {
+							// tell UI thread to update animation
+							Message m = new Message();
+							m.obj = (++dotsCounter) % (nDots+1);
+							uploadHandler.sendMessage(m);
+							
 							file.delete();
+						}
 					}
 				}
 				else {}
