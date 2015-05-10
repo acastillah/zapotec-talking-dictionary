@@ -86,7 +86,7 @@ public class DictionaryDatabase {
 			KEY = KEY + " AND " + KEY_SEMANTIC + " LIKE '%" + String.valueOf(dom) + "%'";
 		}
 				
-		Cursor cursor = db.query(TABLE_WORDS, new String[] { KEY_ID,
+		Cursor cursor = db.query(TABLE_WORDS, new String[] { KEY_ID, KEY_DB_ID,
         KEY_WORD, KEY_IPA, KEY_GLOSS, KEY_POS, KEY_USAGE, KEY_DIALECT, KEY_META, KEY_AUTHORITY,
         KEY_AUDIO, KEY_IMG, KEY_SEMANTIC, KEY_ESGLOSS}, KEY,
         null, null, null, null, null);
