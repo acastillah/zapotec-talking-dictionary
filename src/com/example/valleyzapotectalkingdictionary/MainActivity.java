@@ -489,12 +489,6 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 	}
 	
 	public void hideKeyboard(View view) {
-//        InputMethodManager inputMethodManager =(InputMethodManager)getSystemService(Activity.INPUT_METHOD_SERVICE);
-//        inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
-        
-//        InputMethodManager imm = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
-//        imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
-    
 		InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
 		imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
 	}
@@ -502,15 +496,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 	@Override
 	public void onConfigurationChanged(Configuration newConfig) {
 	    super.onConfigurationChanged(newConfig);
-	    
 	    Log.i("CONFIG CHANGE", "orientation changed");
-
-	    // Checks the orientation of the screen
-//	    if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
-//	        Toast.makeText(this, "landscape", Toast.LENGTH_SHORT).show();
-//	    } else if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT){
-//	        Toast.makeText(this, "portrait", Toast.LENGTH_SHORT).show();
-//	    }
 	}
 	
 	public void setActionBarTitle(String title) {
@@ -524,10 +510,19 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 	}
 
 	
-//	@Override
-//	public void onBackPressed(){
-//	    finish();
-//	}
+	@Override
+	public void onBackPressed(){
+		
+		Fragment searchResult = (Fragment)getSupportFragmentManager().findFragmentByTag(SEARCH_RESULTS_FRAGMENT);
+		Fragment wordDef = (Fragment)getSupportFragmentManager().findFragmentByTag(WORD_DEFINITION_FRAGMENT);
+		if ( (searchResult != null && searchResult.isVisible())
+				|| (wordDef != null && wordDef.isAdded()) ) {
+		   super.onBackPressed();
+		}
+		else {
+			this.finish();
+		}
+	}
 }
 
 

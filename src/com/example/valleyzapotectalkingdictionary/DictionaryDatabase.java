@@ -332,6 +332,7 @@ public class DictionaryDatabase {
 		        // dismiss the dialog after the file was downloaded
 				pDialog.dismiss();
 				Toast.makeText(mHelperContext, "Finished setting up the database", Toast.LENGTH_SHORT).show();
+				((Activity)context).recreate();
 			}
 		}
 		

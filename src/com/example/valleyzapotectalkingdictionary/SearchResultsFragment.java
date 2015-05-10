@@ -87,7 +87,7 @@ public class SearchResultsFragment extends Fragment {
             	    bundle.putStringArray("WORD", w);
             	    ((Fragment) fragment).setArguments(bundle);
             		transaction.addToBackStack(null);            
-            		transaction.replace(R.id.container, fragment).commit();	
+            		transaction.replace(R.id.container, fragment, MainActivity.WORD_DEFINITION_FRAGMENT).commit();	
             		
             		if (v != null) {
 	            		SearchView searchView = (SearchView) v.findViewById(R.id.searchView1);
