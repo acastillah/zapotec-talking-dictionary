@@ -44,9 +44,9 @@ public class UploadActivity extends FragmentActivity {
 	private DropboxAPI<AndroidAuthSession> mDBApi;	
 	
 	private boolean authenticated = false;
+	private boolean authenticationAttempted = false;
 	
 	UploadHandler uploadHandler = null;
-//	DeleteHandler deleteHandler = null;
 	
 	TextView uploading = null;
 	TextView[] dots = new TextView[3];
@@ -125,6 +125,13 @@ public class UploadActivity extends FragmentActivity {
 	    
 //	    if (!authenticated) {
 	    
+	    boolean authenticationSuccessful = true;
+	    
+	    if (!authenticationAttempted) {
+	    	authenticationAttempted = true;
+	    	return;
+	    }
+	    	
 	    if (mDBApi.getSession().authenticationSuccessful()) {
 	        try {
 	            // finish the authentication session
@@ -151,14 +158,17 @@ public class UploadActivity extends FragmentActivity {
 				
 	        } catch (IllegalStateException e) {
 	            Log.i("DbAuthLog", "Error authenticating", e);
-	            // do something?
+	            authenticationSuccessful = false;
 	        }
 	    }
-//	    }
 	    else {
 	    	Log.i("UPLOAD", "Authentication unsuccessful");
-	    	// DO SOMETHING
+	    	authenticationSuccessful = false;
 	    }
+	    
+	    
+	    if (authenticationAttempted && !authenticationSuccessful)
+	    	new AuthenticationErrorDialogFragment(this).show(this.getSupportFragmentManager(), "Dialog");
 	}
 	
 	class UploadHandler extends Handler {
@@ -225,8 +235,8 @@ public class UploadActivity extends FragmentActivity {
 						try {
 							FileInputStream inputStream = new FileInputStream(file);
 							
-							if (originalFileName.contains("-")) {
-								uploadedFileName += originalFileName.substring(0, originalFileName.indexOf('-'));
+							if (originalFileName.contains("__")) {
+								uploadedFileName += originalFileName.substring(0, originalFileName.lastIndexOf('_')-1);
 								uploadedFileName += originalFileName.substring(originalFileName.indexOf('.'));
 							}
 							else {
@@ -560,5 +570,32 @@ public class UploadActivity extends FragmentActivity {
 		public DeleteHandlerMessageObject() {}
 	}
 	
+	
+	
+public class AuthenticationErrorDialogFragment extends DialogFragment {
+		
+		Activity activity = null;
+		
+		public AuthenticationErrorDialogFragment(Activity activity) {
+			this.activity = activity;
+		}
+		
+	    @Override
+	    public Dialog onCreateDialog(Bundle savedInstanceState) {
+	    	
+	    	AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+	        builder.setTitle("Authentication Error");
+	        builder.setMessage("There was an error logging into Dropbox.");
+	    	
+	    		builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+	                   public void onClick(DialogInterface dialog, int id) {
+	                	   activity.finish();
+	                   }
+	               });
+
+	    	
+	        return builder.create();
+	    }
+	}
 
 }

@@ -352,7 +352,9 @@ public class ImageCaptureFragment extends Fragment {
 		    		mImageCaptureButton.setText(R.string.retakePhoto);
 		    	else
 		    		mImageCaptureButton.setText(R.string.takeAnotherPhoto);
-		    	mSaveButton.setEnabled(true);
+		    	
+		    	if (mFileNameEditText.getText().toString().length() > 0)
+		    		mSaveButton.setEnabled(true);
 	    	}
 	    	
 	    	
@@ -383,7 +385,7 @@ public class ImageCaptureFragment extends Fragment {
 	    // Create an image file name
 	    String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
 	    String imageFileName = "JPEG_" + timeStamp + "_";
-
+	    
 	    File storageDir = new File(tempDirectoryFullPath);
 	    File image = File.createTempFile(
 		        imageFileName,  					/* prefix */
@@ -437,10 +439,15 @@ public class ImageCaptureFragment extends Fragment {
 				
 				String userDefinedFileName = mFileNameEditText.getText().toString().replace(' ', '_');
 				
+				// make sure file name is not too short
+	    	    // prefixes of less than length 3 cause an IllegalArgumentException
+				// also, temporary files don't always have the dash before the string of numbers
+	    	    userDefinedFileName += "__";
+				
 				String newFileName = photoDirectoryFullPath;
 	            newFileName += "/" + userDefinedFileName;
-	            newFileName += mFileExtension;
-
+	            newFileName += mFileExtension; 
+	            
 				File newImage;
 				try {
 					newImage = File.createTempFile(userDefinedFileName, ".jpg", new File(photoDirectoryFullPath));

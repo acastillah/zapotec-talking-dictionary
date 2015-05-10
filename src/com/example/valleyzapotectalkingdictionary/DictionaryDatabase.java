@@ -68,9 +68,13 @@ public class DictionaryDatabase {
     public static final int DB_DAY = 5;
     public static final int DB_HOUR = 22; // military time
     public static final int DB_MINUTE = 34;
-    public static final SimpleDateFormat dateFormat = new SimpleDateFormat("MMM dd, yyyy kk:mm");
+    public static final SimpleDateFormat dateFormat_US = new SimpleDateFormat("MM/dd/yyyy kk:mm");
+    public static final SimpleDateFormat dateFormat_MX = new SimpleDateFormat("dd/MM/yyyy kk:mm");
+    
+    private Context context = null;
     
     public DictionaryDatabase(Context context) {
+    	this.context = context;
         mDatabaseOpenHelper = new DictionaryOpenHelper(context);   
         
     }
@@ -286,6 +290,7 @@ public class DictionaryDatabase {
 				pDialog.dismiss();
 				if (response == "Download finished"){
 					new setupDatabase().execute();
+					((Activity)context).recreate();
 				}
 				else{
 					Toast.makeText(mHelperContext, response, Toast.LENGTH_SHORT).show();
