@@ -137,25 +137,25 @@ public class UpdateFragment extends Fragment {
        		lastUpdateView.append(" " + dateMX);
        	}
 		
-		
-		
-		
-		
 
-		
 		// users may only update once per day 
 		if (!preferences.getString(Preferences.LAST_DB_UPDATE, "").equals("")) {
 		Calendar lastUpdate = Calendar.getInstance();
 			try {
 				lastUpdate.setTime(DictionaryDatabase.dateFormat_US.parse(preferences.getString(Preferences.LAST_DB_UPDATE, "")));
 				Calendar today = Calendar.getInstance();
-				if (today.get(Calendar.YEAR) > lastUpdate.get(Calendar.YEAR)
-						|| today.get(Calendar.MONTH) > lastUpdate.get(Calendar.MONTH)
-						|| today.get(Calendar.DATE) > lastUpdate.get(Calendar.DATE)) {
+				if (!preferences.getBoolean("USER_HAS_UPDATED", false)) {
 					updateButton.setEnabled(true);
 				}
 				else {
-					updateButton.setEnabled(false);
+					if (today.get(Calendar.YEAR) > lastUpdate.get(Calendar.YEAR)
+							|| today.get(Calendar.MONTH) > lastUpdate.get(Calendar.MONTH)
+							|| today.get(Calendar.DATE) > lastUpdate.get(Calendar.DATE)) {
+						updateButton.setEnabled(true);
+					}
+					else {
+						updateButton.setEnabled(false);
+					}
 				}
 			} catch (ParseException e) {
 				// TODO Auto-generated catch block
@@ -185,7 +185,11 @@ public class UpdateFragment extends Fragment {
 	public class UpdateButtonListener implements OnClickListener {
 		
 		@Override
-		public void onClick(View arg0) {			
+		public void onClick(View arg0) {	
+			SharedPreferences preferences = getActivity().getSharedPreferences(Preferences.APP_SETTINGS, Activity.MODE_PRIVATE);
+			Editor editor = preferences.edit();
+			editor.putBoolean("USER_HAS_UPDATED", true);
+			editor.commit();
 			new Thread(new Runnable() {
                 public void run() {
                 	String size = getSize();
