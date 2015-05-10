@@ -55,7 +55,7 @@
 	        android:text="@string/save" />
 	    
 	    <TextView
-	        android:id="@+id/fileManagement_textView"
+	        android:id="@+id/upload_textView"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:layout_marginTop="20dp"
@@ -67,6 +67,20 @@
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:text="Upload" />
+	    
+	    <TextView
+	        android:id="@+id/delete_textView"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginTop="20dp"
+	        android:layout_marginBottom="10dp"
+	        android:text="Clicking DELETE CONTENT will delete all content (photos and audio) recorded through this app." />
+	    
+	    <Button
+	        android:id="@+id/delete_button"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="Delete content" />
 	    
 	    </LinearLayout>
 	    </ScrollView>
