@@ -205,6 +205,7 @@ public class MainPageFragment extends Fragment{
 				
 				if (audioFileFD != null) {
 					Log.i("AUDIO", "Opened audio file, fd=" + audioFileFD.toString());
+					playButton.setVisibility(View.VISIBLE);
 				}
 				else {
 					playButton.setVisibility(View.GONE);
