@@ -57,6 +57,9 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 	
 	Bundle bundle = null;
 	
+	public static String SEARCH_RESULTS_FRAGMENT = "SEARCH_RESULTS_FRAGMENT";
+	public static String WORD_DEFINITION_FRAGMENT = "WORD_DEFINITION_FRAGMENT";
+	
 	public MainActivity() {
 		bundle = new Bundle();
 	}
@@ -334,7 +337,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
         bundle.putString("QUERY", "");
         bundle.putString("DOM", domain_search);
         ((Fragment) fragment).setArguments(bundle);
-		transaction.addToBackStack(null).replace(R.id.container, fragment).commit();	
+		transaction.addToBackStack(null).replace(R.id.container, fragment, SEARCH_RESULTS_FRAGMENT).commit();	
 		
         if (searchView != null) {
 //			searchView.setQuery("", false);
@@ -352,7 +355,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 
         
         ((Fragment) fragment).setArguments(bundle);
-		transaction.addToBackStack(null).replace(R.id.container, fragment).commit();	
+		transaction.addToBackStack(null).replace(R.id.container, fragment, SEARCH_RESULTS_FRAGMENT).commit();	
 		
         if (searchView != null) {
 //			searchView.setQuery("", false);
@@ -527,7 +530,10 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 	}
 
 	
-	
+//	@Override
+//	public void onBackPressed(){
+//	    finish();
+//	}
 }
 
 

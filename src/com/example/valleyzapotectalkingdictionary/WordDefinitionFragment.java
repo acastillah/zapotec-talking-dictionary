@@ -45,7 +45,7 @@ public class WordDefinitionFragment extends Fragment{
 	private String[] info;
 	
 	private PlayButton playButton = null;
-		private String audioFileName = null;
+	private String audioFileName = null;
 	private FileDescriptor audioFileFD = null;
 	private ImageView image = null;
 	private InputStream imageStream = null;
