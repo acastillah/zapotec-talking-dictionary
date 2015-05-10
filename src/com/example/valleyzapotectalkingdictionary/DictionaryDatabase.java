@@ -298,62 +298,6 @@ public class DictionaryDatabase {
 		public int getType(){
 			return 2;
 		}
-			    
-	    public void download(){
-			HttpURLConnection con;
-	    	try{
-				int type = getType();
-				URL url = new URL("http://talkingdictionary.swarthmore.edu/dl/retrieve.php");
-				con = (HttpURLConnection) url.openConnection();
-				con.setRequestMethod("POST");
-				con.setDoOutput(true);
-				DataOutputStream wr = new DataOutputStream(con.getOutputStream());
-				String urlParam;
-				urlParam = "dict=teotitlan&export=true&dl_type=" + Integer.toString(type);
-				wr.writeBytes(urlParam);
-				wr.flush();
-				wr.close();
-				String path = mHelperContext.getFilesDir().getAbsolutePath();
-				File file = new File(mHelperContext.getFilesDir(), "content.zip");
-				OutputStream output = new FileOutputStream(file);
-				InputStream input = con.getInputStream();
-				byte[] buffer = new byte[1024]; 
-				int bytesRead = input.read(buffer);
-				while (bytesRead >= 0) {
-				    output.write(buffer, 0, bytesRead);
-				    bytesRead = input.read(buffer);
-				}
-			    output.flush();
-			    output.close();
-			    input.close();
-						
-			    InputStream is;
-			    ZipInputStream zis;
-			    String filename;
-		        is = new FileInputStream(file);
-		        zis = new ZipInputStream(new BufferedInputStream(is));          
-		        ZipEntry ze;
-		        int count;
-		         while ((ze = zis.getNextEntry()) != null) {
-		             filename = ze.getName();
-		             if (ze.isDirectory()) {
-		                File fmd = new File(path, filename);
-		                fmd.mkdirs();
-		                continue;
-		             }
-		             FileOutputStream fout = new FileOutputStream(path + "/" + filename);
-		             while ((count = zis.read(buffer)) != -1) {
-		                 fout.write(buffer, 0, count);             
-		             }
-		             fout.close();               
-		             zis.closeEntry();
-		         }
-		         is.close();
-		         zis.close();
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-	    }
 	    
 	    public Iterator<?> JSONReadFromFile() {
 
