@@ -2,7 +2,6 @@ package com.example.valleyzapotectalkingdictionary;
 
 import java.io.File;
 import java.util.Locale;
-
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.SearchView;
@@ -177,13 +176,8 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		}
 		
 //		if (preferences.getBoolean(Preferences.DB_LOADED, false) == false) {
-//		Editor editor = preferences.edit();
-//		editor.putBoolean(Preferences.DB_LOADED, true);
-//		editor.commit();
-////		this.recreate();
-//		finish();
-//		startActivity(getIntent());
-//	}
+		
+//		}
 		
 		if (this.getCurrentFocus() != null)
 			this.getCurrentFocus().clearFocus();
@@ -323,7 +317,6 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
     		// handles a search query
             String q = intent.getStringExtra(SearchManager.QUERY);
             String query = q.trim();
-            Log.i("QUERY", query);
             this.bundle.putString("QUERY", query);
             showResults(query);
         }
@@ -350,11 +343,8 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
         Bundle bundle = new Bundle();
         bundle.putString("QUERY", query);
         bundle.putInt("LANG", Language_search);
-        bundle.putString("DOM", domain_search);
-        
-//        this.bundle.putString("QUERY", query);
-//        this.bundle.putInt("LANG", Language_search);
-//        this.bundle.putString("DOM", domain_search);
+        bundle.putString("DOM", "");
+
         
         ((Fragment) fragment).setArguments(bundle);
 		transaction.addToBackStack(null).replace(R.id.container, fragment).commit();	
@@ -530,6 +520,9 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		this.mTitle = this.getResources().getString(resId);
 		this.restoreActionBar();
 	}
+
+	
+	
 }
 
 
