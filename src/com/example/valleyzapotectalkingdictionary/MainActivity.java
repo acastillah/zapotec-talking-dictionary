@@ -2,6 +2,7 @@ package com.example.valleyzapotectalkingdictionary;
 
 import java.io.File;
 import java.util.Locale;
+
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.SearchView;
@@ -33,6 +34,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends ActionBarActivity implements NavigationDrawerFragment.NavigationDrawerCallbacks  {
@@ -166,6 +168,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));	
 		searchView.setBackgroundColor(Color.parseColor(getResources().getString(R.color.searchbar_background_color)));
 		mTitle = getString(R.string.app_name);
+		domainSpinner = (Spinner) findViewById(R.id.domain_spinner);
 		addListenerOnSpinnerItemSelection(); 
         handleIntent(getIntent());
         
@@ -273,9 +276,11 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 	}
 	
 	 public void addListenerOnSpinnerItemSelection() {
-			domainSpinner = (Spinner) findViewById(R.id.domain_spinner);
+			
 		   domainSpinner.setOnItemSelectedListener(new OnItemSelectedListener() {
 		        public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
+		        	((TextView) parent.getChildAt(0)).setTextColor(getResources().getColor(R.color.gray));
+		        	
 		            domain_search = domainSpinner.getSelectedItem().toString();
 		            if (pos!=0){
 		            	showDomain();

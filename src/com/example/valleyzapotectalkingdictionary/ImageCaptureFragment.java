@@ -352,7 +352,9 @@ public class ImageCaptureFragment extends Fragment {
 		    		mImageCaptureButton.setText(R.string.retakePhoto);
 		    	else
 		    		mImageCaptureButton.setText(R.string.takeAnotherPhoto);
-		    	mSaveButton.setEnabled(true);
+		    	
+		    	if (mFileNameEditText.getText().toString().length() > 0)
+		    		mSaveButton.setEnabled(true);
 	    	}
 	    	
 	    	
