@@ -235,8 +235,8 @@ public class UploadActivity extends FragmentActivity {
 						try {
 							FileInputStream inputStream = new FileInputStream(file);
 							
-							if (originalFileName.contains("-")) {
-								uploadedFileName += originalFileName.substring(0, originalFileName.indexOf('-'));
+							if (originalFileName.contains("__")) {
+								uploadedFileName += originalFileName.substring(0, originalFileName.lastIndexOf('_')-1);
 								uploadedFileName += originalFileName.substring(originalFileName.indexOf('.'));
 							}
 							else {
