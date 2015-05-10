@@ -22,7 +22,6 @@ import android.content.SharedPreferences.Editor;
 import android.content.res.Configuration;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
@@ -35,7 +34,6 @@ import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class MainActivity extends ActionBarActivity implements NavigationDrawerFragment.NavigationDrawerCallbacks  {
 
@@ -180,10 +178,6 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 			UserAgreementDialogFragment dialog = new UserAgreementDialogFragment();
 			dialog.show(getSupportFragmentManager(), "Dialog");
 		}
-		
-//		if (preferences.getBoolean(Preferences.DB_LOADED, false) == false) {
-		
-//		}
 		
 		if (this.getCurrentFocus() != null)
 			this.getCurrentFocus().clearFocus();

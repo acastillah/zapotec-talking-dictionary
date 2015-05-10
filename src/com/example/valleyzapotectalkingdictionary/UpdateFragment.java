@@ -27,6 +27,7 @@ import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -290,7 +291,7 @@ public class UpdateFragment extends Fragment {
 	class downloadFiles extends AsyncTask<String, String, String> {
 		private ProgressDialog pDialog;
 		
-		DictionaryDatabase db = new DictionaryDatabase(getActivity());
+		//DictionaryDatabase db = new DictionaryDatabase(getActivity());
 	    String response;
 		/**
 	     * Before starting background thread
@@ -366,14 +367,32 @@ public class UpdateFragment extends Fragment {
 			        zis = new ZipInputStream(new BufferedInputStream(is));          
 			        ZipEntry ze;
 			        int count;
+			        String root = Environment.getExternalStorageDirectory().toString();
+			        Boolean isPic = false;
 			         while ((ze = zis.getNextEntry()) != null) {
 			             filename = ze.getName();
 			             if (ze.isDirectory()) {
-			                File fmd = new File(path, filename);
-			                fmd.mkdirs();
-			                continue;
+				            	if(filename.contains("pix")){
+				            		Log.i("pix", filename);
+				            		isPic = true;
+				            		  File myDir = new File(root,filename);    
+				            		  myDir.mkdirs();
+				            	}
+				            	else{
+				            		isPic = false;
+				            		File fmd = new File(path, filename);
+					                fmd.mkdirs();
+				            	}
+				                continue;
+				          }
+			             FileOutputStream fout;
+			             if (isPic){
+			            	 Log.i("placing in", root + "/" + filename);
+				             fout = new FileOutputStream(root + "/" + filename);
 			             }
-			             FileOutputStream fout = new FileOutputStream(path + "/" + filename);
+			             else{
+				             fout = new FileOutputStream(path + "/" + filename);
+			             }
 			             while ((count = zis.read(buffer)) != -1) {
 			                 fout.write(buffer, 0, count);             
 			             }
@@ -384,7 +403,6 @@ public class UpdateFragment extends Fragment {
 			         zis.close();
 			         getHash();
 			         response = "Download finished";
-			         db.update();
 				}
 	        } catch (Exception e) {
 	        }
@@ -408,11 +426,49 @@ public class UpdateFragment extends Fragment {
 	    protected void onPostExecute(String file_url) {
 	        // dismiss the dialog after the file was downloaded
 			pDialog.dismiss();
-			Toast.makeText(getActivity(), response, Toast.LENGTH_SHORT).show();
-
+			if (response == "Download finished"){
+				new setupDatabase().execute();
+			}
+			else{
+				Toast.makeText(getActivity(), response, Toast.LENGTH_SHORT).show();
+			}
 		}
 	}
 
+	/**
+	 * Background Async Task to download file
+	 * */
+	class setupDatabase extends AsyncTask<String, String, String> {
+		private ProgressDialog pDialog;
+		DictionaryDatabase db = new DictionaryDatabase(getActivity());
+
+		@Override
+	    protected void onPreExecute() {
+	       super.onPreExecute();
+	        pDialog = new ProgressDialog(getActivity());
+	        pDialog.setMessage("Setting up database...");
+	        pDialog.setIndeterminate(false);
+	        pDialog.setCanceledOnTouchOutside(false);
+	        pDialog.setMax(100);
+	        pDialog.setCancelable(true);
+	        pDialog.show();        	
+	    }
+
+	    @Override
+	    protected String doInBackground(String... f_url) {
+			         db.update();
+			return null;
+	    }
+
+		@Override
+	    protected void onPostExecute(String file_url) {
+	        // dismiss the dialog after the file was downloaded
+			pDialog.dismiss();
+			Toast.makeText(getActivity(), "Finished setting up the database", Toast.LENGTH_SHORT).show();
+		}
+	}
+	
+	
 	public void getHash(){
 		try{	
 			URL url = new URL("http://talkingdictionary.swarthmore.edu/dl/retrieve.php");

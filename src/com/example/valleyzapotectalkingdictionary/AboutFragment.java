@@ -53,8 +53,6 @@ public class AboutFragment extends Fragment {
         for (int i=0; i<6; i++)
         	Log.i("LOGOS", i + " width=" + logos[i].getWidth() + " height=" + logos[i].getHeight());
         
-        
-        
         return view;
 	}
 	

@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.SearchView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -77,8 +76,8 @@ public class SearchResultsFragment extends Fragment {
                 	FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
             		Fragment fragment = new WordDefinitionFragment();
             		Cursor c = ((SimpleCursorAdapter)parent.getAdapter()).getCursor();
-            		c.moveToPosition(position);      
-            		Log.i("audio", c.getString(9));
+            		c.moveToPosition(position);  
+            		
             		String[] w = {c.getString(0),
     		                c.getString(1), c.getString(2), c.getString(3), 
     		                c.getString(4), c.getString(5), c.getString(6), 

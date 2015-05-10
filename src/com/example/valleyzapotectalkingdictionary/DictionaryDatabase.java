@@ -33,6 +33,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.os.AsyncTask;
+import android.os.Environment;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -40,7 +41,7 @@ import android.widget.Toast;
 public class DictionaryDatabase {
 
     private static final String DATABASE_NAME = "dictionary";
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 2;
     private static final String TABLE_WORDS = "words";
     private final DictionaryOpenHelper mDatabaseOpenHelper;    
  // Words Table Columns names
@@ -212,6 +213,16 @@ public class DictionaryDatabase {
 					wr.writeBytes(urlParam);
 					wr.flush();
 					wr.close();
+					
+					if(con.getContentLength()==0){
+						if(con.getResponseCode()==403 || con.getResponseCode()==404){
+							response = "Error. Try again later.";
+						}
+						else if(con.getResponseCode()==204){
+							response = "No updates available.";
+						}
+					}
+					else{
 					String path = mHelperContext.getFilesDir().getAbsolutePath();
 					File file = new File(mHelperContext.getFilesDir(), "content.zip");
 					OutputStream output = new FileOutputStream(file);
@@ -240,11 +251,15 @@ public class DictionaryDatabase {
 			         while ((ze = zis.getNextEntry()) != null) {
 			             filename = ze.getName();
 			             if (ze.isDirectory()) {
-			                File fmd = new File(path, filename);
-			                fmd.mkdirs();
-			                continue;
-			             }
-			             FileOutputStream fout = new FileOutputStream(path + "/" + filename);
+				
+				            		File fmd = new File(path, filename);
+					                fmd.mkdirs();
+				                continue;
+				          }
+			             FileOutputStream fout;
+			             
+				             fout = new FileOutputStream(path + "/" + filename);
+			           
 			             while ((count = zis.read(buffer)) != -1) {
 			                 fout.write(buffer, 0, count);             
 			             }
@@ -253,7 +268,9 @@ public class DictionaryDatabase {
 			         }
 			         is.close();
 			         zis.close();
-			         loadWords();
+			         response = "Download finished";
+
+					}
 					} catch (IOException e) {
 						e.printStackTrace();
 					}
@@ -271,11 +288,53 @@ public class DictionaryDatabase {
 		    protected void onPostExecute(String file_url) {
 		        // dismiss the dialog after the file was downloaded
 				pDialog.dismiss();
-//				Toast.makeText(mHelperContext, response, Toast.LENGTH_SHORT).show();
-				((Activity)context).recreate();
+				if (response == "Download finished"){
+					new setupDatabase().execute();
+					((Activity)context).recreate();
+				}
+				else{
+					Toast.makeText(mHelperContext, response, Toast.LENGTH_SHORT).show();
+				}
 			}
 		}
 	 
+		/**
+		 * Background Async Task to download file
+		 * */
+		class setupDatabase extends AsyncTask<String, String, String> {
+			private ProgressDialog pDialog;
+			DictionaryDatabase db = new DictionaryDatabase(mHelperContext);
+
+			@Override
+		    protected void onPreExecute() {
+		       super.onPreExecute();
+		        pDialog = new ProgressDialog(mHelperContext);
+		        pDialog.setMessage("Setting up database...");
+		        pDialog.setIndeterminate(false);
+		        pDialog.setCanceledOnTouchOutside(false);
+		        pDialog.setMax(100);
+		        pDialog.setCancelable(true);
+		        pDialog.show();        	
+		    }
+
+		    @Override
+		    protected String doInBackground(String... f_url) {
+		    	try {
+					loadWords();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+		    	return null;
+		    }
+
+			@Override
+		    protected void onPostExecute(String file_url) {
+		        // dismiss the dialog after the file was downloaded
+				pDialog.dismiss();
+				Toast.makeText(mHelperContext, "Finished setting up the database", Toast.LENGTH_SHORT).show();
+			}
+		}
+		
 	    private void loadWords() throws IOException {
 	    	int id = 1;
             Iterator<?> i = JSONReadFromFile();
