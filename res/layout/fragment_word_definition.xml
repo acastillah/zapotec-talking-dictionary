@@ -122,13 +122,13 @@
                 android:orientation="horizontal" >
             </LinearLayout>
 
-            <LinearLayout
+            <FrameLayout
                 android:id="@+id/ImageFragmentContainer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/light_pink"
                 android:orientation="horizontal" >
-            </LinearLayout>
+            </FrameLayout>
             
             <LinearLayout
                 android:id="@+id/spacer2"

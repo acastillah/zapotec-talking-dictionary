@@ -21,7 +21,7 @@ import android.widget.Toast;
 
 public class PasswordFragment extends Fragment {
 	
-	private static final String PASSWORD = "linguist";
+	private static final String PASSWORD = "oaxaca";
 	
 	private TextView incorrectPasswordView = null;
 	private EditText passwordField = null;

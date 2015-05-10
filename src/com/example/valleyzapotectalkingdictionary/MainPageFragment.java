@@ -66,8 +66,6 @@ public class MainPageFragment extends Fragment{
         speaker = (TextView) v.findViewById(R.id.Speaker);
         wordday = (TextView) v.findViewById(R.id.wordDAY);
         dbspecs = (TextView) v.findViewById(R.id.db_specs);
-        logo_top = (ImageView) v.findViewById(R.id.logo);
-        logo_bottom = (ImageView) v.findViewById(R.id.ImageView01);
 		
 		// Inflate the layout for this fragment
 		
