@@ -60,7 +60,7 @@ public class AudioCaptureFragment extends Fragment implements Parcelable {
     private static final String SAVE_BUTTON_ENABLED = "SAVE_BUTTON_ENABLED";
     
     private static final String mFileExtension = ".3gp";
-    private static final String mFileExtension_desired = ".wav";
+    private static final String mFileExtension_desired = ".mp3";
     private static final String dictionaryDirectoryName = "Zapotec Talking Dictionary";
     private static final String audioDirectoryName = "audio";
     private static final String tempDirectoryName = "temp";
@@ -360,7 +360,7 @@ public class AudioCaptureFragment extends Fragment implements Parcelable {
         mRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
         mRecorder.setOutputFile(mFileName);
         mRecorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
-        mRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
+        mRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AAC); // note: AMR doesn't play on desktop
 //        mRecorder.setAudioEncodingBitRate(8000);
 //        mRecorder.setAudioSamplingRate(44100);
         mRecorder.setMaxDuration(60*1000); // 60 sec
