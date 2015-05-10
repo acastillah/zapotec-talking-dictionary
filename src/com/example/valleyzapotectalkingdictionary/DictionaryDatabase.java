@@ -67,7 +67,8 @@ public class DictionaryDatabase {
     public static final int DB_DAY = 5;
     public static final int DB_HOUR = 22; // military time
     public static final int DB_MINUTE = 34;
-    public static final SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy kk:mm");
+    public static final SimpleDateFormat dateFormat_US = new SimpleDateFormat("MM/dd/yyyy kk:mm");
+    public static final SimpleDateFormat dateFormat_MX = new SimpleDateFormat("dd/MM/yyyy kk:mm");
     
     public DictionaryDatabase(Context context) {
         mDatabaseOpenHelper = new DictionaryOpenHelper(context);   

@@ -85,7 +85,7 @@ public class UpdateFragment extends Fragment {
         			DictionaryDatabase.DB_DAY, 
         			DictionaryDatabase.DB_HOUR, 
         			DictionaryDatabase.DB_MINUTE);
-        	String date = DictionaryDatabase.dateFormat.format(cal.getTime());
+        	String date = DictionaryDatabase.dateFormat_US.format(cal.getTime());
         	editor.putString(Preferences.LAST_DB_UPDATE, date);
         }
         
@@ -100,14 +100,54 @@ public class UpdateFragment extends Fragment {
 		updateButton.setOnClickListener(new UpdateButtonListener());
 		
 		dbspecs.setText(preferences.getLong(Preferences.DB_SIZE, 0) + " " + dbspecs.getText().toString());
-		lastUpdateView.append(" " + preferences.getString(Preferences.LAST_DB_UPDATE, ""));
+		
+		if (preferences.getString(Preferences.LANGUAGE, "").equals(Preferences.ENGLISH)) {
+			lastUpdateView.append(" " + preferences.getString(Preferences.LAST_DB_UPDATE, ""));
+       	}
+       	else {
+       		Calendar calMX = Calendar.getInstance();
+       		boolean dateParseSuccess = false;
+       		try {
+				calMX.setTime(DictionaryDatabase.dateFormat_US.parse(preferences.getString(Preferences.LAST_DB_UPDATE, "")));
+				dateParseSuccess = true;
+			} catch (ParseException e) {
+				e.printStackTrace();
+			}
+       		if (dateParseSuccess) {
+       				String dateMX = DictionaryDatabase.dateFormat_MX.format(calMX.getTime());
+       		lastUpdateView.append(" " + dateMX);
+       		}
+       	}
+		
+		
+		
+		
+		Calendar cal = Calendar.getInstance();
+       	String date = DictionaryDatabase.dateFormat_US.format(cal.getTime());
+       	editor.putString(Preferences.LAST_DB_UPDATE, date);
+       	editor.commit();
+       	
+       	lastUpdateView.setText(R.string.last_updated);
+       	
+       	if (preferences.getString(Preferences.LANGUAGE, "").equals(Preferences.ENGLISH)) {
+       		lastUpdateView.append(" " + date);
+       	}
+       	else {
+       		String dateMX = DictionaryDatabase.dateFormat_MX.format(cal.getTime());
+       		lastUpdateView.append(" " + dateMX);
+       	}
+		
+		
+		
+		
+		
 
 		
 		// users may only update once per day 
 		if (!preferences.getString(Preferences.LAST_DB_UPDATE, "").equals("")) {
 		Calendar lastUpdate = Calendar.getInstance();
 			try {
-				lastUpdate.setTime(DictionaryDatabase.dateFormat.parse(preferences.getString(Preferences.LAST_DB_UPDATE, "")));
+				lastUpdate.setTime(DictionaryDatabase.dateFormat_US.parse(preferences.getString(Preferences.LAST_DB_UPDATE, "")));
 				Calendar today = Calendar.getInstance();
 				if (today.get(Calendar.YEAR) > lastUpdate.get(Calendar.YEAR)
 						|| today.get(Calendar.MONTH) > lastUpdate.get(Calendar.MONTH)
@@ -181,12 +221,19 @@ public class UpdateFragment extends Fragment {
 		                	SharedPreferences preferences = getActivity().getSharedPreferences(Preferences.APP_SETTINGS, Activity.MODE_PRIVATE);
 		           			Editor editor = preferences.edit();
 		           			Calendar cal = Calendar.getInstance();
-		                   	String date = DictionaryDatabase.dateFormat.format(cal.getTime());
+		                   	String date = DictionaryDatabase.dateFormat_US.format(cal.getTime());
 		                   	editor.putString(Preferences.LAST_DB_UPDATE, date);
 		                   	editor.commit();
 		                   	
 		                   	lastUpdateView.setText(R.string.last_updated);
-		                   	lastUpdateView.append(" " + preferences.getString(Preferences.LAST_DB_UPDATE, ""));
+		                   	
+		                   	if (preferences.getString(Preferences.LANGUAGE, "").equals(Preferences.ENGLISH)) {
+		                   		lastUpdateView.append(" " + date);
+		                   	}
+		                   	else {
+		                   		String dateMX = DictionaryDatabase.dateFormat_MX.format(cal.getTime());
+		                   		lastUpdateView.append(" " + dateMX);
+		                   	}
 		                    
 		                   	new downloadFiles().execute();
 	                   }
