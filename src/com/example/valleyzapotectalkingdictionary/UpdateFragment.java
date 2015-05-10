@@ -239,7 +239,7 @@ public class UpdateFragment extends Fragment {
 	class downloadFiles extends AsyncTask<String, String, String> {
 		private ProgressDialog pDialog;
 		
-		DictionaryDatabase db = new DictionaryDatabase(getActivity());
+		//DictionaryDatabase db = new DictionaryDatabase(getActivity());
 	    String response;
 		/**
 	     * Before starting background thread
@@ -333,7 +333,7 @@ public class UpdateFragment extends Fragment {
 			         zis.close();
 			         getHash();
 			         response = "Download finished";
-			         db.update();
+			         //db.update();
 				}
 	        } catch (Exception e) {
 	        }
@@ -357,11 +357,49 @@ public class UpdateFragment extends Fragment {
 	    protected void onPostExecute(String file_url) {
 	        // dismiss the dialog after the file was downloaded
 			pDialog.dismiss();
-			Toast.makeText(getActivity(), response, Toast.LENGTH_SHORT).show();
-
+			if (response == "Download finished"){
+				new setupDatabase().execute();
+			}
+			else{
+				Toast.makeText(getActivity(), response, Toast.LENGTH_SHORT).show();
+			}
 		}
 	}
 
+	/**
+	 * Background Async Task to download file
+	 * */
+	class setupDatabase extends AsyncTask<String, String, String> {
+		private ProgressDialog pDialog;
+		DictionaryDatabase db = new DictionaryDatabase(getActivity());
+
+		@Override
+	    protected void onPreExecute() {
+	       super.onPreExecute();
+	        pDialog = new ProgressDialog(getActivity());
+	        pDialog.setMessage("Setting up database...");
+	        pDialog.setIndeterminate(false);
+	        pDialog.setCanceledOnTouchOutside(false);
+	        pDialog.setMax(100);
+	        pDialog.setCancelable(true);
+	        pDialog.show();        	
+	    }
+
+	    @Override
+	    protected String doInBackground(String... f_url) {
+			         db.update();
+			return null;
+	    }
+
+		@Override
+	    protected void onPostExecute(String file_url) {
+	        // dismiss the dialog after the file was downloaded
+			pDialog.dismiss();
+			Toast.makeText(getActivity(), "Finished setting up the database", Toast.LENGTH_SHORT).show();
+		}
+	}
+	
+	
 	public void getHash(){
 		try{	
 			URL url = new URL("http://talkingdictionary.swarthmore.edu/dl/retrieve.php");
