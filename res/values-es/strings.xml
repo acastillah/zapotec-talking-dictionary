@@ -81,10 +81,10 @@ All rights reserved. Do not distribute or reproduce without permission.</string>
     <string name="logoutAccepted">Log out successful</string>
     <string name="logoutExplanation">Logging out recinds access to audio and photo tools. You can always log back in anytime.</string>
     <string name="semanticDomain_text">Categoría:</string>
-    <string name="username">Name:</string>
-    <string name="passwordWelcome">Welcome</string>
+    <string name="username">Nombre:</string>
+    <string name="passwordWelcome">Bienvenida</string>
     <string name="settingsExplanation">Enter your name below. Your name will be used to automatically name photos and audio files you capture through the app.</string>
-    <string name="title_settings">Settings</string>
+    <string name="title_settings">Ajustes</string>
     <string name="settingsSaved">Settings Saved</string>
     <string name="db_specs"> palabras existen en la base de datos</string>
     <string name="last_updated">Last updated: </string>
