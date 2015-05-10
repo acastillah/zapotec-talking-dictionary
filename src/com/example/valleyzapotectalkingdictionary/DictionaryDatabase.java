@@ -24,13 +24,17 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.os.AsyncTask;
 import android.util.Log;
+import android.widget.Toast;
 
 @SuppressLint("SimpleDateFormat")
 public class DictionaryDatabase {
@@ -38,9 +42,7 @@ public class DictionaryDatabase {
     private static final String DATABASE_NAME = "dictionary";
     private static final int DATABASE_VERSION = 1;
     private static final String TABLE_WORDS = "words";
-    private final DictionaryOpenHelper mDatabaseOpenHelper;
-    public static String hash[] = {null,null,null};
-    
+    private final DictionaryOpenHelper mDatabaseOpenHelper;    
  // Words Table Columns names
     private static final String KEY_ID = "_id";
     static final String KEY_WORD = "lang"; //WORD IN ZAPOTEC
@@ -78,10 +80,15 @@ public class DictionaryDatabase {
     	q = q.replace("'", "''");
 				KEY = "(" + KEY_WORD + " LIKE '%" + q + "%'" + " OR " + KEY_GLOSS +  " LIKE '%" + String.valueOf(q) 
 							+ "%'" + " OR " + KEY_ESGLOSS + " LIKE '%" + String.valueOf(q) + "%'" + ")"; 
-    	Cursor cursor = db.query(TABLE_WORDS, new String[] { KEY_ID,
-                KEY_WORD, KEY_IPA, KEY_GLOSS, KEY_POS, KEY_USAGE, KEY_DIALECT, KEY_META, KEY_AUTHORITY,
-                KEY_AUDIO, KEY_IMG, KEY_SEMANTIC, KEY_ESGLOSS}, KEY,
-                null, null, null, null, null);
+    	
+		if (dom!=""){
+			KEY = KEY + " AND " + KEY_SEMANTIC + " LIKE '%" + String.valueOf(dom) + "%'";
+		}
+				
+		Cursor cursor = db.query(TABLE_WORDS, new String[] { KEY_ID,
+        KEY_WORD, KEY_IPA, KEY_GLOSS, KEY_POS, KEY_USAGE, KEY_DIALECT, KEY_META, KEY_AUTHORITY,
+        KEY_AUDIO, KEY_IMG, KEY_SEMANTIC, KEY_ESGLOSS}, KEY,
+        null, null, null, null, null);
         if(cursor==null){
     		return null;
     	}
@@ -123,13 +130,15 @@ public class DictionaryDatabase {
 //    }
     
     public class DictionaryOpenHelper extends SQLiteOpenHelper {
-		
-        private final Context mHelperContext;
+		 private final Context mHelperContext;
     	//private final ArrayList<String> domainList = new ArrayList<String>();
-        
+		 SharedPreferences preferences;
+		 
     	public DictionaryOpenHelper(Context context) {
 	        super(context, DATABASE_NAME, null, DATABASE_VERSION);
             mHelperContext = context;
+            preferences = mHelperContext.getSharedPreferences(Preferences.APP_SETTINGS, Activity.MODE_PRIVATE);
+
 	    }
 	   
 	    // Creating Tables
@@ -147,19 +156,116 @@ public class DictionaryDatabase {
 	    }
 	    
 	    private void loadDictionary() {
-            new Thread(new Runnable() {
-                public void run() {
-                    download();
-			         try {
-						loadWords();
-					} catch (IOException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}	
-
-                }
-            }).start();
+	    	Log.i("database", Boolean.toString(preferences.getBoolean(Preferences.DB_LOADED, false)));
+			if (preferences.getBoolean(Preferences.DB_LOADED, false) == false) {
+	                   	new downloadFiles().execute();
+				         Editor editor = preferences.edit(); 
+				         editor.putBoolean(Preferences.DB_LOADED, true);
+				         editor.commit();
+			}
+			else{
+				try{
+				loadWords();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+	    }
         }
+	    
+		class downloadFiles extends AsyncTask<String, String, String> {
+			private ProgressDialog pDialog;
+		    String response;
+
+			@Override
+		    protected void onPreExecute() {
+		       super.onPreExecute();
+		        pDialog = new ProgressDialog(mHelperContext);
+		        pDialog.setMessage("Downloading file...");
+		        pDialog.setIndeterminate(false);
+		        pDialog.setCanceledOnTouchOutside(false);
+		        pDialog.setMax(100);
+		        pDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+		        pDialog.setCancelable(true);
+		        pDialog.show();        	
+		    }
+
+		    @Override
+		    protected String doInBackground(String... f_url) {
+				HttpURLConnection con;
+		    	try{
+					int type = getType();
+					URL url = new URL("http://talkingdictionary.swarthmore.edu/dl/retrieve.php");
+					con = (HttpURLConnection) url.openConnection();
+					con.setRequestMethod("POST");
+					con.setDoOutput(true);
+					DataOutputStream wr = new DataOutputStream(con.getOutputStream());
+					String urlParam;
+					urlParam = "dict=teotitlan&export=true&dl_type=" + Integer.toString(type);
+					wr.writeBytes(urlParam);
+					wr.flush();
+					wr.close();
+					String path = mHelperContext.getFilesDir().getAbsolutePath();
+					File file = new File(mHelperContext.getFilesDir(), "content.zip");
+					OutputStream output = new FileOutputStream(file);
+					InputStream input = con.getInputStream();
+					byte[] buffer = new byte[1024]; 
+					int lengthOfFile = con.getContentLength();
+					int bytesRead = input.read(buffer);
+					long total = 0;
+					while (bytesRead >= 0) {
+					    total +=bytesRead;
+					    output.write(buffer, 0, bytesRead);
+					    bytesRead = input.read(buffer);
+					    publishProgress(""+(int)((total*100)/lengthOfFile));
+					}
+				    output.flush();
+				    output.close();
+				    input.close();
+							
+				    InputStream is;
+				    ZipInputStream zis;
+				    String filename;
+			        is = new FileInputStream(file);
+			        zis = new ZipInputStream(new BufferedInputStream(is));          
+			        ZipEntry ze;
+			        int count;
+			         while ((ze = zis.getNextEntry()) != null) {
+			             filename = ze.getName();
+			             if (ze.isDirectory()) {
+			                File fmd = new File(path, filename);
+			                fmd.mkdirs();
+			                continue;
+			             }
+			             FileOutputStream fout = new FileOutputStream(path + "/" + filename);
+			             while ((count = zis.read(buffer)) != -1) {
+			                 fout.write(buffer, 0, count);             
+			             }
+			             fout.close();               
+			             zis.closeEntry();
+			         }
+			         is.close();
+			         zis.close();
+			         loadWords();
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
+				return null;
+		    	
+		    }
+
+		    protected void onProgressUpdate(String... progress) {
+		        // setting progress percentage
+				super.onProgressUpdate(progress);
+		        pDialog.setProgress(Integer.parseInt(progress[0]));
+		   }
+
+			@Override
+		    protected void onPostExecute(String file_url) {
+		        // dismiss the dialog after the file was downloaded
+				pDialog.dismiss();
+				Toast.makeText(mHelperContext, response, Toast.LENGTH_SHORT).show();
+			}
+		}
 	 
 	    private void loadWords() throws IOException {
             Iterator<?> i = JSONReadFromFile();
@@ -182,98 +288,13 @@ public class DictionaryDatabase {
 		            addWord(w);
         	}      
         }
-	    
-		public void getHash(){
-			try{	
-				URL url = new URL("http://talkingdictionary.swarthmore.edu/dl/retrieve.php");
-				int type = getType();
-		        String urlParam = "dict=teotitlan&current=true&current_hash=true&dl_type=" + Integer.toString(type);			         
-		        HttpURLConnection con = (HttpURLConnection) url.openConnection();
-				con.setRequestMethod("POST");
-				DataOutputStream hr = new DataOutputStream(con.getOutputStream());
-					hr.writeBytes(urlParam);
-					hr.flush();
-					hr.close();					
-					String str="";
-					StringBuffer buf = new StringBuffer();
-					InputStream is = con.getInputStream();
-
-					BufferedReader reader = new BufferedReader(new InputStreamReader(is));
-					if (is!=null) {							
-						while ((str = reader.readLine()) != null) {	
-							buf.append(str + "\n" );
-						}				
-					}		
-					is.close();	
-					Log.i("download", buf.toString());
-					hash[type] = buf.toString();
-	           } catch (IOException e){
-	        	  Log.i("download", "hash failed");
-	           }
-		}
 		
 		public int getType(){
-	    	SharedPreferences preferences = mHelperContext.getSharedPreferences(Preferences.APP_SETTINGS, Activity.MODE_PRIVATE);
-	       	Boolean pictures = preferences.getBoolean(Preferences.DOWNLOAD_PHOTOS, false);
-	       	Boolean audio = preferences.getBoolean(Preferences.DOWNLOAD_AUDIO, true);
-	       	int type;
-	       	
-	       	if (pictures && audio){
-	       		type = 0;
-	       	}
-	       	else if(audio){
-	       		type = 2;
-	       	}
-	       	else{
-	       		type = 1;
-	       	}
-	       	
-	       	return type;
+			return 2;
 		}
-		
-		public Boolean check(){
-			HttpURLConnection con;
-			try {
-				int type = getType();
-				URL url = new URL("http://talkingdictionary.swarthmore.edu/dl/retrieve.php");
-				con = (HttpURLConnection) url.openConnection();
-				con.setRequestMethod("POST");
-				con.setDoOutput(true);
-				DataOutputStream wr = new DataOutputStream(con.getOutputStream());
-				String urlParam;
-				if(hash[type] == null){
-					Log.i("Download","hash is null");
-					urlParam = "dict=teotitlan&export=true&dl_type=" + Integer.toString(type);
-				} 
-				else{
-					urlParam = "dict=teotitlan&export=true&dl_type=" + Integer.toString(type) + "&hash=" + hash[type];
-					Log.i("download", hash[type]);
-				}
-				wr.writeBytes(urlParam);
-				wr.flush();
-				wr.close();
-
-				if(con.getContentLength()==0){
-					if(con.getResponseCode()==403 || con.getResponseCode()==404){
-						Log.i("download", "error");
-					}
-					else if(con.getResponseCode()==204){
-						Log.i("download", "no update");
-					}
-					return false;
-				}
-				else{
-					return true;
-				}
-			}catch(IOException e){
-			}
-			return false;
-		}
-		
-	    
+			    
 	    public void download(){
 			HttpURLConnection con;
-
 	    	try{
 				int type = getType();
 				URL url = new URL("http://talkingdictionary.swarthmore.edu/dl/retrieve.php");
@@ -282,60 +303,49 @@ public class DictionaryDatabase {
 				con.setDoOutput(true);
 				DataOutputStream wr = new DataOutputStream(con.getOutputStream());
 				String urlParam;
-				if(hash[type] == null){
-					Log.i("Download","hash is null");
-					urlParam = "dict=teotitlan&export=true&dl_type=" + Integer.toString(type);
-				} 
-				else{
-					urlParam = "dict=teotitlan&export=true&dl_type=" + Integer.toString(type) + "&hash=" + hash[type];
-					Log.i("download", hash[type]);
-				}
-				
+				urlParam = "dict=teotitlan&export=true&dl_type=" + Integer.toString(type);
 				wr.writeBytes(urlParam);
 				wr.flush();
 				wr.close();
-						String path = mHelperContext.getFilesDir().getAbsolutePath();
-						File file = new File(mHelperContext.getFilesDir(), "content.zip");
-						OutputStream output = new FileOutputStream(file);
-						InputStream input = con.getInputStream();
-						byte[] buffer = new byte[1024]; 
-						int bytesRead = input.read(buffer);
-						while (bytesRead >= 0) {
-						    output.write(buffer, 0, bytesRead);
-						    bytesRead = input.read(buffer);
-						}
-					    output.flush();
-					    output.close();
-					    input.close();
+				String path = mHelperContext.getFilesDir().getAbsolutePath();
+				File file = new File(mHelperContext.getFilesDir(), "content.zip");
+				OutputStream output = new FileOutputStream(file);
+				InputStream input = con.getInputStream();
+				byte[] buffer = new byte[1024]; 
+				int bytesRead = input.read(buffer);
+				while (bytesRead >= 0) {
+				    output.write(buffer, 0, bytesRead);
+				    bytesRead = input.read(buffer);
+				}
+			    output.flush();
+			    output.close();
+			    input.close();
 						
-					    InputStream is;
-					    ZipInputStream zis;
-					    String filename;
-				        is = new FileInputStream(file);
-				        zis = new ZipInputStream(new BufferedInputStream(is));          
-				        ZipEntry ze;
-				        int count;
-				         while ((ze = zis.getNextEntry()) != null) {
-				             filename = ze.getName();
-				             if (ze.isDirectory()) {
-				                File fmd = new File(path, filename);
-				                fmd.mkdirs();
-				                continue;
-				             }
-				             FileOutputStream fout = new FileOutputStream(path + "/" + filename);
-				             while ((count = zis.read(buffer)) != -1) {
-				                 fout.write(buffer, 0, count);             
-				             }
-				             fout.close();               
-				             zis.closeEntry();
-				         }
-				         is.close();
-				         zis.close();
-				         getHash();
-				         Log.i("Download", "download complete");			
+			    InputStream is;
+			    ZipInputStream zis;
+			    String filename;
+		        is = new FileInputStream(file);
+		        zis = new ZipInputStream(new BufferedInputStream(is));          
+		        ZipEntry ze;
+		        int count;
+		         while ((ze = zis.getNextEntry()) != null) {
+		             filename = ze.getName();
+		             if (ze.isDirectory()) {
+		                File fmd = new File(path, filename);
+		                fmd.mkdirs();
+		                continue;
+		             }
+		             FileOutputStream fout = new FileOutputStream(path + "/" + filename);
+		             while ((count = zis.read(buffer)) != -1) {
+		                 fout.write(buffer, 0, count);             
+		             }
+		             fout.close();               
+		             zis.closeEntry();
+		         }
+		         is.close();
+		         zis.close();
 				} catch (IOException e) {
 					e.printStackTrace();
-					Log.i("DOWNLOAD", "failed");
 				}
 	    }
 	    
@@ -352,16 +362,12 @@ public class DictionaryDatabase {
 					}				
 				}		
 				is.close();	
-				
 				JSONParser parser=new JSONParser();
 	            JSONArray jsonArray = (JSONArray) parser.parse(buf.toString());
-	 	        	
-				Iterator<?> i = jsonArray.iterator();
-	        			 
+				Iterator<?> i = jsonArray.iterator();		 
 	        	return i;  
 
 			} catch (Exception e) {
-				Log.i("Parsing failed", "FAIL");
 			}
 			return null;
 	    }
@@ -369,22 +375,10 @@ public class DictionaryDatabase {
 	    // Upgrading database
 	    @Override
 	    public void onUpgrade(final SQLiteDatabase db, int oldVersion, int newVersion) {
-	    	
-	    	new Thread(new Runnable() {
-                public void run() {
-                	if(!check()){
-        	    		Log.i("download", "no update");
-        	    	}
-        	    	
-        	    	else{
-        	    		 // Drop older table if existed
-        		        db.execSQL("DROP TABLE IF EXISTS " + TABLE_WORDS);
-        		        // Create tables again
-        		        onCreate(db);
-        	    	}
-        	    	                }
-            }).start();
-	    	
+	    	//Drop older table if existed
+	        db.execSQL("DROP TABLE IF EXISTS " + TABLE_WORDS);
+	        // Create tables again
+	        onCreate(db);
 	    	
 	    }
 	    
@@ -422,7 +416,7 @@ public class DictionaryDatabase {
 	        Cursor cursor = db.query(TABLE_WORDS, new String[] { KEY_ID,
 	                KEY_WORD, KEY_IPA, KEY_GLOSS, KEY_POS, KEY_USAGE, KEY_DIALECT, KEY_META, KEY_AUTHORITY,
 	                KEY_AUDIO, KEY_IMG, KEY_SEMANTIC, KEY_ESGLOSS}, KEY_GLOSS + "=?",
-	                new String[] { String.valueOf(q) }, null, null, null, null);
+	                new  String[] { String.valueOf(q) }, null, null, null, null);
 	        return cursor;
 		}
 	     
