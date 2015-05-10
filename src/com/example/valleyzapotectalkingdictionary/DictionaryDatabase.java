@@ -70,7 +70,10 @@ public class DictionaryDatabase {
     public static final SimpleDateFormat dateFormat_US = new SimpleDateFormat("MM/dd/yyyy kk:mm");
     public static final SimpleDateFormat dateFormat_MX = new SimpleDateFormat("dd/MM/yyyy kk:mm");
     
+    private Context context = null;
+    
     public DictionaryDatabase(Context context) {
+    	this.context = context;
         mDatabaseOpenHelper = new DictionaryOpenHelper(context);   
         
     }
@@ -268,7 +271,8 @@ public class DictionaryDatabase {
 		    protected void onPostExecute(String file_url) {
 		        // dismiss the dialog after the file was downloaded
 				pDialog.dismiss();
-				Toast.makeText(mHelperContext, response, Toast.LENGTH_SHORT).show();
+//				Toast.makeText(mHelperContext, response, Toast.LENGTH_SHORT).show();
+				((Activity)context).recreate();
 			}
 		}
 	 
