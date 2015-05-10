@@ -124,7 +124,7 @@ public class AudioCaptureFragment extends Fragment implements Parcelable {
 	    	
 	    	mRecordButton.setEnabled(recordButtonEnabled);
 	    	mPlayButton.setEnabled(playButtonEnabled);
-	    	mFileNameEditText.setFilters(MainActivity.inputFilters);
+	    	mFileNameEditText.setFilters(MainActivity.fileNameInputFilters);
 	    	mFileNameEditText.setEnabled(fileNameEditTextEnabled);
 	    	mSaveButton.setEnabled(saveButtonEnabled);
     	}
@@ -326,7 +326,7 @@ public class AudioCaptureFragment extends Fragment implements Parcelable {
     	mRecordButton.setEnabled(recordButtonEnabled);
     	mPlayButton.setEnabled(playButtonEnabled);
     	mFileNameEditText.setEnabled(fileNameEditTextEnabled);
-    	mFileNameEditText.setFilters(MainActivity.inputFilters);
+    	mFileNameEditText.setFilters(MainActivity.fileNameInputFilters);
         mFileNameEditText.setInputType(InputType.TYPE_TEXT_VARIATION_PERSON_NAME);
     	mSaveButton.setEnabled(saveButtonEnabled);
         
@@ -514,7 +514,7 @@ public class AudioCaptureFragment extends Fragment implements Parcelable {
             	mFileNameEditText.setEnabled(false);
                 mSaveButton.setEnabled(false);
             	
-            	String userDefinedFileName = mFileNameEditText.getText().toString();
+            	String userDefinedFileName = mFileNameEditText.getText().toString().replace(' ', '_');
             	File defaultAudioFile = new File(mFileName);
             	
             	if (defaultAudioFile.exists()) {

@@ -39,7 +39,7 @@ public class SettingsFragment extends Fragment {
 		if (preferences.contains(Preferences.USERNAME))
 			usernameEditText.setText( preferences.getString(Preferences.USERNAME, "") );
         
-		usernameEditText.setFilters(MainActivity.inputFilters);
+		usernameEditText.setFilters(MainActivity.userNameInputFilters);
 		usernameEditText.addTextChangedListener(new usernameEditTextWatcher());
 		saveButton.setOnClickListener(new saveButtonOnClickListener());
 		uploadButton.setOnClickListener(new uploadButtonOnClickListener());

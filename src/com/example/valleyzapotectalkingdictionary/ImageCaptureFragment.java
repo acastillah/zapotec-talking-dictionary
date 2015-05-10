@@ -277,7 +277,7 @@ public class ImageCaptureFragment extends Fragment {
                     ViewGroup.LayoutParams.WRAP_CONTENT,
                     0));
         
-        mFileNameEditText.setFilters(MainActivity.inputFilters);
+        mFileNameEditText.setFilters(MainActivity.fileNameInputFilters);
         mFileNameEditText.setInputType(InputType.TYPE_TEXT_VARIATION_PERSON_NAME);
         
         
@@ -477,7 +477,7 @@ public class ImageCaptureFragment extends Fragment {
 				mFileNameEditText.setEnabled(false);
 				mSaveButton.setEnabled(false);
 				
-				String userDefinedFileName = mFileNameEditText.getText().toString();
+				String userDefinedFileName = mFileNameEditText.getText().toString().replace(' ', '_');
 				
 				String newFileName = /*Environment.getExternalStorageDirectory().getAbsolutePath();*/ photoDirectoryFullPath;
 	            newFileName += "/" + userDefinedFileName;

@@ -60,7 +60,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		bundle = new Bundle();
 	}
 		
-	public static final InputFilter[] inputFilters = new InputFilter[] {
+	public static final InputFilter[] fileNameInputFilters = new InputFilter[] {
             new InputFilter() {
             	@Override
                 public CharSequence filter(CharSequence src, int start,
@@ -69,14 +69,32 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
                     if(src.equals("")){ // for backspace
                         return src;
                     }
-                    if(src.toString().matches("[a-zA-Z _ñáãàéẽèíìóòúùï]*"))
+                    if(src.toString().matches("[a-zA-Z0-9 _ñáãàéẽèíìóòúùï]*"))
                     {
-                        return src;
+                    	return src;
                     }
                     return "";
                 }
             }
         };
+	
+	public static final InputFilter[] userNameInputFilters = new InputFilter[] {
+        new InputFilter() {
+        	@Override
+            public CharSequence filter(CharSequence src, int start,
+                    int end, Spanned dst, int dstart, int dend) {
+
+                if(src.equals("")){ // for backspace
+                    return src;
+                }
+                if(src.toString().matches("[a-zA-Z0-9 _ñáãàéẽèíìóòúùï]*"))
+                {
+                    return src;
+                }
+                return "";
+            }
+        }
+    };
 	
 	private int setLanguage(Spinner spinner) {
 		SharedPreferences prefs = this.getSharedPreferences(Preferences.APP_SETTINGS, Activity.MODE_PRIVATE);
