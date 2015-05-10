@@ -17,6 +17,7 @@ import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnCompletionListener;
 import android.media.MediaPlayer.OnPreparedListener;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.SearchView;
 import android.text.Html;
@@ -28,7 +29,6 @@ import android.view.ViewGroup.LayoutParams;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -208,17 +208,16 @@ public class WordDefinitionFragment extends Fragment{
 		}
 		
 		if (w.getIMG() != null && !w.getIMG().equals("")) {
-			String imageFileName = getActivity().getFilesDir().getAbsolutePath() + "/teotitlan_content/pix/" + w.getIMG();
+			String imageFileName = Environment.getExternalStorageDirectory().toString() + "/teotitlan_content/pix/" + w.getIMG();
 						
 			try {
 			imageStream = new FileInputStream(imageFileName);
 
 			} catch (IOException e) {
-				Log.i("IMAGE", "Failed to open input stream for image file");
+				Log.i("file not found", imageFileName);
 			}
 			
 			if (imageStream != null) {
-				Log.i("IMAGE", "Opened image stream");
 				Bitmap bm = BitmapFactory.decodeStream(imageStream);
 				
 				int width = bm.getWidth();
@@ -232,7 +231,6 @@ public class WordDefinitionFragment extends Fragment{
 		}
 		else {
 			image.setVisibility(View.GONE);
-			Log.i("IMAGE", "no image");
 		}
 	}
 	

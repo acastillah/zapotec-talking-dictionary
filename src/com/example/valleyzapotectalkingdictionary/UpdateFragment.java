@@ -27,6 +27,7 @@ import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -315,14 +316,32 @@ public class UpdateFragment extends Fragment {
 			        zis = new ZipInputStream(new BufferedInputStream(is));          
 			        ZipEntry ze;
 			        int count;
+			        String root = Environment.getExternalStorageDirectory().toString();
+			        Boolean isPic = false;
 			         while ((ze = zis.getNextEntry()) != null) {
 			             filename = ze.getName();
 			             if (ze.isDirectory()) {
-			                File fmd = new File(path, filename);
-			                fmd.mkdirs();
-			                continue;
+				            	if(filename.contains("pix")){
+				            		Log.i("pix", filename);
+				            		isPic = true;
+				            		  File myDir = new File(root,filename);    
+				            		  myDir.mkdirs();
+				            	}
+				            	else{
+				            		isPic = false;
+				            		File fmd = new File(path, filename);
+					                fmd.mkdirs();
+				            	}
+				                continue;
+				          }
+			             FileOutputStream fout;
+			             if (isPic){
+			            	 Log.i("placing in", root + "/" + filename);
+				             fout = new FileOutputStream(root + "/" + filename);
 			             }
-			             FileOutputStream fout = new FileOutputStream(path + "/" + filename);
+			             else{
+				             fout = new FileOutputStream(path + "/" + filename);
+			             }
 			             while ((count = zis.read(buffer)) != -1) {
 			                 fout.write(buffer, 0, count);             
 			             }
@@ -333,7 +352,6 @@ public class UpdateFragment extends Fragment {
 			         zis.close();
 			         getHash();
 			         response = "Download finished";
-			         //db.update();
 				}
 	        } catch (Exception e) {
 	        }
