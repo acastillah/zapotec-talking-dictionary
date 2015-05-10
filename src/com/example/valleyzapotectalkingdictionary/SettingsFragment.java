@@ -34,12 +34,15 @@ public class SettingsFragment extends Fragment {
 	Button saveButton = null;
 	Button uploadButton = null;
 	Button deleteButton = null;
+	Activity activity = null;
 	
 	@Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_settings, container, false);
+        
+        activity = getActivity();
         
         ((MainActivity)getActivity()).setActionBarTitle(R.string.settings);
 
@@ -94,11 +97,9 @@ public class SettingsFragment extends Fragment {
 			editor.putString(Preferences.USERNAME, usernameEditText.getText().toString());
 			editor.commit();
 			
-			Toast.makeText(getActivity(), R.string.settingsSaved, Toast.LENGTH_SHORT).show();
+			((MainActivity)activity).hideKeyboard(usernameEditText);
 			
-//			FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-//			Fragment fragment = new MainPageFragment();
-//			fragmentManager.beginTransaction().addToBackStack(null).replace(R.id.container, fragment).commit();
+			Toast.makeText(getActivity(), R.string.settingsSaved, Toast.LENGTH_SHORT).show();
 		}
 		
 	}
