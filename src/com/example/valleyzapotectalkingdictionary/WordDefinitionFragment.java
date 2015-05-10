@@ -25,6 +25,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -93,10 +94,10 @@ public class WordDefinitionFragment extends Fragment{
 	        		&& true /* no image on local device */) {
 	        
 	        
-	        LinearLayout fragContainer = (LinearLayout) v.findViewById(R.id.ImageFragmentContainer);
+	        FrameLayout fragContainer = (FrameLayout) v.findViewById(R.id.ImageFragmentContainer);
 	
-	        LinearLayout ll = new LinearLayout(v.getContext());
-	        ll.setOrientation(LinearLayout.HORIZONTAL);
+	        FrameLayout ll = new FrameLayout(v.getContext());
+//	        ll.setOrientation(LinearLayout.HORIZONTAL);
 			LayoutParams params = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
 			
 			ll.setLayoutParams(params);
