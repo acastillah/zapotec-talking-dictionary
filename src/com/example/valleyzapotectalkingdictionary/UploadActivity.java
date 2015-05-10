@@ -23,7 +23,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentActivity;
-import android.util.Log;
+//import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -84,11 +84,11 @@ public class UploadActivity extends FragmentActivity {
 		
 		AndroidAuthSession session;
 		if (accessToken.equals("") || accessToken_key.equals("") || accessToken_secret.equals("")) {
-			Log.i("UPLOAD", "Fresh auth session");
+//			Log.i("UPLOAD", "Fresh auth session");
 			session = new AndroidAuthSession(appKeys);
 		}
 		else {
-			Log.i("UPLOAD", "Auth session using access token");
+//			Log.i("UPLOAD", "Auth session using access token");
 			session = new AndroidAuthSession(appKeys, new AccessTokenPair(accessToken_key, accessToken_secret));
 		}
 
@@ -96,7 +96,7 @@ public class UploadActivity extends FragmentActivity {
 		
 		// start authentication session
 		mDBApi.getSession().startOAuth2Authentication(this);
-		Log.i("UPLOAD", "authentication session started");
+//		Log.i("UPLOAD", "authentication session started");
 		
 //		}
 	}
@@ -121,7 +121,7 @@ public class UploadActivity extends FragmentActivity {
 		// TODO: save authentication
 		
 	    super.onResume();
-	    Log.i("UPLOAD", "UploadActivity resumed");
+//	    Log.i("UPLOAD", "UploadActivity resumed");
 	    
 //	    if (!authenticated) {
 	    
@@ -137,7 +137,7 @@ public class UploadActivity extends FragmentActivity {
 	            // finish the authentication session
 	            mDBApi.getSession().finishAuthentication();
 	            Toast.makeText(this, "Session authenticated", Toast.LENGTH_SHORT).show();
-	            Log.i("UPLOAD", "Authentication session finished");
+//	            Log.i("UPLOAD", "Authentication session finished");
 	            
 	            // save the access token for the session
 	            String accessToken = mDBApi.getSession().getOAuth2AccessToken();
@@ -151,18 +151,18 @@ public class UploadActivity extends FragmentActivity {
 //				editor.putString(ACCESS_TOKEN_SECRET, accessToken_secret);
 				editor.commit();
 				
-				Log.i("UPDATE", "accessToken=" + accessToken);
+//				Log.i("UPDATE", "accessToken=" + accessToken);
 //				authenticated = true;
 				
 				new Thread(new UploadRunnable()).start();
 				
 	        } catch (IllegalStateException e) {
-	            Log.i("DbAuthLog", "Error authenticating", e);
+//	            Log.i("DbAuthLog", "Error authenticating", e);
 	            authenticationSuccessful = false;
 	        }
 	    }
 	    else {
-	    	Log.i("UPLOAD", "Authentication unsuccessful");
+//	    	Log.i("UPLOAD", "Authentication unsuccessful");
 	    	authenticationSuccessful = false;
 	    }
 	    
@@ -181,24 +181,24 @@ public class UploadActivity extends FragmentActivity {
 		public void handleMessage(Message msg) {
 			super.handleMessage(msg);
 
-			Log.i("HANDLER", "Handler received message");
-			Log.i("HANDLER", "Message received is of type " + msg.obj.getClass());
+//			Log.i("HANDLER", "Handler received message");
+//			Log.i("HANDLER", "Message received is of type " + msg.obj.getClass());
 			
 			if (msg.obj.getClass().equals(Integer.class)) {
 				updateDots((Integer)msg.obj);
 			}
 			else if (msg.obj.getClass().equals(UploadHandlerMessageObject.class)) {
-				Log.i("HANDLER", "Upload message received");
+//				Log.i("HANDLER", "Upload message received");
 				UploadHandlerMessageObject mObj = (UploadHandlerMessageObject) msg.obj;
 				new UploadCompleteDialogFragment(activity, mObj).show(activity.getSupportFragmentManager(), "Dialog");
 			}
 			else if (msg.obj.getClass().equals(DeleteHandlerMessageObject.class)) {
-				Log.i("HANDLER", "Delete message received");
+//				Log.i("HANDLER", "Delete message received");
 				Toast.makeText(activity, "Files deleted", Toast.LENGTH_SHORT).show();
 		     	activity.finish();
 			}
 			else {
-				Log.i("HANDLER", "Handler did not recognize message type");
+//				Log.i("HANDLER", "Handler did not recognize message type");
 			}
 		}
 	}
@@ -207,7 +207,7 @@ public class UploadActivity extends FragmentActivity {
 
 		@Override
 		public void run() {
-			Log.i("UPLOAD", "Background thread uploading files...");
+//			Log.i("UPLOAD", "Background thread uploading files...");
 			
 			UploadHandlerMessageObject mObj = new UploadHandlerMessageObject();
 			mObj.uploadSuccessful = true;
@@ -231,7 +231,7 @@ public class UploadActivity extends FragmentActivity {
 						String originalFileName = file.getName();
 						String uploadedFileName = "/photos/";
 						
-						Log.i("UPLOAD", "file path="+file.getAbsolutePath());
+//						Log.i("UPLOAD", "file path="+file.getAbsolutePath());
 						try {
 							FileInputStream inputStream = new FileInputStream(file);
 							
@@ -244,14 +244,14 @@ public class UploadActivity extends FragmentActivity {
 							}
 							
 							Entry response = mDBApi.putFile(uploadedFileName, inputStream, file.length(), null, null);
-							Log.i("DbExampleLog", "Uploaded file \'" + originalFileName + "\'"
-									+ "as \'" + uploadedFileName + "\'\n"
-									+ "The uploaded file's rev is: " + response.rev);
+//							Log.i("DbExampleLog", "Uploaded file \'" + originalFileName + "\'"
+//									+ "as \'" + uploadedFileName + "\'\n"
+//									+ "The uploaded file's rev is: " + response.rev);
 							mObj.nImageFiles++;
 							
 
 						} catch (Exception e) {
-							Log.i("DbExampleLog", "Error uploading file \'" + originalFileName + "\'");
+//							Log.i("DbExampleLog", "Error uploading file \'" + originalFileName + "\'");
 							e.printStackTrace();
 							mObj.uploadSuccessful = false;
 							mObj.badFileList.add(file.getAbsolutePath());
@@ -260,7 +260,7 @@ public class UploadActivity extends FragmentActivity {
 					}
 				}
 				else {
-					Log.i("DbExampleLog", "Error: directory \'" + photoDir.getAbsolutePath() + "\' does not exist.");
+//					Log.i("DbExampleLog", "Error: directory \'" + photoDir.getAbsolutePath() + "\' does not exist.");
 					mObj.uploadSuccessful = false;
 					mObj.badFileList.add(photoDir.getAbsolutePath());
 				}
@@ -280,21 +280,21 @@ public class UploadActivity extends FragmentActivity {
 						String originalFileName = file.getName();
 						String uploadedFileName = "/audio/";
 						
-						Log.i("UPLOAD", "file path="+file.getAbsolutePath());
+//						Log.i("UPLOAD", "file path="+file.getAbsolutePath());
 						try {
 							FileInputStream inputStream = new FileInputStream(file);
 							
 							uploadedFileName += originalFileName;
 							
 							Entry response = mDBApi.putFile(uploadedFileName, inputStream, file.length(), null, null);
-							Log.i("DbExampleLog", "Uploaded file \'" + originalFileName + "\'"
-									+ "as \'" + uploadedFileName + "\'\n"
-									+ "The uploaded file's rev is: " + response.rev);
+//							Log.i("DbExampleLog", "Uploaded file \'" + originalFileName + "\'"
+//									+ "as \'" + uploadedFileName + "\'\n"
+//									+ "The uploaded file's rev is: " + response.rev);
 							mObj.nAudioFiles++;
 							
 
 						} catch (Exception e) {
-							Log.i("DbExampleLog", "Error uploading file \'" + originalFileName + "\'");
+//							Log.i("DbExampleLog", "Error uploading file \'" + originalFileName + "\'");
 							mObj.uploadSuccessful = false;
 							mObj.badFileList.add(file.getAbsolutePath());
 						}
@@ -302,7 +302,7 @@ public class UploadActivity extends FragmentActivity {
 					}
 				}
 				else {
-					Log.i("DbExampleLog", "Error: directory \'" + audioDir.getAbsolutePath() + "\' does not exist.");
+//					Log.i("DbExampleLog", "Error: directory \'" + audioDir.getAbsolutePath() + "\' does not exist.");
 					mObj.uploadSuccessful = false;
 					mObj.badFileList.add(audioDir.getAbsolutePath());
 				}
@@ -310,7 +310,7 @@ public class UploadActivity extends FragmentActivity {
 				
 			}
 			else {
-				Log.i("DbExampleLog", "Error: directory \'" + dictionaryDir.getAbsolutePath() + "\' does not exist.");
+//				Log.i("DbExampleLog", "Error: directory \'" + dictionaryDir.getAbsolutePath() + "\' does not exist.");
 				mObj.uploadSuccessful = false;
 				mObj.badFileList.add(dictionaryDir.getAbsolutePath());
 			}
@@ -480,8 +480,8 @@ public class UploadActivity extends FragmentActivity {
 		
 		@Override
 		public void run() {
-			Log.i("DELETE", "Background thread deleting files...");
-			Log.i("DELETE", "doNotDeleteList==null is " + (doNotDeleteList == null));
+//			Log.i("DELETE", "Background thread deleting files...");
+//			Log.i("DELETE", "doNotDeleteList==null is " + (doNotDeleteList == null));
 			
 			DeleteHandlerMessageObject mObj = new DeleteHandlerMessageObject();
 			

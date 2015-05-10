@@ -21,7 +21,7 @@ import android.media.MediaPlayer.OnPreparedListener;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.Html;
-import android.util.Log;
+//import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -150,7 +150,7 @@ public class MainPageFragment extends Fragment{
 			String name = "<b>" + w.getName() + "</b> ";
 			word.setText(Html.fromHtml(name));
 
-			Log.i("WORD", "word name=\'" + w.getName() + "\'");
+//			Log.i("WORD", "word name=\'" + w.getName() + "\'");
 
 			if (!w.getPos().equals("")) {
 				pos.setTypeface(null, Typeface.ITALIC);
@@ -198,21 +198,21 @@ public class MainPageFragment extends Fragment{
 				try {
 					audioFileFD = new FileInputStream(audioFileName).getFD();
 				} catch (IOException e) {
-					Log.i("AUDIO", "Failed to open input stream for audio file");
+//					Log.i("AUDIO", "Failed to open input stream for audio file");
 				}
 				
 				if (audioFileFD != null) {
-					Log.i("AUDIO", "Opened audio file, fd=" + audioFileFD.toString());
+//					Log.i("AUDIO", "Opened audio file, fd=" + audioFileFD.toString());
 					playButton.setVisibility(View.VISIBLE);
 				}
 				else {
 					playButton.setVisibility(View.GONE);
-					Log.i("Hidden button", "AUDIO");
+//					Log.i("Hidden button", "AUDIO");
 				}
 			}
 		}
 		else {
-			Log.i("WORD", "c is null");
+//			Log.i("WORD", "c is null");
 //			playButton.setVisibility(View.GONE);
 		}
 
@@ -265,7 +265,7 @@ public class MainPageFragment extends Fragment{
                 player.setDataSource(audioFileFD);
                 player.prepareAsync();
             } catch (IOException e) {
-                Log.e("AUDIO", "prepare() failed");
+//                Log.e("AUDIO", "prepare() failed");
             }
         }
 

@@ -9,7 +9,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
+//import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -33,7 +33,7 @@ public class PasswordFragment extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
              Bundle savedInstanceState) {
 		 
-		Log.i("PASSWORD", "PasswordFragment onCreateView");
+//		Log.i("PASSWORD", "PasswordFragment onCreateView");
 		View view = inflater.inflate(R.layout.fragment_password, container, false);
 		
 		SharedPreferences preferences = getActivity().getSharedPreferences(Preferences.APP_SETTINGS, Activity.MODE_PRIVATE);
@@ -77,11 +77,11 @@ public class PasswordFragment extends Fragment {
 
 		@Override
 		public void onClick(View arg0) {
-			Log.i("LOGIN", "button clicked");
+//			Log.i("LOGIN", "button clicked");
 			
 			// password accepted
 			if (passwordField.getText().toString().equals(PASSWORD)) {
-				Log.i("LOGIN", "valid password");
+//				Log.i("LOGIN", "valid password");
 				submitButton.setEnabled(false);
 				
 				SharedPreferences preferences = getActivity().getSharedPreferences(Preferences.APP_SETTINGS, Activity.MODE_PRIVATE);
@@ -118,7 +118,7 @@ public class PasswordFragment extends Fragment {
 
 		@Override
 		public void onClick(View arg0) {
-			Log.i("LOGOUT", "button clicked");
+//			Log.i("LOGOUT", "button clicked");
 			
 			SharedPreferences preferences = getActivity().getSharedPreferences(Preferences.APP_SETTINGS, Activity.MODE_PRIVATE);
 			Editor editor = preferences.edit();

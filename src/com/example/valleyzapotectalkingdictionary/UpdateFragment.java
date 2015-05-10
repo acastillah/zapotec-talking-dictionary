@@ -30,7 +30,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
-import android.util.Log;
+//import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -373,7 +373,7 @@ public class UpdateFragment extends Fragment {
 			             filename = ze.getName();
 			             if (ze.isDirectory()) {
 				            	if(filename.contains("pix")){
-				            		Log.i("pix", filename);
+//				            		Log.i("pix", filename);
 				            		isPic = true;
 				            		  File myDir = new File(root,filename);    
 				            		  myDir.mkdirs();
@@ -387,7 +387,7 @@ public class UpdateFragment extends Fragment {
 				          }
 			             FileOutputStream fout;
 			             if (isPic){
-			            	 Log.i("placing in", root + "/" + filename);
+//			            	 Log.i("placing in", root + "/" + filename);
 				             fout = new FileOutputStream(root + "/" + filename);
 			             }
 			             else{
@@ -492,7 +492,7 @@ public class UpdateFragment extends Fragment {
 				is.close();	
 				hash[type] = buf.toString();
 	       } catch (IOException e){
-	    	  Log.i("download", "hash failed");
+//	    	  Log.i("download", "hash failed");
 	       }
 	}
 

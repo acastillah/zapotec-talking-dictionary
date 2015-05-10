@@ -21,7 +21,7 @@ import android.os.Environment;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.SearchView;
 import android.text.Html;
-import android.util.Log;
+//import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -129,7 +129,7 @@ public class WordDefinitionFragment extends Fragment{
 
 	        SearchView searchView = (SearchView) v.getRootView().findViewById(R.id.searchView1);
 	        if (searchView != null) {
-	        	Log.i("SEARCHVIEW", "not null");
+//	        	Log.i("SEARCHVIEW", "not null");
 //				searchView.setQuery("", false);
 				searchView.clearFocus();
 			}
@@ -190,15 +190,15 @@ public class WordDefinitionFragment extends Fragment{
 				audioFileFD = new FileInputStream(audioFileName).getFD();
 //				//audioFileFD = assetManager.openFd(audioFileName);
 			} catch (IOException e) {
-				Log.i("AUDIO", "Failed to open input stream for audio file");
+//				Log.i("AUDIO", "Failed to open input stream for audio file");
 			}
 			
 			if (audioFileFD != null) {
-				Log.i("AUDIO", "Opened audio file, fd=" + audioFileFD.toString());
+//				Log.i("AUDIO", "Opened audio file, fd=" + audioFileFD.toString());
 			}
 			else {
 				playButton.setVisibility(View.GONE);
-				Log.i("Hidden button", "AUDIO");
+//				Log.i("Hidden button", "AUDIO");
 			}
 			
 		}
@@ -214,7 +214,7 @@ public class WordDefinitionFragment extends Fragment{
 			imageStream = new FileInputStream(imageFileName);
 
 			} catch (IOException e) {
-				Log.i("file not found", imageFileName);
+//				Log.i("file not found", imageFileName);
 			}
 			
 			if (imageStream != null) {
@@ -222,7 +222,7 @@ public class WordDefinitionFragment extends Fragment{
 				
 				int width = bm.getWidth();
 				int height = bm.getHeight();
-				Log.i("IMAGE", "width="+width+" height="+height);
+//				Log.i("IMAGE", "width="+width+" height="+height);
 				image.setImageBitmap(bm);
 			}
 			else {
@@ -287,7 +287,7 @@ public class WordDefinitionFragment extends Fragment{
                 player.setDataSource(audioFileFD);
                 player.prepareAsync();
             } catch (IOException e) {
-                Log.e("AUDIO", "prepare() failed");
+//                Log.e("AUDIO", "prepare() failed");
             }
         }
 

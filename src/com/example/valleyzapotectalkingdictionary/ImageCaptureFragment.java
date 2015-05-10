@@ -29,7 +29,7 @@ import android.support.v4.app.FragmentActivity;
 import android.text.Editable;
 import android.text.InputType;
 import android.text.TextWatcher;
-import android.util.Log;
+//import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -96,34 +96,34 @@ public class ImageCaptureFragment extends Fragment {
 	public void onCreate(Bundle icicle) {
     	super.onCreate(icicle);
     	
-    	Log.i("IMAGE", "ImageCaptureFragment entered onCreate method");
+//    	Log.i("IMAGE", "ImageCaptureFragment entered onCreate method");
     	
     	
     	/*********** photo directory **********/
         
-        Log.i("DIR", "Setting audio dir path");
+//        Log.i("DIR", "Setting audio dir path");
         
 //         if (Environment.getExternalStorageState() == true) {
          	photoDirectoryFullPath = Environment.getExternalStorageDirectory().getAbsolutePath();
-         	Log.i("DIR", "audio dir full path=" + photoDirectoryFullPath);
+//         	Log.i("DIR", "audio dir full path=" + photoDirectoryFullPath);
          	
          	File appDir = new File(photoDirectoryFullPath, dictionaryDirectoryName);
          	if (!appDir.exists()) {
          		boolean success = appDir.mkdir();
-         		Log.i("DIR", "appDir created=" + success);
+//         		Log.i("DIR", "appDir created=" + success);
          	}
          	else {
-         		Log.i("DIR", "appDir exists");
+//         		Log.i("DIR", "appDir exists");
          	}
          	
          	if (appDir.exists() && appDir.isDirectory()) {
-         		Log.i("DIR", "appDir exists & is a directory");
+//         		Log.i("DIR", "appDir exists & is a directory");
          		
          		if (!appDir.canWrite())
          			appDir.setWritable(true);
          		
          		photoDirectoryFullPath += "/" + dictionaryDirectoryName;
-         		Log.i("DIR", "audio dir full path=" + photoDirectoryFullPath);
+//         		Log.i("DIR", "audio dir full path=" + photoDirectoryFullPath);
          		        		
          		File audioDir = new File(photoDirectoryFullPath, photoDirectoryName);
          		if (!audioDir.exists()) {
@@ -135,12 +135,12 @@ public class ImageCaptureFragment extends Fragment {
          				audioDir.setWritable(true);
          			
          			photoDirectoryFullPath += "/" + photoDirectoryName;
-         			Log.i("DIR", "audio dir full path=" + photoDirectoryFullPath);
+//         			Log.i("DIR", "audio dir full path=" + photoDirectoryFullPath);
          		}
          		
          	}
          	else {
-         		Log.i("DIR", "app directory is not a directory");
+//         		Log.i("DIR", "app directory is not a directory");
          	}
          	
 
@@ -148,29 +148,29 @@ public class ImageCaptureFragment extends Fragment {
          	
          	/*********** temp directory **********/
             
-            Log.i("DIR", "Setting audio dir path");
+//            Log.i("DIR", "Setting audio dir path");
             
 //             if (Environment.getExternalStorageState() == true) {
              	tempDirectoryFullPath = Environment.getExternalStorageDirectory().getAbsolutePath();
-             	Log.i("DIR", "audio dir full path=" + tempDirectoryFullPath);
+//             	Log.i("DIR", "audio dir full path=" + tempDirectoryFullPath);
              	
              	appDir = new File(tempDirectoryFullPath, dictionaryDirectoryName);
              	if (!appDir.exists()) {
              		boolean success = appDir.mkdir();
-             		Log.i("DIR", "appDir created=" + success);
+//             		Log.i("DIR", "appDir created=" + success);
              	}
              	else {
-             		Log.i("DIR", "appDir exists");
+//             		Log.i("DIR", "appDir exists");
              	}
              	
              	if (appDir.exists() && appDir.isDirectory()) {
-             		Log.i("DIR", "appDir exists & is a directory");
+//             		Log.i("DIR", "appDir exists & is a directory");
              		
              		if (!appDir.canWrite())
              			appDir.setWritable(true);
              		
              		tempDirectoryFullPath += "/" + dictionaryDirectoryName;
-             		Log.i("DIR", "audio dir full path=" + tempDirectoryFullPath);
+//             		Log.i("DIR", "audio dir full path=" + tempDirectoryFullPath);
              		        		
              		File tempDir = new File(tempDirectoryFullPath, tempDirectoryName);
              		if (!tempDir.exists()) {
@@ -182,12 +182,12 @@ public class ImageCaptureFragment extends Fragment {
              				tempDir.setWritable(true);
              			
              			tempDirectoryFullPath += "/" + tempDirectoryName;
-             			Log.i("DIR", "audio dir full path=" + tempDirectoryFullPath);
+//             			Log.i("DIR", "audio dir full path=" + tempDirectoryFullPath);
              		}
              		
              	}
              	else {
-             		Log.i("DIR", "app directory is not a directory");
+//             		Log.i("DIR", "app directory is not a directory");
              	}
              	
 	}
@@ -288,16 +288,16 @@ public class ImageCaptureFragment extends Fragment {
 	
 	@Override
 	public void onActivityResult(int requestCode, int resultCode, Intent data) {
-		Log.i("PHOTO", "onActivityResult");
+//		Log.i("PHOTO", "onActivityResult");
 		if (bundle == null)
 			bundle = new Bundle();
 		bundle.putBoolean(LAUNCH_CAMERA, false);
 	    if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == Activity.RESULT_OK) {
-	    	Log.i("PHOTO", "request and result codes OK");
+//	    	Log.i("PHOTO", "request and result codes OK");
 	    	image = new File(mFileName);
 	    	
-	    	Log.i("IMAGE", "exist? "+image.exists());	
-	    	Log.i("FILE", "File path=" + mFileName);
+//	    	Log.i("IMAGE", "exist? "+image.exists());	
+//	    	Log.i("FILE", "File path=" + mFileName);
 	    	
 	    	mImageCaptured = true;
 			mPreviewText.setVisibility(View.VISIBLE);
@@ -305,12 +305,12 @@ public class ImageCaptureFragment extends Fragment {
 	    	Bitmap bitmap = BitmapFactory.decodeFile(image.getAbsolutePath(), new BitmapFactory.Options());
 	    	
 	    	double ratio = bitmap.getWidth() / bitmap.getHeight();
-	    	Log.i("BITMAP", "original width=" + bitmap.getWidth() + " height=" + bitmap.getHeight() + " ratio=" + ratio);
+//	    	Log.i("BITMAP", "original width=" + bitmap.getWidth() + " height=" + bitmap.getHeight() + " ratio=" + ratio);
 	    	
 	    	Point size = new Point();
 	    	getActivity().getWindowManager().getDefaultDisplay().getSize(size);
 	    	
-	    	Log.i("BITMAP", "window width=" + size.x + " height=" + size.y);
+//	    	Log.i("BITMAP", "window width=" + size.x + " height=" + size.y);
 	    	
 	    	double width = bitmap.getWidth() / 3;
 	    	double height = bitmap.getHeight() / 3;
@@ -394,7 +394,7 @@ public class ImageCaptureFragment extends Fragment {
 		    );
 	    mFileName = image.getAbsolutePath();
 	    
-	    Log.i("PHOTO", "createImageFile file path=" + mFileName);
+//	    Log.i("PHOTO", "createImageFile file path=" + mFileName);
 	    
 	    return image;
 	}
@@ -452,8 +452,8 @@ public class ImageCaptureFragment extends Fragment {
 				try {
 					newImage = File.createTempFile(userDefinedFileName, ".jpg", new File(photoDirectoryFullPath));
 
-					Log.i("PHOTOS", "Old file path=" + mFileName);
-					Log.i("PHOTOS", "New file path=" + newFileName);
+//					Log.i("PHOTOS", "Old file path=" + mFileName);
+//					Log.i("PHOTOS", "New file path=" + newFileName);
 
 					image.setReadable(true);
 					image.setWritable(true);
@@ -462,32 +462,32 @@ public class ImageCaptureFragment extends Fragment {
 
 					boolean renameSuccessful = image.renameTo(newImage); 
 					
-					Log.i("PHOTOS", "image canRead=" + image.canRead()
-							+ " canWrite=" + image.canWrite());
-					Log.i("PHOTOS", "newImage canRead=" + newImage.canRead()
-							+ " canWrite=" + newImage.canWrite());
-
-					Log.i("PHOTOS", "Rename successful=" + renameSuccessful);
+//					Log.i("PHOTOS", "image canRead=" + image.canRead()
+//							+ " canWrite=" + image.canWrite());
+//					Log.i("PHOTOS", "newImage canRead=" + newImage.canRead()
+//							+ " canWrite=" + newImage.canWrite());
+//
+//					Log.i("PHOTOS", "Rename successful=" + renameSuccessful);
 
 					if (renameSuccessful) {
-						Log.i("PHOTOS", "RENAME WAS SUCCESSFUL");
+//						Log.i("PHOTOS", "RENAME WAS SUCCESSFUL");
 						Toast.makeText(getActivity(), R.string.photoSaved,
 								Toast.LENGTH_SHORT).show();
 					} else {
-						Log.i("PHOTOS", "RENAME WAS NOT SUCCESSFUL");
+//						Log.i("PHOTOS", "RENAME WAS NOT SUCCESSFUL");
 					}
 
 					if (newImage.exists()) {
-						Log.i("SAVE AUDIO", "New file exists");
-						Log.i("SAVE AUDIO",
-								"New file name=" + newImage.getAbsolutePath());
+//						Log.i("SAVE AUDIO", "New file exists");
+//						Log.i("SAVE AUDIO",
+//								"New file name=" + newImage.getAbsolutePath());
 					} else {
-						Log.i("SAVE AUDIO", "New does not file exist");
+//						Log.i("SAVE AUDIO", "New does not file exist");
 					}
 
 					
 				} catch (IOException e) {
-					Log.e("SAVE PHOTO", "Could not create new photo file");
+//					Log.e("SAVE PHOTO", "Could not create new photo file");
 				} finally {
 				}
 

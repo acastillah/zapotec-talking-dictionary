@@ -6,7 +6,7 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
+//import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -50,8 +50,8 @@ public class AboutFragment extends Fragment {
 //        for (int i=0; i<6; i++)
 //        	logos[i].setImageBitmap(bitmaps[i]);
         
-        for (int i=0; i<6; i++)
-        	Log.i("LOGOS", i + " width=" + logos[i].getWidth() + " height=" + logos[i].getHeight());
+//        for (int i=0; i<6; i++)
+//        	Log.i("LOGOS", i + " width=" + logos[i].getWidth() + " height=" + logos[i].getHeight());
         
         return view;
 	}

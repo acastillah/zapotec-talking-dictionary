@@ -18,7 +18,7 @@ import android.support.v4.app.FragmentActivity;
 import android.text.Editable;
 import android.text.InputType;
 import android.text.TextWatcher;
-import android.util.Log;
+//import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -108,19 +108,19 @@ public class AudioCaptureFragment extends Fragment implements Parcelable {
     public void onActivityCreated(Bundle savedInstanceState) {
     	super.onActivityCreated(savedInstanceState);
     	
-    	Log.i("AUDIO", "onActivityCreated");
+//    	Log.i("AUDIO", "onActivityCreated");
     	
     	if (savedInstanceState != null) {
-    		Log.i("AUDIO", "savedInstanceState is not null");
+//    		Log.i("AUDIO", "savedInstanceState is not null");
 	    	recordButtonEnabled = savedInstanceState.getBoolean(RECORD_BUTTON_ENABLED, true);
 	    	playButtonEnabled = savedInstanceState.getBoolean(PLAY_BUTTON_ENABLED, false);
 	    	fileNameEditTextEnabled = savedInstanceState.getBoolean(FILE_NAME_EDIT_TEXT_ENABLED, true);
 	    	saveButtonEnabled = savedInstanceState.getBoolean(SAVE_BUTTON_ENABLED, false);
 	    	
-	    	Log.i("AUDIO", "Record button enabled=" + recordButtonEnabled);
-	    	Log.i("AUDIO", "Play button enabled=" + playButtonEnabled);
-	    	Log.i("AUDIO", "File name enabled=" + fileNameEditTextEnabled);
-	    	Log.i("AUDIO", "Save button enabled=" + saveButtonEnabled);
+//	    	Log.i("AUDIO", "Record button enabled=" + recordButtonEnabled);
+//	    	Log.i("AUDIO", "Play button enabled=" + playButtonEnabled);
+//	    	Log.i("AUDIO", "File name enabled=" + fileNameEditTextEnabled);
+//	    	Log.i("AUDIO", "Save button enabled=" + saveButtonEnabled);
 	    	
 	    	mRecordButton.setEnabled(recordButtonEnabled);
 	    	mPlayButton.setEnabled(playButtonEnabled);
@@ -129,7 +129,7 @@ public class AudioCaptureFragment extends Fragment implements Parcelable {
 	    	mSaveButton.setEnabled(saveButtonEnabled);
     	}
     	
-    	Log.i("AUDIO", "onActivityCreated end");
+//    	Log.i("AUDIO", "onActivityCreated end");
     	
     }
     
@@ -138,30 +138,30 @@ public class AudioCaptureFragment extends Fragment implements Parcelable {
     public void onCreate(Bundle icicle) {
     	super.onCreate(icicle);
 
-        Log.i("DIR", "Setting audio dir path");
+//        Log.i("DIR", "Setting audio dir path");
         
 //        if (Environment.getExternalStorageState() == true) {
         	audioDirectoryFullPath = Environment.getExternalStorageDirectory().getAbsolutePath();
         	tempDirectoryFullPath = Environment.getExternalStorageDirectory().getAbsolutePath();
-        	Log.i("DIR", "audio dir full path=" + audioDirectoryFullPath);
+//        	Log.i("DIR", "audio dir full path=" + audioDirectoryFullPath);
         	
         	File appDir = new File(audioDirectoryFullPath, dictionaryDirectoryName);
         	if (!appDir.exists()) {
         		boolean success = appDir.mkdir();
-        		Log.i("DIR", "appDir created=" + success);
+//        		Log.i("DIR", "appDir created=" + success);
         	}
         	else {
-        		Log.i("DIR", "appDir exists");
+//        		Log.i("DIR", "appDir exists");
         	}
         	
         	if (appDir.exists() && appDir.isDirectory()) {
-        		Log.i("DIR", "appDir exists & is a directory");
+//        		Log.i("DIR", "appDir exists & is a directory");
         		
         		if (!appDir.canWrite())
         			appDir.setWritable(true);
         		
         		audioDirectoryFullPath += "/" + dictionaryDirectoryName;
-        		Log.i("DIR", "audio dir full path=" + audioDirectoryFullPath);
+//        		Log.i("DIR", "audio dir full path=" + audioDirectoryFullPath);
         		        		
         		File audioDir = new File(audioDirectoryFullPath, audioDirectoryName);
         		if (!audioDir.exists()) {
@@ -173,13 +173,13 @@ public class AudioCaptureFragment extends Fragment implements Parcelable {
         				audioDir.setWritable(true);
         			
         			audioDirectoryFullPath += "/" + audioDirectoryName;
-        			Log.i("DIR", "audio dir full path=" + audioDirectoryFullPath);
+//        			Log.i("DIR", "audio dir full path=" + audioDirectoryFullPath);
         		}
         		
         		
         		
         		tempDirectoryFullPath += "/" + dictionaryDirectoryName;
-        		Log.i("DIR", "temp dir full path=" + tempDirectoryFullPath);
+//        		Log.i("DIR", "temp dir full path=" + tempDirectoryFullPath);
         		        		
         		File tempDir = new File(tempDirectoryFullPath, tempDirectoryName);
         		if (!tempDir.exists()) {
@@ -191,13 +191,13 @@ public class AudioCaptureFragment extends Fragment implements Parcelable {
         				tempDir.setWritable(true);
         			
         			tempDirectoryFullPath += "/" + tempDirectoryName;
-        			Log.i("DIR", "temp dir full path=" + tempDirectoryFullPath);
+//        			Log.i("DIR", "temp dir full path=" + tempDirectoryFullPath);
         		}
         		
         		
         	}
         	else {
-        		Log.i("DIR", "app directory is not a directory");
+//        		Log.i("DIR", "app directory is not a directory");
         	}
         	
         	
@@ -232,7 +232,7 @@ public class AudioCaptureFragment extends Fragment implements Parcelable {
 	@Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-		Log.i("AUDIO", "onCreateView");
+//		Log.i("AUDIO", "onCreateView");
 		
         // Inflate the layout for this fragment
 		View view = new View(getActivity());
@@ -369,7 +369,7 @@ public class AudioCaptureFragment extends Fragment implements Parcelable {
         try {
             mRecorder.prepare();
         } catch (IOException e) {
-            Log.e(LOG_TAG, "prepare() failed");
+//            Log.e(LOG_TAG, "prepare() failed");
         }
 
         mRecorder.start();
@@ -458,7 +458,7 @@ public class AudioCaptureFragment extends Fragment implements Parcelable {
                 mPlayer.prepare();
                 mPlayer.start();
             } catch (IOException e) {
-                Log.e(LOG_TAG, "prepare() failed");
+//                Log.e(LOG_TAG, "prepare() failed");
             }
         }
 
@@ -519,10 +519,10 @@ public class AudioCaptureFragment extends Fragment implements Parcelable {
             	
             	if (defaultAudioFile.exists()) {
             	
-	            	Log.i("SAVE AUDIO", 
-	            			"default file path=" + mFileName +
-	            			" canRead()=" + defaultAudioFile.canRead() +
-	            			", canWrite()=" + defaultAudioFile.canWrite());
+//	            	Log.i("SAVE AUDIO", 
+//	            			"default file path=" + mFileName +
+//	            			" canRead()=" + defaultAudioFile.canRead() +
+//	            			", canWrite()=" + defaultAudioFile.canWrite());
 	            	
 	            	String newFileName = audioDirectoryFullPath;
 	                newFileName += "/" + userDefinedFileName;
@@ -532,13 +532,13 @@ public class AudioCaptureFragment extends Fragment implements Parcelable {
 	                try {
 						newAudioFile.createNewFile();
 
-		                Log.i("SAVE AUDIO", 
-		            			"new file path=" + newFileName +
-		            			" canRead()=" + newAudioFile.canRead() +
-		            			", canWrite()=" + newAudioFile.canWrite());
+//		                Log.i("SAVE AUDIO", 
+//		            			"new file path=" + newFileName +
+//		            			" canRead()=" + newAudioFile.canRead() +
+//		            			", canWrite()=" + newAudioFile.canWrite());
 		                
 		                boolean renameSuccessful = defaultAudioFile.renameTo(newAudioFile);
-		            	Log.i("SAVE AUDIO", "renameSuccessful=" + renameSuccessful);
+//		            	Log.i("SAVE AUDIO", "renameSuccessful=" + renameSuccessful);
 		            	
 		            	// Inform the user that saving the audio was successful
 		            	Toast.makeText(getActivity(), R.string.audioSaved, Toast.LENGTH_SHORT).show();
@@ -550,23 +550,23 @@ public class AudioCaptureFragment extends Fragment implements Parcelable {
 		            	mFileNameEditText.setEnabled(true);
 		            	
 		            	if (newAudioFile.exists()) {
-		            		Log.i("SAVE AUDIO", "New file exists");
-		            		Log.i("SAVE AUDIO", "New file name=" + newAudioFile.getAbsolutePath());
+//		            		Log.i("SAVE AUDIO", "New file exists");
+//		            		Log.i("SAVE AUDIO", "New file name=" + newAudioFile.getAbsolutePath());
 		            	}
 		            	else {
-		            		Log.i("SAVE AUDIO", "New does not file exist");
+//		            		Log.i("SAVE AUDIO", "New does not file exist");
 		            	}
 		            	
 		            	if (defaultAudioFile.exists()) {
-		            		Log.i("SAVE AUDIO", "Default file exists");
+//		            		Log.i("SAVE AUDIO", "Default file exists");
 		            		defaultAudioFile.delete();
 		            	}
 		            	else {
-		            		Log.i("SAVE AUDIO", "Default does not file exist");
+//		            		Log.i("SAVE AUDIO", "Default does not file exist");
 		            	}
 		            	
 					} catch (IOException e) {
-						Log.e("SAVE AUDIO", "Could not create new audio file");
+//						Log.e("SAVE AUDIO", "Could not create new audio file");
 					}
 	                newAudioFile.setWritable(true);
             	}

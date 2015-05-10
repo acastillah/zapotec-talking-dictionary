@@ -24,7 +24,7 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Environment;
-import android.util.Log;
+//import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -184,12 +184,12 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		
 		searchView.setFocusable(false);
 //		hideKeyboard(getWindow().getDecorView().getRootView());
-		Log.i("ROOT", "null?=" + Boolean.toString(getWindow().getDecorView().getRootView() == null));
+//		Log.i("ROOT", "null?=" + Boolean.toString(getWindow().getDecorView().getRootView() == null));
 		
 		
 		if (savedInstanceState != null && savedInstanceState.containsKey("QUERY")) {
-			Log.i("SEARCH", "QUERY_SAVED");
-			showResults(savedInstanceState.getString("QUERY", ""));
+//			Log.i("SEARCH", "QUERY_SAVED");
+//			showResults(savedInstanceState.getString("QUERY", ""));
 		}
 				
 //		getFragmentManager().popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
@@ -456,7 +456,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 	
 	@Override
 	public void onStop() {
-		Log.i("ONSTOP", "activity stopped");
+//		Log.i("ONSTOP", "activity stopped");
 		new Thread(new DeleteAllFilesInDirectoryRunnable(
 				Environment.getExternalStorageDirectory().getAbsolutePath() + "/Zapotec Talking Dictionary/temp"))
 				.start();
@@ -472,7 +472,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		
 		@Override
 		public void run() {
-			Log.i("DELETE FILES", "Background thread deleting all files in director \'" + directoryPath + "\'");
+//			Log.i("DELETE FILES", "Background thread deleting all files in director \'" + directoryPath + "\'");
 			
 			File dir = new File(directoryPath);
 			if (dir.exists() && dir.isDirectory()) {
@@ -483,7 +483,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 				
 			}
 			else {
-				Log.e("DELETE FILES", "Error: \'" + directoryPath + "\' does not exist or is not a directory");
+//				Log.e("DELETE FILES", "Error: \'" + directoryPath + "\' does not exist or is not a directory");
 			}
 		}
 	}
@@ -496,7 +496,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 	@Override
 	public void onConfigurationChanged(Configuration newConfig) {
 	    super.onConfigurationChanged(newConfig);
-	    Log.i("CONFIG CHANGE", "orientation changed");
+//	    Log.i("CONFIG CHANGE", "orientation changed");
 	}
 	
 	public void setActionBarTitle(String title) {

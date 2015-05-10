@@ -34,7 +34,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.os.AsyncTask;
 import android.os.Environment;
-import android.util.Log;
+//import android.util.Log;
 import android.widget.Toast;
 
 @SuppressLint("SimpleDateFormat")
@@ -165,7 +165,7 @@ public class DictionaryDatabase {
 	    }
 	    
 	    private void loadDictionary() {
-	    	Log.i("database", Boolean.toString(preferences.getBoolean(Preferences.DB_LOADED, false)));
+//	    	Log.i("database", Boolean.toString(preferences.getBoolean(Preferences.DB_LOADED, false)));
 			if (preferences.getBoolean(Preferences.DB_LOADED, false) == false) {
 	                   	new downloadFiles().execute();
 				         Editor editor = preferences.edit(); 
