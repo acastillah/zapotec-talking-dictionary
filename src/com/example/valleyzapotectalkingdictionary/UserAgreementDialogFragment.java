@@ -32,7 +32,7 @@ public class UserAgreementDialogFragment extends DialogFragment {
     	spanishText.setVisibility(View.GONE);
     	
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setTitle("Terms of Use/\nCondiciones de Uso");
+        builder.setTitle(R.string.termsOfUse);
         builder.setView(dialogView);
         builder.setPositiveButton("Accept/\nAccept", new DialogInterface.OnClickListener() {
                    public void onClick(DialogInterface dialog, int id) {

@@ -216,9 +216,9 @@ public class UpdateFragment extends Fragment {
 	        builder.setView(dialogView);
 	        
 	        dialogMSG = (TextView) dialogView.findViewById(R.id.size_update);
-        	dialogMSG.setText("Would you like to download a file of this size?");
+        	dialogMSG.setText(R.string.downloadFileSizeText);
 
-	        builder.setPositiveButton("Update", new DialogInterface.OnClickListener() {
+	        builder.setPositiveButton(R.string.update, new DialogInterface.OnClickListener() {
 	                   public void onClick(DialogInterface dialog, int id) {
 							// proceed with updates
 	                	   updateButton.setEnabled(false);
@@ -244,7 +244,7 @@ public class UpdateFragment extends Fragment {
 	                   }
 	               });
 	        
-	        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+	        builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
 	                   public void onClick(DialogInterface dialog, int id) {
 	                	   // cancel update
 	                   }
@@ -446,7 +446,7 @@ public class UpdateFragment extends Fragment {
 	    protected void onPreExecute() {
 	       super.onPreExecute();
 	        pDialog = new ProgressDialog(getActivity());
-	        pDialog.setMessage("Setting up database...");
+	        pDialog.setMessage(getResources().getString(R.string.settingUpDatabase));
 	        pDialog.setIndeterminate(false);
 	        pDialog.setCanceledOnTouchOutside(false);
 	        pDialog.setMax(100);
@@ -464,7 +464,7 @@ public class UpdateFragment extends Fragment {
 	    protected void onPostExecute(String file_url) {
 	        // dismiss the dialog after the file was downloaded
 			pDialog.dismiss();
-			Toast.makeText(getActivity(), "Finished setting up the database", Toast.LENGTH_SHORT).show();
+			Toast.makeText(getActivity(), R.string.finishedSettingUpDB, Toast.LENGTH_SHORT).show();
 		}
 	}
 	

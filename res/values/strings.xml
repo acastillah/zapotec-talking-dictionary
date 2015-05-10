@@ -88,6 +88,17 @@ All rights reserved. Do not distribute or reproduce without permission.</string>
     <string name="wordDefinition">Word Defition</string>
     <string name="photoSaved">Photo saved</string>
     <string name="audioSaved">Audio saved</string>
+    <string name="downloadFileSizeText">"Would you like to download a file of this size?"</string>
+    <string name="cancel">Cancel</string>
+    <string name="settingUpDatabase">"Setting up database..."</string>
+    <string name="finishedSettingUpDB">"Finished setting up the database"</string>
+    <string name="uploadComplete">"Upload complete"</string>
+    <string name="ok">OK</string>
+    <string name="delete">Delete</string>
+    <string name="authenticationError">"Upload complete"</string>
+    <string name="dropboxErrorMessage">"There was an error logging into Dropbox."</string>
+    <string name="termsOfUse">"Terms of Use/\nCondiciones de Uso"</string>
+    <string name="accept">"Accept/\nAccept"</string>
 
     <string-array name="languages_array">
         <item>ENG</item>

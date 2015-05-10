@@ -434,21 +434,21 @@ public class UploadActivity extends FragmentActivity {
 	    	
 	    	
 	    	AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-	        builder.setTitle("Upload complete");
+	        builder.setTitle(getResources().getString(R.string.uploadComplete));
 	        builder.setView(dialogView);
 	    	
 	    	if (mObj.nImageFiles + mObj.nAudioFiles == 0) { // no files were uploaded
 	    		deleteLocalFiles_textView.setVisibility(View.GONE);
 	    		allFilesUploaded_textView.setVisibility(View.GONE);
 	    		
-	    		builder.setNeutralButton("OK", new DialogInterface.OnClickListener() {
+	    		builder.setNeutralButton(R.string.ok, new DialogInterface.OnClickListener() {
 	                   public void onClick(DialogInterface dialog, int id) {
 	                	   activity.finish();
 	                   }
 	               });
 	    	}
 	    	else {
-	    		builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+	    		builder.setPositiveButton(R.string.delete, new DialogInterface.OnClickListener() {
 	                   public void onClick(DialogInterface dialog, int id) {
 	                	   TextView statusView = (TextView) activity.findViewById(R.id.uploading);
 	                	   statusView.setText("DELETING");
@@ -460,7 +460,7 @@ public class UploadActivity extends FragmentActivity {
 	               });
 	        
 
-		        builder.setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
+		        builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
 		                   public void onClick(DialogInterface dialog, int id) {
 		                	   activity.finish();
 		                   }
@@ -584,10 +584,10 @@ public class AuthenticationErrorDialogFragment extends DialogFragment {
 	    public Dialog onCreateDialog(Bundle savedInstanceState) {
 	    	
 	    	AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-	        builder.setTitle("Authentication Error");
-	        builder.setMessage("There was an error logging into Dropbox.");
+	        builder.setTitle(R.string.authenticationError);
+	        builder.setMessage(R.string.dropboxErrorMessage);
 	    	
-	    		builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+	    		builder.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
 	                   public void onClick(DialogInterface dialog, int id) {
 	                	   activity.finish();
 	                   }
