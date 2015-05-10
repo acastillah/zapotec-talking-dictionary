@@ -124,6 +124,8 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);	 
+		mTitle = getResources().getString(R.string.app_name);
+		restoreActionBar();
 		/** Set the language **/
 		setLanguage(null);
 		/*********************/
