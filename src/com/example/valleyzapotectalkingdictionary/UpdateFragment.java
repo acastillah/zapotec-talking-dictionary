@@ -109,14 +109,14 @@ public class UpdateFragment extends Fragment {
 			try {
 				lastUpdate.setTime(DictionaryDatabase.dateFormat.parse(preferences.getString(Preferences.LAST_DB_UPDATE, "")));
 				Calendar today = Calendar.getInstance();
-//				if (today.get(Calendar.YEAR) > lastUpdate.get(Calendar.YEAR)
-//						|| today.get(Calendar.MONTH) > lastUpdate.get(Calendar.MONTH)
-//						|| today.get(Calendar.DATE) > lastUpdate.get(Calendar.DATE)) {
+				if (today.get(Calendar.YEAR) > lastUpdate.get(Calendar.YEAR)
+						|| today.get(Calendar.MONTH) > lastUpdate.get(Calendar.MONTH)
+						|| today.get(Calendar.DATE) > lastUpdate.get(Calendar.DATE)) {
 					updateButton.setEnabled(true);
-//				}
-//				else {
-//					updateButton.setEnabled(false);
-//				}
+				}
+				else {
+					updateButton.setEnabled(false);
+				}
 			} catch (ParseException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
