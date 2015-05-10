@@ -137,7 +137,7 @@ public class WordDefinitionFragment extends Fragment{
     }
 	
 	public void setUpDisplay(){
-		w = new Word(Integer.parseInt(info[0]), info[1],info[2],info[3],info[4],info[5],info[6],info[7],info[8],info[9],info[10],info[11],info[12]);
+		w = new Word(Integer.parseInt(info[0]), Integer.parseInt(info[1]),info[2],info[3],info[4],info[5],info[6],info[7],info[8],info[9],info[10],info[11],info[12],info[13]);
 		
 		String name = "";
 		if (w.getName() != null)

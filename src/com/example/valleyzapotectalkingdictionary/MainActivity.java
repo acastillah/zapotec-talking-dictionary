@@ -21,6 +21,7 @@ import android.content.SharedPreferences.Editor;
 import android.content.res.Configuration;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
@@ -32,6 +33,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 public class MainActivity extends ActionBarActivity implements NavigationDrawerFragment.NavigationDrawerCallbacks  {
 
@@ -121,6 +123,8 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);	 
+		mTitle = getResources().getString(R.string.app_name);
+		restoreActionBar();
 		/** Set the language **/
 		setLanguage(null);
 		/*********************/
@@ -204,7 +208,8 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 				ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
 				        R.array.languages_array, android.R.layout.simple_spinner_item);
 				// Specify the layout to use when the list of choices appears
-				adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//				adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+				adapter.setDropDownViewResource(R.layout.actionbar_spinner_dropdown);
 				// Apply the adapter to the spinner
 				spinner.setAdapter(adapter);
 				
@@ -475,9 +480,17 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 	}
 	
 	@Override
-	public void onConfigurationChanged (Configuration newConfig) {
-		super.onConfigurationChanged(newConfig);
-		configChange = true;
+	public void onConfigurationChanged(Configuration newConfig) {
+	    super.onConfigurationChanged(newConfig);
+	    
+	    Log.i("CONFIG CHANGE", "orientation changed");
+
+	    // Checks the orientation of the screen
+//	    if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+//	        Toast.makeText(this, "landscape", Toast.LENGTH_SHORT).show();
+//	    } else if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT){
+//	        Toast.makeText(this, "portrait", Toast.LENGTH_SHORT).show();
+//	    }
 	}
 	
 	public void setActionBarTitle(String title) {

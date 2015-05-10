@@ -44,7 +44,8 @@ public class DictionaryDatabase {
     private static final String TABLE_WORDS = "words";
     private final DictionaryOpenHelper mDatabaseOpenHelper;    
  // Words Table Columns names
-    private static final String KEY_ID = "_id";
+    private static final String KEY_ID = "_id";			// the ID we assign
+    private static final String KEY_DB_ID = "db_id";	// the ID from the original DB
     static final String KEY_WORD = "lang"; //WORD IN ZAPOTEC
     static final String KEY_GLOSS = "gloss"; //WORD IN ENGLISH
     private static final String KEY_IPA = "ipa";
@@ -89,6 +90,7 @@ public class DictionaryDatabase {
         KEY_WORD, KEY_IPA, KEY_GLOSS, KEY_POS, KEY_USAGE, KEY_DIALECT, KEY_META, KEY_AUTHORITY,
         KEY_AUDIO, KEY_IMG, KEY_SEMANTIC, KEY_ESGLOSS}, KEY,
         null, null, null, null, null);
+
         if(cursor==null){
     		return null;
     	}
@@ -102,7 +104,7 @@ public class DictionaryDatabase {
     	SQLiteDatabase db = mDatabaseOpenHelper.getReadableDatabase();
     	String selection = KEY_ID + "=?";
     	String[] selectionArgs = {Integer.toString(id)};
-    	Cursor cursor = db.query(TABLE_WORDS,  new String[] { KEY_ID,
+    	Cursor cursor = db.query(TABLE_WORDS,  new String[] { KEY_ID, KEY_DB_ID,
                 KEY_WORD, KEY_IPA, KEY_GLOSS, KEY_POS, KEY_USAGE, KEY_DIALECT, KEY_META, KEY_AUTHORITY,
                 KEY_AUDIO, KEY_IMG, KEY_SEMANTIC, KEY_ESGLOSS}, selection, selectionArgs, null, null, null);
     	if(cursor==null){
@@ -146,7 +148,9 @@ public class DictionaryDatabase {
 	    public void onCreate(SQLiteDatabase db) {
 	    	db_size = 0;
 	        String CREATE_WORDS_TABLE = "CREATE TABLE " + TABLE_WORDS + "("
-	                + KEY_ID + " INTEGER PRIMARY KEY," + KEY_WORD + " TEXT,"
+	                + KEY_ID + " INTEGER PRIMARY KEY," 
+	                + KEY_DB_ID + " INTEGER,"
+	        		+ KEY_WORD + " TEXT,"
 	                + KEY_IPA + " TEXT," + KEY_GLOSS + " TEXT," + KEY_POS + " TEXT,"
 	                + KEY_USAGE + " TEXT," + KEY_DIALECT + " TEXT," + KEY_META + " TEXT," 
 	                + KEY_AUTHORITY + " TEXT," + KEY_AUDIO + " TEXT," + KEY_IMG + " TEXT," 
@@ -268,10 +272,11 @@ public class DictionaryDatabase {
 		}
 	 
 	    private void loadWords() throws IOException {
+	    	int id = 1;
             Iterator<?> i = JSONReadFromFile();
         	while (i.hasNext()) {
         		JSONObject innerObj = (JSONObject) i.next();		                
-		            String id 			= StringEscapeUtils.unescapeHtml4((String) innerObj.get("oid"));
+		            String db_id 		= StringEscapeUtils.unescapeHtml4((String) innerObj.get("oid"));
 		            String word 		= StringEscapeUtils.unescapeHtml4((String) innerObj.get("lang"));
 		            String ipa 			= StringEscapeUtils.unescapeHtml4((String) innerObj.get("ipa"));		            
 		            String gloss 		= StringEscapeUtils.unescapeHtml4((String) innerObj.get("gloss"));
@@ -284,7 +289,7 @@ public class DictionaryDatabase {
 		            String image 		= StringEscapeUtils.unescapeHtml4((String) innerObj.get("image"));
 		            String semantic_ids = StringEscapeUtils.unescapeHtml4((String) innerObj.get("semantic_ids"));
 		            String es_gloss 	= StringEscapeUtils.unescapeHtml4((String) innerObj.get("es_gloss"));
-		            Word w = new Word(Integer.parseInt(id),word,ipa,gloss,pos,usage,dialect,metadata,authority,audio,image,semantic_ids,es_gloss);
+		            Word w = new Word(id++, Integer.parseInt(db_id),word,ipa,gloss,pos,usage,dialect,metadata,authority,audio,image,semantic_ids,es_gloss);
 		            addWord(w);
         	}      
         }
@@ -388,6 +393,7 @@ public class DictionaryDatabase {
 	    	 	    	
 	        ContentValues values = new ContentValues();
 	        values.put(KEY_ID, word.getID());
+	        values.put(KEY_DB_ID, word.getDB_ID());
 	        values.put(KEY_WORD, word.getName()); // Name
 	        values.put(KEY_IPA, word.getIPA()); // IPA
 	        values.put(KEY_GLOSS, word.getGloss()); // Gloss
@@ -413,7 +419,7 @@ public class DictionaryDatabase {
 	    // Getting single contact
 	    public Cursor getEntry(String q) {
 	    	SQLiteDatabase db = this.getReadableDatabase();
-	        Cursor cursor = db.query(TABLE_WORDS, new String[] { KEY_ID,
+	        Cursor cursor = db.query(TABLE_WORDS, new String[] { KEY_ID, KEY_DB_ID,
 	                KEY_WORD, KEY_IPA, KEY_GLOSS, KEY_POS, KEY_USAGE, KEY_DIALECT, KEY_META, KEY_AUTHORITY,
 	                KEY_AUDIO, KEY_IMG, KEY_SEMANTIC, KEY_ESGLOSS}, KEY_GLOSS + "=?",
 	                new  String[] { String.valueOf(q) }, null, null, null, null);

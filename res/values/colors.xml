@@ -15,4 +15,6 @@
     <color name="spinner_color">#D9723B</color>
     <color name="red">#FF0000</color>
     <color name="white">#FFFFFF</color>
+    <color name="langSpinner_background">#FFFFFF</color>
+    <color name="langSpinner_text">#000000</color>
 </resources>
