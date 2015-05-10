@@ -46,7 +46,6 @@ public class UploadActivity extends FragmentActivity {
 	private boolean authenticated = false;
 	
 	UploadHandler uploadHandler = null;
-//	DeleteHandler deleteHandler = null;
 	
 	TextView uploading = null;
 	TextView[] dots = new TextView[3];
@@ -151,13 +150,13 @@ public class UploadActivity extends FragmentActivity {
 				
 	        } catch (IllegalStateException e) {
 	            Log.i("DbAuthLog", "Error authenticating", e);
-	            // do something?
+	            new AuthenticationErrorDialogFragment(this).show(this.getSupportFragmentManager(), "Dialog");
 	        }
 	    }
 //	    }
 	    else {
 	    	Log.i("UPLOAD", "Authentication unsuccessful");
-	    	// DO SOMETHING
+	    	new AuthenticationErrorDialogFragment(this).show(this.getSupportFragmentManager(), "Dialog");
 	    }
 	}
 	
@@ -560,5 +559,32 @@ public class UploadActivity extends FragmentActivity {
 		public DeleteHandlerMessageObject() {}
 	}
 	
+	
+	
+public class AuthenticationErrorDialogFragment extends DialogFragment {
+		
+		Activity activity = null;
+		
+		public AuthenticationErrorDialogFragment(Activity activity) {
+			this.activity = activity;
+		}
+		
+	    @Override
+	    public Dialog onCreateDialog(Bundle savedInstanceState) {
+	    	
+	    	AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+	        builder.setTitle("Authentication Error");
+	        builder.setMessage("There was an error logging into Dropbox.");
+	    	
+	    		builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+	                   public void onClick(DialogInterface dialog, int id) {
+	                	   activity.finish();
+	                   }
+	               });
+
+	    	
+	        return builder.create();
+	    }
+	}
 
 }
