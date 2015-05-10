@@ -44,6 +44,7 @@ public class UploadActivity extends FragmentActivity {
 	private DropboxAPI<AndroidAuthSession> mDBApi;	
 	
 	private boolean authenticated = false;
+	private boolean authenticationAttempted = false;
 	
 	UploadHandler uploadHandler = null;
 	
@@ -124,6 +125,13 @@ public class UploadActivity extends FragmentActivity {
 	    
 //	    if (!authenticated) {
 	    
+	    boolean authenticationSuccessful = true;
+	    
+	    if (!authenticationAttempted) {
+	    	authenticationAttempted = true;
+	    	return;
+	    }
+	    	
 	    if (mDBApi.getSession().authenticationSuccessful()) {
 	        try {
 	            // finish the authentication session
@@ -150,14 +158,17 @@ public class UploadActivity extends FragmentActivity {
 				
 	        } catch (IllegalStateException e) {
 	            Log.i("DbAuthLog", "Error authenticating", e);
-	            new AuthenticationErrorDialogFragment(this).show(this.getSupportFragmentManager(), "Dialog");
+	            authenticationSuccessful = false;
 	        }
 	    }
-//	    }
 	    else {
 	    	Log.i("UPLOAD", "Authentication unsuccessful");
-	    	new AuthenticationErrorDialogFragment(this).show(this.getSupportFragmentManager(), "Dialog");
+	    	authenticationSuccessful = false;
 	    }
+	    
+	    
+	    if (authenticationAttempted && !authenticationSuccessful)
+	    	new AuthenticationErrorDialogFragment(this).show(this.getSupportFragmentManager(), "Dialog");
 	}
 	
 	class UploadHandler extends Handler {
