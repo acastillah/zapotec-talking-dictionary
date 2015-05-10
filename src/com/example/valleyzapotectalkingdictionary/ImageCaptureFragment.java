@@ -347,9 +347,14 @@ public class ImageCaptureFragment extends Fragment {
 		    		m.postRotate(90);
 		    	if (orientation == 8)
 		    		m.postRotate(270);
-		    	
+		    			    	
 		    	bitmap = Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight(), m, true);
-		    	bitmap = Bitmap.createScaledBitmap(bitmap, (int)height, (int)width, false);
+		    	
+		    	if (orientation == 1 || orientation == 3)
+		    		bitmap = Bitmap.createScaledBitmap(bitmap, (int)width, (int)height, false);
+		    	else // orientation == 6 || orientation == 8
+		    		bitmap = Bitmap.createScaledBitmap(bitmap, (int)height, (int)width, false);
+		    	
 		    	mImageView.setImageBitmap(bitmap);
 	    	
 		    	if (bundle != null && bundle.getBoolean(INSIDE_WORD_DEFINITION, false))
