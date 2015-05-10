@@ -34,7 +34,7 @@ public class UserAgreementDialogFragment extends DialogFragment {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setTitle(R.string.termsOfUse);
         builder.setView(dialogView);
-        builder.setPositiveButton("Accept/\nAccept", new DialogInterface.OnClickListener() {
+        builder.setPositiveButton(R.string.accept, new DialogInterface.OnClickListener() {
                    public void onClick(DialogInterface dialog, int id) {
 								SharedPreferences preferences = getActivity()
 										.getSharedPreferences(Preferences.APP_SETTINGS,
@@ -44,7 +44,7 @@ public class UserAgreementDialogFragment extends DialogFragment {
 								editor.commit();
                    }
                })
-               .setNegativeButton("Reject/\nReject", new DialogInterface.OnClickListener() {
+               .setNegativeButton(R.string.reject, new DialogInterface.OnClickListener() {
                    public void onClick(DialogInterface dialog, int id) {
                 	   // exit the application
                 	   getActivity().finish();

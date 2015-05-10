@@ -60,13 +60,13 @@
 	        android:layout_height="wrap_content"
 	        android:layout_marginTop="20dp"
 	        android:layout_marginBottom="10dp"
-	        android:text="You can upload content saved from this app to Dropbox by clicking UPLOAD. When you upload content to Dropbox, you will be given the option to remove the uploaded content from your device." />
+	        android:text="@string/uploadInfo" />
 	    
 	    <Button
 	        android:id="@+id/upload_button"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:text="Upload" />
+	        android:text="@string/upload" />
 	    
 	    <TextView
 	        android:id="@+id/delete_textView"
@@ -74,13 +74,13 @@
 	        android:layout_height="wrap_content"
 	        android:layout_marginTop="20dp"
 	        android:layout_marginBottom="10dp"
-	        android:text="Clicking DELETE CONTENT will delete all content (photos and audio) recorded through this app." />
+	        android:text="@string/deleteInfo" />
 	    
 	    <Button
 	        android:id="@+id/delete_button"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:text="Delete content" />
+	        android:text="@string/deleteContent" />
 	    
 	    </LinearLayout>
 	    </ScrollView>

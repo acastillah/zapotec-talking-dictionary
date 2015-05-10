@@ -21,7 +21,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:text="Upload to Dropbox is complete:" />
+        android:text="uploadToDropboxComplete" />
     
     <TextView
         android:id="@+id/imagesUploaded_textView"
@@ -29,7 +29,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="10dp"
-        android:text="images uploaded" />
+        android:text="imagesUploaded" />
     
     <TextView
         android:id="@+id/audioFilesUploaded_textView"
@@ -38,7 +38,7 @@
         android:layout_marginLeft="30dp"
         android:layout_marginBottom="20dp"
         android:layout_marginRight="10dp"
-        android:text="audio files uploaded" />
+        android:text="audioFilesUploaded" />
     
     <TextView
         android:id="@+id/allFilesUploaded_textView"
@@ -47,7 +47,7 @@
         android:layout_marginBottom="20dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:text="All files were uploaded" />
+        android:text="allFilesWereUploaded" />
     
     <TextView
         android:id="@+id/unsuccessfulUploads_textView"
@@ -56,7 +56,7 @@
         android:layout_marginBottom="20dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:text="The following files were not uploaded successfully:" />
+        android:text="followingFilesNotUploadedSuccessfully" />
     
     <TextView
         android:id="@+id/deleteLocalFiles_textView"
@@ -65,7 +65,7 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:textSize="20sp"
-        android:text="Do you want to delete the uploaded files from your device?" />
+        android:text="deleteUploadedFilesPrompt" />
     
     </LinearLayout>
     

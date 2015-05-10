@@ -99,7 +99,19 @@ All rights reserved. Do not distribute or reproduce without permission.</string>
     <string name="dropboxErrorMessage">"There was an error logging into Dropbox."</string>
     <string name="termsOfUse">"Terms of Use/\nCondiciones de Uso"</string>
     <string name="accept">"Accept/\nAccept"</string>
-
+    <string name="reject">"Reject/\nReject"</string>
+    <string name="uploading">UPLOADING</string>
+    <string name="uploadInfo">You can upload content saved from this app to Dropbox by clicking UPLOAD. When you upload content to Dropbox, you will be given the option to remove the uploaded content from your device.</string>
+	<string name="deleteInfo">Clicking DELETE CONTENT will delete all content (photos and audio) recorded through this app.</string>
+    <string name="deleteContent">Clicking DELETE CONTENT will delete all content (photos and audio) recorded through this app.</string>
+	<string name="upload">Upload</string>
+	<string name="uploadToDropboxComplete">Upload to Dropbox is complete:</string>
+	<string name="imagesUploaded">images uploaded</string>
+	<string name="audioFilesUploaded">audio files uploaded</string>
+	<string name="allFilesWereUploaded">All files were uploaded</string>
+	<string name="followingFilesNotUploadedSuccessfully">The following files were not uploaded successfully:</string>
+	<string name="deleteUploadedFilesPrompt">Do you want to delete the uploaded files from your device?</string>
+    
     <string-array name="languages_array">
         <item>ENG</item>
         <item>ESP</item>
