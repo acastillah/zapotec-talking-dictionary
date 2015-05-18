@@ -549,6 +549,17 @@ public class UploadActivity extends FragmentActivity {
 					}
 				}
 				else {}
+				
+				
+				/** Delete temp files **/
+				File dir = new File(externalStoragePath+"/"+dictionaryDirectoryName, "temp");
+				if (dir.exists() && dir.isDirectory()) {
+
+					File[] files = dir.listFiles();
+					for (File file : files)
+						file.delete();	
+					
+				}
 					
 				
 			}

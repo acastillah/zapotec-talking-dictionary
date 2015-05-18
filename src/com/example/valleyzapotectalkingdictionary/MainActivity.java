@@ -459,39 +459,39 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		fragmentManager.beginTransaction().replace(R.id.container, fragment).addToBackStack(null).commit();		
 	}
 	
-	@Override
-	public void onStop() {
-//		Log.i("ONSTOP", "activity stopped");
-		new Thread(new DeleteAllFilesInDirectoryRunnable(
-				Environment.getExternalStorageDirectory().getAbsolutePath() + "/Zapotec Talking Dictionary/temp"))
-				.start();
-		super.onStop();
-	}
+//	@Override
+//	public void onStop() {
+////		Log.i("ONSTOP", "activity stopped");
+//		new Thread(new DeleteAllFilesInDirectoryRunnable(
+//				Environment.getExternalStorageDirectory().getAbsolutePath() + "/Zapotec Talking Dictionary/temp"))
+//				.start();
+//		super.onStop();
+//	}
 	
-	public class DeleteAllFilesInDirectoryRunnable implements Runnable {
-
-		private String directoryPath = null;
-		public DeleteAllFilesInDirectoryRunnable(String directoryPath) {
-			this.directoryPath = directoryPath;
-		}
-		
-		@Override
-		public void run() {
-//			Log.i("DELETE FILES", "Background thread deleting all files in director \'" + directoryPath + "\'");
-			
-			File dir = new File(directoryPath);
-			if (dir.exists() && dir.isDirectory()) {
-
-				File[] files = dir.listFiles();
-				for (File file : files)
-					file.delete();	
-				
-			}
-			else {
-//				Log.e("DELETE FILES", "Error: \'" + directoryPath + "\' does not exist or is not a directory");
-			}
-		}
-	}
+//	public class DeleteAllFilesInDirectoryRunnable implements Runnable {
+//
+//		private String directoryPath = null;
+//		public DeleteAllFilesInDirectoryRunnable(String directoryPath) {
+//			this.directoryPath = directoryPath;
+//		}
+//		
+//		@Override
+//		public void run() {
+////			Log.i("DELETE FILES", "Background thread deleting all files in director \'" + directoryPath + "\'");
+//			
+//			File dir = new File(directoryPath);
+//			if (dir.exists() && dir.isDirectory()) {
+//
+//				File[] files = dir.listFiles();
+//				for (File file : files)
+//					file.delete();	
+//				
+//			}
+//			else {
+////				Log.e("DELETE FILES", "Error: \'" + directoryPath + "\' does not exist or is not a directory");
+//			}
+//		}
+//	}
 	
 	public void hideKeyboard(View view) {
 		InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);

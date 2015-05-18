@@ -347,6 +347,7 @@ public class ImageCaptureFragment extends Fragment {
 		    		bitmap = Bitmap.createScaledBitmap(bitmap, (int)height, (int)width, false);
 		    	
 		    	mImageView.setImageBitmap(bitmap);
+		    	mImageView.setVisibility(View.VISIBLE);
 	    	
 		    	if (bundle != null && bundle.getBoolean(INSIDE_WORD_DEFINITION, false))
 		    		mImageCaptureButton.setText(R.string.retakePhoto);
@@ -499,6 +500,8 @@ public class ImageCaptureFragment extends Fragment {
 				if (bundle != null)
 					mFileNameEditText.setText(bundle.getString(FILE_NAME, ""));
 
+				mImageView.setVisibility(View.GONE);
+				
 				mFileNameEditText.setEnabled(true);
 
 			}
