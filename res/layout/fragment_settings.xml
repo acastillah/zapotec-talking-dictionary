@@ -54,34 +54,6 @@
 	        android:layout_height="wrap_content"
 	        android:text="@string/save" />
 	    
-	    <TextView
-	        android:id="@+id/upload_textView"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:layout_marginTop="20dp"
-	        android:layout_marginBottom="10dp"
-	        android:text="@string/uploadInfo" />
-	    
-	    <Button
-	        android:id="@+id/upload_button"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:text="@string/upload" />
-	    
-	    <TextView
-	        android:id="@+id/delete_textView"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:layout_marginTop="20dp"
-	        android:layout_marginBottom="10dp"
-	        android:text="@string/deleteInfo" />
-	    
-	    <Button
-	        android:id="@+id/delete_button"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:text="@string/deleteContent" />
-	    
 	    </LinearLayout>
 	    </ScrollView>
 

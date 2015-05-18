@@ -32,8 +32,6 @@ public class SettingsFragment extends Fragment {
 	
 	EditText usernameEditText = null;
 	Button saveButton = null;
-	Button uploadButton = null;
-	Button deleteButton = null;
 	Activity activity = null;
 	
 	@Override
@@ -48,8 +46,6 @@ public class SettingsFragment extends Fragment {
 
         usernameEditText = (EditText) view.findViewById(R.id.username_editText);
         saveButton = (Button) view.findViewById(R.id.settings_submitButton);
-        uploadButton = (Button) view.findViewById(R.id.upload_button);
-        deleteButton = (Button) view.findViewById(R.id.delete_button);
         
         // fill in username if one already exists
         SharedPreferences preferences = getActivity().getSharedPreferences(Preferences.APP_SETTINGS, Activity.MODE_PRIVATE);
@@ -59,8 +55,6 @@ public class SettingsFragment extends Fragment {
 		usernameEditText.setFilters(MainActivity.userNameInputFilters);
 		usernameEditText.addTextChangedListener(new usernameEditTextWatcher());
 		saveButton.setOnClickListener(new saveButtonOnClickListener());
-		uploadButton.setOnClickListener(new uploadButtonOnClickListener());
-		deleteButton.setOnClickListener(new deleteButtonOnClickListener(getActivity()));
         
 		return view;
     }
@@ -102,60 +96,5 @@ public class SettingsFragment extends Fragment {
 			Toast.makeText(getActivity(), R.string.settingsSaved, Toast.LENGTH_SHORT).show();
 		}
 		
-	}
-	
-	public class uploadButtonOnClickListener implements OnClickListener {
-
-		@Override
-		public void onClick(View arg0) {
-			// TODO Auto-generated method stub
-			Intent intent = new Intent(getActivity(), UploadActivity.class);
-		    startActivity(intent);
-		}
-		
-	}
-	
-	public class deleteButtonOnClickListener implements OnClickListener {
-
-		FragmentActivity activity = null;
-		
-		public deleteButtonOnClickListener(FragmentActivity activity) {
-			this.activity = activity;
-		}
-		
-		@Override
-		public void onClick(View arg0) {
-			new deleteFilesDialogFragment().show(activity.getSupportFragmentManager(), "Dialog");
-		}
-		
-	}
-	
-	public class deleteFilesDialogFragment extends DialogFragment {
-				
-	    @Override
-	    public Dialog onCreateDialog(Bundle savedInstanceState) {
-
-	    	AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-	        builder.setTitle("Are you sure you want to delete all photos and audio files?");
-
-	    	
-	    		builder.setPositiveButton("DELETE", new DialogInterface.OnClickListener() {
-	                   public void onClick(DialogInterface dialog, int id) {
-
-	                	   new Thread(((MainActivity)getActivity()).new DeleteAllFilesInDirectoryRunnable(Environment.getExternalStorageDirectory().getAbsolutePath() + "/Zapotec Talking Dictionary/photos")).start();
-	                	   new Thread(((MainActivity)getActivity()).new DeleteAllFilesInDirectoryRunnable(Environment.getExternalStorageDirectory().getAbsolutePath() + "/Zapotec Talking Dictionary/audio")).start();
-	                	   Toast.makeText(getActivity(), "Files deleted", Toast.LENGTH_SHORT).show();
-	                   }
-	               });
-	        
-
-		        builder.setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
-		                   public void onClick(DialogInterface dialog, int id) {
-		                	   
-		                   }
-		               });
-	    	
-	        return builder.create();
-	    }
 	}
 }

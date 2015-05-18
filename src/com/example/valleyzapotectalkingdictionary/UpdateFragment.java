@@ -216,7 +216,7 @@ public class UpdateFragment extends Fragment {
 	        builder.setView(dialogView);
 	        
 	        dialogMSG = (TextView) dialogView.findViewById(R.id.size_update);
-        	dialogMSG.setText(R.string.downloadFileSizeText);
+        	dialogMSG.setText(getResources().getString(R.string.downloadFileSizeText));
 
 	        builder.setPositiveButton(R.string.update, new DialogInterface.OnClickListener() {
 	                   public void onClick(DialogInterface dialog, int id) {

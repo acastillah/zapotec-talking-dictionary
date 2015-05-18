@@ -111,7 +111,10 @@ All rights reserved. Do not distribute or reproduce without permission.</string>
 	<string name="allFilesWereUploaded">All files were uploaded</string>
 	<string name="followingFilesNotUploadedSuccessfully">The following files were not uploaded successfully:</string>
 	<string name="deleteUploadedFilesPrompt">Do you want to delete the uploaded files from your device?</string>
-    
+    <string name="filesDeleted">"Files deleted"</string>
+    <string name="contentManagement">Upload/Delete</string>
+    <string name="upToDate">Up to Date</string>
+	
     <string-array name="languages_array">
         <item>ENG</item>
         <item>ESP</item>

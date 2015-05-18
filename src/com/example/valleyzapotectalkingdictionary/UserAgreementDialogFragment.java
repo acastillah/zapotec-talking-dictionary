@@ -32,7 +32,7 @@ public class UserAgreementDialogFragment extends DialogFragment {
     	spanishText.setVisibility(View.GONE);
     	
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setTitle(R.string.termsOfUse);
+        builder.setTitle(getResources().getString(R.string.termsOfUse));
         builder.setView(dialogView);
         builder.setPositiveButton(R.string.accept, new DialogInterface.OnClickListener() {
                    public void onClick(DialogInterface dialog, int id) {
@@ -44,7 +44,7 @@ public class UserAgreementDialogFragment extends DialogFragment {
 								editor.commit();
                    }
                })
-               .setNegativeButton(R.string.reject, new DialogInterface.OnClickListener() {
+               .setNegativeButton(getResources().getString(R.string.reject), new DialogInterface.OnClickListener() {
                    public void onClick(DialogInterface dialog, int id) {
                 	   // exit the application
                 	   getActivity().finish();

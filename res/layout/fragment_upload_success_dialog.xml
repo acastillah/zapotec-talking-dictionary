@@ -21,7 +21,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:text="uploadToDropboxComplete" />
+        android:text="@string/uploadToDropboxComplete" />
     
     <TextView
         android:id="@+id/imagesUploaded_textView"
@@ -29,7 +29,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="10dp"
-        android:text="imagesUploaded" />
+        android:text="@string/imagesUploaded" />
     
     <TextView
         android:id="@+id/audioFilesUploaded_textView"
@@ -38,7 +38,7 @@
         android:layout_marginLeft="30dp"
         android:layout_marginBottom="20dp"
         android:layout_marginRight="10dp"
-        android:text="audioFilesUploaded" />
+        android:text="@string/audioFilesUploaded" />
     
     <TextView
         android:id="@+id/allFilesUploaded_textView"
@@ -47,7 +47,7 @@
         android:layout_marginBottom="20dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:text="allFilesWereUploaded" />
+        android:text="@string/allFilesWereUploaded" />
     
     <TextView
         android:id="@+id/unsuccessfulUploads_textView"
@@ -56,7 +56,7 @@
         android:layout_marginBottom="20dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:text="followingFilesNotUploadedSuccessfully" />
+        android:text="@string/followingFilesNotUploadedSuccessfully" />
     
     <TextView
         android:id="@+id/deleteLocalFiles_textView"
@@ -65,7 +65,7 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:textSize="20sp"
-        android:text="deleteUploadedFilesPrompt" />
+        android:text="@string/deleteUploadedFilesPrompt" />
     
     </LinearLayout>
     

@@ -194,7 +194,7 @@ public class UploadActivity extends FragmentActivity {
 			}
 			else if (msg.obj.getClass().equals(DeleteHandlerMessageObject.class)) {
 //				Log.i("HANDLER", "Delete message received");
-				Toast.makeText(activity, "Files deleted", Toast.LENGTH_SHORT).show();
+				Toast.makeText(activity, R.string.filesDeleted, Toast.LENGTH_SHORT).show();
 		     	activity.finish();
 			}
 			else {
@@ -441,14 +441,14 @@ public class UploadActivity extends FragmentActivity {
 	    		deleteLocalFiles_textView.setVisibility(View.GONE);
 	    		allFilesUploaded_textView.setVisibility(View.GONE);
 	    		
-	    		builder.setNeutralButton(R.string.ok, new DialogInterface.OnClickListener() {
+	    		builder.setNeutralButton(getResources().getString(R.string.ok), new DialogInterface.OnClickListener() {
 	                   public void onClick(DialogInterface dialog, int id) {
 	                	   activity.finish();
 	                   }
 	               });
 	    	}
 	    	else {
-	    		builder.setPositiveButton(R.string.delete, new DialogInterface.OnClickListener() {
+	    		builder.setPositiveButton(getResources().getString(R.string.delete), new DialogInterface.OnClickListener() {
 	                   public void onClick(DialogInterface dialog, int id) {
 	                	   TextView statusView = (TextView) activity.findViewById(R.id.uploading);
 	                	   statusView.setText("DELETING");
@@ -460,7 +460,7 @@ public class UploadActivity extends FragmentActivity {
 	               });
 	        
 
-		        builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+		        builder.setNegativeButton(getResources().getString(R.string.cancel), new DialogInterface.OnClickListener() {
 		                   public void onClick(DialogInterface dialog, int id) {
 		                	   activity.finish();
 		                   }
@@ -584,8 +584,8 @@ public class AuthenticationErrorDialogFragment extends DialogFragment {
 	    public Dialog onCreateDialog(Bundle savedInstanceState) {
 	    	
 	    	AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-	        builder.setTitle(R.string.authenticationError);
-	        builder.setMessage(R.string.dropboxErrorMessage);
+	        builder.setTitle(getResources().getString(R.string.authenticationError));
+	        builder.setMessage(getResources().getString(R.string.dropboxErrorMessage));
 	    	
 	    		builder.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
 	                   public void onClick(DialogInterface dialog, int id) {
