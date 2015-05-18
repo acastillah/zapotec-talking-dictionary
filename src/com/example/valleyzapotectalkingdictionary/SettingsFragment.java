@@ -1,6 +1,5 @@
 package com.example.valleyzapotectalkingdictionary;
 
-import com.example.valleyzapotectalkingdictionary.MainActivity.DeleteAllFilesInDirectoryRunnable;
 import com.example.valleyzapotectalkingdictionary.UploadActivity.DeleteRunnable;
 import com.example.valleyzapotectalkingdictionary.UploadActivity.UploadCompleteDialogFragment;
 import com.example.valleyzapotectalkingdictionary.UploadActivity.UploadHandlerMessageObject;
