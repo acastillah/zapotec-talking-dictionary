@@ -417,10 +417,14 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 					mTitle = getString(R.string.title_settings);
 				}
 				else if (position+1 == 7) {
+					fragment = new ContentManagementFragment();	
+					mTitle = getString(R.string.contentManagement);
+				}
+				else if (position+1 == 8) {
 					fragment = new PasswordFragment();
 					mTitle = getString(R.string.password_section);
 				}
-				else if (position+1 == 8) {
+				else if (position+1 == 9) {
 					fragment = new ReportFragment();
 					mTitle = getString(R.string.report_a_problem);
 				}
