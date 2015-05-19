@@ -1,4 +1,4 @@
-package com.example.valleyzapotectalkingdictionary;
+package edu.haverford.cs.zapotectalkingdictionary;
 
 import java.io.FileDescriptor;
 import java.io.FileInputStream;

@@ -1,4 +1,4 @@
-package com.example.valleyzapotectalkingdictionary;
+package edu.haverford.cs.zapotectalkingdictionary;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;

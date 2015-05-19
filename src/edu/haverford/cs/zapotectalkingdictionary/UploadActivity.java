@@ -1,4 +1,4 @@
-package com.example.valleyzapotectalkingdictionary;
+package edu.haverford.cs.zapotectalkingdictionary;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -11,6 +11,7 @@ import com.dropbox.client2.android.AndroidAuthSession;
 import com.dropbox.client2.session.AccessTokenPair;
 import com.dropbox.client2.session.AppKeyPair;
 import com.dropbox.client2.session.Session.AccessType;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;

@@ -1,4 +1,4 @@
-package com.example.valleyzapotectalkingdictionary;
+package edu.haverford.cs.zapotectalkingdictionary;
 
 //import android.util.Log;
 import android.view.View;

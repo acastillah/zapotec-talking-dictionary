@@ -1,9 +1,8 @@
-package com.example.valleyzapotectalkingdictionary;
+package edu.haverford.cs.zapotectalkingdictionary;
 
-import com.example.valleyzapotectalkingdictionary.UploadActivity.DeleteRunnable;
-import com.example.valleyzapotectalkingdictionary.UploadActivity.UploadCompleteDialogFragment;
-import com.example.valleyzapotectalkingdictionary.UploadActivity.UploadHandlerMessageObject;
-
+import edu.haverford.cs.zapotectalkingdictionary.UploadActivity.DeleteRunnable;
+import edu.haverford.cs.zapotectalkingdictionary.UploadActivity.UploadCompleteDialogFragment;
+import edu.haverford.cs.zapotectalkingdictionary.UploadActivity.UploadHandlerMessageObject;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;

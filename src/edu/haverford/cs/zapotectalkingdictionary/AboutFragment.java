@@ -1,4 +1,4 @@
-package com.example.valleyzapotectalkingdictionary;
+package edu.haverford.cs.zapotectalkingdictionary;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
