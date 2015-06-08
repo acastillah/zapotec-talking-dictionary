@@ -152,13 +152,13 @@ public class MainPageFragment extends Fragment{
 
 //			Log.i("WORD", "word name=\'" + w.getName() + "\'");
 
-			if (!w.getPos().equals("")) {
+			if (w.getPos() != null && !w.getPos().equals("")) {
 				pos.setTypeface(null, Typeface.ITALIC);
 				pos.setText(w.getPos());
 			} else
 				pos.setVisibility(View.GONE);
 
-			if (!w.getGloss().equals("")) {
+			if (w.getGloss() != null && !w.getGloss().equals("")) {
 				String sourceString = "<b>"
 						+ getResources().getString(R.string.english) + ":</b> "
 						+ w.getGloss();
@@ -166,7 +166,7 @@ public class MainPageFragment extends Fragment{
 			} else
 				definition_Eng.setVisibility(View.GONE);
 
-			if (!w.getEsGloss().equals("")) {
+			if (w.getEsGloss() != null && !w.getEsGloss().equals("")) {
 				String sourceString = "<b>"
 						+ getResources().getString(R.string.spanish) + ":</b> "
 						+ w.getEsGloss();
@@ -174,12 +174,12 @@ public class MainPageFragment extends Fragment{
 			} else
 				definition_Spa.setVisibility(View.GONE);
 
-			if (!w.getDialect().equals(""))
+			if (w.getDialect() != null && !w.getDialect().equals(""))
 				variant.setText(w.getDialect());
 			else
 				variant.setVisibility(View.GONE);
 
-			if (!w.getAuthority().equals("")) {
+			if (w.getAuthority() != null && !w.getAuthority().equals("")) {
 				String authority = "<b>"
 						+ getResources().getString(R.string.speaker) + "</b> "
 						+ w.getAuthority();
@@ -187,7 +187,7 @@ public class MainPageFragment extends Fragment{
 			} else
 				speaker.setVisibility(View.GONE);
 
-			if (!w.getAudio().equals("")) {
+			if (w.getAudio() != null && !w.getAudio().equals("")) {
 				
 				audioFileName = getActivity().getFilesDir().getAbsolutePath() + "/teotitlan_content/aud/" + w.getAudio();				
 				String HtmlUnescapedQuote = StringEscapeUtils.unescapeHtml3("&#8217;");
