@@ -22,96 +22,80 @@ public class Word {
     public Word(){
          
     }
-    // constructor
-    public Word(int id, int db_id, String w, String ipa, String g, String p, String usage, String dialect, String metadata, String authority, String audio, String img, String sem, String esgloss){
-        this.id = id;
-        this.db_id = db_id;
-        this.word = w;
-        this.gloss = g;
-        this.ipa = ipa;
-        this.pos = p;
-        this.usage_example = usage;
-        this.dialect = dialect;
-        this.metadata = metadata;
-        this.authority = authority;
-        this.audio = audio;
-        this.image = img;
-        this.semantic_ids = sem;
-        this.es_gloss = esgloss;
-    }
+	    // constructor
+	    public Word(int id, int db_id, String word, String ipa, String gloss, String pos, String usage, String dialect, String metadata, String authority, String audio, String img, String sem, String esgloss){
+	        this.id = id;
+	        this.db_id = db_id;
+	        this.word = (word != null) ? word : "";
+	        this.gloss = (gloss != null) ? gloss : "";
+	        this.ipa = (ipa != null) ? ipa : "";
+	        this.pos = (pos != null) ? pos : "";
+	        this.usage_example = (usage_example != null) ? usage : "";
+	        this.dialect = (dialect != null) ? dialect : "";
+	        this.metadata = (metadata != null) ? metadata : "";
+	        this.authority = (authority != null) ? authority : "";
+	        this.audio = (audio != null) ? audio : "";
+	        this.image = (img != null) ? img : "";
+	        this.semantic_ids = (sem != null) ? sem : "";
+	        this.es_gloss = (esgloss != null) ? sem : "";
+	    }
+	
+	    public int getID(){
+	        return this.id;
+	    }
 
-    // getting ID
-    public int getID(){
-        return this.id;
-    }
-     
-    // setting id
-    public void setID(int id){
-        this.id = id;
-    }
-    
- // getting ID
-    public int getDB_ID(){
-        return this.db_id;
-    }
-     
-    // setting id
-    public void setDB_ID(int db_id){
-        this.db_id = db_id;
-    }
-     
-    // getting name
-    public String getName(){
-        return this.word;
-    }
-     
-    public String getGloss(){
-        return this.gloss;
-    }
-    
-    public String getIPA(){
-        return this.ipa;
-    }
+	    public int getDB_ID(){
+	        return this.db_id;
+	    }
 
-    public String getPos(){
-        return this.pos;
-    }    
-    
-    public String getUsage(){
-        return this.usage_example;
-    }
-    public String getDialect(){
-        return this.dialect;
-    }
-    
-    public String getMetadata(){
-        return this.metadata;
-    }
-    
-    public String getAuthority(){
-        return this.authority;
-    }
+	    public String getName(){
+	        return this.word;
+	    }
+	     
+	    public String getGloss(){
+	        return this.gloss;
+	    }
+	    
+	    public String getIPA(){
+	        return this.ipa;
+	    }
+	
+	    public String getPos(){
+	        return this.pos;
+	    }    
+	    
+	    public String getUsage(){
+	        return this.usage_example;
+	    }
+	    public String getDialect(){
+	        return this.dialect;
+	    }
+	    
+	    public String getMetadata(){
+	        return this.metadata;
+	    }
+	    
+	    public String getAuthority(){
+	        return this.authority;
+	    }
+	
+	    public String getAudio(){
+	        return this.audio;
+	    }
+	    
+	    public String getIMG(){
+	        return this.image;
+	    }
+	    
+	    public String getSemantic(){
+	        return this.semantic_ids;
+	    }
+	    public String getEsGloss(){
+	        return this.es_gloss;
+	    }
 
-    public String getAudio(){
-        return this.audio;
-    }
-    
-    public String getIMG(){
-        return this.image;
-    }
-    
-    public String getSemantic(){
-        return this.semantic_ids;
-    }
-    public String getEsGloss(){
-        return this.es_gloss;
-    }
-
-    
-    // setting name
-    public void setWord(String w){
-        this.word = w;
-    }
-
+	    public void setWord(String w){
+	        this.word = w;
+	    }
 }
 
