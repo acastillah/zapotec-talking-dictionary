@@ -30,6 +30,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 //import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -80,6 +81,7 @@ public class UpdateFragment extends Fragment {
         }
         
         if (!preferences.contains(Preferences.LAST_DB_UPDATE)) {
+        	Log.i("UPDATE", "no previous update date available");
         	Calendar cal = Calendar.getInstance();
         	cal.set(DictionaryDatabase.DB_YEAR, 
         			DictionaryDatabase.DB_MONTH, 
@@ -103,9 +105,11 @@ public class UpdateFragment extends Fragment {
 		dbspecs.setText(preferences.getLong(Preferences.DB_SIZE, 0) + " " + dbspecs.getText().toString());
 		
 		if (preferences.getString(Preferences.LANGUAGE, "").equals(Preferences.ENGLISH)) {
+			Log.i("UPDATE", "English, setting last update date/time");
 			lastUpdateView.append(" " + preferences.getString(Preferences.LAST_DB_UPDATE, ""));
        	}
        	else {
+       		Log.i("UPDATE", "English, setting last update date/time");
        		Calendar calMX = Calendar.getInstance();
        		boolean dateParseSuccess = false;
        		try {
@@ -116,27 +120,27 @@ public class UpdateFragment extends Fragment {
 			}
        		if (dateParseSuccess) {
        				String dateMX = DictionaryDatabase.dateFormat_MX.format(calMX.getTime());
-       		lastUpdateView.append(" " + dateMX);
+       				lastUpdateView.append(" " + dateMX);
        		}
        	}
 		
 		
 		
 		
-		Calendar cal = Calendar.getInstance();
-       	String date = DictionaryDatabase.dateFormat_US.format(cal.getTime());
-       	editor.putString(Preferences.LAST_DB_UPDATE, date);
-       	editor.commit();
+//		Calendar cal = Calendar.getInstance();
+//       	String date = DictionaryDatabase.dateFormat_US.format(cal.getTime());
+//       	editor.putString(Preferences.LAST_DB_UPDATE, date);
+//       	editor.commit();
        	
-       	lastUpdateView.setText(R.string.last_updated);
-       	
-       	if (preferences.getString(Preferences.LANGUAGE, "").equals(Preferences.ENGLISH)) {
-       		lastUpdateView.append(" " + date);
-       	}
-       	else {
-       		String dateMX = DictionaryDatabase.dateFormat_MX.format(cal.getTime());
-       		lastUpdateView.append(" " + dateMX);
-       	}
+//       	lastUpdateView.setText(R.string.last_updated);
+//       	
+//       	if (preferences.getString(Preferences.LANGUAGE, "").equals(Preferences.ENGLISH)) {
+//       		lastUpdateView.append(" " + date);
+//       	}
+//       	else {
+//       		String dateMX = DictionaryDatabase.dateFormat_MX.format(cal.getTime());
+//       		lastUpdateView.append(" " + dateMX);
+//       	}
 		
 
 		// users may only update once per day 
