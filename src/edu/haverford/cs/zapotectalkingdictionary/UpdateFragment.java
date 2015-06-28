@@ -81,7 +81,7 @@ public class UpdateFragment extends Fragment {
         }
         
         if (!preferences.contains(Preferences.LAST_DB_UPDATE)) {
-        	Log.i("UPDATE", "no previous update date available");
+//        	Log.i("UPDATE", "no previous update date available");
         	Calendar cal = Calendar.getInstance();
         	cal.set(DictionaryDatabase.DB_YEAR, 
         			DictionaryDatabase.DB_MONTH, 
@@ -105,11 +105,11 @@ public class UpdateFragment extends Fragment {
 		dbspecs.setText(preferences.getLong(Preferences.DB_SIZE, 0) + " " + dbspecs.getText().toString());
 		
 		if (preferences.getString(Preferences.LANGUAGE, "").equals(Preferences.ENGLISH)) {
-			Log.i("UPDATE", "English, setting last update date/time");
+//			Log.i("UPDATE", "English, setting last update date/time");
 			lastUpdateView.append(" " + preferences.getString(Preferences.LAST_DB_UPDATE, ""));
        	}
        	else {
-       		Log.i("UPDATE", "English, setting last update date/time");
+//       		Log.i("UPDATE", "English, setting last update date/time");
        		Calendar calMX = Calendar.getInstance();
        		boolean dateParseSuccess = false;
        		try {
