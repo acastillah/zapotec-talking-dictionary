@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/res/merged/debug/menu/upload.xml",
+        "source": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/menu/upload.xml"
+    },
+    {
+        "merged": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/res/merged/debug/menu/main.xml",
+        "source": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/menu/main.xml"
+    },
+    {
+        "merged": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/res/merged/debug/menu/menu.xml",
+        "source": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/menu/menu.xml"
+    }
+]

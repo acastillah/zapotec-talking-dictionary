@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- ZAPOTEC -->
+    
+<string name="TeotitlanDelValleZapotec">Teotitlán del Valle Zapotec</string>
+    <string name="AndroidTalkingDictionary">Android Talking Dictionary</string>
+    <string name="side_menu">Menú</string>
+    <string name="englishInterface">ENG</string>
+    <string name="spanishInterface">ESP</string>
+    <string name="zapotecInterface">ZAP</string>
+    <string name="english">Dix-ingles</string>
+    <string name="spanish">Dixtilih</string>
+    <string name="settings">Ajustes</string>
+    <string name="search">Gudi’lih</string>
+    <string name="wordOfTheDay">Xtìch nadxii</string>
+    <string name="title_activity_menu">Menú</string>
+    <string name="title_activity_search_result">Búsqueda</string>
+    <string name="title_activity_word_definition">Definición</string>
+    <string name="title_activity_search_fragment">Búsqueda</string>
+    <string name="title_main_section">Xtìch nadxii</string>
+    <string name="title_section2">Actualizar</string>
+    <string name="title_section3">Xi naing</string>
+    <string name="password_section">Admin Log In</string> <!-- Iniciar sesión</string> -->
+    <string name="audio_section">Grabar audio</string>
+    <string name="photo_section">Tomar foto</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">All content copyright © the recorded Zapotec communities (2013-2015).
+Dictionary produced by Brook Danielle Lillehaugen, Alex Mannix, 
+Janet Chavez Santiago, Ambrocio Gutiérrez, Bibiana Gutiérrez, Nick Kalivoda, 
+Alex Mannix, Teresa Martínez Chavez and Troi Carleton, with Helen Felker and Rachel Elizabeth Weissler, 
+with support from K. David Harrison and Jeremy Fahringer. (2013-2014).
+All rights reserved. Do not distribute or reproduce without permission.</string>
+    <string name="help">Ayuda</string>
+    <string name="title_activity_search">SearchActivity</string>
+    <string name="preview_image">Imagen</string>
+    <!-- <string name="passwordExplanation">Esta sesión provee acceso a las herramientas usadas por los linguistas que están desarrollando
+        la base de datos del lenguaje Zapoteco de Teotitlán del Valle. Por el momento estas herramientas no son accesibles para el público. </string>
+	-->
+	<string name="password">Contraseña: </string>
+	<string name="passwordIncorrect">Contraseña incorrecta</string>
+	<string name="submit">Mandar</string>
+	<string name="search_hint">Gudi’lih</string>
+    <string name="updateInfo">El idioma esta creciendo constantemente. Cada que actualices la base de datos puedes decidir si deseas incluir audio y fotos o no para preservar espacios.</string>
+    <string name="downloadAudio">Descargar audio</string>
+    <string name="downloadPictures">Descargar imágenes</string>
+    <string name="update">Bakui</string>
+    <string name="speaker">Tu kani\'i: </string>
+    <string name="audioFragmentDescription">"Click \"Start recording\" to start recording audio and click \"Stop recording\" to end the recording. You can play the recording with the \"Start playing/Stop playing\" button. You may name your audio file in the text field. Audio files can be accessed on your device's local storage under the \"Zapotec Talking Dictionary/audio\" directory."</string>
+    <string name="photoName">"Nombre de la imagen:"</string>
+    <string name="stopRecording">"Parar grabación"</string>
+    <string name="startRecording">"Empezar grabación"</string>
+    <string name="stopPlaying">"Para audio"</string>
+    <string name="startPlaying">"Empezar audio"</string>
+    <string name="save">"Guardar"</string>
+    <string name="imageFragmentDescription">Haga clic en  \"Tomar foto\" e introduzca un nombre para el archivo. Puede accesar estas imágenes en el directorio \"Zapotec Talking Dictionary/photos\" dentro de su memoria local</string>
+    <string name="retakePhoto">"Tomar foto de nuevo"</string>
+    <string name="takePhoto">"Tomar foto"</string>
+    <string name="passwordAccepted">"Contraseña aceptada"</string>
+    <string name="upToDate">"Al día"</string>
+    <string name="EnglishDefinition">"dix-ingles: "</string>
+    <string name="SpanishDefinition">"dixtilih: "</string>
+    <string name="semanticDomain_text">Kuib dìch:</string>
+    
+    <string-array name="languages_array">
+        <item>ENG</item>
+        <item>ESP</item>
+        <item>ZAP</item>
+    </string-array>
+    
+    <string-array name="search_options">
+        <item>Raatè\' gits ni rigizhe\'e xi zelau\' xi nekih</item>
+        <item>Guni\' naa te dìch dixza</item>
+        <item>Guni\' naa te dìch ingles</item>
+        <item>Español</item>
+    </string-array>
+    
+    <string-array name="domain_options">
+        <item>Raa ddìch</item>
+        <item>animal</item>
+        <item>body parts</item>
+        <item>clima</item>
+        <item>clothing</item>       
+        <item>color</item>
+        <item>food</item>
+        <item>kinship</item>
+        <item>location</item>
+        <item>persona</item>
+        <item>time</item>
+        <item>ubicación</item>
+    </string-array>
+	
+	<string name="current_language">Spanish</string>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+    <string name="appExplanation">Esta aplicación fue creada con la intención de ser una versión del Diccionario Hablante de Zapoteca de Teotitlán del Valle que se puede ser encontrado en el siguiente enlace: </string>
+    <string name="website"><u>http://talkingdictionary.swarthmore.edu/teotitlan/</u></string>
+    <!-- <string name="passwordExplanation">Esta sesión provee acceso a las herramientas usadas por los linguistas que están desarrollando
+        la base de datos del lenguaje Zapoteco de Teotitlán del Valle. Por el momento estas herramientas no son accesibles para el público. </string>
+	-->
+    
+    <string name="app_name">Dixza</string>
+    <string name="passwordExplanation">Acceso de administrador solamente.</string>
+    <string name="audioName">"Nombre de audio:"</string>
+    <string name="takeAnotherPhoto">Toma otra Foto</string>
+    <string name="updated">Base de datos actualizada</string>
+    <string name="noUpdate">No hay actualizaciones.</string>
+    <string name="logout">Baseu\' xixteniu</string>
+    <string name="logoutAccepted">Sesión cerrada</string>
+    <string name="logoutExplanation">Cerrar sesión le quita acceso a las herramientas de audio y fotos. Puede volver a iniciar sesión en cualquier momento.</string>
+    <string name="username">Nombre:</string>
+    <string name="passwordWelcome">Bienvenida</string>
+    <string name="settingsExplanation">Introduzca su nombre. Será usado para nombrar las fotos y los archivos de audio automáticamente. </string>
+    <string name="title_settings">Ajustes</string>
+    <string name="settingsSaved">Configuración guardada</string>
+    <string name="db_specs"> ddìch ni yu\' le\'eng ginni</string>
+    <string name="last_updated">Última actualización: </string>
+    <string name="checkOncePerDay">Puede buscar actualizaciones una vez por día</string>
+    <string name="recording">GRABANDO</string>
+    <string name="report_a_problem">Gudizhè\'è bel xi kayak</string>
+    <string name="report_textView">Existe un problema con la aplicación? Puede reportar su problema vía email al presionar el siguiente botón.</string>
+    <string name="report_button">Reportar problema</string>
+    <string name="reportEmail_subject">"Dixza Android Application Bug Report"</string>
+    <string name="reportEmail_body">"Descripción del error:\n"</string>
+    <string name="searchResults">Resultados de búsqueda</string>
+    <string name="wordDefinition">Definición de palabra</string>
+    <string name="photoSaved">Foto guardada</string>
+    <string name="audioSaved">Audio guardado</string>
+    <string name="downloadFileSizeText">"Le gustaría bajar un archivo de este tamaño?"</string>
+    <string name="cancel">Cancelar</string>
+    <string name="settingUpDatabase">"Creando base de datos..."</string>
+    <string name="finishedSettingUpDB">"Termino de la creacion de la base de datos"</string>
+    <string name="uploadComplete">"Carga completa"</string>
+    <string name="ok">OK</string>
+    <string name="delete">borrar</string>
+    <string name="authenticationError">Error de aunteticación</string>
+    <string name="dropboxErrorMessage">"Error iniciando sesión."</string>
+    <string name="termsOfUse">"Terms of Use/\nCondiciones de Uso"</string>
+    <string name="accept">"Accept/\nAceptar"</string>
+    <string name="reject">"Reject/\nRechazar"</string>
+    <string name="uploading">SUBIENDO</string>
+    <string name="uploadInfo">Puede subir el contenido guardado a Dropbox al presionar SUBIR. Cuando haya subido contenido a Dropbox, puede tener la opcion de borrar el contenido subido de su telefono</string>
+    
+    	<string name="deleteInfo">Seleccionar BORRAR CONTENIDO va a borrar todo el contenido guardado por medio de la aplicacion</string>
+	<string name="deleteContent">borrar contenido</string>
+	<string name="upload">Subir</string>
+	<string name="uploadToDropboxComplete">La carga a Dropbox se completo:</string>
+	<string name="imagesUploaded">imágenes cargadas</string>
+	<string name="audioFilesUploaded">audio files uploaded</string>
+	<string name="allFilesWereUploaded">Todos los archivos fueron subidos.</string>
+	<string name="followingFilesNotUploadedSuccessfully">Los siguientes archivos no fueron subidos:</string>
+	<string name="deleteUploadedFilesPrompt">Desea borrar los archivos subidos de su celular?</string>
+    <string name="filesDeleted">Archivos borrados</string>
+    
+    
+    
+    
+    
+    
+    
+    <string name="contentManagement">Subir/Borrar</string>
+
+	
+	
+	
+	
+	
+	
+	
+</resources>
