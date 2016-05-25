@@ -37,7 +37,7 @@ import android.widget.TextView;
 
 public class MainActivity extends ActionBarActivity implements NavigationDrawerFragment.NavigationDrawerCallbacks  {
 
-	public boolean recreate = false; 
+	public boolean recreate = false; //...
 	public boolean clearStack = false;
 	
 	private NavigationDrawerFragment mNavigationDrawerFragment;
