@@ -2,17 +2,16 @@
 <resources>
     <string-array name="domain_options">
         <item>todas</item>
-        <item>animal</item>
-        <item>body parts</item>
+        <item>animales</item>
+        <item>partes del cuerpo</item>
         <item>clima</item>
-        <item>clothing</item>       
-        <item>color</item>
-        <item>food</item>
-        <item>kinship</item>
-        <item>location</item>
-        <item>persona</item>
-        <item>time</item>
+        <item>ropa</item>
+        <item>colores</item>
+        <item>comida</item>
+        <item>parentesco</item>
         <item>ubicación</item>
+        <item>persona</item>
+        <item>tiempo</item>
     </string-array>
     <string-array name="languages_array">
         <item>ENG</item>

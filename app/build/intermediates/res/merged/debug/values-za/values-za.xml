@@ -12,7 +12,6 @@
         <item>location</item>
         <item>persona</item>
         <item>time</item>
-        <item>ubicación</item>
     </string-array>
     <string-array name="languages_array">
         <item>ENG</item>

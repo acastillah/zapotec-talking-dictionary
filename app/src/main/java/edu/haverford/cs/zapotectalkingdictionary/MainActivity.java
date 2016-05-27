@@ -282,7 +282,8 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		            domain_search = domainSpinner.getSelectedItem().toString();
 		            if (pos!=0){
 		            	showDomain();
-		            }
+		            } // TODO: Make "all" work when pos = 0. Although this may be here
+					// to show the word of the day when it opens instead of "All"
 		        }
 		        public void onNothingSelected(AdapterView<?> arg0) {
 		        }
@@ -329,7 +330,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
     	FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
 		Fragment fragment = new SearchResultsFragment();
         Bundle bundle = new Bundle();
-        bundle.putString("QUERY", "");
+        bundle.putString("QUERY", ""); // TODO: Convert the domain search into one language (English).
         bundle.putString("DOM", domain_search);
         ((Fragment) fragment).setArguments(bundle);
 		transaction.addToBackStack(null).replace(R.id.container, fragment, SEARCH_RESULTS_FRAGMENT).commit();	

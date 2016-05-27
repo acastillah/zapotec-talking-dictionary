@@ -87,7 +87,6 @@ All rights reserved. Do not distribute or reproduce without permission.</string>
         <item>location</item>
         <item>persona</item>
         <item>time</item>
-        <item>ubicación</item>
     </string-array>
 	
 	<string name="current_language">Spanish</string>

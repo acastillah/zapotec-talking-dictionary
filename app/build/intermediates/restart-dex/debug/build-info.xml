@@ -1,32 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <instant-run
     abi="x86"
-    api-level="18"
-    density="xhdpi"
+    api-level="23"
+    density="420dpi"
     format="7"
-    timestamp="10958502503975" >
+    timestamp="114443573635392" >
 
     <task
         name="javac"
-        duration="29972" />
+        duration="0" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="2669" />
+        duration="0" />
     <task
         name="verifier"
-        duration="169" />
+        duration="0" />
 
     <artifact
-        location="/home/tess/StudioProjects/zapotec-talking-dictionary-real/app/build/outputs/apk/app-debug.apk"
-        type="MAIN" />
+        location="/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/res/resources-debug.ap_"
+        type="RESOURCES" />
 
-    <build timestamp="10958502503975" >
+    <build timestamp="113577204727766" >
         <artifact
-            location="/home/tess/StudioProjects/zapotec-talking-dictionary-real/app/build/outputs/apk/app-debug.apk"
+            location="/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/outputs/apk/app-debug.apk"
             type="MAIN" />
+    </build>
+    <build timestamp="114443573635392" >
+        <artifact
+            location="/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/res/resources-debug.ap_"
+            type="RESOURCES" />
     </build>
 
 </instant-run>

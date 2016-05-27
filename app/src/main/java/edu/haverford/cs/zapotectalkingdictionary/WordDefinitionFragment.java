@@ -157,7 +157,9 @@ public class WordDefinitionFragment extends Fragment{
 			definition_Eng.setText(Html.fromHtml(sourceString));
 		}else
 			definition_Eng.setVisibility(View.GONE);
-		
+		// TODO: Semantic domains are showing up as Spanish definitions,
+		// and the Spanish definitions are possibly hidden there, but
+		// probably not because Spanish definitions aren't searchable
 		if (w.getEsGloss() != null && !w.getEsGloss().equals("")){
 			String sourceString = "<b>" + getResources().getString(R.string.spanish) + ":</b> " + w.getEsGloss(); 
 			definition_Spa.setText(Html.fromHtml(sourceString));

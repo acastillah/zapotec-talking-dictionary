@@ -4,15 +4,14 @@
         <item>all</item>
         <item>animal</item>
         <item>body parts</item>
-        <item>clima</item>
+        <item>climate</item>
         <item>clothing</item>
         <item>color</item>
         <item>food</item>
         <item>kinship</item>
         <item>location</item>
-        <item>persona</item>
+        <item>person</item>
         <item>time</item>
-        <item>ubicación</item>
     </string-array>
     <string-array name="languages_array">
         <item>ENG</item>
