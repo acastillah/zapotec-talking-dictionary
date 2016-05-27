@@ -31,6 +31,8 @@ import android.widget.Toast;
 
 public class AudioCaptureFragment extends Fragment implements Parcelable {
 
+
+
     private static boolean mExternalStorageAvailable = false;
     private static boolean mExternalStorageWriteable = false;
 	

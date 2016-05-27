@@ -1,26 +1,26 @@
 [
     {
-        "merged": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/res/merged/debug/raw/nglogo_2012.gif",
-        "source": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/raw/nglogo_2012.gif"
+        "merged": "/home/tess/StudioProjects/zapotec-talking-dictionary-real/app/build/intermediates/res/merged/debug/raw/livingtongueslogo_2012.gif",
+        "source": "/home/tess/StudioProjects/zapotec-talking-dictionary-real/app/src/main/res/raw/livingtongueslogo_2012.gif"
     },
     {
-        "merged": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/res/merged/debug/raw/alfredo_harp_helu_logo.png",
-        "source": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/raw/alfredo_harp_helu_logo.png"
+        "merged": "/home/tess/StudioProjects/zapotec-talking-dictionary-real/app/build/intermediates/res/merged/debug/raw/haverford_logo.gif",
+        "source": "/home/tess/StudioProjects/zapotec-talking-dictionary-real/app/src/main/res/raw/haverford_logo.gif"
     },
     {
-        "merged": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/res/merged/debug/raw/juan_de_cordova_logo.png",
-        "source": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/raw/juan_de_cordova_logo.png"
+        "merged": "/home/tess/StudioProjects/zapotec-talking-dictionary-real/app/build/intermediates/res/merged/debug/raw/juan_de_cordova_logo.png",
+        "source": "/home/tess/StudioProjects/zapotec-talking-dictionary-real/app/src/main/res/raw/juan_de_cordova_logo.png"
     },
     {
-        "merged": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/res/merged/debug/raw/livingtongueslogo_2012.gif",
-        "source": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/raw/livingtongueslogo_2012.gif"
+        "merged": "/home/tess/StudioProjects/zapotec-talking-dictionary-real/app/build/intermediates/res/merged/debug/raw/nglogo_2012.gif",
+        "source": "/home/tess/StudioProjects/zapotec-talking-dictionary-real/app/src/main/res/raw/nglogo_2012.gif"
     },
     {
-        "merged": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/res/merged/debug/raw/swarthmorelogo_2012.gif",
-        "source": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/raw/swarthmorelogo_2012.gif"
+        "merged": "/home/tess/StudioProjects/zapotec-talking-dictionary-real/app/build/intermediates/res/merged/debug/raw/swarthmorelogo_2012.gif",
+        "source": "/home/tess/StudioProjects/zapotec-talking-dictionary-real/app/src/main/res/raw/swarthmorelogo_2012.gif"
     },
     {
-        "merged": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/res/merged/debug/raw/haverford_logo.gif",
-        "source": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/raw/haverford_logo.gif"
+        "merged": "/home/tess/StudioProjects/zapotec-talking-dictionary-real/app/build/intermediates/res/merged/debug/raw/alfredo_harp_helu_logo.png",
+        "source": "/home/tess/StudioProjects/zapotec-talking-dictionary-real/app/src/main/res/raw/alfredo_harp_helu_logo.png"
     }
 ]
