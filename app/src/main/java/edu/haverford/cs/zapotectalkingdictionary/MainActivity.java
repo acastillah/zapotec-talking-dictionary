@@ -280,7 +280,11 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		        	((TextView) parent.getChildAt(0)).setTextColor(getResources().getColor(R.color.gray));
 		        	
 		            domain_search = domainSpinner.getSelectedItem().toString();
-		            if (pos!=0){
+		            if (pos==1){
+						showAll();
+					}
+
+					else if (pos!=0){
 		            	showDomain();
 		            } // TODO: Make "all" work when pos = 0. Although this may be here
 					// to show the word of the day when it opens instead of "All"
@@ -340,6 +344,21 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 			searchView.clearFocus();
 		}
     }
+
+	private void showAll(){
+		FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+		Fragment fragment = new SearchResultsFragment();
+		Bundle bundle = new Bundle();
+		bundle.putString("QUERY", ""); // TODO: Convert the domain search into one language (English).
+		bundle.putString("DOM", "");
+		((Fragment) fragment).setArguments(bundle);
+		transaction.addToBackStack(null).replace(R.id.container, fragment, SEARCH_RESULTS_FRAGMENT).commit();
+
+		if (searchView != null) {
+//			searchView.setQuery("", false);
+			searchView.clearFocus();
+		}
+	}
     
     private void showResults(String query) {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
