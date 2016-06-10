@@ -35,6 +35,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.os.AsyncTask;
 import android.os.Environment;
 //import android.util.Log;
+import android.util.Log;
 import android.widget.Toast;
 
 @SuppressLint("SimpleDateFormat")
@@ -61,7 +62,7 @@ public class DictionaryDatabase {
     static final String KEY_ESGLOSS = "es_gloss"; //WORD IN SPANISH
     
     private static long db_size;
-    
+
     // date of DB that comes with the app, given same date/time as email from Jeremy
     public static final int DB_YEAR = 2015;
     public static final int DB_MONTH = 1; // NOTE: months start at 0, not 1, so 1=February
@@ -224,13 +225,15 @@ public class DictionaryDatabase {
 					}
 					else{
 					String path = mHelperContext.getFilesDir().getAbsolutePath();
+						Log.d("","String path");
 					File file = new File(mHelperContext.getFilesDir(), "content.zip");
 					OutputStream output = new FileOutputStream(file);
 					InputStream input = con.getInputStream();
-					byte[] buffer = new byte[1024]; 
+					byte[] buffer = new byte[1024];
 					int lengthOfFile = con.getContentLength();
 					int bytesRead = input.read(buffer);
 					long total = 0;
+						Log.d("","long total");
 					while (bytesRead >= 0) {
 					    total +=bytesRead;
 					    output.write(buffer, 0, bytesRead);
@@ -245,7 +248,7 @@ public class DictionaryDatabase {
 				    ZipInputStream zis;
 				    String filename;
 			        is = new FileInputStream(file);
-			        zis = new ZipInputStream(new BufferedInputStream(is));          
+			        zis = new ZipInputStream(new BufferedInputStream(is));
 			        ZipEntry ze;
 			        int count;
 			         while ((ze = zis.getNextEntry()) != null) {

@@ -127,6 +127,7 @@ All rights reserved. Do not distribute or reproduce without permission.</string>
         <item>Spanish</item>
     </string-array>
     <string-array name="domain_options">
+        <item></item>
         <item>all</item>
         <item>animal</item>
         <item>body parts</item>

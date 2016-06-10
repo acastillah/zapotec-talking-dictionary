@@ -23,21 +23,21 @@ public class Word {
          
     }
 	    // constructor
-	    public Word(int id, int db_id, String word, String ipa, String gloss, String pos, String usage, String dialect, String metadata, String authority, String audio, String img, String sem, String esgloss){
+	    public Word(int id, int db_id, String word, String ipa, String gloss, String pos, String usage_example, String dialect, String metadata, String authority, String audio, String img, String sem, String es_gloss){
 	        this.id = id;
 	        this.db_id = db_id;
 	        this.word = (word != null) ? word : "";
 	        this.gloss = (gloss != null) ? gloss : "";
 	        this.ipa = (ipa != null) ? ipa : "";
 	        this.pos = (pos != null) ? pos : "";
-	        this.usage_example = (usage_example != null) ? usage : "";
+	        this.usage_example = (usage_example != null) ? usage_example : "";
 	        this.dialect = (dialect != null) ? dialect : "";
 	        this.metadata = (metadata != null) ? metadata : "";
 	        this.authority = (authority != null) ? authority : "";
 	        this.audio = (audio != null) ? audio : "";
 	        this.image = (img != null) ? img : "";
 	        this.semantic_ids = (sem != null) ? sem : "";
-	        this.es_gloss = (esgloss != null) ? sem : "";
+	        this.es_gloss = (es_gloss != null) ? es_gloss : "";
 	    }
 	
 	    public int getID(){

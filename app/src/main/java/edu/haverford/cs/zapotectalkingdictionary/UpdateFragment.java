@@ -261,7 +261,7 @@ public class UpdateFragment extends Fragment {
 		try{	
 			int type = getType();
 			URL url = new URL("http://talkingdictionary.swarthmore.edu/dl/retrieve.php");
-	        String urlParam = "dict=teotitlan&current=true&size=true&dl_type=" + Integer.toString(type);	
+	        String urlParam = "dict=teotitlan-dev&current=true&size=true&dl_type=" + Integer.toString(type);
 	        HttpURLConnection con = (HttpURLConnection) url.openConnection();
 			con.setRequestMethod("POST");
 			DataOutputStream hr = new DataOutputStream(con.getOutputStream());
@@ -314,9 +314,9 @@ public class UpdateFragment extends Fragment {
 	        pDialog.show();        	
 	    }
 
-	    /**
+	    /*
 	     * Downloading file in background thread
-	     * */
+	     */
 	    @Override
 	    protected String doInBackground(String... f_url) {
 	        try {
@@ -329,10 +329,10 @@ public class UpdateFragment extends Fragment {
 				DataOutputStream wr = new DataOutputStream(con.getOutputStream());
 				String urlParam;
 				if(hash[type] == null){
-					urlParam = "dict=teotitlan&export=true&dl_type=" + Integer.toString(type);
+					urlParam = "dict=teotitlan-dev&export=TRUE&dl_type=" + Integer.toString(type);
 				} 
 				else{
-					urlParam = "dict=teotitlan&export=true&dl_type=" + Integer.toString(type) + "&hash=" + hash[type];
+					urlParam = "dict=teotitlan-dev&export=TRUE&dl_type=" + Integer.toString(type) + "&hash=" + hash[type];
 				}
 				wr.writeBytes(urlParam);
 				wr.flush();
@@ -477,7 +477,7 @@ public class UpdateFragment extends Fragment {
 		try{	
 			URL url = new URL("http://talkingdictionary.swarthmore.edu/dl/retrieve.php");
 			int type = getType();
-	        String urlParam = "dict=teotitlan&current=true&current_hash=true&dl_type=" + Integer.toString(type);			         
+	        String urlParam = "dict=teotitlan-dev&current=true&current_hash=true&dl_type=" + Integer.toString(type);
 	        HttpURLConnection con = (HttpURLConnection) url.openConnection();
 			con.setRequestMethod("POST");
 			DataOutputStream hr = new DataOutputStream(con.getOutputStream());
