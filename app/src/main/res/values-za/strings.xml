@@ -76,6 +76,7 @@ All rights reserved. Do not distribute or reproduce without permission.</string>
     </string-array>
     
     <string-array name="domain_options">
+        <item>""</item>
         <item>Raa ddìch</item>
         <item>animal</item>
         <item>body parts</item>

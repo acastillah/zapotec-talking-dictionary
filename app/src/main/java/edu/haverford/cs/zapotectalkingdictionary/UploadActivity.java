@@ -31,7 +31,9 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class UploadActivity extends FragmentActivity {
+public class
+
+UploadActivity extends FragmentActivity {
 
 	final static public String DROPBOX_APP_KEY = "4kls68jin9bezoo";
 	final static public String DROPBOX_APP_SECRET = "m3g7pnv0mjrgw3d";

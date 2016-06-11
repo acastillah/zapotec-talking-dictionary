@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="domain_options">
-        <item/>
+        <item>""</item>
         <item>all</item>
         <item>animal</item>
         <item>body parts</item>
@@ -309,7 +309,7 @@ All rights reserved. Do not distribute or reproduce without permission.</string>
     <string name="uploading">UPLOADING</string>
     <string name="username">Name:</string>
     <string name="website"><u>http://talkingdictionary.swarthmore.edu/teotitlan/</u></string>
-    <string name="wordDefinition">Word Defition</string>
+    <string name="wordDefinition">Word Definition</string>
     <string name="wordOfTheDay">Word of the Day</string>
     <string name="zapotecInterface">ZAP</string>
     <style name="AppBaseTheme" parent="Theme.AppCompat.Light">

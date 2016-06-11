@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="domain_options">
+        <item>""</item>
         <item>todas</item>
         <item>animales</item>
         <item>partes del cuerpo</item>

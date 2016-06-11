@@ -85,7 +85,7 @@ All rights reserved. Do not distribute or reproduce without permission.</string>
     <string name="reportEmail_subject">"Dixza Android Application Bug Report"</string>
     <string name="reportEmail_body">"Bug description:\n"</string>
     <string name="searchResults">Search Results</string>
-    <string name="wordDefinition">Word Defition</string>
+    <string name="wordDefinition">Word Definition</string>
     <string name="photoSaved">Photo saved</string>
     <string name="audioSaved">Audio saved</string>
     <string name="downloadFileSizeText">"Would you like to download a file of this size?"</string>
@@ -127,7 +127,7 @@ All rights reserved. Do not distribute or reproduce without permission.</string>
         <item>Spanish</item>
     </string-array>
     <string-array name="domain_options">
-        <item></item>
+        <item>""</item>
         <item>all</item>
         <item>animal</item>
         <item>body parts</item>

@@ -142,6 +142,7 @@
     </string-array>
     
     <string-array name="domain_options">
+        <item>""</item>
         <item>todas</item>
         <item>animales</item>
         <item>partes del cuerpo</item>
