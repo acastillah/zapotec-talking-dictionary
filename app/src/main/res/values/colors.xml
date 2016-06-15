@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="app_background">#F0C2B2</color>
-    <color name="actionbar_background">#770000</color>
-    <color name="searchbar_background">#E2725B</color>
+    <color name="app_background">#ffffff</color>
+    <color name="actionbar_background">#003a77</color>
+    <color name="searchbar_background">#5b93e2</color>
     <color name="dropdown_background">#00ff00</color>
     <color name="background">#ba0c0c</color> <!-- not clear what this does in activity_main.xml -->
     <!-- <color name="nav_background_color">#ffff00</color>  not clear what this does -->
-    <color name="nav_drawer">#99EBAD99</color> <!-- extra chars related to transparency? -->
+    <color name="nav_drawer">#997080e7</color> <!-- extra chars related to transparency? -->
     <color name="url">#3333FF</color> <!-- e.g. link on the About page -->
-    <!-- <color name="black">#000000</color> not clear what this does -->
-    <color name="accent_one">#EBAD99</color> <!-- e.g. word box -->
-    <color name="accent_two">#E69980</color> <!-- e.g. little gloss box in word box -->
-    <color name="domain_searchbar_background">#E2725B</color> <!-- same as searchbar -->
+    <color name="text_one">#ffffff</color>
+    <color name="accent_one">#5b93e2</color> <!-- e.g. word box -->
+    <color name="accent_two">#66a6ff</color> <!-- e.g. little gloss box in word box -->
+    <color name="domain_searchbar_background">#5b93e2</color> <!-- same as searchbar -->
     <color name="spinner_background">#D9723B</color>
     <color name="spinner_text">#FFFFFF</color>
     <color name="recording">#FF0000</color>
     <!--<color name="white">#FFFFFF</color> not clear what this does-->
-    <color name="lang_spinner_background">#FFFFFF</color>
+    <color name="lang_spinner_background">#a4d9ff</color>
     <color name="lang_spinner_text">#000000</color>
-    <color name="domain_searchbar_text">#71392D</color>
+    <color name="domain_searchbar_text">#000000</color>
 </resources>

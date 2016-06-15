@@ -4,49 +4,29 @@
     api-level="23"
     density="420dpi"
     format="7"
-    timestamp="231853806617196"
-    verifier="R_CLASS_CHANGE" >
+    timestamp="5842040000138" >
 
     <task
         name="javac"
-        duration="444" />
+        duration="480" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="52" />
+        duration="470" />
     <task
         name="verifier"
-        duration="6" />
+        duration="50" />
 
     <artifact
-        location="/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/res/resources-debug.ap_"
-        type="RESOURCES" />
-    <artifact
-        location="/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_4/classes.dex"
-        type="DEX" />
-    <artifact
-        location="/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_1/classes.dex"
-        type="DEX" />
+        location="/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/outputs/apk/app-debug.apk"
+        type="MAIN" />
 
-    <build timestamp="228531282586218" >
+    <build timestamp="5842040000138" >
         <artifact
             location="/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/outputs/apk/app-debug.apk"
             type="MAIN" />
-    </build>
-    <build
-        timestamp="231853806617196"
-        verifier="R_CLASS_CHANGE" >
-        <artifact
-            location="/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/res/resources-debug.ap_"
-            type="RESOURCES" />
-        <artifact
-            location="/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_4/classes.dex"
-            type="DEX" />
-        <artifact
-            location="/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_1/classes.dex"
-            type="DEX" />
     </build>
 
 </instant-run>

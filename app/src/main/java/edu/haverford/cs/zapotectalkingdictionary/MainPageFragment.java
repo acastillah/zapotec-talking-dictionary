@@ -126,6 +126,9 @@ public class MainPageFragment extends Fragment{
 		if (db_size == 0 && preferences.getLong(Preferences.DB_SIZE, 0) > 0)
 			db_size = preferences.getLong(Preferences.DB_SIZE, 0);
 
+		if (db_size == 0)
+			db_size = 519;
+		
 		int number = rn.nextInt((int)db_size) + 1; 
 		
 		Cursor c = db.getIDmatch(number);

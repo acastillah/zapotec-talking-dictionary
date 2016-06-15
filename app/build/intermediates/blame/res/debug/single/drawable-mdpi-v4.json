@@ -60,12 +60,12 @@
         "source": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/drawable-mdpi/abc_list_pressed_holo_light.9.png"
     },
     {
-        "merged": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/listener_icon.png",
-        "source": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/drawable-mdpi/listener_icon.png"
-    },
-    {
         "merged": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/alfredoharp_logo.png",
         "source": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/drawable-mdpi/alfredoharp_logo.png"
+    },
+    {
+        "merged": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/listener_icon.png",
+        "source": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/drawable-mdpi/listener_icon.png"
     },
     {
         "merged": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/abc_spinner_mtrl_am_alpha.9.png",
