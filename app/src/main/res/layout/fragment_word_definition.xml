@@ -24,7 +24,7 @@
                 android:id="@+id/WordDefinitionLL2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/light_pink"
+                android:background="@color/accent_one"
                 android:orientation="horizontal" >
 
                 <LinearLayout
@@ -75,7 +75,7 @@
                         android:id="@+id/glossLL"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@color/dark_pink"
+                        android:background="@color/accent_two"
                         android:orientation="vertical" >
 
                         <TextView
@@ -128,7 +128,7 @@
                 android:id="@+id/ImageFragmentContainer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/light_pink"
+                android:background="@color/accent_one"
                 android:orientation="horizontal" >
             </FrameLayout>
             

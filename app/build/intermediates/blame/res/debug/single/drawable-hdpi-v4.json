@@ -36,12 +36,12 @@
         "source": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/drawable-hdpi/haverford_logo.png"
     },
     {
-        "merged": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_list_focused_holo.9.png",
-        "source": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/drawable-hdpi/abc_list_focused_holo.9.png"
-    },
-    {
         "merged": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/ng_logo.png",
         "source": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/drawable-hdpi/ng_logo.png"
+    },
+    {
+        "merged": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_list_focused_holo.9.png",
+        "source": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/drawable-hdpi/abc_list_focused_holo.9.png"
     },
     {
         "merged": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_textfield_activated_mtrl_alpha.9.png",

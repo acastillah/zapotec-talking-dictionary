@@ -276,7 +276,7 @@ public class AudioCaptureFragment extends Fragment implements Parcelable {
         
         recordingTextView = new TextView(activity);
         recordingTextView.setText(R.string.recording);
-        recordingTextView.setTextColor(getResources().getColor(R.color.red));
+        recordingTextView.setTextColor(getResources().getColor(R.color.recording));
         recordingTextView.setTextSize(20);
         recordingTextView.setVisibility(View.INVISIBLE);
         fragmentLayout.addView(recordingTextView,

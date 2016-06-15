@@ -44,7 +44,7 @@ public class SearchResultsFragment extends Fragment {
         return v;
         
     }
-	
+
 	public void showWords(){
 		DictionaryDatabase db = new DictionaryDatabase(getActivity());
 		Cursor cursor = db.getMatch(query, MainActivity.LanguageInterface.LANGUAGE_ENGLISH, domain);

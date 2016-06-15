@@ -5,5 +5,5 @@
     android:gravity="center"
     android:height="40dp"    
 
-    android:textColor="@color/langSpinner_text"
-    android:background="@color/langSpinner_background" />
+    android:textColor="@color/lang_spinner_text"
+    android:background="@color/lang_spinner_background" />

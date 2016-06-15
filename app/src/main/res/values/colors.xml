@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="actionbar_background_color">#770000</color>
-    <!-- <color name="searchbar_background_color">#920000</color> -->
-    <color name="searchbar_background_color">#E2725B</color>
-    <color name="dropdown_background_color">#00ff00</color>
-    <color name="background_color">#ba0c0c</color>
-    <color name="nav_background_color">#ffff00</color>
-    <color name="nav_drawer">#99EBAD99</color>
-    <color name="url">#3333FF</color>
-    <color name="black">#000000</color>
-    <color name="light_pink">#EBAD99</color>
-    <color name="dark_pink">#E69980</color>
-    <color name="main_activity_background_color">#E2725B</color>
-    <color name="spinner_color">#D9723B</color>
-    <color name="red">#FF0000</color>
-    <color name="white">#FFFFFF</color>
-    <color name="langSpinner_background">#FFFFFF</color>
-    <color name="langSpinner_text">#000000</color>
-    <color name="gray">#71392D</color>
+    <color name="app_background">#F0C2B2</color>
+    <color name="actionbar_background">#770000</color>
+    <color name="searchbar_background">#E2725B</color>
+    <color name="dropdown_background">#00ff00</color>
+    <color name="background">#ba0c0c</color> <!-- not clear what this does in activity_main.xml -->
+    <!-- <color name="nav_background_color">#ffff00</color>  not clear what this does -->
+    <color name="nav_drawer">#99EBAD99</color> <!-- extra chars related to transparency? -->
+    <color name="url">#3333FF</color> <!-- e.g. link on the About page -->
+    <!-- <color name="black">#000000</color> not clear what this does -->
+    <color name="accent_one">#EBAD99</color> <!-- e.g. word box -->
+    <color name="accent_two">#E69980</color> <!-- e.g. little gloss box in word box -->
+    <color name="domain_searchbar_background">#E2725B</color> <!-- same as searchbar -->
+    <color name="spinner_background">#D9723B</color>
+    <color name="spinner_text">#FFFFFF</color>
+    <color name="recording">#FF0000</color>
+    <!--<color name="white">#FFFFFF</color> not clear what this does-->
+    <color name="lang_spinner_background">#FFFFFF</color>
+    <color name="lang_spinner_text">#000000</color>
+    <color name="domain_searchbar_text">#71392D</color>
 </resources>

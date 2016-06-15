@@ -167,7 +167,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 	    
 		SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);		
 		searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));	
-		searchView.setBackgroundColor(Color.parseColor(getResources().getString(R.color.searchbar_background_color)));
+		searchView.setBackgroundColor(Color.parseColor(getResources().getString(R.color.searchbar_background)));
 		mTitle = getString(R.string.app_name);
 		domainSpinner = (Spinner) findViewById(R.id.domain_spinner);
 		addListenerOnSpinnerItemSelection(); 
@@ -256,7 +256,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		ActionBar actionBar = getSupportActionBar();
 		actionBar.setDisplayShowTitleEnabled(true);	
 		
-		actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor(getResources().getString(R.color.actionbar_background_color))));
+		actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor(getResources().getString(R.color.actionbar_background))));
 		
 		if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT)
 //			actionBar.setTitle(Html.fromHtml("<small>" + mTitle + "</small>"));
@@ -277,7 +277,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 			
 		   domainSpinner.setOnItemSelectedListener(new OnItemSelectedListener() {
 		        public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
-		        	((TextView) parent.getChildAt(0)).setTextColor(getResources().getColor(R.color.gray));
+		        	((TextView) parent.getChildAt(0)).setTextColor(getResources().getColor(R.color.domain_searchbar_text));
 		        	
 		            domain_search = domainSpinner.getSelectedItem().toString();
 		            if (pos==1){
