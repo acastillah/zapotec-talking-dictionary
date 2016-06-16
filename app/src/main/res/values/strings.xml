@@ -143,6 +143,21 @@ All rights reserved. Do not distribute or reproduce without permission.</string>
         <item>time</item>
     </string-array>
 
+    <string-array name="domain_options2"> <!-- This is ugly and stupid. Please find a better way. -->
+        <item>""</item>
+        <item>all</item>
+        <item>animal</item>
+        <item>body parts</item>
+        <item>climate</item>
+        <item>clothing</item>
+        <item>color</item>
+        <item>food</item>
+        <item>kinship</item>
+        <item>location</item>
+        <item>person</item>
+        <item>time</item>
+    </string-array>
+
     <string name="current_language">English</string>
     <string name="title_activity_upload">UploadActivity</string>
     <string name="hello_world">Hello world!</string>

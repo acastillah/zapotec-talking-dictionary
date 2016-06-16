@@ -18,8 +18,9 @@ public final class R {
     }
     public static final class array {
         public static final int domain_options=0x7f080000;
-        public static final int languages_array=0x7f080001;
-        public static final int search_options=0x7f080002;
+        public static final int domain_options2=0x7f080001;
+        public static final int languages_array=0x7f080002;
+        public static final int search_options=0x7f080003;
     }
     public static final class attr {
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"

@@ -279,8 +279,10 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		        public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
 		        	((TextView) parent.getChildAt(0)).setTextColor(getResources().getColor(R.color.domain_searchbar_text));
 		        	
-		            domain_search = domainSpinner.getSelectedItem().toString();
-		            if (pos==1){
+		            //domain_search = domainSpinner.getSelectedItem().toString();
+					//Locale original = locale;
+					domain_search = getResources().getStringArray(R.array.domain_options2)[domainSpinner.getSelectedItemPosition()];
+					if (pos==1){
 						showAll();
 					}
 

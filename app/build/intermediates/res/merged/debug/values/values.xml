@@ -14,6 +14,20 @@
         <item>person</item>
         <item>time</item>
     </string-array>
+    <string-array name="domain_options2">
+        <item>""</item>
+        <item>all</item>
+        <item>animal</item>
+        <item>body parts</item>
+        <item>climate</item>
+        <item>clothing</item>
+        <item>color</item>
+        <item>food</item>
+        <item>kinship</item>
+        <item>location</item>
+        <item>person</item>
+        <item>time</item>
+    </string-array>
     <string-array name="languages_array">
         <item>ESP</item>
         <item>ZAP</item>
