@@ -938,14 +938,7 @@
                     "endOffset": 5714
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/colors.xml",
-                    "position": {
-                        "startLine": 11,
-                        "startColumn": 4,
-                        "startOffset": 715,
-                        "endColumn": 42,
-                        "endOffset": 753
-                    }
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/colors.xml"
                 }
             },
             {

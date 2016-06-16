@@ -9,10 +9,10 @@
     <!-- <color name="nav_background_color">#ffff00</color>  not clear what this does -->
     <color name="nav_drawer">#99005e1e</color> <!-- extra chars related to transparency? -->
     <color name="url">#960009</color> <!-- e.g. link on the About page -->
-    <color name="text_one">#dbf7e4</color>
-    <color name="text_two">#dbf7e4</color>
-    <color name="accent_one">#005e1e</color> <!-- e.g. word box -->
-    <color name="accent_two">#34ab5a</color> <!-- e.g. little gloss box in word box -->
+    <color name="text_one">#0b180f</color>
+    <color name="text_two">#005e1e</color>
+    <color name="accent_one">#34ab5a</color> <!-- e.g. word box -->
+    <color name="accent_two">#52f285</color> <!-- e.g. little gloss box in word box -->
     <color name="spinner_background">#D9723B</color>
     <color name="spinner_text">#FFFFFF</color>
     <color name="recording">#FF0000</color>

@@ -4,7 +4,7 @@
     api-level="23"
     density="420dpi"
     format="7"
-    timestamp="24786218015681" >
+    timestamp="25521019177671" >
 
     <task
         name="javac"
@@ -28,7 +28,7 @@
             location="/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/outputs/apk/app-debug.apk"
             type="MAIN" />
     </build>
-    <build timestamp="24786218015681" >
+    <build timestamp="25521019177671" >
         <artifact
             location="/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/res/resources-debug.ap_"
             type="RESOURCES" />
