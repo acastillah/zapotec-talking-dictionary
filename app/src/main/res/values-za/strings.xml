@@ -61,18 +61,18 @@ All rights reserved. Do not distribute or reproduce without permission.</string>
     <string name="EnglishDefinition">"dix-ingles: "</string>
     <string name="SpanishDefinition">"dixtilih: "</string>
     <string name="semanticDomain_text">Kuib dìch:</string>
-    
+
     <string-array name="languages_array">
-        <item>ENG</item>
         <item>ESP</item>
         <item>ZAP</item>
+        <item>ENG</item>
     </string-array>
-    
+
     <string-array name="search_options">
         <item>Raatè\' gits ni rigizhe\'e xi zelau\' xi nekih</item>
+        <item>Español</item>
         <item>Guni\' naa te dìch dixza</item>
         <item>Guni\' naa te dìch ingles</item>
-        <item>Español</item>
     </string-array>
     
     <string-array name="domain_options">

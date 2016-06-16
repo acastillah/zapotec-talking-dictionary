@@ -29,20 +29,20 @@ public class LanguageSpinnerItemSelectedListener implements
 		
 		switch (pos) {
 			case 0:
-				prefEditor.putString(Preferences.LANGUAGE, Preferences.ENGLISH);
-				config.locale = Preferences.ENGLISH_LOC;
-				break;
-			case 1:
 				prefEditor.putString(Preferences.LANGUAGE, Preferences.SPANISH);
 				config.locale = Preferences.SPANISH_LOC;
 				break;
-			case 2:
+			case 1:
 				prefEditor.putString(Preferences.LANGUAGE, Preferences.ZAPOTEC);
 				config.locale = Preferences.ZAPOTEC_LOC;
 				break;
-			default:
+			case 2:
 				prefEditor.putString(Preferences.LANGUAGE, Preferences.ENGLISH);
 				config.locale = Preferences.ENGLISH_LOC;
+				break;
+			default:
+				prefEditor.putString(Preferences.LANGUAGE, Preferences.SPANISH);
+				config.locale = Preferences.SPANISH_LOC;
 		}
 		
 		prefEditor.commit();		

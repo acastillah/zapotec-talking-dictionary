@@ -103,28 +103,28 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		Editor prefEditor = prefs.edit();
 		
 		if (!prefs.contains(Preferences.LANGUAGE))
-			prefEditor.putString(Preferences.LANGUAGE, Preferences.ENGLISH);
+			prefEditor.putString(Preferences.LANGUAGE, Preferences.SPANISH);
 		
 		prefEditor.commit();
 			
 		prefs = this.getSharedPreferences(Preferences.APP_SETTINGS, Activity.MODE_PRIVATE);
-		String lang = prefs.getString(Preferences.LANGUAGE, Preferences.ENGLISH);
-		Locale locale = Preferences.ENGLISH_LOC;
+		String lang = prefs.getString(Preferences.LANGUAGE, Preferences.SPANISH);
+		Locale locale = Preferences.SPANISH_LOC;
 		int selection = 0;
 		
 		if (lang.equals(Preferences.SPANISH)) {
 			locale = Preferences.SPANISH_LOC;
-			selection = 1;
+			selection = 0;
 			Language_search = LanguageInterface.LANGUAGE_SPANISH;
 		}
 		else if (lang.equals(Preferences.ZAPOTEC)) {
 			locale = Preferences.ZAPOTEC_LOC;
-			selection = 2;
+			selection = 1;
 			Language_search = LanguageInterface.LANGUAGE_ZAPOTEC;
 		}
 		else {
 			locale = Preferences.ENGLISH_LOC;
-			selection = 0;
+			selection = 2;
 			Language_search = LanguageInterface.LANGUAGE_ENGLISH;
 		}
 		

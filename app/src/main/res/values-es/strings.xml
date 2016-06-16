@@ -123,22 +123,22 @@
     
     
     <string name="contentManagement">Subir/Borrar</string>
-    
-    
-    
-    
-    
+
+
+
+
+
     <string-array name="languages_array">
-        <item>ENG</item>
         <item>ESP</item>
         <item>ZAP</item>
+        <item>ENG</item>
     </string-array>
-    
+
     <string-array name="search_options">
         <item>Diccionario completo</item>
-        <item>Zapoteco de Teotitlán del Valle</item>
-        <item>Inglés</item>
         <item>Español</item>
+        <item>Zapoteco del Teotitlán del Valle</item>
+        <item>Inglés</item>
     </string-array>
     
     <string-array name="domain_options">

@@ -116,16 +116,18 @@ All rights reserved. Do not distribute or reproduce without permission.</string>
     <string name="upToDate">Up to Date</string>
 	
     <string-array name="languages_array">
-        <item>ENG</item>
         <item>ESP</item>
         <item>ZAP</item>
+        <item>ENG</item>
     </string-array>
+
     <string-array name="search_options">
         <item>Entire dictionary</item>
+        <item>Spanish</item>
         <item>Teotitlán del Valle Zapotec</item>
         <item>English</item>
-        <item>Spanish</item>
     </string-array>
+
     <string-array name="domain_options">
         <item>""</item>
         <item>all</item>

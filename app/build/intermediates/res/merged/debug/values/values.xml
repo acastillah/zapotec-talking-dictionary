@@ -15,15 +15,15 @@
         <item>time</item>
     </string-array>
     <string-array name="languages_array">
-        <item>ENG</item>
         <item>ESP</item>
         <item>ZAP</item>
+        <item>ENG</item>
     </string-array>
     <string-array name="search_options">
         <item>Entire dictionary</item>
+        <item>Spanish</item>
         <item>Teotitlán del Valle Zapotec</item>
         <item>English</item>
-        <item>Spanish</item>
     </string-array>
     <attr format="reference" name="drawerArrowStyle"/>
     <attr format="dimension" name="height"/>
