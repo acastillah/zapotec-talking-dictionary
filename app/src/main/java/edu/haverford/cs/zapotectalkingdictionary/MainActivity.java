@@ -278,9 +278,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		   domainSpinner.setOnItemSelectedListener(new OnItemSelectedListener() {
 		        public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
 		        	((TextView) parent.getChildAt(0)).setTextColor(getResources().getColor(R.color.domain_searchbar_text));
-		        	
-		            //domain_search = domainSpinner.getSelectedItem().toString();
-					//Locale original = locale;
+
 					domain_search = getResources().getStringArray(R.array.domain_options2)[domainSpinner.getSelectedItemPosition()];
 					if (pos==1){
 						showAll();
@@ -288,8 +286,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 
 					else if (pos!=0){
 		            	showDomain();
-		            } // TODO: Make "all" work when pos = 0. Although this may be here
-					// to show the word of the day when it opens instead of "All"
+		            }
 		        }
 		        public void onNothingSelected(AdapterView<?> arg0) {
 		        }
@@ -336,7 +333,8 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
     	FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
 		Fragment fragment = new SearchResultsFragment();
         Bundle bundle = new Bundle();
-        bundle.putString("QUERY", ""); // TODO: Convert the domain search into one language (English).
+        bundle.putString("QUERY", "");
+		bundle.putInt("LANG", Language_search);
         bundle.putString("DOM", domain_search);
         ((Fragment) fragment).setArguments(bundle);
 		transaction.addToBackStack(null).replace(R.id.container, fragment, SEARCH_RESULTS_FRAGMENT).commit();	
@@ -351,7 +349,8 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
 		Fragment fragment = new SearchResultsFragment();
 		Bundle bundle = new Bundle();
-		bundle.putString("QUERY", ""); // TODO: Convert the domain search into one language (English).
+		bundle.putString("QUERY", "");
+		bundle.putInt("LANG", Language_search);
 		bundle.putString("DOM", "");
 		((Fragment) fragment).setArguments(bundle);
 		transaction.addToBackStack(null).replace(R.id.container, fragment, SEARCH_RESULTS_FRAGMENT).commit();

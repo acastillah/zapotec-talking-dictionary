@@ -1,11 +1,11 @@
 [
     {
-        "merged": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/res/merged/debug/layout/fragment_search_domain.xml",
-        "source": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/layout/fragment_search_domain.xml"
-    },
-    {
         "merged": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/res/merged/debug/layout/abc_action_menu_layout.xml",
         "source": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/layout/abc_action_menu_layout.xml"
+    },
+    {
+        "merged": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/res/merged/debug/layout/fragment_search_domain.xml",
+        "source": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/layout/fragment_search_domain.xml"
     },
     {
         "merged": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/res/merged/debug/layout/fragment_user_agreement_dialog.xml",
@@ -16,16 +16,16 @@
         "source": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/layout/spinner_custom_layout.xml"
     },
     {
-        "merged": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/res/merged/debug/layout/fragment_update.xml",
-        "source": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/layout/fragment_update.xml"
+        "merged": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/res/merged/debug/layout/fragment_word_of_the_day.xml",
+        "source": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/layout/fragment_word_of_the_day.xml"
     },
     {
         "merged": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/res/merged/debug/layout/search_results.xml",
         "source": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/layout/search_results.xml"
     },
     {
-        "merged": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/res/merged/debug/layout/fragment_word_of_the_day.xml",
-        "source": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/layout/fragment_word_of_the_day.xml"
+        "merged": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/res/merged/debug/layout/fragment_update.xml",
+        "source": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/layout/fragment_update.xml"
     },
     {
         "merged": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/res/merged/debug/layout/activity_upload.xml",

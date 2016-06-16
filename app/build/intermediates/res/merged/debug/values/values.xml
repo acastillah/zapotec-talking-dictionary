@@ -14,7 +14,7 @@
         <item>person</item>
         <item>time</item>
     </string-array>
-    <string-array name="domain_options2">
+    <string-array name="domain_options2"> <!-- This is ugly and stupid. Please find a better way. -->
         <item>""</item>
         <item>all</item>
         <item>animal</item>
@@ -262,6 +262,7 @@ All rights reserved. Do not distribute or reproduce without permission.</string>
     <string name="logoutExplanation">Logging out recinds access to audio and photo tools. You can always log back in anytime.</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="noResults">No Results</string>
     <string name="noUpdate">Database alreay up to date.</string>
     <string name="ok">OK</string>
     <string name="password">Password: </string>

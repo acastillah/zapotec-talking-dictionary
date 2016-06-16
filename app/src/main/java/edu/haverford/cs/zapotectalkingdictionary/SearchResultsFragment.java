@@ -50,7 +50,7 @@ public class SearchResultsFragment extends Fragment {
 		Cursor cursor = db.getMatch(query, MainActivity.LanguageInterface.LANGUAGE_ENGLISH, domain);
     	if (cursor == null) {
             // There are no results        	
-    		mTextView.setText("No Results");
+    		mTextView.setText(getResources().getString(R.string.noResults));
         } 
     	else {
    		 	cursor.moveToFirst();

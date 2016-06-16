@@ -14,7 +14,7 @@
         <item>persona</item>
         <item>tiempo</item>
     </string-array>
-    <string-array name="domain_options2">
+    <string-array name="domain_options2"> <!-- This is ugly and stupid. Please find a better way. -->
         <item>""</item>
         <item>all</item>
         <item>animal</item>
@@ -95,6 +95,7 @@
     <string name="logoutExplanation">Cerrar sesión le quita acceso a las herramientas de audio y fotos. Puede volver a iniciar sesión en cualquier momento.</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="noResults">No Hay Resultados</string>
     <string name="noUpdate">No hay actualizaciones.</string>
     <string name="ok">OK</string>
     <string name="password">Contraseña: </string>

@@ -14,7 +14,7 @@
         <item>persona</item>
         <item>time</item>
     </string-array>
-    <string-array name="domain_options2">
+    <string-array name="domain_options2"> <!-- This is ugly and stupid. Please find a better way. -->
         <item>""</item>
         <item>all</item>
         <item>animal</item>
@@ -85,6 +85,7 @@ Alex Mannix, Teresa Martínez Chavez and Troi Carleton, with Helen Felker and Ra
 with support from K. David Harrison and Jeremy Fahringer. (2013-2014).
 All rights reserved. Do not distribute or reproduce without permission.</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="noResults">No Results</string>
     <string name="noUpdate">No hay actualizaciones.</string>
     <string name="ok">OK</string>
     <string name="password">Contraseña: </string>

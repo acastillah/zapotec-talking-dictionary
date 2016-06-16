@@ -117,6 +117,7 @@
 	<string name="followingFilesNotUploadedSuccessfully">Los siguientes archivos no fueron subidos:</string>
 	<string name="deleteUploadedFilesPrompt">Desea borrar los archivos subidos de su celular?</string>
     <string name="filesDeleted">Archivos borrados</string>
+    <string name="noResults">No Hay Resultados</string>
     
     
     

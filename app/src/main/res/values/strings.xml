@@ -114,6 +114,7 @@ All rights reserved. Do not distribute or reproduce without permission.</string>
     <string name="filesDeleted">"Files deleted"</string>
     <string name="contentManagement">Upload/Delete</string>
     <string name="upToDate">Up to Date</string>
+    <string name="noResults">No Results</string>
 	
     <string-array name="languages_array">
         <item>ESP</item>
