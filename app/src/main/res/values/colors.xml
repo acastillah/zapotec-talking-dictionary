@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="app_background">#ffffff</color>
-    <color name="actionbar_background">#003a77</color>
-    <color name="searchbar_background">#5b93e2</color>
+    <color name="app_background">#dbf7e4</color>
+    <color name="actionbar_background">#005e1e</color>
+    <color name="searchbar_background">#34ab5a</color>
+    <color name="domain_searchbar_background">#34ab5a</color> <!-- same as searchbar -->
     <color name="dropdown_background">#00ff00</color>
     <color name="background">#ba0c0c</color> <!-- not clear what this does in activity_main.xml -->
     <!-- <color name="nav_background_color">#ffff00</color>  not clear what this does -->
-    <color name="nav_drawer">#997080e7</color> <!-- extra chars related to transparency? -->
-    <color name="url">#3333FF</color> <!-- e.g. link on the About page -->
-    <color name="text_one">#ffffff</color>
-    <color name="accent_one">#5b93e2</color> <!-- e.g. word box -->
-    <color name="accent_two">#66a6ff</color> <!-- e.g. little gloss box in word box -->
-    <color name="domain_searchbar_background">#5b93e2</color> <!-- same as searchbar -->
+    <color name="nav_drawer">#99005e1e</color> <!-- extra chars related to transparency? -->
+    <color name="url">#960009</color> <!-- e.g. link on the About page -->
+    <color name="text_one">#dbf7e4</color>
+    <color name="text_two">#dbf7e4</color>
+    <color name="accent_one">#005e1e</color> <!-- e.g. word box -->
+    <color name="accent_two">#34ab5a</color> <!-- e.g. little gloss box in word box -->
     <color name="spinner_background">#D9723B</color>
     <color name="spinner_text">#FFFFFF</color>
     <color name="recording">#FF0000</color>
     <!--<color name="white">#FFFFFF</color> not clear what this does-->
-    <color name="lang_spinner_background">#a4d9ff</color>
-    <color name="lang_spinner_text">#000000</color>
-    <color name="domain_searchbar_text">#000000</color>
+    <color name="lang_spinner_background">#34ab5a</color>
+    <color name="lang_spinner_text">#005e1e</color>
+    <color name="domain_searchbar_text">#005e1e</color>
 </resources>

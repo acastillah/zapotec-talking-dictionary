@@ -86,7 +86,7 @@
                             android:layout_height="wrap_content"
                             android:text="English definition"
                             android:textAppearance="?android:attr/textAppearanceMedium"
-                            android:textColor="@color/text_one"/>
+                            android:textColor="@color/text_two"/>
 
                         <TextView
                             android:id="@+id/Word_Spa"
@@ -94,7 +94,7 @@
                             android:layout_height="wrap_content"
                             android:text="Spanish definition"
                             android:textAppearance="?android:attr/textAppearanceMedium"
-                            android:textColor="@color/text_one"/>
+                            android:textColor="@color/text_two"/>
                     </LinearLayout>
 
                     <TextView
