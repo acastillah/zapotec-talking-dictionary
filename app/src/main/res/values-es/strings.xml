@@ -142,36 +142,58 @@
         <item>Inglés</item>
     </string-array>
     
-    <string-array name="domain_options">
+    <string-array name="domain_options_display">
         <item>""</item>
         <item>todas</item>
+        <item>agricultura</item>
         <item>animales</item>
+        <item>aves</item>
         <item>partes del cuerpo</item>
-        <item>clima</item>
         <item>ropa</item>
         <item>colores</item>
         <item>comida</item>
+        <item>saludos</item>
+        <item>salud</item>
+        <item>días de fiesta</item>
         <item>parentesco</item>
-        <item>ubicación</item>
-        <item>persona</item>
+        <item>paisaje</item>
+        <item>ubicaciones</item>
+        <item>números</item>
+        <item>personas</item>
+        <item>plantas</item>
+        <item>religión</item>
+        <item>cielo</item>
         <item>tiempo</item>
+        <item>clima</item>
+        <item>tejida</item>
     </string-array>
 
-    <string-array name="domain_options2"> <!-- This is ugly and stupid. Please find a better way. -->
+    <string-array name="domain_options_search"> <!-- This is ugly and stupid. Please find a better way. -->
         <item>""</item>
         <item>all</item>
+        <item>agriculture</item>
         <item>animal</item>
-        <item>body parts</item>
-        <item>climate</item>
+        <item>bird</item>
+        <item>body part</item>
         <item>clothing</item>
         <item>color</item>
         <item>food</item>
+        <item>greeting</item>
+        <item>health</item>
+        <item>holiday</item>
         <item>kinship</item>
+        <item>landscape</item>
         <item>location</item>
+        <item>number</item>
         <item>person</item>
+        <item>plant</item>
+        <item>religion</item>
+        <item>sky</item>
         <item>time</item>
+        <item>weather</item>
+        <item>weaving</item>
     </string-array>
-	
+
 	<string name="current_language">Spanish</string>
 	
 </resources>

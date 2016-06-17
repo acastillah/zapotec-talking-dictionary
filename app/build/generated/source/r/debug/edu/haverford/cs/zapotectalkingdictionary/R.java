@@ -17,8 +17,8 @@ public final class R {
         public static final int abc_slide_out_top=0x7f040005;
     }
     public static final class array {
-        public static final int domain_options=0x7f080000;
-        public static final int domain_options2=0x7f080001;
+        public static final int domain_options_display=0x7f080000;
+        public static final int domain_options_search=0x7f080001;
         public static final int languages_array=0x7f080002;
         public static final int search_options=0x7f080003;
     }
