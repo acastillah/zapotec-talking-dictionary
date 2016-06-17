@@ -84,8 +84,8 @@ public class DictionaryDatabase {
     	
     	SQLiteDatabase db = mDatabaseOpenHelper.getReadableDatabase();
     	String KEY = null;
-    	q = q.replace("'", "''");
-				KEY = "(" + KEY_WORD + " LIKE '%" + q + "%'" + " OR " + KEY_GLOSS +  " LIKE '%" + String.valueOf(q) 
+    	q = q.replace("'", "_"); // This kind of works but doesn't really...
+				KEY = "(" + KEY_WORD + " LIKE '%" + q + "%'" + " OR " + KEY_GLOSS +  " LIKE '%" + String.valueOf(q)
 							+ "%'" + " OR " + KEY_ESGLOSS + " LIKE '%" + String.valueOf(q) + "%'" + ")"; 
     	
 		if (dom!=""){
@@ -94,8 +94,7 @@ public class DictionaryDatabase {
 				
 		Cursor cursor = db.query(TABLE_WORDS, new String[] { KEY_ID, KEY_DB_ID,
         KEY_WORD, KEY_IPA, KEY_GLOSS, KEY_POS, KEY_USAGE, KEY_DIALECT, KEY_META, KEY_AUTHORITY,
-        KEY_AUDIO, KEY_IMG, KEY_SEMANTIC, KEY_ESGLOSS}, KEY,
-        null, null, null, null, null);
+        KEY_AUDIO, KEY_IMG, KEY_SEMANTIC, KEY_ESGLOSS}, KEY, null, null, null, null, null);
 
         if(cursor==null){
     		return null;

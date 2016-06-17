@@ -1,6 +1,7 @@
 package edu.haverford.cs.zapotectalkingdictionary;
 
 import java.io.File;
+import java.lang.reflect.Array;
 import java.util.Locale;
 
 import android.support.v7.app.ActionBar;
@@ -25,6 +26,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Environment;
 //import android.util.Log;
+import android.util.AttributeSet;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -42,7 +44,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 	
 	private NavigationDrawerFragment mNavigationDrawerFragment;
 
-	static private Spinner /*searchSpinner,*/ domainSpinner;
+	static public Spinner /*searchSpinner,*/ domainSpinner;
 	private static int Language_search = 0;
 	private static String domain_search = null;
 	@SuppressWarnings("unused")
@@ -293,15 +295,14 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		    });    
 	  }
 	 
-	public void displayWord(View view) {
+/*	public void displayWord(View view) {
 		if (searchView != null) {
 //			searchView.setQuery("", false);
 			searchView.clearFocus();
 		}
-		
 		startActivity(new Intent(this, WordDefinitionFragment.class));
 	}
-	
+*/
 	public void displayWordOfTheDay(View v) {
 		startActivity(new Intent(this, WordDefinitionFragment.class));		
 	}	 

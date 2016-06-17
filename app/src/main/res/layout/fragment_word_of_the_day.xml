@@ -32,7 +32,7 @@
         android:onClick="displayWordOfTheDay"
         android:text="bdua       [bdùùa’]"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="@color/text_one"/>
+        android:textColor="@color/text_two"/>
 
     <TextView
         android:id="@+id/textView1"

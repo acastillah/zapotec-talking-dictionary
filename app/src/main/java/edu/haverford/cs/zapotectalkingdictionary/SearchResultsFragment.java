@@ -88,7 +88,8 @@ public class SearchResultsFragment extends Fragment {
             	    ((Fragment) fragment).setArguments(bundle);
             		transaction.addToBackStack(null);            
             		transaction.replace(R.id.container, fragment, MainActivity.WORD_DEFINITION_FRAGMENT).commit();	
-            		
+            		MainActivity.domainSpinner.setSelection(0);
+
             		if (v != null) {
 	            		SearchView searchView = (SearchView) v.findViewById(R.id.searchView1);
 	            		if (searchView != null) {
