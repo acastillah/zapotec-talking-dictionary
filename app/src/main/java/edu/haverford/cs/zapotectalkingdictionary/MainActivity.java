@@ -327,6 +327,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
             String query = q.trim();
             this.bundle.putString("QUERY", query);
             showResults(query);
+			MainActivity.domainSpinner.setSelection(0);
         }
     }
     

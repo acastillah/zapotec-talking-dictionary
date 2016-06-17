@@ -51,7 +51,7 @@ public class SearchResultsFragment extends Fragment {
     	if (cursor == null) {
             // There are no results        	
     		mTextView.setText(getResources().getString(R.string.noResults));
-        } 
+        }
     	else {
    		 	cursor.moveToFirst();
    		 	
@@ -69,6 +69,7 @@ public class SearchResultsFragment extends Fragment {
             // Create a simple cursor adapter for the definitions and apply them to the ListView
             SimpleCursorAdapter words = new SimpleCursorAdapter(getActivity(),R.layout.search_results, cursor, from, to,0);
             mListView.setAdapter(words);
+
 
             // Define the on-click listener for the list items
             mListView.setOnItemClickListener(new OnItemClickListener() {
