@@ -2,29 +2,28 @@
 <resources>
     <string-array name="domain_options_display">
         <item>""</item>
-        <item>Raa ddìch</item>
-        <item>agriculture</item>
-        <item>animal</item>
-        <item>bird</item>
-        <item>body part</item>
-        <item>climate</item>
-        <item>clothing</item>
-        <item>color</item>
-        <item>food</item>
-        <item>greeting</item>
-        <item>health</item>
-        <item>holiday</item>
-        <item>kinship</item>
-        <item>landscape</item>
-        <item>location</item>
-        <item>number</item>
-        <item>person</item>
-        <item>plant</item>
-        <item>religion</item>
-        <item>sky</item>
-        <item>time</item>
-        <item>weather</item>
-        <item>weaving</item>
+        <item>Raa dtitx</item>
+        <item>Dzïin lats</item>
+        <item>Main</item>
+        <item>Main xily</item>
+        <item>La\'dyu</item>
+        <item>Xab</item>
+        <item>Colores</item>
+        <item>Ni rau benny</item>
+        <item>Rinii xtxang</item>
+        <item>Gal nadang/rakxhu\'</item>
+        <item>Dlani</item>
+        <item>Dsa\'</item>
+        <item>Lo gixliu</item>
+        <item>Dlet</item>
+        <item>Gal rulab</item>
+        <item>Benny</item>
+        <item>Dkwang</item>
+        <item>Yudau</item>
+        <item>Giba\'</item>
+        <item>Zena ddxi</item>
+        <item>Xkalna ddxi</item>
+        <item>Gal ruintxei</item>
     </string-array>
     <string-array name="domain_options_search"> <!-- This is ugly and stupid. Please find a better way. -->
         <item>""</item>
@@ -63,36 +62,38 @@
         <item>Guni\' naa te dìch ingles</item>
     </string-array>
     <string name="AndroidTalkingDictionary">Android Talking Dictionary</string>
-    <string name="EnglishDefinition">"dix-ingles: "</string>
+    <string name="EnglishDefinition">"ditx ingles: "</string>
     <string name="SpanishDefinition">"dixtilih: "</string>
-    <string name="TeotitlanDelValleZapotec">Teotitlán del Valle Zapotec</string>
-    <string name="accept">"Accept/\nAceptar"</string>
-    <string name="allFilesWereUploaded">Todos los archivos fueron subidos.</string>
-    <string name="appExplanation">Esta aplicación fue creada con la intención de ser una versión del Diccionario Hablante de Zapoteca de Teotitlán del Valle que se puede ser encontrado en el siguiente enlace: </string>
+    <string name="TeotitlanDelValleZapotec">dixza xten Xigie </string>
+    <string name="UpToDate">a rapu ra dtitx</string>
+    <string name="about">Ra dtixt naden xten ra dbeny Xigie.</string>
+    <string name="accept">"yoo guni\'"</string>
+    <string name="action_settings">Ni rikin gutxau </string>
+    <string name="allFilesWereUploaded">Ra dgits a gwepy</string>
+    <string name="appExplanation">Gib ree ni riniya\' xtitxu nain te ....</string>
     <string name="app_name">Dixza</string>
-    <string name="audioFilesUploaded">audio files uploaded</string>
+    <string name="audioFilesUploaded">Ra dgits ni rinii a gwepyden.</string>
     <string name="audioFragmentDescription">"Click \"Start recording\" to start recording audio and click \"Stop recording\" to end the recording. You can play the recording with the \"Start playing/Stop playing\" button. You may name your audio file in the text field. Audio files can be accessed on your device's local storage under the \"Zapotec Talking Dictionary/audio\" directory."</string>
-    <string name="audioName">"Nombre de audio:"</string>
-    <string name="audioSaved">Audio guardado</string>
-    <string name="audio_section">Grabar audio</string>
+    <string name="audioName">"La xten dgits ni rinii:"</string>
+    <string name="audioSaved">Dgits ni rinii guardado</string>
+    <string name="audio_section">Rukua tsee lo gits ni rinii</string>
     <string name="authenticationError">Error de aunteticación</string>
-    <string name="cancel">Cancelar</string>
-    <string name="checkOncePerDay">Puede buscar actualizaciones una vez por día</string>
-    <string name="contentManagement">Subir/Borrar</string>
-    <string name="current_language">Spanish</string>
-    <string name="db_specs"> ddìch ni yu\' le\'eng ginni</string>
-    <string name="delete">borrar</string>
-    <string name="deleteContent">borrar contenido</string>
-    <string name="deleteInfo">Seleccionar BORRAR CONTENIDO va a borrar todo el contenido guardado por medio de la aplicacion</string>
+    <string name="cancel">Bienla\'z</string>
+    <string name="checkOncePerDay">Zak gaxhielu dtidx nakui tuisi lo te dxi.</string>
+    <string name="contentManagement">Rulepy/Rutsuly</string>
+    <string name="current_language">dixtily</string>
+    <string name="db_specs">dtitx ni yu\' le\'ng ginny</string>
+    <string name="delete">Rutsuly</string>
+    <string name="deleteContent">Rutsuly ginny</string>
     <string name="deleteUploadedFilesPrompt">Desea borrar los archivos subidos de su celular?</string>
-    <string name="downloadAudio">Descargar audio</string>
+    <string name="downloadAudio">Balet dtitx ni rinii</string>
     <string name="downloadFileSizeText">"Le gustaría bajar un archivo de este tamaño?"</string>
     <string name="downloadPictures">Descargar imágenes</string>
     <string name="dropboxErrorMessage">"Error iniciando sesión."</string>
     <string name="english">Dix-ingles</string>
     <string name="englishInterface">ENG</string>
     <string name="filesDeleted">Archivos borrados</string>
-    <string name="finishedSettingUpDB">"Termino de la creacion de la base de datos"</string>
+    <string name="finishedSettingUpDB">"La base de datos ha terminado de configurarse"</string>
     <string name="followingFilesNotUploadedSuccessfully">Los siguientes archivos no fueron subidos:</string>
     <string name="help">Ayuda</string>
     <string name="imageFragmentDescription">Haga clic en  \"Tomar foto\" e introduzca un nombre para el archivo. Puede accesar estas imágenes en el directorio \"Zapotec Talking Dictionary/photos\" dentro de su memoria local</string>
@@ -115,8 +116,8 @@ All rights reserved. Do not distribute or reproduce without permission.</string>
     <string name="passwordAccepted">"Contraseña aceptada"</string>
     <string name="passwordExplanation">Acceso de administrador solamente.</string>
     <string name="passwordIncorrect">Contraseña incorrecta</string>
-    <string name="passwordWelcome">Bienvenida</string>
-    <string name="password_section">Admin Log In</string>
+    <string name="passwordWelcome">Bienvenido/a</string>
+    <string name="password_section">Iniciar sesión como administrador</string>
     <string name="photoName">"Nombre de la imagen:"</string>
     <string name="photoSaved">Foto guardada</string>
     <string name="photo_section">Tomar foto</string>
@@ -127,7 +128,7 @@ All rights reserved. Do not distribute or reproduce without permission.</string>
     <string name="reportEmail_subject">"Dixza Android Application Bug Report"</string>
     <string name="report_a_problem">Gudizhè\'è bel xi kayak</string>
     <string name="report_button">Reportar problema</string>
-    <string name="report_textView">Existe un problema con la aplicación? Puede reportar su problema vía email al presionar el siguiente botón.</string>
+    <string name="report_textView">Te has encontrado con algún problema en la aplicación? ¡Háznoslo saber! Puedes reportarlo vía email presionadno el siguiente botón</string>
     <string name="retakePhoto">"Tomar foto de nuevo"</string>
     <string name="save">"Guardar"</string>
     <string name="search">Gudi’lih</string>
@@ -144,10 +145,10 @@ All rights reserved. Do not distribute or reproduce without permission.</string>
     <string name="speaker">Tu kani\'i: </string>
     <string name="startPlaying">"Empezar audio"</string>
     <string name="startRecording">"Empezar grabación"</string>
-    <string name="stopPlaying">"Para audio"</string>
+    <string name="stopPlaying">"Parar el audio"</string>
     <string name="stopRecording">"Parar grabación"</string>
     <string name="submit">Mandar</string>
-    <string name="takeAnotherPhoto">Toma otra Foto</string>
+    <string name="takeAnotherPhoto">Tomar otra foto</string>
     <string name="takePhoto">"Tomar foto"</string>
     <string name="termsOfUse">"Terms of Use/\nCondiciones de Uso"</string>
     <string name="title_activity_menu">Menú</string>
@@ -161,12 +162,12 @@ All rights reserved. Do not distribute or reproduce without permission.</string>
     <string name="title_settings">Ajustes</string>
     <string name="upToDate">"Al día"</string>
     <string name="update">Bakui</string>
-    <string name="updateInfo">El idioma esta creciendo constantemente. Cada que actualices la base de datos puedes decidir si deseas incluir audio y fotos o no para preservar espacios.</string>
-    <string name="updated">Base de datos actualizada</string>
+    <string name="updateInfo">El diccionario parlante está creciendo continuamente. Cada que actualices la base de datos puedes decidir si deseas incluir audio y fotos o no para preservar espacio.</string>
+    <string name="updated">La base de datos ha sido actualizada correctamente</string>
     <string name="upload">Subir</string>
     <string name="uploadComplete">"Carga completa"</string>
     <string name="uploadInfo">Puede subir el contenido guardado a Dropbox al presionar SUBIR. Cuando haya subido contenido a Dropbox, puede tener la opcion de borrar el contenido subido de su telefono</string>
-    <string name="uploadToDropboxComplete">La carga a Dropbox se completo:</string>
+    <string name="uploadToDropboxComplete">La carga a Dropbox se ha completado:</string>
     <string name="uploading">SUBIENDO</string>
     <string name="username">Nombre:</string>
     <string name="website"><u>http://talkingdictionary.swarthmore.edu/teotitlan/</u></string>

@@ -51,7 +51,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 	private static Menu menu = null;
 	private CharSequence mTitle;
 	
-	SearchView searchView = null;
+	public SearchView searchView = null;
 	
 	private boolean configChange = false;
 	
@@ -289,6 +289,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 					else if (pos!=0){
 		            	showDomain();
 		            }
+
 		        }
 		        public void onNothingSelected(AdapterView<?> arg0) {
 		        }

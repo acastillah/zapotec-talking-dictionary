@@ -222,6 +222,7 @@
     <string name="EnglishDefinition">"English: "</string>
     <string name="SpanishDefinition">"Spanish: "</string>
     <string name="TeotitlanDelValleZapotec">Teotitlán del Valle Zapotec</string>
+    <string name="UpToDate">Up to Date</string>
     <string name="abc_action_bar_home_description">Navigate home</string>
     <string name="abc_action_bar_home_description_format">%1$s, %2$s</string>
     <string name="abc_action_bar_home_subtitle_description_format">%1$s, %2$s, %3$s</string>
@@ -238,19 +239,19 @@
     <string name="abc_shareactionprovider_share_with">Share with</string>
     <string name="abc_shareactionprovider_share_with_application">Share with %s</string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
-    <string name="about">All content copyright © the recorded Zapotec communities (2013-2015).
+    <string name="about">All content copyright © the recorded Zapotec communities (2013-2016).
 Dictionary produced by Brook Danielle Lillehaugen, 
-Janet Chávez Santiago, Ambrocio Gutiérrez, Bibiana Gutiérrez, Nick Kalivoda, 
-Alex Mannix, Teresa Martínez Chavez and Troi Carleton, with Helen Felker and Rachel Elizabeth Weissler, 
-with support from K. David Harrison and Jeremy Fahringer. (2013-2014).
-Mobile application developed by Adriana Castilla and Juliette Klingsberg with support from Brook Danielle Lillehaugen, Janet Chávez Santiago, and Jeremy Fahringer. (2015).
+Janet Chávez Santiago, Tess A. Harty, Nick Kalivoda, Sam Katz, Teresa Martínez Chavez, Javier A. Pina, May Helena Plumb,
+        Diamond C. J. Ray, Cornelio Santos, Jamie A. Thomas (2013-2016).
+Mobile application developed by Adriana Castilla, Juliette Klingsberg, Tess A. Harty, Javier A. Pina,
+        and Sam Katz with support from Brook Danielle Lillehaugen, Janet Chávez Santiago, and Jeremy Fahringer. (2015-2016).
 All rights reserved. Do not distribute or reproduce without permission.</string>
     <string name="accept">"Accept/\nAceptar"</string>
     <string name="action_settings">Settings</string>
     <string name="allFilesWereUploaded">All files were uploaded</string>
     <string name="appExplanation">This android application is intended to be an offline version of the Teotitlán del Valle Zapotec online talking dictionary, which can be found at: </string>
     <string name="app_name">Dixza</string>
-    <string name="audioFilesUploaded">audio files uploaded</string>
+    <string name="audioFilesUploaded">Audio files uploaded</string>
     <string name="audioFragmentDescription">"Click \"Start recording\" to start recording audio and click \"Stop recording\" to end the recording. You can play the recording with the \"Start playing/Stop playing\" button. You may name your audio file in the text field. Audio files can be accessed on your device's local storage under the \"Zapotec Talking Dictionary/audio\" directory."</string>
     <string name="audioName">"Audio name:"</string>
     <string name="audioSaved">Audio saved</string>

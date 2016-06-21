@@ -91,14 +91,16 @@ public class SearchResultsFragment extends Fragment {
             		transaction.replace(R.id.container, fragment, MainActivity.WORD_DEFINITION_FRAGMENT).commit();	
             		MainActivity.domainSpinner.setSelection(0);
 
-            		if (v != null) {
+//					v.findViewById(R.id.searchView1).clearFocus();
+
+/*            		if (v != null) {
 	            		SearchView searchView = (SearchView) v.findViewById(R.id.searchView1);
 	            		if (searchView != null) {
 	//            			searchView.setQuery("", false);
 	            			searchView.clearFocus();
 	            		}
             		}
-                }
+*/                }
             });    	
           }
 	}

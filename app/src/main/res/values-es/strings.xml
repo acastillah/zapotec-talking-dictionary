@@ -20,40 +20,49 @@
     <string name="title_main_section">Palabra del día</string>
     <string name="title_section2">Actualizar</string>
     <string name="title_section3">Información</string>
-    <string name="password_section">Admin Log In</string> <!-- Iniciar sesión</string> -->
+    <string name="password_section">Iniciar sesión como administrador</string> <!-- Iniciar sesión</string> -->
     <string name="audio_section">Grabar audio</string>
     <string name="photo_section">Tomar foto</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
      <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="appExplanation">Esta aplicación fue creada con la intención de ser una versión del Diccionario Hablante de Zapoteca de Teotitlán del Valle que se puede ser encontrado en el siguiente enlace: </string>
+    <string name="appExplanation">Esta aplicación fue creada a partir del Diccionario Parlante del Zapoteco de Teotitlán del Valle al que puede accederse usando el siguiente enlace:</string>
     <string name="website"><u>http://talkingdictionary.swarthmore.edu/teotitlan/</u></string>
+   <string name="about">All content copyright © the recorded Zapotec communities (2013-2016).
+Dictionary produced by Brook Danielle Lillehaugen,
+Janet Chávez Santiago, Tess A. Harty, Nick Kalivoda, Sam Katz, Teresa Martínez Chavez, Javier A. Pina, May Helena Plumb,
+        Diamond C. J. Ray, Cornelio Santos, Jamie A. Thomas (2013-2016).
+Mobile application developed by Adriana Castilla, Juliette Klingsberg, Tess A. Harty, Javier A. Pina,
+        and Sam Katz with support from Brook Danielle Lillehaugen, Janet Chávez Santiago, and Jeremy Fahringer. (2015-2016).
+All rights reserved. Do not distribute or reproduce without permission.</string>
     <string name="help">Ayuda</string>
     <string name="title_activity_search">SearchActivity</string>
     <string name="preview_image">Imagen</string>
-    <!-- <string name="passwordExplanation">Esta sesión provee acceso a las herramientas usadas por los linguistas que están desarrollando
+    <string name="passwordExplanation">Esta sesión provee acceso a las herramientas usadas por los linguistas que están desarrollando
         la base de datos del lenguaje Zapoteco de Teotitlán del Valle. Por el momento estas herramientas no son accesibles para el público. </string>
-	-->
 	<string name="password">Contraseña: </string>
 	<string name="passwordIncorrect">Contraseña incorrecta</string>
 	<string name="submit">Mandar</string>
 	<string name="search_hint">Buscar palabra</string>
-    <string name="updateInfo">El idioma esta creciendo constantemente. Cada que actualices la base de datos puedes decidir si deseas incluir audio y fotos o no para preservar espacio.</string>
+    <string name="updateInfo">El diccionario parlante está creciendo continuamente. Cada que actualices la base de datos puedes decidir si deseas incluir audio y fotos o no para preservar espacio.</string>
     <string name="downloadAudio">Descargar audio</string>
     <string name="downloadPictures">Descargar imágenes</string>
     <string name="update">Actualizar</string>
     <string name="speaker">Hablante: </string>
     <string name="audioFragmentDescription">"Click \"Start recording\" to start recording audio and click \"Stop recording\" to end the recording. You can play the recording with the \"Start playing/Stop playing\" button. You may name your audio file in the text field. Audio files can be accessed on your device's local storage under the \"Zapotec Talking Dictionary/audio\" directory."</string>
     <string name="photoName">"Nombre de la imagen:"</string>
+    <string name="audioName">"Nombre de audio:"</string>
     <string name="stopRecording">"Parar grabación"</string>
     <string name="startRecording">"Empezar grabación"</string>
-    <string name="stopPlaying">"Para audio"</string>
+    <string name="stopPlaying">"Parar el audio"</string>
     <string name="startPlaying">"Empezar audio"</string>
     <string name="save">"Guardar"</string>
     <string name="imageFragmentDescription">Haga clic en  \"Tomar foto\" e introduzca un nombre para el archivo. Puede accesar estas imágenes en el directorio \"Zapotec Talking Dictionary/photos\" dentro de su memoria local</string>
     <string name="retakePhoto">"Tomar foto de nuevo"</string>
+    <string name="takeAnotherPhoto">Tomar otra foto</string>
     <string name="takePhoto">"Tomar foto"</string>
     <string name="passwordAccepted">"Contraseña aceptada"</string>
-    <string name="upToDate">"Al día"</string>
+    <string name="updated">La base de datos ha sido actualizada correctamente</string>
+    <string name="noUpdate">No hay actualizaciones.</string>
     <string name="EnglishDefinition">"Inglés: "</string>
     <string name="SpanishDefinition">"Español: "</string>
     
@@ -64,27 +73,22 @@
     
     
     
-    <string name="app_name">Dixza</string>
-    <string name="passwordExplanation">Acceso de administrador solamente.</string>
-    <string name="audioName">"Nombre de audio:"</string>
-    <string name="takeAnotherPhoto">Toma otra Foto</string>
-    <string name="updated">Base de datos actualizada</string>
-    <string name="noUpdate">No hay actualizaciones.</string>
+
     <string name="logout">Cerrar sesión</string>
     <string name="logoutAccepted">Sesión cerrada</string>
     <string name="logoutExplanation">Cerrar sesión le quita acceso a las herramientas de audio y fotos. Puede volver a iniciar sesión en cualquier momento.</string>
     <string name="semanticDomain_text">Categoría:</string>
     <string name="username">Nombre:</string>
-    <string name="passwordWelcome">Bienvenida</string>
+    <string name="passwordWelcome">Bienvenido/a</string>
     <string name="settingsExplanation">Introduzca su nombre. Será usado para nombrar las fotos y los archivos de audio automáticamente. </string>
     <string name="title_settings">Ajustes</string>
     <string name="settingsSaved">Configuración guardada</string>
     <string name="db_specs"> palabras existen en la base de datos</string>
     <string name="last_updated">Última actualización: </string>
-    <string name="checkOncePerDay">Puede buscar actualizaciones una vez por día</string>
+    <string name="checkOncePerDay">Puede buscar actualizaciones una vez al día</string>
     <string name="recording">GRABANDO</string>
     <string name="report_a_problem">Reportar problema</string>
-    <string name="report_textView">Existe un problema con la aplicación? Puede reportar su problema vía email al presionar el siguiente botón.</string>
+    <string name="report_textView">Te has encontrado con algún problema en la aplicación? ¡Háznoslo saber! Puedes reportarlo vía email presionadno el siguiente botón.</string>
     <string name="report_button">Reportar problema</string>
     <string name="reportEmail_subject">"Dixza Android Application Bug Report"</string>
     <string name="reportEmail_body">"Descripción del error:\n"</string>
@@ -95,11 +99,11 @@
     <string name="downloadFileSizeText">"Le gustaría bajar un archivo de este tamaño?"</string>
     <string name="cancel">Cancelar</string>
     <string name="settingUpDatabase">"Creando base de datos..."</string>
-    <string name="finishedSettingUpDB">"Termino de la creacion de la base de datos"</string>
+    <string name="finishedSettingUpDB">"La base de datos ha terminado de configurarse"</string>
     <string name="uploadComplete">"Carga completa"</string>
     <string name="ok">OK</string>
-    <string name="delete">borrar</string>
-    <string name="authenticationError">Error de aunteticación</string>
+    <string name="delete">Borrar</string>
+    <string name="authenticationError">Error de autentificación</string>
     <string name="dropboxErrorMessage">"Error iniciando sesión."</string>
     <string name="termsOfUse">"Terms of Use/\nCondiciones de Uso"</string>
     <string name="accept">"Accept/\nAceptar"</string>
@@ -107,23 +111,24 @@
     <string name="uploading">SUBIENDO</string>
     <string name="uploadInfo">Puede subir el contenido guardado a Dropbox al presionar SUBIR. Cuando haya subido contenido a Dropbox, puede tener la opcion de borrar el contenido subido de su telefono</string>
     
-    	<string name="deleteInfo">Seleccionar BORRAR CONTENIDO va a borrar todo el contenido guardado por medio de la aplicacion</string>
-	<string name="deleteContent">borrar contenido</string>
+    	<string name="deleteInfo">Seleccionar BORRAR CONTENIDO borrará todo el contenido guardado por medio de la aplicación</string>
+	<string name="deleteContent">Borrar contenido</string>
 	<string name="upload">Subir</string>
-	<string name="uploadToDropboxComplete">La carga a Dropbox se completo:</string>
+	<string name="uploadToDropboxComplete">La carga a Dropbox se ha completado:</string>
 	<string name="imagesUploaded">imágenes cargadas</string>
-	<string name="audioFilesUploaded">audio files uploaded</string>
-	<string name="allFilesWereUploaded">Todos los archivos fueron subidos.</string>
+	<string name="audioFilesUploaded">Los archivos de audio han sido cargados</string>
+	<string name="allFilesWereUploaded">Todos los archivos fueron subidos</string>
 	<string name="followingFilesNotUploadedSuccessfully">Los siguientes archivos no fueron subidos:</string>
 	<string name="deleteUploadedFilesPrompt">Desea borrar los archivos subidos de su celular?</string>
     <string name="filesDeleted">Archivos borrados</string>
-    <string name="noResults">No Hay Resultados</string>
+    <string name="contentManagement">Upload/delete</string>
+    <string name="UpToDate">Bases actualizadas</string>
+    <string name="noResults">No hay Resultados</string>
     
     
     
     
-    
-    <string name="contentManagement">Subir/Borrar</string>
+
 
 
 
@@ -154,7 +159,7 @@
         <item>comida</item>
         <item>saludos</item>
         <item>salud</item>
-        <item>días de fiesta</item>
+        <item>días festivos</item>
         <item>parentesco</item>
         <item>paisaje</item>
         <item>ubicaciones</item>
@@ -165,7 +170,7 @@
         <item>cielo</item>
         <item>tiempo</item>
         <item>clima</item>
-        <item>tejida</item>
+        <item>tejido</item>
     </string-array>
 
     <string-array name="domain_options_search"> <!-- This is ugly and stupid. Please find a better way. -->
@@ -195,5 +200,7 @@
     </string-array>
 
 	<string name="current_language">Spanish</string>
-	
+    <string name="action_settings">Configuración</string>
+    <string name="app_name">Dixza</string>
+
 </resources>

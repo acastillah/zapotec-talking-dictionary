@@ -4,51 +4,29 @@
     api-level="23"
     density="420dpi"
     format="7"
-    timestamp="44715853233395"
-    verifier="COMPATIBLE" >
+    timestamp="111762846304579" >
 
     <task
         name="javac"
-        duration="212" />
+        duration="609" />
     <task
         name="instant-run-dex"
-        duration="854" />
+        duration="0" />
     <task
         name="instant-run-transform"
-        duration="18" />
+        duration="362" />
     <task
         name="verifier"
-        duration="2" />
+        duration="132" />
 
     <artifact
-        location="/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/reload-dex/debug/classes.dex"
-        type="RELOAD_DEX" />
+        location="/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/outputs/apk/app-debug.apk"
+        type="MAIN" />
 
-    <build timestamp="43298113811530" >
+    <build timestamp="111762846304579" >
         <artifact
             location="/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/outputs/apk/app-debug.apk"
             type="MAIN" />
-    </build>
-    <build
-        timestamp="44293085356094"
-        verifier="FIELD_TYPE_CHANGE" >
-        <artifact
-            location="/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_1/classes.dex"
-            type="DEX" />
-    </build>
-    <build
-        timestamp="44641291249760"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/builds/debug/44641291249760/classes.dex"
-            type="RELOAD_DEX" />
-    </build>
-    <build
-        timestamp="44715853233395"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/reload-dex/debug/classes.dex"
-            type="RELOAD_DEX" />
     </build>
 
 </instant-run>

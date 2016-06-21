@@ -25,6 +25,7 @@ import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import android.content.res.Resources;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
@@ -468,7 +469,9 @@ public class UpdateFragment extends Fragment {
 	    protected void onPostExecute(String file_url) {
 	        // dismiss the dialog after the file was downloaded
 			pDialog.dismiss();
-			Toast.makeText(getActivity(), R.string.finishedSettingUpDB, Toast.LENGTH_SHORT).show();
+			long db_size = db.getSize();
+			SharedPreferences preferences = getActivity().getSharedPreferences(Preferences.APP_SETTINGS, Activity.MODE_PRIVATE);
+			dbspecs.setText(db_size + " " + getString(R.string.db_specs));
 		}
 	}
 	
