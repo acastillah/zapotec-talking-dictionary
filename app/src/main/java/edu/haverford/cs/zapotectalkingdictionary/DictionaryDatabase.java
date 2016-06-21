@@ -81,10 +81,11 @@ public class DictionaryDatabase {
     }
     
     public Cursor getMatch(String q, int language, String dom){
-    	
+
+		String HtmlUnescapedQuote = StringEscapeUtils.unescapeHtml3("&#8217;");
     	SQLiteDatabase db = mDatabaseOpenHelper.getReadableDatabase();
     	String KEY = null;
-    	q = q.replace("'", "_"); // This kind of works but doesn't really...
+    	q = q.replace("'", HtmlUnescapedQuote); // This kind of works but doesn't really...
 				KEY = "(" + KEY_WORD + " LIKE '%" + q + "%'" + " OR " + KEY_GLOSS +  " LIKE '%" + String.valueOf(q)
 							+ "%'" + " OR " + KEY_ESGLOSS + " LIKE '%" + String.valueOf(q) + "%'" + ")"; 
     	

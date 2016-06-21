@@ -84,11 +84,6 @@ public class UpdateFragment extends Fragment {
         if (!preferences.contains(Preferences.LAST_DB_UPDATE)) {
 //        	Log.i("UPDATE", "no previous update date available");
         	Calendar cal = Calendar.getInstance();
-        	cal.set(DictionaryDatabase.DB_YEAR, 
-        			DictionaryDatabase.DB_MONTH, 
-        			DictionaryDatabase.DB_DAY, 
-        			DictionaryDatabase.DB_HOUR, 
-        			DictionaryDatabase.DB_MINUTE);
         	String date = DictionaryDatabase.dateFormat_US.format(cal.getTime());
         	editor.putString(Preferences.LAST_DB_UPDATE, date);
         }
