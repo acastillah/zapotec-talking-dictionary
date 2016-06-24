@@ -210,7 +210,7 @@ public class DictionaryDatabase {
 					con.setDoOutput(true);
 					DataOutputStream wr = new DataOutputStream(con.getOutputStream());
 					String urlParam;
-					urlParam = "dict=teotitlan" +
+					urlParam = "dict=teotitlan-original" +
 							"&export=true&dl_type=" + Integer.toString(type);
 					wr.writeBytes(urlParam);
 					wr.flush();

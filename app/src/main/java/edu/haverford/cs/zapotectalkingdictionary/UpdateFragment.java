@@ -257,7 +257,7 @@ public class UpdateFragment extends Fragment {
 		try{	
 			int type = getType();
 			URL url = new URL("http://talkingdictionary.swarthmore.edu/dl/retrieve.php");
-	        String urlParam = "dict=teotitlan-dev&current=true&size=true&dl_type=" + Integer.toString(type);
+	        String urlParam = "dict=teotitlan&current=true&size=true&dl_type=" + Integer.toString(type);
 	        HttpURLConnection con = (HttpURLConnection) url.openConnection();
 			con.setRequestMethod("POST");
 			DataOutputStream hr = new DataOutputStream(con.getOutputStream());
@@ -325,10 +325,10 @@ public class UpdateFragment extends Fragment {
 				DataOutputStream wr = new DataOutputStream(con.getOutputStream());
 				String urlParam;
 				if(hash[type] == null){
-					urlParam = "dict=teotitlan-dev&export=TRUE&dl_type=" + Integer.toString(type);
+					urlParam = "dict=teotitlan&export=TRUE&dl_type=" + Integer.toString(type);
 				} 
 				else{
-					urlParam = "dict=teotitlan-dev&export=TRUE&dl_type=" + Integer.toString(type) + "&hash=" + hash[type];
+					urlParam = "dict=teotitlan&export=TRUE&dl_type=" + Integer.toString(type) + "&hash=" + hash[type];
 				}
 				wr.writeBytes(urlParam);
 				wr.flush();
@@ -373,9 +373,8 @@ public class UpdateFragment extends Fragment {
 			             filename = ze.getName();
 			             if (ze.isDirectory()) {
 				            	if(filename.contains("pix")){
-//				            		Log.i("pix", filename);
 				            		isPic = true;
-				            		  File myDir = new File(root,filename);    
+				            		  File myDir = new File(root,filename);
 				            		  myDir.mkdirs();
 				            	}
 				            	else{
@@ -386,25 +385,30 @@ public class UpdateFragment extends Fragment {
 				                continue;
 				          }
 			             FileOutputStream fout;
-			             if (isPic){
-//			            	 Log.i("placing in", root + "/" + filename);
+			             if (filename.contains(".jpg") || (filename.contains(".JPG"))){//(isPic){
+			            	 Log.d("placing in", root + "/" + filename);
 				             fout = new FileOutputStream(root + "/" + filename);
 			             }
 			             else{
+							 Log.d(filename, filename);
 				             fout = new FileOutputStream(path + "/" + filename);
 			             }
 			             while ((count = zis.read(buffer)) != -1) {
 			                 fout.write(buffer, 0, count);             
 			             }
+						 Log.d("here", "here");
 			             fout.close();               
 			             zis.closeEntry();
 			         }
+					Log.d("finish", "finish");
 			         is.close();
 			         zis.close();
 			         getHash();
 			         response = "Download finished";
 				}
 	        } catch (Exception e) {
+				Log.d("broken", "broken");
+				response = "Download finished"; //forces all words to install without images
 	        }
 			return null;
 	    }
@@ -475,7 +479,7 @@ public class UpdateFragment extends Fragment {
 		try{	
 			URL url = new URL("http://talkingdictionary.swarthmore.edu/dl/retrieve.php");
 			int type = getType();
-	        String urlParam = "dict=teotitlan-dev&current=true&current_hash=true&dl_type=" + Integer.toString(type);
+	        String urlParam = "dict=teotitlan&current=true&current_hash=true&dl_type=" + Integer.toString(type);
 	        HttpURLConnection con = (HttpURLConnection) url.openConnection();
 			con.setRequestMethod("POST");
 			DataOutputStream hr = new DataOutputStream(con.getOutputStream());

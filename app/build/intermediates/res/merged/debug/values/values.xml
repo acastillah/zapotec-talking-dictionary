@@ -245,7 +245,11 @@ Janet Chávez Santiago, Tess A. Harty, Nick Kalivoda, Sam Katz, Teresa Martínez
         Diamond C. J. Ray, Cornelio Santos, Jamie A. Thomas (2013-2016).
 Mobile application developed by Adriana Castilla, Juliette Klingsberg, Tess A. Harty, Javier A. Pina,
         and Sam Katz with support from Brook Danielle Lillehaugen, Janet Chávez Santiago, and Jeremy Fahringer. (2015-2016).
-All rights reserved. Do not distribute or reproduce without permission.</string>
+All rights reserved. Do not distribute or reproduce without permission. Most of the black and while line drawings in these entries are taken from the Arte para la Alfabetización en México
+        (Art for Literacy in Mexico) (Instituto Lingüistico de Verano, A.C., 2004) and are used according to the license
+        agreement therein. All artwork remains the intellectual property of the artist.
+        Supported in part with funding from a NSF REU Site grant (PI Harrison, Building Digital Tools to Support Endangered Languages
+        and Preserve Environmental Knowledge in Mexico, Micronesia, and Navajo Nation, Award #1461056)</string>
     <string name="accept">"Accept/\nAceptar"</string>
     <string name="action_settings">Settings</string>
     <string name="allFilesWereUploaded">All files were uploaded</string>
@@ -324,6 +328,7 @@ All rights reserved. Do not distribute or reproduce without permission.</string>
     <string name="stopPlaying">"Stop playing"</string>
     <string name="stopRecording">"Stop recording"</string>
     <string name="submit">Submit</string>
+    <string name="supported">Supported by:</string>
     <string name="takeAnotherPhoto">Take Another Photo</string>
     <string name="takePhoto">"Take Photo"</string>
     <string name="termsOfUse">"Terms of Use/\nCondiciones de Uso"</string>

@@ -81,13 +81,17 @@
     <string msgid="893419373245838918" name="abc_searchview_description_voice">"Búsqueda por voz"</string>
     <string msgid="3421042268587513524" name="abc_shareactionprovider_share_with">"Compartir con"</string>
     <string msgid="7165123711973476752" name="abc_shareactionprovider_share_with_application">"Compartir con %s"</string>
-    <string name="about">All content copyright © the recorded Zapotec communities (2013-2016).
-Dictionary produced by Brook Danielle Lillehaugen,
-Janet Chávez Santiago, Tess A. Harty, Nick Kalivoda, Sam Katz, Teresa Martínez Chavez, Javier A. Pina, May Helena Plumb,
-        Diamond C. J. Ray, Cornelio Santos, Jamie A. Thomas (2013-2016).
-Mobile application developed by Adriana Castilla, Juliette Klingsberg, Tess A. Harty, Javier A. Pina,
-        and Sam Katz with support from Brook Danielle Lillehaugen, Janet Chávez Santiago, and Jeremy Fahringer. (2015-2016).
-All rights reserved. Do not distribute or reproduce without permission.</string>
+    <string name="about">Todo el contenido está registrado © bajo el dominio de las comunidades zapotecas (2013-2016).
+Este diccionario ha sido producido por Brook Danielle Lillehaugen,
+Janet Chávez Santiago, Tess A. Harty, Nick Kalivoda, Sam Katz, Teresa Martínez Chavez, Javier A. Pina, May Helena Plumb, Diamond C. J. Ray, Cornelio Santos y Jamie A. Thomas (2013-2016).
+
+La aplicación móvil ha sido desarrollada por Adriana Castilla, Juliette Klingsberg, Tess A. Harty, Javier A. Pina y Sam Katz con el apoyo de Brook Danielle Lillehaugen, Janet Chávez Santiago y Jeremy Fahringer. (2015-2016).
+Todos los derechos reservados. Está prohibida su distribución o reproducción sin permiso previo.
+   El arte en blanco y negro utilizado en muchas de las entradas ha sido tomado del Arte para la Alfabetización
+       en México (Instituto Lingüistico de Verano, A.C., 2004) siguiendo las condiciones de uso estipuladas por
+       la licencia. La propiedad intelectual de todo trabajo artístico sigue bajo el control total del artista.
+       Financiado por NSF REU Site Grant (PI Harrison, Building Digital Tools to Support Endangered Languages
+       and Preserve Environmental Knowledge in Mexico, Micronesia, and Navajo Nation, Award #1461056)</string>
     <string name="accept">"Accept/\nAceptar"</string>
     <string name="action_settings">Configuración</string>
     <string name="allFilesWereUploaded">Todos los archivos fueron subidos</string>
@@ -166,6 +170,7 @@ All rights reserved. Do not distribute or reproduce without permission.</string>
     <string name="stopPlaying">"Parar el audio"</string>
     <string name="stopRecording">"Parar grabación"</string>
     <string name="submit">Mandar</string>
+    <string name="supported">Financiado por:</string>
     <string name="takeAnotherPhoto">Tomar otra foto</string>
     <string name="takePhoto">"Tomar foto"</string>
     <string name="termsOfUse">"Terms of Use/\nCondiciones de Uso"</string>

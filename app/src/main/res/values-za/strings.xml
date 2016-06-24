@@ -26,11 +26,12 @@
     <string name="photo_section">Tomar foto</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">All content copyright © the recorded Zapotec communities (2013-2015).
-Dictionary produced by Brook Danielle Lillehaugen, Alex Mannix, 
-Janet Chavez Santiago, Ambrocio Gutiérrez, Bibiana Gutiérrez, Nick Kalivoda, 
-Alex Mannix, Teresa Martínez Chavez and Troi Carleton, with Helen Felker and Rachel Elizabeth Weissler, 
+Dictionary produced by Brook Danielle Lillehaugen, Alex Mannix,
+Janet Chavez Santiago, Ambrocio Gutiérrez, Bibiana Gutiérrez, Nick Kalivoda,
+Alex Mannix, Teresa Martínez Chavez and Troi Carleton, with Helen Felker and Rachel Elizabeth Weissler,
 with support from K. David Harrison and Jeremy Fahringer. (2013-2014).
 All rights reserved. Do not distribute or reproduce without permission.</string>
+    <string name="supported">Financiado por:</string>
     <string name="help">Ayuda</string>
     <string name="title_activity_search">SearchActivity</string>
     <string name="preview_image">Imagen</string>
@@ -206,7 +207,17 @@ All rights reserved. Do not distribute or reproduce without permission.</string>
     
     <string name="contentManagement">Rulepy/Rutsuly</string>
     <string name="UpToDate">a rapu ra dtitx</string>
-    <string name="about">Ra dtixt naden xten ra dbeny Xigie.</string>
+    <string name="about"><string name="about">Todo el contenido está registrado © bajo el dominio de las comunidades zapotecas (2013-2016).
+Este diccionario ha sido producido por Brook Danielle Lillehaugen,
+Janet Chávez Santiago, Tess A. Harty, Nick Kalivoda, Sam Katz, Teresa Martínez Chavez, Javier A. Pina, May Helena Plumb, Diamond C. J. Ray, Cornelio Santos y Jamie A. Thomas (2013-2016).
+
+La aplicación móvil ha sido desarrollada por Adriana Castilla, Juliette Klingsberg, Tess A. Harty, Javier A. Pina y Sam Katz con el apoyo de Brook Danielle Lillehaugen, Janet Chávez Santiago y Jeremy Fahringer. (2015-2016).
+Todos los derechos reservados. Está prohibida su distribución o reproducción sin permiso previo.
+   El arte en blanco y negro utilizado en muchas de las entradas ha sido tomado del Arte para la Alfabetización
+       en México (Instituto Lingüistico de Verano, A.C., 2004) siguiendo las condiciones de uso estipuladas por
+       la licencia. La propiedad intelectual de todo trabajo artístico sigue bajo el control total del artista.
+       Financiado por NSF REU Site Grant (PI Harrison, Building Digital Tools to Support Endangered Languages
+       and Preserve Environmental Knowledge in Mexico, Micronesia, and Navajo Nation, Award #1461056)</string></string>
     <string name="action_settings">Ni rikin gutxau </string>
 
 
