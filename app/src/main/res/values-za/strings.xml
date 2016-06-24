@@ -79,28 +79,31 @@ All rights reserved. Do not distribute or reproduce without permission.</string>
     
     <string-array name="domain_options_display">
         <item>""</item>
-        <item>Raa dtitx</item>
-        <item>Dzïin lats</item>
-        <item>Main</item>
-        <item>Main xily</item>
-        <item>La\'dyu</item>
-        <item>Xab</item>
-        <item>Colores</item>
-        <item>Ni rau benny</item>
-        <item>Rinii xtxang</item>
-        <item>Gal nadang/rakxhu\'</item>
-        <item>Dlani</item>
-        <item>Dsa\'</item>
-        <item>Lo gixliu</item>
-        <item>Dlet</item>
-        <item>Gal rulab</item>
-        <item>Benny</item>
-        <item>Dkwang</item>
-        <item>Yudau</item>
-        <item>Giba\'</item>
-        <item>Zena ddxi</item>
-        <item>Xkalna ddxi</item>
-        <item>Gal ruintxei</item>
+        <item>raa dtitx</item> 
+        <item>dzïin lats</item>
+        <item>main</item>
+        <item>main xily</item>
+        <item>la\'dyu</item>
+        <item>dlani</item>
+        <item>xab</item>
+        <item>colores</item>
+        <item>expresiones comunes</item>
+        <item>ni rau benny</item>
+        <item>rinii xtxang</item>
+        <item>gal nadang/rakxhu\'</item>
+        <item>dsa\'</item>
+        <item>lo gixliu</item>
+        <item>dlet</item>
+        <item>gal rulab</item>
+        <item>benny</item>
+        <item>dkwang</item>
+        <item>yudau</item>
+        <item>xkwily</item>
+        <item>giba\'</item>
+        <item>tecnología</item>
+        <item>zena ddxi</item>
+        <item>xkalna ddxi</item>
+        <item>gal ruintxei</item>
     </string-array>
 
     <string-array name="domain_options_search"> <!-- This is ugly and stupid. Please find a better way. -->
@@ -110,12 +113,13 @@ All rights reserved. Do not distribute or reproduce without permission.</string>
         <item>animal</item>
         <item>bird</item>
         <item>body part</item>
+        <item>celebration</item>
         <item>clothing</item>
         <item>color</item>
+        <item>common expression</item>
         <item>food</item>
         <item>greeting</item>
         <item>health</item>
-        <item>holiday</item>
         <item>kinship</item>
         <item>landscape</item>
         <item>location</item>
@@ -123,7 +127,9 @@ All rights reserved. Do not distribute or reproduce without permission.</string>
         <item>person</item>
         <item>plant</item>
         <item>religion</item>
+        <item>school</item>
         <item>sky</item>
+        <item>technology</item>
         <item>time</item>
         <item>weather</item>
         <item>weaving</item>

@@ -12,7 +12,15 @@
                     "endOffset": 794
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 154,
+                        "startColumn": 4,
+                        "startOffset": 9776,
+                        "endLine": 178,
+                        "endColumn": 19,
+                        "endOffset": 10515
+                    }
                 }
             },
             {
@@ -25,7 +33,15 @@
                     "endOffset": 1571
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 180,
+                        "startColumn": 4,
+                        "startOffset": 10521,
+                        "endLine": 204,
+                        "endColumn": 19,
+                        "endOffset": 11293
+                    }
                 }
             },
             {
@@ -38,7 +54,15 @@
                     "endOffset": 1708
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 141,
+                        "startColumn": 4,
+                        "startOffset": 9419,
+                        "endLine": 145,
+                        "endColumn": 19,
+                        "endOffset": 9551
+                    }
                 }
             },
             {
@@ -51,7 +75,15 @@
                     "endOffset": 1922
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 147,
+                        "startColumn": 4,
+                        "startOffset": 9557,
+                        "endLine": 152,
+                        "endColumn": 19,
+                        "endOffset": 9766
+                    }
                 }
             },
             {
@@ -63,7 +95,14 @@
                     "endOffset": 2002
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 162,
+                        "endColumn": 79,
+                        "endOffset": 237
+                    }
                 }
             },
             {
@@ -75,7 +114,14 @@
                     "endOffset": 2059
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 70,
+                        "startColumn": 4,
+                        "startOffset": 5565,
+                        "endColumn": 56,
+                        "endOffset": 5617
+                    }
                 }
             },
             {
@@ -87,7 +133,14 @@
                     "endOffset": 2117
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 71,
+                        "startColumn": 4,
+                        "startOffset": 5622,
+                        "endColumn": 57,
+                        "endOffset": 5675
+                    }
                 }
             },
             {
@@ -99,7 +152,14 @@
                     "endOffset": 2198
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 81,
+                        "endColumn": 80,
+                        "endOffset": 157
+                    }
                 }
             },
             {
@@ -111,7 +171,14 @@
                     "endOffset": 2254
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 129,
+                        "startColumn": 4,
+                        "startOffset": 9281,
+                        "endColumn": 55,
+                        "endOffset": 9332
+                    }
                 }
             },
             {
@@ -123,7 +190,14 @@
                     "endOffset": 2371
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values-es/values.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values-es/values.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 56,
+                        "endColumn": 116,
+                        "endOffset": 168
+                    }
                 }
             },
             {
@@ -135,7 +209,14 @@
                     "endOffset": 2479
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values-es/values.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values-es/values.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 173,
+                        "endColumn": 107,
+                        "endOffset": 276
+                    }
                 }
             },
             {
@@ -147,7 +228,14 @@
                     "endOffset": 2602
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values-es/values.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values-es/values.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 281,
+                        "endColumn": 122,
+                        "endOffset": 399
+                    }
                 }
             },
             {
@@ -159,7 +247,14 @@
                     "endOffset": 2715
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values-es/values.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values-es/values.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 404,
+                        "endColumn": 112,
+                        "endOffset": 512
+                    }
                 }
             },
             {
@@ -171,7 +266,14 @@
                     "endOffset": 2823
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values-es/values.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values-es/values.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 517,
+                        "endColumn": 107,
+                        "endOffset": 620
+                    }
                 }
             },
             {
@@ -183,7 +285,14 @@
                     "endOffset": 2908
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values-es/values.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values-es/values.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 625,
+                        "endColumn": 84,
+                        "endOffset": 705
+                    }
                 }
             },
             {
@@ -195,7 +304,14 @@
                     "endOffset": 3009
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values-es/values.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values-es/values.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 710,
+                        "endColumn": 100,
+                        "endOffset": 806
+                    }
                 }
             },
             {
@@ -207,7 +323,14 @@
                     "endOffset": 3137
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values-es/values.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values-es/values.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 4,
+                        "startOffset": 811,
+                        "endColumn": 127,
+                        "endOffset": 934
+                    }
                 }
             },
             {
@@ -219,7 +342,14 @@
                     "endOffset": 3244
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values-es/values.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values-es/values.xml",
+                    "position": {
+                        "startLine": 11,
+                        "startColumn": 4,
+                        "startOffset": 939,
+                        "endColumn": 106,
+                        "endOffset": 1041
+                    }
                 }
             },
             {
@@ -231,7 +361,14 @@
                     "endOffset": 3344
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values-es/values.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values-es/values.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 1046,
+                        "endColumn": 99,
+                        "endOffset": 1141
+                    }
                 }
             },
             {
@@ -243,7 +380,14 @@
                     "endOffset": 3443
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values-es/values.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values-es/values.xml",
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 4,
+                        "startOffset": 1146,
+                        "endColumn": 98,
+                        "endOffset": 1240
+                    }
                 }
             },
             {
@@ -255,7 +399,14 @@
                     "endOffset": 3551
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values-es/values.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values-es/values.xml",
+                    "position": {
+                        "startLine": 14,
+                        "startColumn": 4,
+                        "startOffset": 1245,
+                        "endColumn": 107,
+                        "endOffset": 1348
+                    }
                 }
             },
             {
@@ -267,7 +418,14 @@
                     "endOffset": 3658
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values-es/values.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values-es/values.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 1353,
+                        "endColumn": 106,
+                        "endOffset": 1455
+                    }
                 }
             },
             {
@@ -279,7 +437,14 @@
                     "endOffset": 3765
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values-es/values.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values-es/values.xml",
+                    "position": {
+                        "startLine": 16,
+                        "startColumn": 4,
+                        "startOffset": 1460,
+                        "endColumn": 106,
+                        "endOffset": 1562
+                    }
                 }
             },
             {
@@ -291,7 +456,14 @@
                     "endOffset": 3887
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values-es/values.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values-es/values.xml",
+                    "position": {
+                        "startLine": 17,
+                        "startColumn": 4,
+                        "startOffset": 1567,
+                        "endColumn": 121,
+                        "endOffset": 1684
+                    }
                 }
             },
             {
@@ -304,7 +476,15 @@
                     "endOffset": 5139
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 29,
+                        "startColumn": 3,
+                        "startOffset": 1749,
+                        "endLine": 39,
+                        "endColumn": 110,
+                        "endOffset": 2996
+                    }
                 }
             },
             {
@@ -316,7 +496,14 @@
                     "endOffset": 5193
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 113,
+                        "startColumn": 4,
+                        "startOffset": 8052,
+                        "endColumn": 53,
+                        "endOffset": 8101
+                    }
                 }
             },
             {
@@ -328,7 +515,14 @@
                     "endOffset": 5251
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 207,
+                        "startColumn": 4,
+                        "startOffset": 11349,
+                        "endColumn": 57,
+                        "endOffset": 11402
+                    }
                 }
             },
             {
@@ -340,7 +534,14 @@
                     "endOffset": 5334
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 124,
+                        "startColumn": 1,
+                        "startOffset": 8873,
+                        "endColumn": 79,
+                        "endOffset": 8951
+                    }
                 }
             },
             {
@@ -352,7 +553,14 @@
                     "endOffset": 5525
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 27,
+                        "startColumn": 4,
+                        "startOffset": 1465,
+                        "endColumn": 190,
+                        "endOffset": 1651
+                    }
                 }
             },
             {
@@ -364,7 +572,14 @@
                     "endOffset": 5568
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 208,
+                        "startColumn": 4,
+                        "startOffset": 11407,
+                        "endColumn": 42,
+                        "endOffset": 11445
+                    }
                 }
             },
             {
@@ -376,7 +591,14 @@
                     "endOffset": 5655
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 123,
+                        "startColumn": 1,
+                        "startOffset": 8789,
+                        "endColumn": 83,
+                        "endOffset": 8871
+                    }
                 }
             },
             {
@@ -388,7 +610,14 @@
                     "endOffset": 6052
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 55,
+                        "startColumn": 4,
+                        "startOffset": 4148,
+                        "endColumn": 396,
+                        "endOffset": 4540
+                    }
                 }
             },
             {
@@ -400,7 +629,14 @@
                     "endOffset": 6109
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 57,
+                        "startColumn": 4,
+                        "startOffset": 4606,
+                        "endColumn": 56,
+                        "endOffset": 4658
+                    }
                 }
             },
             {
@@ -412,7 +648,14 @@
                     "endOffset": 6163
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 102,
+                        "startColumn": 4,
+                        "startOffset": 7331,
+                        "endColumn": 53,
+                        "endOffset": 7380
+                    }
                 }
             },
             {
@@ -424,7 +667,14 @@
                     "endOffset": 6218
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 23,
+                        "startColumn": 4,
+                        "startOffset": 1206,
+                        "endColumn": 54,
+                        "endOffset": 1256
+                    }
                 }
             },
             {
@@ -436,7 +686,14 @@
                     "endOffset": 6291
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 110,
+                        "startColumn": 4,
+                        "startOffset": 7830,
+                        "endColumn": 72,
+                        "endOffset": 7898
+                    }
                 }
             },
             {
@@ -448,7 +705,14 @@
                     "endOffset": 6335
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 104,
+                        "startColumn": 4,
+                        "startOffset": 7481,
+                        "endColumn": 43,
+                        "endOffset": 7520
+                    }
                 }
             },
             {
@@ -460,7 +724,14 @@
                     "endOffset": 6423
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 92,
+                        "startColumn": 4,
+                        "startOffset": 6555,
+                        "endColumn": 87,
+                        "endOffset": 6638
+                    }
                 }
             },
             {
@@ -472,7 +743,14 @@
                     "endOffset": 6483
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 128,
+                        "startColumn": 4,
+                        "startOffset": 9221,
+                        "endColumn": 59,
+                        "endOffset": 9276
+                    }
                 }
             },
             {
@@ -484,7 +762,14 @@
                     "endOffset": 6536
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 206,
+                        "startColumn": 1,
+                        "startOffset": 11296,
+                        "endColumn": 49,
+                        "endOffset": 11344
+                    }
                 }
             },
             {
@@ -496,7 +781,14 @@
                     "endOffset": 6611
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 90,
+                        "startColumn": 4,
+                        "startOffset": 6416,
+                        "endColumn": 74,
+                        "endOffset": 6486
+                    }
                 }
             },
             {
@@ -508,7 +800,14 @@
                     "endOffset": 6653
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 109,
+                        "startColumn": 4,
+                        "startOffset": 7788,
+                        "endColumn": 41,
+                        "endOffset": 7825
+                    }
                 }
             },
             {
@@ -520,7 +819,14 @@
                     "endOffset": 6712
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 119,
+                        "startColumn": 1,
+                        "startOffset": 8551,
+                        "endColumn": 55,
+                        "endOffset": 8605
+                    }
                 }
             },
             {
@@ -532,7 +838,14 @@
                     "endOffset": 6842
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 118,
+                        "startColumn": 5,
+                        "startOffset": 8424,
+                        "endColumn": 130,
+                        "endOffset": 8549
+                    }
                 }
             },
             {
@@ -544,7 +857,14 @@
                     "endOffset": 6945
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 126,
+                        "startColumn": 1,
+                        "startOffset": 9059,
+                        "endColumn": 99,
+                        "endOffset": 9157
+                    }
                 }
             },
             {
@@ -556,7 +876,14 @@
                     "endOffset": 7003
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 51,
+                        "startColumn": 4,
+                        "startOffset": 3901,
+                        "endColumn": 57,
+                        "endOffset": 3954
+                    }
                 }
             },
             {
@@ -568,7 +895,14 @@
                     "endOffset": 7099
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 103,
+                        "startColumn": 4,
+                        "startOffset": 7385,
+                        "endColumn": 95,
+                        "endOffset": 7476
+                    }
                 }
             },
             {
@@ -599,7 +933,14 @@
                     "endOffset": 7269
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 111,
+                        "startColumn": 4,
+                        "startOffset": 7903,
+                        "endColumn": 73,
+                        "endOffset": 7972
+                    }
                 }
             },
             {
@@ -611,7 +952,14 @@
                     "endOffset": 7312
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 4,
+                        "startOffset": 432,
+                        "endColumn": 42,
+                        "endOffset": 470
+                    }
                 }
             },
             {
@@ -623,7 +971,14 @@
                     "endOffset": 7361
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 285,
+                        "endColumn": 48,
+                        "endOffset": 329
+                    }
                 }
             },
             {
@@ -635,7 +990,14 @@
                     "endOffset": 7420
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 127,
+                        "startColumn": 4,
+                        "startOffset": 9162,
+                        "endColumn": 58,
+                        "endOffset": 9216
+                    }
                 }
             },
             {
@@ -647,7 +1009,14 @@
                     "endOffset": 7516
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 106,
+                        "startColumn": 4,
+                        "startOffset": 7598,
+                        "endColumn": 95,
+                        "endOffset": 7689
+                    }
                 }
             },
             {
@@ -659,7 +1028,14 @@
                     "endOffset": 7625
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 125,
+                        "startColumn": 1,
+                        "startOffset": 8953,
+                        "endColumn": 105,
+                        "endOffset": 9057
+                    }
                 }
             },
             {
@@ -671,7 +1047,14 @@
                     "endOffset": 7664
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 41,
+                        "startColumn": 4,
+                        "startOffset": 3055,
+                        "endColumn": 38,
+                        "endOffset": 3089
+                    }
                 }
             },
             {
@@ -683,7 +1066,14 @@
                     "endOffset": 7897
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 63,
+                        "startColumn": 4,
+                        "startOffset": 4943,
+                        "endColumn": 232,
+                        "endOffset": 5171
+                    }
                 }
             },
             {
@@ -695,7 +1085,14 @@
                     "endOffset": 7958
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 122,
+                        "startColumn": 1,
+                        "startOffset": 8731,
+                        "endColumn": 57,
+                        "endOffset": 8787
+                    }
                 }
             },
             {
@@ -707,7 +1104,14 @@
                     "endOffset": 8022
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 91,
+                        "startColumn": 4,
+                        "startOffset": 6491,
+                        "endColumn": 63,
+                        "endOffset": 6550
+                    }
                 }
             },
             {
@@ -719,7 +1123,14 @@
                     "endOffset": 8071
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 81,
+                        "startColumn": 4,
+                        "startOffset": 5721,
+                        "endColumn": 48,
+                        "endOffset": 5765
+                    }
                 }
             },
             {
@@ -731,7 +1142,14 @@
                     "endOffset": 8129
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 82,
+                        "startColumn": 4,
+                        "startOffset": 5770,
+                        "endColumn": 57,
+                        "endOffset": 5823
+                    }
                 }
             },
             {
@@ -743,7 +1161,14 @@
                     "endOffset": 8294
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 83,
+                        "startColumn": 4,
+                        "startOffset": 5828,
+                        "endColumn": 164,
+                        "endOffset": 5988
+                    }
                 }
             },
             {
@@ -755,7 +1180,14 @@
                     "endOffset": 8370
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 26,
+                        "startColumn": 5,
+                        "startOffset": 1389,
+                        "endColumn": 76,
+                        "endOffset": 1460
+                    }
                 }
             },
             {
@@ -767,7 +1199,14 @@
                     "endOffset": 8444
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 25,
+                        "startColumn": 4,
+                        "startOffset": 1314,
+                        "endColumn": 73,
+                        "endOffset": 1383
+                    }
                 }
             },
             {
@@ -779,7 +1218,14 @@
                     "endOffset": 8500
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 130,
+                        "startColumn": 4,
+                        "startOffset": 9337,
+                        "endColumn": 55,
+                        "endOffset": 9388
+                    }
                 }
             },
             {
@@ -791,7 +1237,14 @@
                     "endOffset": 8561
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 69,
+                        "startColumn": 4,
+                        "startOffset": 5504,
+                        "endColumn": 60,
+                        "endOffset": 5560
+                    }
                 }
             },
             {
@@ -803,7 +1256,14 @@
                     "endOffset": 8595
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 108,
+                        "startColumn": 4,
+                        "startOffset": 7754,
+                        "endColumn": 33,
+                        "endOffset": 7783
+                    }
                 }
             },
             {
@@ -815,7 +1275,14 @@
                     "endOffset": 8645
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 46,
+                        "startColumn": 1,
+                        "startOffset": 3489,
+                        "endColumn": 46,
+                        "endOffset": 3534
+                    }
                 }
             },
             {
@@ -827,7 +1294,14 @@
                     "endOffset": 8712
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 67,
+                        "startColumn": 4,
+                        "startOffset": 5350,
+                        "endColumn": 66,
+                        "endOffset": 5412
+                    }
                 }
             },
             {
@@ -840,7 +1314,15 @@
                     "endOffset": 8996
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 44,
+                        "startColumn": 4,
+                        "startOffset": 3208,
+                        "endLine": 45,
+                        "endColumn": 149,
+                        "endOffset": 3487
+                    }
                 }
             },
             {
@@ -852,7 +1334,14 @@
                     "endOffset": 9064
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 47,
+                        "startColumn": 1,
+                        "startOffset": 3536,
+                        "endColumn": 64,
+                        "endOffset": 3599
+                    }
                 }
             },
             {
@@ -864,7 +1353,14 @@
                     "endOffset": 9121
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 86,
+                        "startColumn": 4,
+                        "startOffset": 6097,
+                        "endColumn": 56,
+                        "endOffset": 6149
+                    }
                 }
             },
             {
@@ -876,7 +1372,14 @@
                     "endOffset": 9200
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 22,
+                        "startColumn": 4,
+                        "startOffset": 1094,
+                        "endColumn": 78,
+                        "endOffset": 1168
+                    }
                 }
             },
             {
@@ -888,7 +1391,14 @@
                     "endOffset": 9261
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 56,
+                        "startColumn": 4,
+                        "startOffset": 4545,
+                        "endColumn": 60,
+                        "endOffset": 4601
+                    }
                 }
             },
             {
@@ -900,7 +1410,14 @@
                     "endOffset": 9314
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 101,
+                        "startColumn": 4,
+                        "startOffset": 7278,
+                        "endColumn": 52,
+                        "endOffset": 7326
+                    }
                 }
             },
             {
@@ -912,7 +1429,14 @@
                     "endOffset": 9367
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 24,
+                        "startColumn": 4,
+                        "startOffset": 1261,
+                        "endColumn": 52,
+                        "endOffset": 1309
+                    }
                 }
             },
             {
@@ -924,7 +1448,14 @@
                     "endOffset": 9416
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 43,
+                        "startColumn": 4,
+                        "startOffset": 3159,
+                        "endColumn": 48,
+                        "endOffset": 3203
+                    }
                 }
             },
             {
@@ -936,7 +1467,14 @@
                     "endOffset": 9463
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 93,
+                        "startColumn": 4,
+                        "startOffset": 6643,
+                        "endColumn": 46,
+                        "endOffset": 6685
+                    }
                 }
             },
             {
@@ -948,7 +1486,14 @@
                     "endOffset": 9518
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 114,
+                        "startColumn": 4,
+                        "startOffset": 8106,
+                        "endColumn": 54,
+                        "endOffset": 8156
+                    }
                 }
             },
             {
@@ -960,7 +1505,14 @@
                     "endOffset": 9590
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 98,
+                        "startColumn": 4,
+                        "startOffset": 7076,
+                        "endColumn": 71,
+                        "endOffset": 7143
+                    }
                 }
             },
             {
@@ -972,7 +1524,14 @@
                     "endOffset": 9677
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 97,
+                        "startColumn": 4,
+                        "startOffset": 6989,
+                        "endColumn": 86,
+                        "endOffset": 7071
+                    }
                 }
             },
             {
@@ -984,7 +1543,14 @@
                     "endOffset": 9740
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 94,
+                        "startColumn": 4,
+                        "startOffset": 6690,
+                        "endColumn": 62,
+                        "endOffset": 6748
+                    }
                 }
             },
             {
@@ -996,7 +1562,14 @@
                     "endOffset": 9800
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 96,
+                        "startColumn": 4,
+                        "startOffset": 6929,
+                        "endColumn": 59,
+                        "endOffset": 6984
+                    }
                 }
             },
             {
@@ -1008,7 +1581,14 @@
                     "endOffset": 9976
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 95,
+                        "startColumn": 4,
+                        "startOffset": 6753,
+                        "endColumn": 175,
+                        "endOffset": 6924
+                    }
                 }
             },
             {
@@ -1020,7 +1600,14 @@
                     "endOffset": 10038
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 64,
+                        "startColumn": 4,
+                        "startOffset": 5176,
+                        "endColumn": 61,
+                        "endOffset": 5233
+                    }
                 }
             },
             {
@@ -1032,7 +1619,14 @@
                     "endOffset": 10081
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 62,
+                        "startColumn": 4,
+                        "startOffset": 4900,
+                        "endColumn": 42,
+                        "endOffset": 4938
+                    }
                 }
             },
             {
@@ -1044,7 +1638,14 @@
                     "endOffset": 10125
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 4,
+                        "startOffset": 564,
+                        "endColumn": 43,
+                        "endOffset": 603
+                    }
                 }
             },
             {
@@ -1056,7 +1657,14 @@
                     "endOffset": 10190
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 99,
+                        "startColumn": 4,
+                        "startOffset": 7148,
+                        "endColumn": 64,
+                        "endOffset": 7208
+                    }
                 }
             },
             {
@@ -1068,7 +1676,14 @@
                     "endOffset": 10245
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 49,
+                        "startColumn": 1,
+                        "startOffset": 3640,
+                        "endColumn": 51,
+                        "endOffset": 3690
+                    }
                 }
             },
             {
@@ -1080,7 +1695,14 @@
                     "endOffset": 10304
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 84,
+                        "startColumn": 4,
+                        "startOffset": 5993,
+                        "endColumn": 58,
+                        "endOffset": 6047
+                    }
                 }
             },
             {
@@ -1092,7 +1714,14 @@
                     "endOffset": 10377
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 105,
+                        "startColumn": 4,
+                        "startOffset": 7525,
+                        "endColumn": 72,
+                        "endOffset": 7593
+                    }
                 }
             },
             {
@@ -1104,7 +1733,14 @@
                     "endOffset": 10422
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 519,
+                        "endColumn": 44,
+                        "endOffset": 559
+                    }
                 }
             },
             {
@@ -1116,7 +1752,14 @@
                     "endOffset": 10568
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 87,
+                        "startColumn": 4,
+                        "startOffset": 6154,
+                        "endColumn": 145,
+                        "endOffset": 6295
+                    }
                 }
             },
             {
@@ -1128,7 +1771,14 @@
                     "endOffset": 10633
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 89,
+                        "startColumn": 4,
+                        "startOffset": 6351,
+                        "endColumn": 64,
+                        "endOffset": 6411
+                    }
                 }
             },
             {
@@ -1140,7 +1790,14 @@
                     "endOffset": 10676
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 242,
+                        "endColumn": 42,
+                        "endOffset": 280
+                    }
                 }
             },
             {
@@ -1152,7 +1809,14 @@
                     "endOffset": 10720
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 11,
+                        "startColumn": 4,
+                        "startOffset": 475,
+                        "endColumn": 43,
+                        "endOffset": 514
+                    }
                 }
             },
             {
@@ -1164,7 +1828,14 @@
                     "endOffset": 10769
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 334,
+                        "endColumn": 48,
+                        "endOffset": 378
+                    }
                 }
             },
             {
@@ -1176,7 +1847,14 @@
                     "endOffset": 10816
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 54,
+                        "startColumn": 4,
+                        "startOffset": 4101,
+                        "endColumn": 46,
+                        "endOffset": 4143
+                    }
                 }
             },
             {
@@ -1188,7 +1866,14 @@
                     "endOffset": 10873
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 61,
+                        "startColumn": 4,
+                        "startOffset": 4843,
+                        "endColumn": 56,
+                        "endOffset": 4895
+                    }
                 }
             },
             {
@@ -1200,7 +1885,14 @@
                     "endOffset": 10936
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 59,
+                        "startColumn": 4,
+                        "startOffset": 4723,
+                        "endColumn": 62,
+                        "endOffset": 4781
+                    }
                 }
             },
             {
@@ -1212,7 +1904,14 @@
                     "endOffset": 10993
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 60,
+                        "startColumn": 4,
+                        "startOffset": 4786,
+                        "endColumn": 56,
+                        "endOffset": 4838
+                    }
                 }
             },
             {
@@ -1224,7 +1923,14 @@
                     "endOffset": 11053
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 58,
+                        "startColumn": 4,
+                        "startOffset": 4663,
+                        "endColumn": 59,
+                        "endOffset": 4718
+                    }
                 }
             },
             {
@@ -1236,7 +1942,14 @@
                     "endOffset": 11095
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 48,
+                        "startColumn": 1,
+                        "startOffset": 3601,
+                        "endColumn": 38,
+                        "endOffset": 3638
+                    }
                 }
             },
             {
@@ -1248,7 +1961,14 @@
                     "endOffset": 11149
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 40,
+                        "startColumn": 4,
+                        "startOffset": 3001,
+                        "endColumn": 53,
+                        "endOffset": 3050
+                    }
                 }
             },
             {
@@ -1260,7 +1980,14 @@
                     "endOffset": 11210
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 65,
+                        "startColumn": 4,
+                        "startOffset": 5238,
+                        "endColumn": 60,
+                        "endOffset": 5294
+                    }
                 }
             },
             {
@@ -1272,7 +1999,14 @@
                     "endOffset": 11261
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 66,
+                        "startColumn": 4,
+                        "startOffset": 5299,
+                        "endColumn": 50,
+                        "endOffset": 5345
+                    }
                 }
             },
             {
@@ -1284,7 +2018,14 @@
                     "endOffset": 11336
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 112,
+                        "startColumn": 4,
+                        "startOffset": 7977,
+                        "endColumn": 74,
+                        "endOffset": 8047
+                    }
                 }
             },
             {
@@ -1296,7 +2037,14 @@
                     "endOffset": 11389
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 665,
+                        "endColumn": 52,
+                        "endOffset": 713
+                    }
                 }
             },
             {
@@ -1308,7 +2056,14 @@
                     "endOffset": 11454
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 42,
+                        "startColumn": 4,
+                        "startOffset": 3094,
+                        "endColumn": 64,
+                        "endOffset": 3154
+                    }
                 }
             },
             {
@@ -1320,7 +2075,14 @@
                     "endOffset": 11522
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 4,
+                        "startOffset": 854,
+                        "endColumn": 67,
+                        "endOffset": 917
+                    }
                 }
             },
             {
@@ -1332,7 +2094,14 @@
                     "endOffset": 11588
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 16,
+                        "startColumn": 4,
+                        "startOffset": 718,
+                        "endColumn": 65,
+                        "endOffset": 779
+                    }
                 }
             },
             {
@@ -1344,7 +2113,14 @@
                     "endOffset": 11658
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 17,
+                        "startColumn": 4,
+                        "startOffset": 784,
+                        "endColumn": 69,
+                        "endOffset": 849
+                    }
                 }
             },
             {
@@ -1356,7 +2132,14 @@
                     "endOffset": 11721
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 19,
+                        "startColumn": 4,
+                        "startOffset": 922,
+                        "endColumn": 62,
+                        "endOffset": 980
+                    }
                 }
             },
             {
@@ -1368,7 +2151,14 @@
                     "endOffset": 11775
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 20,
+                        "startColumn": 4,
+                        "startOffset": 985,
+                        "endColumn": 53,
+                        "endOffset": 1034
+                    }
                 }
             },
             {
@@ -1380,7 +2170,14 @@
                     "endOffset": 11830
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 21,
+                        "startColumn": 4,
+                        "startOffset": 1039,
+                        "endColumn": 54,
+                        "endOffset": 1089
+                    }
                 }
             },
             {
@@ -1392,7 +2189,14 @@
                     "endOffset": 11881
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 88,
+                        "startColumn": 4,
+                        "startOffset": 6300,
+                        "endColumn": 50,
+                        "endOffset": 6346
+                    }
                 }
             },
             {
@@ -1404,7 +2208,14 @@
                     "endOffset": 11927
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 53,
+                        "startColumn": 4,
+                        "startOffset": 4055,
+                        "endColumn": 45,
+                        "endOffset": 4096
+                    }
                 }
             },
             {
@@ -1416,7 +2227,14 @@
                     "endOffset": 12133
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 50,
+                        "startColumn": 4,
+                        "startOffset": 3695,
+                        "endColumn": 205,
+                        "endOffset": 3896
+                    }
                 }
             },
             {
@@ -1428,7 +2246,14 @@
                     "endOffset": 12220
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 68,
+                        "startColumn": 4,
+                        "startOffset": 5417,
+                        "endColumn": 86,
+                        "endOffset": 5499
+                    }
                 }
             },
             {
@@ -1440,7 +2265,14 @@
                     "endOffset": 12261
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 120,
+                        "startColumn": 1,
+                        "startOffset": 8607,
+                        "endColumn": 37,
+                        "endOffset": 8643
+                    }
                 }
             },
             {
@@ -1452,7 +2284,14 @@
                     "endOffset": 12321
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 107,
+                        "startColumn": 4,
+                        "startOffset": 7694,
+                        "endColumn": 59,
+                        "endOffset": 7749
+                    }
                 }
             },
             {
@@ -1464,7 +2303,14 @@
                     "endOffset": 12531
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 116,
+                        "startColumn": 4,
+                        "startOffset": 8208,
+                        "endColumn": 209,
+                        "endOffset": 8413
+                    }
                 }
             },
             {
@@ -1476,7 +2322,14 @@
                     "endOffset": 12620
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 121,
+                        "startColumn": 1,
+                        "startOffset": 8645,
+                        "endColumn": 85,
+                        "endOffset": 8729
+                    }
                 }
             },
             {
@@ -1488,7 +2341,14 @@
                     "endOffset": 12667
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 115,
+                        "startColumn": 4,
+                        "startOffset": 8161,
+                        "endColumn": 46,
+                        "endOffset": 8203
+                    }
                 }
             },
             {
@@ -1500,7 +2360,14 @@
                     "endOffset": 12712
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 85,
+                        "startColumn": 4,
+                        "startOffset": 6052,
+                        "endColumn": 44,
+                        "endOffset": 6092
+                    }
                 }
             },
             {
@@ -1512,7 +2379,14 @@
                     "endOffset": 12806
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 28,
+                        "startColumn": 4,
+                        "startOffset": 1656,
+                        "endColumn": 93,
+                        "endOffset": 1745
+                    }
                 }
             },
             {
@@ -1524,7 +2398,14 @@
                     "endOffset": 12871
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 100,
+                        "startColumn": 4,
+                        "startOffset": 7213,
+                        "endColumn": 64,
+                        "endOffset": 7273
+                    }
                 }
             },
             {
@@ -1536,7 +2417,14 @@
                     "endOffset": 12928
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 14,
+                        "startColumn": 4,
+                        "startOffset": 608,
+                        "endColumn": 56,
+                        "endOffset": 660
+                    }
                 }
             },
             {
@@ -1548,7 +2436,14 @@
                     "endOffset": 12977
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values-es/strings.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 383,
+                        "endColumn": 48,
+                        "endOffset": 427
+                    }
                 }
             }
         ]

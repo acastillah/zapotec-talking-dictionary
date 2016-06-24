@@ -169,7 +169,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 	    
 		SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);		
 		searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));	
-		searchView.setBackgroundColor(Color.parseColor(getResources().getString(R.color.searchbar_background)));
+		searchView.setBackgroundColor(getResources().getColor(R.color.searchbar_background));
 		mTitle = getString(R.string.app_name);
 		domainSpinner = (Spinner) findViewById(R.id.domain_spinner);
 		addListenerOnSpinnerItemSelection(); 
@@ -258,7 +258,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		ActionBar actionBar = getSupportActionBar();
 		actionBar.setDisplayShowTitleEnabled(true);	
 		
-		actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor(getResources().getString(R.color.actionbar_background))));
+		actionBar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.actionbar_background)));
 		
 		if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT)
 //			actionBar.setTitle(Html.fromHtml("<small>" + mTitle + "</small>"));

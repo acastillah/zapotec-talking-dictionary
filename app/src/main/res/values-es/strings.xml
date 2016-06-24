@@ -159,12 +159,13 @@ Todos los derechos reservados. Está prohibida su distribución o reproducción 
         <item>animales</item>
         <item>aves</item>
         <item>partes del cuerpo</item>
+        <item>celebraciones</item>
         <item>ropa</item>
         <item>colores</item>
+        <item>expresiones comunes</item>
         <item>comida</item>
         <item>saludos</item>
         <item>salud</item>
-        <item>días festivos</item>
         <item>parentesco</item>
         <item>paisaje</item>
         <item>ubicaciones</item>
@@ -172,7 +173,9 @@ Todos los derechos reservados. Está prohibida su distribución o reproducción 
         <item>personas</item>
         <item>plantas</item>
         <item>religión</item>
+        <item>escuela</item>
         <item>cielo</item>
+        <item>tecnología</item>
         <item>tiempo</item>
         <item>clima</item>
         <item>tejido</item>
@@ -185,12 +188,13 @@ Todos los derechos reservados. Está prohibida su distribución o reproducción 
         <item>animal</item>
         <item>bird</item>
         <item>body part</item>
+        <item>celebration</item>
         <item>clothing</item>
         <item>color</item>
+        <item>common expression</item>
         <item>food</item>
         <item>greeting</item>
         <item>health</item>
-        <item>holiday</item>
         <item>kinship</item>
         <item>landscape</item>
         <item>location</item>
@@ -198,7 +202,9 @@ Todos los derechos reservados. Está prohibida su distribución o reproducción 
         <item>person</item>
         <item>plant</item>
         <item>religion</item>
+        <item>school</item>
         <item>sky</item>
+        <item>technology</item>
         <item>time</item>
         <item>weather</item>
         <item>weaving</item>
