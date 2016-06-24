@@ -386,28 +386,23 @@ public class UpdateFragment extends Fragment {
 				          }
 			             FileOutputStream fout;
 			             if (filename.contains(".jpg") || (filename.contains(".JPG"))){//(isPic){
-			            	 Log.d("placing in", root + "/" + filename);
 				             fout = new FileOutputStream(root + "/" + filename);
 			             }
 			             else{
-							 Log.d(filename, filename);
 				             fout = new FileOutputStream(path + "/" + filename);
 			             }
 			             while ((count = zis.read(buffer)) != -1) {
 			                 fout.write(buffer, 0, count);             
 			             }
-						 Log.d("here", "here");
 			             fout.close();               
 			             zis.closeEntry();
 			         }
-					Log.d("finish", "finish");
 			         is.close();
 			         zis.close();
 			         getHash();
 			         response = "Download finished";
 				}
 	        } catch (Exception e) {
-				Log.d("broken", "broken");
 				response = "Download finished"; //forces all words to install without images
 	        }
 			return null;

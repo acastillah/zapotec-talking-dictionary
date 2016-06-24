@@ -44,7 +44,7 @@ All rights reserved. Do not distribute or reproduce without permission.</string>
 	<string name="search_hint">Gudi’lih</string>
     <string name="updateInfo">El diccionario parlante está creciendo continuamente. Cada que actualices la base de datos puedes decidir si deseas incluir audio y fotos o no para preservar espacio.</string>
     <string name="downloadAudio">Balet dtitx ni rinii</string>
-    <string name="downloadPictures">Descargar imágenes</string>
+    <string name="downloadPictures">Descargar imágenes  (no disponible en esta versión)</string>
     <string name="update">Bakui</string>
     <string name="speaker">Tu kani\'i: </string>
     <string name="audioFragmentDescription">"Click \"Start recording\" to start recording audio and click \"Stop recording\" to end the recording. You can play the recording with the \"Start playing/Stop playing\" button. You may name your audio file in the text field. Audio files can be accessed on your device's local storage under the \"Zapotec Talking Dictionary/audio\" directory."</string>

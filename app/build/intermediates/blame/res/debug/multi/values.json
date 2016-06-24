@@ -2184,20 +2184,27 @@
                     "startLine": 274,
                     "startColumn": 4,
                     "startOffset": 28344,
-                    "endColumn": 62,
-                    "endOffset": 28402
+                    "endColumn": 94,
+                    "endOffset": 28434
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml",
+                    "position": {
+                        "startLine": 53,
+                        "startColumn": 4,
+                        "startOffset": 3766,
+                        "endColumn": 94,
+                        "endOffset": 3856
+                    }
                 }
             },
             {
                 "to": {
                     "startLine": 275,
                     "startColumn": 4,
-                    "startOffset": 28407,
+                    "startOffset": 28439,
                     "endColumn": 90,
-                    "endOffset": 28493
+                    "endOffset": 28525
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -2207,9 +2214,9 @@
                 "to": {
                     "startLine": 276,
                     "startColumn": 4,
-                    "startOffset": 28498,
+                    "startOffset": 28530,
                     "endColumn": 43,
-                    "endOffset": 28537
+                    "endOffset": 28569
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -2219,9 +2226,9 @@
                 "to": {
                     "startLine": 277,
                     "startColumn": 4,
-                    "startOffset": 28542,
+                    "startOffset": 28574,
                     "endColumn": 48,
-                    "endOffset": 28586
+                    "endOffset": 28618
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -2231,9 +2238,9 @@
                 "to": {
                     "startLine": 278,
                     "startColumn": 4,
-                    "startOffset": 28591,
+                    "startOffset": 28623,
                     "endColumn": 56,
-                    "endOffset": 28643
+                    "endOffset": 28675
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -2243,9 +2250,9 @@
                 "to": {
                     "startLine": 279,
                     "startColumn": 4,
-                    "startOffset": 28648,
+                    "startOffset": 28680,
                     "endColumn": 82,
-                    "endOffset": 28726
+                    "endOffset": 28758
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -2255,9 +2262,9 @@
                 "to": {
                     "startLine": 280,
                     "startColumn": 4,
-                    "startOffset": 28731,
+                    "startOffset": 28763,
                     "endColumn": 117,
-                    "endOffset": 28844
+                    "endOffset": 28876
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -2267,9 +2274,9 @@
                 "to": {
                     "startLine": 281,
                     "startColumn": 4,
-                    "startOffset": 28849,
+                    "startOffset": 28881,
                     "endColumn": 52,
-                    "endOffset": 28897
+                    "endOffset": 28929
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -2279,9 +2286,9 @@
                 "to": {
                     "startLine": 282,
                     "startColumn": 4,
-                    "startOffset": 28902,
+                    "startOffset": 28934,
                     "endColumn": 37,
-                    "endOffset": 28935
+                    "endOffset": 28967
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -2291,9 +2298,9 @@
                 "to": {
                     "startLine": 283,
                     "startColumn": 4,
-                    "startOffset": 28940,
+                    "startOffset": 28972,
                     "endColumn": 236,
-                    "endOffset": 29172
+                    "endOffset": 29204
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -2303,9 +2310,9 @@
                 "to": {
                     "startLine": 284,
                     "startColumn": 4,
-                    "startOffset": 29177,
+                    "startOffset": 29209,
                     "endColumn": 58,
-                    "endOffset": 29231
+                    "endOffset": 29263
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -2315,9 +2322,9 @@
                 "to": {
                     "startLine": 285,
                     "startColumn": 4,
-                    "startOffset": 29236,
+                    "startOffset": 29268,
                     "endColumn": 55,
-                    "endOffset": 29287
+                    "endOffset": 29319
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -2327,9 +2334,9 @@
                 "to": {
                     "startLine": 286,
                     "startColumn": 4,
-                    "startOffset": 29292,
+                    "startOffset": 29324,
                     "endColumn": 42,
-                    "endOffset": 29330
+                    "endOffset": 29362
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -2339,9 +2346,9 @@
                 "to": {
                     "startLine": 287,
                     "startColumn": 4,
-                    "startOffset": 29335,
+                    "startOffset": 29367,
                     "endColumn": 61,
-                    "endOffset": 29392
+                    "endOffset": 29424
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -2351,9 +2358,9 @@
                 "to": {
                     "startLine": 288,
                     "startColumn": 4,
-                    "startOffset": 29397,
+                    "startOffset": 29429,
                     "endColumn": 134,
-                    "endOffset": 29527
+                    "endOffset": 29559
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -2363,9 +2370,9 @@
                 "to": {
                     "startLine": 289,
                     "startColumn": 4,
-                    "startOffset": 29532,
+                    "startOffset": 29564,
                     "endColumn": 75,
-                    "endOffset": 29603
+                    "endOffset": 29635
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -2375,9 +2382,9 @@
                 "to": {
                     "startLine": 290,
                     "startColumn": 4,
-                    "startOffset": 29608,
+                    "startOffset": 29640,
                     "endColumn": 73,
-                    "endOffset": 29677
+                    "endOffset": 29709
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -2387,9 +2394,9 @@
                 "to": {
                     "startLine": 291,
                     "startColumn": 4,
-                    "startOffset": 29682,
+                    "startOffset": 29714,
                     "endColumn": 48,
-                    "endOffset": 29726
+                    "endOffset": 29758
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -2399,9 +2406,9 @@
                 "to": {
                     "startLine": 292,
                     "startColumn": 4,
-                    "startOffset": 29731,
+                    "startOffset": 29763,
                     "endColumn": 64,
-                    "endOffset": 29791
+                    "endOffset": 29823
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -2411,9 +2418,9 @@
                 "to": {
                     "startLine": 293,
                     "startColumn": 4,
-                    "startOffset": 29796,
+                    "startOffset": 29828,
                     "endColumn": 33,
-                    "endOffset": 29825
+                    "endOffset": 29857
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -2423,9 +2430,9 @@
                 "to": {
                     "startLine": 294,
                     "startColumn": 4,
-                    "startOffset": 29830,
+                    "startOffset": 29862,
                     "endColumn": 47,
-                    "endOffset": 29873
+                    "endOffset": 29905
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -2435,9 +2442,9 @@
                 "to": {
                     "startLine": 295,
                     "startColumn": 4,
-                    "startOffset": 29878,
+                    "startOffset": 29910,
                     "endColumn": 64,
-                    "endOffset": 29938
+                    "endOffset": 29970
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -2447,9 +2454,9 @@
                 "to": {
                     "startLine": 296,
                     "startColumn": 4,
-                    "startOffset": 29943,
+                    "startOffset": 29975,
                     "endColumn": 74,
-                    "endOffset": 30013
+                    "endOffset": 30045
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -2459,9 +2466,9 @@
                 "to": {
                     "startLine": 297,
                     "startColumn": 4,
-                    "startOffset": 30018,
+                    "startOffset": 30050,
                     "endColumn": 64,
-                    "endOffset": 30078
+                    "endOffset": 30110
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -2471,9 +2478,9 @@
                 "to": {
                     "startLine": 298,
                     "startColumn": 4,
-                    "startOffset": 30083,
+                    "startOffset": 30115,
                     "endColumn": 51,
-                    "endOffset": 30130
+                    "endOffset": 30162
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -2483,9 +2490,9 @@
                 "to": {
                     "startLine": 299,
                     "startColumn": 4,
-                    "startOffset": 30135,
+                    "startOffset": 30167,
                     "endColumn": 57,
-                    "endOffset": 30188
+                    "endOffset": 30220
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -2495,9 +2502,9 @@
                 "to": {
                     "startLine": 300,
                     "startColumn": 4,
-                    "startOffset": 30193,
+                    "startOffset": 30225,
                     "endColumn": 51,
-                    "endOffset": 30240
+                    "endOffset": 30272
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -2507,9 +2514,9 @@
                 "to": {
                     "startLine": 301,
                     "startColumn": 4,
-                    "startOffset": 30245,
+                    "startOffset": 30277,
                     "endColumn": 50,
-                    "endOffset": 30291
+                    "endOffset": 30323
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -2519,9 +2526,9 @@
                 "to": {
                     "startLine": 302,
                     "startColumn": 4,
-                    "startOffset": 30296,
+                    "startOffset": 30328,
                     "endColumn": 52,
-                    "endOffset": 30344
+                    "endOffset": 30376
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -2531,9 +2538,9 @@
                 "to": {
                     "startLine": 303,
                     "startColumn": 4,
-                    "startOffset": 30349,
+                    "startOffset": 30381,
                     "endColumn": 55,
-                    "endOffset": 30400
+                    "endOffset": 30432
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -2543,9 +2550,9 @@
                 "to": {
                     "startLine": 304,
                     "startColumn": 4,
-                    "startOffset": 30405,
+                    "startOffset": 30437,
                     "endColumn": 47,
-                    "endOffset": 30448
+                    "endOffset": 30480
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -2555,9 +2562,9 @@
                 "to": {
                     "startLine": 305,
                     "startColumn": 4,
-                    "startOffset": 30453,
+                    "startOffset": 30485,
                     "endColumn": 54,
-                    "endOffset": 30503
+                    "endOffset": 30535
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -2567,9 +2574,9 @@
                 "to": {
                     "startLine": 306,
                     "startColumn": 4,
-                    "startOffset": 30508,
+                    "startOffset": 30540,
                     "endColumn": 65,
-                    "endOffset": 30569
+                    "endOffset": 30601
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -2579,9 +2586,9 @@
                 "to": {
                     "startLine": 307,
                     "startColumn": 4,
-                    "startOffset": 30574,
+                    "startOffset": 30606,
                     "endColumn": 86,
-                    "endOffset": 30656
+                    "endOffset": 30688
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -2591,9 +2598,9 @@
                 "to": {
                     "startLine": 308,
                     "startColumn": 4,
-                    "startOffset": 30661,
+                    "startOffset": 30693,
                     "endColumn": 61,
-                    "endOffset": 30718
+                    "endOffset": 30750
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -2603,9 +2610,9 @@
                 "to": {
                     "startLine": 309,
                     "startColumn": 4,
-                    "startOffset": 30723,
+                    "startOffset": 30755,
                     "endColumn": 56,
-                    "endOffset": 30775
+                    "endOffset": 30807
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -2615,9 +2622,9 @@
                 "to": {
                     "startLine": 310,
                     "startColumn": 4,
-                    "startOffset": 30780,
+                    "startOffset": 30812,
                     "endColumn": 187,
-                    "endOffset": 30963
+                    "endOffset": 30995
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -2627,9 +2634,9 @@
                 "to": {
                     "startLine": 311,
                     "startColumn": 4,
-                    "startOffset": 30968,
+                    "startOffset": 31000,
                     "endColumn": 54,
-                    "endOffset": 31018
+                    "endOffset": 31050
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -2639,9 +2646,9 @@
                 "to": {
                     "startLine": 312,
                     "startColumn": 4,
-                    "startOffset": 31023,
+                    "startOffset": 31055,
                     "endColumn": 39,
-                    "endOffset": 31058
+                    "endOffset": 31090
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -2651,9 +2658,9 @@
                 "to": {
                     "startLine": 313,
                     "startColumn": 4,
-                    "startOffset": 31063,
+                    "startOffset": 31095,
                     "endColumn": 41,
-                    "endOffset": 31100
+                    "endOffset": 31132
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -2663,9 +2670,9 @@
                 "to": {
                     "startLine": 314,
                     "startColumn": 4,
-                    "startOffset": 31105,
+                    "startOffset": 31137,
                     "endColumn": 56,
-                    "endOffset": 31157
+                    "endOffset": 31189
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -2675,9 +2682,9 @@
                 "to": {
                     "startLine": 315,
                     "startColumn": 4,
-                    "startOffset": 31162,
+                    "startOffset": 31194,
                     "endColumn": 57,
-                    "endOffset": 31215
+                    "endOffset": 31247
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -2687,9 +2694,9 @@
                 "to": {
                     "startLine": 316,
                     "startColumn": 4,
-                    "startOffset": 31220,
+                    "startOffset": 31252,
                     "endColumn": 57,
-                    "endOffset": 31273
+                    "endOffset": 31305
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -2699,9 +2706,9 @@
                 "to": {
                     "startLine": 317,
                     "startColumn": 4,
-                    "startOffset": 31278,
+                    "startOffset": 31310,
                     "endColumn": 70,
-                    "endOffset": 31344
+                    "endOffset": 31376
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -2711,9 +2718,9 @@
                 "to": {
                     "startLine": 318,
                     "startColumn": 4,
-                    "startOffset": 31349,
+                    "startOffset": 31381,
                     "endColumn": 45,
-                    "endOffset": 31390
+                    "endOffset": 31422
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -2723,9 +2730,9 @@
                 "to": {
                     "startLine": 319,
                     "startColumn": 4,
-                    "startOffset": 31395,
+                    "startOffset": 31427,
                     "endColumn": 167,
-                    "endOffset": 31558
+                    "endOffset": 31590
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -2735,9 +2742,9 @@
                 "to": {
                     "startLine": 320,
                     "startColumn": 4,
-                    "startOffset": 31563,
+                    "startOffset": 31595,
                     "endColumn": 56,
-                    "endOffset": 31615
+                    "endOffset": 31647
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -2747,9 +2754,9 @@
                 "to": {
                     "startLine": 321,
                     "startColumn": 4,
-                    "startOffset": 31620,
+                    "startOffset": 31652,
                     "endColumn": 42,
-                    "endOffset": 31658
+                    "endOffset": 31690
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -2759,9 +2766,9 @@
                 "to": {
                     "startLine": 322,
                     "startColumn": 4,
-                    "startOffset": 31663,
+                    "startOffset": 31695,
                     "endColumn": 43,
-                    "endOffset": 31702
+                    "endOffset": 31734
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -2771,9 +2778,9 @@
                 "to": {
                     "startLine": 323,
                     "startColumn": 4,
-                    "startOffset": 31707,
+                    "startOffset": 31739,
                     "endColumn": 48,
-                    "endOffset": 31751
+                    "endOffset": 31783
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -2783,9 +2790,9 @@
                 "to": {
                     "startLine": 324,
                     "startColumn": 4,
-                    "startOffset": 31756,
+                    "startOffset": 31788,
                     "endColumn": 45,
-                    "endOffset": 31797
+                    "endOffset": 31829
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -2795,9 +2802,9 @@
                 "to": {
                     "startLine": 325,
                     "startColumn": 4,
-                    "startOffset": 31802,
+                    "startOffset": 31834,
                     "endColumn": 56,
-                    "endOffset": 31854
+                    "endOffset": 31886
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -2807,9 +2814,9 @@
                 "to": {
                     "startLine": 326,
                     "startColumn": 4,
-                    "startOffset": 31859,
+                    "startOffset": 31891,
                     "endColumn": 60,
-                    "endOffset": 31915
+                    "endOffset": 31947
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -2819,9 +2826,9 @@
                 "to": {
                     "startLine": 327,
                     "startColumn": 4,
-                    "startOffset": 31920,
+                    "startOffset": 31952,
                     "endColumn": 54,
-                    "endOffset": 31970
+                    "endOffset": 32002
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -2831,9 +2838,9 @@
                 "to": {
                     "startLine": 328,
                     "startColumn": 4,
-                    "startOffset": 31975,
+                    "startOffset": 32007,
                     "endColumn": 58,
-                    "endOffset": 32029
+                    "endOffset": 32061
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -2843,9 +2850,9 @@
                 "to": {
                     "startLine": 329,
                     "startColumn": 4,
-                    "startOffset": 32034,
+                    "startOffset": 32066,
                     "endColumn": 41,
-                    "endOffset": 32071
+                    "endOffset": 32103
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -2855,28 +2862,21 @@
                 "to": {
                     "startLine": 330,
                     "startColumn": 4,
-                    "startOffset": 32076,
+                    "startOffset": 32108,
                     "endColumn": 51,
-                    "endOffset": 32123
+                    "endOffset": 32155
                 },
                 "from": {
-                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml",
-                    "position": {
-                        "startLine": 42,
-                        "startColumn": 4,
-                        "startOffset": 2952,
-                        "endColumn": 51,
-                        "endOffset": 2999
-                    }
+                    "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
                 }
             },
             {
                 "to": {
                     "startLine": 331,
                     "startColumn": 4,
-                    "startOffset": 32128,
+                    "startOffset": 32160,
                     "endColumn": 63,
-                    "endOffset": 32187
+                    "endOffset": 32219
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -2886,9 +2886,9 @@
                 "to": {
                     "startLine": 332,
                     "startColumn": 4,
-                    "startOffset": 32192,
+                    "startOffset": 32224,
                     "endColumn": 50,
-                    "endOffset": 32238
+                    "endOffset": 32270
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -2898,9 +2898,9 @@
                 "to": {
                     "startLine": 333,
                     "startColumn": 4,
-                    "startOffset": 32243,
+                    "startOffset": 32275,
                     "endColumn": 74,
-                    "endOffset": 32313
+                    "endOffset": 32345
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -2910,9 +2910,9 @@
                 "to": {
                     "startLine": 334,
                     "startColumn": 4,
-                    "startOffset": 32318,
+                    "startOffset": 32350,
                     "endColumn": 52,
-                    "endOffset": 32366
+                    "endOffset": 32398
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -2922,9 +2922,9 @@
                 "to": {
                     "startLine": 335,
                     "startColumn": 4,
-                    "startOffset": 32371,
+                    "startOffset": 32403,
                     "endColumn": 65,
-                    "endOffset": 32432
+                    "endOffset": 32464
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -2934,9 +2934,9 @@
                 "to": {
                     "startLine": 336,
                     "startColumn": 4,
-                    "startOffset": 32437,
+                    "startOffset": 32469,
                     "endColumn": 73,
-                    "endOffset": 32506
+                    "endOffset": 32538
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -2946,9 +2946,9 @@
                 "to": {
                     "startLine": 337,
                     "startColumn": 4,
-                    "startOffset": 32511,
+                    "startOffset": 32543,
                     "endColumn": 70,
-                    "endOffset": 32577
+                    "endOffset": 32609
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -2958,9 +2958,9 @@
                 "to": {
                     "startLine": 338,
                     "startColumn": 4,
-                    "startOffset": 32582,
+                    "startOffset": 32614,
                     "endColumn": 64,
-                    "endOffset": 32642
+                    "endOffset": 32674
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -2970,9 +2970,9 @@
                 "to": {
                     "startLine": 339,
                     "startColumn": 4,
-                    "startOffset": 32647,
+                    "startOffset": 32679,
                     "endColumn": 74,
-                    "endOffset": 32717
+                    "endOffset": 32749
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -2982,9 +2982,9 @@
                 "to": {
                     "startLine": 340,
                     "startColumn": 4,
-                    "startOffset": 32722,
+                    "startOffset": 32754,
                     "endColumn": 62,
-                    "endOffset": 32780
+                    "endOffset": 32812
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -2994,9 +2994,9 @@
                 "to": {
                     "startLine": 341,
                     "startColumn": 4,
-                    "startOffset": 32785,
+                    "startOffset": 32817,
                     "endColumn": 49,
-                    "endOffset": 32830
+                    "endOffset": 32862
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -3006,9 +3006,9 @@
                 "to": {
                     "startLine": 342,
                     "startColumn": 4,
-                    "startOffset": 32835,
+                    "startOffset": 32867,
                     "endColumn": 48,
-                    "endOffset": 32879
+                    "endOffset": 32911
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -3018,9 +3018,9 @@
                 "to": {
                     "startLine": 343,
                     "startColumn": 4,
-                    "startOffset": 32884,
+                    "startOffset": 32916,
                     "endColumn": 51,
-                    "endOffset": 32931
+                    "endOffset": 32963
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -3030,9 +3030,9 @@
                 "to": {
                     "startLine": 344,
                     "startColumn": 4,
-                    "startOffset": 32936,
+                    "startOffset": 32968,
                     "endColumn": 47,
-                    "endOffset": 32979
+                    "endOffset": 33011
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -3042,9 +3042,9 @@
                 "to": {
                     "startLine": 345,
                     "startColumn": 4,
-                    "startOffset": 32984,
+                    "startOffset": 33016,
                     "endColumn": 41,
-                    "endOffset": 33021
+                    "endOffset": 33053
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -3054,9 +3054,9 @@
                 "to": {
                     "startLine": 346,
                     "startColumn": 4,
-                    "startOffset": 33026,
+                    "startOffset": 33058,
                     "endColumn": 256,
-                    "endOffset": 33278
+                    "endOffset": 33310
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -3066,9 +3066,9 @@
                 "to": {
                     "startLine": 347,
                     "startColumn": 4,
-                    "startOffset": 33283,
+                    "startOffset": 33315,
                     "endColumn": 65,
-                    "endOffset": 33344
+                    "endOffset": 33376
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -3078,9 +3078,9 @@
                 "to": {
                     "startLine": 348,
                     "startColumn": 4,
-                    "startOffset": 33349,
+                    "startOffset": 33381,
                     "endColumn": 41,
-                    "endOffset": 33386
+                    "endOffset": 33418
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -3090,9 +3090,9 @@
                 "to": {
                     "startLine": 349,
                     "startColumn": 4,
-                    "startOffset": 33391,
+                    "startOffset": 33423,
                     "endColumn": 60,
-                    "endOffset": 33447
+                    "endOffset": 33479
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -3102,9 +3102,9 @@
                 "to": {
                     "startLine": 350,
                     "startColumn": 4,
-                    "startOffset": 33452,
+                    "startOffset": 33484,
                     "endColumn": 226,
-                    "endOffset": 33674
+                    "endOffset": 33706
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -3114,9 +3114,9 @@
                 "to": {
                     "startLine": 351,
                     "startColumn": 4,
-                    "startOffset": 33679,
+                    "startOffset": 33711,
                     "endColumn": 82,
-                    "endOffset": 33757
+                    "endOffset": 33789
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -3126,9 +3126,9 @@
                 "to": {
                     "startLine": 352,
                     "startColumn": 4,
-                    "startOffset": 33762,
+                    "startOffset": 33794,
                     "endColumn": 47,
-                    "endOffset": 33805
+                    "endOffset": 33837
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -3138,9 +3138,9 @@
                 "to": {
                     "startLine": 353,
                     "startColumn": 4,
-                    "startOffset": 33810,
+                    "startOffset": 33842,
                     "endColumn": 42,
-                    "endOffset": 33848
+                    "endOffset": 33880
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -3150,9 +3150,9 @@
                 "to": {
                     "startLine": 354,
                     "startColumn": 4,
-                    "startOffset": 33853,
+                    "startOffset": 33885,
                     "endColumn": 93,
-                    "endOffset": 33942
+                    "endOffset": 33974
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -3162,9 +3162,9 @@
                 "to": {
                     "startLine": 355,
                     "startColumn": 4,
-                    "startOffset": 33947,
+                    "startOffset": 33979,
                     "endColumn": 58,
-                    "endOffset": 34001
+                    "endOffset": 34033
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -3174,9 +3174,9 @@
                 "to": {
                     "startLine": 356,
                     "startColumn": 4,
-                    "startOffset": 34006,
+                    "startOffset": 34038,
                     "endColumn": 56,
-                    "endOffset": 34058
+                    "endOffset": 34090
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -3186,9 +3186,9 @@
                 "to": {
                     "startLine": 357,
                     "startColumn": 4,
-                    "startOffset": 34063,
+                    "startOffset": 34095,
                     "endColumn": 48,
-                    "endOffset": 34107
+                    "endOffset": 34139
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/strings.xml"
@@ -3198,10 +3198,10 @@
                 "to": {
                     "startLine": 358,
                     "startColumn": 4,
-                    "startOffset": 34112,
+                    "startOffset": 34144,
                     "endLine": 364,
                     "endColumn": 12,
-                    "endOffset": 34400
+                    "endOffset": 34432
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/styles.xml"
@@ -3211,10 +3211,10 @@
                 "to": {
                     "startLine": 365,
                     "startColumn": 4,
-                    "startOffset": 34405,
+                    "startOffset": 34437,
                     "endLine": 368,
                     "endColumn": 12,
-                    "endOffset": 34640
+                    "endOffset": 34672
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/styles.xml"
@@ -3224,10 +3224,10 @@
                 "to": {
                     "startLine": 369,
                     "startColumn": 4,
-                    "startOffset": 34645,
+                    "startOffset": 34677,
                     "endLine": 375,
                     "endColumn": 12,
-                    "endOffset": 35117
+                    "endOffset": 35149
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -3237,10 +3237,10 @@
                 "to": {
                     "startLine": 376,
                     "startColumn": 4,
-                    "startOffset": 35122,
+                    "startOffset": 35154,
                     "endLine": 379,
                     "endColumn": 12,
-                    "endOffset": 35339
+                    "endOffset": 35371
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -3250,10 +3250,10 @@
                 "to": {
                     "startLine": 380,
                     "startColumn": 4,
-                    "startOffset": 35344,
+                    "startOffset": 35376,
                     "endLine": 383,
                     "endColumn": 12,
-                    "endOffset": 35561
+                    "endOffset": 35593
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -3263,10 +3263,10 @@
                 "to": {
                     "startLine": 384,
                     "startColumn": 4,
-                    "startOffset": 35566,
+                    "startOffset": 35598,
                     "endLine": 388,
                     "endColumn": 12,
-                    "endOffset": 35829
+                    "endOffset": 35861
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -3276,10 +3276,10 @@
                 "to": {
                     "startLine": 389,
                     "startColumn": 4,
-                    "startOffset": 35834,
+                    "startOffset": 35866,
                     "endLine": 392,
                     "endColumn": 12,
-                    "endOffset": 36056
+                    "endOffset": 36088
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -3289,10 +3289,10 @@
                 "to": {
                     "startLine": 393,
                     "startColumn": 4,
-                    "startOffset": 36061,
+                    "startOffset": 36093,
                     "endLine": 396,
                     "endColumn": 12,
-                    "endOffset": 36286
+                    "endOffset": 36318
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -3302,10 +3302,10 @@
                 "to": {
                     "startLine": 397,
                     "startColumn": 4,
-                    "startOffset": 36291,
+                    "startOffset": 36323,
                     "endLine": 400,
                     "endColumn": 12,
-                    "endOffset": 36516
+                    "endOffset": 36548
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -3315,10 +3315,10 @@
                 "to": {
                     "startLine": 401,
                     "startColumn": 4,
-                    "startOffset": 36521,
+                    "startOffset": 36553,
                     "endLine": 404,
                     "endColumn": 12,
-                    "endOffset": 36746
+                    "endOffset": 36778
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -3328,10 +3328,10 @@
                 "to": {
                     "startLine": 405,
                     "startColumn": 4,
-                    "startOffset": 36751,
+                    "startOffset": 36783,
                     "endLine": 408,
                     "endColumn": 12,
-                    "endOffset": 36976
+                    "endOffset": 37008
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -3341,10 +3341,10 @@
                 "to": {
                     "startLine": 409,
                     "startColumn": 4,
-                    "startOffset": 36981,
+                    "startOffset": 37013,
                     "endLine": 412,
                     "endColumn": 12,
-                    "endOffset": 37203
+                    "endOffset": 37235
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -3354,10 +3354,10 @@
                 "to": {
                     "startLine": 413,
                     "startColumn": 4,
-                    "startOffset": 37208,
+                    "startOffset": 37240,
                     "endLine": 416,
                     "endColumn": 12,
-                    "endOffset": 37442
+                    "endOffset": 37474
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -3367,10 +3367,10 @@
                 "to": {
                     "startLine": 417,
                     "startColumn": 4,
-                    "startOffset": 37447,
+                    "startOffset": 37479,
                     "endLine": 420,
                     "endColumn": 12,
-                    "endOffset": 37668
+                    "endOffset": 37700
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -3380,10 +3380,10 @@
                 "to": {
                     "startLine": 421,
                     "startColumn": 4,
-                    "startOffset": 37673,
+                    "startOffset": 37705,
                     "endLine": 424,
                     "endColumn": 12,
-                    "endOffset": 37913
+                    "endOffset": 37945
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -3393,9 +3393,9 @@
                 "to": {
                     "startLine": 425,
                     "startColumn": 4,
-                    "startOffset": 37918,
+                    "startOffset": 37950,
                     "endColumn": 117,
-                    "endOffset": 38031
+                    "endOffset": 38063
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -3405,9 +3405,9 @@
                 "to": {
                     "startLine": 426,
                     "startColumn": 4,
-                    "startOffset": 38036,
+                    "startOffset": 38068,
                     "endColumn": 117,
-                    "endOffset": 38149
+                    "endOffset": 38181
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -3417,10 +3417,10 @@
                 "to": {
                     "startLine": 427,
                     "startColumn": 4,
-                    "startOffset": 38154,
+                    "startOffset": 38186,
                     "endLine": 430,
                     "endColumn": 12,
-                    "endOffset": 38379
+                    "endOffset": 38411
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -3430,10 +3430,10 @@
                 "to": {
                     "startLine": 431,
                     "startColumn": 4,
-                    "startOffset": 38384,
+                    "startOffset": 38416,
                     "endLine": 434,
                     "endColumn": 12,
-                    "endOffset": 38627
+                    "endOffset": 38659
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -3443,10 +3443,10 @@
                 "to": {
                     "startLine": 435,
                     "startColumn": 4,
-                    "startOffset": 38632,
+                    "startOffset": 38664,
                     "endLine": 438,
                     "endColumn": 12,
-                    "endOffset": 38846
+                    "endOffset": 38878
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -3456,10 +3456,10 @@
                 "to": {
                     "startLine": 439,
                     "startColumn": 4,
-                    "startOffset": 38851,
+                    "startOffset": 38883,
                     "endLine": 443,
                     "endColumn": 12,
-                    "endOffset": 39129
+                    "endOffset": 39161
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -3469,10 +3469,10 @@
                 "to": {
                     "startLine": 444,
                     "startColumn": 4,
-                    "startOffset": 39134,
+                    "startOffset": 39166,
                     "endLine": 447,
                     "endColumn": 12,
-                    "endOffset": 39337
+                    "endOffset": 39369
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -3482,10 +3482,10 @@
                 "to": {
                     "startLine": 448,
                     "startColumn": 4,
-                    "startOffset": 39342,
+                    "startOffset": 39374,
                     "endLine": 450,
                     "endColumn": 12,
-                    "endOffset": 39468
+                    "endOffset": 39500
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -3495,10 +3495,10 @@
                 "to": {
                     "startLine": 451,
                     "startColumn": 4,
-                    "startOffset": 39473,
+                    "startOffset": 39505,
                     "endLine": 454,
                     "endColumn": 12,
-                    "endOffset": 39695
+                    "endOffset": 39727
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -3508,10 +3508,10 @@
                 "to": {
                     "startLine": 455,
                     "startColumn": 4,
-                    "startOffset": 39700,
+                    "startOffset": 39732,
                     "endLine": 458,
                     "endColumn": 12,
-                    "endOffset": 39941
+                    "endOffset": 39973
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -3521,10 +3521,10 @@
                 "to": {
                     "startLine": 459,
                     "startColumn": 4,
-                    "startOffset": 39946,
+                    "startOffset": 39978,
                     "endLine": 462,
                     "endColumn": 12,
-                    "endOffset": 40166
+                    "endOffset": 40198
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -3534,10 +3534,10 @@
                 "to": {
                     "startLine": 463,
                     "startColumn": 4,
-                    "startOffset": 40171,
+                    "startOffset": 40203,
                     "endLine": 466,
                     "endColumn": 12,
-                    "endOffset": 40415
+                    "endOffset": 40447
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -3547,10 +3547,10 @@
                 "to": {
                     "startLine": 467,
                     "startColumn": 4,
-                    "startOffset": 40420,
+                    "startOffset": 40452,
                     "endLine": 470,
                     "endColumn": 12,
-                    "endOffset": 40636
+                    "endOffset": 40668
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -3560,10 +3560,10 @@
                 "to": {
                     "startLine": 471,
                     "startColumn": 4,
-                    "startOffset": 40641,
+                    "startOffset": 40673,
                     "endLine": 474,
                     "endColumn": 12,
-                    "endOffset": 40881
+                    "endOffset": 40913
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -3573,10 +3573,10 @@
                 "to": {
                     "startLine": 475,
                     "startColumn": 4,
-                    "startOffset": 40886,
+                    "startOffset": 40918,
                     "endLine": 479,
                     "endColumn": 12,
-                    "endOffset": 41176
+                    "endOffset": 41208
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -3586,10 +3586,10 @@
                 "to": {
                     "startLine": 480,
                     "startColumn": 4,
-                    "startOffset": 41181,
+                    "startOffset": 41213,
                     "endLine": 482,
                     "endColumn": 12,
-                    "endOffset": 41398
+                    "endOffset": 41430
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -3599,10 +3599,10 @@
                 "to": {
                     "startLine": 483,
                     "startColumn": 4,
-                    "startOffset": 41403,
+                    "startOffset": 41435,
                     "endLine": 485,
                     "endColumn": 12,
-                    "endOffset": 41636
+                    "endOffset": 41668
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -3612,10 +3612,10 @@
                 "to": {
                     "startLine": 486,
                     "startColumn": 4,
-                    "startOffset": 41641,
+                    "startOffset": 41673,
                     "endLine": 488,
                     "endColumn": 12,
-                    "endOffset": 41850
+                    "endOffset": 41882
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -3625,10 +3625,10 @@
                 "to": {
                     "startLine": 489,
                     "startColumn": 4,
-                    "startOffset": 41855,
+                    "startOffset": 41887,
                     "endLine": 491,
                     "endColumn": 12,
-                    "endOffset": 42080
+                    "endOffset": 42112
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -3638,10 +3638,10 @@
                 "to": {
                     "startLine": 492,
                     "startColumn": 4,
-                    "startOffset": 42085,
+                    "startOffset": 42117,
                     "endLine": 494,
                     "endColumn": 12,
-                    "endOffset": 42303
+                    "endOffset": 42335
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -3651,10 +3651,10 @@
                 "to": {
                     "startLine": 495,
                     "startColumn": 4,
-                    "startOffset": 42308,
+                    "startOffset": 42340,
                     "endLine": 497,
                     "endColumn": 12,
-                    "endOffset": 42518
+                    "endOffset": 42550
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -3664,10 +3664,10 @@
                 "to": {
                     "startLine": 498,
                     "startColumn": 4,
-                    "startOffset": 42523,
+                    "startOffset": 42555,
                     "endLine": 500,
                     "endColumn": 12,
-                    "endOffset": 42726
+                    "endOffset": 42758
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -3677,9 +3677,9 @@
                 "to": {
                     "startLine": 501,
                     "startColumn": 4,
-                    "startOffset": 42731,
+                    "startOffset": 42763,
                     "endColumn": 111,
-                    "endOffset": 42838
+                    "endOffset": 42870
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -3689,9 +3689,9 @@
                 "to": {
                     "startLine": 502,
                     "startColumn": 4,
-                    "startOffset": 42843,
+                    "startOffset": 42875,
                     "endColumn": 111,
-                    "endOffset": 42950
+                    "endOffset": 42982
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -3701,9 +3701,9 @@
                 "to": {
                     "startLine": 503,
                     "startColumn": 4,
-                    "startOffset": 42955,
+                    "startOffset": 42987,
                     "endColumn": 104,
-                    "endOffset": 43055
+                    "endOffset": 43087
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -3713,10 +3713,10 @@
                 "to": {
                     "startLine": 504,
                     "startColumn": 4,
-                    "startOffset": 43060,
+                    "startOffset": 43092,
                     "endLine": 506,
                     "endColumn": 12,
-                    "endOffset": 43269
+                    "endOffset": 43301
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -3726,9 +3726,9 @@
                 "to": {
                     "startLine": 507,
                     "startColumn": 4,
-                    "startOffset": 43274,
+                    "startOffset": 43306,
                     "endColumn": 133,
-                    "endOffset": 43403
+                    "endOffset": 43435
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -3738,9 +3738,9 @@
                 "to": {
                     "startLine": 508,
                     "startColumn": 4,
-                    "startOffset": 43408,
+                    "startOffset": 43440,
                     "endColumn": 127,
-                    "endOffset": 43531
+                    "endOffset": 43563
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -3750,9 +3750,9 @@
                 "to": {
                     "startLine": 509,
                     "startColumn": 4,
-                    "startOffset": 43536,
+                    "startOffset": 43568,
                     "endColumn": 73,
-                    "endOffset": 43605
+                    "endOffset": 43637
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -3762,10 +3762,10 @@
                 "to": {
                     "startLine": 510,
                     "startColumn": 4,
-                    "startOffset": 43610,
+                    "startOffset": 43642,
                     "endLine": 513,
                     "endColumn": 12,
-                    "endOffset": 43858
+                    "endOffset": 43890
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -3775,9 +3775,9 @@
                 "to": {
                     "startLine": 514,
                     "startColumn": 4,
-                    "startOffset": 43863,
+                    "startOffset": 43895,
                     "endColumn": 87,
-                    "endOffset": 43946
+                    "endOffset": 43978
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -3787,10 +3787,10 @@
                 "to": {
                     "startLine": 515,
                     "startColumn": 4,
-                    "startOffset": 43951,
+                    "startOffset": 43983,
                     "endLine": 520,
                     "endColumn": 12,
-                    "endOffset": 44348
+                    "endOffset": 44380
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -3800,9 +3800,9 @@
                 "to": {
                     "startLine": 521,
                     "startColumn": 4,
-                    "startOffset": 44353,
+                    "startOffset": 44385,
                     "endColumn": 81,
-                    "endOffset": 44430
+                    "endOffset": 44462
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -3812,9 +3812,9 @@
                 "to": {
                     "startLine": 522,
                     "startColumn": 4,
-                    "startOffset": 44435,
+                    "startOffset": 44467,
                     "endColumn": 85,
-                    "endOffset": 44516
+                    "endOffset": 44548
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -3824,10 +3824,10 @@
                 "to": {
                     "startLine": 523,
                     "startColumn": 4,
-                    "startOffset": 44521,
+                    "startOffset": 44553,
                     "endLine": 532,
                     "endColumn": 12,
-                    "endOffset": 45132
+                    "endOffset": 45164
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -3837,9 +3837,9 @@
                 "to": {
                     "startLine": 533,
                     "startColumn": 4,
-                    "startOffset": 45137,
+                    "startOffset": 45169,
                     "endColumn": 90,
-                    "endOffset": 45223
+                    "endOffset": 45255
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -3849,10 +3849,10 @@
                 "to": {
                     "startLine": 534,
                     "startColumn": 4,
-                    "startOffset": 45228,
+                    "startOffset": 45260,
                     "endLine": 539,
                     "endColumn": 12,
-                    "endOffset": 45631
+                    "endOffset": 45663
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -3862,9 +3862,9 @@
                 "to": {
                     "startLine": 540,
                     "startColumn": 4,
-                    "startOffset": 45636,
+                    "startOffset": 45668,
                     "endColumn": 93,
-                    "endOffset": 45725
+                    "endOffset": 45757
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -3874,9 +3874,9 @@
                 "to": {
                     "startLine": 541,
                     "startColumn": 4,
-                    "startOffset": 45730,
+                    "startOffset": 45762,
                     "endColumn": 57,
-                    "endOffset": 45783
+                    "endOffset": 45815
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -3886,10 +3886,10 @@
                 "to": {
                     "startLine": 542,
                     "startColumn": 4,
-                    "startOffset": 45788,
+                    "startOffset": 45820,
                     "endLine": 544,
                     "endColumn": 12,
-                    "endOffset": 45931
+                    "endOffset": 45963
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -3899,10 +3899,10 @@
                 "to": {
                     "startLine": 545,
                     "startColumn": 4,
-                    "startOffset": 45936,
+                    "startOffset": 45968,
                     "endLine": 577,
                     "endColumn": 12,
-                    "endOffset": 48424
+                    "endOffset": 48456
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -3912,10 +3912,10 @@
                 "to": {
                     "startLine": 578,
                     "startColumn": 4,
-                    "startOffset": 48429,
+                    "startOffset": 48461,
                     "endLine": 580,
                     "endColumn": 12,
-                    "endOffset": 48577
+                    "endOffset": 48609
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -3925,10 +3925,10 @@
                 "to": {
                     "startLine": 581,
                     "startColumn": 4,
-                    "startOffset": 48582,
+                    "startOffset": 48614,
                     "endLine": 612,
                     "endColumn": 12,
-                    "endOffset": 51182
+                    "endOffset": 51214
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -3938,10 +3938,10 @@
                 "to": {
                     "startLine": 613,
                     "startColumn": 4,
-                    "startOffset": 51187,
+                    "startOffset": 51219,
                     "endLine": 711,
                     "endColumn": 12,
-                    "endOffset": 57925
+                    "endOffset": 57957
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -3951,10 +3951,10 @@
                 "to": {
                     "startLine": 712,
                     "startColumn": 4,
-                    "startOffset": 57930,
+                    "startOffset": 57962,
                     "endLine": 807,
                     "endColumn": 12,
-                    "endOffset": 64547
+                    "endOffset": 64579
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -3964,10 +3964,10 @@
                 "to": {
                     "startLine": 808,
                     "startColumn": 4,
-                    "startOffset": 64552,
+                    "startOffset": 64584,
                     "endLine": 906,
                     "endColumn": 12,
-                    "endOffset": 71386
+                    "endOffset": 71418
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -3977,10 +3977,10 @@
                 "to": {
                     "startLine": 907,
                     "startColumn": 4,
-                    "startOffset": 71391,
+                    "startOffset": 71423,
                     "endLine": 921,
                     "endColumn": 12,
-                    "endOffset": 72325
+                    "endOffset": 72357
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -3990,10 +3990,10 @@
                 "to": {
                     "startLine": 922,
                     "startColumn": 4,
-                    "startOffset": 72330,
+                    "startOffset": 72362,
                     "endLine": 926,
                     "endColumn": 12,
-                    "endOffset": 72581
+                    "endOffset": 72613
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -4003,10 +4003,10 @@
                 "to": {
                     "startLine": 927,
                     "startColumn": 4,
-                    "startOffset": 72586,
+                    "startOffset": 72618,
                     "endLine": 931,
                     "endColumn": 12,
-                    "endOffset": 72817
+                    "endOffset": 72849
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -4016,10 +4016,10 @@
                 "to": {
                     "startLine": 932,
                     "startColumn": 4,
-                    "startOffset": 72822,
+                    "startOffset": 72854,
                     "endLine": 941,
                     "endColumn": 12,
-                    "endOffset": 73364
+                    "endOffset": 73396
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -4029,10 +4029,10 @@
                 "to": {
                     "startLine": 942,
                     "startColumn": 4,
-                    "startOffset": 73369,
+                    "startOffset": 73401,
                     "endLine": 950,
                     "endColumn": 12,
-                    "endOffset": 73858
+                    "endOffset": 73890
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -4042,10 +4042,10 @@
                 "to": {
                     "startLine": 951,
                     "startColumn": 4,
-                    "startOffset": 73863,
+                    "startOffset": 73895,
                     "endLine": 961,
                     "endColumn": 12,
-                    "endOffset": 74531
+                    "endOffset": 74563
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -4055,10 +4055,10 @@
                 "to": {
                     "startLine": 962,
                     "startColumn": 4,
-                    "startOffset": 74536,
+                    "startOffset": 74568,
                     "endLine": 964,
                     "endColumn": 12,
-                    "endOffset": 74696
+                    "endOffset": 74728
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -4068,10 +4068,10 @@
                 "to": {
                     "startLine": 965,
                     "startColumn": 4,
-                    "startOffset": 74701,
+                    "startOffset": 74733,
                     "endLine": 971,
                     "endColumn": 12,
-                    "endOffset": 75224
+                    "endOffset": 75256
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -4081,10 +4081,10 @@
                 "to": {
                     "startLine": 972,
                     "startColumn": 4,
-                    "startOffset": 75229,
+                    "startOffset": 75261,
                     "endLine": 979,
                     "endColumn": 12,
-                    "endOffset": 75788
+                    "endOffset": 75820
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -4094,10 +4094,10 @@
                 "to": {
                     "startLine": 980,
                     "startColumn": 4,
-                    "startOffset": 75793,
+                    "startOffset": 75825,
                     "endLine": 986,
                     "endColumn": 12,
-                    "endOffset": 76162
+                    "endOffset": 76194
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -4107,10 +4107,10 @@
                 "to": {
                     "startLine": 987,
                     "startColumn": 4,
-                    "startOffset": 76167,
+                    "startOffset": 76199,
                     "endLine": 991,
                     "endColumn": 12,
-                    "endOffset": 76532
+                    "endOffset": 76564
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -4120,10 +4120,10 @@
                 "to": {
                     "startLine": 992,
                     "startColumn": 4,
-                    "startOffset": 76537,
+                    "startOffset": 76569,
                     "endLine": 998,
                     "endColumn": 12,
-                    "endOffset": 77023
+                    "endOffset": 77055
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -4133,10 +4133,10 @@
                 "to": {
                     "startLine": 999,
                     "startColumn": 4,
-                    "startOffset": 77028,
+                    "startOffset": 77060,
                     "endLine": 1008,
                     "endColumn": 12,
-                    "endOffset": 77500
+                    "endOffset": 77532
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -4146,10 +4146,10 @@
                 "to": {
                     "startLine": 1009,
                     "startColumn": 4,
-                    "startOffset": 77505,
+                    "startOffset": 77537,
                     "endLine": 1014,
                     "endColumn": 12,
-                    "endOffset": 77853
+                    "endOffset": 77885
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -4159,10 +4159,10 @@
                 "to": {
                     "startLine": 1015,
                     "startColumn": 4,
-                    "startOffset": 77858,
+                    "startOffset": 77890,
                     "endLine": 1019,
                     "endColumn": 12,
-                    "endOffset": 78180
+                    "endOffset": 78212
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -4172,10 +4172,10 @@
                 "to": {
                     "startLine": 1020,
                     "startColumn": 4,
-                    "startOffset": 78185,
+                    "startOffset": 78217,
                     "endLine": 1023,
                     "endColumn": 12,
-                    "endOffset": 78486
+                    "endOffset": 78518
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -4185,10 +4185,10 @@
                 "to": {
                     "startLine": 1024,
                     "startColumn": 4,
-                    "startOffset": 78491,
+                    "startOffset": 78523,
                     "endLine": 1028,
                     "endColumn": 12,
-                    "endOffset": 78748
+                    "endOffset": 78780
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -4198,9 +4198,9 @@
                 "to": {
                     "startLine": 1029,
                     "startColumn": 4,
-                    "startOffset": 78753,
+                    "startOffset": 78785,
                     "endColumn": 112,
-                    "endOffset": 78861
+                    "endOffset": 78893
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -4210,9 +4210,9 @@
                 "to": {
                     "startLine": 1030,
                     "startColumn": 4,
-                    "startOffset": 78866,
+                    "startOffset": 78898,
                     "endColumn": 114,
-                    "endOffset": 78976
+                    "endOffset": 79008
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -4222,10 +4222,10 @@
                 "to": {
                     "startLine": 1031,
                     "startColumn": 4,
-                    "startOffset": 78981,
+                    "startOffset": 79013,
                     "endLine": 1033,
                     "endColumn": 12,
-                    "endOffset": 79215
+                    "endOffset": 79247
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -4235,10 +4235,10 @@
                 "to": {
                     "startLine": 1034,
                     "startColumn": 4,
-                    "startOffset": 79220,
+                    "startOffset": 79252,
                     "endLine": 1036,
                     "endColumn": 12,
-                    "endOffset": 79426
+                    "endOffset": 79458
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -4248,10 +4248,10 @@
                 "to": {
                     "startLine": 1037,
                     "startColumn": 4,
-                    "startOffset": 79431,
+                    "startOffset": 79463,
                     "endLine": 1039,
                     "endColumn": 12,
-                    "endOffset": 79643
+                    "endOffset": 79675
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -4261,10 +4261,10 @@
                 "to": {
                     "startLine": 1040,
                     "startColumn": 4,
-                    "startOffset": 79648,
+                    "startOffset": 79680,
                     "endLine": 1042,
                     "endColumn": 12,
-                    "endOffset": 79861
+                    "endOffset": 79893
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -4274,9 +4274,9 @@
                 "to": {
                     "startLine": 1043,
                     "startColumn": 4,
-                    "startOffset": 79866,
+                    "startOffset": 79898,
                     "endColumn": 106,
-                    "endOffset": 79968
+                    "endOffset": 80000
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -4286,10 +4286,10 @@
                 "to": {
                     "startLine": 1044,
                     "startColumn": 4,
-                    "startOffset": 79973,
+                    "startOffset": 80005,
                     "endLine": 1047,
                     "endColumn": 12,
-                    "endOffset": 80161
+                    "endOffset": 80193
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -4299,10 +4299,10 @@
                 "to": {
                     "startLine": 1048,
                     "startColumn": 4,
-                    "startOffset": 80166,
+                    "startOffset": 80198,
                     "endLine": 1054,
                     "endColumn": 12,
-                    "endOffset": 80616
+                    "endOffset": 80648
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -4312,10 +4312,10 @@
                 "to": {
                     "startLine": 1055,
                     "startColumn": 4,
-                    "startOffset": 80621,
+                    "startOffset": 80653,
                     "endLine": 1058,
                     "endColumn": 12,
-                    "endOffset": 80856
+                    "endOffset": 80888
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -4325,10 +4325,10 @@
                 "to": {
                     "startLine": 1059,
                     "startColumn": 4,
-                    "startOffset": 80861,
+                    "startOffset": 80893,
                     "endLine": 1062,
                     "endColumn": 12,
-                    "endOffset": 81115
+                    "endOffset": 81147
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -4338,9 +4338,9 @@
                 "to": {
                     "startLine": 1063,
                     "startColumn": 4,
-                    "startOffset": 81120,
+                    "startOffset": 81152,
                     "endColumn": 100,
-                    "endOffset": 81216
+                    "endOffset": 81248
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -4350,10 +4350,10 @@
                 "to": {
                     "startLine": 1064,
                     "startColumn": 4,
-                    "startOffset": 81221,
+                    "startOffset": 81253,
                     "endLine": 1067,
                     "endColumn": 12,
-                    "endOffset": 81403
+                    "endOffset": 81435
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -4363,9 +4363,9 @@
                 "to": {
                     "startLine": 1068,
                     "startColumn": 4,
-                    "startOffset": 81408,
+                    "startOffset": 81440,
                     "endColumn": 89,
-                    "endOffset": 81493
+                    "endOffset": 81525
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -4375,10 +4375,10 @@
                 "to": {
                     "startLine": 1069,
                     "startColumn": 4,
-                    "startOffset": 81498,
+                    "startOffset": 81530,
                     "endLine": 1074,
                     "endColumn": 12,
-                    "endOffset": 81937
+                    "endOffset": 81969
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -4388,9 +4388,9 @@
                 "to": {
                     "startLine": 1075,
                     "startColumn": 4,
-                    "startOffset": 81942,
+                    "startOffset": 81974,
                     "endColumn": 111,
-                    "endOffset": 82049
+                    "endOffset": 82081
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -4400,10 +4400,10 @@
                 "to": {
                     "startLine": 1076,
                     "startColumn": 4,
-                    "startOffset": 82054,
+                    "startOffset": 82086,
                     "endLine": 1086,
                     "endColumn": 12,
-                    "endOffset": 82854
+                    "endOffset": 82886
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -4413,10 +4413,10 @@
                 "to": {
                     "startLine": 1087,
                     "startColumn": 4,
-                    "startOffset": 82859,
+                    "startOffset": 82891,
                     "endLine": 1091,
                     "endColumn": 12,
-                    "endOffset": 83184
+                    "endOffset": 83216
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -4426,10 +4426,10 @@
                 "to": {
                     "startLine": 1092,
                     "startColumn": 4,
-                    "startOffset": 83189,
+                    "startOffset": 83221,
                     "endLine": 1105,
                     "endColumn": 12,
-                    "endOffset": 84103
+                    "endOffset": 84135
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -4439,10 +4439,10 @@
                 "to": {
                     "startLine": 1106,
                     "startColumn": 4,
-                    "startOffset": 84108,
+                    "startOffset": 84140,
                     "endLine": 1115,
                     "endColumn": 12,
-                    "endOffset": 84769
+                    "endOffset": 84801
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -4452,10 +4452,10 @@
                 "to": {
                     "startLine": 1116,
                     "startColumn": 4,
-                    "startOffset": 84774,
+                    "startOffset": 84806,
                     "endLine": 1120,
                     "endColumn": 12,
-                    "endOffset": 85054
+                    "endOffset": 85086
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -4465,10 +4465,10 @@
                 "to": {
                     "startLine": 1121,
                     "startColumn": 4,
-                    "startOffset": 85059,
+                    "startOffset": 85091,
                     "endLine": 1126,
                     "endColumn": 12,
-                    "endOffset": 85339
+                    "endOffset": 85371
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/styles.xml"
@@ -4478,10 +4478,10 @@
                 "to": {
                     "startLine": 1127,
                     "startColumn": 4,
-                    "startOffset": 85344,
+                    "startOffset": 85376,
                     "endLine": 1132,
                     "endColumn": 12,
-                    "endOffset": 85636
+                    "endOffset": 85668
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/src/main/res/values/styles.xml"
@@ -4491,10 +4491,10 @@
                 "to": {
                     "startLine": 1133,
                     "startColumn": 4,
-                    "startOffset": 85641,
+                    "startOffset": 85673,
                     "endLine": 1173,
                     "endColumn": 12,
-                    "endOffset": 88815
+                    "endOffset": 88847
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -4504,10 +4504,10 @@
                 "to": {
                     "startLine": 1174,
                     "startColumn": 4,
-                    "startOffset": 88820,
+                    "startOffset": 88852,
                     "endLine": 1214,
                     "endColumn": 12,
-                    "endOffset": 92008
+                    "endOffset": 92040
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -4517,10 +4517,10 @@
                 "to": {
                     "startLine": 1215,
                     "startColumn": 4,
-                    "startOffset": 92013,
+                    "startOffset": 92045,
                     "endLine": 1256,
                     "endColumn": 12,
-                    "endOffset": 95327
+                    "endOffset": 95359
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -4530,9 +4530,9 @@
                 "to": {
                     "startLine": 1257,
                     "startColumn": 4,
-                    "startOffset": 95332,
+                    "startOffset": 95364,
                     "endColumn": 86,
-                    "endOffset": 95414
+                    "endOffset": 95446
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -4542,10 +4542,10 @@
                 "to": {
                     "startLine": 1258,
                     "startColumn": 4,
-                    "startOffset": 95419,
+                    "startOffset": 95451,
                     "endLine": 1261,
                     "endColumn": 12,
-                    "endOffset": 95643
+                    "endOffset": 95675
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -4555,10 +4555,10 @@
                 "to": {
                     "startLine": 1262,
                     "startColumn": 4,
-                    "startOffset": 95648,
+                    "startOffset": 95680,
                     "endLine": 1265,
                     "endColumn": 12,
-                    "endOffset": 95892
+                    "endOffset": 95924
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -4568,10 +4568,10 @@
                 "to": {
                     "startLine": 1266,
                     "startColumn": 4,
-                    "startOffset": 95897,
+                    "startOffset": 95929,
                     "endLine": 1269,
                     "endColumn": 12,
-                    "endOffset": 96133
+                    "endOffset": 96165
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -4581,10 +4581,10 @@
                 "to": {
                     "startLine": 1270,
                     "startColumn": 4,
-                    "startOffset": 96138,
+                    "startOffset": 96170,
                     "endLine": 1272,
                     "endColumn": 12,
-                    "endOffset": 96285
+                    "endOffset": 96317
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -4594,10 +4594,10 @@
                 "to": {
                     "startLine": 1273,
                     "startColumn": 4,
-                    "startOffset": 96290,
+                    "startOffset": 96322,
                     "endLine": 1275,
                     "endColumn": 12,
-                    "endOffset": 96456
+                    "endOffset": 96488
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -4607,10 +4607,10 @@
                 "to": {
                     "startLine": 1276,
                     "startColumn": 4,
-                    "startOffset": 96461,
+                    "startOffset": 96493,
                     "endLine": 1278,
                     "endColumn": 12,
-                    "endOffset": 96623
+                    "endOffset": 96655
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -4620,10 +4620,10 @@
                 "to": {
                     "startLine": 1279,
                     "startColumn": 4,
-                    "startOffset": 96628,
+                    "startOffset": 96660,
                     "endLine": 1282,
                     "endColumn": 12,
-                    "endOffset": 96866
+                    "endOffset": 96898
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -4633,10 +4633,10 @@
                 "to": {
                     "startLine": 1283,
                     "startColumn": 4,
-                    "startOffset": 96871,
+                    "startOffset": 96903,
                     "endLine": 1285,
                     "endColumn": 12,
-                    "endOffset": 97036
+                    "endOffset": 97068
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -4646,10 +4646,10 @@
                 "to": {
                     "startLine": 1286,
                     "startColumn": 4,
-                    "startOffset": 97041,
+                    "startOffset": 97073,
                     "endLine": 1288,
                     "endColumn": 12,
-                    "endOffset": 97209
+                    "endOffset": 97241
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -4659,10 +4659,10 @@
                 "to": {
                     "startLine": 1289,
                     "startColumn": 4,
-                    "startOffset": 97214,
+                    "startOffset": 97246,
                     "endLine": 1291,
                     "endColumn": 12,
-                    "endOffset": 97380
+                    "endOffset": 97412
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -4672,10 +4672,10 @@
                 "to": {
                     "startLine": 1292,
                     "startColumn": 4,
-                    "startOffset": 97385,
+                    "startOffset": 97417,
                     "endLine": 1295,
                     "endColumn": 12,
-                    "endOffset": 97654
+                    "endOffset": 97686
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -4685,10 +4685,10 @@
                 "to": {
                     "startLine": 1296,
                     "startColumn": 4,
-                    "startOffset": 97659,
+                    "startOffset": 97691,
                     "endLine": 1298,
                     "endColumn": 12,
-                    "endOffset": 97853
+                    "endOffset": 97885
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -4698,9 +4698,9 @@
                 "to": {
                     "startLine": 1299,
                     "startColumn": 4,
-                    "startOffset": 97858,
+                    "startOffset": 97890,
                     "endColumn": 83,
-                    "endOffset": 97937
+                    "endOffset": 97969
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -4710,9 +4710,9 @@
                 "to": {
                     "startLine": 1300,
                     "startColumn": 4,
-                    "startOffset": 97942,
+                    "startOffset": 97974,
                     "endColumn": 95,
-                    "endOffset": 98033
+                    "endOffset": 98065
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -4722,9 +4722,9 @@
                 "to": {
                     "startLine": 1301,
                     "startColumn": 4,
-                    "startOffset": 98038,
+                    "startOffset": 98070,
                     "endColumn": 95,
-                    "endOffset": 98129
+                    "endOffset": 98161
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -4734,9 +4734,9 @@
                 "to": {
                     "startLine": 1302,
                     "startColumn": 4,
-                    "startOffset": 98134,
+                    "startOffset": 98166,
                     "endColumn": 97,
-                    "endOffset": 98227
+                    "endOffset": 98259
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -4746,9 +4746,9 @@
                 "to": {
                     "startLine": 1303,
                     "startColumn": 4,
-                    "startOffset": 98232,
+                    "startOffset": 98264,
                     "endColumn": 99,
-                    "endOffset": 98327
+                    "endOffset": 98359
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -4758,9 +4758,9 @@
                 "to": {
                     "startLine": 1304,
                     "startColumn": 4,
-                    "startOffset": 98332,
+                    "startOffset": 98364,
                     "endColumn": 101,
-                    "endOffset": 98429
+                    "endOffset": 98461
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -4770,9 +4770,9 @@
                 "to": {
                     "startLine": 1305,
                     "startColumn": 4,
-                    "startOffset": 98434,
+                    "startOffset": 98466,
                     "endColumn": 101,
-                    "endOffset": 98531
+                    "endOffset": 98563
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -4782,9 +4782,9 @@
                 "to": {
                     "startLine": 1306,
                     "startColumn": 4,
-                    "startOffset": 98536,
+                    "startOffset": 98568,
                     "endColumn": 101,
-                    "endOffset": 98633
+                    "endOffset": 98665
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -4794,9 +4794,9 @@
                 "to": {
                     "startLine": 1307,
                     "startColumn": 4,
-                    "startOffset": 98638,
+                    "startOffset": 98670,
                     "endColumn": 101,
-                    "endOffset": 98735
+                    "endOffset": 98767
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -4806,9 +4806,9 @@
                 "to": {
                     "startLine": 1308,
                     "startColumn": 4,
-                    "startOffset": 98740,
+                    "startOffset": 98772,
                     "endColumn": 101,
-                    "endOffset": 98837
+                    "endOffset": 98869
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -4818,9 +4818,9 @@
                 "to": {
                     "startLine": 1309,
                     "startColumn": 4,
-                    "startOffset": 98842,
+                    "startOffset": 98874,
                     "endColumn": 99,
-                    "endOffset": 98937
+                    "endOffset": 98969
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -4830,9 +4830,9 @@
                 "to": {
                     "startLine": 1310,
                     "startColumn": 4,
-                    "startOffset": 98942,
+                    "startOffset": 98974,
                     "endColumn": 95,
-                    "endOffset": 99033
+                    "endOffset": 99065
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -4842,9 +4842,9 @@
                 "to": {
                     "startLine": 1311,
                     "startColumn": 4,
-                    "startOffset": 99038,
+                    "startOffset": 99070,
                     "endColumn": 111,
-                    "endOffset": 99145
+                    "endOffset": 99177
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -4854,9 +4854,9 @@
                 "to": {
                     "startLine": 1312,
                     "startColumn": 4,
-                    "startOffset": 99150,
+                    "startOffset": 99182,
                     "endColumn": 128,
-                    "endOffset": 99274
+                    "endOffset": 99306
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -4866,9 +4866,9 @@
                 "to": {
                     "startLine": 1313,
                     "startColumn": 4,
-                    "startOffset": 99279,
+                    "startOffset": 99311,
                     "endColumn": 122,
-                    "endOffset": 99397
+                    "endOffset": 99429
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -4878,9 +4878,9 @@
                 "to": {
                     "startLine": 1314,
                     "startColumn": 4,
-                    "startOffset": 99402,
+                    "startOffset": 99434,
                     "endColumn": 141,
-                    "endOffset": 99539
+                    "endOffset": 99571
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -4890,9 +4890,9 @@
                 "to": {
                     "startLine": 1315,
                     "startColumn": 4,
-                    "startOffset": 99544,
+                    "startOffset": 99576,
                     "endColumn": 141,
-                    "endOffset": 99681
+                    "endOffset": 99713
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -4902,9 +4902,9 @@
                 "to": {
                     "startLine": 1316,
                     "startColumn": 4,
-                    "startOffset": 99686,
+                    "startOffset": 99718,
                     "endColumn": 97,
-                    "endOffset": 99779
+                    "endOffset": 99811
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -4914,9 +4914,9 @@
                 "to": {
                     "startLine": 1317,
                     "startColumn": 4,
-                    "startOffset": 99784,
+                    "startOffset": 99816,
                     "endColumn": 113,
-                    "endOffset": 99893
+                    "endOffset": 99925
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -4926,9 +4926,9 @@
                 "to": {
                     "startLine": 1318,
                     "startColumn": 4,
-                    "startOffset": 99898,
+                    "startOffset": 99930,
                     "endColumn": 93,
-                    "endOffset": 99987
+                    "endOffset": 100019
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -4938,9 +4938,9 @@
                 "to": {
                     "startLine": 1319,
                     "startColumn": 4,
-                    "startOffset": 99992,
+                    "startOffset": 100024,
                     "endColumn": 127,
-                    "endOffset": 100115
+                    "endOffset": 100147
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -4950,9 +4950,9 @@
                 "to": {
                     "startLine": 1320,
                     "startColumn": 4,
-                    "startOffset": 100120,
+                    "startOffset": 100152,
                     "endColumn": 121,
-                    "endOffset": 100237
+                    "endOffset": 100269
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -4962,9 +4962,9 @@
                 "to": {
                     "startLine": 1321,
                     "startColumn": 4,
-                    "startOffset": 100242,
+                    "startOffset": 100274,
                     "endColumn": 95,
-                    "endOffset": 100333
+                    "endOffset": 100365
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -4974,9 +4974,9 @@
                 "to": {
                     "startLine": 1322,
                     "startColumn": 4,
-                    "startOffset": 100338,
+                    "startOffset": 100370,
                     "endColumn": 111,
-                    "endOffset": 100445
+                    "endOffset": 100477
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -4986,9 +4986,9 @@
                 "to": {
                     "startLine": 1323,
                     "startColumn": 4,
-                    "startOffset": 100450,
+                    "startOffset": 100482,
                     "endColumn": 99,
-                    "endOffset": 100545
+                    "endOffset": 100577
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -4998,9 +4998,9 @@
                 "to": {
                     "startLine": 1324,
                     "startColumn": 4,
-                    "startOffset": 100550,
+                    "startOffset": 100582,
                     "endColumn": 115,
-                    "endOffset": 100661
+                    "endOffset": 100693
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5010,9 +5010,9 @@
                 "to": {
                     "startLine": 1325,
                     "startColumn": 4,
-                    "startOffset": 100666,
+                    "startOffset": 100698,
                     "endColumn": 95,
-                    "endOffset": 100757
+                    "endOffset": 100789
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5022,9 +5022,9 @@
                 "to": {
                     "startLine": 1326,
                     "startColumn": 4,
-                    "startOffset": 100762,
+                    "startOffset": 100794,
                     "endColumn": 111,
-                    "endOffset": 100869
+                    "endOffset": 100901
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5034,9 +5034,9 @@
                 "to": {
                     "startLine": 1327,
                     "startColumn": 4,
-                    "startOffset": 100874,
+                    "startOffset": 100906,
                     "endColumn": 127,
-                    "endOffset": 100997
+                    "endOffset": 101029
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5046,9 +5046,9 @@
                 "to": {
                     "startLine": 1328,
                     "startColumn": 4,
-                    "startOffset": 101002,
+                    "startOffset": 101034,
                     "endColumn": 135,
-                    "endOffset": 101133
+                    "endOffset": 101165
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5058,9 +5058,9 @@
                 "to": {
                     "startLine": 1329,
                     "startColumn": 4,
-                    "startOffset": 101138,
+                    "startOffset": 101170,
                     "endColumn": 151,
-                    "endOffset": 101285
+                    "endOffset": 101317
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5070,9 +5070,9 @@
                 "to": {
                     "startLine": 1330,
                     "startColumn": 4,
-                    "startOffset": 101290,
+                    "startOffset": 101322,
                     "endColumn": 129,
-                    "endOffset": 101415
+                    "endOffset": 101447
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5082,9 +5082,9 @@
                 "to": {
                     "startLine": 1331,
                     "startColumn": 4,
-                    "startOffset": 101420,
+                    "startOffset": 101452,
                     "endColumn": 145,
-                    "endOffset": 101561
+                    "endOffset": 101593
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5094,9 +5094,9 @@
                 "to": {
                     "startLine": 1332,
                     "startColumn": 4,
-                    "startOffset": 101566,
+                    "startOffset": 101598,
                     "endColumn": 137,
-                    "endOffset": 101699
+                    "endOffset": 101731
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5106,9 +5106,9 @@
                 "to": {
                     "startLine": 1333,
                     "startColumn": 4,
-                    "startOffset": 101704,
+                    "startOffset": 101736,
                     "endColumn": 140,
-                    "endOffset": 101840
+                    "endOffset": 101872
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5118,9 +5118,9 @@
                 "to": {
                     "startLine": 1334,
                     "startColumn": 4,
-                    "startOffset": 101845,
+                    "startOffset": 101877,
                     "endColumn": 131,
-                    "endOffset": 101972
+                    "endOffset": 102004
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5130,9 +5130,9 @@
                 "to": {
                     "startLine": 1335,
                     "startColumn": 4,
-                    "startOffset": 101977,
+                    "startOffset": 102009,
                     "endColumn": 134,
-                    "endOffset": 102107
+                    "endOffset": 102139
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5142,9 +5142,9 @@
                 "to": {
                     "startLine": 1336,
                     "startColumn": 4,
-                    "startOffset": 102112,
+                    "startOffset": 102144,
                     "endColumn": 123,
-                    "endOffset": 102231
+                    "endOffset": 102263
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5154,9 +5154,9 @@
                 "to": {
                     "startLine": 1337,
                     "startColumn": 4,
-                    "startOffset": 102236,
+                    "startOffset": 102268,
                     "endColumn": 129,
-                    "endOffset": 102361
+                    "endOffset": 102393
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5166,9 +5166,9 @@
                 "to": {
                     "startLine": 1338,
                     "startColumn": 4,
-                    "startOffset": 102366,
+                    "startOffset": 102398,
                     "endColumn": 129,
-                    "endOffset": 102491
+                    "endOffset": 102523
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5178,9 +5178,9 @@
                 "to": {
                     "startLine": 1339,
                     "startColumn": 4,
-                    "startOffset": 102496,
+                    "startOffset": 102528,
                     "endColumn": 111,
-                    "endOffset": 102603
+                    "endOffset": 102635
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5190,9 +5190,9 @@
                 "to": {
                     "startLine": 1340,
                     "startColumn": 4,
-                    "startOffset": 102608,
+                    "startOffset": 102640,
                     "endColumn": 133,
-                    "endOffset": 102737
+                    "endOffset": 102769
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5202,9 +5202,9 @@
                 "to": {
                     "startLine": 1341,
                     "startColumn": 4,
-                    "startOffset": 102742,
+                    "startOffset": 102774,
                     "endColumn": 131,
-                    "endOffset": 102869
+                    "endOffset": 102901
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5214,9 +5214,9 @@
                 "to": {
                     "startLine": 1342,
                     "startColumn": 4,
-                    "startOffset": 102874,
+                    "startOffset": 102906,
                     "endColumn": 125,
-                    "endOffset": 102995
+                    "endOffset": 103027
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5226,9 +5226,9 @@
                 "to": {
                     "startLine": 1343,
                     "startColumn": 4,
-                    "startOffset": 103000,
+                    "startOffset": 103032,
                     "endColumn": 65,
-                    "endOffset": 103061
+                    "endOffset": 103093
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5238,9 +5238,9 @@
                 "to": {
                     "startLine": 1344,
                     "startColumn": 4,
-                    "startOffset": 103066,
+                    "startOffset": 103098,
                     "endColumn": 89,
-                    "endOffset": 103151
+                    "endOffset": 103183
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5250,9 +5250,9 @@
                 "to": {
                     "startLine": 1345,
                     "startColumn": 4,
-                    "startOffset": 103156,
+                    "startOffset": 103188,
                     "endColumn": 79,
-                    "endOffset": 103231
+                    "endOffset": 103263
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5262,9 +5262,9 @@
                 "to": {
                     "startLine": 1346,
                     "startColumn": 4,
-                    "startOffset": 103236,
+                    "startOffset": 103268,
                     "endColumn": 97,
-                    "endOffset": 103329
+                    "endOffset": 103361
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5274,9 +5274,9 @@
                 "to": {
                     "startLine": 1347,
                     "startColumn": 4,
-                    "startOffset": 103334,
+                    "startOffset": 103366,
                     "endColumn": 77,
-                    "endOffset": 103407
+                    "endOffset": 103439
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5286,9 +5286,9 @@
                 "to": {
                     "startLine": 1348,
                     "startColumn": 4,
-                    "startOffset": 103412,
+                    "startOffset": 103444,
                     "endColumn": 105,
-                    "endOffset": 103513
+                    "endOffset": 103545
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5298,9 +5298,9 @@
                 "to": {
                     "startLine": 1349,
                     "startColumn": 4,
-                    "startOffset": 103518,
+                    "startOffset": 103550,
                     "endColumn": 91,
-                    "endOffset": 103605
+                    "endOffset": 103637
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5310,9 +5310,9 @@
                 "to": {
                     "startLine": 1350,
                     "startColumn": 4,
-                    "startOffset": 103610,
+                    "startOffset": 103642,
                     "endColumn": 109,
-                    "endOffset": 103715
+                    "endOffset": 103747
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5322,10 +5322,10 @@
                 "to": {
                     "startLine": 1351,
                     "startColumn": 4,
-                    "startOffset": 103720,
+                    "startOffset": 103752,
                     "endLine": 1354,
                     "endColumn": 12,
-                    "endOffset": 103886
+                    "endOffset": 103918
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5335,10 +5335,10 @@
                 "to": {
                     "startLine": 1355,
                     "startColumn": 4,
-                    "startOffset": 103891,
+                    "startOffset": 103923,
                     "endLine": 1358,
                     "endColumn": 12,
-                    "endOffset": 104051
+                    "endOffset": 104083
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5348,9 +5348,9 @@
                 "to": {
                     "startLine": 1359,
                     "startColumn": 4,
-                    "startOffset": 104056,
+                    "startOffset": 104088,
                     "endColumn": 79,
-                    "endOffset": 104131
+                    "endOffset": 104163
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5360,9 +5360,9 @@
                 "to": {
                     "startLine": 1360,
                     "startColumn": 4,
-                    "startOffset": 104136,
+                    "startOffset": 104168,
                     "endColumn": 99,
-                    "endOffset": 104231
+                    "endOffset": 104263
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5372,9 +5372,9 @@
                 "to": {
                     "startLine": 1361,
                     "startColumn": 4,
-                    "startOffset": 104236,
+                    "startOffset": 104268,
                     "endColumn": 89,
-                    "endOffset": 104321
+                    "endOffset": 104353
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5384,9 +5384,9 @@
                 "to": {
                     "startLine": 1362,
                     "startColumn": 4,
-                    "startOffset": 104326,
+                    "startOffset": 104358,
                     "endColumn": 109,
-                    "endOffset": 104431
+                    "endOffset": 104463
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5396,9 +5396,9 @@
                 "to": {
                     "startLine": 1363,
                     "startColumn": 4,
-                    "startOffset": 104436,
+                    "startOffset": 104468,
                     "endColumn": 91,
-                    "endOffset": 104523
+                    "endOffset": 104555
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5408,9 +5408,9 @@
                 "to": {
                     "startLine": 1364,
                     "startColumn": 4,
-                    "startOffset": 104528,
+                    "startOffset": 104560,
                     "endColumn": 87,
-                    "endOffset": 104611
+                    "endOffset": 104643
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5420,9 +5420,9 @@
                 "to": {
                     "startLine": 1365,
                     "startColumn": 4,
-                    "startOffset": 104616,
+                    "startOffset": 104648,
                     "endColumn": 99,
-                    "endOffset": 104711
+                    "endOffset": 104743
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5432,9 +5432,9 @@
                 "to": {
                     "startLine": 1366,
                     "startColumn": 4,
-                    "startOffset": 104716,
+                    "startOffset": 104748,
                     "endColumn": 101,
-                    "endOffset": 104813
+                    "endOffset": 104845
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5444,9 +5444,9 @@
                 "to": {
                     "startLine": 1367,
                     "startColumn": 4,
-                    "startOffset": 104818,
+                    "startOffset": 104850,
                     "endColumn": 103,
-                    "endOffset": 104917
+                    "endOffset": 104949
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5456,9 +5456,9 @@
                 "to": {
                     "startLine": 1368,
                     "startColumn": 4,
-                    "startOffset": 104922,
+                    "startOffset": 104954,
                     "endColumn": 103,
-                    "endOffset": 105021
+                    "endOffset": 105053
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5468,9 +5468,9 @@
                 "to": {
                     "startLine": 1369,
                     "startColumn": 4,
-                    "startOffset": 105026,
+                    "startOffset": 105058,
                     "endColumn": 93,
-                    "endOffset": 105115
+                    "endOffset": 105147
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5480,9 +5480,9 @@
                 "to": {
                     "startLine": 1370,
                     "startColumn": 4,
-                    "startOffset": 105120,
+                    "startOffset": 105152,
                     "endColumn": 119,
-                    "endOffset": 105235
+                    "endOffset": 105267
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5492,9 +5492,9 @@
                 "to": {
                     "startLine": 1371,
                     "startColumn": 4,
-                    "startOffset": 105240,
+                    "startOffset": 105272,
                     "endColumn": 117,
-                    "endOffset": 105353
+                    "endOffset": 105385
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5504,9 +5504,9 @@
                 "to": {
                     "startLine": 1372,
                     "startColumn": 4,
-                    "startOffset": 105358,
+                    "startOffset": 105390,
                     "endColumn": 89,
-                    "endOffset": 105443
+                    "endOffset": 105475
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5516,9 +5516,9 @@
                 "to": {
                     "startLine": 1373,
                     "startColumn": 4,
-                    "startOffset": 105448,
+                    "startOffset": 105480,
                     "endColumn": 107,
-                    "endOffset": 105551
+                    "endOffset": 105583
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5528,9 +5528,9 @@
                 "to": {
                     "startLine": 1374,
                     "startColumn": 4,
-                    "startOffset": 105556,
+                    "startOffset": 105588,
                     "endColumn": 109,
-                    "endOffset": 105661
+                    "endOffset": 105693
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5540,9 +5540,9 @@
                 "to": {
                     "startLine": 1375,
                     "startColumn": 4,
-                    "startOffset": 105666,
+                    "startOffset": 105698,
                     "endColumn": 111,
-                    "endOffset": 105773
+                    "endOffset": 105805
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5552,10 +5552,10 @@
                 "to": {
                     "startLine": 1376,
                     "startColumn": 4,
-                    "startOffset": 105778,
+                    "startOffset": 105810,
                     "endLine": 1378,
                     "endColumn": 12,
-                    "endOffset": 105948
+                    "endOffset": 105980
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5565,9 +5565,9 @@
                 "to": {
                     "startLine": 1379,
                     "startColumn": 4,
-                    "startOffset": 105953,
+                    "startOffset": 105985,
                     "endColumn": 115,
-                    "endOffset": 106064
+                    "endOffset": 106096
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5577,9 +5577,9 @@
                 "to": {
                     "startLine": 1380,
                     "startColumn": 4,
-                    "startOffset": 106069,
+                    "startOffset": 106101,
                     "endColumn": 85,
-                    "endOffset": 106150
+                    "endOffset": 106182
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5589,9 +5589,9 @@
                 "to": {
                     "startLine": 1381,
                     "startColumn": 4,
-                    "startOffset": 106155,
+                    "startOffset": 106187,
                     "endColumn": 99,
-                    "endOffset": 106250
+                    "endOffset": 106282
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5601,9 +5601,9 @@
                 "to": {
                     "startLine": 1382,
                     "startColumn": 4,
-                    "startOffset": 106255,
+                    "startOffset": 106287,
                     "endColumn": 111,
-                    "endOffset": 106362
+                    "endOffset": 106394
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5613,9 +5613,9 @@
                 "to": {
                     "startLine": 1383,
                     "startColumn": 4,
-                    "startOffset": 106367,
+                    "startOffset": 106399,
                     "endColumn": 66,
-                    "endOffset": 106429
+                    "endOffset": 106461
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5625,9 +5625,9 @@
                 "to": {
                     "startLine": 1384,
                     "startColumn": 4,
-                    "startOffset": 106434,
+                    "startOffset": 106466,
                     "endColumn": 113,
-                    "endOffset": 106543
+                    "endOffset": 106575
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5637,9 +5637,9 @@
                 "to": {
                     "startLine": 1385,
                     "startColumn": 4,
-                    "startOffset": 106548,
+                    "startOffset": 106580,
                     "endColumn": 67,
-                    "endOffset": 106611
+                    "endOffset": 106643
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5649,9 +5649,9 @@
                 "to": {
                     "startLine": 1386,
                     "startColumn": 4,
-                    "startOffset": 106616,
+                    "startOffset": 106648,
                     "endColumn": 115,
-                    "endOffset": 106727
+                    "endOffset": 106759
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5661,9 +5661,9 @@
                 "to": {
                     "startLine": 1387,
                     "startColumn": 4,
-                    "startOffset": 106732,
+                    "startOffset": 106764,
                     "endColumn": 131,
-                    "endOffset": 106859
+                    "endOffset": 106891
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5673,9 +5673,9 @@
                 "to": {
                     "startLine": 1388,
                     "startColumn": 4,
-                    "startOffset": 106864,
+                    "startOffset": 106896,
                     "endColumn": 115,
-                    "endOffset": 106975
+                    "endOffset": 107007
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5685,9 +5685,9 @@
                 "to": {
                     "startLine": 1389,
                     "startColumn": 4,
-                    "startOffset": 106980,
+                    "startOffset": 107012,
                     "endColumn": 68,
-                    "endOffset": 107044
+                    "endOffset": 107076
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5697,9 +5697,9 @@
                 "to": {
                     "startLine": 1390,
                     "startColumn": 4,
-                    "startOffset": 107049,
+                    "startOffset": 107081,
                     "endColumn": 94,
-                    "endOffset": 107139
+                    "endOffset": 107171
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5709,9 +5709,9 @@
                 "to": {
                     "startLine": 1391,
                     "startColumn": 4,
-                    "startOffset": 107144,
+                    "startOffset": 107176,
                     "endColumn": 114,
-                    "endOffset": 107254
+                    "endOffset": 107286
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5721,9 +5721,9 @@
                 "to": {
                     "startLine": 1392,
                     "startColumn": 4,
-                    "startOffset": 107259,
+                    "startOffset": 107291,
                     "endColumn": 112,
-                    "endOffset": 107367
+                    "endOffset": 107399
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5733,9 +5733,9 @@
                 "to": {
                     "startLine": 1393,
                     "startColumn": 4,
-                    "startOffset": 107372,
+                    "startOffset": 107404,
                     "endColumn": 98,
-                    "endOffset": 107466
+                    "endOffset": 107498
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5745,9 +5745,9 @@
                 "to": {
                     "startLine": 1394,
                     "startColumn": 4,
-                    "startOffset": 107471,
+                    "startOffset": 107503,
                     "endColumn": 119,
-                    "endOffset": 107586
+                    "endOffset": 107618
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5757,9 +5757,9 @@
                 "to": {
                     "startLine": 1395,
                     "startColumn": 4,
-                    "startOffset": 107591,
+                    "startOffset": 107623,
                     "endColumn": 121,
-                    "endOffset": 107708
+                    "endOffset": 107740
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5769,9 +5769,9 @@
                 "to": {
                     "startLine": 1396,
                     "startColumn": 4,
-                    "startOffset": 107713,
+                    "startOffset": 107745,
                     "endColumn": 110,
-                    "endOffset": 107819
+                    "endOffset": 107851
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5781,9 +5781,9 @@
                 "to": {
                     "startLine": 1397,
                     "startColumn": 4,
-                    "startOffset": 107824,
+                    "startOffset": 107856,
                     "endColumn": 100,
-                    "endOffset": 107920
+                    "endOffset": 107952
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5793,9 +5793,9 @@
                 "to": {
                     "startLine": 1398,
                     "startColumn": 4,
-                    "startOffset": 107925,
+                    "startOffset": 107957,
                     "endColumn": 104,
-                    "endOffset": 108025
+                    "endOffset": 108057
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5805,9 +5805,9 @@
                 "to": {
                     "startLine": 1399,
                     "startColumn": 4,
-                    "startOffset": 108030,
+                    "startOffset": 108062,
                     "endColumn": 99,
-                    "endOffset": 108125
+                    "endOffset": 108157
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5817,9 +5817,9 @@
                 "to": {
                     "startLine": 1400,
                     "startColumn": 4,
-                    "startOffset": 108130,
+                    "startOffset": 108162,
                     "endColumn": 117,
-                    "endOffset": 108243
+                    "endOffset": 108275
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5829,9 +5829,9 @@
                 "to": {
                     "startLine": 1401,
                     "startColumn": 4,
-                    "startOffset": 108248,
+                    "startOffset": 108280,
                     "endColumn": 90,
-                    "endOffset": 108334
+                    "endOffset": 108366
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5841,9 +5841,9 @@
                 "to": {
                     "startLine": 1402,
                     "startColumn": 4,
-                    "startOffset": 108339,
+                    "startOffset": 108371,
                     "endColumn": 122,
-                    "endOffset": 108457
+                    "endOffset": 108489
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5853,9 +5853,9 @@
                 "to": {
                     "startLine": 1403,
                     "startColumn": 4,
-                    "startOffset": 108462,
+                    "startOffset": 108494,
                     "endColumn": 99,
-                    "endOffset": 108557
+                    "endOffset": 108589
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5865,9 +5865,9 @@
                 "to": {
                     "startLine": 1404,
                     "startColumn": 4,
-                    "startOffset": 108562,
+                    "startOffset": 108594,
                     "endColumn": 103,
-                    "endOffset": 108661
+                    "endOffset": 108693
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5877,9 +5877,9 @@
                 "to": {
                     "startLine": 1405,
                     "startColumn": 4,
-                    "startOffset": 108666,
+                    "startOffset": 108698,
                     "endColumn": 95,
-                    "endOffset": 108757
+                    "endOffset": 108789
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5889,9 +5889,9 @@
                 "to": {
                     "startLine": 1406,
                     "startColumn": 4,
-                    "startOffset": 108762,
+                    "startOffset": 108794,
                     "endColumn": 87,
-                    "endOffset": 108845
+                    "endOffset": 108877
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5901,9 +5901,9 @@
                 "to": {
                     "startLine": 1407,
                     "startColumn": 4,
-                    "startOffset": 108850,
+                    "startOffset": 108882,
                     "endColumn": 105,
-                    "endOffset": 108951
+                    "endOffset": 108983
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5913,9 +5913,9 @@
                 "to": {
                     "startLine": 1408,
                     "startColumn": 4,
-                    "startOffset": 108956,
+                    "startOffset": 108988,
                     "endColumn": 91,
-                    "endOffset": 109043
+                    "endOffset": 109075
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5925,9 +5925,9 @@
                 "to": {
                     "startLine": 1409,
                     "startColumn": 4,
-                    "startOffset": 109048,
+                    "startOffset": 109080,
                     "endColumn": 91,
-                    "endOffset": 109135
+                    "endOffset": 109167
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5937,9 +5937,9 @@
                 "to": {
                     "startLine": 1410,
                     "startColumn": 4,
-                    "startOffset": 109140,
+                    "startOffset": 109172,
                     "endColumn": 113,
-                    "endOffset": 109249
+                    "endOffset": 109281
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5949,9 +5949,9 @@
                 "to": {
                     "startLine": 1411,
                     "startColumn": 4,
-                    "startOffset": 109254,
+                    "startOffset": 109286,
                     "endColumn": 89,
-                    "endOffset": 109339
+                    "endOffset": 109371
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5961,9 +5961,9 @@
                 "to": {
                     "startLine": 1412,
                     "startColumn": 4,
-                    "startOffset": 109344,
+                    "startOffset": 109376,
                     "endColumn": 83,
-                    "endOffset": 109423
+                    "endOffset": 109455
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5973,9 +5973,9 @@
                 "to": {
                     "startLine": 1413,
                     "startColumn": 4,
-                    "startOffset": 109428,
+                    "startOffset": 109460,
                     "endColumn": 53,
-                    "endOffset": 109477
+                    "endOffset": 109509
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5985,9 +5985,9 @@
                 "to": {
                     "startLine": 1414,
                     "startColumn": 4,
-                    "startOffset": 109482,
+                    "startOffset": 109514,
                     "endColumn": 121,
-                    "endOffset": 109599
+                    "endOffset": 109631
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -5997,9 +5997,9 @@
                 "to": {
                     "startLine": 1415,
                     "startColumn": 4,
-                    "startOffset": 109604,
+                    "startOffset": 109636,
                     "endColumn": 83,
-                    "endOffset": 109683
+                    "endOffset": 109715
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"
@@ -6009,9 +6009,9 @@
                 "to": {
                     "startLine": 1416,
                     "startColumn": 4,
-                    "startOffset": 109688,
+                    "startOffset": 109720,
                     "endColumn": 119,
-                    "endOffset": 109803
+                    "endOffset": 109835
                 },
                 "from": {
                     "file": "/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml"

@@ -114,7 +114,7 @@ Todos los derechos reservados. Está prohibida su distribución o reproducción 
     <string name="deleteUploadedFilesPrompt">Desea borrar los archivos subidos de su celular?</string>
     <string name="downloadAudio">Descargar audio</string>
     <string name="downloadFileSizeText">"Le gustaría bajar un archivo de este tamaño?"</string>
-    <string name="downloadPictures">Descargar imágenes</string>
+    <string name="downloadPictures">Descargar imágenes (no disponible en esta versión)</string>
     <string name="dropboxErrorMessage">"Error iniciando sesión."</string>
     <string name="english">Inglés</string>
     <string name="englishInterface">ENG</string>

@@ -272,7 +272,7 @@ All rights reserved. Do not distribute or reproduce without permission. Most of 
     <string name="deleteUploadedFilesPrompt">Do you want to delete the uploaded files from your device?</string>
     <string name="downloadAudio">Download Audio</string>
     <string name="downloadFileSizeText">"Would you like to download a file of this size?"</string>
-    <string name="downloadPictures">Download Pictures</string>
+    <string name="downloadPictures">Download Pictures (not available in this version)</string>
     <string name="dropboxErrorMessage">"There was an error logging into Dropbox."</string>
     <string name="english">English</string>
     <string name="englishInterface">ENG</string>

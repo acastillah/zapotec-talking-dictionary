@@ -51,7 +51,7 @@ All rights reserved. Do not distribute or reproduce without permission. Most of 
     <string name="search_hint">Search dictionary</string>
     <string name="updateInfo">The Valley Zapotec Talking Dictionary is constantly growing. Each time you update, the new words will take up more space on your phone. If space is a concern, you may choose if you want to download audio and pictures.</string>
     <string name="downloadAudio">Download Audio</string>
-    <string name="downloadPictures">Download Pictures</string>
+    <string name="downloadPictures">Download Pictures (not available in this version)</string>
     <string name="update">Update</string>
     <string name="speaker">Speaker: </string>
     <string name="audioFragmentDescription">"Click \"Start recording\" to start recording audio and click \"Stop recording\" to end the recording. You can play the recording with the \"Start playing/Stop playing\" button. You may name your audio file in the text field. Audio files can be accessed on your device's local storage under the \"Zapotec Talking Dictionary/audio\" directory."</string>
