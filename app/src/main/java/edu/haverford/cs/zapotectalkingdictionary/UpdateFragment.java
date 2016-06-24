@@ -202,8 +202,9 @@ public class UpdateFragment extends Fragment {
 		}
 	}
 	
+	@SuppressLint("ValidFragment")
 	public class UpdateDialogFragment extends DialogFragment {
-		
+
 		public TextView dialogMSG = null;
 	    @SuppressLint("InflateParams")
 		@Override
@@ -214,7 +215,7 @@ public class UpdateFragment extends Fragment {
 	        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 	        builder.setTitle(msg);
 	        builder.setView(dialogView);
-	        
+
 	        dialogMSG = (TextView) dialogView.findViewById(R.id.size_update);
         	dialogMSG.setText(getResources().getString(R.string.downloadFileSizeText));
 
@@ -222,16 +223,16 @@ public class UpdateFragment extends Fragment {
 	                   public void onClick(DialogInterface dialog, int id) {
 							// proceed with updates
 	                	   updateButton.setEnabled(false);
-	                	   
+
 		                	SharedPreferences preferences = getActivity().getSharedPreferences(Preferences.APP_SETTINGS, Activity.MODE_PRIVATE);
 		           			Editor editor = preferences.edit();
 		           			Calendar cal = Calendar.getInstance();
 		                   	String date = DictionaryDatabase.dateFormat_US.format(cal.getTime());
 		                   	editor.putString(Preferences.LAST_DB_UPDATE, date);
 		                   	editor.commit();
-		                   	
+
 		                   	lastUpdateView.setText(R.string.last_updated);
-		                   	
+
 		                   	if (preferences.getString(Preferences.LANGUAGE, "").equals(Preferences.ENGLISH)) {
 		                   		lastUpdateView.append(" " + date);
 		                   	}
@@ -239,11 +240,11 @@ public class UpdateFragment extends Fragment {
 		                   		String dateMX = DictionaryDatabase.dateFormat_MX.format(cal.getTime());
 		                   		lastUpdateView.append(" " + dateMX);
 		                   	}
-		                    
+
 		                   	new downloadFiles().execute();
 	                   }
 	               });
-	        
+
 	        builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
 	                   public void onClick(DialogInterface dialog, int id) {
 	                	   // cancel update
@@ -252,7 +253,7 @@ public class UpdateFragment extends Fragment {
 	        return builder.create();
 	    }
 	}
-	
+
 	public String getSize(){		
 		try{	
 			int type = getType();

@@ -2,28 +2,31 @@
 <resources>
     <string-array name="domain_options_display">
         <item>""</item>
-        <item>Raa dtitx</item>
-        <item>Dzïin lats</item>
-        <item>Main</item>
-        <item>Main xily</item>
-        <item>La\'dyu</item>
-        <item>Xab</item>
-        <item>Colores</item>
-        <item>Ni rau benny</item>
-        <item>Rinii xtxang</item>
-        <item>Gal nadang/rakxhu\'</item>
-        <item>Dlani</item>
-        <item>Dsa\'</item>
-        <item>Lo gixliu</item>
-        <item>Dlet</item>
-        <item>Gal rulab</item>
-        <item>Benny</item>
-        <item>Dkwang</item>
-        <item>Yudau</item>
-        <item>Giba\'</item>
-        <item>Zena ddxi</item>
-        <item>Xkalna ddxi</item>
-        <item>Gal ruintxei</item>
+        <item>raa dtitx</item>
+        <item>dzïin lats</item>
+        <item>main</item>
+        <item>main xily</item>
+        <item>la\'dyu</item>
+        <item>dlani</item>
+        <item>xab</item>
+        <item>colores</item>
+        <item>expresiones comunes</item>
+        <item>ni rau benny</item>
+        <item>rinii xtxang</item>
+        <item>gal nadang/rakxhu\'</item>
+        <item>dsa\'</item>
+        <item>lo gixliu</item>
+        <item>dlet</item>
+        <item>gal rulab</item>
+        <item>benny</item>
+        <item>dkwang</item>
+        <item>yudau</item>
+        <item>xkwily</item>
+        <item>giba\'</item>
+        <item>tecnología</item>
+        <item>zena ddxi</item>
+        <item>xkalna ddxi</item>
+        <item>gal ruintxei</item>
     </string-array>
     <string-array name="domain_options_search"> <!-- This is ugly and stupid. Please find a better way. -->
         <item>""</item>
@@ -32,12 +35,13 @@
         <item>animal</item>
         <item>bird</item>
         <item>body part</item>
+        <item>celebration</item>
         <item>clothing</item>
         <item>color</item>
+        <item>common expression</item>
         <item>food</item>
         <item>greeting</item>
         <item>health</item>
-        <item>holiday</item>
         <item>kinship</item>
         <item>landscape</item>
         <item>location</item>
@@ -45,7 +49,9 @@
         <item>person</item>
         <item>plant</item>
         <item>religion</item>
+        <item>school</item>
         <item>sky</item>
+        <item>technology</item>
         <item>time</item>
         <item>weather</item>
         <item>weaving</item>
@@ -95,6 +101,7 @@ Todos los derechos reservados. Está prohibida su distribución o reproducción 
     <string name="db_specs">dtitx ni yu\' le\'ng ginny</string>
     <string name="delete">Rutsuly</string>
     <string name="deleteContent">Rutsuly ginny</string>
+    <string name="deleteInfo">Seleccionar BORRAR CONTENIDO borrará todo el contenido guardado por medio de la aplicación</string>
     <string name="deleteUploadedFilesPrompt">Desea borrar los archivos subidos de su celular?</string>
     <string name="downloadAudio">Balet dtitx ni rinii</string>
     <string name="downloadFileSizeText">"Le gustaría bajar un archivo de este tamaño?"</string>
@@ -105,6 +112,7 @@ Todos los derechos reservados. Está prohibida su distribución o reproducción 
     <string name="filesDeleted">Archivos borrados</string>
     <string name="finishedSettingUpDB">"La base de datos ha terminado de configurarse"</string>
     <string name="followingFilesNotUploadedSuccessfully">Los siguientes archivos no fueron subidos:</string>
+    <string name="hello_world">Zakxdily gixhliu!</string>
     <string name="help">Ayuda</string>
     <string name="imageFragmentDescription">Haga clic en  \"Tomar foto\" e introduzca un nombre para el archivo. Puede accesar estas imágenes en el directorio \"Zapotec Talking Dictionary/photos\" dentro de su memoria local</string>
     <string name="imagesUploaded">imágenes cargadas</string>
@@ -166,6 +174,7 @@ All rights reserved. Do not distribute or reproduce without permission.</string>
     <string name="title_activity_search">SearchActivity</string>
     <string name="title_activity_search_fragment">Búsqueda</string>
     <string name="title_activity_search_result">Búsqueda</string>
+    <string name="title_activity_upload">UploadActivity</string>
     <string name="title_activity_word_definition">Definición</string>
     <string name="title_main_section">Xtìch nadxii</string>
     <string name="title_section2">Actualizar</string>

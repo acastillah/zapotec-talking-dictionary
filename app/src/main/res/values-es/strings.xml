@@ -116,7 +116,7 @@ Todos los derechos reservados. Está prohibida su distribución o reproducción 
     <string name="uploading">SUBIENDO</string>
     <string name="uploadInfo">Puede subir el contenido guardado a Dropbox al presionar SUBIR. Cuando haya subido contenido a Dropbox, puede tener la opcion de borrar el contenido subido de su telefono</string>
     
-    	<string name="deleteInfo">Seleccionar BORRAR CONTENIDO borrará todo el contenido guardado por medio de la aplicación</string>
+    <string name="deleteInfo">Seleccionar BORRAR CONTENIDO borrará todo el contenido guardado por medio de la aplicación</string>
 	<string name="deleteContent">Borrar contenido</string>
 	<string name="upload">Subir</string>
 	<string name="uploadToDropboxComplete">La carga a Dropbox se ha completado:</string>
@@ -127,7 +127,7 @@ Todos los derechos reservados. Está prohibida su distribución o reproducción 
 	<string name="deleteUploadedFilesPrompt">Desea borrar los archivos subidos de su celular?</string>
     <string name="filesDeleted">Archivos borrados</string>
     <string name="contentManagement">Upload/delete</string>
-    <string name="UpToDate">Bases actualizadas</string>
+    <string name="upToDate">Bases actualizadas</string>
     <string name="noResults">No hay Resultados</string>
     
     
@@ -211,7 +211,10 @@ Todos los derechos reservados. Está prohibida su distribución o reproducción 
     </string-array>
 
 	<string name="current_language">Spanish</string>
+    <string name="title_activity_upload">UploadActivity</string>
+    <string name="hello_world">Hola mundo!</string>
     <string name="action_settings">Configuración</string>
     <string name="app_name">Dixza</string>
+    <string name="UpToDate">Up to Date</string>
 
 </resources>

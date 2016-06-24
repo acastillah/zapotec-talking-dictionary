@@ -102,7 +102,7 @@ public class WordDefinitionFragment extends Fragment{
 			
 			ll.setLayoutParams(params);
 	
-	        ll.setId(12345);
+	        ll.setId(R.id.WordDefinitionLL);
 	        
 	        String fileName = "Teotitlan_";
 	        

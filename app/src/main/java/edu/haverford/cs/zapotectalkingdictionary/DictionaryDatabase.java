@@ -42,7 +42,7 @@ import android.widget.Toast;
 public class DictionaryDatabase {
 
     private static final String DATABASE_NAME = "dictionary";
-    private static final int DATABASE_VERSION = 2;
+    private static final int DATABASE_VERSION = 3;
     private static final String TABLE_WORDS = "words";
     private final DictionaryOpenHelper mDatabaseOpenHelper;    
  // Words Table Columns names

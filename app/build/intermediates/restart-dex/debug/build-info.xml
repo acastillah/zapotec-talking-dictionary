@@ -2,28 +2,28 @@
 <instant-run
     abi="x86"
     api-level="23"
-    density="420dpi"
+    density="xhdpi"
     format="7"
-    timestamp="229939856164525" >
+    timestamp="8556422888989" >
 
     <task
         name="javac"
-        duration="976" />
+        duration="587" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="576" />
+        duration="456" />
     <task
         name="verifier"
-        duration="92" />
+        duration="47" />
 
     <artifact
         location="/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/outputs/apk/app-debug.apk"
         type="MAIN" />
 
-    <build timestamp="229939856164525" >
+    <build timestamp="8556422888989" >
         <artifact
             location="/Users/sam/StudioProjects/zapotec-talking-dictionary/app/build/outputs/apk/app-debug.apk"
             type="MAIN" />

@@ -1,22 +1,36 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        config {
+            keyAlias 'zapoteckey'
+            keyPassword 'oaxaca'
+            storeFile file('/Users/sam/Downloads/zapotectalkingdictionary.jks')
+            storePassword 'oaxaca'
+        }
+    }
     compileSdkVersion 21
     buildToolsVersion "23.0.3"
-
     defaultConfig {
         applicationId "edu.haverford.cs.zapotectalkingdictionary"
         minSdkVersion 14
         targetSdkVersion 21
+        versionCode 3
+        versionName "1.1"
     }
-
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+            signingConfig signingConfigs.config
+        }
+        debug {
+            signingConfig signingConfigs.config
         }
     }
 }
+
+
 
 dependencies {
     compile 'com.android.support:appcompat-v7:21.0.3'

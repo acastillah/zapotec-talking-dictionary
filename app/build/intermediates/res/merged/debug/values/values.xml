@@ -7,20 +7,23 @@
         <item>animals</item>
         <item>birds</item>
         <item>body parts</item>
+        <item>celebrations</item>
         <item>clothing</item>
         <item>colors</item>
+        <item>common expressions</item>
         <item>food</item>
         <item>greetings</item>
         <item>health</item>
-        <item>holidays</item>
-        <item>kinship terms</item>
+        <item>kinship</item>
         <item>landscape</item>
-        <item>location</item>
+        <item>locations</item>
         <item>numbers</item>
         <item>people</item>
         <item>plants</item>
         <item>religion</item>
+        <item>school</item>
         <item>sky</item>
+        <item>technology</item>
         <item>time</item>
         <item>weather</item>
         <item>weaving</item>
@@ -32,12 +35,13 @@
         <item>animal</item>
         <item>bird</item>
         <item>body part</item>
+        <item>celebration</item>
         <item>clothing</item>
         <item>color</item>
+        <item>common expression</item>
         <item>food</item>
         <item>greeting</item>
         <item>health</item>
-        <item>holiday</item>
         <item>kinship</item>
         <item>landscape</item>
         <item>location</item>
@@ -45,7 +49,9 @@
         <item>person</item>
         <item>plant</item>
         <item>religion</item>
+        <item>school</item>
         <item>sky</item>
+        <item>technology</item>
         <item>time</item>
         <item>weather</item>
         <item>weaving</item>

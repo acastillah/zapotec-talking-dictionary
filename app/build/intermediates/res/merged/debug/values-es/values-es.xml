@@ -7,12 +7,13 @@
         <item>animales</item>
         <item>aves</item>
         <item>partes del cuerpo</item>
+        <item>celebraciones</item>
         <item>ropa</item>
         <item>colores</item>
+        <item>expresiones comunes</item>
         <item>comida</item>
         <item>saludos</item>
         <item>salud</item>
-        <item>días festivos</item>
         <item>parentesco</item>
         <item>paisaje</item>
         <item>ubicaciones</item>
@@ -20,7 +21,9 @@
         <item>personas</item>
         <item>plantas</item>
         <item>religión</item>
+        <item>escuela</item>
         <item>cielo</item>
+        <item>tecnología</item>
         <item>tiempo</item>
         <item>clima</item>
         <item>tejido</item>
@@ -32,12 +35,13 @@
         <item>animal</item>
         <item>bird</item>
         <item>body part</item>
+        <item>celebration</item>
         <item>clothing</item>
         <item>color</item>
+        <item>common expression</item>
         <item>food</item>
         <item>greeting</item>
         <item>health</item>
-        <item>holiday</item>
         <item>kinship</item>
         <item>landscape</item>
         <item>location</item>
@@ -45,7 +49,9 @@
         <item>person</item>
         <item>plant</item>
         <item>religion</item>
+        <item>school</item>
         <item>sky</item>
+        <item>technology</item>
         <item>time</item>
         <item>weather</item>
         <item>weaving</item>
@@ -65,7 +71,7 @@
     <string name="EnglishDefinition">"Inglés: "</string>
     <string name="SpanishDefinition">"Español: "</string>
     <string name="TeotitlanDelValleZapotec">Teotitlán del Valle Zapotec</string>
-    <string name="UpToDate">Bases actualizadas</string>
+    <string name="UpToDate">Up to Date</string>
     <string msgid="4600421777120114993" name="abc_action_bar_home_description">"Ir a la pantalla de inicio"</string>
     <string msgid="1397052879051804371" name="abc_action_bar_home_description_format">"%1$s, %2$s"</string>
     <string msgid="6623331958280229229" name="abc_action_bar_home_subtitle_description_format">"%1$s, %2$s, %3$s"</string>
@@ -121,6 +127,7 @@ Todos los derechos reservados. Está prohibida su distribución o reproducción 
     <string name="filesDeleted">Archivos borrados</string>
     <string name="finishedSettingUpDB">"La base de datos ha terminado de configurarse"</string>
     <string name="followingFilesNotUploadedSuccessfully">Los siguientes archivos no fueron subidos:</string>
+    <string name="hello_world">Hola mundo!</string>
     <string name="help">Ayuda</string>
     <string name="imageFragmentDescription">Haga clic en  \"Tomar foto\" e introduzca un nombre para el archivo. Puede accesar estas imágenes en el directorio \"Zapotec Talking Dictionary/photos\" dentro de su memoria local</string>
     <string name="imagesUploaded">imágenes cargadas</string>
@@ -178,11 +185,13 @@ Todos los derechos reservados. Está prohibida su distribución o reproducción 
     <string name="title_activity_search">SearchActivity</string>
     <string name="title_activity_search_fragment">Búsqueda</string>
     <string name="title_activity_search_result">Búsqueda</string>
+    <string name="title_activity_upload">UploadActivity</string>
     <string name="title_activity_word_definition">Definición</string>
     <string name="title_main_section">Palabra del día</string>
     <string name="title_section2">Actualizar</string>
     <string name="title_section3">Información</string>
     <string name="title_settings">Ajustes</string>
+    <string name="upToDate">Bases actualizadas</string>
     <string name="update">Actualizar</string>
     <string name="updateInfo">El diccionario parlante está creciendo continuamente. Cada que actualices la base de datos puedes decidir si deseas incluir audio y fotos o no para preservar espacio.</string>
     <string name="updated">La base de datos ha sido actualizada correctamente</string>

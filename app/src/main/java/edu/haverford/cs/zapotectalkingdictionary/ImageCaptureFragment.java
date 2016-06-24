@@ -82,13 +82,10 @@ public class ImageCaptureFragment extends Fragment {
     private Bundle bundle = null;
 	
     public ImageCaptureFragment() {}
-    
-	public ImageCaptureFragment(Bundle bundle) {
-		this.bundle = bundle;
-	}
 	
 	public static ImageCaptureFragment newInstance(Bundle bundle) {
-		ImageCaptureFragment f = new ImageCaptureFragment(bundle);
+		ImageCaptureFragment f = new ImageCaptureFragment();
+		f.bundle = bundle;
         return f;
     }
 	

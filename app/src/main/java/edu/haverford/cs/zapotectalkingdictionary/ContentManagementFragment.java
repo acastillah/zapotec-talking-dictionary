@@ -79,7 +79,7 @@ public class ContentManagementFragment extends Fragment {
 		
 	}
 	
-	public class deleteFilesDialogFragment extends DialogFragment {
+	public static class deleteFilesDialogFragment extends DialogFragment {
 				
 	    @Override
 	    public Dialog onCreateDialog(Bundle savedInstanceState) {
@@ -109,7 +109,7 @@ public class ContentManagementFragment extends Fragment {
 	    }
 	}
 	
-	public class DeleteAllFilesInDirectoryRunnable implements Runnable {
+	public static class DeleteAllFilesInDirectoryRunnable implements Runnable {
 
 		private String directoryPath = null;
 		public DeleteAllFilesInDirectoryRunnable(String directoryPath) {

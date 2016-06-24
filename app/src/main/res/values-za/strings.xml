@@ -79,7 +79,7 @@ All rights reserved. Do not distribute or reproduce without permission.</string>
     
     <string-array name="domain_options_display">
         <item>""</item>
-        <item>raa dtitx</item> 
+        <item>raa dtitx</item>
         <item>dzïin lats</item>
         <item>main</item>
         <item>main xily</item>
@@ -136,16 +136,16 @@ All rights reserved. Do not distribute or reproduce without permission.</string>
     </string-array>
 
 	<string name="current_language">dixtily</string>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+    <string name="title_activity_upload">UploadActivity</string>
+
+
+
+
+
+
+
+
+
 
     <string name="appExplanation">Gib ree ni riniya\' xtitxu nain te ....</string>
     <string name="website"><u>http://talkingdictionary.swarthmore.edu/teotitlan/</u></string>
@@ -194,6 +194,7 @@ All rights reserved. Do not distribute or reproduce without permission.</string>
     <string name="reject">"Reject/\nRechazar"</string>
     <string name="uploading">SUBIENDO</string>
     <string name="uploadInfo">Puede subir el contenido guardado a Dropbox al presionar SUBIR. Cuando haya subido contenido a Dropbox, puede tener la opcion de borrar el contenido subido de su telefono</string>
+    <string name="deleteInfo">Seleccionar BORRAR CONTENIDO borrará todo el contenido guardado por medio de la aplicación</string>
 
     <string name="deleteContent">Rutsuly ginny</string>
 	<string name="upload">Subir</string>
@@ -213,6 +214,7 @@ All rights reserved. Do not distribute or reproduce without permission.</string>
     
     <string name="contentManagement">Rulepy/Rutsuly</string>
     <string name="UpToDate">a rapu ra dtitx</string>
+    <string name="hello_world">Zakxdily gixhliu!</string>
     <string name="about"><string name="about">Todo el contenido está registrado © bajo el dominio de las comunidades zapotecas (2013-2016).
 Este diccionario ha sido producido por Brook Danielle Lillehaugen,
 Janet Chávez Santiago, Tess A. Harty, Nick Kalivoda, Sam Katz, Teresa Martínez Chavez, Javier A. Pina, May Helena Plumb, Diamond C. J. Ray, Cornelio Santos y Jamie A. Thomas (2013-2016).

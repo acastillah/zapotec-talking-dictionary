@@ -12,6 +12,7 @@ import com.dropbox.client2.session.AccessTokenPair;
 import com.dropbox.client2.session.AppKeyPair;
 import com.dropbox.client2.session.Session.AccessType;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -400,6 +401,7 @@ UploadActivity extends FragmentActivity {
 		}
 	}
 	
+	@SuppressLint("ValidFragment")
 	public class UploadCompleteDialogFragment extends DialogFragment {
 		
 		UploadHandlerMessageObject mObj = null;
@@ -586,6 +588,7 @@ UploadActivity extends FragmentActivity {
 	
 	
 	
+@SuppressLint("ValidFragment")
 public class AuthenticationErrorDialogFragment extends DialogFragment {
 		
 		Activity activity = null;

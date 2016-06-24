@@ -81,7 +81,9 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
                 }
             }
         };
-	
+
+
+
 	public static final InputFilter[] userNameInputFilters = new InputFilter[] {
         new InputFilter() {
         	@Override
